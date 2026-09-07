@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ಬೆಂಗಳೂರು - A Field Guide</title>
 <meta name="description" content="A community field guide to Bengaluru and South India - locations, food, craft, and a look past the usual idea of 'India'.">
+<script>
+  (function(){
+    try{
+      var saved = localStorage.getItem('blr-theme');
+      if(saved === 'dark' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)){
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    }catch(e){}
+  })();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Baloo+Tamma+2:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
@@ -24,6 +34,8 @@
     --ink-soft:#5B4E44;
     --line:rgba(36,28,24,0.16);
     --radius:3px;
+    --dot-line:rgba(36,28,24,0.06);
+    --card-surface:#fff;
     /* ---- regional palette, drawn from craft & textile traditions ---- */
     --terracotta:#C1631A;     /* Mangaluru roof tile & pottery */
     --ilkal-red:#9C2436;      /* Ilkal saree field, Bagalkot/Vijayapura belt */
@@ -32,12 +44,35 @@
     --coffee:#3E2A1C;         /* Chikmagalur-Kodagu estate soil */
     --coastal-teal:#1F7A6E;   /* Udupi-Mangaluru coast */
   }
+  [data-theme="dark"]{
+    --maroon:#E14D66;
+    --maroon-dark:#B93650;
+    --gold:#E8B93A;
+    --gold-light:#F5D67A;
+    --jacaranda:#9A7FD4;
+    --jacaranda-dark:#6B4FA0;
+    --leaf:#4CB56E;
+    --leaf-light:#6FCB8E;
+    --cream:#181310;
+    --cream-2:#241C17;
+    --ink:#F0E6D4;
+    --ink-soft:#B9AC96;
+    --line:rgba(240,230,212,0.16);
+    --dot-line:rgba(240,230,212,0.06);
+    --card-surface:#221A15;
+    --terracotta:#D98A44;
+    --ilkal-red:#D2596F;
+    --kasuti-black:#3A322A;
+    --hampi-stone:#C08850;
+    --coffee:#8A6A4E;
+    --coastal-teal:#3FA396;
+  }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
     margin:0;
     background-color:var(--cream);
-    background-image: radial-gradient(rgba(36,28,24,0.06) 1px, transparent 1.4px);
+    background-image: radial-gradient(var(--dot-line) 1px, transparent 1.4px);
     background-size: 20px 20px;
     color:var(--ink);
     font-family:'IBM Plex Sans', sans-serif;
@@ -93,6 +128,17 @@
     color:var(--ink-soft); font-weight:500;
   }
   nav.main-nav a:hover{background:var(--cream-2); color:var(--ink);}
+  .header-actions{display:flex; align-items:center; gap:10px; flex:none;}
+  .theme-toggle{
+    display:flex; align-items:center; justify-content:center; flex:none;
+    width:36px; height:36px; border-radius:50%; border:1px solid var(--line);
+    background:var(--cream-2); color:var(--ink-soft); padding:0;
+  }
+  .theme-toggle:hover{background:var(--line); color:var(--ink);}
+  .theme-toggle svg{width:18px; height:18px; stroke:currentColor; fill:none; stroke-width:1.6; stroke-linecap:round;}
+  .theme-icon-moon{display:none;}
+  [data-theme="dark"] .theme-icon-sun{display:none;}
+  [data-theme="dark"] .theme-icon-moon{display:block;}
   .agenda-pill{
     display:flex; align-items:center; gap:6px;
     background:var(--maroon); color:var(--cream); border:none;
@@ -217,8 +263,9 @@
   }
   .map-note{font-size:12px; color:var(--ink-soft); margin-top:10px;}
   .map-note a{color:var(--maroon); text-decoration:underline;}
-  .leaflet-popup-content-wrapper{border-radius:var(--radius); font-family:'IBM Plex Sans',sans-serif;}
+  .leaflet-popup-content-wrapper{border-radius:var(--radius); font-family:'IBM Plex Sans',sans-serif; background:var(--card-surface); color:var(--ink);}
   .leaflet-popup-content{margin:12px 14px; font-size:13.5px; line-height:1.4;}
+  .leaflet-popup-tip{background:var(--card-surface);}
   .map-popup-title{font-family:'Baloo 2',sans-serif; font-weight:700; font-size:15px; margin-bottom:3px;}
   .map-popup-area{font-size:11.5px; color:var(--ink-soft); margin-bottom:6px;}
   .map-pin-icon{
@@ -294,7 +341,7 @@
   /* ---------- festivals ---------- */
   .festival-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:18px;}
   .festival-card{
-    background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px;
+    background:var(--card-surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px;
     border-top:4px solid var(--fest-color, var(--maroon));
   }
   .festival-top{display:flex; justify-content:space-between; align-items:baseline; gap:10px; margin-bottom:6px;}
@@ -345,7 +392,7 @@
   .skip-list{display:flex; flex-direction:column; gap:14px;}
   .skip-row{
     display:grid; grid-template-columns:1fr 32px 1fr; gap:18px; align-items:stretch;
-    background:#fff; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+    background:var(--card-surface); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
   }
   .skip-col{padding:16px 18px;}
   .skip-col.crowded{border-left:4px solid var(--ink-soft);}
@@ -435,7 +482,7 @@
   .timeline-item.active h4{color:var(--maroon);}
   .timeline-item:focus-visible{outline:2px solid var(--maroon); outline-offset:3px;}
   .growth-map-wrap{
-    background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:20px 22px 18px;
+    background:var(--card-surface); border:1px solid var(--line); border-radius:var(--radius); padding:20px 22px 18px;
   }
   .growth-map-wrap h3{font-size:16px; margin-bottom:4px;}
   .growth-sub{font-size:13px; color:var(--ink-soft); margin-bottom:12px;}
@@ -452,13 +499,13 @@
   .areas-col h4{font-size:14px; text-transform:none; color:var(--ink-soft); margin-bottom:10px; font-weight:600;}
   .areas-col ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:7px;}
   .areas-col li{
-    font-size:14px; padding:9px 13px; background:#fff; border:1px solid var(--line);
+    font-size:14px; padding:9px 13px; background:var(--card-surface); border:1px solid var(--line);
     border-left:3px solid var(--areas-color, var(--hampi-stone)); border-radius:var(--radius);
   }
 
   /* ---------- about the guide / creator note ---------- */
   .creator-note{
-    background:#fff; border:1px solid var(--line); border-left:4px solid var(--jacaranda);
+    background:var(--card-surface); border:1px solid var(--line); border-left:4px solid var(--jacaranda);
     border-radius:var(--radius); padding:26px 28px; margin-bottom:32px;
   }
   .creator-note .head-with-icon{margin-bottom:12px;}
@@ -469,7 +516,7 @@
 
   /* ---------- add your own ---------- */
   .add-form{
-    background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:24px;
+    background:var(--card-surface); border:1px solid var(--line); border-radius:var(--radius); padding:24px;
     display:grid; grid-template-columns:1fr 1fr; gap:14px;
   }
   .add-form .full{grid-column:1/-1;}
@@ -505,7 +552,7 @@
   .drawer-body{padding:16px 20px; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:10px;}
   .drawer-item{
     display:flex; justify-content:space-between; align-items:center; gap:10px;
-    background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:10px 12px;
+    background:var(--card-surface); border:1px solid var(--line); border-radius:var(--radius); padding:10px 12px;
   }
   .drawer-item .meta{font-size:12px; color:var(--ink-soft);}
   .drawer-item button{background:none; border:none; color:var(--maroon); font-size:13px; font-weight:600;}
@@ -588,7 +635,13 @@
       <a href="#add-yours">Add a spot</a>
       <a href="#about">About</a>
     </nav>
-    <button class="agenda-pill" onclick="openDrawer()">My Agenda <span class="agenda-count" id="agendaCount">0</span></button>
+    <div class="header-actions">
+      <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" aria-label="Switch between light and dark mode" title="Switch between light and dark mode">
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+      </button>
+      <button class="agenda-pill" onclick="openDrawer()">My Agenda <span class="agenda-count" id="agendaCount">0</span></button>
+    </div>
   </div>
 </header>
 <div class="kolam-strip"></div>
@@ -993,6 +1046,9 @@
         <li><a href="https://en.wikipedia.org/wiki/Lal_Bagh" target="_blank" rel="noopener">Lalbagh Botanical Garden</a></li>
         <li><a href="https://en.wikipedia.org/wiki/Kingdom_of_Mysore" target="_blank" rel="noopener">Kingdom of Mysore</a></li>
         <li><a href="https://en.wikipedia.org/wiki/Hindustan_Aeronautics_Limited" target="_blank" rel="noopener">Hindustan Aeronautics Limited (HAL)</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/ITI_Limited" target="_blank" rel="noopener">ITI Limited (Indian Telephone Industries)</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Bharat_Electronics" target="_blank" rel="noopener">Bharat Electronics (BEL)</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/HMT_Limited" target="_blank" rel="noopener">HMT Limited</a></li>
         <li><a href="https://en.wikipedia.org/wiki/Electronic_City" target="_blank" rel="noopener">Electronic City</a></li>
         <li><a href="https://en.wikipedia.org/wiki/Whitefield,_Bengaluru" target="_blank" rel="noopener">Whitefield</a></li>
         <li><a href="https://en.wikipedia.org/wiki/Kempegowda_International_Airport" target="_blank" rel="noopener">Kempegowda International Airport</a></li>
@@ -1031,8 +1087,8 @@
 <div class="kasuti-divider"></div>
 <footer>
   <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
-  <p>Made for people spending time in Bengaluru. Edit freely - this file has no dependencies beyond two web fonts.</p>
-  <p class="footer-meta">v2026-09-08.1 &middot; &copy; 2026, all rights reserved</p>
+  <p>Made for people spending time in Bengaluru.</p>
+  <p class="footer-meta">v2026-09-08.2 &middot; &copy; 2026, all rights reserved</p>
 </footer>
 
 <div class="drawer-backdrop" id="drawerBackdrop" onclick="closeDrawer()"></div>
@@ -1341,22 +1397,47 @@ let customLocations = [];
 function allLocations(){ return LOCATIONS.concat(customLocations); }
 function catMeta(id){ return CATEGORIES.find(c=>c.id===id) || CATEGORIES[0]; }
 
+/* ---------------- theme ---------------- */
+function applyTheme(theme){
+  if(theme === 'dark'){
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }else{
+    document.documentElement.removeAttribute('data-theme');
+  }
+}
+function toggleTheme(){
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const next = isDark ? 'light' : 'dark';
+  applyTheme(next);
+  try{ localStorage.setItem('blr-theme', next); }catch(e){}
+}
+function initTheme(){
+  let saved = null;
+  try{ saved = localStorage.getItem('blr-theme'); }catch(e){}
+  if(saved){
+    applyTheme(saved);
+  }else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+    applyTheme('dark');
+  }
+}
+initTheme();
+
 /* ---------------- persistence ---------------- */
-async function loadState(){
+function loadState(){
   try{
-    const a = await window.storage.get('agenda-ids', false);
-    if(a) agenda = JSON.parse(a.value);
+    const a = localStorage.getItem('blr-agenda-ids');
+    if(a) agenda = JSON.parse(a);
   }catch(e){ agenda = []; }
   try{
-    const c = await window.storage.get('custom-locations', false);
-    if(c) customLocations = JSON.parse(c.value);
+    const c = localStorage.getItem('blr-custom-locations');
+    if(c) customLocations = JSON.parse(c);
   }catch(e){ customLocations = []; }
 }
-async function saveAgenda(){
-  try{ await window.storage.set('agenda-ids', JSON.stringify(agenda), false); }catch(e){}
+function saveAgenda(){
+  try{ localStorage.setItem('blr-agenda-ids', JSON.stringify(agenda)); }catch(e){}
 }
-async function saveCustom(){
-  try{ await window.storage.set('custom-locations', JSON.stringify(customLocations), false); }catch(e){}
+function saveCustom(){
+  try{ localStorage.setItem('blr-custom-locations', JSON.stringify(customLocations)); }catch(e){}
 }
 
 /* ---------------- render: category pills ---------------- */
