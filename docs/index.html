@@ -50,9 +50,9 @@
     --gold:#E8B93A;
     --gold-light:#F5D67A;
     --jacaranda:#9A7FD4;
-    --jacaranda-dark:#6B4FA0;
-    --leaf:#4CB56E;
-    --leaf-light:#6FCB8E;
+    --jacaranda-dark:#4A3570;
+    --leaf:#2F6B48;
+    --leaf-light:#4A8A62;
     --cream:#181310;
     --cream-2:#241C17;
     --ink:#F0E6D4;
@@ -352,7 +352,8 @@
 
   /* ---------- dishes ---------- */
   .dish-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:16px;}
-  .dish-card{background:var(--cream); border:1px solid var(--line); border-radius:var(--radius); padding:16px 18px;}
+  .dish-card{background:var(--cream); border:1px solid var(--line); border-radius:var(--radius); padding:16px 18px; overflow:hidden;}
+  .dish-photo{width:calc(100% + 36px); margin:-16px -18px 12px; display:block; height:140px; object-fit:cover;}
   .dish-name{font-family:'Baloo 2',sans-serif; font-weight:700; font-size:16px;}
   .dish-kn-row{display:flex; align-items:baseline; gap:7px; margin-top:3px; flex-wrap:wrap;}
   .dish-kn{font-size:15px; color:var(--maroon);}
@@ -1016,7 +1017,7 @@
     <p>I was born in Pondicherry, and by the time I got to Bengaluru I'd already been through seven schools and two colleges spread across Uttar Pradesh, Andhra Pradesh and Telangana, Tamil Nadu, and Kolkata. Somewhere in that shuffle, one thing became obvious: the best way to actually enjoy a place is to live it like a local, not visit it like a checklist. I've moved around so much that I don't really belong anywhere anymore - which, funnily enough, means I belong everywhere a little bit too.</p>
     <p>Bengaluru is as representative of India as anywhere else - but it holds far more than the software-and-startups image most people carry in from outside. As an outsider who's chosen to stay, I've come to think the city's older identity, the one built over centuries and not just the last two decades, deserves a guide of its own.</p>
     <p>There's also a narrower reason this page cites its sources. A lot of what gets said about Bengaluru - in listicles, reels, "hidden gem" posts - quietly overrides the work and context that came before it, without crediting where any of it actually came from. This page isn't trying to correct that or relitigate anyone's claim to the city. It's just trying to keep the reference-worthy details - the founding date, the lake names, the source of a dish or a craft - written down with a source attached, so they don't have to be rediscovered from scratch every few years.</p>
-    <p class="creator-links">Find me on <a href="https://www.linkedin.com/in/aravindbaskaran/" target="_blank" rel="noopener">LinkedIn</a> or <a href="https://x.com/aravind_baskara" target="_blank" rel="noopener">X (@aravind_baskara)</a>.</p>
+    <p class="creator-links">Find me on <a href="https://www.linkedin.com/in/aravindbaskaran/" target="_blank" rel="noopener">LinkedIn</a> or <a href="https://x.com/aravind_baskara" target="_blank" rel="noopener">X</a>.</p>
   </div>
   <div class="about-grid">
     <div>
@@ -1088,7 +1089,7 @@
 <footer>
   <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
   <p>Made for people spending time in Bengaluru.</p>
-  <p class="footer-meta">v2026-09-08.2 &middot; &copy; 2026, all rights reserved</p>
+  <p class="footer-meta">v2026-09-08.3 &middot; &copy; 2026, all rights reserved</p>
 </footer>
 
 <div class="drawer-backdrop" id="drawerBackdrop" onclick="closeDrawer()"></div>
@@ -1158,6 +1159,7 @@ const CATEGORIES = [
 const LOCATIONS = [
   { id:'lalbagh', name:'Lalbagh Botanical Garden', area:'Basavanagudi', category:'nature',
     blurb:'A 240-acre garden built around a glass house and a 3-billion-year-old rock outcrop. Best before 8am, when it belongs to walkers and mynas.',
+    photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Glasshouse%20and%20fountain%20at%20lalbagh.jpg'],
     kn:'ಲಾಲ್ ಬಾಗ್', say:'Laal Baag', lat:12.9507, lng:77.5848 },
   { id:'cubbon', name:'Cubbon Park', area:'Central Bengaluru', category:'nature',
     blurb:'The city\'s green lung, threading past the High Court and State Library. Car-free on Sunday mornings.',
@@ -1209,6 +1211,7 @@ const LOCATIONS = [
     kn:'ನಂದಿ ಬೆಟ್ಟ', say:'Nandi Betta', lat:13.3702, lng:77.6835 },
   { id:'mysuru', name:'Mysuru Palace', area:'~3 hrs south', category:'daytrip',
     blurb:'Karnataka\'s own answer to a "royal palace" - Indo-Saracenic architecture, lit up gold every Sunday evening.',
+    photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Mysore%20Palace%20Morning.jpg'],
     kn:'ಮೈಸೂರು ಅರಮನೆ', say:'My-sooru Ara-mane', lat:12.3052, lng:76.6552 },
   { id:'coorg', name:'Coorg (Kodagu)', area:'~5 hrs southwest', category:'daytrip',
     blurb:'Misty coffee estates, Kodava culture, and a cuisine (pandi curry, kadambuttu) unlike anything else on this list.',
@@ -1233,6 +1236,7 @@ const LOCATIONS = [
     kn:'ಯಕ್ಷಗಾನ ಕೇಂದ್ರ', say:'Yaksha-gaana Kendra', lat:13.3389, lng:74.7466 },
   { id:'hampi', name:'Hampi', area:'~6-7 hrs north, better as an overnight', category:'daytrip',
     blurb:'The boulder-strewn ruins of the Vijayanagara empire\'s capital - temples, market streets, and elephant stables carved into a lunar landscape.',
+    photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Sunrise%20from%20the%20top%20of%20Matanga%20hill%2C%20Hampi.jpg'],
     kn:'ಹಂಪಿ', say:'Hampi', lat:15.335, lng:76.46 },
   { id:'vijayapura', name:'Vijayapura (Bijapur)', area:'~9 hrs north, pair with Hampi', category:'daytrip',
     blurb:'Deccan sultanate architecture at its most confident - the Gol Gumbaz dome, second largest in the world, has a whisper gallery worth the echo.',
@@ -1244,7 +1248,7 @@ const LOCATIONS = [
    ============================================================ */
 const NOT_THAT = [
   { often:'Hindi as "the" Indian language', also:'Kannada is the first love here - Tamil, Telugu, Malayalam and Tulu are all heard too, within a day\'s drive' },
-  { often:'Butter chicken and naan', also:'Ragi mudde, bisi bele bath, chow-chow bath, ghee roast, filter kaapi in a steel tumbler' },
+  { often:'Butter chicken and naan', also:'Ragi mudde, bisi bele bath, chow-chow bath, ghee roast, filter kaapi in a steel tumbler-davara set' },
   { often:'Bollywood', also:'Sandalwood is the first love here too - Kollywood, Tollywood and Mollywood all run alongside it' },
   { often:'The Taj Mahal as the monument', also:'Hoysala temples at Belur and Halebidu, the ruins of Hampi, Mysuru Palace' },
   { often:'Sitar and tabla', also:'Carnatic music, the veena, the mridangam, the nadaswaram' },
@@ -1302,10 +1306,13 @@ const FESTIVALS = [
    ============================================================ */
 const DISHES = [
   { name:'Mysore Pak', kn:'ಮೈಸೂರು ಪಾಕ್', say:'My-sooru Paak',
+    photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Mysore%20pak.jpg',
     desc:'A dense, ghee-heavy sweet made from gram flour, sugar and ghee, invented in the Mysuru palace kitchens.' },
   { name:'Bisi Bele Bath', kn:'ಬಿಸಿ ಬೇಳೆ ಬಾತ್', say:'Bisi Bele Baath',
+    photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Bisi%20Bele%20Bath%20(Bisibelebath).JPG',
     desc:'Literally "hot lentil rice" - a spiced, tangy rice-and-lentil dish and Karnataka\'s definitive comfort food.' },
   { name:'Ragi Mudde', kn:'ರಾಗಿ ಮುದ್ದೆ', say:'Raagi Mudde',
+    photo:'https://commons.wikimedia.org/wiki/Special:FilePath/RAGI%20MUDDE.JPG',
     desc:'Steamed finger-millet dumplings, torn by hand and dunked in saaru (thin lentil soup) - an old-Mysore rural staple.' },
   { name:'Benne Masale Dosa', kn:'ಬೆಣ್ಣೆ ಮಸಾಲೆ ದೋಸೆ', say:'Ben-ne Masaale Dose',
     desc:'A crisp dosa laced with butter (benne) and filled with spiced potato palya.' },
@@ -1340,6 +1347,7 @@ const DISHES = [
   { name:'Kadambuttu', kn:'ಕಡುಬುಟ್ಟು', say:'Kadam-buttu',
     desc:'Steamed rice dumplings from Kodagu, the traditional partner to pandi curry.' },
   { name:'Filter Kaapi', kn:'ಫಿಲ್ಟರ್ ಕಾಫಿ', say:'Filter Kaapi',
+    photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Filter%20Coffee%20-%20CTR%20Shri%20Sagar%2C%20Bangalore%20-%20Karnataka%20-%20PXL0254.jpg',
     desc:'Strong decoction coffee brewed in a stainless steel filter, served with hot milk in a tumbler-davara set.' },
   { name:'Majjige', kn:'ಮಜ್ಜಿಗೆ', say:'Maj-jige',
     desc:'Spiced, thinned buttermilk - the everyday cooling drink that closes out a Karnataka meal.' },
@@ -1626,13 +1634,17 @@ function renderFestivals(){
 /* ---------------- dishes ---------------- */
 function renderDishes(){
   const wrap = document.getElementById('dishGrid');
-  wrap.innerHTML = DISHES.map(d => `
+  wrap.innerHTML = DISHES.map(d => {
+    const photoHtml = d.photo ? `<img class="dish-photo" src="${d.photo}" loading="lazy" alt="${d.name}">` : '';
+    return `
     <div class="dish-card">
+      ${photoHtml}
       <div class="dish-name">${d.name}</div>
       <div class="dish-kn-row"><span class="kn dish-kn">${d.kn}</span><span class="dish-say">${d.say}</span>${speakBtn(d.kn, 'sm')}</div>
       <p class="dish-desc">${d.desc}</p>
     </div>
-  `).join('');
+  `;
+  }).join('');
 }
 
 /* ---------------- learn kannada ---------------- */
