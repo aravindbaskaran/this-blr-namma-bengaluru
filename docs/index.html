@@ -1094,7 +1094,7 @@
 <footer>
   <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
   <p>Made for people spending time in Bengaluru.</p>
-  <p class="footer-meta">v2026-09-08.4 &middot; &copy; 2026, all rights reserved</p>
+  <p class="footer-meta">v2026-09-08.5 &middot; &copy; 2026, all rights reserved</p>
 </footer>
 
 <div class="drawer-backdrop" id="drawerBackdrop" onclick="closeDrawer()"></div>
@@ -1196,6 +1196,7 @@ const LOCATIONS = [
     kn:'ಟೊಯ್ಟ್', say:'Toyt', lat:12.9716, lng:77.6412 },
   { id:'commercial', name:'Commercial Street & Chickpet', area:'Shivajinagar / Chickpet', category:'craft',
     blurb:'Two markets, two moods: Commercial Street for fashion and export surplus, Chickpet\'s lanes for silk, bangles, and spice by weight.',
+    photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Commercial%20Street%2C%20Bangalore%20(7870991636).jpg'],
     kn:'ಚಿಕ್ಕಪೇಟೆ', say:'Chik-ka-pete', lat:12.9828, lng:77.6096 },
   { id:'malleswaram-market', name:'Malleswaram Market', area:'Malleswaram', category:'craft',
     blurb:'Flowers, filter coffee powder, and produce sold the way it has been for generations, a few streets from CTR.',
@@ -1216,6 +1217,7 @@ const LOCATIONS = [
     kn:'ರಂಗಶಂಕರ', say:'Ranga-shankara', lat:12.9089, lng:77.5831 },
   { id:'nandi', name:'Nandi Hills', area:'~60km north', category:'daytrip',
     blurb:'A pre-dawn drive up a hill fort for sunrise above the clouds - a Bengaluru weekend ritual since long before it was scenic on Instagram.',
+    photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Sunset%20on%20Nandi%20Hill.jpg'],
     kn:'ನಂದಿ ಬೆಟ್ಟ', say:'Nandi Betta', lat:13.3702, lng:77.6835 },
   { id:'mysuru', name:'Mysuru Palace', area:'~3 hrs south', category:'daytrip',
     blurb:'Karnataka\'s own answer to a "royal palace" - Indo-Saracenic architecture, lit up gold every Sunday evening.',
@@ -1223,9 +1225,11 @@ const LOCATIONS = [
     kn:'ಮೈಸೂರು ಅರಮನೆ', say:'My-sooru Ara-mane', lat:12.3052, lng:76.6552 },
   { id:'coorg', name:'Coorg (Kodagu)', area:'~5 hrs southwest', category:'daytrip',
     blurb:'Misty coffee estates, Kodava culture, and a cuisine (pandi curry, kadambuttu) unlike anything else on this list.',
+    photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Iruppu%20falls%208.JPG'],
     kn:'ಕೊಡಗು', say:'Ko-dagu', lat:12.4244, lng:75.7382 },
   { id:'channapatna', name:'Channapatna', area:'~1.5 hrs south, on the Mysuru road', category:'craft',
     blurb:'The "town of toys" - lacquered wooden toys turned on a lathe, a craft old enough to have a GI tag. Workshops will let you watch.',
+    photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Channapatna%20artist%20making%20toy.jpg'],
     kn:'ಚನ್ನಪಟ್ಟಣ', say:'Channa-pattana', lat:12.6514, lng:77.2064 },
   { id:'cauvery-emporium', name:'Cauvery Arts & Crafts Emporium', area:'MG Road', category:'craft',
     blurb:'The state-run showroom for Karnataka craft under one roof: Mysore silk, sandalwood carving, and handloom from as far as Ilkal and Hubballi-Dharwad.',
@@ -1235,9 +1239,11 @@ const LOCATIONS = [
     kn:'ಬಾಬುಸಿಂಗ್ ಠಾಕೂರ್ ಪೇಡಾ', say:'Baabu-singh Thaakur Pedaa', lat:15.4589, lng:75.0078 },
   { id:'chikmagalur', name:'Chikmagalur', area:'~4 hrs west', category:'daytrip',
     blurb:'Karnataka\'s coffee country - Western Ghats estates, waterfalls, and the trail up Mullayanagiri, the state\'s highest peak.',
+    photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Chikmagalur%20Coffee%20Estate%20(8322311510).jpg'],
     kn:'ಚಿಕ್ಕಮಗಳೂರು', say:'Chikka-magaluru', lat:13.3161, lng:75.772 },
   { id:'udupi-mangaluru', name:'Udupi & Mangaluru coast', area:'~7 hrs west, or a short flight', category:'daytrip',
     blurb:'Krishna Matt\'s temple kitchens, Malpe\'s beaches, and a coastal cuisine - neer dosa, kori rotti, Mangalorean seafood - worlds from Bengaluru\'s own. Eat at Mitra Samaj by the temple, where the Mangalore bun and goli baje reportedly started.',
+    photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Floating%20bridge%2C%20Malpe%20beach.jpg'],
     kn:'ಉಡುಪಿ - ಮಂಗಳೂರು', say:'Udupi - Mangaluru', lat:13.3409, lng:74.7421 },
   { id:'yakshagana-kendra', name:'Yakshagana Kendra', area:'Udupi', category:'culture',
     blurb:'A training school for Yakshagana, coastal Karnataka\'s all-night dance-drama - towering headgear, painted faces, a live Bhagavatha narrating epics to drums and cymbals. Ask locally for a mela performance nearby; the season runs roughly January to May.',
@@ -1248,6 +1254,7 @@ const LOCATIONS = [
     kn:'ಹಂಪಿ', say:'Hampi', lat:15.335, lng:76.46 },
   { id:'vijayapura', name:'Vijayapura (Bijapur)', area:'~9 hrs north, pair with Hampi', category:'daytrip',
     blurb:'Deccan sultanate architecture at its most confident - the Gol Gumbaz dome, second largest in the world, has a whisper gallery worth the echo.',
+    photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Gol%20Gumbaz%20-4%2C%20Bijapur%2C%20Karnataka.jpg'],
     kn:'ವಿಜಯಪುರ', say:'Vijaya-pura', lat:16.83, lng:75.7361 },
 ];
 
