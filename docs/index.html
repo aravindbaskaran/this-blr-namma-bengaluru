@@ -51,6 +51,19 @@
     margin:0;
   }
   .kn{font-family:'Baloo Tamma 2', sans-serif; font-weight:600;}
+  .kn-cycle{display:inline-grid !important; vertical-align:top;}
+  .kn-cycle > *{grid-area:1/1;}
+  .kn-cycle .kn-native{font-family:'Baloo Tamma 2', sans-serif; animation:knFade 7s ease-in-out infinite;}
+  .kn-cycle .kn-en{font-family:'Baloo 2', sans-serif; animation:knFade 7s ease-in-out infinite; animation-delay:-3.5s;}
+  @keyframes knFade{
+    0%, 42% { opacity:1; }
+    50%, 92% { opacity:0; }
+    100% { opacity:1; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .kn-cycle .kn-native{animation:none; opacity:0;}
+    .kn-cycle .kn-en{animation:none; opacity:1;}
+  }
   a{color:inherit;}
   img,svg{display:block;max-width:100%;}
   button{font-family:inherit;cursor:pointer;}
@@ -174,6 +187,9 @@
   .card-title-row{display:flex; align-items:center; gap:7px;}
   .card h3{font-size:17px; line-height:1.25;}
   .card .area{font-size:12.5px; color:var(--ink-soft); margin-top:3px;}
+  .card-pronounce{display:flex; align-items:baseline; gap:6px; margin-top:4px; flex-wrap:wrap;}
+  .card-kn{font-size:13px; color:var(--maroon);}
+  .card-say{font-size:11px; color:var(--ink-soft); font-style:italic;}
   .approved-badge{width:19px; height:19px; flex:none; color:var(--gold); cursor:help;}
   .approved-badge path, .approved-badge circle{stroke:currentColor; fill:none; stroke-width:1.3;}
   .tag{
@@ -285,6 +301,15 @@
   .festival-when{font-size:11.5px; font-weight:600; color:var(--fest-color, var(--maroon)); white-space:nowrap;}
   .festival-where{font-size:12px; color:var(--ink-soft); margin-bottom:8px;}
   .festival-card p{font-size:13.5px; color:var(--ink-soft); line-height:1.5;}
+
+  /* ---------- dishes ---------- */
+  .dish-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:16px;}
+  .dish-card{background:var(--cream); border:1px solid var(--line); border-radius:var(--radius); padding:16px 18px;}
+  .dish-name{font-family:'Baloo 2',sans-serif; font-weight:700; font-size:16px;}
+  .dish-kn-row{display:flex; align-items:baseline; gap:7px; margin-top:3px; flex-wrap:wrap;}
+  .dish-kn{font-size:15px; color:var(--maroon);}
+  .dish-say{font-size:11.5px; color:var(--ink-soft); font-style:italic;}
+  .dish-desc{font-size:13px; color:var(--ink-soft); margin-top:8px; line-height:1.5;}
 
   /* ---------- this not that ---------- */
   .tnt-section{
@@ -408,6 +433,9 @@
   text.growth-shape.on{opacity:1;}
   .growth-label{font-size:7px; fill:var(--ink-soft); font-family:'IBM Plex Sans',sans-serif;}
   .growth-caption{font-size:13.5px; color:var(--ink-soft); margin-top:10px; min-height:34px;}
+  .growth-legend{display:flex; gap:16px; flex-wrap:wrap; margin-top:12px; font-size:12px; color:var(--ink-soft);}
+  .growth-legend span{display:flex; align-items:center; gap:6px;}
+  .growth-legend i{width:10px; height:10px; border-radius:50%; display:inline-block;}
   .areas-compare{display:flex; flex-direction:column; gap:26px;}
   .areas-col h4{font-size:14px; text-transform:none; color:var(--ink-soft); margin-bottom:10px; font-weight:600;}
   .areas-col ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:7px;}
@@ -540,6 +568,7 @@
       <a href="#not-that">This, not that</a>
       <a href="#skip-crowd">Skip the crowd</a>
       <a href="#festivals">Festivals</a>
+      <a href="#dishes">Dishes</a>
       <a href="#learn-kannada">Learn Kannada</a>
       <a href="#add-yours">Add a spot</a>
       <a href="#about">About</a>
@@ -577,7 +606,7 @@
     <div class="region-strip-head">
       <div class="head-with-icon">
         <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-2 2-1 4 0 5-3 0-5 2-5 5 0 4 3 6 5 8 2-2 5-4 5-8 0-3-2-5-5-5 1-1 2-3 0-5Z"/></svg>
-        <span class="kn">ಆರು ಎಳೆಗಳು - six threads of Karnataka</span>
+        <span class="kn kn-cycle"><span class="kn-native">ಆರು ಎಳೆಗಳು</span><span class="kn-en">six threads of Karnataka</span></span>
       </div>
       <h2>Bengaluru is one weave in a bigger loom</h2>
     </div>
@@ -663,7 +692,7 @@
   <div class="section-head">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v4M12 22v-4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3.5"/></svg>
-      <span class="kn">ಇತಿಹಾಸ · a short history</span>
+      <span class="kn kn-cycle"><span class="kn-native">ಇತಿಹಾಸ</span><span class="kn-en">a short history</span></span>
     </div>
     <h2>A garden and lake city, long before it was a tech city</h2>
     <p>Bengaluru is nearly 500 years old. The software industry accounts for maybe the last 15 of those - worth knowing before you decide which parts of the city are "the real one."</p>
@@ -721,17 +750,21 @@
           </g>
           <circle class="growth-shape" data-era="0" cx="100" cy="112" r="9" fill="var(--hampi-stone)"/>
           <circle class="growth-shape" data-era="1" cx="100" cy="110" r="15" fill="none" stroke="var(--hampi-stone)" stroke-width="1.5"/>
-          <circle class="growth-shape" data-era="2" cx="122" cy="97" r="14" fill="var(--maroon)"/>
-          <circle class="growth-shape" data-era="3" cx="100" cy="108" r="36" fill="none" stroke="var(--jacaranda)" stroke-width="2" stroke-dasharray="3 3"/>
+          <circle class="growth-shape" data-era="2" cx="122" cy="97" r="14" fill="var(--hampi-stone)"/>
+          <circle class="growth-shape" data-era="3" cx="100" cy="108" r="36" fill="none" stroke="var(--hampi-stone)" stroke-width="2" stroke-dasharray="3 3"/>
           <circle class="growth-shape" data-era="4" cx="93" cy="162" r="14" fill="var(--leaf)"/>
-          <circle class="growth-shape" data-era="5" cx="152" cy="118" r="18" fill="var(--gold)"/>
-          <circle class="growth-shape" data-era="6" cx="96" cy="52" r="16" fill="var(--jacaranda-dark)"/>
+          <circle class="growth-shape" data-era="5" cx="152" cy="118" r="18" fill="var(--leaf)"/>
+          <circle class="growth-shape" data-era="6" cx="96" cy="52" r="16" fill="var(--leaf-light)"/>
           <text x="100" y="115" class="growth-label growth-shape" data-era="0" text-anchor="middle">Pete</text>
           <text x="122" y="100" class="growth-label growth-shape" data-era="2" text-anchor="middle">Cantonment</text>
           <text x="93" y="165" class="growth-label growth-shape" data-era="4" text-anchor="middle">E-City</text>
           <text x="152" y="121" class="growth-label growth-shape" data-era="5" text-anchor="middle">Whitefield</text>
           <text x="96" y="55" class="growth-label growth-shape" data-era="6" text-anchor="middle">Airport</text>
         </svg>
+        <div class="growth-legend">
+          <span><i style="background:var(--hampi-stone)"></i>Old Bengaluru - pre-1980s</span>
+          <span><i style="background:var(--leaf)"></i>New Bengaluru - IT era onward</span>
+        </div>
         <p class="growth-caption" id="growthCaption">Click a year on the timeline to begin.</p>
       </div>
       <div class="areas-compare">
@@ -774,7 +807,7 @@
   <div class="section-head">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L15.5 6.5 H8.5 Z M7 10 H17 V6.5 H7 Z M4.5 15 H19.5 V10 H4.5 Z M2.5 21.5 H21.5 V15 H2.5 Z"/></svg>
-      <span class="kn">ಅನ್ವೇಷಿಸಿ · explore</span>
+      <span class="kn kn-cycle"><span class="kn-native">ಅನ್ವೇಷಿಸಿ</span><span class="kn-en">explore</span></span>
     </div>
     <h2>Places, in the words of people who'd actually take you there</h2>
     <p>Filter by kind, add anything to your agenda, and switch to the map to see how close things really are. A small <span class="kn" style="font-size:13px;">ಗಂಡಭೇರುಂಡ</span> mark on a card means it's personally recommended, not just popular.</p>
@@ -790,17 +823,17 @@
   <div class="section-head">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h11M11 4l4 4-4 4M21 16H10M13 20l-4-4 4-4"/></svg>
-      <span class="kn">ಇದು, ಅದಲ್ಲ · this, not that</span>
+      <span class="kn kn-cycle"><span class="kn-native">ಇದು, ಅದಲ್ಲ</span><span class="kn-en">this, not that</span></span>
     </div>
     <h2>What "India" usually means on screen, and what's also true here</h2>
-    <p>None of this is a correction - the north is real too. It's just not the whole map, and Bengaluru sits south of the Vindhyas/Satpuras, on the other side of that line.</p>
+    <p>None of this is a correction - the north is real too. It's just not the whole map, and Bengaluru sits south of the Vindhyas, on the other side of that line.</p>
   </div>
   <div class="india-map-row">
     <div class="india-map-frame">
       <img class="india-map" src="https://upload.wikimedia.org/wikipedia/commons/6/6d/India_Karnataka_locator_map.svg" alt="Locator map of India with Karnataka highlighted" loading="lazy">
     </div>
     <div class="india-map-caption">
-      <p>Karnataka, highlighted - roughly 1,750 km south of Delhi as the crow flies (over 2,100 km by road), and further still from Rajasthan and Agra, where most default "India" imagery on screen is actually shot.</p>
+      <p>Karnataka, highlighted - roughly 1,750 km south of Delhi as the crow flies (over 2,100 km by road), and further still from the Delhi-Agra-Jaipur "Golden Triangle" that supplies most default "India" imagery on screen - even India's own "Incredible India" campaigns leaned on Rajasthan and the Taj Mahal as the one signifier that "needs no additional context." Kerala's backwaters get an occasional look-in; Karnataka rarely does.</p>
       <p>Everything on this list lives inside that highlighted patch, a day's drive from Bengaluru at most.</p>
       <p class="map-credit">Map: India Karnataka locator map, Wikimedia Commons (CC BY-SA)</p>
     </div>
@@ -813,7 +846,7 @@
   <div class="section-head">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V12c0-4.5 3.5-8 8-8M16 4L12 8M16 4l0 5.5"/></svg>
-      <span class="kn">ಜನಜಂಗುಳಿ ಬೇಡ · skip the crowd</span>
+      <span class="kn kn-cycle"><span class="kn-native">ಜನಜಂಗುಳಿ ಬೇಡ</span><span class="kn-en">skip the crowd</span></span>
     </div>
     <h2>Some of the "must-see" spots aren't worth the queue</h2>
     <p>A few places show up on every visitor checklist mostly because they're on every visitor checklist - the actual experience is a parking jam, a ticket line, and a photo you could've taken from a search engine. Here's what to do instead, for the same amount of time.</p>
@@ -825,7 +858,7 @@
   <div class="section-head">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V10l8-6 8 6v11 M4 21h16 M9 21v-6h6v6"/></svg>
-      <span class="kn">ಹಬ್ಬಗಳು · festivals worth planning around</span>
+      <span class="kn kn-cycle"><span class="kn-native">ಹಬ್ಬಗಳು</span><span class="kn-en">festivals worth planning around</span></span>
     </div>
     <h2>Karnataka doesn't run out of reasons to celebrate</h2>
     <p>Some of these are city-specific, some run the length of the coast for months - worth checking dates before you go, since most follow the lunar calendar and move every year.</p>
@@ -833,11 +866,23 @@
   <div class="festival-grid" id="festivalGrid"></div>
 </section>
 
+<section id="dishes">
+  <div class="section-head">
+    <div class="head-with-icon">
+      <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3v8a4 4 0 0 0 4 4v6M8 3v7M12 3v7M17 3c-2 2-2 5 0 7-1 1-1 3-1 3v8"/></svg>
+      <span class="kn kn-cycle"><span class="kn-native">ಖಾದ್ಯಗಳು</span><span class="kn-en">the dishes, by name</span></span>
+    </div>
+    <h2>Every dish named on this page, in one place</h2>
+    <p>What each one actually is, how it's written in Kannada, and roughly how to say it - pulled together from the region cards and food stops above, so you're not guessing at a menu.</p>
+  </div>
+  <div class="dish-grid" id="dishGrid"></div>
+</section>
+
 <section class="kannada-section" id="learn-kannada">
   <div class="section-head">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14c0-3 2-5 5-5h1V6a2 2 0 0 1 4 0v3c3 0 5 2 5 5v4H4Z M9 18v2M15 18v2M4 12H2"/></svg>
-      <span class="kn">ಸ್ವಲ್ಪ ಕನ್ನಡ ಕಲಿಯಿರಿ · learn a little Kannada</span>
+      <span class="kn kn-cycle"><span class="kn-native">ಸ್ವಲ್ಪ ಕನ್ನಡ ಕಲಿಯಿರಿ</span><span class="kn-en">learn a little Kannada</span></span>
     </div>
     <h2>Words that go further than any guidebook</h2>
     <p>Kannada is Karnataka's official language and Bengaluru's mother tongue, even if English and Hindi both get by. Try a few of these in an auto, a darshini, or a market stall - people notice, and it usually gets you a warmer price or a warmer welcome. Tap the speaker icon to hear a phrase - your browser needs a Kannada voice installed for it to sound right, so treat it as a rough guide, not a lesson.</p>
@@ -851,7 +896,7 @@
 
 <section id="add-yours">
   <div class="section-head">
-    <span class="kn">ನಿಮ್ಮ ಸ್ಥಳ ಸೇರಿಸಿ · add a spot</span>
+    <span class="kn kn-cycle"><span class="kn-native">ನಿಮ್ಮ ಸ್ಥಳ ಸೇರಿಸಿ</span><span class="kn-en">add a spot</span></span>
     <h2>Know a place that should be here?</h2>
     <p>Add it below - it'll appear in Explore right away and stay saved on this device for next time.</p>
   </div>
@@ -881,14 +926,14 @@
   <div class="section-head">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2"/><circle cx="12" cy="4" r="1.4"/><circle cx="12" cy="20" r="1.4"/><circle cx="4" cy="12" r="1.4"/><circle cx="20" cy="12" r="1.4"/><circle cx="6.3" cy="6.3" r="1.1"/><circle cx="17.7" cy="6.3" r="1.1"/><circle cx="6.3" cy="17.7" r="1.1"/><circle cx="17.7" cy="17.7" r="1.1"/></svg>
-      <span class="kn">ಈ ಮಾರ್ಗದರ್ಶಿ ಬಗ್ಗೆ · about this guide</span>
+      <span class="kn kn-cycle"><span class="kn-native">ಈ ಮಾರ್ಗದರ್ಶಿ ಬಗ್ಗೆ</span><span class="kn-en">about this guide</span></span>
     </div>
     <h2>What this is, and how to make it yours</h2>
   </div>
   <div class="creator-note">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-2 2-1 4 0 5-3 0-5 2-5 5 0 4 3 6 5 8 2-2 5-4 5-8 0-3-2-5-5-5 1-1 2-3 0-5Z"/></svg>
-      <span class="kn">ಬರೆದವರ ಬಗ್ಗೆ · about the person behind this</span>
+      <span class="kn kn-cycle"><span class="kn-native">ಬರೆದವರ ಬಗ್ಗೆ</span><span class="kn-en">about the person behind this</span></span>
     </div>
     <p>I was born in Pondicherry, and by the time I got to Bengaluru I'd already been through seven schools and two colleges spread across Uttar Pradesh, Andhra Pradesh and Telangana, Tamil Nadu, and Kolkata. Somewhere in that shuffle, one thing became obvious: the best way to actually enjoy a place is to live it like a local, not visit it like a checklist.</p>
     <p>Bengaluru is as representative of India as anywhere else - but it holds far more than the software-and-startups image most people carry in from outside. As an outsider who's chosen to stay, I've come to think the city's older identity, the one built over centuries and not just the last two decades, deserves a guide of its own.</p>
@@ -897,7 +942,7 @@
   <div class="about-grid">
     <div>
       <h3>Why it exists</h3>
-      <p>Visitor guides to events happening in Bengaluru often ship with generic "India" branding - Rajasthani motifs, Hindi greetings, north Indian food - none of which is local to this city or to anywhere south of the Vindhyas/Satpuras. This guide starts from what's actually around you: Kannada, Karnataka's own cuisine and crafts, and the neighbourhoods a short auto ride from wherever you're staying.</p>
+      <p>Visitor guides to events happening in Bengaluru often ship with generic "India" branding - Rajasthani motifs, Hindi greetings, north Indian food - none of which is local to this city or to anywhere south of the Vindhyas. This guide starts from what's actually around you: Kannada, Karnataka's own cuisine and crafts, and the neighbourhoods a short auto ride from wherever you're staying.</p>
     </div>
     <div>
       <h3>How to edit the list of places</h3>
@@ -911,7 +956,7 @@
   <div class="section-head">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h10l4 4v14H6z M16 3v4h4 M9 12h8 M9 16h8 M9 8h3"/></svg>
-      <span class="kn">ಆಕರಗಳು · sources &amp; further reading</span>
+      <span class="kn kn-cycle"><span class="kn-native">ಆಕರಗಳು</span><span class="kn-en">sources &amp; further reading</span></span>
     </div>
     <h2>Where this came from</h2>
     <p>The history, crafts and regional detail on this page draw on the following - mostly Wikipedia, for stability and easy cross-checking. Worth reading past this page if any of it caught your interest.</p>
@@ -961,7 +1006,7 @@
 
 <div class="kasuti-divider"></div>
 <footer>
-  <span class="kn">ಧನ್ಯವಾದಗಳು</span>
+  <span class="kn kn-cycle"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
   <p>Made for people spending time in Bengaluru. Edit freely - this file has no dependencies beyond two web fonts.</p>
 </footer>
 
@@ -1000,90 +1045,90 @@ const CATEGORIES = [
 const LOCATIONS = [
   { id:'lalbagh', name:'Lalbagh Botanical Garden', area:'Basavanagudi', category:'nature',
     blurb:'A 240-acre garden built around a glass house and a 3-billion-year-old rock outcrop. Best before 8am, when it belongs to walkers and mynas.',
-    lat:12.9507, lng:77.5848 },
+    kn:'ಲಾಲ್ ಬಾಗ್', say:'Laal Baag', lat:12.9507, lng:77.5848 },
   { id:'cubbon', name:'Cubbon Park', area:'Central Bengaluru', category:'nature',
     blurb:'The city\'s green lung, threading past the High Court and State Library. Car-free on Sunday mornings.',
-    lat:12.9763, lng:77.5929 },
+    kn:'ಕಬ್ಬನ್ ಪಾರ್ಕ್', say:'Kabban Paark', lat:12.9763, lng:77.5929 },
   { id:'veena-thindi', name:'Veena Stores & Thindi Beedi', area:'Malleswaram', category:'food',
     blurb:'A benne masale dosa counter with no seating and no fuss, on the same lane as a dozen other breakfast stalls locals actually rotate through.',
-    lat:13.0035, lng:77.573 },
+    kn:'ವೀಣಾ ಸ್ಟೋರ್ಸ್', say:'Veena Stores', lat:13.0035, lng:77.573 },
   { id:'mltr', name:'Mahalakshmi Tiffin Room (MLTR)', area:'Gandhi Bazaar, Basavanagudi', category:'food',
     blurb:'Been serving the same Gandhi Bazaar lane since 1926, one door down from its far more photographed neighbour. Order the khali dose - a bare, buttery dosa found almost nowhere else.',
-    lat:12.943, lng:77.573 },
+    kn:'ಮಹಾಲಕ್ಷ್ಮಿ ಟಿಫಿನ್ ರೂಮ್', say:'Mahaalakshmi Tiffin Room', lat:12.943, lng:77.573 },
   { id:'atithyaa', name:'Atithyaa', area:'Gandhi Bazaar, Basavanagudi', category:'food', approved:true,
     blurb:'An unlimited Karnataka thali on a kansa plate, serving the same Gandhi Bazaar crowd since 1986 - bisi bele bath, gojju, and palya that change with the season, not the menu.',
-    lat:12.943, lng:77.5735 },
+    kn:'ಆತಿಥ್ಯ', say:'Aa-thi-thya', lat:12.943, lng:77.5735 },
   { id:'mudde-mess', name:'Mudde Madappa Mess', area:'Gandhi Nagar, near Majestic', category:'food',
     blurb:'A no-frills mess built entirely around ragi mudde - hot millet dumplings with saaru, rice and buttermilk, coupon at the counter, hands washed at the table.',
-    lat:12.977, lng:77.573 },
+    kn:'ಮುದ್ದೆ ಮಾದಪ್ಪ ಮೆಸ್', say:'Mudde Maa-dappa Mess', lat:12.977, lng:77.573 },
   { id:'halli-jonne', name:'Halli Jonne Biriyani', area:'Jayanagar', category:'food',
     blurb:'The donne biryani style done properly - short-grain jonne rice, a green masala base, and the biryani served hot in an areca-leaf donne, not a foil box.',
-    lat:12.925, lng:77.5938 },
+    kn:'ಹಳ್ಳಿ ಜೋಳ ಬಿರಿಯಾನಿ', say:'Halli Jo-ne Biriyani', lat:12.925, lng:77.5938 },
   { id:'vvpuram', name:'VV Puram Food Street', area:'Basavanagudi', category:'food',
     blurb:'A single lane that turns into an open kitchen after sunset - grilled corn, kebabs, and desserts nobody outside Karnataka has heard of.',
-    lat:12.942, lng:77.575 },
+    kn:'ವಿ.ವಿ. ಪುರಂ', say:'V V Puram', lat:12.942, lng:77.575 },
   { id:'mylari', name:'Vinayaka Mylari', area:'Nazarbad, Mysuru', category:'food',
     blurb:'A six-table Mysuru institution since the late 1930s, making one soft, ghee-roasted dosa and nothing else worth asking about. Grab a churmuri from the puffed-rice stalls outside Devaraja Market on the way.',
-    lat:12.305, lng:76.6553 },
+    kn:'ವಿನಾಯಕ ಮೈಲಾರಿ', say:'Vinaayaka My-laari', lat:12.305, lng:76.6553 },
   { id:'toit', name:'Toit Brewpub', area:'Indiranagar', category:'night',
     blurb:'One of the city\'s original craft breweries, credited with starting Bengaluru\'s microbrewery culture in the 2010s.',
-    lat:12.9716, lng:77.6412 },
+    kn:'ಟೊಯ್ಟ್', say:'Toyt', lat:12.9716, lng:77.6412 },
   { id:'commercial', name:'Commercial Street & Chickpet', area:'Shivajinagar / Chickpet', category:'craft',
     blurb:'Two markets, two moods: Commercial Street for fashion and export surplus, Chickpet\'s lanes for silk, bangles, and spice by weight.',
-    lat:12.9828, lng:77.6096 },
+    kn:'ಚಿಕ್ಕಪೇಟೆ', say:'Chik-ka-pete', lat:12.9828, lng:77.6096 },
   { id:'malleswaram-market', name:'Malleswaram Market', area:'Malleswaram', category:'craft',
     blurb:'Flowers, filter coffee powder, and produce sold the way it has been for generations, a few streets from CTR.',
-    lat:13.0068, lng:77.573 },
+    kn:'ಮಲ್ಲೇಶ್ವರಂ ಮಾರುಕಟ್ಟೆ', say:'Malle-shwa-ram Maa-ru-katte', lat:13.0068, lng:77.573 },
   { id:'ubcity', name:'UB City', area:'Vittal Mallya Road', category:'craft',
     blurb:'The city\'s luxury quarter - useful for seeing how Bengaluru\'s design and jewellery houses reinterpret Karnataka craft for a global shelf.',
-    lat:12.9716, lng:77.5958 },
+    kn:'ಯುಬಿ ಸಿಟಿ', say:'U B City', lat:12.9716, lng:77.5958 },
   { id:'iskcon', name:'ISKCON Temple Bangalore', area:'Rajajinagar', category:'culture',
     blurb:'A modern temple complex built into a hillside, worth visiting at evening aarti even if you\'re not devotional.',
-    lat:12.9884, lng:77.5513 },
+    kn:'ಇಸ್ಕಾನ್ ದೇವಾಲಯ', say:'Iskon Devaalaya', lat:12.9884, lng:77.5513 },
   { id:'palace', name:'Bangalore Palace', area:'Vasanth Nagar', category:'culture',
     blurb:'A Tudor-style palace that has nothing to do with Rajasthani forts - a reminder that royal Karnataka architecture looked very different.',
-    lat:12.9987, lng:77.592 },
+    kn:'ಬೆಂಗಳೂರು ಅರಮನೆ', say:'Bengaluru Ara-mane', lat:12.9987, lng:77.592 },
   { id:'rangashankara', name:'Ranga Shankara', area:'J.P. Nagar', category:'culture',
     blurb:'The city\'s best-loved theatre, running Kannada, English, and regional-language plays most nights of the week.',
-    lat:12.9089, lng:77.5831 },
+    kn:'ರಂಗಶಂಕರ', say:'Ranga-shankara', lat:12.9089, lng:77.5831 },
   { id:'nandi', name:'Nandi Hills', area:'~60km north', category:'daytrip',
     blurb:'A pre-dawn drive up a hill fort for sunrise above the clouds - a Bengaluru weekend ritual since long before it was scenic on Instagram.',
-    lat:13.3702, lng:77.6835 },
+    kn:'ನಂದಿ ಬೆಟ್ಟ', say:'Nandi Betta', lat:13.3702, lng:77.6835 },
   { id:'mysuru', name:'Mysuru Palace', area:'~3 hrs south', category:'daytrip',
     blurb:'Karnataka\'s own answer to a "royal palace" - Indo-Saracenic architecture, lit up gold every Sunday evening.',
-    lat:12.3052, lng:76.6552 },
+    kn:'ಮೈಸೂರು ಅರಮನೆ', say:'My-sooru Ara-mane', lat:12.3052, lng:76.6552 },
   { id:'coorg', name:'Coorg (Kodagu)', area:'~5 hrs southwest', category:'daytrip',
     blurb:'Misty coffee estates, Kodava culture, and a cuisine (pandi curry, kadambuttu) unlike anything else on this list.',
-    lat:12.4244, lng:75.7382 },
+    kn:'ಕೊಡಗು', say:'Ko-dagu', lat:12.4244, lng:75.7382 },
   { id:'channapatna', name:'Channapatna', area:'~1.5 hrs south, on the Mysuru road', category:'craft',
     blurb:'The "town of toys" - lacquered wooden toys turned on a lathe, a craft old enough to have a GI tag. Workshops will let you watch.',
-    lat:12.6514, lng:77.2064 },
+    kn:'ಚನ್ನಪಟ್ಟಣ', say:'Channa-pattana', lat:12.6514, lng:77.2064 },
   { id:'cauvery-emporium', name:'Cauvery Arts & Crafts Emporium', area:'MG Road', category:'craft',
     blurb:'The state-run showroom for Karnataka craft under one roof: Mysore silk, sandalwood carving, and handloom from as far as Ilkal and Hubballi-Dharwad.',
-    lat:12.9757, lng:77.6079 },
+    kn:'ಕಾವೇರಿ ಕರಕುಶಲ ಮಳಿಗೆ', say:'Kaaveri Kara-kushala Malige', lat:12.9757, lng:77.6079 },
   { id:'chikmagalur', name:'Chikmagalur', area:'~4 hrs west', category:'daytrip',
     blurb:'Karnataka\'s coffee country - Western Ghats estates, waterfalls, and the trail up Mullayanagiri, the state\'s highest peak.',
-    lat:13.3161, lng:75.772 },
+    kn:'ಚಿಕ್ಕಮಗಳೂರು', say:'Chikka-magaluru', lat:13.3161, lng:75.772 },
   { id:'udupi-mangaluru', name:'Udupi & Mangaluru coast', area:'~7 hrs west, or a short flight', category:'daytrip',
     blurb:'Krishna Matt\'s temple kitchens, Malpe\'s beaches, and a coastal cuisine - neer dosa, kori rotti, Mangalorean seafood - worlds from Bengaluru\'s own. Eat at Mitra Samaj by the temple, where the Mangalore bun and goli baje reportedly started.',
-    lat:13.3409, lng:74.7421 },
+    kn:'ಉಡುಪಿ - ಮಂಗಳೂರು', say:'Udupi - Mangaluru', lat:13.3409, lng:74.7421 },
   { id:'yakshagana-kendra', name:'Yakshagana Kendra', area:'Udupi', category:'culture',
     blurb:'A training school for Yakshagana, coastal Karnataka\'s all-night dance-drama - towering headgear, painted faces, a live Bhagavatha narrating epics to drums and cymbals. Ask locally for a mela performance nearby; the season runs roughly January to May.',
-    lat:13.3389, lng:74.7466 },
+    kn:'ಯಕ್ಷಗಾನ ಕೇಂದ್ರ', say:'Yaksha-gaana Kendra', lat:13.3389, lng:74.7466 },
   { id:'hampi', name:'Hampi', area:'~6-7 hrs north, better as an overnight', category:'daytrip',
     blurb:'The boulder-strewn ruins of the Vijayanagara empire\'s capital - temples, market streets, and elephant stables carved into a lunar landscape.',
-    lat:15.335, lng:76.46 },
+    kn:'ಹಂಪಿ', say:'Hampi', lat:15.335, lng:76.46 },
   { id:'vijayapura', name:'Vijayapura (Bijapur)', area:'~9 hrs north, pair with Hampi', category:'daytrip',
     blurb:'Deccan sultanate architecture at its most confident - the Gol Gumbaz dome, second largest in the world, has a whisper gallery worth the echo.',
-    lat:16.83, lng:75.7361 },
+    kn:'ವಿಜಯಪುರ', say:'Vijaya-pura', lat:16.83, lng:75.7361 },
 ];
 
 /* ============================================================
    THIS, NOT THAT - the contrast list.
    ============================================================ */
 const NOT_THAT = [
+  { often:'Hindi as "the" Indian language', also:'Kannada first here - then Tamil, Telugu, Malayalam and Tulu, all spoken within a day\'s drive' },
   { often:'Butter chicken and naan', also:'Ragi mudde, bisi bele bath, appam and stew, filter kaapi in a steel tumbler' },
-  { often:'Hindi as "the" Indian language', also:'Kannada, Tamil, Telugu, Malayalam and Tulu, all spoken within a day\'s drive' },
   { often:'Bollywood', also:'Sandalwood, Kollywood, Tollywood and Mollywood - separate industries, separate stars' },
   { often:'The Taj Mahal as the monument', also:'Hoysala temples at Belur and Halebidu, the ruins of Hampi, Mysuru Palace' },
   { often:'Sitar and tabla', also:'Carnatic music, the veena, the mridangam, the nadaswaram' },
@@ -1091,7 +1136,7 @@ const NOT_THAT = [
   { often:'Diwali fireworks as "the" festival', also:'Bengaluru\'s own Karaga, plus Ugadi, Onam and Pongal across the south' },
   { often:'Chaotic traffic and scorching heat', also:'A hill-station elevation that keeps Bengaluru mild most of the year' },
   { often:'One flat idea of "South Indian"', also:'Coorg\'s coffee culture, coastal Mangalore seafood, Chennai\'s temple towns, Kerala\'s backwaters' },
-  { often:'Rickshaws as the whole transport story', also:'Namma Metro, tech-park shuttle fleets, and app-based autos running the daily commute' },
+  { often:'Rickshaws as the whole transport story', also:'All still true, plus Namma Metro, tech-park shuttles and app-based autos - worth trying a few modes, since the traffic stories aren\'t exaggerated either' },
 ];
 
 /* ============================================================
@@ -1131,6 +1176,55 @@ const FESTIVALS = [
   { name:'Hampi Utsav', kn:'ಹಂಪಿ ಉತ್ಸವ', when:'Usually Nov or Feb/Mar, 3 days', where:'Hampi', color:'var(--coffee)',
     blurb:'Also called Vijaya Utsava - the ruined capital of the Vijayanagara Empire lit up for dance, music and folk performance, reviving a Mahanavami tradition the empire itself once held on the same ground.' },
 ];
+
+/* ============================================================
+   DISHES - every dish named elsewhere on this page, glossed.
+   ============================================================ */
+const DISHES = [
+  { name:'Mysore Pak', kn:'ಮೈಸೂರು ಪಾಕ್', say:'My-sooru Paak',
+    desc:'A dense, ghee-heavy sweet made from gram flour, sugar and ghee, invented in the Mysuru palace kitchens.' },
+  { name:'Bisi Bele Bath', kn:'ಬಿಸಿ ಬೇಳೆ ಬಾತ್', say:'Bisi Bele Baath',
+    desc:'Literally "hot lentil rice" - a spiced, tangy rice-and-lentil dish and Karnataka\'s definitive comfort food.' },
+  { name:'Ragi Mudde', kn:'ರಾಗಿ ಮುದ್ದೆ', say:'Raagi Mudde',
+    desc:'Steamed finger-millet dumplings, torn by hand and dunked in saaru (thin lentil soup) - an old-Mysore rural staple.' },
+  { name:'Benne Masale Dosa', kn:'ಬೆಣ್ಣೆ ಮಸಾಲೆ ದೋಸೆ', say:'Ben-ne Masaale Dose',
+    desc:'A crisp dosa laced with butter (benne) and filled with spiced potato palya.' },
+  { name:'Khali Dose', kn:'ಖಾಲಿ ದೋಸೆ', say:'Khaali Dose',
+    desc:'A plain, unstuffed dosa - thin, buttery, and a Bengaluru darshini specialty in its own right.' },
+  { name:'Donne Biryani', kn:'ದೊನ್ನೆ ಬಿರಿಯಾನಿ', say:'Don-ne Biriyaani',
+    desc:'Biryani made with short-grain jonne rice and a green masala base, served in a donne - a stitched areca-leaf cup.' },
+  { name:'Kori Rotti', kn:'ಕೋರಿ ರೊಟ್ಟಿ', say:'Kori Rotti',
+    desc:'A Tulu Nadu dish - spicy coconut-milk chicken curry poured over crisp, dry rice wafers.' },
+  { name:'Neer Dosa', kn:'ನೀರ್ ದೋಸೆ', say:'Neer Dose',
+    desc:'A thin, lacy rice-batter crepe from the coast - the name literally means "water dosa."' },
+  { name:'Mangalore Buns', kn:'ಮಂಗಳೂರು ಬನ್ಸ್', say:'Mangaluru Buns',
+    desc:'Slightly sweet, deep-fried banana buns from the coastal Udupi breakfast tradition.' },
+  { name:'Goli Baje', kn:'ಗೋಳಿ ಬಜೆ', say:'Goli Baje',
+    desc:'Soft, tangy fritters from a fermented flour-and-curd batter - a Udupi teatime classic, best eaten hot.' },
+  { name:'Jolada Rotti', kn:'ಜೋಳದ ರೊಟ್ಟಿ', say:'Jo-lada Rotti',
+    desc:'A hand-flattened sorghum flatbread - the everyday bread of North Karnataka.' },
+  { name:'Yenne Badnekai', kn:'ಎಣ್ಣೆ ಬದನೆಕಾಯಿ', say:'En-ne Badne-kaayi',
+    desc:'Small eggplants stuffed with a peanut-sesame masala and slow-cooked in oil - a Dharwad-Hubballi classic.' },
+  { name:'Kesari Bath', kn:'ಕೇಸರಿ ಬಾತ್', say:'Kesari Baath',
+    desc:'A bright orange semolina sweet, often plated next to khara bath as the combination "chow-chow bath."' },
+  { name:'Churmuri', kn:'ಚುರುಮುರಿ', say:'Churu-muri',
+    desc:'Puffed rice tossed with onion, tomato, chilli and a tangy dressing - Mysuru\'s answer to bhel puri.' },
+  { name:'Mylari Dosa', kn:'ಮೈಲಾರಿ ದೋಸೆ', say:'My-laari Dose',
+    desc:'A soft, thick, ghee-roasted dosa unique to a handful of Mysuru eateries - different in texture from a typical dosa.' },
+  { name:'Pandi Curry', kn:'ಪಂದಿ ಕರಿ', say:'Pandi Curry',
+    desc:'A dark, tangy Kodava pork curry, soured with kachampuli - a dark vinegar unique to Kodagu.' },
+  { name:'Kadambuttu', kn:'ಕಡುಬುಟ್ಟು', say:'Kadam-buttu',
+    desc:'Steamed rice dumplings from Kodagu, the traditional partner to pandi curry.' },
+  { name:'Filter Kaapi', kn:'ಫಿಲ್ಟರ್ ಕಾಫಿ', say:'Filter Kaapi',
+    desc:'Strong decoction coffee brewed in a stainless steel filter, served with hot milk in a tumbler-davara set.' },
+  { name:'Majjige', kn:'ಮಜ್ಜಿಗೆ', say:'Maj-jige',
+    desc:'Spiced, thinned buttermilk - the everyday cooling drink that closes out a Karnataka meal.' },
+  { name:'Nannari Sherbet', kn:'ನನ್ನಾರಿ ಶರಬತ್', say:'Nan-naari Sharabath',
+    desc:'A deep red-brown cooling drink made from Indian sarsaparilla root syrup - a Mysuru street-cart classic.' },
+  { name:'Kashaya', kn:'ಕಷಾಯ', say:'Ka-shaaya',
+    desc:'A hot spiced herbal decoction from the Tulu Nadu coast, often the very first thing offered to a guest.' },
+];
+
 
 /* ============================================================
    PHRASES - a starter Kannada phrasebook.
@@ -1220,9 +1314,10 @@ function renderList(){
     const badgeHtml = l.approved
       ? `<svg class="approved-badge" viewBox="0 0 24 24" title="Recommended - personally vetted, not just popular"><path d="M12 3c-2 2-1 4 0 5-3 0-5 2-5 5 0 4 3 6 5 8 2-2 5-4 5-8 0-3-2-5-5-5 1-1 2-3 0-5Z M8 9c-2 0-3.5 1.5-3 4 M16 9c2 0 3.5 1.5 3 4"/><circle cx="9.3" cy="7.2" r="0.9"/><circle cx="14.7" cy="7.2" r="0.9"/></svg>`
       : '';
+    const pronounceHtml = l.kn ? `<div class="card-pronounce"><span class="kn card-kn">${l.kn}</span><span class="card-say">${l.say}</span></div>` : '';
     return `<div class="card" style="--cat-color:${cat.color}">
       <div class="card-top">
-        <div><div class="card-title-row">${badgeHtml}<h3>${l.name}</h3></div><div class="area">${l.area}</div></div>
+        <div><div class="card-title-row">${badgeHtml}<h3>${l.name}</h3></div><div class="area">${l.area}</div>${pronounceHtml}</div>
         <span class="tag">${cat.label}</span>
       </div>
       <p class="blurb">${l.blurb}</p>
@@ -1378,6 +1473,18 @@ function renderFestivals(){
   `).join('');
 }
 
+/* ---------------- dishes ---------------- */
+function renderDishes(){
+  const wrap = document.getElementById('dishGrid');
+  wrap.innerHTML = DISHES.map(d => `
+    <div class="dish-card">
+      <div class="dish-name">${d.name}</div>
+      <div class="dish-kn-row"><span class="kn dish-kn">${d.kn}</span><span class="dish-say">${d.say}</span></div>
+      <p class="dish-desc">${d.desc}</p>
+    </div>
+  `).join('');
+}
+
 /* ---------------- learn kannada ---------------- */
 function renderPhrases(){
   const wrap = document.getElementById('phraseGrid');
@@ -1486,6 +1593,7 @@ document.getElementById('addForm').addEventListener('submit', async function(e){
   renderTNT();
   renderSkipCrowd();
   renderFestivals();
+  renderDishes();
   renderPhrases();
   renderAgendaCount();
   setEra(6);
