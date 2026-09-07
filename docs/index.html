@@ -464,6 +464,8 @@
   .creator-note .head-with-icon{margin-bottom:12px;}
   .creator-note p{font-size:15px; color:var(--ink-soft); line-height:1.65; max-width:760px;}
   .creator-note p + p{margin-top:12px;}
+  .creator-links{font-size:14px !important;}
+  .creator-links a{color:var(--maroon); text-decoration:underline; font-weight:600;}
 
   /* ---------- add your own ---------- */
   .add-form{
@@ -530,6 +532,7 @@
   footer{border-top:1px solid var(--line); padding:32px 24px; text-align:center;}
   footer .kn{color:var(--maroon); font-weight:600; margin-bottom:6px; display:block;}
   footer p{color:var(--ink-soft); font-size:13px;}
+  .footer-meta{font-size:11px !important; color:var(--ink-soft); opacity:0.6; margin-top:8px;}
 
   @media (max-width:960px){
     .region-row{grid-template-columns:repeat(2,1fr);}
@@ -960,6 +963,7 @@
     <p>I was born in Pondicherry, and by the time I got to Bengaluru I'd already been through seven schools and two colleges spread across Uttar Pradesh, Andhra Pradesh and Telangana, Tamil Nadu, and Kolkata. Somewhere in that shuffle, one thing became obvious: the best way to actually enjoy a place is to live it like a local, not visit it like a checklist. I've moved around so much that I don't really belong anywhere anymore - which, funnily enough, means I belong everywhere a little bit too.</p>
     <p>Bengaluru is as representative of India as anywhere else - but it holds far more than the software-and-startups image most people carry in from outside. As an outsider who's chosen to stay, I've come to think the city's older identity, the one built over centuries and not just the last two decades, deserves a guide of its own.</p>
     <p>There's also a narrower reason this page cites its sources. A lot of what gets said about Bengaluru - in listicles, reels, "hidden gem" posts - quietly overrides the work and context that came before it, without crediting where any of it actually came from. This page isn't trying to correct that or relitigate anyone's claim to the city. It's just trying to keep the reference-worthy details - the founding date, the lake names, the source of a dish or a craft - written down with a source attached, so they don't have to be rediscovered from scratch every few years.</p>
+    <p class="creator-links">Find me on <a href="https://www.linkedin.com/in/aravindbaskaran/" target="_blank" rel="noopener">LinkedIn</a> or <a href="https://x.com/aravind_baskara" target="_blank" rel="noopener">X (@aravind_baskara)</a>.</p>
   </div>
   <div class="about-grid">
     <div>
@@ -1028,6 +1032,7 @@
 <footer>
   <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
   <p>Made for people spending time in Bengaluru. Edit freely - this file has no dependencies beyond two web fonts.</p>
+  <p class="footer-meta">v2026-09-08.1 &middot; &copy; 2026, all rights reserved</p>
 </footer>
 
 <div class="drawer-backdrop" id="drawerBackdrop" onclick="closeDrawer()"></div>
@@ -1080,6 +1085,12 @@ const CATEGORIES = [
    paid, billing-enabled key you'd manage on your own Google Cloud
    account. Nothing here calls out to Google on its own; everything
    else on this page runs with no key and no external service.
+
+   VERSIONING: the footer shows a version like 2026-09-08.1 - the
+   date of the last edit, plus a counter for how many changes were
+   made that day. Bump the counter on same-day edits (.1 -> .2);
+   start a fresh date and reset to .1 on the first edit of a new day.
+   Update the line in the <footer> markup by hand.
    ============================================================ */
 
 /* ============================================================
