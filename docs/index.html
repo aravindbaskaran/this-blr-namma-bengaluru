@@ -43,6 +43,12 @@
     --hampi-stone:#A66A32;    /* Hampi boulder & ruin sandstone */
     --coffee:#3E2A1C;         /* Chikmagalur-Kodagu estate soil */
     --coastal-teal:#1F7A6E;   /* Udupi-Mangaluru coast */
+    /* ---- "Imperial Weave" palette (comparison variant, Festivals section only) ---- */
+    --imperial-bg:#FDFBF7;
+    --imperial-text:#0E2540;
+    --imperial-gold:#D99B26;
+    --imperial-kumkum:#AC2424;
+    --imperial-muted:#736E65;
   }
   [data-theme="dark"]{
     --maroon:#E14D66;
@@ -66,6 +72,14 @@
     --hampi-stone:#C08850;
     --coffee:#8A6A4E;
     --coastal-teal:#3FA396;
+    /* Imperial Weave, dark: the navy/ivory anchor pair inverts - navy becomes
+       the background, ivory becomes the text, exactly swapping roles rather
+       than just brightening the light values. */
+    --imperial-bg:#10161F;
+    --imperial-text:#EDE7DB;
+    --imperial-gold:#E3B24E;
+    --imperial-kumkum:#E0574F;
+    --imperial-muted:#9B958B;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -290,6 +304,26 @@
     opacity:0.14; pointer-events:none;
   }
   .berunda-mark path, .berunda-mark circle{stroke:var(--gold-light); fill:none; stroke-width:1.3;}
+
+  /* ---------- ganda berunda watermark, v2 (for comparison) ---------- */
+  #festivals{
+    position:relative; overflow:hidden;
+    background:var(--imperial-bg); border-radius:var(--radius); color:var(--imperial-text);
+    /* Imperial Weave palette applied locally: these overrides only affect
+       elements inside #festivals, borrowed by everything that already
+       references --ink, --ink-soft, --maroon, --card-surface, --line. */
+    --ink:var(--imperial-text);
+    --ink-soft:var(--imperial-muted);
+    --maroon:var(--imperial-kumkum);
+    --gold-light:var(--imperial-gold);
+    --card-surface:color-mix(in srgb, var(--imperial-text) 4%, var(--imperial-bg));
+    --line:color-mix(in srgb, var(--imperial-text) 20%, transparent);
+  }
+  .berunda-mark-v2{
+    position:absolute; right:-20px; top:-10px; width:230px; height:auto;
+    opacity:0.09; pointer-events:none; color:var(--maroon);
+  }
+  .berunda-mark-v2 path{stroke:currentColor; fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round;}
 
   /* ---------- kasuti stitch divider ---------- */
   .kasuti-divider{
@@ -615,6 +649,7 @@
     .skip-arrow{display:none;}
     .skip-col.instead{border-top:1px dashed var(--line);}
     .berunda-mark{display:none;}
+    .berunda-mark-v2{display:none;}
     .elephant-mark{display:none;}
     .history-grid{grid-template-columns:1fr; gap:32px;}
     .areas-compare{position:static;}
@@ -646,6 +681,7 @@
     <nav class="main-nav">
       <a href="#history">History</a>
       <a href="#explore">Explore</a>
+      <a href="#outside-bengaluru">Outside Bengaluru</a>
       <a href="#not-that">This, not that</a>
       <a href="#skip-crowd">Skip the crowd</a>
       <a href="#festivals">Festivals</a>
@@ -669,7 +705,7 @@
   <div class="hero-inner">
     <div class="eyebrow">For the curious ones, who love learning about the heritage and history that surrounds them</div>
     <h1>India is not one story.<br>Bengaluru isn't either.</h1>
-    <p class="lede">Most guides to "India" default to the north - the Taj, the sitar, Bollywood, wheat and paneer. This one starts from Bengaluru: a garden city of jacaranda trees, filter kaapi, five languages within a day's drive, and a few thousand years of temple-building next door to a few decades of tech campuses.</p>
+    <p class="lede">Most guides to "India" default to the north - the Taj, the sitar, Bollywood, garlic naan and paneer. This one starts from Bengaluru: a garden city of jacaranda trees, filter kaapi, five languages within a day's drive, and a few thousand years of temple-building next door to a few decades of tech campuses.</p>
     <div class="hero-stats">
       <div><strong>6</strong><span>languages heard daily, one first love (Kannada)</span></div>
       <div><strong>900+ m</strong><span>elevation - why it stays mild</span></div>
@@ -798,6 +834,18 @@
   </div>
 </section>
 
+<section id="outside-bengaluru">
+  <div class="section-head">
+    <div class="head-with-icon">
+      <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l9-9 9 9M6 10v10h5v-6h2v6h5V10"/></svg>
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಬೆಂಗಳೂರಿನ ಆಚೆ</span><span class="kn-en">outside Bengaluru, in Karnataka</span></span>
+    </div>
+    <h2>Outside Bengaluru, in Karnataka</h2>
+    <p>Everything below is a day trip or an overnight, not something you'll stumble into on a regular week - kept separate so the city section above stays about the city.</p>
+  </div>
+  <div id="daytripGrid" class="grid"></div>
+</section>
+
 <section class="tnt-section" id="not-that">
   <div class="section-head">
     <div class="head-with-icon">
@@ -834,6 +882,18 @@
 </section>
 
 <section id="festivals">
+  <svg class="berunda-mark-v2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M100,50 L100,160 M100,80 C85,90 70,110 70,140 C70,165 100,175 100,175 C100,175 130,165 130,140 C130,110 115,90 100,80 Z" />
+    <path d="M85,50 C85,35 68,35 68,48 C68,55 78,60 88,60 M68,48 L60,52 L67,56" />
+    <path d="M115,50 C115,35 132,35 132,48 C132,55 122,60 112,60 M132,48 L140,52 L133,56" />
+    <path d="M80,38 L75,25 L83,32 L88,20 L92,33" />
+    <path d="M120,38 L125,25 L117,32 L112,20 L108,33" />
+    <path d="M70,95 C45,95 25,115 25,140 C45,140 65,120 72,105" />
+    <path d="M71,112 C50,120 35,135 32,155 C50,152 65,140 73,125" />
+    <path d="M130,95 C155,95 175,115 175,140 C155,140 135,120 128,105" />
+    <path d="M129,112 C150,120 165,135 168,155 C150,152 135,140 127,125" />
+    <path d="M85,168 L75,190 L100,180 L125,190 L115,168" />
+  </svg>
   <div class="section-head">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V10l8-6 8 6v11 M4 21h16 M9 21v-6h6v6"/></svg>
@@ -964,14 +1024,26 @@
         <div class="region-movie"><b>Watch</b> - <i>James</i> (2022), a Puneeth Rajkumar blockbuster with a schedule shot on location in Hampi and Kamalapura.</div>
       </div>
       <div class="region-card" style="--region-color:var(--coffee); --region-pattern:radial-gradient(ellipse 4px 6px at 14px 14px, color-mix(in srgb, var(--coffee) 38%, transparent) 40%, transparent 41%); --region-pattern-size:24px 24px;">
-        <h4>Chikmagalur &amp; Kodagu</h4>
-        <div class="region-pronounce"><span class="kn region-kn">ಚಿಕ್ಕಮಗಳೂರು - ಕೊಡಗು</span><span class="region-say">Chikka-magaluru - Kodagu</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಚಿಕ್ಕಮಗಳೂರು ಕೊಡಗು')" aria-label="Hear pronunciation">🔊</button></div>
-        <p>Western Ghats coffee estates, misty ridgelines, and the origin point of most filter kaapi in your cup.</p>
+        <h4>Chikmagalur</h4>
+        <div class="region-pronounce"><span class="kn region-kn">ಚಿಕ್ಕಮಗಳೂರು</span><span class="region-say">Chikka-magaluru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಚಿಕ್ಕಮಗಳೂರು')" aria-label="Hear pronunciation">🔊</button></div>
+        <p>Where Indian coffee began - Baba Budan planted the first beans on these hills in the 1670s, and Mullayanagiri, Karnataka's highest peak, rises right beside them.</p>
         <div class="flavor-list">
-          <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Baale halwa</div>
+          <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Coffee halwa</div>
+          <div class="flavor-item"><span class="flavor-dot spicy"></span><b>Spicy</b> - Malnad-style chicken curry</div>
+          <div class="flavor-item"><span class="flavor-dot cold"></span><b>Cold</b> - Estate cold coffee</div>
+          <div class="flavor-item"><span class="flavor-dot hot"></span><b>Hot</b> - Filter kaapi, at its source</div>
+        </div>
+        <div class="region-wear"><b>Wear</b> - A simpler, practical version of the panche-angi suited to plantation work and the cooler hill climate.</div>
+      </div>
+      <div class="region-card" style="--region-color:var(--coffee); --region-pattern:radial-gradient(ellipse 4px 6px at 14px 14px, color-mix(in srgb, var(--coffee) 38%, transparent) 40%, transparent 41%); --region-pattern-size:24px 24px;">
+        <h4>Kodagu</h4>
+        <div class="region-pronounce"><span class="kn region-kn">ಕೊಡಗು</span><span class="region-say">Kodagu</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಕೊಡಗು')" aria-label="Hear pronunciation">🔊</button></div>
+        <p>The Kodava homeland - misty coffee estates layered over a distinct language, a martial tradition, and a cuisine found nowhere else in Karnataka.</p>
+        <div class="flavor-list">
+          <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Coorg orange</div>
           <div class="flavor-item"><span class="flavor-dot spicy"></span><b>Spicy</b> - Pandi curry</div>
           <div class="flavor-item"><span class="flavor-dot cold"></span><b>Cold</b> - Estate cold coffee</div>
-          <div class="flavor-item"><span class="flavor-dot hot"></span><b>Hot</b> - Filter kaapi</div>
+          <div class="flavor-item"><span class="flavor-dot hot"></span><b>Hot</b> - Kadambuttu</div>
         </div>
         <div class="region-wear"><b>Wear</b> - The Kodava kupya chele - a black knee-length coat, a gold-embroidered red sash, and a silver peeche kathi dagger tucked into it.</div>
         <div class="region-movie"><b>Watch</b> - <i>Mungaru Male</i> (2006), the biggest Kannada blockbuster of its decade, shot largely across Coorg's coffee country.</div>
@@ -1015,7 +1087,7 @@
   <div class="about-grid">
     <div>
       <h3>Why it exists</h3>
-      <p>Visitor guides to events happening in Bengaluru often ship with generic "India" branding - Rajasthani motifs, Hindi greetings, north Indian food - none of which is local to this city or to anywhere south of the Vindhyas. This guide starts from what's actually around you: Kannada, Karnataka's own cuisine and crafts, and the neighbourhoods a short auto ride from wherever you're staying.</p>
+      <p>Typical Bengaluru guides are geographically misplaced - they reach for cultures a thousand kilometres away and bundle it all into a generic "India," Rajasthani motifs and Hindi greetings included, none of it local to this city or to anywhere south of the Vindhyas. This guide is for what's actually around you the moment you land in Bengaluru: Kannada and Karnataka, its cuisine, its culture, its crafts, its neighbourhoods - everything within reach, not a thousand kilometres from it.</p>
     </div>
   </div>
 </section>
@@ -1082,7 +1154,7 @@
 <footer>
   <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
   <p>Made for people spending time in Bengaluru.</p>
-  <p class="footer-meta">v2026-09-08.6 &middot; &copy; 2026, all rights reserved</p>
+  <p class="footer-meta">v2026-09-08.7 &middot; &copy; 2026, all rights reserved</p>
 </footer>
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
@@ -1113,8 +1185,8 @@ const CATEGORIES = [
   { id:'nature',  label:'Nature & parks',    color:'#1F6B3A' },
   { id:'culture', label:'Art & culture',     color:'#6B4FA0' },
   { id:'night',   label:'Evenings out',      color:'#48326E' },
-  { id:'daytrip', label:'Day trips',         color:'#3F8F57' },
 ];
+const DAYTRIP_COLOR = '#3F8F57';
 
 /* ============================================================
    HOW TO EDIT THIS FILE - for anyone with code access.
@@ -1408,7 +1480,10 @@ let agenda = [];
 let customLocations = [];
 
 function allLocations(){ return LOCATIONS.concat(customLocations); }
-function catMeta(id){ return CATEGORIES.find(c=>c.id===id) || CATEGORIES[0]; }
+function catMeta(id){
+  if(id === 'daytrip') return { id:'daytrip', label:'Day trip', color:DAYTRIP_COLOR };
+  return CATEGORIES.find(c=>c.id===id) || CATEGORIES[0];
+}
 
 /* ---------------- theme ---------------- */
 function applyTheme(theme){
@@ -1464,22 +1539,19 @@ function renderPills(){
 function setCategory(id){ activeCategory = id; renderPills(); renderList(); renderMap(); }
 
 /* ---------------- render: list view ---------------- */
-function renderList(){
-  const wrap = document.getElementById('listView');
-  const items = allLocations().filter(l => activeCategory==='all' || l.category===activeCategory);
-  wrap.innerHTML = items.map(l => {
-    const cat = catMeta(l.category);
-    const added = agenda.includes(l.id);
-    const photosHtml = (l.photos && l.photos.length)
-      ? `<div class="camera-roll">${l.photos.map(src => `<img src="${src}" loading="lazy" alt="${l.name}" onclick="openLightbox('${src}', '${l.name}')">`).join('')}</div>`
-      : `<div class="camera-roll-empty">No photos yet - <a href="https://commons.wikimedia.org/w/index.php?search=${encodeURIComponent(l.name + ' ' + l.area)}&title=Special:MediaSearch&type=image" target="_blank" rel="noopener">search Wikimedia Commons for ${l.name}</a> (openly licensed, free to use) and drop the image URL into this spot's "photos" array.</div>`;
-    const badgeHtml = l.approved
-      ? `<div class="approved-row"><svg class="approved-badge" viewBox="0 0 44 44"><circle class="stamp-ring" cx="22" cy="22" r="20"/><g transform="translate(22,20) scale(0.85)"><path d="M0 -9c-2 2-1 4 0 5-3 0-5 2-5 5 0 4 3 6 5 8 2-2 5-4 5-8 0-3-2-5-5-5 1-1 2-3 0-5Z M-4 -3c-2 0-3.5 1.5-3 4 M4 -3c2 0 3.5 1.5 3 4"/><circle cx="-2.7" cy="-4.8" r="0.9"/><circle cx="2.7" cy="-4.8" r="0.9"/></g></svg><span class="approved-label">Recommended<br><small>personally vetted, not just popular</small></span></div>`
-      : '';
-    const pronounceHtml = l.kn ? `<div class="card-pronounce"><span class="kn card-kn">${l.kn}</span><span class="card-say">${l.say}</span>${speakBtn(l.kn, 'sm')}</div>` : '';
-    const mapLinkHtml = (typeof l.lat === 'number' && typeof l.lng === 'number')
-      ? `<button class="map-link-btn" onclick="viewOnMap('${l.id}')">📍 View on map</button>` : '';
-    return `<div class="card" style="--cat-color:${cat.color}">
+function buildLocationCard(l){
+  const cat = catMeta(l.category);
+  const added = agenda.includes(l.id);
+  const photosHtml = (l.photos && l.photos.length)
+    ? `<div class="camera-roll">${l.photos.map(src => `<img src="${src}" loading="lazy" alt="${l.name}" onclick="openLightbox('${src}', '${l.name}')">`).join('')}</div>`
+    : `<div class="camera-roll-empty">No photos yet - <a href="https://commons.wikimedia.org/w/index.php?search=${encodeURIComponent(l.name + ' ' + l.area)}&title=Special:MediaSearch&type=image" target="_blank" rel="noopener">search Wikimedia Commons for ${l.name}</a> (openly licensed, free to use) and drop the image URL into this spot's "photos" array.</div>`;
+  const badgeHtml = l.approved
+    ? `<div class="approved-row"><svg class="approved-badge" viewBox="0 0 44 44"><circle class="stamp-ring" cx="22" cy="22" r="20"/><g transform="translate(22,20) scale(0.85)"><path d="M0 -9c-2 2-1 4 0 5-3 0-5 2-5 5 0 4 3 6 5 8 2-2 5-4 5-8 0-3-2-5-5-5 1-1 2-3 0-5Z M-4 -3c-2 0-3.5 1.5-3 4 M4 -3c2 0 3.5 1.5 3 4"/><circle cx="-2.7" cy="-4.8" r="0.9"/><circle cx="2.7" cy="-4.8" r="0.9"/></g></svg><span class="approved-label">Recommended<br><small>personally vetted, not just popular</small></span></div>`
+    : '';
+  const pronounceHtml = l.kn ? `<div class="card-pronounce"><span class="kn card-kn">${l.kn}</span><span class="card-say">${l.say}</span>${speakBtn(l.kn, 'sm')}</div>` : '';
+  const mapLinkHtml = (typeof l.lat === 'number' && typeof l.lng === 'number')
+    ? `<button class="map-link-btn" onclick="viewOnMap('${l.id}')">📍 View on map</button>` : '';
+  return `<div class="card" style="--cat-color:${cat.color}">
       <div class="card-top">
         <div><h3>${l.name}</h3><div class="area">${l.area}</div>${pronounceHtml}</div>
         <span class="tag">${cat.label}</span>
@@ -1492,7 +1564,17 @@ function renderList(){
         ${mapLinkHtml}
       </div>
     </div>`;
-  }).join('') || `<p style="color:var(--ink-soft);">No spots in this category yet - add one below.</p>`;
+}
+function renderList(){
+  const wrap = document.getElementById('listView');
+  const items = allLocations().filter(l => l.category !== 'daytrip' && (activeCategory==='all' || l.category===activeCategory));
+  wrap.innerHTML = items.map(buildLocationCard).join('') || `<p style="color:var(--ink-soft);">No spots in this category yet - add one below.</p>`;
+}
+function renderDaytrips(){
+  const wrap = document.getElementById('daytripGrid');
+  if(!wrap) return;
+  const items = allLocations().filter(l => l.category === 'daytrip');
+  wrap.innerHTML = items.map(buildLocationCard).join('');
 }
 
 /* ---------------- render: map view ---------------- */
@@ -1563,6 +1645,7 @@ function toggleAgenda(id){
   else agenda.push(id);
   saveAgenda();
   renderList();
+  renderDaytrips();
   renderAgendaCount();
   renderDrawer();
 }
@@ -1789,6 +1872,7 @@ document.getElementById('addForm').addEventListener('submit', async function(e){
   renderPills();
   renderCategorySelect();
   renderList();
+  renderDaytrips();
   renderTNT();
   renderSkipCrowd();
   renderFestivals();
