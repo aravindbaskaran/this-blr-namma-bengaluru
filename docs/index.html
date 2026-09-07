@@ -229,10 +229,15 @@
   .card-pronounce{display:flex; align-items:baseline; gap:6px; margin-top:4px; flex-wrap:wrap;}
   .card-kn{font-size:13px; color:var(--maroon);}
   .card-say{font-size:11px; color:var(--ink-soft); font-style:italic;}
-  .approved-badge{
-    position:absolute; top:10px; right:10px; width:46px; height:46px;
-    color:var(--gold); opacity:0.85; transform:rotate(8deg); cursor:help; pointer-events:none;
+  .approved-row{
+    display:flex; align-items:center; gap:10px; padding-top:10px; border-top:1px dashed var(--line);
   }
+  .approved-badge{
+    width:56px; height:56px; flex:none;
+    color:var(--gold); transform:rotate(-6deg);
+  }
+  .approved-label{font-size:12.5px; font-weight:600; color:var(--hampi-stone); line-height:1.3;}
+  .approved-label small{font-size:10.5px; font-weight:400; color:var(--ink-soft);}
   .approved-badge path, .approved-badge circle{stroke:currentColor; fill:none; stroke-width:1;}
   .approved-badge .stamp-ring{stroke-width:1.1; stroke-dasharray:2 1.6;}
   .tag{
@@ -1089,7 +1094,7 @@
 <footer>
   <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
   <p>Made for people spending time in Bengaluru.</p>
-  <p class="footer-meta">v2026-09-08.3 &middot; &copy; 2026, all rights reserved</p>
+  <p class="footer-meta">v2026-09-08.4 &middot; &copy; 2026, all rights reserved</p>
 </footer>
 
 <div class="drawer-backdrop" id="drawerBackdrop" onclick="closeDrawer()"></div>
@@ -1163,6 +1168,7 @@ const LOCATIONS = [
     kn:'ಲಾಲ್ ಬಾಗ್', say:'Laal Baag', lat:12.9507, lng:77.5848 },
   { id:'cubbon', name:'Cubbon Park', area:'Central Bengaluru', category:'nature',
     blurb:'The city\'s green lung, threading past the High Court and State Library. Car-free on Sunday mornings.',
+    photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Entrance%20of%20Cubbon%20Park%2C%20Bengaluru.jpg'],
     kn:'ಕಬ್ಬನ್ ಪಾರ್ಕ್', say:'Kabban Paark', lat:12.9763, lng:77.5929 },
   { id:'veena-thindi', name:'Veena Stores & Thindi Beedi', area:'Malleswaram', category:'food',
     blurb:'A benne masale dosa counter with no seating and no fuss, on the same lane as a dozen other breakfast stalls locals actually rotate through.',
@@ -1199,9 +1205,11 @@ const LOCATIONS = [
     kn:'ಯುಬಿ ಸಿಟಿ', say:'U B City', lat:12.9716, lng:77.5958 },
   { id:'iskcon', name:'ISKCON Temple Bangalore', area:'Rajajinagar', category:'culture',
     blurb:'A modern temple complex built into a hillside, worth visiting at evening aarti even if you\'re not devotional.',
+    photos:['https://commons.wikimedia.org/wiki/Special:FilePath/ISKCON%20Temple%20-%20Bangalore%20-%20Karnataka%20-%20DSCN0101.jpg'],
     kn:'ಇಸ್ಕಾನ್ ದೇವಾಲಯ', say:'Iskon Devaalaya', lat:12.9884, lng:77.5513 },
   { id:'palace', name:'Bangalore Palace', area:'Vasanth Nagar', category:'culture',
     blurb:'A Tudor-style palace that has nothing to do with Rajasthani forts - a reminder that royal Karnataka architecture looked very different.',
+    photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Bangalore%20Palace%20%2C%20Main%20Entrance.jpg'],
     kn:'ಬೆಂಗಳೂರು ಅರಮನೆ', say:'Bengaluru Ara-mane', lat:12.9987, lng:77.592 },
   { id:'rangashankara', name:'Ranga Shankara', area:'J.P. Nagar', category:'culture',
     blurb:'The city\'s best-loved theatre, running Kannada, English, and regional-language plays most nights of the week.',
@@ -1469,17 +1477,17 @@ function renderList(){
       ? `<div class="camera-roll">${l.photos.map(src => `<img src="${src}" loading="lazy" alt="${l.name}">`).join('')}</div>`
       : `<div class="camera-roll-empty">No photos yet - <a href="https://commons.wikimedia.org/w/index.php?search=${encodeURIComponent(l.name + ' ' + l.area)}&title=Special:MediaSearch&type=image" target="_blank" rel="noopener">search Wikimedia Commons for ${l.name}</a> (openly licensed, free to use) and drop the image URL into this spot's "photos" array.</div>`;
     const badgeHtml = l.approved
-      ? `<svg class="approved-badge" viewBox="0 0 44 44" title="Recommended - personally vetted, not just popular"><circle class="stamp-ring" cx="22" cy="22" r="20"/><g transform="translate(22,20) scale(0.85)"><path d="M0 -9c-2 2-1 4 0 5-3 0-5 2-5 5 0 4 3 6 5 8 2-2 5-4 5-8 0-3-2-5-5-5 1-1 2-3 0-5Z M-4 -3c-2 0-3.5 1.5-3 4 M4 -3c2 0 3.5 1.5 3 4"/><circle cx="-2.7" cy="-4.8" r="0.9"/><circle cx="2.7" cy="-4.8" r="0.9"/></g></svg>`
+      ? `<div class="approved-row"><svg class="approved-badge" viewBox="0 0 44 44"><circle class="stamp-ring" cx="22" cy="22" r="20"/><g transform="translate(22,20) scale(0.85)"><path d="M0 -9c-2 2-1 4 0 5-3 0-5 2-5 5 0 4 3 6 5 8 2-2 5-4 5-8 0-3-2-5-5-5 1-1 2-3 0-5Z M-4 -3c-2 0-3.5 1.5-3 4 M4 -3c2 0 3.5 1.5 3 4"/><circle cx="-2.7" cy="-4.8" r="0.9"/><circle cx="2.7" cy="-4.8" r="0.9"/></g></svg><span class="approved-label">Recommended<br><small>personally vetted, not just popular</small></span></div>`
       : '';
     const pronounceHtml = l.kn ? `<div class="card-pronounce"><span class="kn card-kn">${l.kn}</span><span class="card-say">${l.say}</span>${speakBtn(l.kn, 'sm')}</div>` : '';
     return `<div class="card" style="--cat-color:${cat.color}">
-      ${badgeHtml}
       <div class="card-top">
         <div><h3>${l.name}</h3><div class="area">${l.area}</div>${pronounceHtml}</div>
         <span class="tag">${cat.label}</span>
       </div>
       <p class="blurb">${l.blurb}</p>
       ${photosHtml}
+      ${badgeHtml}
       <button class="add-btn" data-added="${added}" onclick="toggleAgenda('${l.id}')">${added ? 'Added ✓' : '+ Add to agenda'}</button>
     </div>`;
   }).join('') || `<p style="color:var(--ink-soft);">No spots in this category yet - add one below.</p>`;
