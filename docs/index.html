@@ -43,15 +43,24 @@
     --hampi-stone:#A66A32;    /* Hampi boulder & ruin sandstone */
     --coffee:#3E2A1C;         /* Chikmagalur-Kodagu estate soil */
     --coastal-teal:#1F7A6E;   /* Udupi-Mangaluru coast */
+    /* dedicated section-background color, independent of the --terracotta
+       accent value above, so brightening one for accent visibility never
+       fights deepening the other for a full-bleed section mood */
+    --kannada-bg:#A54E14;
     /* ---- "Imperial Weave" palette (comparison variant, Festivals section only) ---- */
     --imperial-bg:#FDFBF7;
     --imperial-text:#0E2540;
     --imperial-gold:#D99B26;
     --imperial-kumkum:#AC2424;
     --imperial-muted:#736E65;
+    /* fixed light text for use on saturated accent backgrounds (maroon,
+       jacaranda-dark, kannada-bg, the hero gradient) that stay dark/mid-toned
+       in both themes - deliberately NOT re-defined under [data-theme="dark"],
+       since it must never flip to a dark color the way --cream does. */
+    --on-accent:#F6F1E4;
   }
   [data-theme="dark"]{
-    --maroon:#E14D66;
+    --maroon:#E8536E;
     --maroon-dark:#B93650;
     --gold:#E8B93A;
     --gold-light:#F5D67A;
@@ -72,6 +81,7 @@
     --hampi-stone:#C08850;
     --coffee:#8A6A4E;
     --coastal-teal:#3FA396;
+    --kannada-bg:#7A3D14;
     /* Imperial Weave, dark: the navy/ivory anchor pair inverts - navy becomes
        the background, ivory becomes the text, exactly swapping roles rather
        than just brightening the light values. */
@@ -155,7 +165,7 @@
   [data-theme="dark"] .theme-icon-moon{display:block;}
   .agenda-pill{
     display:flex; align-items:center; gap:6px;
-    background:var(--maroon); color:var(--cream); border:none;
+    background:var(--maroon); color:var(--on-accent); border:none;
     padding:8px 14px; border-radius:20px; font-size:14px; font-weight:600;
   }
   .agenda-pill:hover{background:var(--maroon-dark);}
@@ -168,7 +178,7 @@
   .hero{
     position:relative; overflow:hidden;
     background:linear-gradient(150deg, var(--jacaranda) 0%, var(--jacaranda-dark) 55%, var(--maroon-dark) 100%);
-    color:var(--cream);
+    color:var(--on-accent);
     padding:88px 24px 64px;
   }
   .hero::before{
@@ -218,7 +228,7 @@
   .view-toggle button{
     border:none; background:transparent; padding:8px 16px; font-size:13px; font-weight:600; color:var(--ink-soft);
   }
-  .view-toggle button[data-active="true"]{background:var(--maroon); color:var(--cream);}
+  .view-toggle button[data-active="true"]{background:var(--maroon); color:var(--on-accent);}
 
   section{max-width:1180px; margin:0 auto; padding:56px 24px;}
   .section-head{max-width:640px; margin-bottom:32px;}
@@ -305,12 +315,20 @@
   }
   .berunda-mark path, .berunda-mark circle{stroke:var(--gold-light); fill:none; stroke-width:1.3;}
 
+  /* ---------- karnataka: locations, food, festivals ---------- */
+  .karnataka-sub{margin-top:44px;}
+  .karnataka-sub:first-of-type{margin-top:28px;}
+  .sub-head{max-width:640px; margin-bottom:20px;}
+  .sub-head h3{font-size:clamp(19px,2.2vw,24px);}
+  .sub-head p{color:var(--ink-soft); margin-top:6px; font-size:14.5px;}
+
   /* ---------- ganda berunda watermark, v2 (for comparison) ---------- */
-  #festivals{
+  .festivals-sub{
     position:relative; overflow:hidden;
     background:var(--imperial-bg); border-radius:var(--radius); color:var(--imperial-text);
+    padding:32px 28px;
     /* Imperial Weave palette applied locally: these overrides only affect
-       elements inside #festivals, borrowed by everything that already
+       elements inside this subsection, borrowed by everything that already
        references --ink, --ink-soft, --maroon, --card-surface, --line. */
     --ink:var(--imperial-text);
     --ink-soft:var(--imperial-muted);
@@ -346,13 +364,6 @@
   .head-with-icon .kn{margin-bottom:0 !important;}
 
   /* ---------- region strip: six threads of karnataka ---------- */
-  .region-strip{background:var(--cream-2); border-bottom:1px solid var(--line);}
-  .region-strip-inner{
-    max-width:1180px; margin:0 auto; padding:26px 24px 30px;
-  }
-  .region-strip-head{max-width:640px; margin-bottom:18px;}
-  .region-strip-head .kn{color:var(--maroon); font-size:13px; font-weight:600; display:block; margin-bottom:4px;}
-  .region-strip-head h2{font-size:19px;}
   .region-row{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
   .region-card{
     background:var(--cream-2); padding:16px 16px 14px; border-top:4px solid var(--region-color, var(--maroon));
@@ -399,6 +410,7 @@
   .dish-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:16px;}
   .dish-card{background:var(--cream); border:1px solid var(--line); border-radius:var(--radius); padding:16px 18px; overflow:hidden;}
   .dish-photo{width:calc(100% + 36px); margin:-16px -18px 12px; display:block; height:140px; object-fit:cover;}
+  .dish-photo:focus-visible, .camera-roll img:focus-visible{outline:2px solid var(--maroon); outline-offset:-2px;}
   .dish-name{font-family:'Baloo 2',sans-serif; font-weight:700; font-size:16px;}
   .dish-kn-row{display:flex; align-items:baseline; gap:7px; margin-top:3px; flex-wrap:wrap;}
   .dish-kn{font-size:15px; color:var(--maroon);}
@@ -407,20 +419,44 @@
 
   /* ---------- this not that ---------- */
   .tnt-section{
-    background:var(--jacaranda-dark); color:var(--cream);
+    background:var(--jacaranda-dark); color:var(--on-accent);
   }
   .tnt-section .section-head .kn{color:var(--gold-light);}
   .tnt-section .section-head .motif-icon{color:var(--gold-light);}
   .tnt-section .section-head p{color:rgba(246,241,228,0.78);}
-  .tnt-list{display:flex; flex-direction:column; border-top:1px solid rgba(246,241,228,0.18);}
-  .tnt-row{
-    display:grid; grid-template-columns:1fr 32px 1fr; gap:18px; align-items:center;
-    padding:20px 0; border-bottom:1px solid rgba(246,241,228,0.18);
+  .tnt-grid{
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:20px;
+    perspective:1400px;
   }
-  .tnt-row .often{color:rgba(246,241,228,0.55); font-size:15px;}
-  .tnt-row .also{color:var(--cream); font-size:16px; font-weight:500;}
-  .tnt-arrow{color:var(--gold-light); text-align:center; font-size:15px;}
-  .tnt-label-row{display:flex; justify-content:space-between; padding-top:6px; font-size:12px; color:rgba(246,241,228,0.55); text-transform:none;}
+  .flip-card{position:relative; height:230px;}
+  .flip-card-inner{
+    position:relative; width:100%; height:100%;
+    transition:transform 0.55s cubic-bezier(.4,.2,.2,1); transform-style:preserve-3d;
+    cursor:pointer; border-radius:var(--radius);
+  }
+  .flip-card[data-flipped="true"] .flip-card-inner{transform:rotateY(180deg);}
+  .flip-card-inner:focus-visible{outline:2px solid var(--gold-light); outline-offset:3px;}
+  .flip-card-front, .flip-card-back{
+    position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden;
+    border-radius:var(--radius); padding:20px; display:flex; flex-direction:column;
+  }
+  .flip-card-front{
+    background:rgba(246,241,228,0.07); border:1px solid rgba(246,241,228,0.2);
+  }
+  .flip-card-back{
+    background:var(--gold); color:var(--kasuti-black); transform:rotateY(180deg);
+    border:1px solid rgba(246,241,228,0.2);
+  }
+  .flip-card-label{
+    font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;
+    opacity:0.65; margin-bottom:10px;
+  }
+  .flip-card-text{font-size:16px; font-weight:500; line-height:1.42; flex:1;}
+  .flip-card-front .flip-card-text{color:rgba(246,241,228,0.85); font-weight:400;}
+  .flip-hint{
+    font-size:11px; opacity:0.6; margin-top:12px; display:flex; align-items:center; gap:5px;
+  }
+  .flip-instructions{font-size:12.5px; color:rgba(246,241,228,0.55); margin-bottom:16px;}
   .india-stat-row{display:flex; gap:32px; align-items:center; flex-wrap:wrap; margin-bottom:26px;}
   .india-stat{
     flex:none; text-align:center; border:1px solid rgba(246,241,228,0.25); border-radius:var(--radius);
@@ -451,7 +487,7 @@
   .skip-arrow{display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:15px; background:var(--cream-2);}
 
   /* ---------- learn kannada ---------- */
-  .kannada-section{background:var(--leaf); color:var(--cream); position:relative; overflow:hidden;}
+  .kannada-section{background:var(--kannada-bg); color:var(--on-accent); position:relative; overflow:hidden;}
   .kannada-section .section-head .kn{color:var(--gold-light);}
   .kannada-section .section-head .motif-icon{color:var(--gold-light);}
   .kannada-section .section-head p{color:rgba(246,241,228,0.82);}
@@ -475,7 +511,7 @@
   .p-kn-row{display:flex; align-items:center; justify-content:space-between; gap:8px;}
   .speak-btn{
     background:rgba(246,241,228,0.12); border:1px solid rgba(246,241,228,0.25); border-radius:50%;
-    width:28px; height:28px; flex:none; font-size:13px; line-height:1; color:var(--cream);
+    width:28px; height:28px; flex:none; font-size:13px; line-height:1; color:var(--on-accent);
     display:flex; align-items:center; justify-content:center;
   }
   .speak-btn:hover{background:rgba(246,241,228,0.22);}
@@ -484,6 +520,7 @@
     color:var(--maroon); width:20px; height:20px; font-size:10px;
   }
   .speak-btn-sm:hover{background:color-mix(in srgb, var(--maroon) 18%, transparent);}
+  .footer-preethi{display:inline-flex; align-items:center; gap:5px; vertical-align:middle;}
   .phrase-card .p-translit{font-size:13px; font-style:italic; color:rgba(246,241,228,0.75); margin-top:2px;}
   .p-say{font-size:11.5px; color:var(--gold-light); margin-top:3px; letter-spacing:0.02em;}
   .phrase-card .p-meaning{font-size:14.5px; font-weight:600; margin-top:8px;}
@@ -643,8 +680,8 @@
     .add-form{grid-template-columns:1fr;}
     .about-grid{grid-template-columns:1fr;}
     .sources-grid{grid-template-columns:1fr;}
-    .tnt-row{grid-template-columns:1fr 20px 1fr; gap:8px;}
-    .tnt-row .often, .tnt-row .also{font-size:13.5px;}
+    .tnt-grid{grid-template-columns:1fr;}
+    .flip-card{height:200px;}
     .skip-row{grid-template-columns:1fr; }
     .skip-arrow{display:none;}
     .skip-col.instead{border-top:1px dashed var(--line);}
@@ -674,7 +711,7 @@
         <path d="M8.4 8.4 L12.5 12.5 M17.5 17.5 L21.6 21.6 M8.4 21.6 L12.5 17.5 M17.5 12.5 L21.6 8.4"/>
       </g></svg>
       <div class="brand-text">
-        <span class="kn">ಬೆಂಗಳೂರು</span>
+        <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಬೆಂಗಳೂರು</span><span class="kn-en">Bengaluru</span></span>
         <span class="en">Field Guide</span>
       </div>
     </div>
@@ -684,10 +721,8 @@
       <a href="#outside-bengaluru">Outside Bengaluru</a>
       <a href="#not-that">This, not that</a>
       <a href="#skip-crowd">Skip the crowd</a>
-      <a href="#festivals">Festivals</a>
-      <a href="#dishes">Dishes</a>
       <a href="#learn-kannada">Learn Kannada</a>
-      <a href="#add-yours">Add a spot</a>
+      <a href="#karnataka">Karnataka</a>
       <a href="#about">About</a>
     </nav>
     <div class="header-actions">
@@ -865,8 +900,8 @@
       <p>Everything on this list lives that far south, or further, a day's drive from Bengaluru at most.</p>
     </div>
   </div>
-  <div class="tnt-label-row"><span>Often the default picture</span><span>Also true, an hour or a language away</span></div>
-  <div class="tnt-list" id="tntList"></div>
+  <p class="flip-instructions">Tap a card to flip it.</p>
+  <div class="tnt-grid" id="tntList"></div>
 </section>
 
 <section class="skip-section" id="skip-crowd">
@@ -881,41 +916,6 @@
   <div class="skip-list" id="skipList"></div>
 </section>
 
-<section id="festivals">
-  <svg class="berunda-mark-v2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M100,50 L100,160 M100,80 C85,90 70,110 70,140 C70,165 100,175 100,175 C100,175 130,165 130,140 C130,110 115,90 100,80 Z" />
-    <path d="M85,50 C85,35 68,35 68,48 C68,55 78,60 88,60 M68,48 L60,52 L67,56" />
-    <path d="M115,50 C115,35 132,35 132,48 C132,55 122,60 112,60 M132,48 L140,52 L133,56" />
-    <path d="M80,38 L75,25 L83,32 L88,20 L92,33" />
-    <path d="M120,38 L125,25 L117,32 L112,20 L108,33" />
-    <path d="M70,95 C45,95 25,115 25,140 C45,140 65,120 72,105" />
-    <path d="M71,112 C50,120 35,135 32,155 C50,152 65,140 73,125" />
-    <path d="M130,95 C155,95 175,115 175,140 C155,140 135,120 128,105" />
-    <path d="M129,112 C150,120 165,135 168,155 C150,152 135,140 127,125" />
-    <path d="M85,168 L75,190 L100,180 L125,190 L115,168" />
-  </svg>
-  <div class="section-head">
-    <div class="head-with-icon">
-      <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V10l8-6 8 6v11 M4 21h16 M9 21v-6h6v6"/></svg>
-      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಹಬ್ಬಗಳು</span><span class="kn-en">festivals worth planning around</span></span>
-    </div>
-    <h2>Karnataka doesn't run out of reasons to celebrate</h2>
-    <p>Some of these are city-specific, some run the length of the coast for months - worth checking dates before you go, since most follow the lunar calendar and move every year.</p>
-  </div>
-  <div class="festival-grid" id="festivalGrid"></div>
-</section>
-
-<section id="dishes">
-  <div class="section-head">
-    <div class="head-with-icon">
-      <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3v8a4 4 0 0 0 4 4v6M8 3v7M12 3v7M17 3c-2 2-2 5 0 7-1 1-1 3-1 3v8"/></svg>
-      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಖಾದ್ಯಗಳು</span><span class="kn-en">the dishes, by name</span></span>
-    </div>
-    <h2>Every dish named on this page, in one place</h2>
-    <p>What each one actually is, how it's written in Kannada, and roughly how to say it - pulled together from the region cards and food stops above, so you're not guessing at a menu.</p>
-  </div>
-  <div class="dish-grid" id="dishGrid"></div>
-</section>
 
 <section class="kannada-section" id="learn-kannada">
   <div class="section-head">
@@ -933,43 +933,18 @@
   </svg>
 </section>
 
-<section id="add-yours">
+<section id="karnataka">
   <div class="section-head">
-    <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ನಿಮ್ಮ ಸ್ಥಳ ಸೇರಿಸಿ</span><span class="kn-en">add a spot</span></span>
-    <h2>Know a place that should be here?</h2>
-    <p>Add it below - it'll appear in Explore right away and stay saved on this device for next time.</p>
+    <div class="head-with-icon">
+      <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-2 2-1 4 0 5-3 0-5 2-5 5 0 4 3 6 5 8 2-2 5-4 5-8 0-3-2-5-5-5 1-1 2-3 0-5Z"/></svg>
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಕರ್ನಾಟಕ</span><span class="kn-en">karnataka, in three parts</span></span>
+    </div>
+    <h2>Karnataka: locations, food, and festivals</h2>
+    <p>Bengaluru is one weave in a bigger loom - the regions, dishes, and festivals that surround it, all in one place.</p>
   </div>
-  <form class="add-form" id="addForm">
-    <div>
-      <label>Name</label>
-      <input type="text" id="f-name" placeholder="e.g. Vidyarthi Bhavan" required>
-    </div>
-    <div>
-      <label>Neighbourhood / area</label>
-      <input type="text" id="f-area" placeholder="e.g. Basavanagudi" required>
-    </div>
-    <div class="full">
-      <label>Kind</label>
-      <select id="f-category"></select>
-    </div>
-    <div class="full">
-      <label>One line on why it matters</label>
-      <textarea id="f-blurb" placeholder="What should someone expect, and why is it worth the trip?" required></textarea>
-    </div>
-    <button type="submit" class="submit-btn">Add to the guide</button>
-  </form>
-  <p class="form-note">Custom spots are stored privately on your device using this page's built-in storage - nothing is shared or uploaded anywhere.</p>
-</section>
 
-<div class="region-strip">
-  <div class="region-strip-inner">
-    <div class="region-strip-head">
-      <div class="head-with-icon">
-        <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-2 2-1 4 0 5-3 0-5 2-5 5 0 4 3 6 5 8 2-2 5-4 5-8 0-3-2-5-5-5 1-1 2-3 0-5Z"/></svg>
-        <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಆರು ಎಳೆಗಳು</span><span class="kn-en">six threads of Karnataka</span></span>
-      </div>
-      <h2>Bengaluru is one weave in a bigger loom</h2>
-    </div>
+  <div class="karnataka-sub">
+    <div class="sub-head"><h3>Locations</h3></div>
     <div class="region-row">
       <div class="region-card" style="--region-color:var(--jacaranda); --region-pattern:repeating-linear-gradient(45deg, transparent 0 9px, color-mix(in srgb, var(--jacaranda) 40%, transparent) 9px 10px)">
         <h4>Mysuru</h4>
@@ -1063,8 +1038,63 @@
       </div>
     </div>
   </div>
-</div>
-<div class="temple-border"></div>
+
+  <div class="karnataka-sub">
+    <div class="sub-head">
+      <h3>Food</h3>
+      <p>Every dish named on this page, in one place - what each one actually is, how it's written in Kannada, and roughly how to say it, so you're not guessing at a menu.</p>
+    </div>
+    <div class="dish-grid" id="dishGrid"></div>
+  </div>
+
+  <div class="karnataka-sub festivals-sub">
+    <svg class="berunda-mark-v2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M100,50 L100,160 M100,80 C85,90 70,110 70,140 C70,165 100,175 100,175 C100,175 130,165 130,140 C130,110 115,90 100,80 Z" />
+      <path d="M85,50 C85,35 68,35 68,48 C68,55 78,60 88,60 M68,48 L60,52 L67,56" />
+      <path d="M115,50 C115,35 132,35 132,48 C132,55 122,60 112,60 M132,48 L140,52 L133,56" />
+      <path d="M80,38 L75,25 L83,32 L88,20 L92,33" />
+      <path d="M120,38 L125,25 L117,32 L112,20 L108,33" />
+      <path d="M70,95 C45,95 25,115 25,140 C45,140 65,120 72,105" />
+      <path d="M71,112 C50,120 35,135 32,155 C50,152 65,140 73,125" />
+      <path d="M130,95 C155,95 175,115 175,140 C155,140 135,120 128,105" />
+      <path d="M129,112 C150,120 165,135 168,155 C150,152 135,140 127,125" />
+      <path d="M85,168 L75,190 L100,180 L125,190 L115,168" />
+    </svg>
+    <div class="sub-head">
+      <h3>Festivals</h3>
+      <p>Some of these are city-specific, some run the length of the coast for months - worth checking dates before you go, since most follow the lunar calendar and move every year.</p>
+    </div>
+    <div class="festival-grid" id="festivalGrid"></div>
+  </div>
+</section>
+
+<section id="add-yours">
+  <div class="section-head">
+    <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ನಿಮ್ಮ ಸ್ಥಳ ಸೇರಿಸಿ</span><span class="kn-en">add a spot</span></span>
+    <h2>Know a place that should be here?</h2>
+    <p>Add it below - it'll appear in Explore right away and stay saved on this device for next time.</p>
+  </div>
+  <form class="add-form" id="addForm">
+    <div>
+      <label>Name</label>
+      <input type="text" id="f-name" placeholder="e.g. Vidyarthi Bhavan" required>
+    </div>
+    <div>
+      <label>Neighbourhood / area</label>
+      <input type="text" id="f-area" placeholder="e.g. Basavanagudi" required>
+    </div>
+    <div class="full">
+      <label>Kind</label>
+      <select id="f-category"></select>
+    </div>
+    <div class="full">
+      <label>One line on why it matters</label>
+      <textarea id="f-blurb" placeholder="What should someone expect, and why is it worth the trip?" required></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Add to the guide</button>
+  </form>
+  <p class="form-note">Custom spots are stored privately on your device using this page's built-in storage - nothing is shared or uploaded anywhere.</p>
+</section>
 
 <section id="about">
   <div class="section-head">
@@ -1072,7 +1102,8 @@
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2"/><circle cx="12" cy="4" r="1.4"/><circle cx="12" cy="20" r="1.4"/><circle cx="4" cy="12" r="1.4"/><circle cx="20" cy="12" r="1.4"/><circle cx="6.3" cy="6.3" r="1.1"/><circle cx="17.7" cy="6.3" r="1.1"/><circle cx="6.3" cy="17.7" r="1.1"/><circle cx="17.7" cy="17.7" r="1.1"/></svg>
       <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಈ ಮಾರ್ಗದರ್ಶಿ ಬಗ್ಗೆ</span><span class="kn-en">about this guide</span></span>
     </div>
-    <h2>What this is, and how to make it yours</h2>
+    <h2>Why this guide exists</h2>
+    <p>Typical Bengaluru guides are geographically misplaced - they reach for cultures a thousand kilometres away and bundle it all into a generic "India," Rajasthani motifs and Hindi greetings included, none of it local to this city or to anywhere south of the Vindhyas. This guide is for what's actually around you the moment you land in Bengaluru: Kannada and Karnataka, its cuisine, its culture, its crafts, its neighbourhoods - everything within reach, not a thousand kilometres from it.</p>
   </div>
   <div class="creator-note">
     <div class="head-with-icon">
@@ -1083,12 +1114,6 @@
     <p>Bengaluru is as representative of India as anywhere else - but it holds far more than the software-and-startups image most people carry in from outside. As an outsider who's chosen to stay, I've come to think the city's older identity, the one built over centuries and not just the last two decades, deserves a guide of its own.</p>
     <p>There's also a narrower reason this page cites its sources. A lot of what gets said about Bengaluru - in listicles, reels, "hidden gem" posts - quietly overrides the work and context that came before it, without crediting where any of it actually came from. This page isn't trying to correct that or relitigate anyone's claim to the city. It's just trying to keep the reference-worthy details - the founding date, the lake names, the source of a dish or a craft - written down with a source attached, so they don't have to be rediscovered from scratch every few years.</p>
     <p class="creator-links">Find me on <a href="https://www.linkedin.com/in/aravindbaskaran/" target="_blank" rel="noopener">LinkedIn</a> or <a href="https://x.com/aravind_baskara" target="_blank" rel="noopener">X</a>.</p>
-  </div>
-  <div class="about-grid">
-    <div>
-      <h3>Why it exists</h3>
-      <p>Typical Bengaluru guides are geographically misplaced - they reach for cultures a thousand kilometres away and bundle it all into a generic "India," Rajasthani motifs and Hindi greetings included, none of it local to this city or to anywhere south of the Vindhyas. This guide is for what's actually around you the moment you land in Bengaluru: Kannada and Karnataka, its cuisine, its culture, its crafts, its neighbourhoods - everything within reach, not a thousand kilometres from it.</p>
-    </div>
   </div>
 </section>
 
@@ -1153,8 +1178,8 @@
 <div class="kasuti-divider"></div>
 <footer>
   <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
-  <p>Made for people spending time in Bengaluru.</p>
-  <p class="footer-meta">v2026-09-08.7 &middot; &copy; 2026, all rights reserved</p>
+  <p>Made for people spending time in Bengaluru, with <span class="footer-preethi"><span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಪ್ರೀತಿ</span><span class="kn-en">love</span></span> ❤️<button class="speak-btn speak-btn-sm" onclick="speakText('ಪ್ರೀತಿ')" aria-label="Hear pronunciation">🔊</button></span></p>
+  <p class="footer-meta">v2026-09-09.1 &middot; &copy; 2026, all rights reserved</p>
 </footer>
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
@@ -1166,7 +1191,7 @@
 <div class="drawer" id="drawer">
   <div class="drawer-head">
     <h3>My Agenda</h3>
-    <button class="drawer-close" onclick="closeDrawer()">&times;</button>
+    <button class="drawer-close" onclick="closeDrawer()" aria-label="Close">&times;</button>
   </div>
   <div class="drawer-body" id="drawerBody"></div>
   <div class="drawer-foot">
@@ -1180,13 +1205,13 @@
    CATEGORIES - edit labels / colours here, or add new kinds.
    ============================================================ */
 const CATEGORIES = [
-  { id:'food',    label:'Food & drink',      color:'#9E1B32' },
-  { id:'craft',   label:'Craft & markets',   color:'#D6A419' },
-  { id:'nature',  label:'Nature & parks',    color:'#1F6B3A' },
-  { id:'culture', label:'Art & culture',     color:'#6B4FA0' },
-  { id:'night',   label:'Evenings out',      color:'#48326E' },
+  { id:'food',    label:'Food & drink',      color:'var(--maroon)' },
+  { id:'craft',   label:'Craft & markets',   color:'var(--gold)' },
+  { id:'nature',  label:'Nature & parks',    color:'var(--leaf)' },
+  { id:'culture', label:'Art & culture',     color:'var(--jacaranda)' },
+  { id:'night',   label:'Evenings out',      color:'var(--jacaranda-dark)' },
 ];
-const DAYTRIP_COLOR = '#3F8F57';
+const DAYTRIP_COLOR = 'var(--leaf-light)';
 
 /* ============================================================
    HOW TO EDIT THIS FILE - for anyone with code access.
@@ -1409,6 +1434,8 @@ const DISHES = [
     desc:'A hand-flattened sorghum flatbread - the everyday bread of North Karnataka.' },
   { name:'Yenne Badnekai', kn:'ಎಣ್ಣೆ ಬದನೆಕಾಯಿ', say:'En-ne Badne-kaayi',
     desc:'Small eggplants stuffed with a peanut-sesame masala and slow-cooked in oil - a Dharwad-Hubballi classic.' },
+  { name:'Girmit', kn:'ಗಿರ್ಮಿಟ್', say:'Gir-mit',
+    desc:'Hubballi-Dharwad\'s answer to bhel - puffed rice tossed in a tangy onion-tomato-tamarind masala, sold at evening street stalls and eaten with mirchi bajji.' },
   { name:'Dharwad Peda', kn:'ಧಾರವಾಡ ಪೇಡಾ', say:'Dhaar-waad Pedaa',
     desc:'A caramel-brown milk sweet with a history over 175 years old, still made at the original Babusingh Thakur shop on Dharwad\'s Line Bazaar - which the queues for it gave its name to.' },
   { name:'Belagavi Kunda', kn:'ಬೆಳಗಾವಿ ಕುಂದಾ', say:'Bela-gaavi Kundaa',
@@ -1543,7 +1570,7 @@ function buildLocationCard(l){
   const cat = catMeta(l.category);
   const added = agenda.includes(l.id);
   const photosHtml = (l.photos && l.photos.length)
-    ? `<div class="camera-roll">${l.photos.map(src => `<img src="${src}" loading="lazy" alt="${l.name}" onclick="openLightbox('${src}', '${l.name}')">`).join('')}</div>`
+    ? `<div class="camera-roll">${l.photos.map(src => `<img src="${src}" loading="lazy" alt="${l.name}" tabindex="0" role="button" aria-label="View larger photo of ${l.name}" onclick="openLightbox('${src}', '${l.name}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('${src}', '${l.name}')}">`).join('')}</div>`
     : `<div class="camera-roll-empty">No photos yet - <a href="https://commons.wikimedia.org/w/index.php?search=${encodeURIComponent(l.name + ' ' + l.area)}&title=Special:MediaSearch&type=image" target="_blank" rel="noopener">search Wikimedia Commons for ${l.name}</a> (openly licensed, free to use) and drop the image URL into this spot's "photos" array.</div>`;
   const badgeHtml = l.approved
     ? `<div class="approved-row"><svg class="approved-badge" viewBox="0 0 44 44"><circle class="stamp-ring" cx="22" cy="22" r="20"/><g transform="translate(22,20) scale(0.85)"><path d="M0 -9c-2 2-1 4 0 5-3 0-5 2-5 5 0 4 3 6 5 8 2-2 5-4 5-8 0-3-2-5-5-5 1-1 2-3 0-5Z M-4 -3c-2 0-3.5 1.5-3 4 M4 -3c2 0 3.5 1.5 3 4"/><circle cx="-2.7" cy="-4.8" r="0.9"/><circle cx="2.7" cy="-4.8" r="0.9"/></g></svg><span class="approved-label">Recommended<br><small>personally vetted, not just popular</small></span></div>`
@@ -1709,13 +1736,26 @@ async function copyAgenda(){
 /* ---------------- this, not that ---------------- */
 function renderTNT(){
   const wrap = document.getElementById('tntList');
-  wrap.innerHTML = NOT_THAT.map(row => `
-    <div class="tnt-row">
-      <div class="often">${row.often}</div>
-      <div class="tnt-arrow">→</div>
-      <div class="also">${row.also}</div>
+  wrap.innerHTML = NOT_THAT.map((row, i) => `
+    <div class="flip-card" id="flip-${i}" data-flipped="false">
+      <div class="flip-card-inner" onclick="toggleFlip(${i})" tabindex="0" role="button"
+           aria-label="Flip card" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFlip(${i})}">
+        <div class="flip-card-front">
+          <div class="flip-card-label">Often the default picture</div>
+          <div class="flip-card-text">${row.often}</div>
+          <div class="flip-hint">🔄 Tap to flip</div>
+        </div>
+        <div class="flip-card-back">
+          <div class="flip-card-label">Also true, an hour or a language away</div>
+          <div class="flip-card-text">${row.also}</div>
+        </div>
+      </div>
     </div>
   `).join('');
+}
+function toggleFlip(i){
+  const card = document.getElementById('flip-' + i);
+  card.dataset.flipped = card.dataset.flipped === 'true' ? 'false' : 'true';
 }
 
 /* ---------------- skip the crowd ---------------- */
@@ -1756,7 +1796,7 @@ function renderFestivals(){
 function renderDishes(){
   const wrap = document.getElementById('dishGrid');
   wrap.innerHTML = DISHES.map(d => {
-    const photoHtml = d.photo ? `<img class="dish-photo" src="${d.photo}" loading="lazy" alt="${d.name}" onclick="openLightbox('${d.photo}', '${d.name}')">` : '';
+    const photoHtml = d.photo ? `<img class="dish-photo" src="${d.photo}" loading="lazy" alt="${d.name}" tabindex="0" role="button" aria-label="View larger photo of ${d.name}" onclick="openLightbox('${d.photo}', '${d.name}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('${d.photo}', '${d.name}')}">` : '';
     return `
     <div class="dish-card">
       ${photoHtml}
