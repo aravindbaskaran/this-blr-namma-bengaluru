@@ -7,6 +7,7 @@
 <meta name="description" content="A community field guide to Bengaluru and South India - locations, food, craft, and a look past the usual idea of 'India'.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Baloo+Tamma+2:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <style>
   :root{
     --maroon:#9E1B32;
@@ -195,30 +196,21 @@
   }
   .add-btn[data-added="true"]{background:var(--leaf); border-color:var(--leaf); color:#fff;}
 
-  /* ---------- map view ---------- */
+  /* ---------- map view (Leaflet) ---------- */
   .map-wrap{
-    position:relative; background:var(--cream-2); border:1px solid var(--line); border-radius:var(--radius);
-    aspect-ratio:16/10; overflow:hidden;
+    background:var(--cream-2); border:1px solid var(--line); border-radius:var(--radius);
+    height:520px; z-index:1;
   }
   .map-note{font-size:12px; color:var(--ink-soft); margin-top:10px;}
-  .map-blob{
-    position:absolute; opacity:0.55;
+  .map-note a{color:var(--maroon); text-decoration:underline;}
+  .leaflet-popup-content-wrapper{border-radius:var(--radius); font-family:'IBM Plex Sans',sans-serif;}
+  .leaflet-popup-content{margin:12px 14px; font-size:13.5px; line-height:1.4;}
+  .map-popup-title{font-family:'Baloo 2',sans-serif; font-weight:700; font-size:15px; margin-bottom:3px;}
+  .map-popup-area{font-size:11.5px; color:var(--ink-soft); margin-bottom:6px;}
+  .map-pin-icon{
+    width:16px; height:16px; border-radius:50% 50% 50% 0; transform:rotate(-45deg);
+    border:2px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,0.35);
   }
-  .map-pin{
-    position:absolute; transform:translate(-50%,-100%); cursor:pointer;
-    display:flex; flex-direction:column; align-items:center; gap:4px;
-  }
-  .map-pin .dot{
-    width:14px; height:14px; border-radius:50% 50% 50% 0; transform:rotate(-45deg);
-    background:var(--cat-color, var(--maroon)); border:2px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,0.25);
-  }
-  .map-pin .label{
-    font-size:11px; font-weight:600; background:#fff; padding:2px 6px; border-radius:8px;
-    border:1px solid var(--line); white-space:nowrap; opacity:0; pointer-events:none;
-    transform:translateY(2px); transition:opacity .15s ease;
-  }
-  .map-pin:hover .label{opacity:1;}
-  .map-pin[data-active="true"] .dot{outline:3px solid var(--gold);}
 
   /* ---------- ganda berunda watermark ---------- */
   .berunda-mark{
@@ -790,7 +782,7 @@
   <div id="listView" class="grid"></div>
   <div id="mapView" style="display:none;">
     <div class="map-wrap" id="mapWrap"></div>
-    <p class="map-note">Illustrative, not to scale - a rough sense of where things sit relative to the centre, not a street map.</p>
+    <p class="map-note">Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors - real coordinates, click a pin for details.</p>
   </div>
 </section>
 
@@ -801,7 +793,7 @@
       <span class="kn">ಇದು, ಅದಲ್ಲ · this, not that</span>
     </div>
     <h2>What "India" usually means on screen, and what's also true here</h2>
-    <p>None of this is a correction - the north is real too. It's just not the whole map, and Bengaluru sits closer to the other half of it.</p>
+    <p>None of this is a correction - the north is real too. It's just not the whole map, and Bengaluru sits south of the Vindhyas/Satpuras, on the other side of that line.</p>
   </div>
   <div class="india-map-row">
     <div class="india-map-frame">
@@ -905,7 +897,7 @@
   <div class="about-grid">
     <div>
       <h3>Why it exists</h3>
-      <p>Visitor guides to events happening in Bengaluru often ship with generic "India" branding - Rajasthani motifs, Hindi greetings, north Indian food - none of which is local to this city or this half of the country. This guide starts from what's actually around you: Kannada, Karnataka's own cuisine and crafts, and the neighbourhoods a short auto ride from wherever you're staying.</p>
+      <p>Visitor guides to events happening in Bengaluru often ship with generic "India" branding - Rajasthani motifs, Hindi greetings, north Indian food - none of which is local to this city or to anywhere south of the Vindhyas/Satpuras. This guide starts from what's actually around you: Kannada, Karnataka's own cuisine and crafts, and the neighbourhoods a short auto ride from wherever you're staying.</p>
     </div>
     <div>
       <h3>How to edit the list of places</h3>
@@ -985,6 +977,7 @@
   </div>
 </div>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 /* ============================================================
    CATEGORIES - edit labels / colours here, or add new kinds.
@@ -1000,88 +993,89 @@ const CATEGORIES = [
 
 /* ============================================================
    LOCATIONS - this is the list to customise.
-   mapX / mapY are rough percentage positions on the illustrative
-   map (0 = left/top, 100 = right/bottom). Nudge them by eye.
+   lat / lng are real coordinates, used to place a pin on the
+   OpenStreetMap view (Explore -> Map view). No API key needed -
+   the map runs on Leaflet + OpenStreetMap tiles, both free.
    ============================================================ */
 const LOCATIONS = [
   { id:'lalbagh', name:'Lalbagh Botanical Garden', area:'Basavanagudi', category:'nature',
     blurb:'A 240-acre garden built around a glass house and a 3-billion-year-old rock outcrop. Best before 8am, when it belongs to walkers and mynas.',
-    mapX:38, mapY:66 },
+    lat:12.9507, lng:77.5848 },
   { id:'cubbon', name:'Cubbon Park', area:'Central Bengaluru', category:'nature',
     blurb:'The city\'s green lung, threading past the High Court and State Library. Car-free on Sunday mornings.',
-    mapX:52, mapY:40 },
+    lat:12.9763, lng:77.5929 },
   { id:'veena-thindi', name:'Veena Stores & Thindi Beedi', area:'Malleswaram', category:'food',
     blurb:'A benne masale dosa counter with no seating and no fuss, on the same lane as a dozen other breakfast stalls locals actually rotate through.',
-    mapX:43, mapY:23 },
+    lat:13.0035, lng:77.573 },
   { id:'mltr', name:'Mahalakshmi Tiffin Room (MLTR)', area:'Gandhi Bazaar, Basavanagudi', category:'food',
     blurb:'Been serving the same Gandhi Bazaar lane since 1926, one door down from its far more photographed neighbour. Order the khali dose - a bare, buttery dosa found almost nowhere else.',
-    mapX:36, mapY:71 },
+    lat:12.943, lng:77.573 },
   { id:'atithyaa', name:'Atithyaa', area:'Gandhi Bazaar, Basavanagudi', category:'food', approved:true,
     blurb:'An unlimited Karnataka thali on a kansa plate, serving the same Gandhi Bazaar crowd since 1986 - bisi bele bath, gojju, and palya that change with the season, not the menu.',
-    mapX:36, mapY:70 },
+    lat:12.943, lng:77.5735 },
   { id:'mudde-mess', name:'Mudde Madappa Mess', area:'Gandhi Nagar, near Majestic', category:'food',
     blurb:'A no-frills mess built entirely around ragi mudde - hot millet dumplings with saaru, rice and buttermilk, coupon at the counter, hands washed at the table.',
-    mapX:41, mapY:52 },
+    lat:12.977, lng:77.573 },
   { id:'halli-jonne', name:'Halli Jonne Biriyani', area:'Jayanagar', category:'food',
     blurb:'The donne biryani style done properly - short-grain jonne rice, a green masala base, and the biryani served hot in an areca-leaf donne, not a foil box.',
-    mapX:43, mapY:78 },
+    lat:12.925, lng:77.5938 },
   { id:'vvpuram', name:'VV Puram Food Street', area:'Basavanagudi', category:'food',
     blurb:'A single lane that turns into an open kitchen after sunset - grilled corn, kebabs, and desserts nobody outside Karnataka has heard of.',
-    mapX:37, mapY:72 },
+    lat:12.942, lng:77.575 },
   { id:'mylari', name:'Vinayaka Mylari', area:'Nazarbad, Mysuru', category:'food',
     blurb:'A six-table Mysuru institution since the late 1930s, making one soft, ghee-roasted dosa and nothing else worth asking about. Grab a churmuri from the puffed-rice stalls outside Devaraja Market on the way.',
-    mapX:9, mapY:90 },
+    lat:12.305, lng:76.6553 },
   { id:'toit', name:'Toit Brewpub', area:'Indiranagar', category:'night',
     blurb:'One of the city\'s original craft breweries, credited with starting Bengaluru\'s microbrewery culture in the 2010s.',
-    mapX:70, mapY:44 },
+    lat:12.9716, lng:77.6412 },
   { id:'commercial', name:'Commercial Street & Chickpet', area:'Shivajinagar / Chickpet', category:'craft',
     blurb:'Two markets, two moods: Commercial Street for fashion and export surplus, Chickpet\'s lanes for silk, bangles, and spice by weight.',
-    mapX:54, mapY:32 },
+    lat:12.9828, lng:77.6096 },
   { id:'malleswaram-market', name:'Malleswaram Market', area:'Malleswaram', category:'craft',
     blurb:'Flowers, filter coffee powder, and produce sold the way it has been for generations, a few streets from CTR.',
-    mapX:43, mapY:22 },
+    lat:13.0068, lng:77.573 },
   { id:'ubcity', name:'UB City', area:'Vittal Mallya Road', category:'craft',
     blurb:'The city\'s luxury quarter - useful for seeing how Bengaluru\'s design and jewellery houses reinterpret Karnataka craft for a global shelf.',
-    mapX:56, mapY:46 },
+    lat:12.9716, lng:77.5958 },
   { id:'iskcon', name:'ISKCON Temple Bangalore', area:'Rajajinagar', category:'culture',
     blurb:'A modern temple complex built into a hillside, worth visiting at evening aarti even if you\'re not devotional.',
-    mapX:30, mapY:34 },
+    lat:12.9884, lng:77.5513 },
   { id:'palace', name:'Bangalore Palace', area:'Vasanth Nagar', category:'culture',
     blurb:'A Tudor-style palace that has nothing to do with Rajasthani forts - a reminder that royal Karnataka architecture looked very different.',
-    mapX:48, mapY:36 },
+    lat:12.9987, lng:77.592 },
   { id:'rangashankara', name:'Ranga Shankara', area:'J.P. Nagar', category:'culture',
     blurb:'The city\'s best-loved theatre, running Kannada, English, and regional-language plays most nights of the week.',
-    mapX:46, mapY:80 },
+    lat:12.9089, lng:77.5831 },
   { id:'nandi', name:'Nandi Hills', area:'~60km north', category:'daytrip',
     blurb:'A pre-dawn drive up a hill fort for sunrise above the clouds - a Bengaluru weekend ritual since long before it was scenic on Instagram.',
-    mapX:58, mapY:6 },
+    lat:13.3702, lng:77.6835 },
   { id:'mysuru', name:'Mysuru Palace', area:'~3 hrs south', category:'daytrip',
     blurb:'Karnataka\'s own answer to a "royal palace" - Indo-Saracenic architecture, lit up gold every Sunday evening.',
-    mapX:8, mapY:92 },
+    lat:12.3052, lng:76.6552 },
   { id:'coorg', name:'Coorg (Kodagu)', area:'~5 hrs southwest', category:'daytrip',
     blurb:'Misty coffee estates, Kodava culture, and a cuisine (pandi curry, kadambuttu) unlike anything else on this list.',
-    mapX:4, mapY:70 },
+    lat:12.4244, lng:75.7382 },
   { id:'channapatna', name:'Channapatna', area:'~1.5 hrs south, on the Mysuru road', category:'craft',
     blurb:'The "town of toys" - lacquered wooden toys turned on a lathe, a craft old enough to have a GI tag. Workshops will let you watch.',
-    mapX:22, mapY:80 },
+    lat:12.6514, lng:77.2064 },
   { id:'cauvery-emporium', name:'Cauvery Arts & Crafts Emporium', area:'MG Road', category:'craft',
     blurb:'The state-run showroom for Karnataka craft under one roof: Mysore silk, sandalwood carving, and handloom from as far as Ilkal and Hubballi-Dharwad.',
-    mapX:58, mapY:44 },
+    lat:12.9757, lng:77.6079 },
   { id:'chikmagalur', name:'Chikmagalur', area:'~4 hrs west', category:'daytrip',
     blurb:'Karnataka\'s coffee country - Western Ghats estates, waterfalls, and the trail up Mullayanagiri, the state\'s highest peak.',
-    mapX:6, mapY:44 },
+    lat:13.3161, lng:75.772 },
   { id:'udupi-mangaluru', name:'Udupi & Mangaluru coast', area:'~7 hrs west, or a short flight', category:'daytrip',
     blurb:'Krishna Matt\'s temple kitchens, Malpe\'s beaches, and a coastal cuisine - neer dosa, kori rotti, Mangalorean seafood - worlds from Bengaluru\'s own. Eat at Mitra Samaj by the temple, where the Mangalore bun and goli baje reportedly started.',
-    mapX:2, mapY:52 },
+    lat:13.3409, lng:74.7421 },
   { id:'yakshagana-kendra', name:'Yakshagana Kendra', area:'Udupi', category:'culture',
     blurb:'A training school for Yakshagana, coastal Karnataka\'s all-night dance-drama - towering headgear, painted faces, a live Bhagavatha narrating epics to drums and cymbals. Ask locally for a mela performance nearby; the season runs roughly January to May.',
-    mapX:3, mapY:50 },
+    lat:13.3389, lng:74.7466 },
   { id:'hampi', name:'Hampi', area:'~6-7 hrs north, better as an overnight', category:'daytrip',
     blurb:'The boulder-strewn ruins of the Vijayanagara empire\'s capital - temples, market streets, and elephant stables carved into a lunar landscape.',
-    mapX:14, mapY:16 },
+    lat:15.335, lng:76.46 },
   { id:'vijayapura', name:'Vijayapura (Bijapur)', area:'~9 hrs north, pair with Hampi', category:'daytrip',
     blurb:'Deccan sultanate architecture at its most confident - the Gol Gumbaz dome, second largest in the world, has a whisper gallery worth the echo.',
-    mapX:10, mapY:4 },
+    lat:16.83, lng:75.7361 },
 ];
 
 /* ============================================================
@@ -1239,29 +1233,42 @@ function renderList(){
 }
 
 /* ---------------- render: map view ---------------- */
+/* ---------------- map view (Leaflet + OpenStreetMap, no API key) ---------------- */
+let leafletMap = null;
+let leafletMarkers = [];
 function renderMap(){
-  const wrap = document.getElementById('mapWrap');
+  if(currentView !== 'map') return;
+  if(typeof L === 'undefined'){
+    document.getElementById('mapWrap').innerHTML = '<p style="padding:24px;color:var(--ink-soft);font-size:13.5px;">Map couldn\'t load - this needs an internet connection to fetch map tiles from OpenStreetMap. Try the list view instead.</p>';
+    return;
+  }
   const items = allLocations().filter(l => activeCategory==='all' || l.category===activeCategory);
-  const blobs = `
-    <div class="map-blob" style="left:2%;top:0%;width:30%;height:100%;background:${'#2F5233'}0f;"></div>
-    <div class="map-blob" style="left:30%;top:10%;width:45%;height:75%;border-radius:40% 60% 55% 45%;background:${'#C9962C'}12;"></div>
-    <div class="map-blob" style="left:60%;top:5%;width:35%;height:70%;border-radius:50%;background:${'#7A1F2B'}0d;"></div>
-  `;
-  const pins = items.map(l=>{
+  if(!leafletMap){
+    leafletMap = L.map('mapWrap', { scrollWheelZoom:false });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
+      maxZoom: 18,
+    }).addTo(leafletMap);
+  }
+  leafletMarkers.forEach(m => leafletMap.removeLayer(m));
+  leafletMarkers = [];
+  const bounds = [];
+  items.forEach(l=>{
+    if(typeof l.lat !== 'number' || typeof l.lng !== 'number') return;
     const cat = catMeta(l.category);
-    return `<div class="map-pin" style="left:${l.mapX}%; top:${l.mapY}%;" onclick="scrollToCard('${l.id}')">
-      <span class="label">${l.name}</span>
-      <span class="dot" style="--cat-color:${cat.color}"></span>
-    </div>`;
-  }).join('');
-  wrap.innerHTML = blobs + pins;
-}
-function scrollToCard(id){
-  setView('list');
-  setTimeout(()=>{
-    const el = document.getElementById('listView');
-    el.scrollIntoView({behavior:'smooth', block:'start'});
-  }, 30);
+    const icon = L.divIcon({
+      className: '', html: `<span class="map-pin-icon" style="background:${cat.color}"></span>`,
+      iconSize:[16,16], iconAnchor:[8,15],
+    });
+    const marker = L.marker([l.lat, l.lng], { icon }).addTo(leafletMap);
+    marker.bindPopup(`<div class="map-popup-title">${l.name}</div><div class="map-popup-area">${l.area}</div>${l.blurb}`);
+    leafletMarkers.push(marker);
+    bounds.push([l.lat, l.lng]);
+  });
+  if(bounds.length){
+    leafletMap.fitBounds(bounds, { padding:[28,28], maxZoom:12 });
+  }
+  setTimeout(()=>{ if(leafletMap) leafletMap.invalidateSize(); }, 60);
 }
 
 /* ---------------- view toggle ---------------- */
@@ -1435,7 +1442,7 @@ function renderCategorySelect(){
   const sel = document.getElementById('f-category');
   sel.innerHTML = CATEGORIES.map(c=>`<option value="${c.id}">${c.label}</option>`).join('');
 }
-document.getElementById('addForm').addEventListener('submit', function(e){
+document.getElementById('addForm').addEventListener('submit', async function(e){
   e.preventDefault();
   const name = document.getElementById('f-name').value.trim();
   const area = document.getElementById('f-area').value.trim();
@@ -1443,12 +1450,26 @@ document.getElementById('addForm').addEventListener('submit', function(e){
   const blurb = document.getElementById('f-blurb').value.trim();
   if(!name || !area || !blurb) return;
   const id = 'custom-' + Date.now();
-  customLocations.push({
-    id, name, area, category, blurb,
-    mapX: 20 + Math.random()*60, mapY: 20 + Math.random()*60
-  });
+  const submitBtn = this.querySelector('.submit-btn');
+  const originalLabel = submitBtn.textContent;
+  submitBtn.textContent = 'Finding it on the map...';
+  submitBtn.disabled = true;
+  let lat = 12.9716 + (Math.random()-0.5)*0.06, lng = 77.5946 + (Math.random()-0.5)*0.06; // central Bengaluru, jittered fallback
+  try{
+    // Free geocoding via OpenStreetMap Nominatim - no API key needed.
+    const q = encodeURIComponent(area + ', Karnataka, India');
+    const res = await fetch(`https://nominatim.openstreetmap.org/search?q=${q}&format=json&limit=1`);
+    const data = await res.json();
+    if(data && data[0]){
+      lat = parseFloat(data[0].lat);
+      lng = parseFloat(data[0].lon);
+    }
+  }catch(err){ /* offline or blocked - keep the jittered fallback so the pin still lands somewhere reasonable */ }
+  customLocations.push({ id, name, area, category, blurb, lat, lng });
   saveCustom();
   this.reset();
+  submitBtn.textContent = originalLabel;
+  submitBtn.disabled = false;
   activeCategory = 'all';
   renderPills();
   renderList();
