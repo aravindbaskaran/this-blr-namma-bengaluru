@@ -51,19 +51,12 @@
     margin:0;
   }
   .kn{font-family:'Baloo Tamma 2', sans-serif; font-weight:600;}
-  .kn-cycle{display:inline-grid !important; vertical-align:top;}
-  .kn-cycle > *{grid-area:1/1;}
-  .kn-cycle .kn-native{font-family:'Baloo Tamma 2', sans-serif; animation:knFade 7s ease-in-out infinite;}
-  .kn-cycle .kn-en{font-family:'Baloo 2', sans-serif; animation:knFade 7s ease-in-out infinite; animation-delay:-3.5s;}
-  @keyframes knFade{
-    0%, 42% { opacity:1; }
-    50%, 92% { opacity:0; }
-    100% { opacity:1; }
-  }
-  @media (prefers-reduced-motion: reduce){
-    .kn-cycle .kn-native{animation:none; opacity:0;}
-    .kn-cycle .kn-en{animation:none; opacity:1;}
-  }
+  .kn-cycle{display:inline-grid !important; vertical-align:top; cursor:default;}
+  .kn-cycle > *{grid-area:1/1; transition:opacity .25s ease;}
+  .kn-cycle .kn-native{font-family:'Baloo Tamma 2', sans-serif; opacity:1;}
+  .kn-cycle .kn-en{font-family:'Baloo 2', sans-serif; opacity:0;}
+  .kn-cycle:hover .kn-native, .kn-cycle:focus-within .kn-native{opacity:0;}
+  .kn-cycle:hover .kn-en, .kn-cycle:focus-within .kn-en{opacity:1;}
   a{color:inherit;}
   img,svg{display:block;max-width:100%;}
   button{font-family:inherit;cursor:pointer;}
@@ -181,7 +174,7 @@
   .card{
     background:var(--cream); border:1px solid var(--line); border-left:5px solid var(--cat-color, var(--maroon));
     border-radius:var(--radius); padding:18px 18px 16px;
-    display:flex; flex-direction:column; gap:10px;
+    display:flex; flex-direction:column; gap:10px; position:relative;
   }
   .card-top{display:flex; justify-content:space-between; align-items:flex-start; gap:10px;}
   .card-title-row{display:flex; align-items:center; gap:7px;}
@@ -190,8 +183,12 @@
   .card-pronounce{display:flex; align-items:baseline; gap:6px; margin-top:4px; flex-wrap:wrap;}
   .card-kn{font-size:13px; color:var(--maroon);}
   .card-say{font-size:11px; color:var(--ink-soft); font-style:italic;}
-  .approved-badge{width:19px; height:19px; flex:none; color:var(--gold); cursor:help;}
-  .approved-badge path, .approved-badge circle{stroke:currentColor; fill:none; stroke-width:1.3;}
+  .approved-badge{
+    position:absolute; top:10px; right:10px; width:46px; height:46px;
+    color:var(--gold); opacity:0.85; transform:rotate(8deg); cursor:help; pointer-events:none;
+  }
+  .approved-badge path, .approved-badge circle{stroke:currentColor; fill:none; stroke-width:1;}
+  .approved-badge .stamp-ring{stroke-width:1.1; stroke-dasharray:2 1.6;}
   .tag{
     font-size:11px; font-weight:600; text-transform:none; letter-spacing:0.01em;
     color:var(--cat-color, var(--maroon)); background:color-mix(in srgb, var(--cat-color, var(--maroon)) 16%, var(--cream));
@@ -204,8 +201,9 @@
     flex:none; background:var(--cream-2);
   }
   .camera-roll-empty{
-    font-size:11px; color:var(--ink-soft); opacity:0.7; font-style:italic; margin-top:-2px;
+    font-size:11px; color:var(--ink-soft); opacity:0.85; font-style:italic; margin-top:-2px;
   }
+  .camera-roll-empty a{color:var(--maroon); text-decoration:underline; font-style:normal;}
   .add-btn{
     align-self:flex-start; border:1px solid var(--line); background:var(--cream-2);
     padding:6px 12px; border-radius:16px; font-size:13px; font-weight:600; color:var(--ink);
@@ -277,6 +275,9 @@
   .region-card > *{position:relative; z-index:1;}
   .region-card h4{font-family:'Baloo 2',sans-serif; font-size:15.5px; font-weight:600; margin-bottom:6px; display:flex; align-items:center; gap:6px;}
   .region-card p{font-size:12.5px; color:var(--ink-soft); line-height:1.45; position:relative;}
+  .region-pronounce{display:flex; align-items:baseline; gap:6px; margin-bottom:6px; position:relative; flex-wrap:wrap;}
+  .region-kn{font-size:13px; color:var(--region-color, var(--maroon));}
+  .region-say{font-size:11px; color:var(--ink-soft); font-style:italic;}
   .flavor-list{margin-top:11px; display:flex; flex-direction:column; gap:4px; position:relative;}
   .flavor-item{font-size:11px; color:var(--ink-soft); display:flex; align-items:baseline; gap:6px; line-height:1.4;}
   .flavor-item b{color:var(--ink); font-weight:600;}
@@ -327,15 +328,15 @@
   .tnt-row .also{color:var(--cream); font-size:16px; font-weight:500;}
   .tnt-arrow{color:var(--gold-light); text-align:center; font-size:15px;}
   .tnt-label-row{display:flex; justify-content:space-between; padding-top:6px; font-size:12px; color:rgba(246,241,228,0.55); text-transform:none;}
-  .india-map-row{display:flex; gap:30px; align-items:center; flex-wrap:wrap; margin-bottom:26px;}
-  .india-map-frame{
-    background:var(--cream); border-radius:var(--radius); padding:10px; flex:none;
-    box-shadow:0 2px 10px rgba(0,0,0,0.18);
+  .india-stat-row{display:flex; gap:32px; align-items:center; flex-wrap:wrap; margin-bottom:26px;}
+  .india-stat{
+    flex:none; text-align:center; border:1px solid rgba(246,241,228,0.25); border-radius:var(--radius);
+    padding:18px 24px;
   }
-  .india-map{width:110px; height:auto; display:block;}
-  .india-map-caption{display:flex; flex-direction:column; gap:8px; max-width:480px;}
+  .india-stat strong{display:block; font-family:'Baloo 2',sans-serif; font-size:28px; color:var(--gold-light); white-space:nowrap;}
+  .india-stat span{display:block; font-size:11.5px; color:rgba(246,241,228,0.7); margin-top:4px; max-width:150px;}
+  .india-map-caption{display:flex; flex-direction:column; gap:8px; max-width:520px;}
   .india-map-caption p{font-size:13.5px; color:rgba(246,241,228,0.85); margin:0;}
-  .india-map-caption .map-credit{font-size:11px; color:rgba(246,241,228,0.5); margin-top:2px;}
 
   /* ---------- skip the crowd ---------- */
   .skip-section{background:var(--cream-2);}
@@ -366,7 +367,13 @@
     opacity:0.12; pointer-events:none;
   }
   .elephant-mark path{stroke:var(--cream); fill:none; stroke-width:1.4;}
-  .phrase-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px; position:relative;}
+  .phrase-grid{display:flex; flex-direction:column; gap:24px; position:relative;}
+  .phrase-group-title{
+    font-family:'Baloo 2',sans-serif; font-size:14px; font-weight:700; color:var(--gold-light);
+    text-transform:none; letter-spacing:0.02em; margin-bottom:10px;
+    padding-bottom:6px; border-bottom:1px solid rgba(246,241,228,0.2);
+  }
+  .phrase-group-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px;}
   .phrase-card{
     background:rgba(246,241,228,0.08); border:1px solid rgba(246,241,228,0.22); border-radius:var(--radius);
     padding:16px 18px;
@@ -379,6 +386,11 @@
     display:flex; align-items:center; justify-content:center;
   }
   .speak-btn:hover{background:rgba(246,241,228,0.22);}
+  .speak-btn-sm{
+    background:color-mix(in srgb, var(--maroon) 10%, transparent); border:1px solid var(--line);
+    color:var(--maroon); width:20px; height:20px; font-size:10px;
+  }
+  .speak-btn-sm:hover{background:color-mix(in srgb, var(--maroon) 18%, transparent);}
   .phrase-card .p-translit{font-size:13px; font-style:italic; color:rgba(246,241,228,0.75); margin-top:2px;}
   .p-say{font-size:11.5px; color:var(--gold-light); margin-top:3px; letter-spacing:0.02em;}
   .phrase-card .p-meaning{font-size:14.5px; font-weight:600; margin-top:8px;}
@@ -503,7 +515,7 @@
   }
 
   /* ---------- about / customize ---------- */
-  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+  .about-grid{display:grid; grid-template-columns:1fr; max-width:640px; gap:32px;}
   .about-grid h3{font-size:16px; margin-bottom:8px;}
   .about-grid p{font-size:14.5px; color:var(--ink-soft);}
   code{background:var(--cream-2); padding:2px 6px; border-radius:4px; font-size:13px;}
@@ -580,11 +592,11 @@
 
 <div class="hero">
   <div class="hero-inner">
-    <div class="eyebrow">A guide made by people who live here</div>
+    <div class="eyebrow">For the curious ones, who love learning about the heritage and history that surrounds them</div>
     <h1>India is not one story.<br>Bengaluru isn't either.</h1>
     <p class="lede">Most guides to "India" default to the north - the Taj, the sitar, Bollywood, wheat and paneer. This one starts from Bengaluru: a garden city of jacaranda trees, filter kaapi, five languages within a day's drive, and a few thousand years of temple-building next door to a few decades of tech campuses.</p>
     <div class="hero-stats">
-      <div><strong>6</strong><span>languages spoken daily in the metro</span></div>
+      <div><strong>6</strong><span>languages heard daily, one first love (Kannada)</span></div>
       <div><strong>900+ m</strong><span>elevation - why it stays mild</span></div>
       <div><strong>3-4 hrs</strong><span>to Mysuru, Coorg, or Hampi</span></div>
     </div>
@@ -606,13 +618,14 @@
     <div class="region-strip-head">
       <div class="head-with-icon">
         <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-2 2-1 4 0 5-3 0-5 2-5 5 0 4 3 6 5 8 2-2 5-4 5-8 0-3-2-5-5-5 1-1 2-3 0-5Z"/></svg>
-        <span class="kn kn-cycle"><span class="kn-native">ಆರು ಎಳೆಗಳು</span><span class="kn-en">six threads of Karnataka</span></span>
+        <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಆರು ಎಳೆಗಳು</span><span class="kn-en">six threads of Karnataka</span></span>
       </div>
       <h2>Bengaluru is one weave in a bigger loom</h2>
     </div>
     <div class="region-row">
       <div class="region-card" style="--region-color:var(--jacaranda); --region-pattern:repeating-linear-gradient(45deg, transparent 0 9px, color-mix(in srgb, var(--jacaranda) 40%, transparent) 9px 10px)">
         <h4>Mysuru</h4>
+        <div class="region-pronounce"><span class="kn region-kn">ಮೈಸೂರು</span><span class="region-say">My-sooru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಮೈಸೂರು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Wodeyar palaces, Mysore silk shot through with gold zari, sandalwood and Dasara's elephant processions.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Mysore Pak</div>
@@ -625,6 +638,7 @@
       </div>
       <div class="region-card" style="--region-color:var(--coastal-teal); --region-pattern:radial-gradient(circle at 12px 12px, color-mix(in srgb, var(--coastal-teal) 35%, transparent) 3px, transparent 4px); --region-pattern-size:22px 22px;">
         <h4>Udupi &amp; Mangaluru</h4>
+        <div class="region-pronounce"><span class="kn region-kn">ಉಡುಪಿ - ಮಂಗಳೂರು</span><span class="region-say">Udupi - Mangaluru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಉಡುಪಿ ಮಂಗಳೂರು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Kasavu-bordered cottons, red-tiled roofs, Yakshagana masks, and a coastline running on neer dosa and kori rotti.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Mangalore buns</div>
@@ -633,13 +647,14 @@
           <div class="flavor-item"><span class="flavor-dot hot"></span><b>Hot</b> - Kashaya</div>
         </div>
         <div class="region-wear"><b>Wear</b> - Everyday, a simple lungi and shirt; on stage, the towering headgear and painted faces of Yakshagana, coastal Karnataka's own dance-drama.</div>
-        <div class="region-movie"><b>Watch</b> - <i>RangiTaranga</i> (2015), a blockbuster thriller set in a coastal Karnataka village, with a soundtrack partly in Tulu.</div>
+        <div class="region-movie"><b>Watch</b> - <i>Su From So</i> (2025), a coastal-village comedy-horror shot around Someshwara that became the 7th highest-grossing Kannada film ever - proof the coast still sets the trends.</div>
       </div>
       <div class="region-card" style="--region-color:var(--kasuti-black); --region-pattern:linear-gradient(color-mix(in srgb, var(--kasuti-black) 30%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--kasuti-black) 30%, transparent) 1px, transparent 1px); --region-pattern-size:13px 13px;">
         <h4>Hubballi-Dharwad-Belagavi</h4>
+        <div class="region-pronounce"><span class="kn region-kn">ಹುಬ್ಬಳ್ಳಿ-ಧಾರವಾಡ-ಬೆಳಗಾವಿ</span><span class="region-say">Hubballi-Dhaarwaad-Belagaavi</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಹುಬ್ಬಳ್ಳಿ ಧಾರವಾಡ ಬೆಳಗಾವಿ')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Kasuti embroidery worked in black cotton, Ilkal sarees with their temple-tower pallu, jowar rotti country.</p>
         <div class="flavor-list">
-          <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Dharwad peda</div>
+          <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Dharwad peda &amp; Belagavi kunda</div>
           <div class="flavor-item"><span class="flavor-dot spicy"></span><b>Spicy</b> - Yenne badnekai</div>
           <div class="flavor-item"><span class="flavor-dot cold"></span><b>Cold</b> - Majjige</div>
           <div class="flavor-item"><span class="flavor-dot hot"></span><b>Hot</b> - Jolada rotti</div>
@@ -649,18 +664,20 @@
       </div>
       <div class="region-card" style="--region-color:var(--hampi-stone); --region-pattern:radial-gradient(circle at 22% 28%, color-mix(in srgb, var(--hampi-stone) 30%, transparent) 7px, transparent 8px), radial-gradient(circle at 72% 62%, color-mix(in srgb, var(--hampi-stone) 24%, transparent) 9px, transparent 10px); --region-pattern-size:60px 60px;">
         <h4>Hampi &amp; Vijayapura</h4>
+        <div class="region-pronounce"><span class="kn region-kn">ಹಂಪಿ - ವಿಜಯಪುರ</span><span class="region-say">Hampi - Vijayapura</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಹಂಪಿ ವಿಜಯಪುರ')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Vijayanagara boulder-ruins and Deccan sultanate domes - two very different empires, one dry northern landscape.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Kesari bath</div>
           <div class="flavor-item"><span class="flavor-dot spicy"></span><b>Spicy</b> - Shenga chutney pudi</div>
           <div class="flavor-item"><span class="flavor-dot cold"></span><b>Cold</b> - Nimbu sherbet</div>
-          <div class="flavor-item"><span class="flavor-dot hot"></span><b>Hot</b> - Roadside cha</div>
+          <div class="flavor-item"><span class="flavor-dot hot"></span><b>Hot</b> - Roadside chaha</div>
         </div>
         <div class="region-wear"><b>Wear</b> - The angarkha and pagadi of the Deccan sultanate courts around Vijayapura - a different silhouette from anything worn further south.</div>
         <div class="region-movie"><b>Watch</b> - <i>James</i> (2022), a Puneeth Rajkumar blockbuster with a schedule shot on location in Hampi and Kamalapura.</div>
       </div>
       <div class="region-card" style="--region-color:var(--coffee); --region-pattern:radial-gradient(ellipse 4px 6px at 14px 14px, color-mix(in srgb, var(--coffee) 38%, transparent) 40%, transparent 41%); --region-pattern-size:24px 24px;">
         <h4>Chikmagalur &amp; Kodagu</h4>
+        <div class="region-pronounce"><span class="kn region-kn">ಚಿಕ್ಕಮಗಳೂರು - ಕೊಡಗು</span><span class="region-say">Chikka-magaluru - Kodagu</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಚಿಕ್ಕಮಗಳೂರು ಕೊಡಗು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Western Ghats coffee estates, misty ridgelines, and the origin point of most filter kaapi in your cup.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Baale halwa</div>
@@ -673,6 +690,7 @@
       </div>
       <div class="region-card" style="--region-color:var(--terracotta); --region-pattern:repeating-linear-gradient(0deg, color-mix(in srgb, var(--terracotta) 30%, transparent) 0 2px, transparent 2px 15px);">
         <h4>Bengaluru</h4>
+        <div class="region-pronounce"><span class="kn region-kn">ಬೆಂಗಳೂರು</span><span class="region-say">Bengaluru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಬೆಂಗಳೂರು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Where all of the above land in one city - in its markets, its emporiums, and its Kannadiga kitchens.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Iyengar bakery benne biscuit</div>
@@ -692,10 +710,14 @@
   <div class="section-head">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v4M12 22v-4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3.5"/></svg>
-      <span class="kn kn-cycle"><span class="kn-native">ಇತಿಹಾಸ</span><span class="kn-en">a short history</span></span>
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಇತಿಹಾಸ</span><span class="kn-en">a short history</span></span>
     </div>
     <h2>A garden and lake city, long before it was a tech city</h2>
     <p>Bengaluru is nearly 500 years old. The software industry accounts for maybe the last 15 of those - worth knowing before you decide which parts of the city are "the real one."</p>
+  </div>
+  <div class="rename-note">
+    <h4>Ground older than the city, older than most continents</h4>
+    <p>Before any of the dates below, there's the land itself. Bengaluru sits on the Peninsular Gneiss - among the oldest exposed rock on Earth, dated to 3-3.4 billion years, older than the Himalayas, older than dinosaurs, older than atmospheric oxygen. The best exposures are at Lalbagh and Basavanagudi's Bugle Rock, both declared National Geological Monuments in 1975. This bedrock is part of the Dharwar Craton, a fragment of the ancient supercontinent Gondwana that once also included Antarctica, Africa and Australia, before continental drift pulled them apart. The city's undulating, hilly terrain and its elevation - over 900m, with no major river nearby - is exactly why it grew into a "city of a thousand lakes": rainwater was dammed into cascading tanks down three natural valleys, over 2,300 of them by 1897. Fewer than 200 survive today, but the terrain that made them possible hasn't gone anywhere.</p>
   </div>
   <div class="rename-note">
     <h4>Why Bengaluru, not Bangalore</h4>
@@ -807,7 +829,7 @@
   <div class="section-head">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L15.5 6.5 H8.5 Z M7 10 H17 V6.5 H7 Z M4.5 15 H19.5 V10 H4.5 Z M2.5 21.5 H21.5 V15 H2.5 Z"/></svg>
-      <span class="kn kn-cycle"><span class="kn-native">ಅನ್ವೇಷಿಸಿ</span><span class="kn-en">explore</span></span>
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಅನ್ವೇಷಿಸಿ</span><span class="kn-en">explore</span></span>
     </div>
     <h2>Places, in the words of people who'd actually take you there</h2>
     <p>Filter by kind, add anything to your agenda, and switch to the map to see how close things really are. A small <span class="kn" style="font-size:13px;">ಗಂಡಭೇರುಂಡ</span> mark on a card means it's personally recommended, not just popular.</p>
@@ -823,19 +845,19 @@
   <div class="section-head">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h11M11 4l4 4-4 4M21 16H10M13 20l-4-4 4-4"/></svg>
-      <span class="kn kn-cycle"><span class="kn-native">ಇದು, ಅದಲ್ಲ</span><span class="kn-en">this, not that</span></span>
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಇದು, ಅದಲ್ಲ</span><span class="kn-en">this, not that</span></span>
     </div>
     <h2>What "India" usually means on screen, and what's also true here</h2>
     <p>None of this is a correction - the north is real too. It's just not the whole map, and Bengaluru sits south of the Vindhyas, on the other side of that line.</p>
   </div>
-  <div class="india-map-row">
-    <div class="india-map-frame">
-      <img class="india-map" src="https://upload.wikimedia.org/wikipedia/commons/6/6d/India_Karnataka_locator_map.svg" alt="Locator map of India with Karnataka highlighted" loading="lazy">
+  <div class="india-stat-row">
+    <div class="india-stat">
+      <strong>~1,750 km</strong>
+      <span>south of Delhi as the crow flies (over 2,100 km by road)</span>
     </div>
     <div class="india-map-caption">
-      <p>Karnataka, highlighted - roughly 1,750 km south of Delhi as the crow flies (over 2,100 km by road), and further still from the Delhi-Agra-Jaipur "Golden Triangle" that supplies most default "India" imagery on screen - even India's own "Incredible India" campaigns leaned on Rajasthan and the Taj Mahal as the one signifier that "needs no additional context." Kerala's backwaters get an occasional look-in; Karnataka rarely does.</p>
-      <p>Everything on this list lives inside that highlighted patch, a day's drive from Bengaluru at most.</p>
-      <p class="map-credit">Map: India Karnataka locator map, Wikimedia Commons (CC BY-SA)</p>
+      <p>Further still from the Delhi-Agra-Jaipur "Golden Triangle" that supplies most default "India" imagery on screen - even India's own "Incredible India" campaigns leaned on Rajasthan and the Taj Mahal as the one signifier that "needs no additional context." Kerala's backwaters get an occasional look-in; Karnataka rarely does.</p>
+      <p>Everything on this list lives that far south, or further, a day's drive from Bengaluru at most.</p>
     </div>
   </div>
   <div class="tnt-label-row"><span>Often the default picture</span><span>Also true, an hour or a language away</span></div>
@@ -846,7 +868,7 @@
   <div class="section-head">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V12c0-4.5 3.5-8 8-8M16 4L12 8M16 4l0 5.5"/></svg>
-      <span class="kn kn-cycle"><span class="kn-native">ಜನಜಂಗುಳಿ ಬೇಡ</span><span class="kn-en">skip the crowd</span></span>
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಜನಜಂಗುಳಿ ಬೇಡ</span><span class="kn-en">skip the crowd</span></span>
     </div>
     <h2>Some of the "must-see" spots aren't worth the queue</h2>
     <p>A few places show up on every visitor checklist mostly because they're on every visitor checklist - the actual experience is a parking jam, a ticket line, and a photo you could've taken from a search engine. Here's what to do instead, for the same amount of time.</p>
@@ -858,7 +880,7 @@
   <div class="section-head">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V10l8-6 8 6v11 M4 21h16 M9 21v-6h6v6"/></svg>
-      <span class="kn kn-cycle"><span class="kn-native">ಹಬ್ಬಗಳು</span><span class="kn-en">festivals worth planning around</span></span>
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಹಬ್ಬಗಳು</span><span class="kn-en">festivals worth planning around</span></span>
     </div>
     <h2>Karnataka doesn't run out of reasons to celebrate</h2>
     <p>Some of these are city-specific, some run the length of the coast for months - worth checking dates before you go, since most follow the lunar calendar and move every year.</p>
@@ -870,7 +892,7 @@
   <div class="section-head">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3v8a4 4 0 0 0 4 4v6M8 3v7M12 3v7M17 3c-2 2-2 5 0 7-1 1-1 3-1 3v8"/></svg>
-      <span class="kn kn-cycle"><span class="kn-native">ಖಾದ್ಯಗಳು</span><span class="kn-en">the dishes, by name</span></span>
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಖಾದ್ಯಗಳು</span><span class="kn-en">the dishes, by name</span></span>
     </div>
     <h2>Every dish named on this page, in one place</h2>
     <p>What each one actually is, how it's written in Kannada, and roughly how to say it - pulled together from the region cards and food stops above, so you're not guessing at a menu.</p>
@@ -882,7 +904,7 @@
   <div class="section-head">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14c0-3 2-5 5-5h1V6a2 2 0 0 1 4 0v3c3 0 5 2 5 5v4H4Z M9 18v2M15 18v2M4 12H2"/></svg>
-      <span class="kn kn-cycle"><span class="kn-native">ಸ್ವಲ್ಪ ಕನ್ನಡ ಕಲಿಯಿರಿ</span><span class="kn-en">learn a little Kannada</span></span>
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಸ್ವಲ್ಪ ಕನ್ನಡ ಕಲಿಯಿರಿ</span><span class="kn-en">learn a little Kannada</span></span>
     </div>
     <h2>Words that go further than any guidebook</h2>
     <p>Kannada is Karnataka's official language and Bengaluru's mother tongue, even if English and Hindi both get by. Try a few of these in an auto, a darshini, or a market stall - people notice, and it usually gets you a warmer price or a warmer welcome. Tap the speaker icon to hear a phrase - your browser needs a Kannada voice installed for it to sound right, so treat it as a rough guide, not a lesson.</p>
@@ -896,7 +918,7 @@
 
 <section id="add-yours">
   <div class="section-head">
-    <span class="kn kn-cycle"><span class="kn-native">ನಿಮ್ಮ ಸ್ಥಳ ಸೇರಿಸಿ</span><span class="kn-en">add a spot</span></span>
+    <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ನಿಮ್ಮ ಸ್ಥಳ ಸೇರಿಸಿ</span><span class="kn-en">add a spot</span></span>
     <h2>Know a place that should be here?</h2>
     <p>Add it below - it'll appear in Explore right away and stay saved on this device for next time.</p>
   </div>
@@ -926,16 +948,16 @@
   <div class="section-head">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2"/><circle cx="12" cy="4" r="1.4"/><circle cx="12" cy="20" r="1.4"/><circle cx="4" cy="12" r="1.4"/><circle cx="20" cy="12" r="1.4"/><circle cx="6.3" cy="6.3" r="1.1"/><circle cx="17.7" cy="6.3" r="1.1"/><circle cx="6.3" cy="17.7" r="1.1"/><circle cx="17.7" cy="17.7" r="1.1"/></svg>
-      <span class="kn kn-cycle"><span class="kn-native">ಈ ಮಾರ್ಗದರ್ಶಿ ಬಗ್ಗೆ</span><span class="kn-en">about this guide</span></span>
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಈ ಮಾರ್ಗದರ್ಶಿ ಬಗ್ಗೆ</span><span class="kn-en">about this guide</span></span>
     </div>
     <h2>What this is, and how to make it yours</h2>
   </div>
   <div class="creator-note">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-2 2-1 4 0 5-3 0-5 2-5 5 0 4 3 6 5 8 2-2 5-4 5-8 0-3-2-5-5-5 1-1 2-3 0-5Z"/></svg>
-      <span class="kn kn-cycle"><span class="kn-native">ಬರೆದವರ ಬಗ್ಗೆ</span><span class="kn-en">about the person behind this</span></span>
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಬರೆದವರ ಬಗ್ಗೆ</span><span class="kn-en">about the person behind this</span></span>
     </div>
-    <p>I was born in Pondicherry, and by the time I got to Bengaluru I'd already been through seven schools and two colleges spread across Uttar Pradesh, Andhra Pradesh and Telangana, Tamil Nadu, and Kolkata. Somewhere in that shuffle, one thing became obvious: the best way to actually enjoy a place is to live it like a local, not visit it like a checklist.</p>
+    <p>I was born in Pondicherry, and by the time I got to Bengaluru I'd already been through seven schools and two colleges spread across Uttar Pradesh, Andhra Pradesh and Telangana, Tamil Nadu, and Kolkata. Somewhere in that shuffle, one thing became obvious: the best way to actually enjoy a place is to live it like a local, not visit it like a checklist. I've moved around so much that I don't really belong anywhere anymore - which, funnily enough, means I belong everywhere a little bit too.</p>
     <p>Bengaluru is as representative of India as anywhere else - but it holds far more than the software-and-startups image most people carry in from outside. As an outsider who's chosen to stay, I've come to think the city's older identity, the one built over centuries and not just the last two decades, deserves a guide of its own.</p>
     <p>There's also a narrower reason this page cites its sources. A lot of what gets said about Bengaluru - in listicles, reels, "hidden gem" posts - quietly overrides the work and context that came before it, without crediting where any of it actually came from. This page isn't trying to correct that or relitigate anyone's claim to the city. It's just trying to keep the reference-worthy details - the founding date, the lake names, the source of a dish or a craft - written down with a source attached, so they don't have to be rediscovered from scratch every few years.</p>
   </div>
@@ -944,11 +966,6 @@
       <h3>Why it exists</h3>
       <p>Visitor guides to events happening in Bengaluru often ship with generic "India" branding - Rajasthani motifs, Hindi greetings, north Indian food - none of which is local to this city or to anywhere south of the Vindhyas. This guide starts from what's actually around you: Kannada, Karnataka's own cuisine and crafts, and the neighbourhoods a short auto ride from wherever you're staying.</p>
     </div>
-    <div>
-      <h3>How to edit the list of places</h3>
-      <p>Every location lives in one array near the top of this file's script, named <code>LOCATIONS</code>. Each entry has a name, area, category, one-line blurb, a rough map position (<code>mapX</code>/<code>mapY</code> as percentages), an optional <code>photos</code> array of image URLs - leave it out and the card shows a placeholder instead - and an optional <code>approved:true</code> flag, which adds a small Gandaberunda mark to the card as a personal "recommended" stamp, separate from how popular or crowded a place is. Duplicate an entry and edit the fields - no other part of the page needs to change. Categories are defined just above it in <code>CATEGORIES</code>, so you can rename, recolour, or add one. The "this, not that", "skip the crowd" and phrasebook lists work the same way, in <code>NOT_THAT</code>, <code>SKIP_CROWD</code> and <code>PHRASES</code>.</p>
-      <p>The only place this page would ever need a Google API key is the <code>photos</code> array above, if you want it pulling live photos from Google Maps/Places instead of URLs you paste in yourself. That's a paid, billing-enabled key you'd manage on your own Google Cloud account - nothing here calls out to Google on its own, and everything else on this page runs with no key and no external service at all.</p>
-    </div>
   </div>
 </section>
 
@@ -956,7 +973,7 @@
   <div class="section-head">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h10l4 4v14H6z M16 3v4h4 M9 12h8 M9 16h8 M9 8h3"/></svg>
-      <span class="kn kn-cycle"><span class="kn-native">ಆಕರಗಳು</span><span class="kn-en">sources &amp; further reading</span></span>
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಆಕರಗಳು</span><span class="kn-en">sources &amp; further reading</span></span>
     </div>
     <h2>Where this came from</h2>
     <p>The history, crafts and regional detail on this page draw on the following - mostly Wikipedia, for stability and easy cross-checking. Worth reading past this page if any of it caught your interest.</p>
@@ -966,6 +983,8 @@
       <h4>History &amp; the city</h4>
       <ul>
         <li><a href="https://en.wikipedia.org/wiki/Bengaluru" target="_blank" rel="noopener">Bengaluru - overview</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Peninsular_Gneiss" target="_blank" rel="noopener">Peninsular Gneiss, the bedrock beneath the city</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Lakes_in_Bengaluru" target="_blank" rel="noopener">Lakes in Bengaluru</a></li>
         <li><a href="https://en.wikipedia.org/wiki/Kempe_Gowda_I" target="_blank" rel="noopener">Kempe Gowda I, the city's founder</a></li>
         <li><a href="https://en.wikipedia.org/wiki/Lal_Bagh" target="_blank" rel="noopener">Lalbagh Botanical Garden</a></li>
         <li><a href="https://en.wikipedia.org/wiki/Kingdom_of_Mysore" target="_blank" rel="noopener">Kingdom of Mysore</a></li>
@@ -998,6 +1017,7 @@
         <li><a href="https://en.wikipedia.org/wiki/Hampi" target="_blank" rel="noopener">Hampi</a></li>
         <li><a href="https://en.wikipedia.org/wiki/Gol_Gumbaz" target="_blank" rel="noopener">Gol Gumbaz, Vijayapura</a></li>
         <li><a href="https://en.wikipedia.org/wiki/Kodava_people" target="_blank" rel="noopener">Kodava people, Kodagu</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Buta_Kola" target="_blank" rel="noopener">Bhuta Kola, Tulu Nadu spirit worship</a></li>
         <li><a href="https://en.wikipedia.org/wiki/Udupi_cuisine" target="_blank" rel="noopener">Udupi cuisine</a></li>
       </ul>
     </div>
@@ -1006,7 +1026,7 @@
 
 <div class="kasuti-divider"></div>
 <footer>
-  <span class="kn kn-cycle"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
+  <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
   <p>Made for people spending time in Bengaluru. Edit freely - this file has no dependencies beyond two web fonts.</p>
 </footer>
 
@@ -1035,6 +1055,32 @@ const CATEGORIES = [
   { id:'night',   label:'Evenings out',      color:'#48326E' },
   { id:'daytrip', label:'Day trips',         color:'#3F8F57' },
 ];
+
+/* ============================================================
+   HOW TO EDIT THIS FILE - for anyone with code access.
+
+   Every location lives in the LOCATIONS array just below. Each
+   entry has a name, area, category, one-line blurb, a real
+   lat/lng (used to place a pin on the OpenStreetMap view under
+   Explore -> Map view - no API key needed, Leaflet + OpenStreetMap
+   tiles are both free), an optional photos array of image URLs
+   (leave it out and the card shows a placeholder instead), and an
+   optional approved:true flag, which stamps a Gandaberunda mark on
+   the card as a personal "recommended" pick, separate from how
+   popular or crowded a place is. Duplicate an entry and edit the
+   fields - no other part of the page needs to change. Categories
+   are defined just above LOCATIONS, in CATEGORIES, so you can
+   rename, recolour, or add one. The "this, not that", "skip the
+   crowd", festivals, dishes and phrasebook lists work the same
+   way, in NOT_THAT, SKIP_CROWD, FESTIVALS, DISHES and PHRASES.
+
+   The only place this page would ever need a Google API key is
+   the photos array above, if you want it pulling live photos from
+   Google Maps/Places instead of URLs you paste in yourself - a
+   paid, billing-enabled key you'd manage on your own Google Cloud
+   account. Nothing here calls out to Google on its own; everything
+   else on this page runs with no key and no external service.
+   ============================================================ */
 
 /* ============================================================
    LOCATIONS - this is the list to customise.
@@ -1106,6 +1152,9 @@ const LOCATIONS = [
   { id:'cauvery-emporium', name:'Cauvery Arts & Crafts Emporium', area:'MG Road', category:'craft',
     blurb:'The state-run showroom for Karnataka craft under one roof: Mysore silk, sandalwood carving, and handloom from as far as Ilkal and Hubballi-Dharwad.',
     kn:'ಕಾವೇರಿ ಕರಕುಶಲ ಮಳಿಗೆ', say:'Kaaveri Kara-kushala Malige', lat:12.9757, lng:77.6079 },
+  { id:'babusingh-peda', name:'Babusingh Thakur Peda', area:'Line Bazaar, Dharwad, ~7-8 hrs north', category:'food',
+    blurb:'The original Dharwad Peda shop - over 175 years on the same Line Bazaar spot, run by the sixth generation of the same family. The queues for it are reportedly why the street is called Line Bazaar in the first place.',
+    kn:'ಬಾಬುಸಿಂಗ್ ಠಾಕೂರ್ ಪೇಡಾ', say:'Baabu-singh Thaakur Pedaa', lat:15.4589, lng:75.0078 },
   { id:'chikmagalur', name:'Chikmagalur', area:'~4 hrs west', category:'daytrip',
     blurb:'Karnataka\'s coffee country - Western Ghats estates, waterfalls, and the trail up Mullayanagiri, the state\'s highest peak.',
     kn:'ಚಿಕ್ಕಮಗಳೂರು', say:'Chikka-magaluru', lat:13.3161, lng:75.772 },
@@ -1127,12 +1176,12 @@ const LOCATIONS = [
    THIS, NOT THAT - the contrast list.
    ============================================================ */
 const NOT_THAT = [
-  { often:'Hindi as "the" Indian language', also:'Kannada first here - then Tamil, Telugu, Malayalam and Tulu, all spoken within a day\'s drive' },
-  { often:'Butter chicken and naan', also:'Ragi mudde, bisi bele bath, appam and stew, filter kaapi in a steel tumbler' },
-  { often:'Bollywood', also:'Sandalwood, Kollywood, Tollywood and Mollywood - separate industries, separate stars' },
+  { often:'Hindi as "the" Indian language', also:'Kannada is the first love here - Tamil, Telugu, Malayalam and Tulu are all heard too, within a day\'s drive' },
+  { often:'Butter chicken and naan', also:'Ragi mudde, bisi bele bath, chow-chow bath, ghee roast, filter kaapi in a steel tumbler' },
+  { often:'Bollywood', also:'Sandalwood is the first love here too - Kollywood, Tollywood and Mollywood all run alongside it' },
   { often:'The Taj Mahal as the monument', also:'Hoysala temples at Belur and Halebidu, the ruins of Hampi, Mysuru Palace' },
   { often:'Sitar and tabla', also:'Carnatic music, the veena, the mridangam, the nadaswaram' },
-  { often:'Turbans and lehengas', also:'Mysore silk, jasmine strung fresh each morning, ikkat and ilkal weaves' },
+  { often:'Kurtas and lehengas', also:'Mysore silk, jasmine strung fresh each morning, ikkat and ilkal weaves' },
   { often:'Diwali fireworks as "the" festival', also:'Bengaluru\'s own Karaga, plus Ugadi, Onam and Pongal across the south' },
   { often:'Chaotic traffic and scorching heat', also:'A hill-station elevation that keeps Bengaluru mild most of the year' },
   { often:'One flat idea of "South Indian"', also:'Coorg\'s coffee culture, coastal Mangalore seafood, Chennai\'s temple towns, Kerala\'s backwaters' },
@@ -1165,12 +1214,16 @@ const SKIP_CROWD = [
 const FESTIVALS = [
   { name:'Mysuru Dasara', kn:'ಮೈಸೂರು ದಸರಾ', when:'Sep/Oct, 10 days', where:'Mysuru', color:'var(--jacaranda)',
     blurb:'Karnataka\'s state festival, Naada Habba - the Mysuru Palace lit end to end, the Wodeyar royal durbar, and the Jamboo Savari procession carrying Goddess Chamundeshwari through the streets in a 750kg golden howdah. Traced back to the Vijayanagara Empire and formalised by the Wodeyars in 1610.' },
+  { name:'Gombe Habba', kn:'ಗೊಂಬೆ ಹಬ್ಬ', when:'Sep/Oct, during Dasara', where:'Mysuru households, statewide', color:'var(--jacaranda)',
+    blurb:'The doll festival - the quieter, domestic side of Dasara. Families in Mysuru build tiered steps of dolls and figurines (bombe mane) in their homes, and neighbours are invited over to see each other\'s displays. A world away from the palace procession, in the same ten days.' },
   { name:'Ugadi', kn:'ಯುಗಾದಿ', when:'March/April', where:'Statewide', color:'var(--terracotta)',
     blurb:'The Kannada New Year, marked with bevu-bella - a mix of neem and jaggery eaten together as a reminder that the year ahead will hold both bitterness and sweetness.' },
   { name:'Bengaluru Karaga', kn:'ಬೆಂಗಳೂರು ಕರಗ', when:'March/April, 9 nights', where:'Dharmaraya Swamy Temple, Bengaluru', color:'var(--maroon)',
     blurb:'The city\'s own festival, older than its software reputation by centuries - a priest in women\'s attire carries a flower-pyramid through the old pete at midnight, escorted by sword-wielding Thigala Veerakumaras. The procession stops at a Sufi dargah each year, an unbroken 18th-century tradition of Hindu-Muslim unity.' },
   { name:'Kadalekai Parishe', kn:'ಕಡಲೆಕಾಯಿ ಪರಿಷೆ', when:'Nov/Dec, 2-3 days', where:'Basavanagudi & Malleswaram, Bengaluru', color:'var(--hampi-stone)',
     blurb:'The groundnut fair - farmers bring the season\'s first harvest to offer at the Bull Temple, and the streets around it disappear under mounds of roasted and raw groundnuts, bangles, and clay toys.' },
+  { name:'Bhuta Kola', kn:'ಭೂತ ಕೋಲ', when:'Dec-May, night-long', where:'Dakshina Kannada & Udupi coast', color:'var(--coastal-teal)',
+    blurb:'Tulu Nadu\'s spirit-worship ritual, the tradition behind the film Kantara - a hereditary medium becomes possessed by a guardian daiva (deity) such as Panjurli, delivering counsel and settling disputes through the night, to torchlight, drums and paddana ballads sung in Tulu.' },
   { name:'Kambala', kn:'ಕಂಬಳ', when:'Nov-March', where:'Dakshina Kannada & Udupi coast', color:'var(--coastal-teal)',
     blurb:'Buffalo races down slushy paddy tracks, run in over 45 villages along the Tulu Nadu coast - handlers balance on wooden planks behind the animals, sometimes hitting 50 km/h. A farming-season thanksgiving that predates any spectator sport it now resembles.' },
   { name:'Hampi Utsav', kn:'ಹಂಪಿ ಉತ್ಸವ', when:'Usually Nov or Feb/Mar, 3 days', where:'Hampi', color:'var(--coffee)',
@@ -1205,6 +1258,10 @@ const DISHES = [
     desc:'A hand-flattened sorghum flatbread - the everyday bread of North Karnataka.' },
   { name:'Yenne Badnekai', kn:'ಎಣ್ಣೆ ಬದನೆಕಾಯಿ', say:'En-ne Badne-kaayi',
     desc:'Small eggplants stuffed with a peanut-sesame masala and slow-cooked in oil - a Dharwad-Hubballi classic.' },
+  { name:'Dharwad Peda', kn:'ಧಾರವಾಡ ಪೇಡಾ', say:'Dhaar-waad Pedaa',
+    desc:'A caramel-brown milk sweet with a history over 175 years old, still made at the original Babusingh Thakur shop on Dharwad\'s Line Bazaar - which the queues for it gave its name to.' },
+  { name:'Belagavi Kunda', kn:'ಬೆಳಗಾವಿ ಕುಂದಾ', say:'Bela-gaavi Kundaa',
+    desc:'A soft, caramelised milk-and-khoa sweet from Belagavi, invented by accident when a confectioner let a pot of milk boil too long - the city is sometimes called Kundagiri after it.' },
   { name:'Kesari Bath', kn:'ಕೇಸರಿ ಬಾತ್', say:'Kesari Baath',
     desc:'A bright orange semolina sweet, often plated next to khara bath as the combination "chow-chow bath."' },
   { name:'Churmuri', kn:'ಚುರುಮುರಿ', say:'Churu-muri',
@@ -1230,30 +1287,30 @@ const DISHES = [
    PHRASES - a starter Kannada phrasebook.
    ============================================================ */
 const PHRASES = [
-  { kn:'ನಮಸ್ಕಾರ', translit:'Namaskara', say:'Na-ma-skaa-ra', meaning:'Hello', tip:'Works as a greeting any time of day, formal or casual.' },
-  { kn:'ಹೇಗಿದ್ದೀರಾ?', translit:'Hegiddeera?', say:'Heh-gid-dee-raa', meaning:'How are you?', tip:'Add a name at the end for warmth - "Hegiddeera, anna?"',
+  { group:'Greetings & courtesy', kn:'ನಮಸ್ಕಾರ', translit:'Namaskara', say:'Na-ma-skaa-ra', meaning:'Hello', tip:'Works as a greeting any time of day, formal or casual.' },
+  { group:'Greetings & courtesy', kn:'ಹೇಗಿದ್ದೀರಾ?', translit:'Hegiddeera?', say:'Heh-gid-dee-raa', meaning:'How are you?', tip:'Add a name at the end for warmth - "Hegiddeera, anna?"',
     variant:{ region:'Hubballi-Dharwad-Belagavi', kn:'ಆರಾಮ ಇದ್ದೀರಾ?', translit:'Aaram idhira?', say:'Aa-ram id-dee-raa' } },
-  { kn:'ಚೆನ್ನಾಗಿದೆ', translit:'Chennagide', say:'Chen-naa-gi-de', meaning:'It\'s good / nice', tip:'Use it for food, weather, a view - almost anything.' },
-  { kn:'ಎಷ್ಟು?', translit:'Eshtu?', say:'Esh-tu', meaning:'How much?', tip:'The single most useful word for markets and autos.' },
-  { kn:'ಸ್ವಲ್ಪ ಅಡ್ಜಸ್ಟ್ ಮಾಡಿ', translit:'Swalpa adjust maadi', say:'Swal-pa uh-just maa-di', meaning:'Just adjust a little', tip:'Half Kannada, half English, entirely Bengaluru - said with a smile when asking for flexibility.' },
-  { kn:'ಗೊತ್ತಿಲ್ಲ', translit:'Gottilla', say:'Got-til-la', meaning:'I don\'t know', tip:'A perfectly normal, honest answer here - no need to guess.' },
-  { kn:'ಬರ್ತೀನಿ', translit:'Bartini', say:'Bar-thee-nee', meaning:'I\'ll get going', tip:'The Kannada goodbye - it literally means "I\'ll come [back]."' },
-  { kn:'ಎಲ್ಲಿದೆ?', translit:'Ellide?', say:'El-li-de', meaning:'Where is it?', tip:'Pair with a place name - "Lalbagh ellide?"' },
-  { kn:'ಇಲ್ಲ', translit:'Illa', say:'Il-la', meaning:'No', tip:'Short, flat, and used constantly - not considered rude.' },
-  { kn:'ಹೌದು', translit:'Houdu', say:'How-du', meaning:'Yes', tip:'The flip side of Illa, used just as often - a firm, simple yes.' },
-  { kn:'ಧನ್ಯವಾದಗಳು', translit:'Dhanyavaadagalu', say:'Dhan-ya-vaa-da-ga-lu', meaning:'Thank you', tip:'A bit formal - a casual "thanks" in English lands just as well day to day.' },
-  { kn:'ದಯವಿಟ್ಟು', translit:'Dayavittu', say:'Da-ya-vit-tu', meaning:'Please', tip:'Formal enough for most situations - "Swalpa" (a little) softens a request just as well and sounds more casual.' },
-  { kn:'ಕ್ಷಮಿಸಿ', translit:'Kshamisi', say:'Ksha-mi-si', meaning:'Sorry / excuse me', tip:'Doubles as a polite way to get someone\'s attention, not just to apologise.' },
-  { kn:'ನನ್ನ ಹೆಸರು...', translit:'Nanna hesaru...', say:'Nan-na he-sa-ru', meaning:'My name is...', tip:'Follow it straight with your name - no extra words needed.' },
-  { kn:'ನಿಮ್ಮ ಹೆಸರೇನು?', translit:'Nimma hesarenu?', say:'Nim-ma he-sa-re-nu', meaning:'What is your name?', tip:'Polite/plural form - safe to use with anyone you\'ve just met.' },
-  { kn:'ಎಲ್ಲಿಂದ ಬಂದ್ರಿ?', translit:'Ellinda bandri?', say:'El-lin-da band-ri', meaning:'Where are you from?', tip:'A common icebreaker, and already carries the "-ri" respect ending.' },
-  { kn:'ಊಟ ಆಯ್ತಾ?', translit:'Oota aaytha?', say:'Oo-ta aai-tha', meaning:'Have you eaten?', tip:'Asked as a genuine greeting, not small talk - answering "illa" (no) often gets you fed.' },
-  { kn:'ರುಚಿಯಾಗಿದೆ', translit:'Ruchiyagide', say:'Ru-chi-yaa-gi-de', meaning:'It\'s delicious', tip:'The line that makes any darshini or amma\'s kitchen light up.' },
-  { kn:'ಚಂದ ಇದೆ', translit:'Chanda ide', say:'Chan-da i-de', meaning:'It\'s beautiful', tip:'Works for a view, a saree, a building - anything pleasing to look at.' },
-  { kn:'ಹೋಗೋಣ', translit:'Hogona', say:'Ho-go-na', meaning:'Let\'s go', tip:'The casual, friendly version - said among friends, not to elders.' },
-  { kn:'ಒಂದು, ಎರಡು, ಮೂರು', translit:'Ondu, eradu, mooru', say:'On-du, e-ra-du, moo-ru', meaning:'One, two, three', tip:'Enough to order food or count change without switching to English.' },
-  { kn:'ಅಣ್ಣ / ಅಕ್ಕ', translit:'Anna / Akka', say:'An-na / Ak-ka', meaning:'Elder brother / elder sister', tip:'The default respectful way to address a stranger close to your age - an auto driver, a shopkeeper, anyone. Warmer than any English equivalent.' },
-  { kn:'...ರೀ', translit:'...ri', say:'...ree', meaning:'A respect particle added to the end of a word', tip:'Common in North Karnataka, but heard everywhere. Adds warmth without changing the meaning - it turns a plain instruction into a polite one.',
+  { group:'Everyday essentials', kn:'ಚೆನ್ನಾಗಿದೆ', translit:'Chennagide', say:'Chen-naa-gi-de', meaning:'It\'s good / nice', tip:'Use it for food, weather, a view - almost anything.' },
+  { group:'Everyday essentials', kn:'ಎಷ್ಟು?', translit:'Eshtu?', say:'Esh-tu', meaning:'How much?', tip:'The single most useful word for markets and autos.' },
+  { group:'Everyday essentials', kn:'ಸ್ವಲ್ಪ ಅಡ್ಜಸ್ಟ್ ಮಾಡಿ', translit:'Swalpa adjust maadi', say:'Swal-pa uh-just maa-di', meaning:'Just adjust a little', tip:'Half Kannada, half English, entirely Bengaluru - said with a smile when asking for flexibility.' },
+  { group:'Everyday essentials', kn:'ಗೊತ್ತಿಲ್ಲ', translit:'Gottilla', say:'Got-til-la', meaning:'I don\'t know', tip:'A perfectly normal, honest answer here - no need to guess.' },
+  { group:'Everyday essentials', kn:'ಬರ್ತೀನಿ', translit:'Bartini', say:'Bar-thee-nee', meaning:'I\'ll get going', tip:'The Kannada goodbye - it literally means "I\'ll come [back]."' },
+  { group:'Everyday essentials', kn:'ಎಲ್ಲಿದೆ?', translit:'Ellide?', say:'El-li-de', meaning:'Where is it?', tip:'Pair with a place name - "Lalbagh ellide?"' },
+  { group:'Everyday essentials', kn:'ಇಲ್ಲ', translit:'Illa', say:'Il-la', meaning:'No', tip:'Short, flat, and used constantly - not considered rude.' },
+  { group:'Everyday essentials', kn:'ಹೌದು', translit:'Houdu', say:'How-du', meaning:'Yes', tip:'The flip side of Illa, used just as often - a firm, simple yes.' },
+  { group:'Greetings & courtesy', kn:'ಧನ್ಯವಾದಗಳು', translit:'Dhanyavaadagalu', say:'Dhan-ya-vaa-da-ga-lu', meaning:'Thank you', tip:'A bit formal - a casual "thanks" in English lands just as well day to day.' },
+  { group:'Greetings & courtesy', kn:'ದಯವಿಟ್ಟು', translit:'Dayavittu', say:'Da-ya-vit-tu', meaning:'Please', tip:'Formal enough for most situations - "Swalpa" (a little) softens a request just as well and sounds more casual.' },
+  { group:'Greetings & courtesy', kn:'ಕ್ಷಮಿಸಿ', translit:'Kshamisi', say:'Ksha-mi-si', meaning:'Sorry / excuse me', tip:'Doubles as a polite way to get someone\'s attention, not just to apologise.' },
+  { group:'Getting to know someone', kn:'ನನ್ನ ಹೆಸರು...', translit:'Nanna hesaru...', say:'Nan-na he-sa-ru', meaning:'My name is...', tip:'Follow it straight with your name - no extra words needed.' },
+  { group:'Getting to know someone', kn:'ನಿಮ್ಮ ಹೆಸರೇನು?', translit:'Nimma hesarenu?', say:'Nim-ma he-sa-re-nu', meaning:'What is your name?', tip:'Polite/plural form - safe to use with anyone you\'ve just met.' },
+  { group:'Getting to know someone', kn:'ಎಲ್ಲಿಂದ ಬಂದ್ರಿ?', translit:'Ellinda bandri?', say:'El-lin-da band-ri', meaning:'Where are you from?', tip:'A common icebreaker, and already carries the "-ri" respect ending.' },
+  { group:'Food & warmth', kn:'ಊಟ ಆಯ್ತಾ?', translit:'Oota aaytha?', say:'Oo-ta aai-tha', meaning:'Have you eaten?', tip:'Asked as a genuine greeting, not small talk - answering "illa" (no) often gets you fed.' },
+  { group:'Food & warmth', kn:'ರುಚಿಯಾಗಿದೆ', translit:'Ruchiyagide', say:'Ru-chi-yaa-gi-de', meaning:'It\'s delicious', tip:'The line that makes any darshini or amma\'s kitchen light up.' },
+  { group:'Food & warmth', kn:'ಚಂದ ಇದೆ', translit:'Chanda ide', say:'Chan-da i-de', meaning:'It\'s beautiful', tip:'Works for a view, a saree, a building - anything pleasing to look at.' },
+  { group:'Everyday essentials', kn:'ಹೋಗೋಣ', translit:'Hogona', say:'Ho-go-na', meaning:'Let\'s go', tip:'The casual, friendly version - said among friends, not to elders.' },
+  { group:'Everyday essentials', kn:'ಒಂದು, ಎರಡು, ಮೂರು', translit:'Ondu, eradu, mooru', say:'On-du, e-ra-du, moo-ru', meaning:'One, two, three', tip:'Enough to order food or count change without switching to English.' },
+  { group:'Respect & address', kn:'ಅಣ್ಣ / ಅಕ್ಕ', translit:'Anna / Akka', say:'An-na / Ak-ka', meaning:'Elder brother / elder sister', tip:'The default respectful way to address a stranger close to your age - an auto driver, a shopkeeper, anyone. Warmer than any English equivalent.' },
+  { group:'Respect & address', kn:'...ರೀ', translit:'...ri', say:'...ree', meaning:'A respect particle added to the end of a word', tip:'Common in North Karnataka, but heard everywhere. Adds warmth without changing the meaning - it turns a plain instruction into a polite one.',
     examples:[
       { kn:'ಬರ್ರಿ', translit:'Barri', meaning:'Please come' },
       { kn:'ಕೂಡ್ರಿ', translit:'Koodri', meaning:'Please sit' },
@@ -1310,14 +1367,15 @@ function renderList(){
     const added = agenda.includes(l.id);
     const photosHtml = (l.photos && l.photos.length)
       ? `<div class="camera-roll">${l.photos.map(src => `<img src="${src}" loading="lazy" alt="${l.name}">`).join('')}</div>`
-      : `<div class="camera-roll-empty">No photos yet - drop image URLs into this spot's "photos" array.</div>`;
+      : `<div class="camera-roll-empty">No photos yet - <a href="https://commons.wikimedia.org/w/index.php?search=${encodeURIComponent(l.name + ' ' + l.area)}&title=Special:MediaSearch&type=image" target="_blank" rel="noopener">search Wikimedia Commons for ${l.name}</a> (openly licensed, free to use) and drop the image URL into this spot's "photos" array.</div>`;
     const badgeHtml = l.approved
-      ? `<svg class="approved-badge" viewBox="0 0 24 24" title="Recommended - personally vetted, not just popular"><path d="M12 3c-2 2-1 4 0 5-3 0-5 2-5 5 0 4 3 6 5 8 2-2 5-4 5-8 0-3-2-5-5-5 1-1 2-3 0-5Z M8 9c-2 0-3.5 1.5-3 4 M16 9c2 0 3.5 1.5 3 4"/><circle cx="9.3" cy="7.2" r="0.9"/><circle cx="14.7" cy="7.2" r="0.9"/></svg>`
+      ? `<svg class="approved-badge" viewBox="0 0 44 44" title="Recommended - personally vetted, not just popular"><circle class="stamp-ring" cx="22" cy="22" r="20"/><g transform="translate(22,20) scale(0.85)"><path d="M0 -9c-2 2-1 4 0 5-3 0-5 2-5 5 0 4 3 6 5 8 2-2 5-4 5-8 0-3-2-5-5-5 1-1 2-3 0-5Z M-4 -3c-2 0-3.5 1.5-3 4 M4 -3c2 0 3.5 1.5 3 4"/><circle cx="-2.7" cy="-4.8" r="0.9"/><circle cx="2.7" cy="-4.8" r="0.9"/></g></svg>`
       : '';
-    const pronounceHtml = l.kn ? `<div class="card-pronounce"><span class="kn card-kn">${l.kn}</span><span class="card-say">${l.say}</span></div>` : '';
+    const pronounceHtml = l.kn ? `<div class="card-pronounce"><span class="kn card-kn">${l.kn}</span><span class="card-say">${l.say}</span>${speakBtn(l.kn, 'sm')}</div>` : '';
     return `<div class="card" style="--cat-color:${cat.color}">
+      ${badgeHtml}
       <div class="card-top">
-        <div><div class="card-title-row">${badgeHtml}<h3>${l.name}</h3></div><div class="area">${l.area}</div>${pronounceHtml}</div>
+        <div><h3>${l.name}</h3><div class="area">${l.area}</div>${pronounceHtml}</div>
         <span class="tag">${cat.label}</span>
       </div>
       <p class="blurb">${l.blurb}</p>
@@ -1479,7 +1537,7 @@ function renderDishes(){
   wrap.innerHTML = DISHES.map(d => `
     <div class="dish-card">
       <div class="dish-name">${d.name}</div>
-      <div class="dish-kn-row"><span class="kn dish-kn">${d.kn}</span><span class="dish-say">${d.say}</span></div>
+      <div class="dish-kn-row"><span class="kn dish-kn">${d.kn}</span><span class="dish-say">${d.say}</span>${speakBtn(d.kn, 'sm')}</div>
       <p class="dish-desc">${d.desc}</p>
     </div>
   `).join('');
@@ -1488,15 +1546,15 @@ function renderDishes(){
 /* ---------------- learn kannada ---------------- */
 function renderPhrases(){
   const wrap = document.getElementById('phraseGrid');
-  wrap.innerHTML = PHRASES.map((p, i) => {
-    const variantHtml = p.variant ? `<div class="p-variant"><span class="p-variant-label">${p.variant.region}</span> "${p.variant.kn}" - ${p.variant.translit}${p.variant.say ? ` (say: ${p.variant.say})` : ''}</div>` : '';
+  const GROUP_ORDER = ['Greetings & courtesy', 'Getting to know someone', 'Everyday essentials', 'Food & warmth', 'Respect & address'];
+  const cardHtml = (p) => {
+    const variantHtml = p.variant ? `<div class="p-variant"><span class="p-variant-label">${p.variant.region}</span> "${p.variant.kn}" - ${p.variant.translit}${p.variant.say ? ` (say: ${p.variant.say})` : ''} ${speakBtn(p.variant.kn, 'sm')}</div>` : '';
     const examplesHtml = p.examples ? `<div class="p-examples">${p.examples.map(ex => `
-        <div class="p-example"><span class="p-ex-kn">${ex.kn}</span><span class="p-ex-translit">${ex.translit}</span> - ${ex.meaning}</div>
+        <div class="p-example"><span class="p-ex-kn">${ex.kn}</span><span class="p-ex-translit">${ex.translit}</span> - ${ex.meaning} ${speakBtn(ex.kn, 'sm')}</div>
       `).join('')}</div>` : '';
     const sayHtml = p.say ? `<div class="p-say">say: ${p.say}</div>` : '';
-    const speakBtn = SPEECH_OK ? `<button class="speak-btn" onclick="speakPhrase(${i})" aria-label="Hear this phrase">🔊</button>` : '';
     return `<div class="phrase-card">
-      <div class="p-kn-row"><div class="p-kn">${p.kn}</div>${speakBtn}</div>
+      <div class="p-kn-row"><div class="p-kn">${p.kn}</div>${speakBtn(p.kn)}</div>
       <div class="p-translit">${p.translit}</div>
       ${sayHtml}
       <div class="p-meaning">${p.meaning}</div>
@@ -1504,14 +1562,21 @@ function renderPhrases(){
       ${examplesHtml}
       ${variantHtml}
     </div>`;
+  };
+  wrap.innerHTML = GROUP_ORDER.map(group => {
+    const items = PHRASES.filter(p => p.group === group);
+    if(!items.length) return '';
+    return `<div class="phrase-group">
+      <h3 class="phrase-group-title">${group}</h3>
+      <div class="phrase-group-grid">${items.map(cardHtml).join('')}</div>
+    </div>`;
   }).join('');
 }
 const SPEECH_OK = (typeof window !== 'undefined' && 'speechSynthesis' in window);
-function speakPhrase(i){
-  if(!SPEECH_OK) return;
+function speakText(text){
+  if(!SPEECH_OK || !text) return;
   try{
-    const p = PHRASES[i];
-    const utter = new SpeechSynthesisUtterance(p.kn);
+    const utter = new SpeechSynthesisUtterance(text);
     utter.lang = 'kn-IN';
     utter.rate = 0.85;
     const voices = window.speechSynthesis.getVoices();
@@ -1521,6 +1586,13 @@ function speakPhrase(i){
     window.speechSynthesis.speak(utter);
   }catch(e){ /* speech not available - silently ignore */ }
 }
+function speakBtn(text, size){
+  if(!SPEECH_OK || !text) return '';
+  const safe = text.replace(/'/g, "\\'");
+  const cls = size==='sm' ? 'speak-btn speak-btn-sm' : 'speak-btn';
+  return `<button class="${cls}" onclick="speakText('${safe}')" aria-label="Hear pronunciation">\uD83D\uDD0A</button>`;
+}
+function speakPhrase(i){ speakText(PHRASES[i].kn); }
 
 /* ---------------- history: growing map ---------------- */
 const GROWTH_CAPTIONS = [
