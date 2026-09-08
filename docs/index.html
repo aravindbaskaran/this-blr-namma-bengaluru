@@ -132,10 +132,25 @@
     background:var(--cream);
     border-bottom:1px solid var(--line);
   }
-  .kolam-strip{
+  /* ---------- top-of-page kolam + zari: a real threshold pattern,
+     not a plain gradient bar - dots (pulli) linked by a continuous
+     loop, the same motif used at the section dividers throughout the
+     page, paired with a thin zari (gold thread) line above it, the
+     way an actual saree or dhoti border pairs a woven thread edge
+     with the body of the cloth. ---------- */
+  .zari-strip{
     position:sticky; top:63px; z-index:39;
-    height:5px;
-    background:linear-gradient(90deg, var(--maroon) 0 25%, var(--gold) 25% 50%, var(--jacaranda) 50% 75%, var(--leaf) 75% 100%);
+    height:7px;
+    background-color:var(--kasuti-black);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='7'%3E%3Cpath d='M0 3.5 L14 3.5' stroke='%23D4A017' stroke-width='1'/%3E%3Ccircle cx='7' cy='3.5' r='1.6' fill='none' stroke='%23D4A017' stroke-width='0.9'/%3E%3C/svg%3E");
+    background-repeat:repeat-x;
+  }
+  .kolam-strip{
+    position:sticky; top:70px; z-index:39;
+    height:26px;
+    background-color:var(--maroon);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23F6F1E4' stroke-width='1.3' stroke-linecap='round'%3E%3Ccircle cx='30' cy='9' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='21' cy='19.5' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='30' cy='19.5' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='39' cy='19.5' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='12' cy='30' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='21' cy='30' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='30' cy='30' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='39' cy='30' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='48' cy='30' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='21' cy='40.5' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='30' cy='40.5' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='39' cy='40.5' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='30' cy='51' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Cpath d='M30 9 C39 9 39 19.5 30 19.5 C21 19.5 21 9 30 9'/%3E%3Cpath d='M12 30 C12 21 21 21 21 30 C21 39 12 39 12 30'/%3E%3Cpath d='M48 30 C48 21 39 21 39 30 C39 39 48 39 48 30'/%3E%3Cpath d='M30 51 C39 51 39 40.5 30 40.5 C21 40.5 21 51 30 51'/%3E%3Cpath d='M30 19.5 C34.5 19.5 39 24 39 30 C39 36 34.5 40.5 30 40.5 C25.5 40.5 21 36 21 30 C21 24 25.5 19.5 30 19.5 Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat:repeat-x; background-size:auto 26px;
   }
   .header-inner{
     max-width:1180px; margin:0 auto; padding:16px 24px;
@@ -385,6 +400,17 @@
     height:24px;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='24'%3E%3Cpolygon points='0,24 14,1 28,24' fill='%239C2436'/%3E%3Cpolygon points='0,24 14,7 28,24' fill='%23D4A017'/%3E%3Cpolygon points='0,24 14,12 28,24' fill='%23F6F1E4'/%3E%3Cpolygon points='0,24 14,16 28,24' fill='%239C2436'/%3E%3C/svg%3E");
     background-repeat:repeat-x;
+  }
+
+  /* ---------- kolam threshold divider: dots (pulli) linked by a
+     continuous looping line, drawn at doorways and thresholds in
+     daily life across Karnataka and the wider south - used here at
+     section thresholds for the same reason ---------- */
+  .kolam-divider{
+    height:44px;
+    background-color:var(--maroon);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23F6F1E4' stroke-width='1.3' stroke-linecap='round'%3E%3Ccircle cx='30' cy='9' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='21' cy='19.5' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='30' cy='19.5' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='39' cy='19.5' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='12' cy='30' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='21' cy='30' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='30' cy='30' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='39' cy='30' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='48' cy='30' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='21' cy='40.5' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='30' cy='40.5' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='39' cy='40.5' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Ccircle cx='30' cy='51' r='1.3' fill='%23F6F1E4' stroke='none'/%3E%3Cpath d='M30 9 C39 9 39 19.5 30 19.5 C21 19.5 21 9 30 9'/%3E%3Cpath d='M12 30 C12 21 21 21 21 30 C21 39 12 39 12 30'/%3E%3Cpath d='M48 30 C48 21 39 21 39 30 C39 39 48 39 48 30'/%3E%3Cpath d='M30 51 C39 51 39 40.5 30 40.5 C21 40.5 21 51 30 51'/%3E%3Cpath d='M30 19.5 C34.5 19.5 39 24 39 30 C39 36 34.5 40.5 30 40.5 C25.5 40.5 21 36 21 30 C21 24 25.5 19.5 30 19.5 Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat:repeat-x; background-size:auto 44px;
   }
 
   /* ---------- mundu / shalya motif icon: folded cloth with gold kara border ---------- */
@@ -763,6 +789,7 @@
     </div>
   </div>
 </header>
+<div class="zari-strip"></div>
 <div class="kolam-strip"></div>
 
 <div class="hero">
@@ -812,6 +839,8 @@
     </div>
   </div>
 </section>
+
+<div class="kolam-divider"></div>
 
 <section id="sources">
   <div class="section-head">
@@ -873,6 +902,8 @@
   </div>
   </details>
 </section>
+
+<div class="kolam-divider"></div>
 
 <section class="history-section" id="history">
   <div class="section-head">
@@ -985,6 +1016,8 @@
   </div>
 </section>
 
+<div class="kolam-divider"></div>
+
 <section class="tnt-section" id="not-that">
   <div class="section-head">
     <div class="head-with-icon">
@@ -1008,6 +1041,8 @@
   <div class="tnt-list" id="tntList"></div>
 </section>
 
+<div class="kolam-divider"></div>
+
 <section class="skip-section" id="skip-crowd">
   <div class="section-head">
     <div class="head-with-icon">
@@ -1020,6 +1055,8 @@
   <div class="skip-list" id="skipList"></div>
 </section>
 
+
+<div class="kolam-divider"></div>
 
 <section id="modern-blr">
   <div class="section-head">
@@ -1111,6 +1148,8 @@
   </div>
 </section>
 
+<div class="kolam-divider"></div>
+
 <section id="personal-picks">
   <div class="section-head">
     <div class="head-with-icon">
@@ -1140,6 +1179,9 @@
   </div>
 </section>
 
+<div class="kolam-divider"></div>
+<div class="temple-border"></div>
+
 <section class="kannada-section" id="learn-kannada">
   <div class="section-head">
     <div class="head-with-icon">
@@ -1147,7 +1189,7 @@
       <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಕನ್ನಡ ಕಲಿಯಿರಿ</span><span class="kn-en">learn Kannada</span></span>
     </div>
     <h2>Words that go further than any guidebook</h2>
-    <p>Kannada is Karnataka's official language and Bengaluru's mother tongue - you can get away with some English and some Hindi, but the city itself runs on Kannada first, Tamil to a real extent, and a scatter of other languages after that. It's one of eleven languages in India with classical-language status - a list that also includes Tamil, Sanskrit, Telugu, Malayalam, Odia, Marathi, Bengali, Assamese, Pali, and Prakrit. The oldest surviving Kannada inscription is from 450 CE, and Kavirajamarga, the oldest surviving work of Kannada poetics, dates to 850 CE. That's a longer running conversation than most languages on earth get to have, and it's genuinely fun to pick up a few threads of it. Try a few of these in an auto, a darshini, or a market stall - people notice. Kannada, like most Indian languages, rewards the effort: a warmer smile, a warmer welcome, and sometimes even a warmer price. Tap the speaker icon to hear a phrase - it uses your browser's own Kannada voice when it has one, or a lightweight open-source voice otherwise (a few seconds to load the first time, then quick after). Either way, treat it as a rough guide, not a lesson.</p>
+    <p>Kannada is Karnataka's official language and Bengaluru's mother tongue - you can get away with some English and some Hindi, but the city itself runs on Kannada first, Tamil to a real extent, and a scatter of other languages after that. It's one of eleven languages in India with classical-language status - a list that also includes Tamil, Sanskrit, Telugu, Malayalam, Odia, Marathi, Bengali, Assamese, Pali, and Prakrit. The oldest surviving Kannada inscription is from 450 CE, and Kavirajamarga, the oldest surviving work of Kannada poetics, dates to 850 CE. That's a longer running conversation than most languages on earth get to have, and it's genuinely fun to pick up a few threads of it. Try a few of these in an auto, a darshini, or a market stall - people notice. Kannada, like most Indian languages, rewards the effort: a warmer smile, a warmer welcome, and sometimes even a warmer price. Tap the speaker icon to hear a phrase - your browser needs a Kannada voice installed for it to sound right, so treat it as a rough guide, not a lesson.</p>
   </div>
   <div class="phrase-grid" id="phraseGrid"></div>
   <svg class="elephant-mark" viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1155,6 +1197,9 @@
     <path d="M92 18 C110 10 130 18 128 34" />
   </svg>
 </section>
+
+<div class="kolam-divider"></div>
+<div class="temple-border"></div>
 
 <section id="karnataka">
   <div class="section-head">
@@ -1171,7 +1216,7 @@
     <div class="region-row">
       <div class="region-card region-dark" style="--region-color:var(--gold); --region-pattern-opacity:0.94; --region-pattern:linear-gradient(#5B3F7A,#5B3F7A), url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34'%3E%3Cpath d='M17 6c5 1 8 5 7 10-1 4-4 6-7 8-2 1-3 3-2 6-3-2-4-4-4-7 0-3 2-5 4-6 3-2 4-4 3-8-0.4-1.5-0.6-2.5-1-3z' fill='none' stroke='%23D4A017' stroke-width='1.1'/%3E%3C/svg%3E&quot;); --region-pattern-size:100% 100%, 34px 34px">
         <h4>Mysuru</h4>
-        <div class="region-pronounce"><span class="kn region-kn">ಮೈಸೂರು</span><span class="region-say">My-sooru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಮೈಸೂರು', this)" aria-label="Hear pronunciation">🔊</button></div>
+        <div class="region-pronounce"><span class="kn region-kn">ಮೈಸೂರು</span><span class="region-say">My-sooru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಮೈಸೂರು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Wodeyar palaces, Mysore silk shot through with gold zari, sandalwood and Dasara's elephant processions.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Mysore Pak</div>
@@ -1183,7 +1228,7 @@
       </div>
       <div class="region-card" style="--region-color:var(--coastal-teal); --region-pattern:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M4 18 L8 13 L12 18 L8 23 Z' fill='none' stroke='%23C99A2E' stroke-width='1.1'/%3E%3Cpath d='M16 18 L20 13 L24 18 L20 23 Z' fill='none' stroke='%23C99A2E' stroke-width='1.1'/%3E%3C/svg%3E&quot;), repeating-linear-gradient(0deg, #C99A2E 0 3px, transparent 3px 28px); --region-pattern-size:24px 24px, 100% 28px;">
         <h4>Udupi &amp; Mangaluru</h4>
-        <div class="region-pronounce"><span class="kn region-kn">ಉಡುಪಿ - ಮಂಗಳೂರು</span><span class="region-say">Udupi - Mangaluru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಉಡುಪಿ ಮಂಗಳೂರು', this)" aria-label="Hear pronunciation">🔊</button></div>
+        <div class="region-pronounce"><span class="kn region-kn">ಉಡುಪಿ - ಮಂಗಳೂರು</span><span class="region-say">Udupi - Mangaluru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಉಡುಪಿ ಮಂಗಳೂರು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Kasavu-bordered cottons, red-tiled roofs, Yakshagana masks, and a coastline running on neer dosa and kori rotti.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Mangalore buns</div>
@@ -1195,7 +1240,7 @@
       </div>
       <div class="region-card" style="--region-color:var(--kasuti-black); --region-pattern:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg fill='none' stroke='%23201C17' stroke-width='1.6' stroke-linecap='square'%3E%3Cpath d='M24 5 L24 9 M20 9 L28 9 M17 13 L31 13 M14 17 L34 17 M11 21 L37 21'/%3E%3Cpath d='M6 34 L9.5 30.5 L13 34 L9.5 37.5 Z'/%3E%3Cpath d='M35 34 L38.5 30.5 L42 34 L38.5 37.5 Z'/%3E%3Cpath d='M22 40 L25.5 36.5 L29 40 L25.5 43.5 Z'/%3E%3C/g%3E%3C/svg%3E&quot;); --region-pattern-size:48px 48px;">
         <h4>Hubballi-Dharwad-Belagavi</h4>
-        <div class="region-pronounce"><span class="kn region-kn">ಹುಬ್ಬಳ್ಳಿ-ಧಾರವಾಡ-ಬೆಳಗಾವಿ</span><span class="region-say">Hubballi-Dhaarwaad-Belagaavi</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಹುಬ್ಬಳ್ಳಿ ಧಾರವಾಡ ಬೆಳಗಾವಿ', this)" aria-label="Hear pronunciation">🔊</button></div>
+        <div class="region-pronounce"><span class="kn region-kn">ಹುಬ್ಬಳ್ಳಿ-ಧಾರವಾಡ-ಬೆಳಗಾವಿ</span><span class="region-say">Hubballi-Dhaarwaad-Belagaavi</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಹುಬ್ಬಳ್ಳಿ ಧಾರವಾಡ ಬೆಳಗಾವಿ')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Kasuti embroidery worked in black cotton, Ilkal sarees with their temple-tower pallu, jowar rotti country.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Dharwad peda &amp; Belagavi kunda</div>
@@ -1207,7 +1252,7 @@
       </div>
       <div class="region-card" style="--region-color:var(--hampi-stone); --region-pattern:radial-gradient(circle at 22% 28%, color-mix(in srgb, var(--hampi-stone) 30%, transparent) 7px, transparent 8px), radial-gradient(circle at 72% 62%, color-mix(in srgb, var(--hampi-stone) 24%, transparent) 9px, transparent 10px); --region-pattern-size:60px 60px;">
         <h4>Hampi &amp; Vijayapura</h4>
-        <div class="region-pronounce"><span class="kn region-kn">ಹಂಪಿ - ವಿಜಯಪುರ</span><span class="region-say">Hampi - Vijayapura</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಹಂಪಿ ವಿಜಯಪುರ', this)" aria-label="Hear pronunciation">🔊</button></div>
+        <div class="region-pronounce"><span class="kn region-kn">ಹಂಪಿ - ವಿಜಯಪುರ</span><span class="region-say">Hampi - Vijayapura</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಹಂಪಿ ವಿಜಯಪುರ')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Vijayanagara boulder-ruins and Deccan sultanate domes - two very different empires, one dry northern landscape.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Kesari bath</div>
@@ -1219,7 +1264,7 @@
       </div>
       <div class="region-card" style="--region-color:var(--coffee); --region-pattern:radial-gradient(ellipse 4px 6px at 14px 14px, color-mix(in srgb, var(--coffee) 38%, transparent) 40%, transparent 41%); --region-pattern-size:24px 24px;">
         <h4>Chikmagalur</h4>
-        <div class="region-pronounce"><span class="kn region-kn">ಚಿಕ್ಕಮಗಳೂರು</span><span class="region-say">Chikka-magaluru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಚಿಕ್ಕಮಗಳೂರು', this)" aria-label="Hear pronunciation">🔊</button></div>
+        <div class="region-pronounce"><span class="kn region-kn">ಚಿಕ್ಕಮಗಳೂರು</span><span class="region-say">Chikka-magaluru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಚಿಕ್ಕಮಗಳೂರು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Where Indian coffee began - Baba Budan planted the first beans on these hills in the 1670s, and Mullayanagiri, Karnataka's highest peak, rises right beside them.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Coffee halwa</div>
@@ -1231,7 +1276,7 @@
       </div>
       <div class="region-card region-dark" style="--region-color:var(--gold); --region-pattern-opacity:0.94; --region-pattern:linear-gradient(#201C17,#201C17), url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath d='M0 8 L8 0 L16 8 L8 16 Z' fill='none' stroke='%23D4A017' stroke-width='1'/%3E%3C/svg%3E&quot;), repeating-linear-gradient(115deg, transparent 0 50px, #9C2436 50px 62px, transparent 62px 112px); --region-pattern-size:100% 100%, 16px 16px, 100% 100%;">
         <h4>Kodagu</h4>
-        <div class="region-pronounce"><span class="kn region-kn">ಕೊಡಗು</span><span class="region-say">Kodagu</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಕೊಡಗು', this)" aria-label="Hear pronunciation">🔊</button></div>
+        <div class="region-pronounce"><span class="kn region-kn">ಕೊಡಗು</span><span class="region-say">Kodagu</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಕೊಡಗು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>The Kodava homeland - misty coffee estates, the black-and-gold kupya with its red chele sash, a martial tradition, and a cuisine found nowhere else in Karnataka.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Coorg orange</div>
@@ -1243,7 +1288,7 @@
       </div>
       <div class="region-card" style="--region-color:var(--terracotta); --region-pattern:repeating-linear-gradient(0deg, color-mix(in srgb, var(--terracotta) 28%, transparent) 0 1.5px, transparent 1.5px 15px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--terracotta) 28%, transparent) 0 1.5px, transparent 1.5px 15px);">
         <h4>Bengaluru</h4>
-        <div class="region-pronounce"><span class="kn region-kn">ಬೆಂಗಳೂರು</span><span class="region-say">Bengaluru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಬೆಂಗಳೂರು', this)" aria-label="Hear pronunciation">🔊</button></div>
+        <div class="region-pronounce"><span class="kn region-kn">ಬೆಂಗಳೂರು</span><span class="region-say">Bengaluru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಬೆಂಗಳೂರು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Where all of the above land in one city - in its markets, its emporiums, and its Kannadiga kitchens.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Iyengar bakery benne biscuit</div>
@@ -1292,6 +1337,8 @@
     <div class="festival-grid" id="festivalGrid"></div>
   </div>
 </section>
+
+<div class="kolam-divider"></div>
 
 <section id="add-yours">
   <div class="section-head">
@@ -1346,8 +1393,8 @@
 <div class="temple-border"></div>
 <footer>
   <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
-  <p>Made for people spending time in Bengaluru, with <span class="footer-preethi"><span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಪ್ರೀತಿ</span><span class="kn-en">love</span></span> ❤️<button class="speak-btn speak-btn-sm" onclick="speakText('ಪ್ರೀತಿ', this)" aria-label="Hear pronunciation">🔊</button></span></p>
-  <p class="footer-meta">v2026-09-09.12 &middot; &copy; 2026, all rights reserved</p>
+  <p>Made for people spending time in Bengaluru, with <span class="footer-preethi"><span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಪ್ರೀತಿ</span><span class="kn-en">love</span></span> ❤️<button class="speak-btn speak-btn-sm" onclick="speakText('ಪ್ರೀತಿ')" aria-label="Hear pronunciation">🔊</button></span></p>
+  <p class="footer-meta">v2026-09-09.22 &middot; &copy; 2026, all rights reserved</p>
   <p class="footer-meta">Built with AI, edited and fact-checked by human.</p>
 </footer>
 
@@ -1899,7 +1946,7 @@ const REGION_MASKS = {
   kodagu: { size:'16px 16px', mask:"url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22%3E%3Cpath d=%22M0 8 L8 0 L16 8 L8 16 Z%22 fill=%22none%22 stroke=%22%23000%22 stroke-width=%221.1%22/%3E%3C/svg%3E')" },
   hampi: { size:'60px 60px', mask:"url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22%3E%3Ccircle cx=%2216%22 cy=%2220%22 r=%228%22/%3E%3Ccircle cx=%2244%22 cy=%2240%22 r=%2210%22/%3E%3C/svg%3E')" },
   chikmagalur: { size:'24px 24px', mask:"url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22%3E%3Cellipse cx=%2213%22 cy=%2213%22 rx=%224%22 ry=%226%22/%3E%3C/svg%3E')" },
-  bengaluru: { size:'14px 14px', mask:"url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2214%22 height=%2214%22%3E%3Cpath d=%22M0 0 L14 0 M0 0 L0 14%22 stroke=%22%23000%22 stroke-width=%221.2%22/%3E%3C/svg%3E')" },
+  bengaluru: { size:'60px 60px', mask:"url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22%3E%3Cg fill=%22none%22 stroke=%22%23000%22 stroke-width=%221.3%22 stroke-linecap=%22round%22%3E%3Ccircle cx=%2230%22 cy=%229%22 r=%221.3%22 fill=%22%23000%22 stroke=%22none%22/%3E%3Ccircle cx=%2221%22 cy=%2219.5%22 r=%221.3%22 fill=%22%23000%22 stroke=%22none%22/%3E%3Ccircle cx=%2230%22 cy=%2219.5%22 r=%221.3%22 fill=%22%23000%22 stroke=%22none%22/%3E%3Ccircle cx=%2239%22 cy=%2219.5%22 r=%221.3%22 fill=%22%23000%22 stroke=%22none%22/%3E%3Ccircle cx=%2212%22 cy=%2230%22 r=%221.3%22 fill=%22%23000%22 stroke=%22none%22/%3E%3Ccircle cx=%2221%22 cy=%2230%22 r=%221.3%22 fill=%22%23000%22 stroke=%22none%22/%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%221.3%22 fill=%22%23000%22 stroke=%22none%22/%3E%3Ccircle cx=%2239%22 cy=%2230%22 r=%221.3%22 fill=%22%23000%22 stroke=%22none%22/%3E%3Ccircle cx=%2248%22 cy=%2230%22 r=%221.3%22 fill=%22%23000%22 stroke=%22none%22/%3E%3Ccircle cx=%2221%22 cy=%2240.5%22 r=%221.3%22 fill=%22%23000%22 stroke=%22none%22/%3E%3Ccircle cx=%2230%22 cy=%2240.5%22 r=%221.3%22 fill=%22%23000%22 stroke=%22none%22/%3E%3Ccircle cx=%2239%22 cy=%2240.5%22 r=%221.3%22 fill=%22%23000%22 stroke=%22none%22/%3E%3Ccircle cx=%2230%22 cy=%2251%22 r=%221.3%22 fill=%22%23000%22 stroke=%22none%22/%3E%3Cpath d=%22M30 9 C39 9 39 19.5 30 19.5 C21 19.5 21 9 30 9%22/%3E%3Cpath d=%22M12 30 C12 21 21 21 21 30 C21 39 12 39 12 30%22/%3E%3Cpath d=%22M48 30 C48 21 39 21 39 30 C39 39 48 39 48 30%22/%3E%3Cpath d=%22M30 51 C39 51 39 40.5 30 40.5 C21 40.5 21 51 30 51%22/%3E%3Cpath d=%22M30 19.5 C34.5 19.5 39 24 39 30 C39 36 34.5 40.5 30 40.5 C25.5 40.5 21 36 21 30 C21 24 25.5 19.5 30 19.5 Z%22/%3E%3C/g%3E%3C/svg%3E')" }, // kolam - dot lattice with petal loops, drawn daily at thresholds
 };
 function regionMaskFor(area, name){
   if(!area && !name) return null;
@@ -2180,93 +2227,24 @@ function renderPhrases(){
   }).join('');
 }
 const SPEECH_OK = (typeof window !== 'undefined' && 'speechSynthesis' in window);
-
-/* ---------------- Kannada pronunciation: ONNX fallback ----------------
-   When the visitor's browser/OS has no native Kannada voice, speakText()
-   below falls back to this instead of letting the browser mumble through
-   the text in the wrong voice/language. Runs entirely client-side via
-   transformers.js (onnxruntime-web under the hood) - no server, no API
-   key, lazy-loaded only on first actual use so nobody downloads a speech
-   model just for visiting the page.
-
-   MODEL / LICENSE - READ BEFORE CHANGING: ONNX_TTS_MODEL_ID below points
-   at Xenova/mms-tts-kan, a properly transformers.js-structured ONNX
-   export of Meta's MMS-TTS Kannada checkpoint (tried onnx-community/
-   mms-tts-kan-ONNX first - that repo is missing preprocessor_config.json
-   and fails to load; Xenova/mms-tts-XXX is the same, consistently-
-   structured conversion used for dozens of other MMS-TTS languages and
-   documented as working, so it's the safer bet - confirm it loads
-   before relying on it, since it hasn't been directly verified here).
-   Either way, the underlying checkpoint is licensed CC-BY-NC-4.0 -
-   NON-COMMERCIAL ONLY. Fine for personal testing/eval, NOT something to
-   leave wired up as the permanent default on a public site without
-   checking that use is actually covered. The real fix is swapping this
-   constant for a self-hosted ONNX export of the MIT-licensed
-   Open-Speech-EkStep/Vakyansh Kannada voice once that conversion
-   exists - see the conversion spec that was written up separately for
-   that project (Glow-TTS + HiFi-GAN, MIT, both a male and female
-   voice). Nothing else in this function needs to change, only this
-   constant and, if the replacement isn't also a VITS/transformers.js-
-   pipeline-compatible export, the synthesis call itself.
-*/
-const ONNX_TTS_MODEL_ID = 'Xenova/mms-tts-kan'; // CC-BY-NC-4.0 - see note above
-let _onnxTtsPipelinePromise = null;
-function getOnnxKannadaTts(){
-  if(!_onnxTtsPipelinePromise){
-    _onnxTtsPipelinePromise = import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@3/dist/transformers.min.js')
-      .then(({ pipeline }) => pipeline('text-to-speech', ONNX_TTS_MODEL_ID));
-  }
-  return _onnxTtsPipelinePromise;
-}
-function playFloat32Audio(audioData, sampleRate){
-  const AudioCtx = window.AudioContext || window.webkitAudioContext;
-  if(!AudioCtx) return;
-  const ctx = new AudioCtx();
-  const buffer = ctx.createBuffer(1, audioData.length, sampleRate);
-  buffer.copyToChannel(audioData, 0);
-  const source = ctx.createBufferSource();
-  source.buffer = buffer;
-  source.connect(ctx.destination);
-  source.start();
-}
-async function speakTextOnnxFallback(text, btnEl){
-  const originalLabel = btnEl ? btnEl.textContent : null;
+function speakText(text){
+  if(!SPEECH_OK || !text) return;
   try{
-    if(btnEl){ btnEl.textContent = '\u23F3'; btnEl.disabled = true; } // hourglass while the model loads/runs
-    const synth = await getOnnxKannadaTts();
-    const output = await synth(text);
-    playFloat32Audio(output.audio, output.sampling_rate);
-  }catch(e){
-    console.warn('Open-source Kannada TTS fallback failed:', e);
-  }finally{
-    if(btnEl){ btnEl.textContent = originalLabel; btnEl.disabled = false; }
-  }
-}
-
-function speakText(text, btnEl){
-  if(!text) return;
-  const voices = SPEECH_OK ? window.speechSynthesis.getVoices() : [];
-  const knVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('kn'));
-  if(knVoice){
-    try{
-      const utter = new SpeechSynthesisUtterance(text);
-      utter.lang = 'kn-IN';
-      utter.rate = 0.85;
-      utter.voice = knVoice;
-      window.speechSynthesis.cancel();
-      window.speechSynthesis.speak(utter);
-    }catch(e){ /* speech not available - silently ignore */ }
-  } else {
-    // no native Kannada voice on this browser/OS - fall back to the
-    // open-source ONNX voice instead of guessing with the wrong one.
-    speakTextOnnxFallback(text, btnEl);
-  }
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'kn-IN';
+    utter.rate = 0.85;
+    const voices = window.speechSynthesis.getVoices();
+    const knVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('kn'));
+    if(knVoice) utter.voice = knVoice;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utter);
+  }catch(e){ /* speech not available - silently ignore */ }
 }
 function speakBtn(text, size){
-  if(!text) return '';
+  if(!SPEECH_OK || !text) return '';
   const safe = text.replace(/'/g, "\\'");
   const cls = size==='sm' ? 'speak-btn speak-btn-sm' : 'speak-btn';
-  return `<button class="${cls}" onclick="speakText('${safe}', this)" aria-label="Hear pronunciation">\uD83D\uDD0A</button>`;
+  return `<button class="${cls}" onclick="speakText('${safe}')" aria-label="Hear pronunciation">\uD83D\uDD0A</button>`;
 }
 function speakPhrase(i){ speakText(PHRASES[i].kn); }
 
