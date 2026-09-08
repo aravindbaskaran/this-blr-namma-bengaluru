@@ -1347,7 +1347,7 @@
 <footer>
   <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
   <p>Made for people spending time in Bengaluru, with <span class="footer-preethi"><span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಪ್ರೀತಿ</span><span class="kn-en">love</span></span> ❤️<button class="speak-btn speak-btn-sm" onclick="speakText('ಪ್ರೀತಿ', this)" aria-label="Hear pronunciation">🔊</button></span></p>
-  <p class="footer-meta">v2026-09-09.11 &middot; &copy; 2026, all rights reserved</p>
+  <p class="footer-meta">v2026-09-09.12 &middot; &copy; 2026, all rights reserved</p>
   <p class="footer-meta">Built with AI, edited and fact-checked by human.</p>
 </footer>
 
@@ -2190,20 +2190,26 @@ const SPEECH_OK = (typeof window !== 'undefined' && 'speechSynthesis' in window)
    model just for visiting the page.
 
    MODEL / LICENSE - READ BEFORE CHANGING: ONNX_TTS_MODEL_ID below points
-   at onnx-community/mms-tts-kan-ONNX, a community ONNX export of Meta's
-   MMS-TTS Kannada checkpoint. That underlying checkpoint is licensed
-   CC-BY-NC-4.0 - NON-COMMERCIAL ONLY. Fine for personal testing/eval,
-   NOT something to leave wired up as the permanent default on a public
-   site without checking that use is actually covered. The real fix is
-   swapping this constant for a self-hosted ONNX export of the MIT-
-   licensed Open-Speech-EkStep/Vakyansh Kannada voice once that
-   conversion exists - see the conversion spec that was written up
-   separately for that project (Glow-TTS + HiFi-GAN, MIT, both a male
-   and female voice). Nothing else in this function needs to change,
-   only this constant and, if the replacement isn't also a VITS/
-   transformers.js-pipeline-compatible export, the synthesis call itself.
+   at Xenova/mms-tts-kan, a properly transformers.js-structured ONNX
+   export of Meta's MMS-TTS Kannada checkpoint (tried onnx-community/
+   mms-tts-kan-ONNX first - that repo is missing preprocessor_config.json
+   and fails to load; Xenova/mms-tts-XXX is the same, consistently-
+   structured conversion used for dozens of other MMS-TTS languages and
+   documented as working, so it's the safer bet - confirm it loads
+   before relying on it, since it hasn't been directly verified here).
+   Either way, the underlying checkpoint is licensed CC-BY-NC-4.0 -
+   NON-COMMERCIAL ONLY. Fine for personal testing/eval, NOT something to
+   leave wired up as the permanent default on a public site without
+   checking that use is actually covered. The real fix is swapping this
+   constant for a self-hosted ONNX export of the MIT-licensed
+   Open-Speech-EkStep/Vakyansh Kannada voice once that conversion
+   exists - see the conversion spec that was written up separately for
+   that project (Glow-TTS + HiFi-GAN, MIT, both a male and female
+   voice). Nothing else in this function needs to change, only this
+   constant and, if the replacement isn't also a VITS/transformers.js-
+   pipeline-compatible export, the synthesis call itself.
 */
-const ONNX_TTS_MODEL_ID = 'onnx-community/mms-tts-kan-ONNX'; // CC-BY-NC-4.0 - see note above
+const ONNX_TTS_MODEL_ID = 'Xenova/mms-tts-kan'; // CC-BY-NC-4.0 - see note above
 let _onnxTtsPipelinePromise = null;
 function getOnnxKannadaTts(){
   if(!_onnxTtsPipelinePromise){
