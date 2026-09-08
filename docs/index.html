@@ -1279,7 +1279,7 @@
 <footer>
   <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
   <p>Made for people spending time in Bengaluru, with <span class="footer-preethi"><span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಪ್ರೀತಿ</span><span class="kn-en">love</span></span> ❤️<button class="speak-btn speak-btn-sm" onclick="speakText('ಪ್ರೀತಿ')" aria-label="Hear pronunciation">🔊</button></span></p>
-  <p class="footer-meta">v2026-09-09.5 &middot; &copy; 2026, all rights reserved</p>
+  <p class="footer-meta">v2026-09-09.6 &middot; &copy; 2026, all rights reserved</p>
   <p class="footer-meta">Built with AI, edited and fact-checked by human.</p>
 </footer>
 
@@ -1367,6 +1367,7 @@ const LOCATIONS = [
     kn:'ಚೌಡಯ್ಯ ಸ್ಮಾರಕ ಭವನ', say:'Chow-dayya Smaaraka Bhavana', lat:12.9977, lng:77.5773 },
   { id:'sankey-tank', name:'Sankey Tank', area:'Malleswaram / Sadashivanagar', category:'nature',
     blurb:'A 37-acre lake dug in 1882 as a drinking-water reservoir, now one of the city\'s steadiest walking and jogging spots - a paved loop (not a full circuit), an open gym, and a regular crowd of morning walkers who know each other by face.',
+    photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Sankey%20Tank.jpg'],
     kn:'ಸಂಕೆ ಕೆರೆ', say:'Sankey Kere', lat:13.0064, lng:77.5701 },
   { id:'veena-thindi', name:'Veena Stores & Thindi Beedi', area:'Malleswaram', category:'food',
     blurb:'A benne masale dosa counter with no seating and no fuss, on the same lane as a dozen other breakfast stalls locals actually rotate through.',
@@ -1405,6 +1406,7 @@ const LOCATIONS = [
     kn:'ಮಲ್ಲೇಶ್ವರಂ ಮಾರುಕಟ್ಟೆ', say:'Malle-shwa-ram Maa-ru-katte', lat:13.0068, lng:77.573 },
   { id:'ubcity', name:'UB City', area:'Vittal Mallya Road', category:'craft',
     blurb:'The city\'s luxury quarter - useful for seeing how Bengaluru\'s design and jewellery houses reinterpret Karnataka craft for a global shelf.',
+    photos:['https://commons.wikimedia.org/wiki/Special:FilePath/UB%20City%20Bangalore.JPG'],
     kn:'ಯುಬಿ ಸಿಟಿ', say:'U B City', lat:12.9716, lng:77.5958 },
   { id:'iskcon', name:'ISKCON Temple Bangalore', area:'Rajajinagar', category:'culture',
     blurb:'A modern temple complex built into a hillside, worth visiting at evening aarti even if you\'re not devotional.',
@@ -1416,6 +1418,7 @@ const LOCATIONS = [
     kn:'ಬೆಂಗಳೂರು ಅರಮನೆ', say:'Bengaluru Ara-mane', lat:12.9987, lng:77.592 },
   { id:'rangashankara', name:'Ranga Shankara', area:'J.P. Nagar', category:'culture',
     blurb:'The city\'s best-loved theatre, running Kannada, English, and regional-language plays most nights of the week.',
+    photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Ranga%20Shankara%2C%20Bangalore%20%282024%29%2022.jpg'],
     kn:'ರಂಗಶಂಕರ', say:'Ranga-shankara', lat:12.9089, lng:77.5831 },
   { id:'nandi', name:'Nandi Hills', area:'~60km north', category:'daytrip',
     blurb:'A pre-dawn drive up a hill fort for sunrise above the clouds - a Bengaluru weekend ritual long before Instagram.',
@@ -1555,7 +1558,7 @@ const DISHES = [
     desc:'Slightly sweet, deep-fried banana buns from the coastal Udupi breakfast tradition.' },
   { name:'Goli Baje', kn:'ಗೋಳಿ ಬಜೆ', say:'Goli Baje', photo:'https://commons.wikimedia.org/wiki/Special:FilePath/%E0%B2%97%E0%B3%8B%E0%B2%B3%E0%B2%BF%20%E0%B2%AC%E0%B2%9C%E0%B3%86.jpg',
     desc:'Soft, tangy fritters from a fermented flour-and-curd batter - a Udupi teatime classic, best eaten hot.' },
-  { name:'Jolada Rotti', kn:'ಜೋಳದ ರೊಟ್ಟಿ', say:'Jo-lada Rotti',
+  { name:'Jolada Rotti', kn:'ಜೋಳದ ರೊಟ್ಟಿ', say:'Jo-lada Rotti', photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Another%20Vegetarian%20Meal.jpg',
     desc:'A hand-flattened sorghum flatbread - the everyday bread of North Karnataka.' },
   { name:'Akki Rotti', kn:'ಅಕ್ಕಿ ರೊಟ್ಟಿ', say:'Akki Rotti',
     desc:'A rice-flour flatbread patted straight onto a hot tawa by hand, not rolled, worked through with grated carrot, onion, coriander and green chilli.' },
@@ -1567,7 +1570,7 @@ const DISHES = [
     desc:'Hubballi-Dharwad\'s answer to bhel - puffed rice tossed in a tangy onion-tomato-tamarind masala, sold at evening street stalls and eaten with mirchi bajji.' },
   { name:'Kalaburgi Tahari', kn:'ಕಲಬುರಗಿ ತಹರಿ', say:'Kala-burgi Tahari',
     desc:'North Karnataka\'s answer to biryani - mutton and rice cooked together in one pot, a Nizam-era dish still tied to a handful of old Kalaburgi eateries that only take cash.' },
-  { name:'Dharwad Peda', kn:'ಧಾರವಾಡ ಪೇಡಾ', say:'Dhaar-waad Pedaa',
+  { name:'Dharwad Peda', kn:'ಧಾರವಾಡ ಪೇಡಾ', say:'Dhaar-waad Pedaa', photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Dharwad%20peda.jpg',
     desc:'A caramel-brown milk sweet with a history over 175 years old, still made at the original Babusingh Thakur shop on Dharwad\'s Line Bazaar - which the queues for it gave its name to.' },
   { name:'Belagavi Kunda', kn:'ಬೆಳಗಾವಿ ಕುಂದಾ', say:'Bela-gaavi Kundaa',
     desc:'A soft, caramelised milk-and-khoa sweet from Belagavi, invented by accident when a confectioner let a pot of milk boil too long - the city is sometimes called Kundagiri after it.' },
