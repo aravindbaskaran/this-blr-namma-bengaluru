@@ -253,17 +253,19 @@
     border-radius:var(--radius); padding:18px 18px 16px;
     display:flex; flex-direction:column; gap:10px; position:relative; overflow:hidden;
   }
-  /* saree-print motif: a paisley (kairi/buti) block-print pattern, tinted per
+  /* region-textile motif: authentic per-region pattern (kasuti, ilkal,
+     kasavu, mysuru silk, kodagu, hampi, chikmagalur, or the default
+     paisley block-print for Bengaluru/unmatched spots), tinted per
      category via --cat-color. Uses a mask so the SVG shape stays a plain
-     white silhouette and the actual color comes from a real CSS variable -
-     the same trick as the region-card textile patterns, adapted for a motif
-     instead of dots/stripes. */
+     silhouette and the actual color comes from a real CSS variable.
+     Swappable per-card via --card-mask / --card-mask-size, set in JS
+     from the location's area (see regionMaskFor). */
   .card::before{
     content:''; position:absolute; inset:0; pointer-events:none;
-    background:var(--cat-color, var(--maroon)); opacity:0.16;
-    -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52'%3E%3Cpath d='M27 8c8 1 13 7 12 15-1 6-6 10-11 13-3 2-5 5-4 9-4-3-6-6-6-11 0-5 3-8 6-10 5-3 7-7 6-12-1-3-2-4-3-4z'/%3E%3Ccircle cx='12' cy='40' r='2'/%3E%3Ccircle cx='42' cy='14' r='1.6'/%3E%3C/svg%3E");
-    mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52'%3E%3Cpath d='M27 8c8 1 13 7 12 15-1 6-6 10-11 13-3 2-5 5-4 9-4-3-6-6-6-11 0-5 3-8 6-10 5-3 7-7 6-12-1-3-2-4-3-4z'/%3E%3Ccircle cx='12' cy='40' r='2'/%3E%3Ccircle cx='42' cy='14' r='1.6'/%3E%3C/svg%3E");
-    -webkit-mask-size:52px 52px; mask-size:52px 52px;
+    background:var(--cat-color, var(--maroon)); opacity:0.18;
+    -webkit-mask-image:var(--card-mask, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52'%3E%3Cpath d='M27 8c8 1 13 7 12 15-1 6-6 10-11 13-3 2-5 5-4 9-4-3-6-6-6-11 0-5 3-8 6-10 5-3 7-7 6-12-1-3-2-4-3-4z'/%3E%3Ccircle cx='12' cy='40' r='2'/%3E%3Ccircle cx='42' cy='14' r='1.6'/%3E%3C/svg%3E"));
+    mask-image:var(--card-mask, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52'%3E%3Cpath d='M27 8c8 1 13 7 12 15-1 6-6 10-11 13-3 2-5 5-4 9-4-3-6-6-6-11 0-5 3-8 6-10 5-3 7-7 6-12-1-3-2-4-3-4z'/%3E%3Ccircle cx='12' cy='40' r='2'/%3E%3Ccircle cx='42' cy='14' r='1.6'/%3E%3C/svg%3E"));
+    -webkit-mask-size:var(--card-mask-size, 52px 52px); mask-size:var(--card-mask-size, 52px 52px);
     -webkit-mask-repeat:repeat; mask-repeat:repeat;
   }
   .card > *{position:relative;}
@@ -371,20 +373,28 @@
   }
   .berunda-mark-v2 path{stroke:currentColor; fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round;}
 
-  /* ---------- kasuti stitch divider ---------- */
+  /* ---------- kasuti stitch divider: authentic gopura + menthya motif ---------- */
   .kasuti-divider{
-    height:14px;
-    background-image: repeating-linear-gradient(45deg, var(--kasuti-black) 0 2px, transparent 2px 9px),
-                       repeating-linear-gradient(-45deg, var(--kasuti-black) 0 2px, transparent 2px 9px);
-    opacity:0.5;
+    height:44px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg fill='none' stroke='%23201C17' stroke-width='1.6' stroke-linecap='square'%3E%3Cpath d='M24 5 L24 9 M20 9 L28 9 M17 13 L31 13 M14 17 L34 17 M11 21 L37 21'/%3E%3Cpath d='M6 34 L9.5 30.5 L13 34 L9.5 37.5 Z'/%3E%3Cpath d='M35 34 L38.5 30.5 L42 34 L38.5 37.5 Z'/%3E%3Cpath d='M22 40 L25.5 36.5 L29 40 L25.5 43.5 Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat:repeat; opacity:0.6;
   }
 
-  /* ---------- temple-tower border, ilkal-pallu style ---------- */
+  /* ---------- temple-tower border, authentic ilkal-pallu zigzag ---------- */
   .temple-border{
-    height:13px;
-    background: repeating-linear-gradient(-45deg, var(--gold) 0 7px, var(--ilkal-red) 7px 14px);
-    clip-path: polygon(0 100%,4% 0,8% 100%,12% 0,16% 100%,20% 0,24% 100%,28% 0,32% 100%,36% 0,40% 100%,44% 0,48% 100%,52% 0,56% 100%,60% 0,64% 100%,68% 0,72% 100%,76% 0,80% 100%,84% 0,88% 100%,92% 0,96% 100%,100% 0,100% 100%);
+    height:24px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='24'%3E%3Cpolygon points='0,24 14,1 28,24' fill='%239C2436'/%3E%3Cpolygon points='0,24 14,7 28,24' fill='%23D4A017'/%3E%3Cpolygon points='0,24 14,12 28,24' fill='%23F6F1E4'/%3E%3Cpolygon points='0,24 14,16 28,24' fill='%239C2436'/%3E%3C/svg%3E");
+    background-repeat:repeat-x;
   }
+
+  /* ---------- mundu / shalya motif icon: folded cloth with gold kara border ---------- */
+  .mundu-icon{width:34px; height:44px; flex:none; vertical-align:middle; margin-left:4px;}
+  .mundu-icon rect.cloth{fill:var(--on-accent, #F6F1E4); stroke:#c9bfa5; stroke-width:1;}
+  .mundu-icon .fold-line{stroke:#c9bfa5; stroke-width:0.7;}
+  .mundu-icon .kara{fill:var(--gold);}
+  .mundu-icon .kara-line{stroke:var(--ilkal-red); stroke-width:1.2;}
+  .mundu-icon .collar{fill:none; stroke:#c9bfa5; stroke-width:1;}
+
 
   /* ---------- inline motif icons ---------- */
   .motif-icon{width:18px; height:18px; flex:none; stroke:currentColor; fill:none; stroke-width:1.4;}
@@ -401,9 +411,15 @@
     content:''; position:absolute; inset:0;
     background-image:var(--region-pattern, none);
     background-size:var(--region-pattern-size, 20px 20px);
-    opacity:0.4; pointer-events:none;
+    opacity:var(--region-pattern-opacity, 0.4); pointer-events:none;
   }
   .region-card > *{position:relative; z-index:1;}
+  /* dark-ground region cards (rich silk / kupya ground) need light text */
+  .region-card.region-dark h4, .region-card.region-dark p,
+  .region-card.region-dark .region-say, .region-card.region-dark .flavor-item,
+  .region-card.region-dark .region-movie{color:var(--on-accent, #F6F1E4);}
+  .region-card.region-dark .flavor-item b, .region-card.region-dark .region-movie b{color:var(--on-accent, #F6F1E4);}
+  .region-card.region-dark .speak-btn-sm{color:var(--on-accent, #F6F1E4);}
   .region-card h4{font-family:'Baloo 2',sans-serif; font-size:15.5px; font-weight:600; margin-bottom:6px; display:flex; align-items:center; gap:6px;}
   .region-card p{font-size:12.5px; color:var(--ink-soft); line-height:1.45; position:relative;}
   .region-pronounce{display:flex; align-items:baseline; gap:6px; margin-bottom:6px; position:relative; flex-wrap:wrap;}
@@ -612,6 +628,7 @@
   }
   .submit-btn:hover{background:var(--maroon-dark);}
   .form-note{font-size:12.5px; color:var(--ink-soft); margin-top:10px;}
+  .issue-form-block{margin-top:28px; padding-top:24px; border-top:1px dashed var(--line);}
 
   /* ---------- agenda drawer ---------- */
   .drawer-backdrop{
@@ -940,6 +957,7 @@
 </section>
 
 <div class="kasuti-divider"></div>
+<div class="temple-border"></div>
 
 <div class="controls">
   <div class="controls-inner">
@@ -1129,7 +1147,7 @@
       <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಕನ್ನಡ ಕಲಿಯಿರಿ</span><span class="kn-en">learn Kannada</span></span>
     </div>
     <h2>Words that go further than any guidebook</h2>
-    <p>Kannada is Karnataka's official language and Bengaluru's mother tongue, even if English and Hindi both get by. It's also one of only a handful of languages in India with classical-language status - the oldest surviving Kannada inscription is from 450 CE, and Kavirajamarga, the oldest surviving work of Kannada poetics, dates to 850 CE. That's a longer running conversation than most languages on earth get to have, and it's genuinely fun to pick up a few threads of it. Try a few of these in an auto, a darshini, or a market stall - people notice, and it usually gets you a warmer price or a warmer welcome. Tap the speaker icon to hear a phrase - your browser needs a Kannada voice installed for it to sound right, so treat it as a rough guide, not a lesson.</p>
+    <p>Kannada is Karnataka's official language and Bengaluru's mother tongue - you can get away with some English and some Hindi, but the city itself runs on Kannada first, Tamil to a real extent, and a scatter of other languages after that. It's one of eleven languages in India with classical-language status - a list that also includes Tamil, Sanskrit, Telugu, Malayalam, Odia, Marathi, Bengali, Assamese, Pali, and Prakrit. The oldest surviving Kannada inscription is from 450 CE, and Kavirajamarga, the oldest surviving work of Kannada poetics, dates to 850 CE. That's a longer running conversation than most languages on earth get to have, and it's genuinely fun to pick up a few threads of it. Try a few of these in an auto, a darshini, or a market stall - people notice. Kannada, like most Indian languages, rewards the effort: a warmer smile, a warmer welcome, and sometimes even a warmer price. Tap the speaker icon to hear a phrase - your browser needs a Kannada voice installed for it to sound right, so treat it as a rough guide, not a lesson.</p>
   </div>
   <div class="phrase-grid" id="phraseGrid"></div>
   <svg class="elephant-mark" viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1151,7 +1169,7 @@
   <div class="karnataka-sub">
     <div class="sub-head"><h3>Locations</h3></div>
     <div class="region-row">
-      <div class="region-card" style="--region-color:var(--jacaranda); --region-pattern:repeating-linear-gradient(45deg, transparent 0 3px, color-mix(in srgb, var(--jacaranda) 45%, transparent) 3px 4px, transparent 4px 7px), radial-gradient(circle at 4px 4px, color-mix(in srgb, var(--gold) 65%, transparent) 1.3px, transparent 1.6px); --region-pattern-size:7px 7px, 26px 26px">
+      <div class="region-card region-dark" style="--region-color:var(--gold); --region-pattern-opacity:0.94; --region-pattern:linear-gradient(#5B3F7A,#5B3F7A), url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34'%3E%3Cpath d='M17 6c5 1 8 5 7 10-1 4-4 6-7 8-2 1-3 3-2 6-3-2-4-4-4-7 0-3 2-5 4-6 3-2 4-4 3-8-0.4-1.5-0.6-2.5-1-3z' fill='none' stroke='%23D4A017' stroke-width='1.1'/%3E%3C/svg%3E&quot;); --region-pattern-size:100% 100%, 34px 34px">
         <h4>Mysuru</h4>
         <div class="region-pronounce"><span class="kn region-kn">ಮೈಸೂರು</span><span class="region-say">My-sooru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಮೈಸೂರು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Wodeyar palaces, Mysore silk shot through with gold zari, sandalwood and Dasara's elephant processions.</p>
@@ -1163,7 +1181,7 @@
         </div>
         <div class="region-movie"><b>Watch</b> - <i>Mysore Mallige</i> (1992), a National Award-winning film based on the poet K. S. Narasimhaswamy's collection of the same name.</div>
       </div>
-      <div class="region-card" style="--region-color:var(--coastal-teal); --region-pattern:repeating-linear-gradient(0deg, color-mix(in srgb, var(--gold) 75%, transparent) 0 3px, transparent 3px 22px), repeating-linear-gradient(0deg, color-mix(in srgb, var(--coastal-teal) 30%, transparent) 22px 23px, transparent 23px 44px); --region-pattern-size:100% 44px, 100% 44px;">
+      <div class="region-card" style="--region-color:var(--coastal-teal); --region-pattern:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M4 18 L8 13 L12 18 L8 23 Z' fill='none' stroke='%23C99A2E' stroke-width='1.1'/%3E%3Cpath d='M16 18 L20 13 L24 18 L20 23 Z' fill='none' stroke='%23C99A2E' stroke-width='1.1'/%3E%3C/svg%3E&quot;), repeating-linear-gradient(0deg, #C99A2E 0 3px, transparent 3px 28px); --region-pattern-size:24px 24px, 100% 28px;">
         <h4>Udupi &amp; Mangaluru</h4>
         <div class="region-pronounce"><span class="kn region-kn">ಉಡುಪಿ - ಮಂಗಳೂರು</span><span class="region-say">Udupi - Mangaluru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಉಡುಪಿ ಮಂಗಳೂರು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Kasavu-bordered cottons, red-tiled roofs, Yakshagana masks, and a coastline running on neer dosa and kori rotti.</p>
@@ -1175,7 +1193,7 @@
         </div>
         <div class="region-movie"><b>Watch</b> - <i>Su From So</i> (2025), a coastal-village horror-comedy shot around Someshwara - now the 4th highest-grossing Kannada film of all time, behind only the two KGF films and Kantara.</div>
       </div>
-      <div class="region-card" style="--region-color:var(--kasuti-black); --region-pattern:linear-gradient(color-mix(in srgb, var(--kasuti-black) 30%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--kasuti-black) 30%, transparent) 1px, transparent 1px), linear-gradient(45deg, transparent 42%, color-mix(in srgb, var(--ilkal-red) 45%, transparent) 42% 48%, transparent 48%), linear-gradient(-45deg, transparent 42%, color-mix(in srgb, var(--ilkal-red) 45%, transparent) 42% 48%, transparent 48%); --region-pattern-size:13px 13px, 13px 13px, 18px 18px, 18px 18px;">
+      <div class="region-card" style="--region-color:var(--kasuti-black); --region-pattern:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg fill='none' stroke='%23201C17' stroke-width='1.6' stroke-linecap='square'%3E%3Cpath d='M24 5 L24 9 M20 9 L28 9 M17 13 L31 13 M14 17 L34 17 M11 21 L37 21'/%3E%3Cpath d='M6 34 L9.5 30.5 L13 34 L9.5 37.5 Z'/%3E%3Cpath d='M35 34 L38.5 30.5 L42 34 L38.5 37.5 Z'/%3E%3Cpath d='M22 40 L25.5 36.5 L29 40 L25.5 43.5 Z'/%3E%3C/g%3E%3C/svg%3E&quot;); --region-pattern-size:48px 48px;">
         <h4>Hubballi-Dharwad-Belagavi</h4>
         <div class="region-pronounce"><span class="kn region-kn">ಹುಬ್ಬಳ್ಳಿ-ಧಾರವಾಡ-ಬೆಳಗಾವಿ</span><span class="region-say">Hubballi-Dhaarwaad-Belagaavi</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಹುಬ್ಬಳ್ಳಿ ಧಾರವಾಡ ಬೆಳಗಾವಿ')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Kasuti embroidery worked in black cotton, Ilkal sarees with their temple-tower pallu, jowar rotti country.</p>
@@ -1211,10 +1229,10 @@
         </div>
         <div class="region-movie"><b>Watch</b> - <i>Love Mocktail</i> (2020), one of the biggest Kannada hits of its year, shot partly at Samse's tea estates - it's since become a three-film series.</div>
       </div>
-      <div class="region-card" style="--region-color:var(--ilkal-red); --region-pattern:repeating-linear-gradient(115deg, color-mix(in srgb, var(--ilkal-red) 40%, transparent) 0 4px, transparent 4px 26px), repeating-linear-gradient(115deg, color-mix(in srgb, var(--gold) 45%, transparent) 26px 27px, transparent 27px 52px); --region-pattern-size:60px 60px, 60px 60px;">
+      <div class="region-card region-dark" style="--region-color:var(--gold); --region-pattern-opacity:0.94; --region-pattern:linear-gradient(#201C17,#201C17), url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath d='M0 8 L8 0 L16 8 L8 16 Z' fill='none' stroke='%23D4A017' stroke-width='1'/%3E%3C/svg%3E&quot;), repeating-linear-gradient(115deg, transparent 0 50px, #9C2436 50px 62px, transparent 62px 112px); --region-pattern-size:100% 100%, 16px 16px, 100% 100%;">
         <h4>Kodagu</h4>
         <div class="region-pronounce"><span class="kn region-kn">ಕೊಡಗು</span><span class="region-say">Kodagu</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಕೊಡಗು')" aria-label="Hear pronunciation">🔊</button></div>
-        <p>The Kodava homeland - misty coffee estates layered over a distinct language, a martial tradition, and a cuisine found nowhere else in Karnataka.</p>
+        <p>The Kodava homeland - misty coffee estates, the black-and-gold kupya with its red chele sash, a martial tradition, and a cuisine found nowhere else in Karnataka.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Coorg orange</div>
           <div class="flavor-item"><span class="flavor-dot spicy"></span><b>Spicy</b> - Pandi curry</div>
@@ -1301,15 +1319,35 @@
     <button type="submit" class="submit-btn">Add to the guide</button>
   </form>
   <p class="form-note">Custom spots are stored privately on your device using this page's built-in storage - nothing is shared or uploaded anywhere.</p>
+
+  <div class="issue-form-block">
+    <div class="section-head">
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಪ್ರಶ್ನೆ ಇದೆಯೇ?</span><span class="kn-en">have a question?</span></span>
+      <h2>Spot a mistake, or have a question?</h2>
+      <p>This opens a prefilled GitHub issue on the guide's repo - you'll need a GitHub account to actually submit it. Nothing is sent from this page directly; you finish and post it yourself on the next screen.</p>
+    </div>
+    <form class="add-form" id="issueForm">
+      <div class="full">
+        <label>Short summary</label>
+        <input type="text" id="i-title" placeholder="e.g. MTR's address has changed" required>
+      </div>
+      <div class="full">
+        <label>Details</label>
+        <textarea id="i-body" placeholder="What's wrong, or what would you like to ask?" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Open as GitHub issue</button>
+    </form>
+  </div>
 </section>
 
 
 
 <div class="kasuti-divider"></div>
+<div class="temple-border"></div>
 <footer>
   <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
   <p>Made for people spending time in Bengaluru, with <span class="footer-preethi"><span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಪ್ರೀತಿ</span><span class="kn-en">love</span></span> ❤️<button class="speak-btn speak-btn-sm" onclick="speakText('ಪ್ರೀತಿ')" aria-label="Hear pronunciation">🔊</button></span></p>
-  <p class="footer-meta">v2026-09-09.8 &middot; &copy; 2026, all rights reserved</p>
+  <p class="footer-meta">v2026-09-09.10 &middot; &copy; 2026, all rights reserved</p>
   <p class="footer-meta">Built with AI, edited and fact-checked by human.</p>
 </footer>
 
@@ -1374,6 +1412,15 @@ const DAYTRIP_COLOR = 'var(--leaf-light)';
    made that day. Bump the counter on same-day edits (.1 -> .2);
    start a fresh date and reset to .1 on the first edit of a new day.
    Update the line in the <footer> markup by hand.
+
+   ISSUE REPORTING: below the "Add to the guide" form is a second,
+   separate form (#issueForm, in the .issue-form-block) for flagging
+   a mistake or asking a question. It doesn't submit anything itself -
+   this is a static file with no backend - it just builds a prefilled
+   GitHub issue URL (title + body via encodeURIComponent) and opens
+   it in a new tab against aravindbaskaran/this-blr-not-that. The
+   visitor finishes and posts it themselves on GitHub, so they'll
+   need a GitHub account.
    ============================================================ */
 
 /* ============================================================
@@ -1607,7 +1654,7 @@ const NOT_THAT = [
   { often:'Bollywood', also:'Sandalwood is the first love here too - Kollywood, Tollywood and Mollywood all run alongside it' },
   { often:'The Taj Mahal as the monument', also:'Hoysala temples at Belur and Halebidu, the ruins of Hampi, Mysuru Palace' },
   { often:'Sitar and tabla', also:'Carnatic music, the veena, the mridangam, the nadaswaram' },
-  { often:'Kurtas and lehengas', also:'Sarees and half-sarees, Kodagu-style kupya chele, Malnad and Mangaluru-belt drapes, mundu, panche and shalya' },
+  { often:'Kurtas and lehengas', also:'Sarees and half-sarees, Kodagu-style kupya chele, Malnad and Mangaluru-belt drapes, mundu, panche and shalya <svg class="mundu-icon" viewBox="0 0 26 34" aria-hidden="true"><path class="collar" d="M2 6 L13 13 L24 6"/><rect class="cloth" x="2" y="4" width="22" height="26" rx="1"/><line class="fold-line" x1="2" y1="14" x2="24" y2="14"/><line class="fold-line" x1="2" y1="22" x2="24" y2="22"/><rect class="kara" x="2" y="26" width="22" height="4"/><line class="kara-line" x1="2" y1="28.5" x2="24" y2="28.5"/></svg>' },
   { often:'Diwali fireworks as "the" festival', also:'Bengaluru\'s own Karaga, plus Ugadi, Onam and Pongal across the south' },
   { often:'One flat idea of "South Indian"', also:'Coorg\'s coffee culture, coastal Mangalore seafood, Hampi\'s temple ruins, the jowar-rotti belt of North Karnataka - four different worlds inside one state' },
   { often:'Rickshaws as the whole transport story', also:'All still true, plus Namma Metro, tech-park shuttles and app-based autos - worth trying a few modes, since the traffic stories aren\'t exaggerated either' },
@@ -1839,6 +1886,38 @@ function renderPills(){
 }
 function setCategory(id){ activeCategory = id; renderPills(); renderList(); renderMap(); }
 
+/* ---------------- region-authentic card textures ----------------
+   Each card gets the real textile/landscape motif for its own part of
+   Karnataka (same shapes used on the region-summary cards), tinted by
+   the card's existing category color. Falls back to the default paisley
+   (set as the CSS variable's own fallback) for Bengaluru-city spots or
+   anywhere that doesn't match a known region. */
+const REGION_MASKS = {
+  mysuru: { size:'34px 34px', mask:"url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2234%22 height=%2234%22%3E%3Cpath d=%22M17 6c5 1 8 5 7 10-1 4-4 6-7 8-2 1-3 3-2 6-3-2-4-4-4-7 0-3 2-5 4-6 3-2 4-4 3-8-0.4-1.5-0.6-2.5-1-3z%22 fill=%22none%22 stroke=%22%23000%22 stroke-width=%221.3%22/%3E%3C/svg%3E')" },
+  'udupi-mangaluru': { size:'22px 22px', mask:"url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2222%22 height=%2222%22%3E%3Cg fill=%22none%22 stroke=%22%23000%22 stroke-width=%221.1%22%3E%3Cpath d=%22M4 16 L7.5 12 L11 16 L7.5 20 Z%22/%3E%3Cpath d=%22M15 16 L18.5 12 L22 16 L18.5 20 Z%22/%3E%3Crect y=%221%22 width=%2222%22 height=%221.3%22/%3E%3C/g%3E%3C/svg%3E')" },
+  hubballi: { size:'40px 40px', mask:"url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22%3E%3Cg fill=%22none%22 stroke=%22%23000%22 stroke-width=%221.4%22 stroke-linecap=%22square%22%3E%3Cpath d=%22M20 4 L20 7 M17 7 L23 7 M14.5 10 L25.5 10 M12 13 L28 13%22/%3E%3Cpath d=%22M5 28 L8 25 L11 28 L8 31 Z%22/%3E%3Cpath d=%22M29 28 L32 25 L35 28 L32 31 Z%22/%3E%3C/g%3E%3C/svg%3E')" },
+  kodagu: { size:'16px 16px', mask:"url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22%3E%3Cpath d=%22M0 8 L8 0 L16 8 L8 16 Z%22 fill=%22none%22 stroke=%22%23000%22 stroke-width=%221.1%22/%3E%3C/svg%3E')" },
+  hampi: { size:'60px 60px', mask:"url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22%3E%3Ccircle cx=%2216%22 cy=%2220%22 r=%228%22/%3E%3Ccircle cx=%2244%22 cy=%2240%22 r=%2210%22/%3E%3C/svg%3E')" },
+  chikmagalur: { size:'24px 24px', mask:"url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22%3E%3Cellipse cx=%2213%22 cy=%2213%22 rx=%224%22 ry=%226%22/%3E%3C/svg%3E')" },
+  bengaluru: { size:'14px 14px', mask:"url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2214%22 height=%2214%22%3E%3Cpath d=%22M0 0 L14 0 M0 0 L0 14%22 stroke=%22%23000%22 stroke-width=%221.2%22/%3E%3C/svg%3E')" },
+};
+function regionMaskFor(area, name){
+  if(!area && !name) return null;
+  const a = ((area||'') + ' ' + (name||'')).toLowerCase();
+  // Bangalore road/locality names that collide with region-city names must be
+  // checked first (e.g. "Mysore Road" and "Old Madras Road" are Bengaluru
+  // arterial roads, not the cities of Mysuru or Chennai).
+  if(/mysore road|chikmagalur road/.test(a)) return REGION_MASKS.bengaluru;
+  if(/mysuru|mysore/.test(a)) return REGION_MASKS.mysuru;
+  if(/udupi|mangaluru|mangalore|coastal/.test(a)) return REGION_MASKS['udupi-mangaluru'];
+  if(/hubballi|hubli|dharwad|belagavi|belgaum|bagalkot|line bazaar|gadag/.test(a)) return REGION_MASKS.hubballi;
+  if(/kodagu|coorg|madikeri|virajpet|samse/.test(a)) return REGION_MASKS.kodagu;
+  if(/hampi|vijayapura|bijapur|badami|aihole|pattadakal|vijayanagar/.test(a)) return REGION_MASKS.hampi;
+  if(/chikmagalur|chikkamagaluru/.test(a)) return REGION_MASKS.chikmagalur;
+  if(/bengaluru|bangalore|malleswaram|basavanagudi|indiranagar|koramangala|jayanagar|chickpet|chamarajapet|balepet|shankarapuram|residency road|lalbagh road|ashok nagar|ulsoor|hsr layout|vv puram|gandhi bazaar|j\.?\s*p\.?\s*nagar|rest house road|church street|kumara krupa|sheshadripuram|gandhi nagar|majestic|vittal mallya|rajajinagar|vasanth nagar|mg road|multiple outlets|citywide|kambipura/.test(a)) return REGION_MASKS.bengaluru;
+  return null;
+}
+
 /* ---------------- render: list view ---------------- */
 function buildLocationCard(l){
   const cat = catMeta(l.category);
@@ -1852,7 +1931,9 @@ function buildLocationCard(l){
   const pronounceHtml = l.kn ? `<div class="card-pronounce"><span class="kn card-kn">${l.kn}</span><span class="card-say">${l.say}</span>${speakBtn(l.kn, 'sm')}</div>` : '';
   const mapLinkHtml = (typeof l.lat === 'number' && typeof l.lng === 'number')
     ? `<button class="map-link-btn" onclick="viewOnMap('${l.id}')">📍 View on map</button>` : '';
-  return `<div class="card" style="--cat-color:${cat.color}">
+  const regionMask = regionMaskFor(l.area, l.name);
+  const maskStyle = regionMask ? ` --card-mask:${regionMask.mask}; --card-mask-size:${regionMask.size};` : '';
+  return `<div class="card" style="--cat-color:${cat.color};${maskStyle}">
       <div class="card-top">
         <div><h3>${l.name}</h3><div class="area">${l.area}</div>${pronounceHtml}</div>
         <span class="tag">${cat.label}</span>
@@ -2165,6 +2246,17 @@ document.getElementById('addForm').addEventListener('submit', async function(e){
   renderList();
   renderMap();
   document.getElementById('explore').scrollIntoView({behavior:'smooth'});
+});
+
+document.getElementById('issueForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const title = document.getElementById('i-title').value.trim();
+  const body = document.getElementById('i-body').value.trim();
+  if(!title || !body) return;
+  const repo = 'https://github.com/aravindbaskaran/this-blr-not-that';
+  const url = `${repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+  window.open(url, '_blank', 'noopener');
+  this.reset();
 });
 
 /* ---------------- init ---------------- */
