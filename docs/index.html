@@ -244,8 +244,22 @@
   .card{
     background:var(--cream); border:1px solid var(--line); border-left:5px solid var(--cat-color, var(--maroon));
     border-radius:var(--radius); padding:18px 18px 16px;
-    display:flex; flex-direction:column; gap:10px; position:relative;
+    display:flex; flex-direction:column; gap:10px; position:relative; overflow:hidden;
   }
+  /* saree-print motif: a paisley (kairi/buti) block-print pattern, tinted per
+     category via --cat-color. Uses a mask so the SVG shape stays a plain
+     white silhouette and the actual color comes from a real CSS variable -
+     the same trick as the region-card textile patterns, adapted for a motif
+     instead of dots/stripes. */
+  .card::before{
+    content:''; position:absolute; inset:0; pointer-events:none;
+    background:var(--cat-color, var(--maroon)); opacity:0.16;
+    -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52'%3E%3Cpath d='M27 8c8 1 13 7 12 15-1 6-6 10-11 13-3 2-5 5-4 9-4-3-6-6-6-11 0-5 3-8 6-10 5-3 7-7 6-12-1-3-2-4-3-4z'/%3E%3Ccircle cx='12' cy='40' r='2'/%3E%3Ccircle cx='42' cy='14' r='1.6'/%3E%3C/svg%3E");
+    mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52'%3E%3Cpath d='M27 8c8 1 13 7 12 15-1 6-6 10-11 13-3 2-5 5-4 9-4-3-6-6-6-11 0-5 3-8 6-10 5-3 7-7 6-12-1-3-2-4-3-4z'/%3E%3Ccircle cx='12' cy='40' r='2'/%3E%3Ccircle cx='42' cy='14' r='1.6'/%3E%3C/svg%3E");
+    -webkit-mask-size:52px 52px; mask-size:52px 52px;
+    -webkit-mask-repeat:repeat; mask-repeat:repeat;
+  }
+  .card > *{position:relative;}
   .card-top{display:flex; justify-content:space-between; align-items:flex-start; gap:10px;}
   .card-title-row{display:flex; align-items:center; gap:7px;}
   .card h3{font-size:17px; line-height:1.25;}
@@ -748,11 +762,11 @@
   <div class="note-pair">
     <div class="rename-note note-geology">
       <h4>Ground older than the city, older than most continents</h4>
-      <p>Before any of the dates below, there's the land itself. Bengaluru sits on the Peninsular Gneiss - among the oldest exposed rock on Earth, dated to 3-3.4 billion years, older than the Himalayas, older than dinosaurs, older than atmospheric oxygen. The best exposures are at Lalbagh and Basavanagudi's Bugle Rock, both declared National Geological Monuments in 1975. This bedrock is part of the Dharwar Craton, a fragment of the ancient supercontinent Gondwana that once also included Antarctica, Africa and Australia, before continental drift pulled them apart. The city's undulating, hilly terrain and its elevation - over 900m, with no major river nearby - is exactly why it grew into a "city of a thousand lakes": rainwater was dammed into cascading tanks down three natural valleys, over 2,300 of them by 1897. Fewer than 200 survive today, but the terrain that made them possible hasn't gone anywhere.</p>
+      <p>Before any of the dates below, there's the land itself. Bengaluru sits on the Peninsular Gneiss - among the oldest exposed rock on Earth, dated to 3-3.4 billion years, older than the Himalayas, older than dinosaurs, older than atmospheric oxygen. The best exposures are at Lalbagh and Basavanagudi's Bugle Rock, both declared National Geological Monuments in 1975. This bedrock is part of the Dharwar Craton, a fragment of the ancient supercontinent Gondwana that once also included Antarctica, Africa and Australia, before continental drift pulled them apart. The city's undulating, hilly terrain and its elevation - over 900m, with no major river nearby - is why it grew into a "city of a thousand lakes": rainwater was dammed into cascading tanks down three natural valleys, over 2,300 of them by 1897. Fewer than 200 survive today. The terrain is still there.</p>
     </div>
     <div class="rename-note note-rename">
       <h4>Why Bengaluru, not Bangalore</h4>
-      <p>On 1 November 2014 - Karnataka Rajyotsava, the state's formation day - the Karnataka government officially renamed Bengaluru and eleven other cities, restoring their Kannada names after decades of anglicised spellings from the colonial era. The proposal had been pending since 2005, first raised by the writer U. R. Ananthamurthy. It's the same reasoning behind Mysuru, Mangaluru, Belagavi, Vijayapura, Hubballi and Chikkamagaluru elsewhere on this page - not a rebrand, but a correction, on the same footing as Bombay becoming Mumbai or Madras becoming Chennai.</p>
+      <p>On 1 November 2014 - Karnataka Rajyotsava, the state's formation day - the Karnataka government officially renamed Bengaluru and eleven other cities, restoring their Kannada names after decades of anglicised spellings from the colonial era. The proposal had been pending since 2005, first raised by the writer U. R. Ananthamurthy. It's the same reasoning behind Mysuru, Mangaluru, Belagavi, Vijayapura, Hubballi and Chikkamagaluru elsewhere on this page - a correction, on the same footing as Bombay becoming Mumbai or Madras becoming Chennai.</p>
     </div>
   </div>
   <div class="history-grid">
@@ -837,7 +851,7 @@
       <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಅನ್ವೇಷಿಸಿ</span><span class="kn-en">explore</span></span>
     </div>
     <h2>Places, in the words of people who'd actually take you there</h2>
-    <p>Filter by kind, add anything to your agenda, and switch to the map to see how close things really are. A small <span class="kn" style="font-size:13px;">ಗಂಡಭೇರುಂಡ</span> mark on a card means it's personally recommended, not just popular.</p>
+    <p>Filter by kind, add anything to your agenda, and switch to the map to see how close things are. A small <span class="kn" style="font-size:13px;">ಗಂಡಭೇರುಂಡ</span> mark on a card means it's personally recommended, not just popular.</p>
   </div>
   <div id="listView" class="grid"></div>
   <div id="mapView" style="display:none;">
@@ -853,7 +867,7 @@
       <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಬೆಂಗಳೂರಿನ ಆಚೆ</span><span class="kn-en">outside Bengaluru, in Karnataka</span></span>
     </div>
     <h2>Outside Bengaluru, in Karnataka</h2>
-    <p>Everything below is a day trip or an overnight, not something you'll stumble into on a regular week - kept separate so the city section above stays about the city.</p>
+    <p>Day trips and overnights. Kept apart so the city section stays about the city.</p>
   </div>
   <div id="daytripGrid" class="grid"></div>
 </section>
@@ -923,7 +937,7 @@
   <div class="karnataka-sub">
     <div class="sub-head"><h3>Locations</h3></div>
     <div class="region-row">
-      <div class="region-card" style="--region-color:var(--jacaranda); --region-pattern:repeating-linear-gradient(45deg, transparent 0 9px, color-mix(in srgb, var(--jacaranda) 40%, transparent) 9px 10px)">
+      <div class="region-card" style="--region-color:var(--jacaranda); --region-pattern:repeating-linear-gradient(45deg, transparent 0 3px, color-mix(in srgb, var(--jacaranda) 45%, transparent) 3px 4px, transparent 4px 7px), radial-gradient(circle at 4px 4px, color-mix(in srgb, var(--gold) 65%, transparent) 1.3px, transparent 1.6px); --region-pattern-size:7px 7px, 26px 26px">
         <h4>Mysuru</h4>
         <div class="region-pronounce"><span class="kn region-kn">ಮೈಸೂರು</span><span class="region-say">My-sooru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಮೈಸೂರು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Wodeyar palaces, Mysore silk shot through with gold zari, sandalwood and Dasara's elephant processions.</p>
@@ -936,7 +950,7 @@
         <div class="region-wear"><b>Wear</b> - The Mysuru peta, a pleated silk-and-zari turban worn by the Wodeyars and still given to grooms and honoured guests today.</div>
         <div class="region-movie"><b>Watch</b> - <i>Mysore Mallige</i> (1992), a National Award-winning film based on the poet K. S. Narasimhaswamy's collection of the same name.</div>
       </div>
-      <div class="region-card" style="--region-color:var(--coastal-teal); --region-pattern:radial-gradient(circle at 12px 12px, color-mix(in srgb, var(--coastal-teal) 35%, transparent) 3px, transparent 4px); --region-pattern-size:22px 22px;">
+      <div class="region-card" style="--region-color:var(--coastal-teal); --region-pattern:repeating-linear-gradient(0deg, color-mix(in srgb, var(--gold) 75%, transparent) 0 3px, transparent 3px 22px), repeating-linear-gradient(0deg, color-mix(in srgb, var(--coastal-teal) 30%, transparent) 22px 23px, transparent 23px 44px); --region-pattern-size:100% 44px, 100% 44px;">
         <h4>Udupi &amp; Mangaluru</h4>
         <div class="region-pronounce"><span class="kn region-kn">ಉಡುಪಿ - ಮಂಗಳೂರು</span><span class="region-say">Udupi - Mangaluru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಉಡುಪಿ ಮಂಗಳೂರು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Kasavu-bordered cottons, red-tiled roofs, Yakshagana masks, and a coastline running on neer dosa and kori rotti.</p>
@@ -949,7 +963,7 @@
         <div class="region-wear"><b>Wear</b> - Everyday, a simple lungi and shirt; on stage, the towering headgear and painted faces of Yakshagana, coastal Karnataka's own dance-drama.</div>
         <div class="region-movie"><b>Watch</b> - <i>Su From So</i> (2025), a coastal-village comedy-horror shot around Someshwara that became the 7th highest-grossing Kannada film ever - proof the coast still sets the trends.</div>
       </div>
-      <div class="region-card" style="--region-color:var(--kasuti-black); --region-pattern:linear-gradient(color-mix(in srgb, var(--kasuti-black) 30%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--kasuti-black) 30%, transparent) 1px, transparent 1px); --region-pattern-size:13px 13px;">
+      <div class="region-card" style="--region-color:var(--kasuti-black); --region-pattern:linear-gradient(color-mix(in srgb, var(--kasuti-black) 30%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--kasuti-black) 30%, transparent) 1px, transparent 1px), linear-gradient(45deg, transparent 42%, color-mix(in srgb, var(--ilkal-red) 45%, transparent) 42% 48%, transparent 48%), linear-gradient(-45deg, transparent 42%, color-mix(in srgb, var(--ilkal-red) 45%, transparent) 42% 48%, transparent 48%); --region-pattern-size:13px 13px, 13px 13px, 18px 18px, 18px 18px;">
         <h4>Hubballi-Dharwad-Belagavi</h4>
         <div class="region-pronounce"><span class="kn region-kn">ಹುಬ್ಬಳ್ಳಿ-ಧಾರವಾಡ-ಬೆಳಗಾವಿ</span><span class="region-say">Hubballi-Dhaarwaad-Belagaavi</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಹುಬ್ಬಳ್ಳಿ ಧಾರವಾಡ ಬೆಳಗಾವಿ')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Kasuti embroidery worked in black cotton, Ilkal sarees with their temple-tower pallu, jowar rotti country.</p>
@@ -987,7 +1001,7 @@
         </div>
         <div class="region-wear"><b>Wear</b> - A simpler, practical version of the panche-angi suited to plantation work and the cooler hill climate.</div>
       </div>
-      <div class="region-card" style="--region-color:var(--coffee); --region-pattern:radial-gradient(ellipse 4px 6px at 14px 14px, color-mix(in srgb, var(--coffee) 38%, transparent) 40%, transparent 41%); --region-pattern-size:24px 24px;">
+      <div class="region-card" style="--region-color:var(--ilkal-red); --region-pattern:repeating-linear-gradient(115deg, color-mix(in srgb, var(--ilkal-red) 40%, transparent) 0 4px, transparent 4px 26px), repeating-linear-gradient(115deg, color-mix(in srgb, var(--gold) 45%, transparent) 26px 27px, transparent 27px 52px); --region-pattern-size:60px 60px, 60px 60px;">
         <h4>Kodagu</h4>
         <div class="region-pronounce"><span class="kn region-kn">ಕೊಡಗು</span><span class="region-say">Kodagu</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಕೊಡಗು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>The Kodava homeland - misty coffee estates layered over a distinct language, a martial tradition, and a cuisine found nowhere else in Karnataka.</p>
@@ -1000,7 +1014,7 @@
         <div class="region-wear"><b>Wear</b> - The Kodava kupya chele - a black knee-length coat, a gold-embroidered red sash, and a silver peeche kathi dagger tucked into it.</div>
         <div class="region-movie"><b>Watch</b> - <i>Mungaru Male</i> (2006), the biggest Kannada blockbuster of its decade, shot largely across Coorg's coffee country.</div>
       </div>
-      <div class="region-card" style="--region-color:var(--terracotta); --region-pattern:repeating-linear-gradient(0deg, color-mix(in srgb, var(--terracotta) 30%, transparent) 0 2px, transparent 2px 15px);">
+      <div class="region-card" style="--region-color:var(--terracotta); --region-pattern:repeating-linear-gradient(0deg, color-mix(in srgb, var(--terracotta) 28%, transparent) 0 1.5px, transparent 1.5px 15px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--terracotta) 28%, transparent) 0 1.5px, transparent 1.5px 15px);">
         <h4>Bengaluru</h4>
         <div class="region-pronounce"><span class="kn region-kn">ಬೆಂಗಳೂರು</span><span class="region-say">Bengaluru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಬೆಂಗಳೂರು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Where all of the above land in one city - in its markets, its emporiums, and its Kannadiga kitchens.</p>
@@ -1019,7 +1033,7 @@
   <div class="karnataka-sub">
     <div class="sub-head">
       <h3>Food</h3>
-      <p>Every dish named on this page, in one place - what each one actually is, how it's written in Kannada, and roughly how to say it, so you're not guessing at a menu.</p>
+      <p>Every dish named on this page, in one place - what each one is, how it's written in Kannada, and roughly how to say it, so you're not guessing at a menu.</p>
     </div>
     <div class="dish-grid" id="dishGrid"></div>
   </div>
@@ -1039,7 +1053,7 @@
     </svg>
     <div class="sub-head">
       <h3>Festivals</h3>
-      <p>Some of these are city-specific, some run the length of the coast for months - worth checking dates before you go, since most follow the lunar calendar and move every year.</p>
+      <p>Some of these are city-specific, some run the length of the coast for months - check dates before you go, since most follow the lunar calendar and move every year.</p>
     </div>
     <div class="festival-grid" id="festivalGrid"></div>
   </div>
@@ -1080,16 +1094,16 @@
       <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಈ ಮಾರ್ಗದರ್ಶಿ ಬಗ್ಗೆ</span><span class="kn-en">about this guide</span></span>
     </div>
     <h2>Why this guide exists</h2>
-    <p>Typical Bengaluru guides are geographically misplaced - they reach for cultures a thousand kilometres away and bundle it all into a generic "India," Rajasthani motifs and Hindi greetings included, none of it local to this city or to anywhere south of the Vindhyas. This guide is for what's actually around you the moment you land in Bengaluru: Kannada and Karnataka, its cuisine, its culture, its crafts, its neighbourhoods - everything within reach, not a thousand kilometres from it.</p>
+    <p>Typical Bengaluru guides are geographically misplaced - they reach for cultures a thousand kilometres away and bundle it all into a generic "India," Rajasthani motifs and Hindi greetings included, none of it local to this city or to anywhere south of the Vindhyas. This guide is for what's actually around you the moment you land in Bengaluru: Kannada and Karnataka, its cuisine, its culture, its crafts, its neighbourhoods. All of it within reach.</p>
   </div>
   <div class="creator-note">
     <div class="head-with-icon">
       <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-2 2-1 4 0 5-3 0-5 2-5 5 0 4 3 6 5 8 2-2 5-4 5-8 0-3-2-5-5-5 1-1 2-3 0-5Z"/></svg>
       <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಬರೆದವರ ಬಗ್ಗೆ</span><span class="kn-en">about the person behind this</span></span>
     </div>
-    <p>I was born in Pondicherry, and by the time I got to Bengaluru I'd already been through seven schools and two colleges spread across Uttar Pradesh, Andhra Pradesh and Telangana, Tamil Nadu, and Kolkata. Somewhere in that shuffle, one thing became obvious: the best way to actually enjoy a place is to live it like a local, not visit it like a checklist. I've moved around so much that I don't really belong anywhere anymore - which, funnily enough, means I belong everywhere a little bit too.</p>
+    <p>I was born in Pondicherry, and by the time I got to Bengaluru I'd already been through seven schools and two colleges spread across Uttar Pradesh, Andhra Pradesh and Telangana, Tamil Nadu, and Kolkata. Somewhere in that shuffle, one thing became obvious: the best way to enjoy a place is to live it like a local, not visit it like a checklist. I've moved around so much that I don't really belong anywhere anymore - which, funnily enough, means I belong everywhere a little bit too.</p>
     <p>Bengaluru is as representative of India as anywhere else - but it holds far more than the software-and-startups image most people carry in from outside. As an outsider who's chosen to stay, I've come to think the city's older identity, the one built over centuries and not just the last two decades, deserves a guide of its own.</p>
-    <p>There's also a narrower reason this page cites its sources. A lot of what gets said about Bengaluru - in listicles, reels, "hidden gem" posts - quietly overrides the work and context that came before it, without crediting where any of it actually came from. This page isn't trying to correct that or relitigate anyone's claim to the city. It's just trying to keep the reference-worthy details - the founding date, the lake names, the source of a dish or a craft - written down with a source attached, so they don't have to be rediscovered from scratch every few years.</p>
+    <p>There's also a narrower reason this page cites its sources. A lot of what gets said about Bengaluru - in listicles, reels, "hidden gem" posts - quietly overrides the work and context that came before it, without crediting where any of it came from. This page isn't out to relitigate anyone's claim to the city. It keeps the reference-worthy details - the founding date, the lake names, the source of a dish or a craft - written down with a source attached, so they don't have to be rediscovered from scratch every few years.</p>
     <p class="creator-links">Find me on <a href="https://www.linkedin.com/in/aravindbaskaran/" target="_blank" rel="noopener">LinkedIn</a> or <a href="https://x.com/aravind_baskara" target="_blank" rel="noopener">X</a>.</p>
   </div>
 </section>
@@ -1101,7 +1115,7 @@
       <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಆಕರಗಳು</span><span class="kn-en">sources &amp; further reading</span></span>
     </div>
     <h2>Where this came from</h2>
-    <p>The history, crafts and regional detail on this page draw on the following - mostly Wikipedia, for stability and easy cross-checking. Worth reading past this page if any of it caught your interest.</p>
+    <p>The history, crafts and regional detail on this page draw on the following - mostly Wikipedia, for stability and easy cross-checking. Read past this page if any of it caught your interest.</p>
   </div>
   <div class="sources-grid">
     <div class="sources-col">
@@ -1254,6 +1268,7 @@ const LOCATIONS = [
     kn:'ಹಳ್ಳಿ ಜೋಳ ಬಿರಿಯಾನಿ', say:'Halli Jo-ne Biriyani', lat:12.925, lng:77.5938 },
   { id:'vvpuram', name:'VV Puram Food Street', area:'Basavanagudi', category:'food',
     blurb:'A single lane that turns into an open kitchen after sunset - grilled corn, kebabs, and desserts nobody outside Karnataka has heard of.',
+    photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Vad%20Pav%20-%20Food%20Street%2C%20VV%20puram%2C%20Bengaluru%20-%20Karnataka%20023.jpg'],
     kn:'ವಿ.ವಿ. ಪುರಂ', say:'V V Puram', lat:12.942, lng:77.575 },
   { id:'mylari', name:'Vinayaka Mylari', area:'Nazarbad, Mysuru', category:'food',
     blurb:'A six-table Mysuru institution since the late 1930s, making one soft, ghee-roasted dosa and nothing else worth asking about. Grab a churmuri from the puffed-rice stalls outside Devaraja Market on the way.',
@@ -1261,6 +1276,9 @@ const LOCATIONS = [
   { id:'toit', name:'Toit Brewpub', area:'Indiranagar', category:'night',
     blurb:'One of the city\'s original craft breweries, credited with starting Bengaluru\'s microbrewery culture in the 2010s.',
     kn:'ಟೊಯ್ಟ್', say:'Toyt', lat:12.9716, lng:77.6412 },
+  { id:'amrut', name:'Amrut Distillery', area:'Kambipura, Mysore Road', category:'night',
+    blurb:'The distillery behind India\'s first internationally launched single malt, Amrut Fusion, debuted in Glasgow in 2004 - Bengaluru\'s heat actually speeds up the ageing. Tours exist but are inconsistent; call ahead rather than showing up.',
+    kn:'ಅಮೃತ್ ಡಿಸ್ಟಿಲರಿ', say:'Amrut Distillery', lat:12.9086, lng:77.4256 },
   { id:'commercial', name:'Commercial Street & Chickpet', area:'Shivajinagar / Chickpet', category:'craft',
     blurb:'Two markets, two moods: Commercial Street for fashion and export surplus, Chickpet\'s lanes for silk, bangles, and spice by weight.',
     photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Commercial%20Street%2C%20Bangalore%20(7870991636).jpg'],
@@ -1283,7 +1301,7 @@ const LOCATIONS = [
     blurb:'The city\'s best-loved theatre, running Kannada, English, and regional-language plays most nights of the week.',
     kn:'ರಂಗಶಂಕರ', say:'Ranga-shankara', lat:12.9089, lng:77.5831 },
   { id:'nandi', name:'Nandi Hills', area:'~60km north', category:'daytrip',
-    blurb:'A pre-dawn drive up a hill fort for sunrise above the clouds - a Bengaluru weekend ritual since long before it was scenic on Instagram.',
+    blurb:'A pre-dawn drive up a hill fort for sunrise above the clouds - a Bengaluru weekend ritual long before Instagram.',
     photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Sunset%20on%20Nandi%20Hill.jpg'],
     kn:'ನಂದಿ ಬೆಟ್ಟ', say:'Nandi Betta', lat:13.3702, lng:77.6835 },
   { id:'mysuru', name:'Mysuru Palace', area:'~3 hrs south', category:'daytrip',
@@ -1320,9 +1338,13 @@ const LOCATIONS = [
     photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Sunrise%20from%20the%20top%20of%20Matanga%20hill%2C%20Hampi.jpg'],
     kn:'ಹಂಪಿ', say:'Hampi', lat:15.335, lng:76.46 },
   { id:'vijayapura', name:'Vijayapura (Bijapur)', area:'~9 hrs north, pair with Hampi', category:'daytrip',
-    blurb:'Deccan sultanate architecture at its most confident - the Gol Gumbaz dome, second largest in the world, has a whisper gallery worth the echo.',
+    blurb:'Deccan sultanate architecture at full scale - the Gol Gumbaz dome, second largest in the world, has a whisper gallery worth the echo.',
     photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Gol%20Gumbaz%20-4%2C%20Bijapur%2C%20Karnataka.jpg'],
     kn:'ವಿಜಯಪುರ', say:'Vijaya-pura', lat:16.83, lng:75.7361 },
+  { id:'aihole', name:'Aihole, Badami & Pattadakal', area:'~9-10 hrs north, pair with Hampi or Vijayapura', category:'daytrip',
+    blurb:'Three Chalukya-era temple towns on the Malaprabha river - the "primary school, secondary school and university" of Indian temple architecture, centuries older than Hampi.',
+    photos:['https://commons.wikimedia.org/wiki/Special:FilePath/Agastya%20Lake%20with%20Badami%20Temples.jpg'],
+    kn:'ಐಹೊಳೆ-ಬಾದಾಮಿ-ಪಟ್ಟದಕಲ್', say:'Aihole-Baadaami-Pattadakal', lat:15.9143, lng:75.6805 },
 ];
 
 /* ============================================================
@@ -1344,16 +1366,16 @@ const NOT_THAT = [
    SKIP_CROWD - overtouristy spots and a local alternative.
    ============================================================ */
 const SKIP_CROWD = [
-  { crowded:'ISKCON Temple at peak evening aarti', why:'Long security queues and a shuffle-through pace that leaves little room to actually sit with it.',
+  { crowded:'ISKCON Temple at peak evening aarti', why:'Long security queues and a shuffle-through pace that leaves little room to sit with it.',
     instead:'Dodda Ganapathi Temple, Basavanagudi', area:'Basavanagudi', why2:'A 16th-century monolithic Ganesha idol, unhurried, tucked below Bull Temple hill.' },
   { crowded:'Brigade Road / MG Road for "nightlife"', why:'Mall-brand shopping and chain restaurants - the same strip you\'d find in most Indian metros.',
-    instead:'Indiranagar\'s 12th Main or HSR\'s social streets', area:'Indiranagar / HSR Layout', why2:'Independent kitchens and bars actually run by Bengaluru people, not franchise counters.' },
+    instead:'Indiranagar\'s 12th Main or HSR\'s social streets', area:'Indiranagar / HSR Layout', why2:'Independent kitchens and bars run by Bengaluru people, not franchise counters.' },
   { crowded:'UB City for a "royal India" photo', why:'A luxury mall with imported marble - striking, but tells you nothing about Karnataka craft.',
     instead:'Cauvery Arts & Crafts Emporium', area:'MG Road', why2:'The real handloom and sandalwood work, at fixed state-run prices, no upsell.' },
   { crowded:'A generic shopping mall or multiplex for an evening out', why:'The same experience as any big-city mall abroad - nothing here that couldn\'t be swapped for Singapore or Dubai.',
-    instead:'VV Puram Food Street', area:'Basavanagudi', why2:'An actual local evening ritual - grilled corn, kebabs, and desserts that don\'t travel outside Karnataka.' },
+    instead:'VV Puram Food Street', area:'Basavanagudi', why2:'A local evening ritual - grilled corn, kebabs, and desserts that don\'t travel outside Karnataka.' },
   { crowded:'Bangalore Palace for the "royal seat" experience', why:'A Tudor-Gothic building with a paid walk-through and little Karnataka history behind it.',
-    instead:'Mysuru Palace, ~3 hrs south', area:'Mysuru', why2:'The actual Wodeyar seat of power, lit gold every Sunday evening - worth the drive if royalty is what you\'re after.' },
+    instead:'Mysuru Palace, ~3 hrs south', area:'Mysuru', why2:'The Wodeyar seat of power, lit gold every Sunday evening - the drive is justified if royalty is what you\'re after.' },
   { crowded:'Vidyarthi Bhavan for masala dosa', why:'It went viral years ago and never came back down; expect an hour-long wait for a table on weekends.',
     instead:'Veena Stores or Thindi Beedi, Malleswaram', area:'Malleswaram', why2:'The same benne masale dosa culture, no influencer queue, and a whole lane of other breakfast stalls to graze on the way.' },
 ];
@@ -1375,7 +1397,7 @@ const FESTIVALS = [
   { name:'Bhuta Kola', kn:'ಭೂತ ಕೋಲ', when:'Dec-May, night-long', where:'Dakshina Kannada & Udupi coast', color:'var(--coastal-teal)',
     blurb:'Tulu Nadu\'s spirit-worship ritual, the tradition behind the film Kantara - a hereditary medium becomes possessed by a guardian daiva (deity) such as Panjurli, delivering counsel and settling disputes through the night, to torchlight, drums and paddana ballads sung in Tulu.' },
   { name:'Kambala', kn:'ಕಂಬಳ', when:'Nov-March', where:'Dakshina Kannada & Udupi coast', color:'var(--coastal-teal)',
-    blurb:'Buffalo races down slushy paddy tracks, run in over 45 villages along the Tulu Nadu coast - handlers balance on wooden planks behind the animals, sometimes hitting 50 km/h. A farming-season thanksgiving that predates any spectator sport it now resembles.' },
+    blurb:'Buffalo races down slushy paddy tracks, run in over 45 villages along the Tulu Nadu coast - handlers balance on wooden planks behind the animals, sometimes hitting 50 km/h. A farming-season thanksgiving, long before it was a spectator sport.' },
   { name:'Hampi Utsav', kn:'ಹಂಪಿ ಉತ್ಸವ', when:'Usually Nov or Feb/Mar, 3 days', where:'Hampi', color:'var(--coffee)',
     blurb:'Also called Vijaya Utsava - the ruined capital of the Vijayanagara Empire lit up for dance, music and folk performance, reviving a Mahanavami tradition the empire itself once held on the same ground.' },
 ];
@@ -1387,6 +1409,8 @@ const DISHES = [
   { name:'Mysore Pak', kn:'ಮೈಸೂರು ಪಾಕ್', say:'My-sooru Paak',
     photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Mysore%20pak.jpg',
     desc:'A dense, ghee-heavy sweet made from gram flour, sugar and ghee, invented in the Mysuru palace kitchens.' },
+  { name:'Mysore Mutton Curry', kn:'ಮೈಸೂರು ಮಟನ್ ಕರಿ', say:'My-sooru Mutton Curry',
+    desc:'A dark, tangy mutton curry built on roasted spices rather than cream - it has since travelled as far as Singapore, picking up soy sauce along the way.' },
   { name:'Bisi Bele Bath', kn:'ಬಿಸಿ ಬೇಳೆ ಬಾತ್', say:'Bisi Bele Baath',
     photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Bisi%20Bele%20Bath%20(Bisibelebath).JPG',
     desc:'Literally "hot lentil rice" - a spiced, tangy rice-and-lentil dish and Karnataka\'s definitive comfort food.' },
@@ -1395,30 +1419,44 @@ const DISHES = [
     desc:'Steamed finger-millet dumplings, torn by hand and dunked in saaru (thin lentil soup) - an old-Mysore rural staple.' },
   { name:'Benne Masale Dosa', kn:'ಬೆಣ್ಣೆ ಮಸಾಲೆ ದೋಸೆ', say:'Ben-ne Masaale Dose',
     desc:'A crisp dosa laced with butter (benne) and filled with spiced potato palya.' },
+  { name:'Davanagere Benne Dose', kn:'ದಾವಣಗೆರೆ ಬೆಣ್ಣೆ ದೋಸೆ', say:'Daavana-gere Ben-ne Dose',
+    desc:'A different animal from the Bengaluru version above - thicker and spongier, with puffed rice ground into the batter, first sold by a woman named Chennamma outside a Davanagere drama theatre in 1928.' },
   { name:'Khali Dose', kn:'ಖಾಲಿ ದೋಸೆ', say:'Khaali Dose',
     desc:'A plain, unstuffed dosa - thin, buttery, and a Bengaluru darshini specialty in its own right.' },
   { name:'Donne Biryani', kn:'ದೊನ್ನೆ ಬಿರಿಯಾನಿ', say:'Don-ne Biriyaani',
     desc:'Biryani made with short-grain jonne rice and a green masala base, served in a donne - a stitched areca-leaf cup.' },
   { name:'Kori Rotti', kn:'ಕೋರಿ ರೊಟ್ಟಿ', say:'Kori Rotti',
     desc:'A Tulu Nadu dish - spicy coconut-milk chicken curry poured over crisp, dry rice wafers.' },
-  { name:'Neer Dosa', kn:'ನೀರ್ ದೋಸೆ', say:'Neer Dose',
+  { name:'Kori Gassi', kn:'ಕೋರಿ ಗಸ್ಸಿ', say:'Kori Gassi',
+    desc:'The chicken curry itself, without the wafers - a Mangalorean Bunt-community dish built on roasted coconut and dry red chilli. Kori is chicken, gassi is curry, in Tulu.' },
+  { name:'Neer Dosa', kn:'ನೀರ್ ದೋಸೆ', say:'Neer Dose', photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Neer%20Dosa%20%28%E0%B2%A8%E0%B3%80%E0%B2%B0%E0%B3%81%20%E0%B2%A6%E0%B3%8B%E0%B2%B8%E0%B3%86%29.jpg',
     desc:'A thin, lacy rice-batter crepe from the coast - the name literally means "water dosa."' },
-  { name:'Mangalore Buns', kn:'ಮಂಗಳೂರು ಬನ್ಸ್', say:'Mangaluru Buns',
+  { name:'Thatte Idli', kn:'ತಟ್ಟೆ ಇಡ್ಲಿ', say:'Tat-te Idli',
+    desc:'Plate-sized idli - thatte means plate - steamed wide and flat instead of in the usual small moulds, soft enough that it barely needs chewing.' },
+  { name:'Mangalore Buns', kn:'ಮಂಗಳೂರು ಬನ್ಸ್', say:'Mangaluru Buns', photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Mangalore%20Bun%20%2B%20Pickle%20%284307171460%29.jpg',
     desc:'Slightly sweet, deep-fried banana buns from the coastal Udupi breakfast tradition.' },
-  { name:'Goli Baje', kn:'ಗೋಳಿ ಬಜೆ', say:'Goli Baje',
+  { name:'Goli Baje', kn:'ಗೋಳಿ ಬಜೆ', say:'Goli Baje', photo:'https://commons.wikimedia.org/wiki/Special:FilePath/%E0%B2%97%E0%B3%8B%E0%B2%B3%E0%B2%BF%20%E0%B2%AC%E0%B2%9C%E0%B3%86.jpg',
     desc:'Soft, tangy fritters from a fermented flour-and-curd batter - a Udupi teatime classic, best eaten hot.' },
   { name:'Jolada Rotti', kn:'ಜೋಳದ ರೊಟ್ಟಿ', say:'Jo-lada Rotti',
     desc:'A hand-flattened sorghum flatbread - the everyday bread of North Karnataka.' },
+  { name:'Akki Rotti', kn:'ಅಕ್ಕಿ ರೊಟ್ಟಿ', say:'Akki Rotti',
+    desc:'A rice-flour flatbread patted straight onto a hot tawa by hand, not rolled, worked through with grated carrot, onion, coriander and green chilli.' },
+  { name:'Ragi Rotti', kn:'ರಾಗಿ ರೊಟ್ಟಿ', say:'Raagi Rotti',
+    desc:'The same hand-patted method as akki rotti, made with finger-millet flour instead of rice - denser, earthier, a staple alongside ragi mudde.' },
   { name:'Yenne Badnekai', kn:'ಎಣ್ಣೆ ಬದನೆಕಾಯಿ', say:'En-ne Badne-kaayi',
     desc:'Small eggplants stuffed with a peanut-sesame masala and slow-cooked in oil - a Dharwad-Hubballi classic.' },
   { name:'Girmit', kn:'ಗಿರ್ಮಿಟ್', say:'Gir-mit',
     desc:'Hubballi-Dharwad\'s answer to bhel - puffed rice tossed in a tangy onion-tomato-tamarind masala, sold at evening street stalls and eaten with mirchi bajji.' },
+  { name:'Kalaburgi Tahari', kn:'ಕಲಬುರಗಿ ತಹರಿ', say:'Kala-burgi Tahari',
+    desc:'North Karnataka\'s answer to biryani - mutton and rice cooked together in one pot, a Nizam-era dish still tied to a handful of old Kalaburgi eateries that only take cash.' },
   { name:'Dharwad Peda', kn:'ಧಾರವಾಡ ಪೇಡಾ', say:'Dhaar-waad Pedaa',
     desc:'A caramel-brown milk sweet with a history over 175 years old, still made at the original Babusingh Thakur shop on Dharwad\'s Line Bazaar - which the queues for it gave its name to.' },
   { name:'Belagavi Kunda', kn:'ಬೆಳಗಾವಿ ಕುಂದಾ', say:'Bela-gaavi Kundaa',
     desc:'A soft, caramelised milk-and-khoa sweet from Belagavi, invented by accident when a confectioner let a pot of milk boil too long - the city is sometimes called Kundagiri after it.' },
-  { name:'Kesari Bath', kn:'ಕೇಸರಿ ಬಾತ್', say:'Kesari Baath',
+  { name:'Kesari Bath', kn:'ಕೇಸರಿ ಬಾತ್', say:'Kesari Baath', photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Kesari%20bhath.jpg',
     desc:'A bright orange semolina sweet, often plated next to khara bath as the combination "chow-chow bath."' },
+  { name:'Chow Chow Bath', kn:'ಚೌ ಚೌ ಬಾತ್', say:'Chow Chow Baath', photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Kesari%20bhath.jpg',
+    desc:'The two dishes above, served together on one plate with a spoon of coconut chutney between them - sweet kesari bath and spicy khara bath, a Bengaluru darshini staple with no single inventor on record.' },
   { name:'Churmuri', kn:'ಚುರುಮುರಿ', say:'Churu-muri',
     desc:'Puffed rice tossed with onion, tomato, chilli and a tangy dressing - Mysuru\'s answer to bhel puri.' },
   { name:'Mylari Dosa', kn:'ಮೈಲಾರಿ ದೋಸೆ', say:'My-laari Dose',
@@ -1429,13 +1467,13 @@ const DISHES = [
     desc:'Steamed rice dumplings from Kodagu, the traditional partner to pandi curry.' },
   { name:'Filter Kaapi', kn:'ಫಿಲ್ಟರ್ ಕಾಫಿ', say:'Filter Kaapi',
     photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Filter%20Coffee%20-%20CTR%20Shri%20Sagar%2C%20Bangalore%20-%20Karnataka%20-%20PXL0254.jpg',
-    desc:'Strong decoction coffee brewed in a stainless steel filter, served with hot milk in a tumbler-davara set.' },
+    desc:'Traces back to the seven coffee beans the Sufi saint Baba Budan reportedly smuggled from Yemen to Chikmagalur in the 1670s - the slow-drip steel filter and the tumbler-davara pour came later, worked out in South Indian kitchens in the early 1900s. Strong decoction, hot milk, poured back and forth to cool and froth it. CTR and Vidyarthi Bhavan are two of Bengaluru\'s oldest addresses for it.' },
   { name:'Majjige', kn:'ಮಜ್ಜಿಗೆ', say:'Maj-jige',
     desc:'Spiced, thinned buttermilk - the everyday cooling drink that closes out a Karnataka meal.' },
   { name:'Nannari Sherbet', kn:'ನನ್ನಾರಿ ಶರಬತ್', say:'Nan-naari Sharabath',
     desc:'A deep red-brown cooling drink made from Indian sarsaparilla root syrup - a Mysuru street-cart classic.' },
   { name:'Kashaya', kn:'ಕಷಾಯ', say:'Ka-shaaya',
-    desc:'A hot spiced herbal decoction from the Tulu Nadu coast, often the very first thing offered to a guest.' },
+    desc:'A hot spiced herbal decoction from the Tulu Nadu coast, often the first thing offered to a guest.' },
 ];
 
 
