@@ -708,77 +708,114 @@
     .areas-compare{position:static;}
     .history-side{position:static;}
   }
-  /* ---------- page stage: sarees, torana, jasmine, dabara ---------- */
+  /* ---------- page stage: scroll-driven sarees, coffee, monuments ---------- */
   .stage{
     position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden;
   }
+  .stage svg{max-width:none;}
+  .stage-actor{
+    position:absolute;
+    opacity:0;
+    will-change:transform, opacity;
+    transition:opacity .55s ease;
+  }
+  .stage-actor.is-on{opacity:var(--on, 0.46);}
   .saree-roll{
-    position:absolute; width:min(46vw, 480px); height:210px;
-    opacity:0.42;
+    width:min(48vw, 500px); height:200px;
+    --on:0.5;
+    background-repeat:no-repeat, repeat, repeat-x;
+    background-position:0 0, 0 0, 0 100%;
+    background-size:100% 100%, auto, 14px 12px;
+    box-shadow:0 18px 40px rgba(62,42,28,0.16);
+    border-radius:4px 42% 8px 32%;
+  }
+  .saree-roll.tone-ilkal{
     background-color:var(--ilkal-red);
     background-image:
       linear-gradient(105deg, transparent 0 18%, rgba(247,238,218,0.28) 22%, transparent 32%),
       repeating-linear-gradient(90deg, #9C2436 0 22px, #7A1828 22px 24px),
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12'%3E%3Cpolygon points='0,12 7,0 14,12' fill='%23D4A017'/%3E%3Cpolygon points='0,12 7,4 14,12' fill='%23F6F1E4'/%3E%3C/svg%3E");
-    background-repeat:no-repeat, repeat, repeat-x;
-    background-position:0 0, 0 0, 0 100%;
-    background-size:100% 100%, auto, 14px 12px;
-    box-shadow:0 18px 40px rgba(62,42,28,0.18);
-    border-radius:4px 40% 8px 30%;
   }
-  .saree-roll-tl{
-    top:78px; left:-110px;
-    animation:saree-roll-tl 22s ease-in-out infinite;
-    transform-origin:20% 0;
+  .saree-roll.tone-mysore{
+    background-color:#5C1A4A;
+    background-image:
+      linear-gradient(105deg, transparent 0 18%, rgba(247,238,218,0.22) 22%, transparent 32%),
+      repeating-linear-gradient(90deg, #5C1A4A 0 22px, #3D1032 22px 24px),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12'%3E%3Cpolygon points='0,12 7,0 14,12' fill='%23D6A419'/%3E%3Cpolygon points='0,12 7,4 14,12' fill='%23F6F1E4'/%3E%3C/svg%3E");
   }
-  .saree-roll-br{
-    bottom:-70px; right:-120px;
+  .saree-roll.tone-kasuti{
+    background-color:var(--kasuti-black);
+    background-image:
+      linear-gradient(105deg, transparent 0 18%, rgba(247,238,218,0.18) 22%, transparent 32%),
+      repeating-linear-gradient(90deg, #201C17 0 18px, #D6A419 18px 20px, #9E1B32 20px 22px),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12'%3E%3Cpolygon points='0,12 7,0 14,12' fill='%23D6A419'/%3E%3Cpolygon points='0,12 7,4 14,12' fill='%239E1B32'/%3E%3C/svg%3E");
+  }
+  .saree-roll.tone-jacaranda{
     background-color:var(--jacaranda);
     background-image:
       linear-gradient(105deg, transparent 0 18%, rgba(247,238,218,0.22) 22%, transparent 32%),
       repeating-linear-gradient(90deg, #5B3F7A 0 22px, #48326E 22px 24px),
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12'%3E%3Cpolygon points='0,12 7,0 14,12' fill='%23D4A017'/%3E%3Cpolygon points='0,12 7,4 14,12' fill='%23F6F1E4'/%3E%3C/svg%3E");
-    animation:saree-roll-br 26s ease-in-out infinite;
-    transform-origin:80% 100%;
   }
-  @keyframes saree-roll-tl{
-    0%,100%{transform:rotate(-22deg) translateX(-18px);}
-    50%{transform:rotate(-16deg) translateX(28px);}
+  .saree-roll.tone-coastal{
+    background-color:var(--coastal-teal);
+    background-image:
+      linear-gradient(105deg, transparent 0 18%, rgba(247,238,218,0.24) 22%, transparent 32%),
+      repeating-linear-gradient(90deg, #1F7A6E 0 22px, #165A52 22px 24px),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12'%3E%3Cpolygon points='0,12 7,0 14,12' fill='%23F0C550'/%3E%3Cpolygon points='0,12 7,4 14,12' fill='%23F6F1E4'/%3E%3C/svg%3E");
   }
-  @keyframes saree-roll-br{
-    0%,100%{transform:rotate(158deg) translateX(-14px);}
-    50%{transform:rotate(164deg) translateX(22px);}
+  .saree-roll.tone-hampi{
+    background-color:var(--hampi-stone);
+    background-image:
+      linear-gradient(105deg, transparent 0 18%, rgba(247,238,218,0.2) 22%, transparent 32%),
+      repeating-linear-gradient(90deg, #A66A32 0 22px, #7A4A22 22px 24px),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12'%3E%3Cpolygon points='0,12 7,0 14,12' fill='%23F6F1E4'/%3E%3Cpolygon points='0,12 7,4 14,12' fill='%239E1B32'/%3E%3C/svg%3E");
   }
+  .saree-a{top:78px; left:-120px; transform-origin:20% 0;}
+  .saree-b{bottom:-64px; right:-130px; transform-origin:80% 100%;}
+  .saree-c{top:42%; left:-160px; height:160px; width:min(40vw, 380px); transform-origin:0 50%;}
   .torana-v{
-    position:absolute; top:72px; left:max(8px, calc(50% - 640px));
-    height:min(78vh, 640px); width:54px; opacity:0.55;
+    top:72px; left:max(6px, calc(50% - 650px));
+    height:min(78vh, 640px); width:54px; --on:0.5;
   }
   .jasmine-drift{
-    position:absolute; top:18%; right:max(12px, calc(50% - 620px));
-    width:120px; height:220px; opacity:0.5;
-    animation:jasmine-float 14s ease-in-out infinite;
+    top:16%; right:max(8px, calc(50% - 630px));
+    width:120px; height:220px; --on:0.48;
   }
-  @keyframes jasmine-float{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(14px);}
-  }
-  .dabara-set{
-    position:absolute; width:88px; height:88px; opacity:0.48;
-  }
-  .dabara-set.one{bottom:18%; left:max(16px, calc(50% - 620px));}
-  .dabara-set.two{top:38%; right:max(20px, calc(50% - 630px)); transform:scale(0.85); opacity:0.4;}
+  .dabara-set{width:96px; height:96px; --on:0.52;}
+  .dabara-set.one{bottom:16%; left:max(12px, calc(50% - 640px));}
+  .dabara-set.two{top:36%; right:max(16px, calc(50% - 640px));}
   .dabara-steam{stroke:var(--coffee); fill:none; stroke-width:1.1; stroke-linecap:round; opacity:0.45;
     animation:steam 2.8s ease-in-out infinite;}
   .dabara-steam.b{animation-delay:0.7s;}
   .dabara-steam.c{animation-delay:1.3s;}
   @keyframes steam{0%,100%{transform:translateY(0); opacity:0.15;} 50%{transform:translateY(-6px); opacity:0.55;}}
   .flower-cluster{
-    position:absolute; bottom:22%; right:max(40px, calc(50% - 580px));
-    width:140px; height:90px; opacity:0.4;
+    bottom:20%; right:max(28px, calc(50% - 590px));
+    width:150px; height:96px; --on:0.42;
+  }
+  .monument{
+    color:var(--hampi-stone); --on:0.38;
+  }
+  .monument.gopura{
+    bottom:12%; left:max(8px, calc(50% - 660px));
+    width:130px; height:200px;
+  }
+  .monument.vidhana{
+    top:22%; right:max(4px, calc(50% - 670px));
+    width:200px; height:130px; color:var(--maroon-dark);
+  }
+  .monument.nandi{
+    bottom:28%; right:max(20px, calc(50% - 620px));
+    width:140px; height:90px; color:#4A3C32;
+  }
+  .elephant-walk{
+    bottom:10%; left:max(24px, calc(50% - 620px));
+    width:190px; height:130px; --on:0.44;
   }
   @media (max-width:960px){
-    .torana-v, .jasmine-drift, .dabara-set, .flower-cluster{display:none;}
-    .saree-roll{opacity:0.22; width:70vw;}
+    .torana-v, .jasmine-drift, .dabara-set, .flower-cluster, .monument, .elephant-walk, .saree-c{display:none;}
+    .saree-roll{width:72vw;}
   }
 
   /* ---------- guide data loader ---------- */
@@ -813,7 +850,7 @@
   [data-reveal].is-in{opacity:1; transform:none;}
   @media (prefers-reduced-motion: reduce){
     *{transition:none !important; scroll-behavior:auto !important;}
-    .loader-torana, .loader-teni, .saree-roll, .jasmine-drift, .dabara-steam{animation:none !important;}
+    .loader-torana, .loader-teni, .dabara-steam{animation:none !important;}
     [data-reveal]{opacity:1; transform:none;}
   }
 </style>
@@ -847,10 +884,11 @@
   </div>
 </div>
 
-<div class="stage" aria-hidden="true">
-  <div class="saree-roll saree-roll-tl"></div>
-  <div class="saree-roll saree-roll-br"></div>
-  <svg class="torana-v" viewBox="0 0 54 640" preserveAspectRatio="xMidYMin meet">
+<div class="stage" id="pageStage" aria-hidden="true">
+  <div class="stage-actor saree-roll saree-a tone-ilkal" data-cast="sareeA"></div>
+  <div class="stage-actor saree-roll saree-b tone-jacaranda" data-cast="sareeB"></div>
+  <div class="stage-actor saree-roll saree-c tone-mysore" data-cast="sareeC"></div>
+  <svg class="stage-actor torana-v" data-cast="torana" viewBox="0 0 54 640" preserveAspectRatio="xMidYMin meet">
     <line x1="27" y1="0" x2="27" y2="640" stroke="#201C17" stroke-width="1.4"/>
     <g fill="#1F6B3A">
       <path d="M27 18 C18 28 16 48 27 62 C38 48 36 28 27 18Z"/>
@@ -874,7 +912,7 @@
       <circle cx="14" cy="420" r="3.6"/><circle cx="40" cy="420" r="3.6"/>
     </g>
   </svg>
-  <svg class="jasmine-drift" viewBox="0 0 120 220">
+  <svg class="stage-actor jasmine-drift" data-cast="jasmine" viewBox="0 0 120 220">
     <g fill="#F6F1E4" stroke="#9E1B32" stroke-width="0.6">
       <circle cx="24" cy="20" r="4"/><circle cx="70" cy="48" r="3.4"/><circle cx="40" cy="86" r="4.2"/>
       <circle cx="88" cy="110" r="3.2"/><circle cx="28" cy="148" r="3.8"/><circle cx="76" cy="176" r="4"/>
@@ -883,7 +921,7 @@
       <circle cx="96" cy="30" r="2.4"/><circle cx="12" cy="120" r="2"/><circle cx="104" cy="150" r="2.6"/>
     </g>
   </svg>
-  <svg class="dabara-set one" viewBox="0 0 88 88">
+  <svg class="stage-actor dabara-set one" data-cast="dabaraL" viewBox="0 0 88 88">
     <ellipse cx="44" cy="72" rx="28" ry="8" fill="#C9CDC8" stroke="#7A8078" stroke-width="1.2"/>
     <ellipse cx="44" cy="68" rx="22" ry="6" fill="#DDE0DC"/>
     <path d="M30 28 L33 66 L55 66 L58 28 Z" fill="#E7EAE5" stroke="#7A8078" stroke-width="1.2"/>
@@ -893,7 +931,7 @@
     <path class="dabara-steam b" d="M44 20 C43 14 46 11 44 6"/>
     <path class="dabara-steam c" d="M50 22 C52 16 48 12 50 8"/>
   </svg>
-  <svg class="dabara-set two" viewBox="0 0 88 88">
+  <svg class="stage-actor dabara-set two" data-cast="dabaraR" viewBox="0 0 88 88">
     <ellipse cx="44" cy="72" rx="28" ry="8" fill="#C9CDC8" stroke="#7A8078" stroke-width="1.2"/>
     <ellipse cx="44" cy="68" rx="22" ry="6" fill="#DDE0DC"/>
     <path d="M30 28 L33 66 L55 66 L58 28 Z" fill="#E7EAE5" stroke="#7A8078" stroke-width="1.2"/>
@@ -902,7 +940,7 @@
     <path class="dabara-steam" d="M38 22 C36 16 40 12 38 8"/>
     <path class="dabara-steam b" d="M50 22 C52 16 48 12 50 8"/>
   </svg>
-  <svg class="flower-cluster" viewBox="0 0 140 90">
+  <svg class="stage-actor flower-cluster" data-cast="flowers" viewBox="0 0 140 90">
     <g fill="#6B4FA0" opacity="0.85">
       <circle cx="30" cy="40" r="7"/><circle cx="44" cy="28" r="6"/><circle cx="48" cy="46" r="7.5"/><circle cx="62" cy="36" r="5"/>
     </g>
@@ -912,6 +950,63 @@
     <g fill="#D6A419">
       <circle cx="78" cy="22" r="4"/><circle cx="20" cy="62" r="3.4"/>
     </g>
+  </svg>
+  <svg class="stage-actor monument gopura" data-cast="gopura" viewBox="0 0 120 200" fill="currentColor">
+    <path d="M60 8 L64 18 H56 Z"/>
+    <ellipse cx="60" cy="22" rx="5" ry="3"/>
+    <path d="M38 32 L82 32 L78 50 H42 Z"/>
+    <path d="M28 52 L92 52 L86 78 H34 Z"/>
+    <path d="M16 80 L104 80 L96 118 H24 Z"/>
+    <path d="M8 120 L112 120 L108 188 H12 Z"/>
+    <g fill="var(--cream)" opacity="0.35">
+      <path d="M52 40 h16 v8 H52 Z"/>
+      <path d="M44 62 h12 v10 H44 Z M64 62 h12 v10 H64 Z"/>
+      <path d="M36 92 h14 v14 H36 Z M53 92 h14 v14 H53 Z M70 92 h14 v14 H70 Z"/>
+      <path d="M28 138 h16 v22 H28 Z M52 138 h16 v22 H52 Z M76 138 h16 v22 H76 Z"/>
+    </g>
+  </svg>
+  <svg class="stage-actor monument vidhana" data-cast="vidhana" viewBox="0 0 220 140" fill="currentColor">
+    <rect x="18" y="118" width="184" height="10" rx="1"/>
+    <rect x="28" y="108" width="164" height="10"/>
+    <rect x="38" y="98" width="144" height="10"/>
+    <rect x="12" y="62" width="70" height="36"/>
+    <rect x="138" y="62" width="70" height="36"/>
+    <rect x="78" y="36" width="64" height="62"/>
+    <path d="M86 36 h48 l-4-16 h-40 Z"/>
+    <ellipse cx="110" cy="18" rx="18" ry="10"/>
+    <rect x="108" y="4" width="4" height="10"/>
+    <g fill="var(--cream)" opacity="0.28">
+      <rect x="22" y="70" width="6" height="24"/><rect x="36" y="70" width="6" height="24"/><rect x="50" y="70" width="6" height="24"/><rect x="64" y="70" width="6" height="24"/>
+      <rect x="150" y="70" width="6" height="24"/><rect x="164" y="70" width="6" height="24"/><rect x="178" y="70" width="6" height="24"/><rect x="192" y="70" width="6" height="24"/>
+      <rect x="90" y="48" width="8" height="40"/><rect x="106" y="48" width="8" height="40"/><rect x="122" y="48" width="8" height="40"/>
+    </g>
+  </svg>
+  <svg class="stage-actor monument nandi" data-cast="nandi" viewBox="0 0 160 100" fill="currentColor">
+    <ellipse cx="78" cy="62" rx="46" ry="24"/>
+    <ellipse cx="118" cy="50" rx="22" ry="18"/>
+    <path d="M132 44 C148 38 154 52 140 58"/>
+    <path d="M108 34 L118 18 L128 34"/>
+    <path d="M124 36 L136 22"/>
+    <rect x="48" y="72" width="14" height="22" rx="4"/>
+    <rect x="78" y="74" width="14" height="20" rx="4"/>
+    <rect x="28" y="68" width="12" height="18" rx="3"/>
+    <ellipse cx="70" cy="54" rx="8" ry="5" fill="var(--gold)" opacity="0.55"/>
+  </svg>
+  <svg class="stage-actor elephant-walk" data-cast="elephant" viewBox="0 0 200 140">
+    <g fill="#4A3C32">
+      <ellipse cx="96" cy="78" rx="54" ry="34"/>
+      <ellipse cx="148" cy="70" rx="26" ry="24"/>
+      <path d="M128 58 C118 28 92 34 102 62 C110 70 122 68 128 58Z"/>
+      <path d="M168 74 C186 84 180 118 158 124 C154 108 174 96 164 80"/>
+      <rect x="58" y="100" width="16" height="32" rx="5"/>
+      <rect x="86" y="102" width="16" height="30" rx="5"/>
+      <rect x="108" y="100" width="15" height="32" rx="5"/>
+      <rect x="128" y="98" width="15" height="30" rx="5"/>
+    </g>
+    <path d="M162 82 Q174 92 168 104" fill="none" stroke="#F6F1E4" stroke-width="3.5" stroke-linecap="round"/>
+    <rect x="78" y="42" width="42" height="16" rx="3" fill="#9E1B32"/>
+    <rect x="88" y="32" width="22" height="12" rx="2" fill="#D6A419"/>
+    <circle cx="158" cy="64" r="3" fill="#F6F1E4"/>
   </svg>
 </div>
 
@@ -1513,7 +1608,7 @@
 <footer>
   <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
   <p>Made for people spending time in Bengaluru, with <span class="footer-preethi"><span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಪ್ರೀತಿ</span><span class="kn-en">love</span></span> ❤️<button class="speak-btn speak-btn-sm" onclick="speakText('ಪ್ರೀತಿ')" aria-label="Hear pronunciation">🔊</button></span></p>
-    <p class="footer-meta">v2026-09-10.9 &middot; &copy; 2026, all rights reserved</p>
+    <p class="footer-meta">v2026-09-10.10 &middot; &copy; 2026, all rights reserved</p>
   <p class="footer-meta">Built with AI, edited and fact-checked by human.</p>
 </footer>
 
@@ -2039,6 +2134,103 @@ document.getElementById('issueForm').addEventListener('submit', function(e){
   window.open(url, '_blank', 'noopener');
   this.reset();
 });
+
+/* ---------------- scroll stage ---------------- */
+(function startStage(){
+  const stage = document.getElementById('pageStage');
+  if(!stage) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const node = {};
+  stage.querySelectorAll('[data-cast]').forEach(el => { node[el.dataset.cast] = el; });
+  const TONES = ['tone-ilkal','tone-mysore','tone-kasuti','tone-jacaranda','tone-coastal','tone-hampi'];
+  const setTone = (el, tone) => {
+    if(!el) return;
+    TONES.forEach(c => el.classList.toggle(c, c === tone));
+  };
+  const kWin = (t, a, b, fade = 0.06) => {
+    if(t <= a || t >= b) return 0;
+    if(t < a + fade) return (t - a) / fade;
+    if(t > b - fade) return (b - t) / fade;
+    return 1;
+  };
+  const actors = [
+    {id:'sareeA', a:0, b:0.34, idle:18, pose(t,k,w){
+      setTone(node.sareeA, t < 0.16 ? 'tone-ilkal' : 'tone-mysore');
+      return `rotate(${-22 + t * 10 + w}deg) translate(${-18 + k * 72}px, ${w * 1.4}px)`;
+    }},
+    {id:'sareeB', a:0.14, b:0.62, idle:-14, pose(t,k,w){
+      setTone(node.sareeB, t < 0.38 ? 'tone-jacaranda' : 'tone-kasuti');
+      return `rotate(${158 + t * 8 + w}deg) translate(${-12 + k * 50}px, ${w}px)`;
+    }},
+    {id:'sareeC', a:0.48, b:0.92, idle:12, pose(t,k,w){
+      setTone(node.sareeC, t < 0.7 ? 'tone-coastal' : 'tone-hampi');
+      return `rotate(${-12 + w}deg) translate(${-30 + k * 80}px, ${(t - 0.7) * 40 + w * 2}px)`;
+    }},
+    {id:'torana', a:0, b:0.22, a2:0.84, b2:1, idle:0, pose(t,k,w){
+      return `translate(${w * 1.2}px, ${t * -48 + w * 2}px)`;
+    }},
+    {id:'jasmine', a:0.04, b:0.32, idle:10, pose(t,k,w){
+      return `translate(${8 * Math.sin(w / 6)}px, ${t * 36 + w * 2.5}px)`;
+    }},
+    {id:'gopura', a:0.12, b:0.42, idle:4, pose(t,k,w){
+      return `translate(${(0.27 - t) * 40}px, ${(t - 0.27) * 90 + w}px)`;
+    }},
+    {id:'nandi', a:0.2, b:0.44, idle:-6, pose(t,k,w){
+      return `translate(${(t - 0.32) * 50}px, ${w * 1.5}px)`;
+    }},
+    {id:'vidhana', a:0.28, b:0.54, idle:3, pose(t,k,w){
+      return `translate(${(0.4 - t) * 60}px, ${(t - 0.4) * 70 + w}px)`;
+    }},
+    {id:'dabaraL', a:0.4, b:0.68, idle:0, pose(t,k,w){
+      return `translate(${w * 1.5}px, ${(0.54 - t) * 80}px) scale(${0.92 + k * 0.1})`;
+    }},
+    {id:'dabaraR', a:0.46, b:0.74, idle:0, pose(t,k,w){
+      return `translate(${(t - 0.6) * 40}px, ${w * 2}px) scale(0.88)`;
+    }},
+    {id:'flowers', a:0.52, b:0.78, idle:8, pose(t,k,w){
+      return `translate(${Math.sin(w / 5) * 10}px, ${(t - 0.65) * 60 + w}px)`;
+    }},
+    {id:'elephant', a:0.6, b:0.9, idle:0, pose(t,k,w){
+      return `translate(${(t - 0.6) * 140 + w * 2}px, ${Math.sin(w / 7) * 6}px)`;
+    }}
+  ];
+
+  let ticking = false;
+  function frame(now){
+    ticking = false;
+    const max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    const t = Math.min(1, Math.max(0, scrollY / max));
+    const w = reduce ? 0 : Math.sin(now / 2200);
+    actors.forEach(a => {
+      const el = node[a.id];
+      if(!el) return;
+      let k = kWin(t, a.a, a.b);
+      if(a.a2 != null) k = Math.max(k, kWin(t, a.a2, a.b2));
+      el.classList.toggle('is-on', k > 0.04);
+      el.style.setProperty('--on', String((0.28 + 0.28 * k).toFixed(3)));
+      if(reduce){
+        el.style.transform = '';
+        return;
+      }
+      el.style.transform = a.pose(t, k, w * (a.idle || 1));
+    });
+    if(!reduce) requestAnimationFrame(() => { ticking = true; frame(performance.now()); });
+  }
+
+  if(reduce){
+    actors.forEach(a => {
+      const el = node[a.id];
+      if(el && (a.id === 'sareeA' || a.id === 'torana')){
+        el.classList.add('is-on');
+        el.style.setProperty('--on', '0.32');
+      }
+    });
+    return;
+  }
+  addEventListener('scroll', () => { if(!ticking){ ticking = true; requestAnimationFrame(() => frame(performance.now())); } }, {passive:true});
+  addEventListener('resize', () => frame(performance.now()), {passive:true});
+  requestAnimationFrame(frame);
+})();
 
 /* ---------------- init ---------------- */
 (async function init(){
