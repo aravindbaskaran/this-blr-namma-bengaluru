@@ -62,7 +62,6 @@
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
   }
-  body > :not(.stage):not(#guide-loader){position:relative; z-index:1;}
   h1,h2,h3,.display{
     font-family:'Baloo 2', sans-serif;
     font-weight:700;
@@ -217,13 +216,12 @@
   }
   .card > *{position:relative;}
   .card-top{display:flex; justify-content:space-between; align-items:flex-start; gap:10px;}
-  .card-title-row{display:flex; align-items:center; gap:7px;}
+  .card-title-row{display:flex; align-items:center; gap:8px;}
   .card h3{font-size:17px; line-height:1.25;}
   .card .area{font-size:12.5px; color:var(--ink-soft); margin-top:3px;}
   .card-pronounce{display:flex; align-items:baseline; gap:6px; margin-top:4px; flex-wrap:wrap;}
   .card-kn{font-size:13px; color:var(--maroon);}
   .card-say{font-size:11px; color:var(--ink-soft); font-style:italic;}
-  .card-title-row{display:flex; align-items:center; gap:8px;}
   .pick-mark{
     width:22px; height:15px; flex:none; color:var(--gold);
     filter:drop-shadow(0 1px 0 rgba(0,0,0,0.12));
@@ -710,6 +708,79 @@
     .areas-compare{position:static;}
     .history-side{position:static;}
   }
+  /* ---------- page stage: sarees, torana, jasmine, dabara ---------- */
+  .stage{
+    position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden;
+  }
+  .saree-roll{
+    position:absolute; width:min(46vw, 480px); height:210px;
+    opacity:0.42;
+    background-color:var(--ilkal-red);
+    background-image:
+      linear-gradient(105deg, transparent 0 18%, rgba(247,238,218,0.28) 22%, transparent 32%),
+      repeating-linear-gradient(90deg, #9C2436 0 22px, #7A1828 22px 24px),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12'%3E%3Cpolygon points='0,12 7,0 14,12' fill='%23D4A017'/%3E%3Cpolygon points='0,12 7,4 14,12' fill='%23F6F1E4'/%3E%3C/svg%3E");
+    background-repeat:no-repeat, repeat, repeat-x;
+    background-position:0 0, 0 0, 0 100%;
+    background-size:100% 100%, auto, 14px 12px;
+    box-shadow:0 18px 40px rgba(62,42,28,0.18);
+    border-radius:4px 40% 8px 30%;
+  }
+  .saree-roll-tl{
+    top:78px; left:-110px;
+    animation:saree-roll-tl 22s ease-in-out infinite;
+    transform-origin:20% 0;
+  }
+  .saree-roll-br{
+    bottom:-70px; right:-120px;
+    background-color:var(--jacaranda);
+    background-image:
+      linear-gradient(105deg, transparent 0 18%, rgba(247,238,218,0.22) 22%, transparent 32%),
+      repeating-linear-gradient(90deg, #5B3F7A 0 22px, #48326E 22px 24px),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12'%3E%3Cpolygon points='0,12 7,0 14,12' fill='%23D4A017'/%3E%3Cpolygon points='0,12 7,4 14,12' fill='%23F6F1E4'/%3E%3C/svg%3E");
+    animation:saree-roll-br 26s ease-in-out infinite;
+    transform-origin:80% 100%;
+  }
+  @keyframes saree-roll-tl{
+    0%,100%{transform:rotate(-22deg) translateX(-18px);}
+    50%{transform:rotate(-16deg) translateX(28px);}
+  }
+  @keyframes saree-roll-br{
+    0%,100%{transform:rotate(158deg) translateX(-14px);}
+    50%{transform:rotate(164deg) translateX(22px);}
+  }
+  .torana-v{
+    position:absolute; top:72px; left:max(8px, calc(50% - 640px));
+    height:min(78vh, 640px); width:54px; opacity:0.55;
+  }
+  .jasmine-drift{
+    position:absolute; top:18%; right:max(12px, calc(50% - 620px));
+    width:120px; height:220px; opacity:0.5;
+    animation:jasmine-float 14s ease-in-out infinite;
+  }
+  @keyframes jasmine-float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(14px);}
+  }
+  .dabara-set{
+    position:absolute; width:88px; height:88px; opacity:0.48;
+  }
+  .dabara-set.one{bottom:18%; left:max(16px, calc(50% - 620px));}
+  .dabara-set.two{top:38%; right:max(20px, calc(50% - 630px)); transform:scale(0.85); opacity:0.4;}
+  .dabara-steam{stroke:var(--coffee); fill:none; stroke-width:1.1; stroke-linecap:round; opacity:0.45;
+    animation:steam 2.8s ease-in-out infinite;}
+  .dabara-steam.b{animation-delay:0.7s;}
+  .dabara-steam.c{animation-delay:1.3s;}
+  @keyframes steam{0%,100%{transform:translateY(0); opacity:0.15;} 50%{transform:translateY(-6px); opacity:0.55;}}
+  .flower-cluster{
+    position:absolute; bottom:22%; right:max(40px, calc(50% - 580px));
+    width:140px; height:90px; opacity:0.4;
+  }
+  @media (max-width:960px){
+    .torana-v, .jasmine-drift, .dabara-set, .flower-cluster{display:none;}
+    .saree-roll{opacity:0.22; width:70vw;}
+  }
+
   /* ---------- guide data loader ---------- */
   body.is-loading{overflow:hidden;}
   #guide-loader{
@@ -719,10 +790,9 @@
     transition:opacity .55s ease, visibility .55s ease;
   }
   #guide-loader[aria-hidden="true"]{opacity:0; visibility:hidden; pointer-events:none;}
-  .loader-inner{text-align:center; max-width:340px; padding:24px;}
-  .loader-namaskara{
-    width:64px; height:64px; margin:0 auto 16px;
-    stroke:var(--maroon); fill:none; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;
+  .loader-inner{text-align:center; max-width:360px; padding:24px;}
+  .loader-torana{
+    width:min(240px, 70vw); height:36px; margin:0 auto 16px;
     animation:loader-pulse 1.4s ease-in-out infinite;
   }
   .loader-teni{
@@ -736,14 +806,14 @@
   .loader-copy{font-size:14.5px; color:var(--ink-soft); margin:0;}
   .loader-error{display:none; color:var(--maroon); font-size:14px; margin-top:10px;}
   #guide-loader.is-error .loader-error{display:block;}
-  #guide-loader.is-error .loader-teni, #guide-loader.is-error .loader-namaskara{animation:none;}
+  #guide-loader.is-error .loader-teni, #guide-loader.is-error .loader-torana{animation:none;}
   @keyframes loader-pulse{0%,100%{transform:scale(1); opacity:1;} 50%{transform:scale(0.94); opacity:.7;}}
   @keyframes loader-teni{from{background-position:0 0;} to{background-position:12px 0;}}
   [data-reveal]{opacity:0; transform:translateY(10px); transition:opacity .45s ease, transform .45s ease;}
   [data-reveal].is-in{opacity:1; transform:none;}
   @media (prefers-reduced-motion: reduce){
     *{transition:none !important; scroll-behavior:auto !important;}
-    .loader-namaskara, .loader-teni{animation:none !important;}
+    .loader-torana, .loader-teni, .saree-roll, .jasmine-drift, .dabara-steam{animation:none !important;}
     [data-reveal]{opacity:1; transform:none;}
   }
 </style>
@@ -751,12 +821,24 @@
 <body class="is-loading">
 <div id="guide-loader" role="status" aria-live="polite" aria-busy="true">
   <div class="loader-inner">
-    <svg class="loader-namaskara" viewBox="0 0 32 32" aria-hidden="true">
-      <path d="M16 28 C11.5 27.2 9.2 24.4 9.6 20.6 L11.2 11.2 C11.6 8 14.2 6.4 16 8.6"/>
-      <path d="M16 28 C20.5 27.2 22.8 24.4 22.4 20.6 L20.8 11.2 C20.4 8 17.8 6.4 16 8.6"/>
-      <path d="M16 8.6 V28"/>
-      <path d="M11.4 18.8 C8.8 18.2 8.2 21.4 11 22.2"/>
-      <path d="M20.6 18.8 C23.2 18.2 23.8 21.4 21 22.2"/>
+    <svg class="loader-torana" viewBox="0 0 160 36" aria-hidden="true">
+      <line x1="4" y1="8" x2="156" y2="8" stroke="#201C17" stroke-width="1.6" stroke-linecap="round"/>
+      <g fill="#1F6B3A">
+        <path d="M16 8 C11 16 12 26 16 33 C21 26 21 16 16 8Z"/>
+        <path d="M36 8 C31 17 32 27 36 34 C41 27 41 17 36 8Z"/>
+        <path d="M56 8 C51 15 52 25 56 32 C61 25 61 15 56 8Z"/>
+        <path d="M76 8 C71 17 72 27 76 34 C81 27 81 17 76 8Z"/>
+        <path d="M96 8 C91 16 92 26 96 33 C101 26 101 16 96 8Z"/>
+        <path d="M116 8 C111 17 112 27 116 34 C121 27 121 17 116 8Z"/>
+        <path d="M136 8 C131 15 132 25 136 32 C141 25 141 15 136 8Z"/>
+      </g>
+      <g stroke="#143d22" fill="none" stroke-width="0.7">
+        <path d="M16 10 L16 30 M36 10 L36 31 M56 10 L56 29 M76 10 L76 31 M96 10 L96 30 M116 10 L116 31 M136 10 L136 29"/>
+      </g>
+      <g fill="#F6F1E4" stroke="#9E1B32" stroke-width="0.5">
+        <circle cx="26" cy="8" r="2.1"/><circle cx="46" cy="8" r="2.1"/><circle cx="66" cy="8" r="2.1"/>
+        <circle cx="86" cy="8" r="2.1"/><circle cx="106" cy="8" r="2.1"/><circle cx="126" cy="8" r="2.1"/>
+      </g>
     </svg>
     <p class="kn">ನಮ್ಮ ಬೆಂಗಳೂರಿಗೆ ಸ್ವಾಗತ</p>
     <p class="loader-copy">Welcome to namma Bengaluru</p>
@@ -765,16 +847,91 @@
   </div>
 </div>
 
+<div class="stage" aria-hidden="true">
+  <div class="saree-roll saree-roll-tl"></div>
+  <div class="saree-roll saree-roll-br"></div>
+  <svg class="torana-v" viewBox="0 0 54 640" preserveAspectRatio="xMidYMin meet">
+    <line x1="27" y1="0" x2="27" y2="640" stroke="#201C17" stroke-width="1.4"/>
+    <g fill="#1F6B3A">
+      <path d="M27 18 C18 28 16 48 27 62 C38 48 36 28 27 18Z"/>
+      <path d="M27 78 C16 90 18 112 27 126 C36 112 38 90 27 78Z"/>
+      <path d="M27 148 C18 160 17 182 27 196 C37 182 36 160 27 148Z"/>
+      <path d="M27 218 C17 230 18 252 27 266 C36 252 37 230 27 218Z"/>
+      <path d="M27 288 C18 300 16 322 27 336 C38 322 36 300 27 288Z"/>
+      <path d="M27 358 C16 370 18 392 27 406 C36 392 38 370 27 358Z"/>
+      <path d="M27 428 C18 440 17 462 27 476 C37 462 36 440 27 428Z"/>
+      <path d="M27 498 C17 510 18 532 27 546 C36 532 37 510 27 498Z"/>
+      <path d="M27 568 C18 580 16 602 27 616 C38 602 36 580 27 568Z"/>
+    </g>
+    <g fill="#F6F1E4" stroke="#9E1B32" stroke-width="0.6">
+      <circle cx="18" cy="70" r="3.2"/><circle cx="36" cy="70" r="3.2"/>
+      <circle cx="18" cy="210" r="3.2"/><circle cx="36" cy="210" r="3.2"/>
+      <circle cx="18" cy="350" r="3.2"/><circle cx="36" cy="350" r="3.2"/>
+      <circle cx="18" cy="490" r="3.2"/><circle cx="36" cy="490" r="3.2"/>
+    </g>
+    <g fill="#D6A419">
+      <circle cx="14" cy="140" r="3.6"/><circle cx="40" cy="140" r="3.6"/>
+      <circle cx="14" cy="420" r="3.6"/><circle cx="40" cy="420" r="3.6"/>
+    </g>
+  </svg>
+  <svg class="jasmine-drift" viewBox="0 0 120 220">
+    <g fill="#F6F1E4" stroke="#9E1B32" stroke-width="0.6">
+      <circle cx="24" cy="20" r="4"/><circle cx="70" cy="48" r="3.4"/><circle cx="40" cy="86" r="4.2"/>
+      <circle cx="88" cy="110" r="3.2"/><circle cx="28" cy="148" r="3.8"/><circle cx="76" cy="176" r="4"/>
+    </g>
+    <g fill="#6B4FA0" opacity="0.55">
+      <circle cx="96" cy="30" r="2.4"/><circle cx="12" cy="120" r="2"/><circle cx="104" cy="150" r="2.6"/>
+    </g>
+  </svg>
+  <svg class="dabara-set one" viewBox="0 0 88 88">
+    <ellipse cx="44" cy="72" rx="28" ry="8" fill="#C9CDC8" stroke="#7A8078" stroke-width="1.2"/>
+    <ellipse cx="44" cy="68" rx="22" ry="6" fill="#DDE0DC"/>
+    <path d="M30 28 L33 66 L55 66 L58 28 Z" fill="#E7EAE5" stroke="#7A8078" stroke-width="1.2"/>
+    <ellipse cx="44" cy="28" rx="14" ry="5" fill="#F6F1E4" stroke="#7A8078" stroke-width="1"/>
+    <ellipse cx="44" cy="28.5" rx="11" ry="3.4" fill="#3E2A1C"/>
+    <path class="dabara-steam" d="M38 22 C36 16 40 12 38 8"/>
+    <path class="dabara-steam b" d="M44 20 C43 14 46 11 44 6"/>
+    <path class="dabara-steam c" d="M50 22 C52 16 48 12 50 8"/>
+  </svg>
+  <svg class="dabara-set two" viewBox="0 0 88 88">
+    <ellipse cx="44" cy="72" rx="28" ry="8" fill="#C9CDC8" stroke="#7A8078" stroke-width="1.2"/>
+    <ellipse cx="44" cy="68" rx="22" ry="6" fill="#DDE0DC"/>
+    <path d="M30 28 L33 66 L55 66 L58 28 Z" fill="#E7EAE5" stroke="#7A8078" stroke-width="1.2"/>
+    <ellipse cx="44" cy="28" rx="14" ry="5" fill="#F6F1E4" stroke="#7A8078" stroke-width="1"/>
+    <ellipse cx="44" cy="28.5" rx="11" ry="3.4" fill="#3E2A1C"/>
+    <path class="dabara-steam" d="M38 22 C36 16 40 12 38 8"/>
+    <path class="dabara-steam b" d="M50 22 C52 16 48 12 50 8"/>
+  </svg>
+  <svg class="flower-cluster" viewBox="0 0 140 90">
+    <g fill="#6B4FA0" opacity="0.85">
+      <circle cx="30" cy="40" r="7"/><circle cx="44" cy="28" r="6"/><circle cx="48" cy="46" r="7.5"/><circle cx="62" cy="36" r="5"/>
+    </g>
+    <g fill="#F6F1E4" stroke="#9E1B32" stroke-width="0.5">
+      <circle cx="92" cy="50" r="5"/><circle cx="108" cy="38" r="4.2"/><circle cx="118" cy="58" r="4.6"/>
+    </g>
+    <g fill="#D6A419">
+      <circle cx="78" cy="22" r="4"/><circle cx="20" cy="62" r="3.4"/>
+    </g>
+  </svg>
+</div>
+
 
 <header>
   <div class="header-inner">
     <a class="brand" href="#" onclick="event.preventDefault(); window.scrollTo({top:0, behavior:'smooth'});" aria-label="Welcome to namma Bengaluru, field guide">
-      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
-        <path d="M16 28 C11.5 27.2 9.2 24.4 9.6 20.6 L11.2 11.2 C11.6 8 14.2 6.4 16 8.6"/>
-        <path d="M16 28 C20.5 27.2 22.8 24.4 22.4 20.6 L20.8 11.2 C20.4 8 17.8 6.4 16 8.6"/>
-        <path d="M16 8.6 V28"/>
-        <path d="M11.4 18.8 C8.8 18.2 8.2 21.4 11 22.2"/>
-        <path d="M20.6 18.8 C23.2 18.2 23.8 21.4 21 22.2"/>
+      <svg class="brand-mark" viewBox="0 0 48 20" aria-hidden="true">
+        <line class="cord" x1="1.5" y1="4.5" x2="46.5" y2="4.5"/>
+        <path class="leaf" d="M8 4.5 C5 10 5.5 15.5 8 19 C10.8 15.5 11 10 8 4.5Z"/>
+        <path class="rib" d="M8 5.8 L8 17"/>
+        <path class="leaf" d="M18 4.5 C15 11 16 16 18 19.5 C21 16 21 11 18 4.5Z"/>
+        <path class="rib" d="M18 5.8 L18 17.5"/>
+        <path class="leaf" d="M28 4.5 C25 10 25.5 15.5 28 19 C31 15.5 31 10 28 4.5Z"/>
+        <path class="rib" d="M28 5.8 L28 17"/>
+        <path class="leaf" d="M38 4.5 C35 11 36 16 38 19.5 C41 16 41 11 38 4.5Z"/>
+        <path class="rib" d="M38 5.8 L38 17.5"/>
+        <circle class="jasmine" cx="13" cy="4.5" r="1.35"/>
+        <circle class="jasmine" cx="23" cy="4.5" r="1.35"/>
+        <circle class="jasmine" cx="33" cy="4.5" r="1.35"/>
       </svg>
       <div class="brand-text">
         <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ನಮ್ಮ ಬೆಂಗಳೂರು</span><span class="kn-en">Namma Bengaluru</span></span>
@@ -1036,7 +1193,7 @@
       <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಅನ್ವೇಷಿಸಿ</span><span class="kn-en">explore</span></span>
     </div>
     <h2>Places, in the words of people who'd actually take you there</h2>
-    <p>Filter by kind, or by personal picks. A small <span class="kn" style="font-size:13px;">ಗಂಡಭೇರುಂಡ</span> mark means it's a pick, not just popular. If a place is usually a queue, open Skip the crowd on the card for what to do instead.</p>
+    <p>Filter by kind, or by personal picks. If a place is usually a queue, open Skip the crowd on the card for what to do instead.</p>
   </div>
 <div class="controls">
   <div class="controls-inner">
@@ -1356,7 +1513,7 @@
 <footer>
   <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
   <p>Made for people spending time in Bengaluru, with <span class="footer-preethi"><span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಪ್ರೀತಿ</span><span class="kn-en">love</span></span> ❤️<button class="speak-btn speak-btn-sm" onclick="speakText('ಪ್ರೀತಿ')" aria-label="Hear pronunciation">🔊</button></span></p>
-    <p class="footer-meta">v2026-09-10.8 &middot; &copy; 2026, all rights reserved</p>
+    <p class="footer-meta">v2026-09-10.9 &middot; &copy; 2026, all rights reserved</p>
   <p class="footer-meta">Built with AI, edited and fact-checked by human.</p>
 </footer>
 
@@ -1389,6 +1546,8 @@ let FESTIVALS = [];
 let DISH_TAGS = [];
 let DISHES = [];
 let PHRASES = [];
+
+const PICK_MARK = `<svg class="pick-mark" viewBox="0 0 40 26" role="img" aria-label="Personal pick"><title>Personal pick</title><ellipse cx="10.4" cy="7.2" rx="4.4" ry="4"/><ellipse cx="29.6" cy="7.2" rx="4.4" ry="4"/><path d="M6.6 6.2 L2.4 4.6 L7 9.2Z"/><path d="M33.4 6.2 L37.6 4.6 L33 9.2Z"/><path d="M20 10 C13 12 8.2 16.5 7 23 C13.5 20.2 17 22 20 26 C23 22 26.5 20.2 33 23 C31.8 16.5 27 12 20 10Z"/></svg>`;
 
 const DATA_FILES = {
   categories: 'data/categories.json',
@@ -1499,8 +1658,9 @@ function buildLocationCard(l){
   const photosHtml = (l.photos && l.photos.length)
     ? `<div class="camera-roll">${l.photos.map(src => `<img src="${src}" loading="lazy" alt="${l.name}" tabindex="0" role="button" aria-label="View larger photo of ${l.name}" onclick="openLightbox('${src}', '${l.name}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('${src}', '${l.name}')}">`).join('')}</div>`
     : `<div class="camera-roll-empty">No photos yet - <a href="https://commons.wikimedia.org/w/index.php?search=${encodeURIComponent(l.name + ' ' + l.area)}&title=Special:MediaSearch&type=image" target="_blank" rel="noopener">search Wikimedia Commons for ${l.name}</a> (openly licensed, free to use) and drop the image URL into this spot's "photos" array.</div>`;
-  const badgeHtml = (l.personalPick || l.approved)
-    ? `<div class="approved-row"><svg class="approved-badge" viewBox="0 0 44 44"><circle class="stamp-ring" cx="22" cy="22" r="20"/><g transform="translate(22,20) scale(0.85)"><path d="M0 -9c-2 2-1 4 0 5-3 0-5 2-5 5 0 4 3 6 5 8 2-2 5-4 5-8 0-3-2-5-5-5 1-1 2-3 0-5Z M-4 -3c-2 0-3.5 1.5-3 4 M4 -3c2 0 3.5 1.5 3 4"/><circle cx="-2.7" cy="-4.8" r="0.9"/><circle cx="2.7" cy="-4.8" r="0.9"/></g></svg><span class="approved-label">Personal pick<br><small>not just popular</small></span></div>`
+  const pickHtml = (l.personalPick || l.approved) ? PICK_MARK : '';
+  const tryHtml = (l.try && l.try.length)
+    ? `<div class="try-block"><div class="try-label">Try</div><ul class="try-list">${l.try.map(t => `<li>${t}</li>`).join('')}</ul></div>`
     : '';
   const skipHtml = skipCrowdHtml(l);
   const pronounceHtml = l.kn ? `<div class="card-pronounce"><span class="kn card-kn">${l.kn}</span><span class="card-say">${l.say}</span>${speakBtn(l.kn, 'sm')}</div>` : '';
@@ -1509,12 +1669,15 @@ function buildLocationCard(l){
     ? `<button class="map-link-btn" onclick="viewOnMap('${l.id}')">📍 View on map</button>` : '';
   return `<div class="card" id="card-${l.id}" style="--cat-color:${cat.color}">
       <div class="card-top">
-        <div><h3>${l.name}</h3><div class="area">${l.area}</div>${pronounceHtml}</div>
+        <div>
+          <div class="card-title-row">${pickHtml}<h3>${l.name}</h3></div>
+          <div class="area">${l.area}</div>${pronounceHtml}
+        </div>
         <span class="tag">${cat.label}</span>
       </div>
       <p class="blurb">${l.blurb}</p>
+      ${tryHtml}
       ${photosHtml}
-      ${badgeHtml}
       ${skipHtml}
       <div class="card-actions">
         <button class="add-btn" data-added="${added}" onclick="toggleAgenda('${l.id}')">${added ? 'Added ✓' : '+ Add to agenda'}</button>
@@ -1753,14 +1916,14 @@ function renderDishes(){
       const t = DISH_TAGS.find(x => x.id === id);
       return t ? `<span class="tag">${t.label}</span>` : '';
     }).join('');
-    const pick = d.personalPick ? `<span class="tag">Personal pick</span>` : '';
+    const pickMark = d.personalPick ? PICK_MARK : '';
     return `
     <div class="dish-card">
       ${photoHtml}
-      <div class="dish-name">${d.name}</div>
+      <div class="dish-name-row">${pickMark}<div class="dish-name">${d.name}</div></div>
       <div class="dish-kn-row"><span class="kn dish-kn">${d.kn}</span><span class="dish-say">${d.say}</span>${speakBtn(d.kn, 'sm')}</div>
       <p class="dish-desc">${d.desc}</p>
-      <div class="card-actions" style="margin-top:10px;flex-wrap:wrap">${pick}${tagsHtml}</div>
+      <div class="card-actions" style="margin-top:10px;flex-wrap:wrap">${tagsHtml}</div>
     </div>
   `;
   }).join('') || `<p style="color:var(--ink-soft);">No dishes in this tag yet.</p>`;
