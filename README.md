@@ -1,2 +1,2 @@
-# this-blr-not-that
-This Bengaluru, not that
+# namma-blr-not-that
+Namma Bengaluru, not that
