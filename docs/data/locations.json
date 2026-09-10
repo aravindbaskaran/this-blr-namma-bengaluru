@@ -1,0 +1,922 @@
+[
+  {
+    "id": "lalbagh",
+    "name": "Lalbagh Botanical Garden",
+    "area": "Basavanagudi",
+    "category": "nature",
+    "blurb": "A 240-acre garden built around a glass house and a 3-billion-year-old rock outcrop. Best before 8am, when it belongs to walkers and mynas.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Glasshouse%20and%20fountain%20at%20lalbagh.jpg"
+    ],
+    "kn": "ಲಾಲ್ ಬಾಗ್",
+    "say": "Laal Baag",
+    "lat": 12.9507,
+    "lng": 77.5848,
+    "try": [
+      "Walk the glass-house lawns before 8am, when it still belongs to walkers.",
+      "Climb the Lalbagh rock — it's older than the city by a few billion years."
+    ]
+  },
+  {
+    "id": "cubbon",
+    "name": "Cubbon Park",
+    "area": "Central Bengaluru",
+    "category": "nature",
+    "blurb": "The city's green lung, threading past the High Court and State Library. Car-free on Sunday mornings.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Entrance%20of%20Cubbon%20Park%2C%20Bengaluru.jpg"
+    ],
+    "kn": "ಕಬ್ಬನ್ ಪಾರ್ಕ್",
+    "say": "Kabban Paark",
+    "lat": 12.9763,
+    "lng": 77.5929,
+    "try": [
+      "Run or cycle the car-free roads 5:30–8am, or on Sunday mornings.",
+      "Cut through to the High Court and State Library instead of looping the same path."
+    ]
+  },
+  {
+    "id": "chowdiah",
+    "name": "Chowdiah Memorial Hall",
+    "area": "Malleswaram",
+    "category": "culture",
+    "blurb": "A working concert hall built in 1980 as a tribute to violinist T. Chowdiah, shaped like a giant seven-stringed violin at 1:100 scale, right down to a 140-foot steel bow. Still hosts real Carnatic and Hindustani concerts, not just a photo stop.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Chowdiah%20Memorial%20Hall.jpg"
+    ],
+    "kn": "ಚೌಡಯ್ಯ ಸ್ಮಾರಕ ಭವನ",
+    "say": "Chow-dayya Smaaraka Bhavana",
+    "lat": 12.9977,
+    "lng": 77.5773,
+    "try": [
+      "Catch an actual Carnatic or Hindustani concert, not just the violin-shaped exterior.",
+      "Walk the 1:100-scale bow — it's a working hall, not a sculpture park."
+    ]
+  },
+  {
+    "id": "sankey-tank",
+    "name": "Sankey Tank",
+    "area": "Malleswaram / Sadashivanagar",
+    "category": "nature",
+    "blurb": "A 37-acre lake dug in 1882 as a drinking-water reservoir, now one of the city's steadiest walking and jogging spots - a paved loop (not a full circuit), an open gym, and a regular crowd of morning walkers who know each other by face.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Sankey%20Tank.jpg"
+    ],
+    "kn": "ಸಂಕೆ ಕೆರೆ",
+    "say": "Sankey Kere",
+    "lat": 13.0064,
+    "lng": 77.5701,
+    "try": [
+      "Do the paved lakeside loop, then the open gym if you want a short daily circuit.",
+      "Go at dusk when the water takes the last of the light."
+    ]
+  },
+  {
+    "id": "veena-thindi",
+    "name": "Veena Stores & Thindi Beedi",
+    "area": "Malleswaram",
+    "category": "food",
+    "blurb": "A benne masale dosa counter with no seating and no fuss, on the same lane as a dozen other breakfast stalls locals actually rotate through.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Veena%20Stores%2C%20Malleshwaram%2C%20Margosa%20Road%20Bengaluru%20popular%20eatery.webp"
+    ],
+    "kn": "ವೀಣಾ ಸ್ಟೋರ್ಸ್",
+    "say": "Veena Stores",
+    "lat": 13.0035,
+    "lng": 77.573,
+    "try": [
+      "Stand at the counter for a benne masale dosa — there are no tables, on purpose.",
+      "Grazing the rest of Thindi Beedi is the point; don't stop at one stall."
+    ]
+  },
+  {
+    "id": "mtr",
+    "name": "MTR (Mavalli Tiffin Room)",
+    "area": "Lalbagh Road",
+    "category": "food",
+    "blurb": "Opened as the Brahmin Coffee Club in 1924, renamed MTR in 1960 - the place that invented rava idli by accident, during a WWII rice shortage. Shut for six years after the 1975 Emergency's price caps rather than cut quality, and reopened in 1981. Still run by the same family, four generations on.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Mavalli%20Tiffin%20Room%20(6)%2C%20Lalbagh%20Road%2C%20Bengaluru.jpg"
+    ],
+    "kn": "ಎಂಟಿಆರ್",
+    "say": "M T R",
+    "lat": 12.9536,
+    "lng": 77.5847,
+    "try": [
+      "Order rava idli — they invented it here — and filter kaapi in a steel tumbler.",
+      "Go on a weekday morning; weekends are a different restaurant."
+    ]
+  },
+  {
+    "id": "corner-house",
+    "name": "Corner House",
+    "area": "Residency Road (and branches citywide)",
+    "category": "food",
+    "blurb": "Opened in 1982 as a small fast-food joint on the corner of Residency Road - ice cream wasn't even the focus at first. That changed with Death By Chocolate, now ranked among TasteAtlas's 100 most iconic ice creams in the world. The chocolate fudge recipe is named Sheila's Fudge, after the family matriarch.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Death%20by%20chocolate.jpg"
+    ],
+    "kn": "ಕಾರ್ನರ್ ಹೌಸ್",
+    "say": "Corner House",
+    "lat": 12.9698,
+    "lng": 77.6079,
+    "try": [
+      "The Death by Chocolate is the reason the city still uses this as a landmark.",
+      "Any branch works; the Residency Road original is the story, not a better scoop."
+    ]
+  },
+  {
+    "id": "ctr",
+    "name": "CTR (Shri Sagar)",
+    "area": "Malleswaram",
+    "category": "food",
+    "blurb": "Opened as Shree Sagar in 1950, informally renamed Central Tiffin Room by regulars - the benne masale dosa reference point everyone else in the city gets compared to.",
+    "kn": "ಸಿ.ಟಿ.ಆರ್",
+    "say": "C T R",
+    "lat": 13.0067,
+    "lng": 77.5813,
+    "try": [
+      "Benne masale dosa at the counter, standing, the way regulars have since 1950.",
+      "Don't expect seating theatre — this is a tiffin room that got famous."
+    ]
+  },
+  {
+    "id": "brahmins-coffee-bar",
+    "name": "Brahmin's Coffee Bar",
+    "area": "Shankarapuram, Basavanagudi",
+    "category": "food",
+    "blurb": "Standing-only since January 1965, four items on the menu - idli, vada, kara bath, kesari bath - and a chutney so central to the place that they never bothered adding sambar.",
+    "kn": "ಬ್ರಾಹ್ಮಿನ್ಸ್ ಕಾಫಿ ಬಾರ್",
+    "say": "Brahmins Coffee Bar",
+    "lat": 12.9432,
+    "lng": 77.5711,
+    "try": [
+      "Four items only: idli, vada, kara bath, kesari bath. Order all of them.",
+      "Drink the kaapi standing; that's the whole format."
+    ]
+  },
+  {
+    "id": "airlines-hotel",
+    "name": "Airlines Hotel",
+    "area": "Ashok Nagar",
+    "category": "food",
+    "blurb": "Open-air since 1968, tables set under old banyan trees - one of the first drive-in eateries in the city, and still the most relaxed darshini experience going.",
+    "kn": "ಏರ್‌ಲೈನ್ಸ್ ಹೋಟೆಲ್",
+    "say": "Airlines Hotel",
+    "lat": 12.977,
+    "lng": 77.6013,
+    "try": [
+      "Sit under the banyan trees — the open-air tables are the point.",
+      "Come for breakfast or a slow lunch, not a quick grab."
+    ]
+  },
+  {
+    "id": "karavalli",
+    "name": "Karavalli",
+    "area": "Residency Road (Taj Gateway)",
+    "category": "food",
+    "blurb": "Running since 1990, styled after a Mangalorean home under tamarind trees - chefs are sent to the coast to learn recipes directly from families, not from a cookbook. Chef Naren Thimmaiah has led the kitchen since nearly the start.",
+    "kn": "ಕರಾವಳಿ",
+    "say": "Karavalli",
+    "lat": 12.9691,
+    "lng": 77.6076,
+    "try": [
+      "Ask what's come in from the coast that day; the kitchen changes with the catch.",
+      "This is a sit-down meal, not a darshini — budget the evening."
+    ]
+  },
+  {
+    "id": "mangalore-pearl",
+    "name": "Mangalore Pearl",
+    "area": "Ulsoor",
+    "category": "food",
+    "blurb": "Home-style Mangalorean seafood since 2004, started by an ex-IT professional who wanted to bring his hometown's cooking to the city - neer dosa, sannas, and a whole chalkboard of fish and prawn preparations.",
+    "kn": "ಮಂಗಳೂರು ಪರ್ಲ್",
+    "say": "Mangalore Pearl",
+    "lat": 12.9815,
+    "lng": 77.6198,
+    "try": [
+      "Go for kori rotti or a fish curry if you want Mangalorean cooking without the drive.",
+      "It's home-style, not plated for photographs."
+    ]
+  },
+  {
+    "id": "searock",
+    "name": "Searock",
+    "area": "Sheshadripuram",
+    "category": "food",
+    "blurb": "Coastal cooking that ranges wider than most - Mangalore, Kundapur, and Karwar styles all on one menu.",
+    "kn": "ಸೀ ರಾಕ್",
+    "say": "Sea Rock",
+    "lat": 12.9944,
+    "lng": 77.5735,
+    "try": [
+      "Try a Kundapur or Karwar dish, not only the Mangalore hits.",
+      "Share a few coastal plates rather than one heavy curry."
+    ]
+  },
+  {
+    "id": "kamat-bugle-rock",
+    "name": "Kamat Bugle Rock",
+    "area": "Basavanagudi",
+    "category": "food",
+    "blurb": "The Jolada Rotti Oota reference point - unlimited North Karnataka thali on a banana leaf, live Carnatic music playing through lunch.",
+    "kn": "ಕಾಮತ್ ಬಗಲ್ ರಾಕ್",
+    "say": "Kamat Bugle Rock",
+    "lat": 12.9432,
+    "lng": 77.5686,
+    "try": [
+      "Unlimited Jolada Rotti Oota on a banana leaf — eat with your hands.",
+      "This is the North Karnataka thali reference; don't treat it as a snack."
+    ]
+  },
+  {
+    "id": "halli-mane",
+    "name": "Halli Mane",
+    "area": "JP Nagar / Malleswaram",
+    "category": "food",
+    "blurb": "Jolada rotti, ennegayi, and badanekayi palya served with a real village-mess feel - the kind of place people drive across the city for.",
+    "kn": "ಹಳ್ಳಿ ಮನೆ",
+    "say": "Halli Mane",
+    "lat": 12.9089,
+    "lng": 77.594,
+    "try": [
+      "Jolada rotti with ennegayi and badanekayi palya — the village-mess plates.",
+      "It's a full meal; go hungry."
+    ]
+  },
+  {
+    "id": "sri-venkateshwara-nk",
+    "name": "Sri Venkateshwara North Karnataka Foods",
+    "area": "VV Puram",
+    "category": "food",
+    "blurb": "A cheap, no-frills Jolada Rotti Oota - two rotis, rice, sambar, rasam, and curd for around a hundred rupees, masala buttermilk and gulab jamun extra.",
+    "kn": "ಶ್ರೀ ವೆಂಕಟೇಶ್ವರ ಉತ್ತರ ಕರ್ನಾಟಕ ಫುಡ್ಸ್",
+    "say": "Sri Venkateshwara North Karnataka Foods",
+    "lat": 12.9459,
+    "lng": 77.5729,
+    "try": [
+      "The cheap Jolada Rotti Oota: two rotis, rice, sambar, rasam, curd.",
+      "VV Puram after sunset if you want the street as well as the plate."
+    ]
+  },
+  {
+    "id": "sendhoor",
+    "name": "Sendhoor Coffee House",
+    "area": "Basavanagudi",
+    "category": "food",
+    "blurb": "A neighbourhood filter coffee spot doing the same soft idli-crisp vada-strong kaapi routine, minus the queues of its more famous neighbours.",
+    "kn": "ಸೇಂದೂರ್ ಕಾಫಿ ಹೌಸ್",
+    "say": "Sendhoor Coffee House",
+    "lat": 12.9418,
+    "lng": 77.5732,
+    "try": [
+      "Idli, vada, and a strong filter kaapi — that's the whole visit.",
+      "Neighbourhood pace; don't expect a menu tour."
+    ]
+  },
+  {
+    "id": "araku-coffee",
+    "name": "Araku Coffee",
+    "area": "Indiranagar",
+    "category": "food",
+    "blurb": "A two-storeyed flagship with an in-house roastery and a bookstore built in - beans grown on the Araku Valley's own estates, further proof Bengaluru's specialty coffee scene runs deep.",
+    "kn": "ಅರಕು ಕಾಫಿ",
+    "say": "Araku Coffee",
+    "lat": 12.9716,
+    "lng": 77.6412,
+    "try": [
+      "A pour-over or filter from the in-house roast, then browse the bookstore upstairs.",
+      "This is a sit-and-stay cafe, not a stand-and-go kaapi."
+    ]
+  },
+  {
+    "id": "third-wave",
+    "name": "Third Wave Coffee Roasters",
+    "area": "Koramangala",
+    "category": "food",
+    "blurb": "Founded 2016 by two childhood friends who left tech jobs to chase specialty coffee - the flagship that helped start Bengaluru's third-wave scene, roasting beans sourced from Chikmagalur.",
+    "kn": "ಥರ್ಡ್ ವೇವ್ ಕಾಫಿ ರೋಸ್ಟರ್ಸ್",
+    "say": "Third Wave Coffee Roasters",
+    "lat": 12.9352,
+    "lng": 77.6146,
+    "try": [
+      "A single-origin pour-over if you want specialty, not filter-kaapi nostalgia.",
+      "Laptop-friendly; pick a quieter outlet if you're working."
+    ]
+  },
+  {
+    "id": "dyu-art-cafe",
+    "name": "Dyu Art Cafe",
+    "area": "Koramangala",
+    "category": "craft",
+    "blurb": "Part gallery, part cafe, part quiet workspace - paintings on every wall, two floors of greenery, and enough breakfast-to-dessert range to justify hours here.",
+    "kn": "ಡ್ಯೂ ಆರ್ಟ್ ಕೆಫೆ",
+    "say": "Dyu Art Cafe",
+    "lat": 12.9345,
+    "lng": 77.621,
+    "try": [
+      "Work or read downstairs; the paintings are the décor, not a gallery hop.",
+      "Stay for a slow coffee rather than a photo of the façade."
+    ]
+  },
+  {
+    "id": "sv-sweetmeat",
+    "name": "Sri Venkateshwara Sweetmeat Stall",
+    "area": "Balepet",
+    "category": "food",
+    "blurb": "Started by Venkatachala Shetty in 1954 and still widely called the best Mysore Pak in India - ghee-heavy, soft, and made the same way seventy years on.",
+    "kn": "ಶ್ರೀ ವೆಂಕಟೇಶ್ವರ ಸ್ವೀಟ್ ಮೀಟ್ ಸ್ಟಾಲ್",
+    "say": "Sri Venkateshwara Sweetmeat Stall",
+    "lat": 12.9667,
+    "lng": 77.5806,
+    "try": [
+      "Mysore Pak from the stall that's been arguing it's the best since 1954.",
+      "Buy a box to take; this is not a sit-down sweet shop."
+    ]
+  },
+  {
+    "id": "asha-sweets",
+    "name": "Asha Sweet Center",
+    "area": "Multiple outlets citywide",
+    "category": "food",
+    "blurb": "A Bengaluru mithai institution since 1951 - Mysore Pak, kaju katli, rasmalai, and a bakery counter alongside, trusted for festive gifting for three generations.",
+    "kn": "ಆಶಾ ಸ್ವೀಟ್ ಸೆಂಟರ್",
+    "say": "Asha Sweet Center",
+    "lat": 12.9634,
+    "lng": 77.5738,
+    "try": [
+      "Mysore Pak or kaju katli, plus whatever the bakery counter has that day.",
+      "Any outlet; it's an institution, not a single-room pilgrimage."
+    ]
+  },
+  {
+    "id": "atta-galatta",
+    "name": "Atta Galatta",
+    "area": "Koramangala",
+    "category": "craft",
+    "blurb": "A bookstore built around Indian and regional-language writing, with a steady calendar of readings and open mics - one of the city's real literary hubs, not just a shop.",
+    "kn": "ಅಟ್ಟ ಗಲಾಟ",
+    "say": "Atta Galatta",
+    "lat": 12.9351,
+    "lng": 77.6217,
+    "try": [
+      "Browse Indian and regional-language shelves; check what's on the events calendar.",
+      "It's a bookshop that wants you to linger, not a cafe with books."
+    ]
+  },
+  {
+    "id": "blossom-books",
+    "name": "Blossom Book House",
+    "area": "Church Street",
+    "category": "craft",
+    "blurb": "New and secondhand books since 1962, several floors deep, with a reputation for rare and out-of-print finds that keeps collectors coming back.",
+    "kn": "ಬ್ಲಾಸಂ ಬುಕ್ ಹೌಸ್",
+    "say": "Blossom Book House",
+    "lat": 12.9757,
+    "lng": 77.6051,
+    "try": [
+      "Go upstairs for secondhand and odd finds; Church Street is the hunt.",
+      "Budget time — several floors deep since 1962."
+    ]
+  },
+  {
+    "id": "pecos",
+    "name": "Pecos",
+    "area": "Rest House Road",
+    "category": "night",
+    "blurb": "A retro rock pub that has barely changed - cheap drinks, classic rock on the speakers, and a regular crowd that has been coming back for decades.",
+    "kn": "ಪೆಕೋಸ್",
+    "say": "Pecos",
+    "lat": 12.9698,
+    "lng": 77.6076,
+    "try": [
+      "Cheap drinks, classic rock, no redesign — that's the night.",
+      "Go with people who like pubs that haven't been restyled."
+    ]
+  },
+  {
+    "id": "ulsoor-lake",
+    "name": "Ulsoor Lake",
+    "area": "Ulsoor",
+    "category": "nature",
+    "blurb": "One of the city's oldest lakes, dating to Kempegowda and later expanded under the British - a jogging path along the water, boating, and an island in the middle, minutes from MG Road.",
+    "kn": "ಉಲ್ಸೂರು ಕೆರೆ",
+    "say": "Ulsoor Kere",
+    "lat": 12.9815,
+    "lng": 77.6224,
+    "try": [
+      "Walk the bund in the morning; it's one of Kempegowda's old tanks, enlarged later.",
+      "Don't come for boating theatre — it's a city lake, used as a lake."
+    ]
+  },
+  {
+    "id": "agara-lake",
+    "name": "Agara Lake",
+    "area": "HSR Layout",
+    "category": "nature",
+    "blurb": "A 98-acre lake with a full perimeter jogging track, popular with the HSR and Koramangala crowd for a reason - clean, well kept, and rarely too crowded to actually run.",
+    "kn": "ಅಗರ ಕೆರೆ",
+    "say": "Agara Kere",
+    "lat": 12.9236,
+    "lng": 77.6383,
+    "try": [
+      "The full perimeter jog, popular with HSR and Koramangala for a reason.",
+      "Early or late; midday is just a hot loop."
+    ]
+  },
+  {
+    "id": "puttenahalli-lake",
+    "name": "Puttenahalli Lake",
+    "area": "JP Nagar",
+    "category": "nature",
+    "blurb": "A small lake restored and maintained by the neighbourhood around it rather than the city - quiet, good for birdwatching, and a genuine community effort worth knowing about.",
+    "kn": "ಪುಟ್ಟೇನಹಳ್ಳಿ ಕೆರೆ",
+    "say": "Puttenahalli Kere",
+    "lat": 12.9089,
+    "lng": 77.5847,
+    "try": [
+      "A short walk maintained by the neighbourhood, not a destination park.",
+      "Treat it as a local pause if you're already in JP Nagar."
+    ]
+  },
+  {
+    "id": "gandhi-bazaar",
+    "name": "Gandhi Bazaar",
+    "area": "Basavanagudi",
+    "category": "craft",
+    "blurb": "A flower-and-condiment market that has run since well before independence - puja items, fresh produce, and the DVG Road stretch that anchors old Basavanagudi.",
+    "kn": "ಗಾಂಧಿ ಬಜಾರ್",
+    "say": "Gandhi Bazaar",
+    "lat": 12.9447,
+    "lng": 77.5735,
+    "try": [
+      "Buy flowers, coconut, and puja items the way the market has always sold them.",
+      "Combine with a Gandhi Bazaar breakfast; the street is the visit."
+    ]
+  },
+  {
+    "id": "kr-market",
+    "name": "KR Market (City Market)",
+    "area": "Chickpet",
+    "category": "craft",
+    "blurb": "The city's biggest wholesale market - flowers, fruit, vegetables, and spices sold by the sackload since long before Bengaluru had supermarkets. Go early, before 8am, for it at its most alive.",
+    "kn": "ಕೆ.ಆರ್. ಮಾರುಕಟ್ಟೆ",
+    "say": "K R Market",
+    "lat": 12.9634,
+    "lng": 77.5763,
+    "try": [
+      "Go at dawn for flowers by the sack, not a boutique browse.",
+      "It's wholesale chaos — wear shoes you don't mind."
+    ]
+  },
+  {
+    "id": "chitrakala-parishath",
+    "name": "Karnataka Chitrakala Parishath",
+    "area": "Kumara Krupa Road",
+    "category": "culture",
+    "blurb": "An 18-gallery art complex founded in 1960, with a permanent collection of Mysore paintings and leather puppetry - and Chitra Santhe, the city's open-air art fair, held here every January.",
+    "kn": "ಕರ್ನಾಟಕ ಚಿತ್ರಕಲಾ ಪರಿಷತ್",
+    "say": "Karnataka Chitrakala Parishath",
+    "lat": 12.9868,
+    "lng": 77.5926,
+    "try": [
+      "The Mysore painting rooms in the permanent collection, then whichever show is up.",
+      "Eighteen galleries: pick two, don't march the lot."
+    ]
+  },
+  {
+    "id": "srinivasa-brahmins-bakery",
+    "name": "Srinivasa Brahmins Bakery",
+    "area": "Basavanagudi",
+    "category": "food",
+    "blurb": "An Iyengar bakery running since 1956, part of the wave of bakeries Iyengar Brahmin migrants from Hassan set up across the city. Famous for Congress kadlekai - spiced split peanuts, named after the 1969 party split - stuffed into a butter-laced khara bun.",
+    "kn": "ಶ್ರೀನಿವಾಸ ಬ್ರಾಹ್ಮಿನ್ಸ್ ಬೇಕರಿ",
+    "say": "Shreenivasa Brahmins Bakery",
+    "lat": 12.9421,
+    "lng": 77.5738,
+    "try": [
+      "Iyengar bakery classics: toast, khara bun, and whatever just came out.",
+      "It's a counter, not a cafe."
+    ]
+  },
+  {
+    "id": "thoms-bakery",
+    "name": "Thom's Bakery",
+    "area": "Multiple outlets",
+    "category": "food",
+    "blurb": "The city's reference point for the cream bun - an Iyengar-bakery classic, essentially a filled doughnut topped with coconut flakes and tutti-frutti, not a Western cream bun at all.",
+    "kn": "ಥಾಮ್ಸ್ ಬೇಕರಿ",
+    "say": "Thoms Bakery",
+    "lat": 12.9634,
+    "lng": 77.5951,
+    "try": [
+      "The cream bun is the city's reference version — that's the order.",
+      "Take away; this is a bakery queue."
+    ]
+  },
+  {
+    "id": "vb-bakery",
+    "name": "VB Bakery",
+    "area": "VV Puram Food Street",
+    "category": "food",
+    "blurb": "The bakery anchoring the start of Thindi Beedi - the Congress Khara Bun here, butter and spiced peanuts packed into a soft bun, is the one regulars name first.",
+    "kn": "ವಿ.ಬಿ. ಬೇಕರಿ",
+    "say": "V B Bakery",
+    "lat": 12.9459,
+    "lng": 77.5729,
+    "try": [
+      "Congress Khara Bun at the start of Thindi Beedi, then walk the lane.",
+      "Butter and spice; don't overthink the rest of the tray."
+    ]
+  },
+  {
+    "id": "koshys-bakery",
+    "name": "Koshy's Automatic Bakery",
+    "area": "Multiple outlets",
+    "category": "food",
+    "blurb": "Baking since 1940 - egg puffs and glazed doughnuts are the reason people cross the city for this one, plum cake included every December.",
+    "kn": "ಕೋಶೀಸ್ ಆಟೋಮ್ಯಾಟಿಕ್ ಬೇಕರಿ",
+    "say": "Koshys Automatic Bakery",
+    "lat": 12.9634,
+    "lng": 77.5951,
+    "try": [
+      "Egg puffs and glazed doughnuts — people cross the city for those two.",
+      "Any outlet; the 1940 story is the brand, not a single room."
+    ]
+  },
+  {
+    "id": "karnataka-bhel-house",
+    "name": "Karnataka Bhel House",
+    "area": "Chamarajapet",
+    "category": "food",
+    "blurb": "A small family counter on Uma Theatre Road doing exactly one thing well - Bengaluru-style masala puri, wetter and more ragda-like than the chaat found elsewhere in India, alongside sev puri and dahi puri.",
+    "kn": "ಕರ್ನಾಟಕ ಭೇಲ್ ಹೌಸ್",
+    "say": "Karnataka Bhel House",
+    "lat": 12.9558,
+    "lng": 77.5688,
+    "try": [
+      "One thing: Bengaluru-style bhel. That's the visit.",
+      "Uma Theatre Road, standing, then move on."
+    ]
+  },
+  {
+    "id": "mltr",
+    "name": "Mahalakshmi Tiffin Room (MLTR)",
+    "area": "Gandhi Bazaar, Basavanagudi",
+    "category": "food",
+    "blurb": "Been serving the same Gandhi Bazaar lane since 1926, one door down from its far more photographed neighbour. Order the khali dose - a bare, buttery dosa found almost nowhere else.",
+    "kn": "ಮಹಾಲಕ್ಷ್ಮಿ ಟಿಫಿನ್ ರೂಮ್",
+    "say": "Mahaalakshmi Tiffin Room",
+    "lat": 12.943,
+    "lng": 77.573,
+    "try": [
+      "Khali dose — the bare, buttery dosa almost nobody else still does.",
+      "Same Gandhi Bazaar lane as the famous neighbour, without the queue theatre."
+    ]
+  },
+  {
+    "id": "atithyaa",
+    "name": "Atithyaa",
+    "area": "Gandhi Bazaar, Basavanagudi",
+    "category": "food",
+    "approved": true,
+    "blurb": "An unlimited Karnataka thali on a kansa plate, serving the same Gandhi Bazaar crowd since 1986 - bisi bele bath, gojju, and palya that change with the season, not the menu.",
+    "kn": "ಆತಿಥ್ಯ",
+    "say": "Aa-thi-thya",
+    "lat": 12.943,
+    "lng": 77.5735,
+    "personalPick": true,
+    "try": [
+      "Unlimited Karnataka thali on a kansa plate — bisi bele bath, gojju, seasonal palya.",
+      "Lunch crowd since 1986; this is a meal, not a tasting."
+    ]
+  },
+  {
+    "id": "mudde-mess",
+    "name": "Mudde Madappa Mess",
+    "area": "Gandhi Nagar, near Majestic",
+    "category": "food",
+    "blurb": "A no-frills mess built entirely around ragi mudde - hot millet dumplings with saaru, rice and buttermilk, coupon at the counter, hands washed at the table.",
+    "kn": "ಮುದ್ದೆ ಮಾದಪ್ಪ ಮೆಸ್",
+    "say": "Mudde Maa-dappa Mess",
+    "lat": 12.977,
+    "lng": 77.573,
+    "try": [
+      "Ragi mudde with saaru, rice and buttermilk — coupon at the counter, hands at the table.",
+      "Don't come for dosa. Come for millet."
+    ]
+  },
+  {
+    "id": "halli-jonne",
+    "name": "Halli Jonne Biriyani",
+    "area": "Jayanagar",
+    "category": "food",
+    "blurb": "The donne biryani style done properly - short-grain jonne rice, a green masala base, and the biryani served hot in an areca-leaf donne, not a foil box.",
+    "kn": "ಹಳ್ಳಿ ಜೋಳ ಬಿರಿಯಾನಿ",
+    "say": "Halli Jo-ne Biriyani",
+    "lat": 12.925,
+    "lng": 77.5938,
+    "try": [
+      "Donne biryani in an areca-leaf cup: short-grain jonne rice, green masala.",
+      "Eat it hot in the donne, not packed for later."
+    ]
+  },
+  {
+    "id": "vvpuram",
+    "name": "VV Puram Food Street",
+    "area": "Basavanagudi",
+    "category": "food",
+    "blurb": "A single lane that turns into an open kitchen after sunset - grilled corn, kebabs, and desserts nobody outside Karnataka has heard of.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Vad%20Pav%20-%20Food%20Street%2C%20VV%20puram%2C%20Bengaluru%20-%20Karnataka%20023.jpg"
+    ],
+    "kn": "ವಿ.ವಿ. ಪುರಂ",
+    "say": "V V Puram",
+    "lat": 12.942,
+    "lng": 77.575,
+    "try": [
+      "After sunset: grilled corn, kebabs, and sweets that don't travel outside Karnataka.",
+      "Walk the whole lane; one stall is a snack, the street is dinner."
+    ]
+  },
+  {
+    "id": "toit",
+    "name": "Toit Brewpub",
+    "area": "Indiranagar",
+    "category": "night",
+    "blurb": "One of the city's original craft breweries, credited with starting Bengaluru's microbrewery culture in the 2010s.",
+    "kn": "ಟೊಯ್ಟ್",
+    "say": "Toyt",
+    "lat": 12.9716,
+    "lng": 77.6412,
+    "try": [
+      "A house beer and a long table — this is the brewpub that normalised craft here.",
+      "Indiranagar evening, not a nightclub."
+    ]
+  },
+  {
+    "id": "amrut",
+    "name": "Amrut Distillery",
+    "area": "Kambipura, Mysore Road",
+    "category": "night",
+    "blurb": "The distillery behind India's first internationally launched single malt, Amrut Fusion, debuted in Glasgow in 2004 - Bengaluru's heat actually speeds up the ageing. Tours exist but are inconsistent; call ahead rather than showing up.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Amrut%20singlemalt%20whisky%202013-06-11%2018-39.jpg"
+    ],
+    "kn": "ಅಮೃತ್ ಡಿಸ್ಟಿಲರಿ",
+    "say": "Amrut Distillery",
+    "lat": 12.9086,
+    "lng": 77.4256,
+    "try": [
+      "The tour if you care how Fusion gets made; otherwise drink it in the city, not the industrial estate.",
+      "It's a distillery on Mysore Road — plan the trip, don't stumble in."
+    ]
+  },
+  {
+    "id": "commercial",
+    "name": "Commercial Street & Chickpet",
+    "area": "Shivajinagar / Chickpet",
+    "category": "craft",
+    "blurb": "Two markets, two moods: Commercial Street for fashion and export surplus, Chickpet's lanes for silk, bangles, and spice by weight.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Commercial%20Street%2C%20Bangalore%20(7870991636).jpg"
+    ],
+    "kn": "ಚಿಕ್ಕಪೇಟೆ",
+    "say": "Chik-ka-pete",
+    "lat": 12.9828,
+    "lng": 77.6096,
+    "try": [
+      "Commercial Street for clothes and surplus; Chickpet for fabric, jewellery, and old-city density.",
+      "Two markets, two moods — don't treat them as one mall."
+    ]
+  },
+  {
+    "id": "malleswaram-market",
+    "name": "Malleswaram Market",
+    "area": "Malleswaram",
+    "category": "craft",
+    "blurb": "Flowers, filter coffee powder, and produce sold the way it has been for generations, a few streets from CTR.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Sampigeroad.JPG"
+    ],
+    "kn": "ಮಲ್ಲೇಶ್ವರಂ ಮಾರುಕಟ್ಟೆ",
+    "say": "Malle-shwa-ram Maa-ru-katte",
+    "lat": 13.0068,
+    "lng": 77.573,
+    "try": [
+      "Flowers, filter-coffee powder, and produce the way the neighbourhood still shops.",
+      "Pair it with Veena Stores or CTR on the same visit."
+    ]
+  },
+  {
+    "id": "ubcity",
+    "name": "UB City",
+    "area": "Vittal Mallya Road",
+    "category": "craft",
+    "blurb": "The city's luxury quarter - useful for seeing how Bengaluru's design and jewellery houses reinterpret Karnataka craft for a global shelf.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/UB%20City%20Bangalore.JPG"
+    ],
+    "kn": "ಯುಬಿ ಸಿಟಿ",
+    "say": "U B City",
+    "lat": 12.9716,
+    "lng": 77.5958,
+    "skipCrowd": {
+      "why": "A luxury mall with imported marble — striking, but tells you nothing about Karnataka craft.",
+      "insteadId": "cauvery-emporium",
+      "insteadNote": "The real handloom and sandalwood work, at fixed state-run prices."
+    },
+    "try": [
+      "Look at how Bengaluru jewellery and design houses present themselves — then leave for actual craft.",
+      "Open Skip the crowd on the card if this was the royal-India photo stop."
+    ]
+  },
+  {
+    "id": "iskcon",
+    "name": "ISKCON Temple Bangalore",
+    "area": "Rajajinagar",
+    "category": "culture",
+    "blurb": "A modern temple complex built into a hillside, worth visiting at evening aarti even if you're not devotional.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/ISKCON%20Temple%20-%20Bangalore%20-%20Karnataka%20-%20DSCN0101.jpg"
+    ],
+    "kn": "ಇಸ್ಕಾನ್ ದೇವಾಲಯ",
+    "say": "Iskon Devaalaya",
+    "lat": 12.9884,
+    "lng": 77.5513,
+    "skipCrowd": {
+      "why": "Long security queues and a shuffle-through pace that leaves little room to sit with it.",
+      "insteadId": "dodda-ganapathi",
+      "insteadNote": "A 16th-century monolithic Ganesha, unhurried, tucked below Bull Temple hill."
+    },
+    "try": [
+      "Evening aarti if you want the hill complex at full volume.",
+      "Open Skip the crowd for Dodda Ganapathi if you want a quieter temple."
+    ]
+  },
+  {
+    "id": "palace",
+    "name": "Bangalore Palace",
+    "area": "Vasanth Nagar",
+    "category": "culture",
+    "blurb": "A Tudor-style palace that has nothing to do with Rajasthani forts - a reminder that royal Karnataka architecture looked very different.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Bangalore%20Palace%20%2C%20Main%20Entrance.jpg"
+    ],
+    "kn": "ಬೆಂಗಳೂರು ಅರಮನೆ",
+    "say": "Bengaluru Ara-mane",
+    "lat": 12.9987,
+    "lng": 77.592,
+    "skipCrowd": {
+      "why": "A Tudor-Gothic building with a paid walk-through and little Karnataka history behind it.",
+      "insteadNote": "Mysuru Palace, ~3 hrs south — the Wodeyar seat, lit gold every Sunday evening."
+    },
+    "try": [
+      "A Tudor walk-through — useful as a reminder this isn't Rajasthan.",
+      "Open Skip the crowd if you actually wanted a royal seat: that's Mysuru."
+    ]
+  },
+  {
+    "id": "rangashankara",
+    "name": "Ranga Shankara",
+    "area": "J.P. Nagar",
+    "category": "culture",
+    "blurb": "The city's best-loved theatre, running Kannada, English, and regional-language plays most nights of the week.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Ranga%20Shankara%2C%20Bangalore%20%282024%29%2022.jpg"
+    ],
+    "kn": "ರಂಗಶಂಕರ",
+    "say": "Ranga-shankara",
+    "lat": 12.9089,
+    "lng": 77.5831,
+    "try": [
+      "Check the week's Kannada, English, and regional plays and book a night.",
+      "It's a theatre. Stay for the play, not the lobby."
+    ]
+  },
+  {
+    "id": "cauvery-emporium",
+    "name": "Cauvery Arts & Crafts Emporium",
+    "area": "MG Road",
+    "category": "craft",
+    "blurb": "The state-run showroom for Karnataka craft under one roof: Mysore silk, sandalwood carving, and handloom from as far as Ilkal and Hubballi-Dharwad.",
+    "kn": "ಕಾವೇರಿ ಕರಕುಶಲ ಮಳಿಗೆ",
+    "say": "Kaaveri Kara-kushala Malige",
+    "lat": 12.9757,
+    "lng": 77.6079,
+    "try": [
+      "Mysore silk, sandalwood, and Channapatna under one state-run roof, fixed prices.",
+      "This is the craft shop; UB City is the mall."
+    ]
+  },
+  {
+    "id": "dodda-ganapathi",
+    "name": "Dodda Ganapathi Temple",
+    "area": "Basavanagudi",
+    "category": "culture",
+    "blurb": "A 16th-century monolithic Ganesha below Bull Temple hill — quieter than the city's headline temples, and a better place to actually sit.",
+    "kn": "ದೊಡ್ಡ ಗಣಪತಿ",
+    "say": "Dod-da Ganapathi",
+    "lat": 12.9426,
+    "lng": 77.5683,
+    "try": [
+      "Sit with the 16th-century monolithic Ganesha below Bull Temple hill.",
+      "Unhurried on purpose — don't stack it with a temple-hopping checklist."
+    ]
+  },
+  {
+    "id": "vidyarthi-bhavan",
+    "name": "Vidyarthi Bhavan",
+    "area": "Basavanagudi",
+    "category": "food",
+    "blurb": "The masala dosa that went viral and never came back down — worth knowing by name, and worth knowing when to skip the queue.",
+    "kn": "ವಿದ್ಯಾರ್ಥಿ ಭವನ",
+    "say": "Vidyaarthi Bhavan",
+    "lat": 12.9451,
+    "lng": 77.5716,
+    "skipCrowd": {
+      "why": "An hour-long wait for a table on weekends is the usual story now.",
+      "insteadId": "veena-thindi",
+      "insteadNote": "The same benne masale dosa culture, no influencer queue, and a whole lane of breakfast stalls to graze."
+    },
+    "try": [
+      "Masala dosa if you accept the wait; otherwise open Skip the crowd.",
+      "It's famous. That's the whole problem and the whole reason to know the name."
+    ]
+  },
+  {
+    "id": "brigade-mg",
+    "name": "Brigade Road / MG Road",
+    "area": "Central Bengaluru",
+    "category": "night",
+    "blurb": "The postcard nightlife strip — mall-brand shopping and chain restaurants you could swap for any Indian metro.",
+    "lat": 12.9738,
+    "lng": 77.607,
+    "skipCrowd": {
+      "why": "The same strip you'd find in most Indian metros.",
+      "insteadId": "toit",
+      "insteadNote": "Independent kitchens and bars on Indiranagar's 12th Main, run by Bengaluru people, not franchise counters."
+    },
+    "try": [
+      "Walk it once so you know the postcard strip, then leave.",
+      "Open Skip the crowd for Indiranagar if you wanted a night out."
+    ]
+  },
+  {
+    "id": "chinita",
+    "name": "Chinita",
+    "area": "Indiranagar / Koramangala",
+    "category": "food",
+    "personalPick": true,
+    "blurb": "Real Mexican food — proper horchata, churros, and a mole that isn't playing it safe for an Indian palate. Go for the tacos, stay for the horchata.",
+    "lat": 12.978,
+    "lng": 77.6408,
+    "try": [
+      "Tacos and horchata; the mole if you want something that isn't mild-for-India.",
+      "Indiranagar or Koramangala — same kitchen idea."
+    ]
+  },
+  {
+    "id": "chianti",
+    "name": "Chianti",
+    "area": "Koramangala",
+    "category": "food",
+    "personalPick": true,
+    "blurb": "An Italian spot that's been consistently good for years — pasta, lasagna, tiramisu, the kind of place you take someone when you don't want to gamble.",
+    "lat": 12.9342,
+    "lng": 77.6156,
+    "try": [
+      "Pasta or lasagna when you don't want to gamble on a new place.",
+      "Tiramisu if you're already there; this is a consistent, not a trendy, room."
+    ]
+  },
+  {
+    "id": "rnr-biriyani",
+    "name": "RnR Biriyani",
+    "area": "Jayanagar",
+    "category": "food",
+    "personalPick": true,
+    "blurb": "\"Taste of 1953\" — donne-style biryani on a family recipe that's stayed more or less untouched for three generations. Namma Bengaluru's own biryani, not the Hyderabadi kind.",
+    "lat": 12.9254,
+    "lng": 77.5839,
+    "try": [
+      "Donne-style biryani, family recipe since 1953 — Bengaluru's own, not Hyderabadi.",
+      "Go hungry; this is the meal."
+    ]
+  },
+  {
+    "id": "meghana-foods",
+    "name": "Meghana Foods",
+    "area": "Koramangala (and other outlets)",
+    "category": "food",
+    "personalPick": true,
+    "blurb": "Andhra-style biryani with a genuine cult following — spicier than most, and the boneless chicken biryani is the one people queue for.",
+    "lat": 12.9348,
+    "lng": 77.6226,
+    "try": [
+      "Boneless chicken biryani, spicier than most of the city's Andhra counters.",
+      "Expect a queue; that's the cult, not a secret."
+    ]
+  }
+]

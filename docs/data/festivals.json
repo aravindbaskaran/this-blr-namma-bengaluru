@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Mysuru Dasara",
+    "kn": "ಮೈಸೂರು ದಸರಾ",
+    "when": "Sep/Oct, 10 days",
+    "where": "Mysuru",
+    "color": "var(--jacaranda)",
+    "blurb": "Karnataka's state festival, Naada Habba - the Mysuru Palace lit end to end, the Wodeyar royal durbar, and the Jamboo Savari procession carrying Goddess Chamundeshwari through the streets in a 750kg golden howdah. Traced back to the Vijayanagara Empire and formalised by the Wodeyars in 1610."
+  },
+  {
+    "name": "Gombe Habba",
+    "kn": "ಗೊಂಬೆ ಹಬ್ಬ",
+    "when": "Sep/Oct, during Dasara",
+    "where": "Mysuru households, statewide",
+    "color": "var(--jacaranda)",
+    "blurb": "The doll festival - the quieter, domestic side of Dasara. Families in Mysuru build tiered steps of dolls and figurines (bombe mane) in their homes, and neighbours are invited over to see each other's displays. A world away from the palace procession, in the same ten days."
+  },
+  {
+    "name": "Ugadi",
+    "kn": "ಯುಗಾದಿ",
+    "when": "March/April",
+    "where": "Statewide",
+    "color": "var(--terracotta)",
+    "blurb": "The Kannada New Year, marked with bevu-bella - a mix of neem and jaggery eaten together as a reminder that the year ahead will hold both bitterness and sweetness."
+  },
+  {
+    "name": "Bengaluru Karaga",
+    "kn": "ಬೆಂಗಳೂರು ಕರಗ",
+    "when": "March/April, 9 nights",
+    "where": "Dharmaraya Swamy Temple, Bengaluru",
+    "color": "var(--maroon)",
+    "blurb": "The city's own festival, older than its software reputation by centuries - a priest in women's attire carries a flower-pyramid through the old pete at midnight, escorted by sword-wielding Thigala Veerakumaras. The procession stops at a Sufi dargah each year, an unbroken 18th-century tradition of Hindu-Muslim unity."
+  },
+  {
+    "name": "Kadalekai Parishe",
+    "kn": "ಕಡಲೆಕಾಯಿ ಪರಿಷೆ",
+    "when": "Nov/Dec, 2-3 days",
+    "where": "Basavanagudi & Malleswaram, Bengaluru",
+    "color": "var(--hampi-stone)",
+    "blurb": "The groundnut fair - farmers bring the season's first harvest to offer at the Bull Temple, and the streets around it disappear under mounds of roasted and raw groundnuts, bangles, and clay toys."
+  },
+  {
+    "name": "Bhuta Kola",
+    "kn": "ಭೂತ ಕೋಲ",
+    "when": "Dec-May, night-long",
+    "where": "Dakshina Kannada & Udupi coast",
+    "color": "var(--coastal-teal)",
+    "blurb": "Tulu Nadu's spirit-worship ritual, the tradition behind the film Kantara - a hereditary medium becomes possessed by a guardian daiva (deity) such as Panjurli, delivering counsel and settling disputes through the night, to torchlight, drums and paddana ballads sung in Tulu."
+  },
+  {
+    "name": "Kambala",
+    "kn": "ಕಂಬಳ",
+    "when": "Nov-March",
+    "where": "Dakshina Kannada & Udupi coast",
+    "color": "var(--coastal-teal)",
+    "blurb": "Buffalo races down slushy paddy tracks, run in over 45 villages along the Tulu Nadu coast - handlers balance on wooden planks behind the animals, sometimes hitting 50 km/h. A farming-season thanksgiving, long before it was a spectator sport."
+  },
+  {
+    "name": "Hampi Utsav",
+    "kn": "ಹಂಪಿ ಉತ್ಸವ",
+    "when": "Usually Nov or Feb/Mar, 3 days",
+    "where": "Hampi",
+    "color": "var(--coffee)",
+    "blurb": "Also called Vijaya Utsava - the ruined capital of the Vijayanagara Empire lit up for dance, music and folk performance, reviving a Mahanavami tradition the empire itself once held on the same ground."
+  }
+]

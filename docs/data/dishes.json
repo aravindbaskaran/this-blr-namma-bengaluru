@@ -1,0 +1,419 @@
+{
+  "tags": [
+    {
+      "id": "breakfast",
+      "label": "Breakfast & tiffin"
+    },
+    {
+      "id": "sweet",
+      "label": "Sweets"
+    },
+    {
+      "id": "rice",
+      "label": "Rice & millet"
+    },
+    {
+      "id": "meat",
+      "label": "Meat & curry"
+    },
+    {
+      "id": "bread",
+      "label": "Rotti & breads"
+    },
+    {
+      "id": "drink",
+      "label": "Drinks"
+    },
+    {
+      "id": "mysuru",
+      "label": "Mysuru"
+    },
+    {
+      "id": "north",
+      "label": "North Karnataka"
+    },
+    {
+      "id": "kodagu",
+      "label": "Kodagu"
+    },
+    {
+      "id": "coast",
+      "label": "Udupi–Mangaluru"
+    },
+    {
+      "id": "picks",
+      "label": "Personal picks"
+    }
+  ],
+  "dishes": [
+    {
+      "name": "Mysore Pak",
+      "kn": "ಮೈಸೂರು ಪಾಕ್",
+      "say": "My-sooru Paak",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mysore%20pak.jpg",
+      "desc": "A dense, ghee-heavy sweet made from gram flour, sugar and ghee, invented in the Mysuru palace kitchens.",
+      "tags": [
+        "sweet",
+        "mysuru"
+      ],
+      "id": "mysore-pak"
+    },
+    {
+      "name": "Mysore Mutton Curry",
+      "kn": "ಮೈಸೂರು ಮಟನ್ ಕರಿ",
+      "say": "My-sooru Mutton Curry",
+      "desc": "A dark, tangy mutton curry built on roasted spices rather than cream - it has since travelled as far as Singapore, picking up soy sauce along the way.",
+      "tags": [
+        "meat",
+        "mysuru"
+      ],
+      "id": "mysore-mutton-curry"
+    },
+    {
+      "name": "Bisi Bele Bath",
+      "kn": "ಬಿಸಿ ಬೇಳೆ ಬಾತ್",
+      "say": "Bisi Bele Baath",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bisi%20Bele%20Bath%20(Bisibelebath).JPG",
+      "desc": "Literally \"hot lentil rice\" - a spiced, tangy rice-and-lentil dish and Karnataka's definitive comfort food.",
+      "tags": [
+        "rice",
+        "breakfast"
+      ],
+      "id": "bisi-bele-bath"
+    },
+    {
+      "name": "Ragi Mudde",
+      "kn": "ರಾಗಿ ಮುದ್ದೆ",
+      "say": "Raagi Mudde",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/RAGI%20MUDDE.JPG",
+      "desc": "Steamed finger-millet dumplings, torn by hand and dunked in saaru (thin lentil soup) - an old-Mysore rural staple.",
+      "tags": [
+        "rice"
+      ],
+      "id": "ragi-mudde"
+    },
+    {
+      "name": "Benne Masale Dosa",
+      "kn": "ಬೆಣ್ಣೆ ಮಸಾಲೆ ದೋಸೆ",
+      "say": "Ben-ne Masaale Dose",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%22Butter%22%20Masala%20Dosai%20(1602609238).jpg",
+      "desc": "A crisp dosa laced with butter (benne) and filled with spiced potato palya.",
+      "tags": [
+        "breakfast"
+      ],
+      "personalPick": true,
+      "id": "benne-masale-dosa"
+    },
+    {
+      "name": "Davanagere Benne Dose",
+      "kn": "ದಾವಣಗೆರೆ ಬೆಣ್ಣೆ ದೋಸೆ",
+      "say": "Daavana-gere Ben-ne Dose",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Davanagere%20Benne%20Dosa.jpg",
+      "desc": "A different animal from the Bengaluru version above - thicker and spongier, with puffed rice ground into the batter, first sold by a woman named Chennamma outside a Davanagere drama theatre in 1928.",
+      "tags": [
+        "breakfast"
+      ],
+      "id": "davanagere-benne-dose"
+    },
+    {
+      "name": "Khali Dose",
+      "kn": "ಖಾಲಿ ದೋಸೆ",
+      "say": "Khaali Dose",
+      "desc": "A plain, unstuffed dosa - thin, buttery, and a Bengaluru darshini specialty in its own right.",
+      "tags": [
+        "breakfast"
+      ],
+      "id": "khali-dose"
+    },
+    {
+      "name": "Donne Biryani",
+      "kn": "ದೊನ್ನೆ ಬಿರಿಯಾನಿ",
+      "say": "Don-ne Biriyaani",
+      "desc": "Biryani made with short-grain jonne rice and a green masala base, served in a donne - a stitched areca-leaf cup.",
+      "tags": [
+        "rice",
+        "meat"
+      ],
+      "personalPick": true,
+      "id": "donne-biryani"
+    },
+    {
+      "name": "Kori Rotti",
+      "kn": "ಕೋರಿ ರೊಟ್ಟಿ",
+      "say": "Kori Rotti",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kori%20Rotti.jpg",
+      "desc": "A Tulu Nadu dish - spicy coconut-milk chicken curry poured over crisp, dry rice wafers.",
+      "tags": [
+        "meat",
+        "coast"
+      ],
+      "id": "kori-rotti"
+    },
+    {
+      "name": "Kori Gassi",
+      "kn": "ಕೋರಿ ಗಸ್ಸಿ",
+      "say": "Kori Gassi",
+      "desc": "The chicken curry itself, without the wafers - a Mangalorean Bunt-community dish built on roasted coconut and dry red chilli. Kori is chicken, gassi is curry, in Tulu.",
+      "tags": [
+        "meat",
+        "coast"
+      ],
+      "id": "kori-gassi"
+    },
+    {
+      "name": "Neer Dosa",
+      "kn": "ನೀರ್ ದೋಸೆ",
+      "say": "Neer Dose",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Neer%20Dosa%20%28%E0%B2%A8%E0%B3%80%E0%B2%B0%E0%B3%81%20%E0%B2%A6%E0%B3%8B%E0%B2%B8%E0%B3%86%29.jpg",
+      "desc": "A thin, lacy rice-batter crepe from the coast - the name literally means \"water dosa.\"",
+      "tags": [
+        "breakfast",
+        "coast"
+      ],
+      "id": "neer-dosa"
+    },
+    {
+      "name": "Thatte Idli",
+      "kn": "ತಟ್ಟೆ ಇಡ್ಲಿ",
+      "say": "Tat-te Idli",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Thatte%20Idli%20(2).jpg",
+      "desc": "Plate-sized idli - thatte means plate - steamed wide and flat instead of in the usual small moulds, soft enough that it barely needs chewing.",
+      "tags": [
+        "breakfast"
+      ],
+      "id": "thatte-idli"
+    },
+    {
+      "name": "Mangalore Buns",
+      "kn": "ಮಂಗಳೂರು ಬನ್ಸ್",
+      "say": "Mangaluru Buns",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mangalore%20Bun%20%2B%20Pickle%20%284307171460%29.jpg",
+      "desc": "Slightly sweet, deep-fried banana buns from the coastal Udupi breakfast tradition.",
+      "tags": [
+        "breakfast",
+        "coast",
+        "sweet"
+      ],
+      "id": "mangalore-buns"
+    },
+    {
+      "name": "Goli Baje",
+      "kn": "ಗೋಳಿ ಬಜೆ",
+      "say": "Goli Baje",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%E0%B2%97%E0%B3%8B%E0%B2%B3%E0%B2%BF%20%E0%B2%AC%E0%B2%9C%E0%B3%86.jpg",
+      "desc": "Soft, tangy fritters from a fermented flour-and-curd batter - a Udupi teatime classic, best eaten hot.",
+      "tags": [
+        "breakfast",
+        "coast"
+      ],
+      "id": "goli-baje"
+    },
+    {
+      "name": "Jolada Rotti",
+      "kn": "ಜೋಳದ ರೊಟ್ಟಿ",
+      "say": "Jo-lada Rotti",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Another%20Vegetarian%20Meal.jpg",
+      "desc": "A hand-flattened sorghum flatbread - the everyday bread of North Karnataka.",
+      "tags": [
+        "bread",
+        "north"
+      ],
+      "id": "jolada-rotti"
+    },
+    {
+      "name": "Akki Rotti",
+      "kn": "ಅಕ್ಕಿ ರೊಟ್ಟಿ",
+      "say": "Akki Rotti",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Akki%20Roti%20-%20A2B%20-%20Karnataka%20-%20Kae003.jpg",
+      "desc": "A rice-flour flatbread patted straight onto a hot tawa by hand, not rolled, worked through with grated carrot, onion, coriander and green chilli.",
+      "tags": [
+        "bread",
+        "breakfast"
+      ],
+      "id": "akki-rotti"
+    },
+    {
+      "name": "Ragi Rotti",
+      "kn": "ರಾಗಿ ರೊಟ್ಟಿ",
+      "say": "Raagi Rotti",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ragi%20Rotti%20Chutney%20Karnataka%20Kannada%20%E0%B2%B0%E0%B2%BE%E0%B2%97%E0%B2%BF%20%E0%B2%B0%E0%B3%8A%E0%B2%9F%E0%B3%8D%E0%B2%9F%E0%B2%BF%20%E0%B2%95%E0%B2%A8%E0%B3%8D%E0%B2%A8%E0%B2%A1.jpg",
+      "desc": "The same hand-patted method as akki rotti, made with finger-millet flour instead of rice - denser, earthier, a staple alongside ragi mudde.",
+      "tags": [
+        "bread"
+      ],
+      "id": "ragi-rotti"
+    },
+    {
+      "name": "Yenne Badnekai",
+      "kn": "ಎಣ್ಣೆ ಬದನೆಕಾಯಿ",
+      "say": "En-ne Badne-kaayi",
+      "desc": "Small eggplants stuffed with a peanut-sesame masala and slow-cooked in oil - a Dharwad-Hubballi classic.",
+      "tags": [
+        "north"
+      ],
+      "id": "yenne-badnekai"
+    },
+    {
+      "name": "Girmit",
+      "kn": "ಗಿರ್ಮಿಟ್",
+      "say": "Gir-mit",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Masala%20Puffed%20rice.jpg",
+      "desc": "Hubballi-Dharwad's answer to bhel - puffed rice tossed in a tangy onion-tomato-tamarind masala, sold at evening street stalls and eaten with mirchi bajji.",
+      "tags": [
+        "north"
+      ],
+      "id": "girmit"
+    },
+    {
+      "name": "Kalaburgi Tahari",
+      "kn": "ಕಲಬುರಗಿ ತಹರಿ",
+      "say": "Kala-burgi Tahari",
+      "desc": "North Karnataka's answer to biryani - mutton and rice cooked together in one pot, a Nizam-era dish still tied to a handful of old Kalaburgi eateries that only take cash.",
+      "tags": [
+        "rice",
+        "meat",
+        "north"
+      ],
+      "id": "kalaburgi-tahari"
+    },
+    {
+      "name": "Dharwad Peda",
+      "kn": "ಧಾರವಾಡ ಪೇಡಾ",
+      "say": "Dhaar-waad Pedaa",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Dharwad%20peda.jpg",
+      "desc": "A caramel-brown milk sweet with a history over 175 years old, still made at the original Babusingh Thakur shop on Dharwad's Line Bazaar - which the queues for it gave its name to.",
+      "tags": [
+        "sweet",
+        "north"
+      ],
+      "id": "dharwad-peda"
+    },
+    {
+      "name": "Belagavi Kunda",
+      "kn": "ಬೆಳಗಾವಿ ಕುಂದಾ",
+      "say": "Bela-gaavi Kundaa",
+      "desc": "A soft, caramelised milk-and-khoa sweet from Belagavi, invented by accident when a confectioner let a pot of milk boil too long - the city is sometimes called Kundagiri after it.",
+      "tags": [
+        "sweet",
+        "north"
+      ],
+      "id": "belagavi-kunda"
+    },
+    {
+      "name": "Kesari Bath",
+      "kn": "ಕೇಸರಿ ಬಾತ್",
+      "say": "Kesari Baath",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kesari%20bhath.jpg",
+      "desc": "A bright orange semolina sweet, often plated next to khara bath as the combination \"chow-chow bath.\"",
+      "tags": [
+        "sweet",
+        "breakfast"
+      ],
+      "id": "kesari-bath"
+    },
+    {
+      "name": "Chow Chow Bath",
+      "kn": "ಚೌ ಚೌ ಬಾತ್",
+      "say": "Chow Chow Baath",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kesari%20bhath.jpg",
+      "desc": "The two dishes above, served together on one plate with a spoon of coconut chutney between them - sweet kesari bath and spicy khara bath, a Bengaluru darshini staple with no single inventor on record.",
+      "tags": [
+        "breakfast",
+        "sweet"
+      ],
+      "personalPick": true,
+      "id": "chow-chow-bath"
+    },
+    {
+      "name": "Churmuri",
+      "kn": "ಚುರುಮುರಿ",
+      "say": "Churu-muri",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Churumuri%20at%20raja%20seat.jpg",
+      "desc": "Puffed rice tossed with onion, tomato, chilli and a tangy dressing - Mysuru's answer to bhel puri.",
+      "tags": [
+        "mysuru"
+      ],
+      "id": "churmuri"
+    },
+    {
+      "name": "Mylari Dosa",
+      "kn": "ಮೈಲಾರಿ ದೋಸೆ",
+      "say": "My-laari Dose",
+      "desc": "A soft, thick, ghee-roasted dosa unique to a handful of Mysuru eateries - different in texture from a typical dosa.",
+      "tags": [
+        "breakfast",
+        "mysuru"
+      ],
+      "id": "mylari-dosa"
+    },
+    {
+      "name": "Pandi Curry",
+      "kn": "ಪಂದಿ ಕರಿ",
+      "say": "Pandi Curry",
+      "desc": "A dark, tangy Kodava pork curry, soured with kachampuli - a dark vinegar unique to Kodagu.",
+      "tags": [
+        "meat",
+        "kodagu"
+      ],
+      "id": "pandi-curry"
+    },
+    {
+      "name": "Kadambuttu",
+      "kn": "ಕಡುಬುಟ್ಟು",
+      "say": "Kadam-buttu",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kadubu%20of%20Coorg.jpg",
+      "desc": "Steamed rice dumplings from Kodagu, the traditional partner to pandi curry.",
+      "tags": [
+        "rice",
+        "kodagu"
+      ],
+      "id": "kadambuttu"
+    },
+    {
+      "name": "Filter Kaapi",
+      "kn": "ಫಿಲ್ಟರ್ ಕಾಫಿ",
+      "say": "Filter Kaapi",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Filter%20Coffee%20-%20CTR%20Shri%20Sagar%2C%20Bangalore%20-%20Karnataka%20-%20PXL0254.jpg",
+      "desc": "Traces back to the seven coffee beans the Sufi saint Baba Budan reportedly smuggled from Yemen to Chikmagalur in the 1670s - the slow-drip steel filter and the tumbler-davara pour came later, worked out in South Indian kitchens in the early 1900s. Strong decoction, hot milk, poured back and forth to cool and froth it. CTR and Vidyarthi Bhavan are two of Bengaluru's oldest addresses for it.",
+      "tags": [
+        "drink",
+        "breakfast"
+      ],
+      "personalPick": true,
+      "id": "filter-kaapi"
+    },
+    {
+      "name": "Majjige",
+      "kn": "ಮಜ್ಜಿಗೆ",
+      "say": "Maj-jige",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Neer%20moru%20spiced%20buttermilk.jpg",
+      "desc": "Spiced, thinned buttermilk - the everyday cooling drink that closes out a Karnataka meal.",
+      "tags": [
+        "drink"
+      ],
+      "id": "majjige"
+    },
+    {
+      "name": "Nannari Sherbet",
+      "kn": "ನನ್ನಾರಿ ಶರಬತ್",
+      "say": "Nan-naari Sharabath",
+      "desc": "A deep red-brown cooling drink made from Indian sarsaparilla root syrup - a Mysuru street-cart classic.",
+      "tags": [
+        "drink",
+        "mysuru"
+      ],
+      "id": "nannari-sherbet"
+    },
+    {
+      "name": "Kashaya",
+      "kn": "ಕಷಾಯ",
+      "say": "Ka-shaaya",
+      "desc": "A hot spiced herbal decoction from the Tulu Nadu coast, often the first thing offered to a guest.",
+      "tags": [
+        "drink",
+        "coast"
+      ],
+      "id": "kashaya"
+    }
+  ]
+}

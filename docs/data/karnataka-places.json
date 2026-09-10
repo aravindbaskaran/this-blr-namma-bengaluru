@@ -1,0 +1,215 @@
+[
+  {
+    "id": "mylari",
+    "name": "Vinayaka Mylari",
+    "area": "Nazarbad, Mysuru",
+    "category": "food",
+    "blurb": "A six-table Mysuru institution since the late 1930s, making one soft, ghee-roasted dosa and nothing else worth asking about. Grab a churmuri from the puffed-rice stalls outside Devaraja Market on the way.",
+    "kn": "ವಿನಾಯಕ ಮೈಲಾರಿ",
+    "say": "Vinaayaka My-laari",
+    "lat": 12.305,
+    "lng": 76.6553,
+    "try": [
+      "One soft, ghee-roasted dosa at a six-table Mysuru room that's been doing only that.",
+      "Don't ask for a masala stuffed the Bengaluru way."
+    ]
+  },
+  {
+    "id": "nandi",
+    "name": "Nandi Hills",
+    "area": "~60km north",
+    "category": "daytrip",
+    "blurb": "A pre-dawn drive up a hill fort for sunrise above the clouds - a Bengaluru weekend ritual long before Instagram.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Sunset%20on%20Nandi%20Hill.jpg"
+    ],
+    "kn": "ನಂದಿ ಬೆಟ್ಟ",
+    "say": "Nandi Betta",
+    "lat": 13.3702,
+    "lng": 77.6835,
+    "try": [
+      "Leave well before dawn for sunrise above the cloud line.",
+      "It's a hill-fort drive, not a cafe with a view — start early or sit in traffic."
+    ]
+  },
+  {
+    "id": "mysuru",
+    "name": "Mysuru Palace",
+    "area": "~3 hrs south",
+    "category": "daytrip",
+    "blurb": "Karnataka's own answer to a \"royal palace\" - Indo-Saracenic architecture, lit up gold every Sunday evening.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Mysore%20Palace%20Morning.jpg"
+    ],
+    "kn": "ಮೈಸೂರು ಅರಮನೆ",
+    "say": "My-sooru Ara-mane",
+    "lat": 12.3052,
+    "lng": 76.6552,
+    "try": [
+      "The palace lit gold on a Sunday evening if you can time it.",
+      "Walk the front, then the city market and a Mylari dosa, not only the ticketed rooms."
+    ]
+  },
+  {
+    "id": "coorg",
+    "name": "Coorg (Kodagu)",
+    "area": "~5 hrs southwest",
+    "category": "daytrip",
+    "blurb": "Misty coffee estates, Kodava culture, and a cuisine (pandi curry, kadambuttu) unlike anything else on this list.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Iruppu%20falls%208.JPG"
+    ],
+    "kn": "ಕೊಡಗು",
+    "say": "Ko-dagu",
+    "lat": 12.4244,
+    "lng": 75.7382,
+    "try": [
+      "Estate coffee, pandi curry, kadambuttu — stay overnight if you can.",
+      "This is Kodava country, not a Bengaluru weekend park."
+    ]
+  },
+  {
+    "id": "channapatna",
+    "name": "Channapatna",
+    "area": "~1.5 hrs south, on the Mysuru road",
+    "category": "craft",
+    "blurb": "The \"town of toys\" - lacquered wooden toys turned on a lathe, a craft old enough to have a GI tag. Workshops will let you watch.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Channapatna%20artist%20making%20toy.jpg"
+    ],
+    "kn": "ಚನ್ನಪಟ್ಟಣ",
+    "say": "Channa-pattana",
+    "lat": 12.6514,
+    "lng": 77.2064,
+    "try": [
+      "Watch lacquered toys turned on a lathe, then buy from the makers, not a mall shelf.",
+      "A stop on the Mysuru road, not a full-day destination unless you linger at a workshop."
+    ]
+  },
+  {
+    "id": "babusingh-peda",
+    "name": "Babusingh Thakur Peda",
+    "area": "Line Bazaar, Dharwad, ~7-8 hrs north",
+    "category": "food",
+    "blurb": "The original Dharwad Peda shop - over 175 years on the same Line Bazaar spot, run by the sixth generation of the same family. The queues for it are reportedly why the street is called Line Bazaar in the first place.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Dharwad%20peda.jpg"
+    ],
+    "kn": "ಬಾಬುಸಿಂಗ್ ಠಾಕೂರ್ ಪೇಡಾ",
+    "say": "Baabu-singh Thaakur Pedaa",
+    "lat": 15.4589,
+    "lng": 75.0078,
+    "try": [
+      "Dharwad Peda from the Line Bazaar shop that's been on the same spot 175 years.",
+      "Cash, queue, take a box; that's the pilgrimage."
+    ]
+  },
+  {
+    "id": "chikmagalur",
+    "name": "Chikmagalur",
+    "area": "~4 hrs west",
+    "category": "daytrip",
+    "blurb": "Karnataka's coffee country - Western Ghats estates, waterfalls, and the trail up Mullayanagiri, the state's highest peak.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Chikmagalur%20Coffee%20Estate%20(8322311510).jpg"
+    ],
+    "kn": "ಚಿಕ್ಕಮಗಳೂರು",
+    "say": "Chikka-magaluru",
+    "lat": 13.3161,
+    "lng": 75.772,
+    "try": [
+      "An estate walk and the Mullayanagiri trail if you have the legs.",
+      "Coffee country — stay a night, don't treat it as a day from Bengaluru unless you must."
+    ]
+  },
+  {
+    "id": "udupi-mangaluru",
+    "name": "Udupi & Mangaluru coast",
+    "area": "~7 hrs west, or a short flight",
+    "category": "daytrip",
+    "blurb": "Krishna Matt's temple kitchens, Malpe's beaches, and a coastal cuisine - neer dosa, kori rotti, Mangalorean seafood - worlds from Bengaluru's own. Eat at Mitra Samaj by the temple, where the Mangalore bun and goli baje reportedly started. Detour up NH66 to Maravanthe, where the road runs on a strip of land with the Arabian Sea on one side and the Souparnika river on the other - a geography not repeated anywhere else in India.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Maravanthe%20Beach%281%29.jpg"
+    ],
+    "kn": "ಉಡುಪಿ - ಮಂಗಳೂರು",
+    "say": "Udupi - Mangaluru",
+    "lat": 13.3409,
+    "lng": 74.7421,
+    "try": [
+      "Temple-kitchen Udupi food, Malpe beach, neer dosa and kori rotti.",
+      "Coastal Karnataka is a trip, not a lunch."
+    ]
+  },
+  {
+    "id": "yakshagana-kendra",
+    "name": "Yakshagana Kendra",
+    "area": "Udupi",
+    "category": "culture",
+    "blurb": "A training school for Yakshagana, coastal Karnataka's all-night dance-drama - towering headgear, painted faces, a live Bhagavatha narrating epics to drums and cymbals. Ask locally for a mela performance nearby; the season runs roughly January to May.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Yakshagana%20Performance.jpg"
+    ],
+    "kn": "ಯಕ್ಷಗಾನ ಕೇಂದ್ರ",
+    "say": "Yaksha-gaana Kendra",
+    "lat": 13.3389,
+    "lng": 74.7466,
+    "try": [
+      "If a performance or rehearsal is on, that's the visit — costumes and all-night drama.",
+      "It's a training school in Udupi, not a museum diorama."
+    ]
+  },
+  {
+    "id": "hampi",
+    "name": "Hampi",
+    "area": "~6-7 hrs north, better as an overnight",
+    "category": "daytrip",
+    "blurb": "The boulder-strewn ruins of the Vijayanagara empire's capital - temples, market streets, and elephant stables carved into a lunar landscape.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Sunrise%20from%20the%20top%20of%20Matanga%20hill%2C%20Hampi.jpg"
+    ],
+    "kn": "ಹಂಪಿ",
+    "say": "Hampi",
+    "lat": 15.335,
+    "lng": 76.46,
+    "try": [
+      "Boulder ruins, temple streets, and the river — plan an overnight, not a day dash.",
+      "Sunrise or late afternoon; midday on the rocks is punishment."
+    ]
+  },
+  {
+    "id": "vijayapura",
+    "name": "Vijayapura (Bijapur)",
+    "area": "~9 hrs north, pair with Hampi",
+    "category": "daytrip",
+    "blurb": "Deccan sultanate architecture at full scale - the Gol Gumbaz dome, second largest in the world, has a whisper gallery worth the echo.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Gol%20Gumbaz%20-4%2C%20Bijapur%2C%20Karnataka.jpg"
+    ],
+    "kn": "ವಿಜಯಪುರ",
+    "say": "Vijaya-pura",
+    "lat": 16.83,
+    "lng": 75.7361,
+    "try": [
+      "Gol Gumbaz first, then the other sultanate buildings if you still have light.",
+      "Pair with Hampi or Aihole; it's a long north Karnataka haul."
+    ]
+  },
+  {
+    "id": "aihole",
+    "name": "Aihole, Badami & Pattadakal",
+    "area": "~9-10 hrs north, pair with Hampi or Vijayapura",
+    "category": "daytrip",
+    "blurb": "Three Chalukya-era temple towns on the Malaprabha river - the \"primary school, secondary school and university\" of Indian temple architecture, centuries older than Hampi.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Agastya%20Lake%20with%20Badami%20Temples.jpg"
+    ],
+    "kn": "ಐಹೊಳೆ-ಬಾದಾಮಿ-ಪಟ್ಟದಕಲ್",
+    "say": "Aihole-Baadaami-Pattadakal",
+    "lat": 15.9143,
+    "lng": 75.6805,
+    "try": [
+      "Aihole, Badami, Pattadakal as one Chalukya chain along the Malaprabha.",
+      "Temple-town hopping — start early, one site rushed is a waste."
+    ]
+  }
+]

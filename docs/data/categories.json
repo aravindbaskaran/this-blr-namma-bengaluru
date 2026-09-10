@@ -1,0 +1,30 @@
+{
+  "categories": [
+    {
+      "id": "food",
+      "label": "Food & drink",
+      "color": "var(--maroon)"
+    },
+    {
+      "id": "craft",
+      "label": "Craft & markets",
+      "color": "var(--gold)"
+    },
+    {
+      "id": "nature",
+      "label": "Nature & parks",
+      "color": "var(--leaf)"
+    },
+    {
+      "id": "culture",
+      "label": "Art & culture",
+      "color": "var(--jacaranda)"
+    },
+    {
+      "id": "night",
+      "label": "Evenings out",
+      "color": "var(--jacaranda-dark)"
+    }
+  ],
+  "daytripColor": "var(--leaf-light)"
+}
