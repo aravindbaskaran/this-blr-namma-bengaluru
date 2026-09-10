@@ -616,16 +616,33 @@
   .creator-links{font-size:14px !important;}
   .creator-links a{color:var(--maroon); text-decoration:underline; font-weight:600;}
 
-  /* ---------- add your own ---------- */
+  /* ---------- write in: spot + question ---------- */
+  .write-in{
+    background:color-mix(in srgb, var(--cream) 58%, transparent);
+    backdrop-filter:blur(9px);
+    -webkit-backdrop-filter:blur(9px);
+    border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+  }
+  .write-in-tabs{
+    display:flex; border-bottom:1px solid var(--line); padding:8px 10px; gap:6px;
+  }
+  .write-in-tabs button{
+    border:1px solid var(--line); background:transparent;
+    padding:8px 16px; border-radius:20px; font-size:13px; font-weight:600; color:var(--ink-soft);
+  }
+  .write-in-tabs button[aria-selected="true"]{
+    background:var(--maroon); color:var(--on-accent); border-color:var(--maroon);
+  }
+  .write-in-panel{padding:22px 24px 20px;}
+  .write-in-panel[hidden]{display:none;}
   .add-form{
-    background:var(--card-surface); border:1px solid var(--line); border-radius:var(--radius); padding:24px;
     display:grid; grid-template-columns:1fr 1fr; gap:14px;
   }
   .add-form .full{grid-column:1/-1;}
   .add-form label{font-size:12.5px; font-weight:600; color:var(--ink-soft); display:block; margin-bottom:6px;}
   .add-form input, .add-form select, .add-form textarea{
     width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:var(--radius);
-    font-family:inherit; font-size:14px; background:var(--cream);
+    font-family:inherit; font-size:14px; background:color-mix(in srgb, var(--cream) 80%, transparent);
   }
   .add-form textarea{resize:vertical; min-height:56px;}
   .submit-btn{
@@ -633,8 +650,7 @@
     padding:11px 22px; border-radius:20px; font-weight:600; font-size:14px;
   }
   .submit-btn:hover{background:var(--maroon-dark);}
-  .form-note{font-size:12.5px; color:var(--ink-soft); margin-top:10px;}
-  .issue-form-block{margin-top:28px; padding-top:24px; border-top:1px dashed var(--line);}
+  .form-note{font-size:12.5px; color:var(--ink-soft); margin-top:12px;}
 
   /* ---------- agenda drawer ---------- */
   .drawer-backdrop{
@@ -740,48 +756,71 @@
     transition:opacity .55s ease;
   }
   .stage-actor.is-on{opacity:var(--on, 0.46);}
-  .saree-drape{
-    width:min(30vw, 270px); height:min(78vh, 560px);
-    --on:0.78;
+  .saree-ribbon{
+    height:34px;
+    width:130vw;
+    --on:0.7;
     overflow:visible;
-    filter:drop-shadow(8px 22px 28px rgba(62,42,28,0.28));
+    transform-origin:50% 50%;
+    background-color:var(--saree-field, #9C2436);
+    background-image:
+      linear-gradient(var(--saree-kara, #D4A017), var(--saree-kara, #D4A017)),
+      linear-gradient(var(--saree-zari, #F6F1E4), var(--saree-zari, #F6F1E4)),
+      repeating-linear-gradient(90deg, transparent 0 26px, rgba(0,0,0,0.14) 26px 28px),
+      var(--saree-motif, none);
+    background-repeat:no-repeat, no-repeat, repeat, repeat;
+    background-position:0 0, 0 100%, 0 0, 0 0;
+    background-size:100% 4px, 100% 3px, auto, auto;
+    box-shadow:0 10px 22px rgba(62,42,28,0.2);
+    border-radius:2px 18px 18px 2px;
+    position:absolute;
     --saree-field:#9C2436; --saree-kara:#D4A017; --saree-zari:#F6F1E4; --saree-teni:#F6F1E4; --saree-check:#F0C550;
   }
-  .saree-field{fill:var(--saree-field);}
-  .saree-kara{stroke:var(--saree-kara); stroke-width:15; fill:none; stroke-linecap:round;}
-  .saree-zari{stroke:var(--saree-zari); stroke-width:2.6; fill:none; stroke-linecap:round; opacity:0.9;}
-  .saree-pleats path{stroke:rgba(247,238,218,0.32); stroke-width:1.8; fill:none;}
-  .saree-buttas{fill:var(--saree-kara); display:none;}
-  .saree-teni{fill:var(--saree-teni); display:none;}
-  .saree-teni .in{fill:var(--saree-kara);}
-  .saree-checks{display:none; color:var(--saree-check);}
-  .saree-fan{fill:var(--saree-kara);}
-  .tone-ilkal{--saree-field:#9C2436; --saree-kara:#D4A017; --saree-zari:#F6F1E4; --saree-teni:#F6F1E4;}
-  .tone-ilkal .saree-teni, .tone-ilkal-green .saree-teni{display:block;}
+  .saree-ribbon.horizon{transform-origin:20% 50%;}
+  .saree-ribbon::after{
+    content:''; position:absolute; top:-7px; width:22px; height:48px; border-radius:50%;
+    background:inherit; background-size:auto;
+    box-shadow:inset -3px 0 6px rgba(0,0,0,0.22), 2px 4px 10px rgba(62,42,28,0.2);
+  }
+  .saree-ribbon.horizon::after{right:-6px;}
+  .saree-ribbon.drop{
+    width:36px; height:115vh; border-radius:2px 2px 16px 16px;
+    background-image:
+      linear-gradient(90deg, var(--saree-kara, #D4A017), var(--saree-kara, #D4A017)),
+      linear-gradient(90deg, var(--saree-zari, #F6F1E4), var(--saree-zari, #F6F1E4)),
+      repeating-linear-gradient(180deg, transparent 0 26px, rgba(0,0,0,0.14) 26px 28px),
+      var(--saree-motif, none);
+    background-position:0 0, 100% 0, 0 0, 0 0;
+    background-size:4px 100%, 3px 100%, auto, auto;
+    transform-origin:50% 0;
+  }
+  .saree-ribbon.drop::after{left:-6px; right:auto; top:auto; bottom:-8px; width:48px; height:22px;}
+  .tone-ilkal{--saree-field:#9C2436; --saree-kara:#D4A017; --saree-zari:#F6F1E4;
+    --saree-motif:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12'%3E%3Cpolygon points='0,12 7,0 14,12' fill='%23D4A017'/%3E%3Cpolygon points='0,12 7,4 14,12' fill='%23F6F1E4'/%3E%3C/svg%3E");}
   .tone-mysore{--saree-field:#5C1A4A; --saree-kara:#D6A419; --saree-zari:#F0C550;}
-  .tone-mysore .saree-buttas, .tone-magenta .saree-buttas, .tone-navy-zari .saree-buttas{display:block;}
   .tone-kasuti{--saree-field:#201C17; --saree-kara:#D6A419; --saree-zari:#9E1B32;}
   .tone-jacaranda{--saree-field:#6B4FA0; --saree-kara:#D4A017; --saree-zari:#F6F1E4;}
   .tone-coastal{--saree-field:#1F7A6E; --saree-kara:#F0C550; --saree-zari:#F6F1E4;}
   .tone-hampi{--saree-field:#A66A32; --saree-kara:#F6F1E4; --saree-zari:#9E1B32;}
   .tone-blr-silk{--saree-field:#F3E4C0; --saree-kara:#9E1B32; --saree-zari:#D6A419;}
-  .tone-blr-silk .saree-kara{stroke-width:22;}
-  .tone-molakalmuru{--saree-field:#C41E3A; --saree-kara:#1F6B3A; --saree-check:#F0C550; --saree-teni:#F6F1E4;}
-  .tone-molakalmuru .saree-checks, .tone-khana .saree-checks{display:block;}
+  .tone-molakalmuru{--saree-field:#C41E3A; --saree-kara:#1F6B3A; --saree-check:#F0C550;
+    --saree-motif:repeating-linear-gradient(90deg,#C41E3A 0 14px,#F0C550 14px 28px,#1F6B3A 28px 32px);}
   .tone-kodagu{--saree-field:#1A4A32; --saree-kara:#D6A419; --saree-zari:#F6F1E4;}
-  .tone-kodagu .saree-kara{stroke-width:24;}
-  .tone-khana{--saree-field:#9C2436; --saree-kara:#D6A419; --saree-check:#C1631A;}
-  .tone-ilkal-green{--saree-field:#1F5C45; --saree-kara:#9C2436; --saree-zari:#D4A017; --saree-teni:#F6F1E4;}
+  .tone-khana{--saree-field:#9C2436; --saree-kara:#D6A419; --saree-check:#C1631A;
+    --saree-motif:repeating-linear-gradient(90deg,#9C2436 0 8px,#C1631A 8px 16px,#D6A419 16px 18px);}
+  .tone-ilkal-green{--saree-field:#1F5C45; --saree-kara:#9C2436; --saree-zari:#D4A017;
+    --saree-motif:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12'%3E%3Cpolygon points='0,12 7,0 14,12' fill='%239C2436'/%3E%3Cpolygon points='0,12 7,4 14,12' fill='%23D4A017'/%3E%3C/svg%3E");}
   .tone-narayanpet{--saree-field:#C45C26; --saree-kara:#201C17; --saree-zari:#D6A419;}
   .tone-crepe{--saree-field:#E8D5A3; --saree-kara:#C45B7A; --saree-zari:#D6A419;}
-  .tone-navy-zari{--saree-field:#1A2744; --saree-kara:#D6A419; --saree-zari:#F0C550;}
+  .tone-navy-zari{--saree-field:#1A2744; --saree-kara:#D6A419; --saree-zari:#F0C550;
+    --saree-motif:radial-gradient(circle at 10px 8px,#D6A419 1.4px,transparent 1.6px);}
   .tone-peacock{--saree-field:#0E6B6A; --saree-kara:#D6A419; --saree-zari:#F6F1E4;}
   .tone-magenta{--saree-field:#9B1B4A; --saree-kara:#D6A419; --saree-zari:#F6F1E4;}
-  .saree-a{top:64px; left:max(-36px, calc(50% - 700px));}
-  .saree-b{bottom:-80px; right:max(-48px, calc(50% - 720px));}
-  .saree-c{top:28%; left:max(-70px, calc(50% - 640px)); height:min(62vh, 440px); width:min(24vw, 210px);}
-  .saree-d{top:8%; right:max(-40px, calc(50% - 690px));}
-  .saree-e{bottom:4%; left:max(-20px, calc(50% - 620px)); height:min(58vh, 400px); width:min(22vw, 200px);}
+  .saree-a{top:18%; left:-18vw;}
+  .saree-b{top:52%; left:-22vw;}
+  .saree-c.drop{top:-8vh; left:max(8px, calc(50% - 640px));}
+  .saree-d{top:34%; left:-16vw;}
+  .saree-e.drop{top:-10vh; right:max(6px, calc(50% - 650px)); left:auto;}
   .mala{--on:0.72;}
   .mala-h{
     top:86px; left:50%; width:min(92vw, 760px); height:78px;
@@ -840,8 +879,8 @@
     width:190px; height:130px; --on:0.44;
   }
   @media (max-width:960px){
-    .monument, .elephant-walk, .saree-c, .saree-d, .saree-e, .dabara-set, .mala-v{display:none;}
-    .saree-drape{width:44vw; height:52vh;}
+    .monument, .elephant-walk, .saree-c, .saree-e, .dabara-set, .mala-v{display:none;}
+    .saree-ribbon.horizon{height:26px; width:160vw;}
   }
 
   /* ---------- guide data loader ---------- */
@@ -911,11 +950,11 @@
 </div>
 
 <div class="stage" id="pageStage" aria-hidden="true">
-  <svg class="stage-actor saree-drape saree-a tone-ilkal" data-cast="sareeA" viewBox="0 0 220 480"></svg>
-  <svg class="stage-actor saree-drape saree-b tone-jacaranda" data-cast="sareeB" viewBox="0 0 220 480"></svg>
-  <svg class="stage-actor saree-drape saree-c tone-mysore" data-cast="sareeC" viewBox="0 0 220 480"></svg>
-  <svg class="stage-actor saree-drape saree-d tone-blr-silk" data-cast="sareeD" viewBox="0 0 220 480"></svg>
-  <svg class="stage-actor saree-drape saree-e tone-khana" data-cast="sareeE" viewBox="0 0 220 480"></svg>
+  <div class="stage-actor saree-ribbon horizon saree-a tone-ilkal" data-cast="sareeA"></div>
+  <div class="stage-actor saree-ribbon horizon saree-b tone-jacaranda" data-cast="sareeB"></div>
+  <div class="stage-actor saree-ribbon drop saree-c tone-mysore" data-cast="sareeC"></div>
+  <div class="stage-actor saree-ribbon horizon saree-d tone-blr-silk" data-cast="sareeD"></div>
+  <div class="stage-actor saree-ribbon drop saree-e tone-khana" data-cast="sareeE"></div>
   <svg class="stage-actor mala mala-h" data-cast="malaJasmine" viewBox="0 0 640 80">
     <path d="M8 42 Q80 10 160 42 T320 42 T480 42 T632 42" fill="none" stroke="#5A4638" stroke-width="1.4"/>
     <g fill="#F6F1E4" stroke="#9E1B32" stroke-width="0.4">
@@ -1725,7 +1764,7 @@
 <footer>
   <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
   <p>Made for people spending time in Bengaluru, with <span class="footer-preethi"><span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಪ್ರೀತಿ</span><span class="kn-en">love</span></span> ❤️<button class="speak-btn speak-btn-sm" onclick="speakText('ಪ್ರೀತಿ')" aria-label="Hear pronunciation">🔊</button></span></p>
-    <p class="footer-meta">v2026-09-10.12 &middot; &copy; 2026, all rights reserved</p>
+    <p class="footer-meta">v2026-09-10.13 &middot; &copy; 2026, all rights reserved</p>
   <p class="footer-meta">Built with AI, edited and fact-checked by human.</p>
 </footer>
 
@@ -2256,36 +2295,6 @@ document.getElementById('issueForm').addEventListener('submit', function(e){
 (function startStage(){
   const stage = document.getElementById('pageStage');
   if(!stage) return;
-  const DRAPE = 'M70 8 C95 4 130 12 155 28 C175 42 188 70 192 110 C198 180 205 260 200 340 C196 390 170 430 120 455 C85 472 45 460 28 420 C12 370 18 280 22 200 C26 130 32 70 48 36 C54 22 60 12 70 8Z';
-  stage.querySelectorAll('.saree-drape').forEach(el => {
-    const cid = 'sc-' + el.dataset.cast;
-    el.innerHTML = `<defs>
-      <clipPath id="${cid}"><path d="${DRAPE}"/></clipPath>
-      <pattern id="${cid}-ck" width="18" height="18" patternUnits="userSpaceOnUse">
-        <rect width="9" height="9" fill="currentColor"/>
-        <rect x="9" y="9" width="9" height="9" fill="currentColor"/>
-      </pattern>
-    </defs>
-    <path class="saree-field" d="${DRAPE}"/>
-    <rect class="saree-checks" clip-path="url(#${cid})" width="220" height="480" fill="url(#${cid}-ck)"/>
-    <path class="saree-kara" d="M152 30 C174 44 186 72 190 112 C196 182 203 262 198 338 C194 388 168 428 118 452"/>
-    <path class="saree-zari" d="M146 34 C168 48 180 74 184 114 C190 184 197 262 192 336 C188 384 164 422 116 446"/>
-    <g class="saree-pleats">
-      <path d="M78 36 C88 150 92 280 84 430"/>
-      <path d="M98 42 C108 160 112 290 104 428"/>
-      <path d="M118 50 C126 170 128 300 122 424"/>
-      <path d="M54 50 C62 170 68 300 60 410"/>
-    </g>
-    <g class="saree-buttas">
-      <circle cx="70" cy="120" r="3.5"/><circle cx="95" cy="175" r="3"/><circle cx="68" cy="230" r="3.5"/>
-      <circle cx="100" cy="280" r="3"/><circle cx="72" cy="335" r="3.5"/><circle cx="92" cy="385" r="3"/>
-    </g>
-    <g class="saree-teni">
-      <path d="M40 400 L55 372 L70 400Z"/><path d="M68 412 L84 380 L100 412Z"/><path d="M98 424 L114 392 L130 424Z"/>
-      <path class="in" d="M52 388 L64 368 L76 388Z"/>
-    </g>
-    <path class="saree-fan" d="M70 8 C92 20 112 8 132 24 C110 30 88 22 70 8Z"/>`;
-  });
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const node = {};
   stage.querySelectorAll('[data-cast]').forEach(el => { node[el.dataset.cast] = el; });
@@ -2306,25 +2315,30 @@ document.getElementById('issueForm').addEventListener('submit', function(e){
     return 1;
   };
   const actors = [
-    {id:'sareeA', a:0, b:0.42, idle:18, pose(t,k,w){
+    {id:'sareeA', a:0, b:0.46, idle:8, pose(t,k,w){
       setTone(node.sareeA, pickTone(t, 0));
-      return `rotate(${-12 + t * 6 + w * 0.3}deg) translate(${-18 + k * 40}px, ${w * 1.4}px)`;
+      const open = 0.18 + k * 0.82;
+      return `perspective(820px) rotateX(${58 + w * 0.4}deg) rotateZ(${-6 + w * 0.2}deg) scaleX(${open}) translate(${(t - 0.2) * 80}px, ${w * 2}px)`;
     }},
-    {id:'sareeB', a:0.08, b:0.58, idle:-14, pose(t,k,w){
+    {id:'sareeB', a:0.1, b:0.62, idle:-6, pose(t,k,w){
       setTone(node.sareeB, pickTone(t, 5));
-      return `rotate(${8 + w}deg) translate(${12 - k * 36}px, ${w}px)`;
+      const open = 0.2 + k * 0.8;
+      return `perspective(820px) rotateX(${62 + w * 0.3}deg) rotateZ(${5 + w * 0.15}deg) scaleX(${open}) translate(${(0.4 - t) * 70}px, ${w}px)`;
     }},
-    {id:'sareeC', a:0.32, b:0.78, idle:12, pose(t,k,w){
+    {id:'sareeC', a:0.22, b:0.7, idle:4, pose(t,k,w){
       setTone(node.sareeC, pickTone(t, 9));
-      return `rotate(${-12 + w}deg) translate(${-30 + k * 80}px, ${(t - 0.55) * 40 + w * 2}px)`;
+      const drop = 0.08 + k * 0.92;
+      return `scaleY(${drop}) translate(${w * 1.2}px, 0)`;
     }},
-    {id:'sareeD', a:0.18, b:0.64, idle:-10, pose(t,k,w){
+    {id:'sareeD', a:0.16, b:0.68, idle:5, pose(t,k,w){
       setTone(node.sareeD, pickTone(t, 3));
-      return `rotate(${18 + w}deg) translate(${12 - k * 40}px, ${w * 1.6}px)`;
+      const open = 0.16 + k * 0.84;
+      return `perspective(820px) rotateX(${55 + w * 0.35}deg) rotateZ(${-2}deg) scaleX(${open}) translate(${(t - 0.4) * -60}px, ${w * 1.5}px)`;
     }},
-    {id:'sareeE', a:0.52, b:1, idle:8, pose(t,k,w){
+    {id:'sareeE', a:0.48, b:1, idle:3, pose(t,k,w){
       setTone(node.sareeE, pickTone(t, 12));
-      return `rotate(${-8 + w}deg) translate(${-20 + k * 60}px, ${(t - 0.76) * 30 + w}px)`;
+      const drop = 0.1 + k * 0.9;
+      return `scaleY(${drop}) translate(${w}px, 0)`;
     }},
     {id:'malaJasmine', a:0.02, b:0.26, a2:0.78, b2:0.96, idle:6, pose(t,k,w){
       return `translate(${(t - 0.12) * -40}px, ${w * 2}px)`;
