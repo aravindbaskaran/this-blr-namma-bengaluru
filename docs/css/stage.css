@@ -25,7 +25,40 @@
   .saree-ribbon .pleat{fill:none; stroke:rgba(247,238,218,0.22); stroke-width:1.6;}
   .saree-ribbon .bolt-body{fill:var(--saree-field); stroke:var(--saree-kara); stroke-width:3;}
   .saree-ribbon .bolt-ring{fill:none; stroke:var(--saree-zari); stroke-width:1.8; opacity:0.75;}
-  .saree-ribbon .bolt-end{fill:var(--saree-kara);}
+  .saree-ribbon .teni{fill:var(--saree-zari);}
+  .saree-ribbon .teni-gold{fill:var(--saree-kara);}
+  .saree-ribbon .butta{fill:var(--saree-zari);}
+  .saree-ribbon .butta-sm{fill:var(--saree-kara);}
+  .saree-ribbon .zari-band{fill:none; stroke:var(--saree-zari); stroke-width:2.2; opacity:0.9;}
+  .saree-ribbon .kasuti-stitch{fill:none; stroke:var(--saree-kara); stroke-width:1.6; stroke-linecap:square;}
+  .saree-ribbon .kasuti-mark{fill:var(--saree-zari);}
+  .saree-ribbon.weave-ilkal .kara{stroke-width:18;}
+  .saree-ribbon.weave-mysore .kara{stroke-width:9;}
+  .saree-ribbon.weave-kasuti .kara{stroke-width:5;}
+  .saree-ribbon.weave-molakalmuru .kara{stroke-width:14;}
+  .saree-ribbon.weave-khana .kara{stroke-width:13;}
+  .saree-ribbon.weave-ilkal .zari{stroke-width:3.2;}
+  .saree-ribbon.weave-mysore .zari{stroke-width:1.6;}
+  .stage-say{
+    position:absolute; left:0; top:0; margin:0; z-index:4;
+    width:max-content; max-width:168px;
+    padding:7px 10px 8px;
+    background:var(--cream);
+    color:var(--ink);
+    border:1.5px solid var(--maroon);
+    border-radius:2px 11px 11px 11px;
+    box-shadow:3px 3px 0 var(--gold);
+    font-size:11px; line-height:1.25;
+    opacity:0; visibility:hidden;
+    transform-origin:0 0;
+    transition:opacity .3s ease, visibility .3s ease;
+  }
+  .stage-say.is-on{opacity:0.96; visibility:visible;}
+  .stage-say b{
+    display:block; font-family:'Baloo 2', sans-serif;
+    font-size:13px; color:var(--maroon); font-weight:700;
+  }
+  .stage-say span{color:var(--ink-soft); font-size:10.5px;}
   .saree-ribbon.drop{
     width:168px; height:115vh; transform-origin:50% 0;
   }
