@@ -162,6 +162,39 @@
     0%,100%{transform:scale(1,1); opacity:0.7;}
     50%{transform:scale(1.18,1.35); opacity:1;}
   }
+  .food-dosa{
+    bottom:14%; left:max(16px, calc(50% - 520px));
+    width:168px; height:168px; --on:0.55;
+  }
+  .food-idli{
+    top:36%; right:max(18px, calc(50% - 620px));
+    width:108px; height:136px; --on:0.5;
+  }
+  .food-leaf{
+    bottom:16%; right:max(40px, calc(50% - 500px));
+    width:190px; height:108px; --on:0.48;
+  }
+  .dosa-batter{
+    fill:#E8D5A3; transform-box:fill-box; transform-origin:center;
+    animation:dosa-spread 4.2s ease-in-out infinite;
+  }
+  .dosa-spreader{
+    transform-box:view-box; transform-origin:80px 76px;
+    animation:dosa-spin 4.2s ease-in-out infinite;
+  }
+  .idli-puck ellipse{transform-box:fill-box; transform-origin:center;
+    animation:kaapi-foam 2.2s ease-in-out infinite;}
+  @keyframes dosa-spread{
+    0%,8%{transform:scale(0.12); fill:#F6F1E4; opacity:0.55;}
+    38%{transform:scale(1); fill:#E8D5A3; opacity:1;}
+    70%,100%{transform:scale(1); fill:#C4A882; opacity:1;}
+  }
+  @keyframes dosa-spin{
+    0%,8%{transform:rotate(0deg); opacity:0;}
+    12%{opacity:1;}
+    40%{transform:rotate(340deg); opacity:1;}
+    48%,100%{opacity:0; transform:rotate(360deg);}
+  }
   .flower-cluster{
     bottom:20%; right:max(28px, calc(50% - 590px));
     width:150px; height:96px; --on:0.42;
@@ -187,7 +220,7 @@
     transform-origin:center bottom;
   }
   @media (max-width:960px){
-    .monument, .elephant-walk, .saree-c, .saree-e, .dabara-set.two, .mala-v, .mango-drift.ripe{display:none;}
+    .monument, .elephant-walk, .saree-c, .saree-e, .dabara-set.two, .mala-v, .mango-drift.ripe, .food-idli, .food-leaf{display:none;}
     .saree-ribbon.horizon{height:120px; width:140vw;}
     .saree-ribbon.drop{width:120px;}
   }
@@ -224,6 +257,6 @@
   [data-reveal].is-in{opacity:1; transform:none;}
   @media (prefers-reduced-motion: reduce){
     *{transition:none !important; scroll-behavior:auto !important;}
-    .loader-torana, .loader-teni, .dabara-steam, .kaapi-tumbler, .kaapi-stream, .kaapi-froth ellipse{animation:none !important;}
+    .loader-torana, .loader-teni, .dabara-steam, .kaapi-tumbler, .kaapi-stream, .kaapi-froth ellipse, .dosa-batter, .dosa-spreader, .idli-puck ellipse{animation:none !important;}
     [data-reveal]{opacity:1; transform:none;}
   }

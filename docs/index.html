@@ -339,6 +339,41 @@
     <rect x="88" y="32" width="22" height="12" rx="2" fill="#D6A419"/>
     <circle cx="158" cy="64" r="3" fill="#F6F1E4"/>
   </svg>
+  <svg class="stage-actor food-dosa" data-cast="dosaTava" viewBox="0 0 160 160">
+    <ellipse cx="80" cy="84" rx="68" ry="18" fill="#3A322C" opacity="0.28"/>
+    <ellipse cx="80" cy="78" rx="64" ry="52" fill="#4A4038"/>
+    <ellipse cx="80" cy="76" rx="56" ry="44" fill="#2C2622"/>
+    <ellipse class="dosa-batter" cx="80" cy="76" rx="46" ry="36"/>
+    <g class="dosa-spreader">
+      <path d="M80 76 L118 48" stroke="#C4A882" stroke-width="3.2" stroke-linecap="round"/>
+      <circle cx="122" cy="44" r="7" fill="#8A6A4A"/>
+    </g>
+    <path class="dabara-steam" d="M52 58 C50 46 56 40 52 30"/>
+    <path class="dabara-steam b" d="M80 50 C78 38 84 32 80 22"/>
+    <path class="dabara-steam c" d="M108 58 C112 46 106 40 110 30"/>
+  </svg>
+  <svg class="stage-actor food-idli" data-cast="idliPot" viewBox="0 0 110 140">
+    <ellipse cx="55" cy="128" rx="36" ry="8" fill="#8A8E8A"/>
+    <path d="M22 70 L28 124 Q55 134 82 124 L88 70 Z" fill="#C9CDC8" stroke="#8A8E8A" stroke-width="1.2"/>
+    <ellipse cx="55" cy="70" rx="34" ry="10" fill="#D4D7D3" stroke="#8A8E8A" stroke-width="1.1"/>
+    <g class="idli-puck">
+      <ellipse cx="38" cy="88" rx="12" ry="6" fill="#F6F1E4"/>
+      <ellipse cx="72" cy="90" rx="12" ry="6" fill="#F6F1E4"/>
+      <ellipse cx="55" cy="102" rx="13" ry="6.5" fill="#EEE4C8"/>
+    </g>
+    <path class="dabara-steam" d="M40 66 C38 54 44 48 40 38"/>
+    <path class="dabara-steam b" d="M55 62 C54 50 60 44 55 34"/>
+    <path class="dabara-steam c" d="M72 66 C75 54 70 48 74 38"/>
+  </svg>
+  <svg class="stage-actor food-leaf" data-cast="bananaLeaf" viewBox="0 0 200 110">
+    <path d="M12 58 C40 18 90 8 188 42 C140 78 70 96 18 72 Z" fill="#1F6B3A"/>
+    <path d="M18 60 C50 28 100 22 176 48" fill="none" stroke="#0E4A32" stroke-width="1.4"/>
+    <ellipse cx="78" cy="52" rx="18" ry="11" fill="#F6F1E4"/>
+    <ellipse cx="108" cy="58" rx="14" ry="9" fill="#C1631A"/>
+    <ellipse cx="132" cy="50" rx="10" ry="7" fill="#1F7A6E"/>
+    <circle cx="56" cy="62" r="6" fill="#9E1B32"/>
+    <circle cx="148" cy="62" r="5" fill="#D6A419"/>
+  </svg>
 </div>
 
 
@@ -905,7 +940,7 @@
   <div class="section-head">
     <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಬರೆಯಿರಿ</span><span class="kn-en">write in</span></span>
     <h2>Know a spot, or spot a mistake?</h2>
-    <p>Add a place for your own copy of the guide, or open a GitHub issue if something here is wrong or missing.</p>
+    <p>Suggest a place, or flag something wrong - both open a GitHub issue on the guide's repo.</p>
   </div>
   <div class="write-in">
     <div class="write-in-tabs" role="tablist" aria-label="Write in">
@@ -930,9 +965,9 @@
           <label>One line on why it matters</label>
           <textarea id="f-blurb" placeholder="What should someone expect, and why is it worth the trip?" required></textarea>
         </div>
-        <button type="submit" class="submit-btn">Add to the guide</button>
+        <button type="submit" class="submit-btn">Open as GitHub issue</button>
       </form>
-      <p class="form-note">Custom spots are stored privately on your device using this page's built-in storage - nothing is shared or uploaded anywhere.</p>
+      <p class="form-note">This opens a prefilled GitHub issue so the spot can be added to the shared guide - you'll need a GitHub account to submit it. Nothing is sent from this page directly; you finish and post it yourself on the next screen.</p>
     </div>
     <div class="write-in-panel" id="panel-ask" role="tabpanel" aria-labelledby="tab-ask" hidden>
       <form class="add-form" id="issueForm">

@@ -282,6 +282,15 @@
     {id:'dabaraR', a:0.46, b:0.74, idle:0, pose(t,k,w){
       return `translate(${(t - 0.6) * 40}px, ${w * 2}px) scale(0.88)`;
     }},
+    {id:'dosaTava', a:0.32, b:0.7, idle:3, pose(t,k,w){
+      return `translate(${w * 2}px, ${(0.5 - t) * 40}px) rotate(${w * 0.4}deg)`;
+    }},
+    {id:'idliPot', a:0.38, b:0.76, idle:-4, pose(t,k,w){
+      return `translate(${(t - 0.55) * 36}px, ${w * 2}px)`;
+    }},
+    {id:'bananaLeaf', a:0.5, b:0.88, idle:5, pose(t,k,w){
+      return `translate(${Math.sin(w / 5) * 12}px, ${(t - 0.7) * 50 + w}px) rotate(${-6 + w}deg)`;
+    }},
     {id:'flowers', a:0.52, b:0.78, idle:8, pose(t,k,w){
       return `translate(${Math.sin(w / 5) * 10}px, ${(t - 0.65) * 60 + w}px)`;
     }},

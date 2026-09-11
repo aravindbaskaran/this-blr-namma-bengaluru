@@ -496,43 +496,26 @@ function setWriteIn(which){
 }
 
 /* ---------------- add-your-own form ---------------- */
+const GUIDE_REPO = 'https://github.com/aravindbaskaran/this-blr-namma-bengaluru';
+function openGuideIssue(title, body){
+  window.open(`${GUIDE_REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`, '_blank', 'noopener');
+}
 function renderCategorySelect(){
   const sel = document.getElementById('f-category');
   sel.innerHTML = CATEGORIES.map(c=>`<option value="${c.id}">${c.label}</option>`).join('');
 }
-document.getElementById('addForm').addEventListener('submit', async function(e){
+document.getElementById('addForm').addEventListener('submit', function(e){
   e.preventDefault();
   const name = document.getElementById('f-name').value.trim();
   const area = document.getElementById('f-area').value.trim();
   const category = document.getElementById('f-category').value;
+  const catLabel = (CATEGORIES.find(c => c.id === category) || {}).label || category;
   const blurb = document.getElementById('f-blurb').value.trim();
   if(!name || !area || !blurb) return;
-  const id = 'custom-' + Date.now();
-  const submitBtn = this.querySelector('.submit-btn');
-  const originalLabel = submitBtn.textContent;
-  submitBtn.textContent = 'Finding it on the map...';
-  submitBtn.disabled = true;
-  let lat = 12.9716 + (Math.random()-0.5)*0.06, lng = 77.5946 + (Math.random()-0.5)*0.06; // central Bengaluru, jittered fallback
-  try{
-    // Free geocoding via OpenStreetMap Nominatim - no API key needed.
-    const q = encodeURIComponent(area + ', Karnataka, India');
-    const res = await fetch(`https://nominatim.openstreetmap.org/search?q=${q}&format=json&limit=1`);
-    const data = await res.json();
-    if(data && data[0]){
-      lat = parseFloat(data[0].lat);
-      lng = parseFloat(data[0].lon);
-    }
-  }catch(err){ /* offline or blocked - keep the jittered fallback so the pin still lands somewhere reasonable */ }
-  customLocations.push({ id, name, area, category, blurb, lat, lng });
-  saveCustom();
+  const title = `Spot: ${name} (${area})`;
+  const body = [`**Name:** ${name}`, `**Area:** ${area}`, `**Kind:** ${catLabel}`, '', blurb].join('\n');
+  openGuideIssue(title, body);
   this.reset();
-  submitBtn.textContent = originalLabel;
-  submitBtn.disabled = false;
-  activeCategory = 'all';
-  renderPills();
-  renderList();
-  renderMap();
-  document.getElementById('explore').scrollIntoView({behavior:'smooth'});
 });
 
 document.getElementById('issueForm').addEventListener('submit', function(e){
@@ -540,9 +523,7 @@ document.getElementById('issueForm').addEventListener('submit', function(e){
   const title = document.getElementById('i-title').value.trim();
   const body = document.getElementById('i-body').value.trim();
   if(!title || !body) return;
-  const repo = 'https://github.com/aravindbaskaran/this-blr-not-that';
-  const url = `${repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
-  window.open(url, '_blank', 'noopener');
+  openGuideIssue(title, body);
   this.reset();
 });
 
