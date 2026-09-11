@@ -1,0 +1,68 @@
+/* Palette and base type */
+  :root{
+    --maroon:#9E1B32;
+    --maroon-dark:#6B0F20;
+    --gold:#D6A419;
+    --gold-light:#F0C550;
+    --jacaranda:#6B4FA0;
+    --jacaranda-dark:#48326E;
+    --leaf:#1F6B3A;
+    --leaf-light:#3F8F57;
+    --cream:#F7EEDA;
+    --cream-2:#EEE1BE;
+    --ink:#221A14;
+    --ink-soft:#5B4E44;
+    --line:rgba(36,28,24,0.16);
+    --radius:3px;
+    --dot-line:rgba(36,28,24,0.06);
+    --card-surface:#fff;
+    /* ---- regional palette, drawn from craft & textile traditions ---- */
+    --terracotta:#C1631A;     /* Mangaluru roof tile & pottery */
+    --ilkal-red:#9C2436;      /* Ilkal saree field, Bagalkot/Vijayapura belt */
+    --kasuti-black:#201C17;   /* Kasuti embroidery ground, Hubballi-Dharwad-Belagavi */
+    --hampi-stone:#A66A32;    /* Hampi boulder & ruin sandstone */
+    --coffee:#3E2A1C;         /* Chikmagalur-Kodagu estate soil */
+    --coastal-teal:#1F7A6E;   /* Udupi-Mangaluru coast */
+    /* dedicated section-background color, independent of the --terracotta
+       accent value above, so brightening one for accent visibility never
+       fights deepening the other for a full-bleed section mood */
+    --kannada-bg:#A54E14;
+    /* ---- "Imperial Weave" palette (comparison variant, Festivals section only) ---- */
+    --imperial-bg:#FDFBF7;
+    --imperial-text:#0E2540;
+    --imperial-gold:#D99B26;
+    --imperial-kumkum:#AC2424;
+    --imperial-muted:#736E65;
+    /* fixed light text for use on saturated accent backgrounds (maroon,
+       jacaranda-dark, kannada-bg, the hero gradient). */
+    --on-accent:#F6F1E4;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background-color:var(--cream);
+    background-image: radial-gradient(var(--dot-line) 1px, transparent 1.4px);
+    background-size: 20px 20px;
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    letter-spacing:0;
+    margin:0;
+  }
+  .kn{font-family:'Baloo Tamma 2', sans-serif; font-weight:600;}
+  .kn-cycle{display:inline-grid !important; vertical-align:top; cursor:default;}
+  .kn-cycle > *{grid-area:1/1; transition:opacity .25s ease;}
+  .kn-cycle .kn-native{font-family:'Baloo Tamma 2', sans-serif; opacity:1;}
+  .kn-cycle .kn-en{font-family:'Baloo 2', sans-serif; opacity:0;}
+  .kn-cycle:hover .kn-native, .kn-cycle:focus-within .kn-native{opacity:0;}
+  .kn-cycle:hover .kn-en, .kn-cycle:focus-within .kn-en{opacity:1;}
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  button{font-family:inherit;cursor:pointer;}
+
