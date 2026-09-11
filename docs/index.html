@@ -423,6 +423,33 @@
   .festival-where{font-size:12px; color:var(--ink-soft); margin-bottom:8px;}
   .festival-card p{font-size:13.5px; color:var(--ink-soft); line-height:1.5;}
 
+  /* ---------- did you know ---------- */
+  .quip-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:16px;
+  }
+  .quip-card{
+    background:color-mix(in srgb, var(--cream) 58%, transparent);
+    backdrop-filter:blur(9px);
+    -webkit-backdrop-filter:blur(9px);
+    border:1px solid var(--line); border-radius:var(--radius);
+    padding:20px 20px 18px; border-top:3px solid var(--gold);
+  }
+  .quip-card.featured{
+    grid-column:1 / -1;
+    display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1.15fr); gap:28px; align-items:start;
+    padding:28px 26px 24px;
+    border-top-color:var(--maroon);
+  }
+  .quip-kicker{font-size:11px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--maroon); margin-bottom:8px;}
+  .quip-card h3{font-size:20px; line-height:1.25; margin:0;}
+  .quip-card.featured h3{font-size:clamp(22px, 2.6vw, 30px);}
+  .quip-kn{display:block; color:var(--maroon); font-size:13px; margin-top:6px;}
+  .quip-card p{font-size:14.5px; color:var(--ink-soft); line-height:1.55; margin:10px 0 0;}
+  .quip-card.featured p{margin-top:0; font-size:15.5px;}
+  @media (max-width:800px){
+    .quip-grid, .quip-card.featured{grid-template-columns:1fr;}
+  }
+
   /* ---------- dishes ---------- */
   .dish-controls{margin-bottom:18px;}
   .dish-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:16px;}
@@ -757,70 +784,43 @@
   }
   .stage-actor.is-on{opacity:var(--on, 0.46);}
   .saree-ribbon{
-    height:34px;
-    width:130vw;
-    --on:0.7;
+    width:118vw; height:132px;
+    --on:0.72;
     overflow:visible;
-    transform-origin:50% 50%;
-    background-color:var(--saree-field, #9C2436);
-    background-image:
-      linear-gradient(var(--saree-kara, #D4A017), var(--saree-kara, #D4A017)),
-      linear-gradient(var(--saree-zari, #F6F1E4), var(--saree-zari, #F6F1E4)),
-      repeating-linear-gradient(90deg, transparent 0 26px, rgba(0,0,0,0.14) 26px 28px),
-      var(--saree-motif, none);
-    background-repeat:no-repeat, no-repeat, repeat, repeat;
-    background-position:0 0, 0 100%, 0 0, 0 0;
-    background-size:100% 4px, 100% 3px, auto, auto;
-    box-shadow:0 10px 22px rgba(62,42,28,0.2);
-    border-radius:2px 18px 18px 2px;
-    position:absolute;
-    --saree-field:#9C2436; --saree-kara:#D4A017; --saree-zari:#F6F1E4; --saree-teni:#F6F1E4; --saree-check:#F0C550;
+    transform-origin:12% 50%;
+    filter:drop-shadow(0 14px 18px rgba(62,42,28,0.22));
+    --saree-field:#9C2436; --saree-kara:#D4A017; --saree-zari:#F6F1E4;
   }
-  .saree-ribbon.horizon{transform-origin:20% 50%;}
-  .saree-ribbon::after{
-    content:''; position:absolute; top:-7px; width:22px; height:48px; border-radius:50%;
-    background:inherit; background-size:auto;
-    box-shadow:inset -3px 0 6px rgba(0,0,0,0.22), 2px 4px 10px rgba(62,42,28,0.2);
-  }
-  .saree-ribbon.horizon::after{right:-6px;}
+  .saree-ribbon .wave{fill:var(--saree-field);}
+  .saree-ribbon .kara{fill:none; stroke:var(--saree-kara); stroke-width:5; stroke-linecap:round;}
+  .saree-ribbon .zari{fill:none; stroke:var(--saree-zari); stroke-width:1.8; opacity:0.85;}
+  .saree-ribbon .coil-outer{fill:var(--saree-field); stroke:var(--saree-kara); stroke-width:3;}
+  .saree-ribbon .coil-inner{fill:none; stroke:var(--saree-zari); stroke-width:2.2;}
+  .saree-ribbon .coil-core{fill:var(--saree-kara);}
   .saree-ribbon.drop{
-    width:36px; height:115vh; border-radius:2px 2px 16px 16px;
-    background-image:
-      linear-gradient(90deg, var(--saree-kara, #D4A017), var(--saree-kara, #D4A017)),
-      linear-gradient(90deg, var(--saree-zari, #F6F1E4), var(--saree-zari, #F6F1E4)),
-      repeating-linear-gradient(180deg, transparent 0 26px, rgba(0,0,0,0.14) 26px 28px),
-      var(--saree-motif, none);
-    background-position:0 0, 100% 0, 0 0, 0 0;
-    background-size:4px 100%, 3px 100%, auto, auto;
-    transform-origin:50% 0;
+    width:132px; height:118vh; transform-origin:50% 0;
   }
-  .saree-ribbon.drop::after{left:-6px; right:auto; top:auto; bottom:-8px; width:48px; height:22px;}
-  .tone-ilkal{--saree-field:#9C2436; --saree-kara:#D4A017; --saree-zari:#F6F1E4;
-    --saree-motif:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12'%3E%3Cpolygon points='0,12 7,0 14,12' fill='%23D4A017'/%3E%3Cpolygon points='0,12 7,4 14,12' fill='%23F6F1E4'/%3E%3C/svg%3E");}
+  .tone-ilkal{--saree-field:#9C2436; --saree-kara:#D4A017; --saree-zari:#F6F1E4;}
   .tone-mysore{--saree-field:#5C1A4A; --saree-kara:#D6A419; --saree-zari:#F0C550;}
   .tone-kasuti{--saree-field:#201C17; --saree-kara:#D6A419; --saree-zari:#9E1B32;}
   .tone-jacaranda{--saree-field:#6B4FA0; --saree-kara:#D4A017; --saree-zari:#F6F1E4;}
   .tone-coastal{--saree-field:#1F7A6E; --saree-kara:#F0C550; --saree-zari:#F6F1E4;}
   .tone-hampi{--saree-field:#A66A32; --saree-kara:#F6F1E4; --saree-zari:#9E1B32;}
   .tone-blr-silk{--saree-field:#F3E4C0; --saree-kara:#9E1B32; --saree-zari:#D6A419;}
-  .tone-molakalmuru{--saree-field:#C41E3A; --saree-kara:#1F6B3A; --saree-check:#F0C550;
-    --saree-motif:repeating-linear-gradient(90deg,#C41E3A 0 14px,#F0C550 14px 28px,#1F6B3A 28px 32px);}
+  .tone-molakalmuru{--saree-field:#C41E3A; --saree-kara:#1F6B3A; --saree-zari:#F0C550;}
   .tone-kodagu{--saree-field:#1A4A32; --saree-kara:#D6A419; --saree-zari:#F6F1E4;}
-  .tone-khana{--saree-field:#9C2436; --saree-kara:#D6A419; --saree-check:#C1631A;
-    --saree-motif:repeating-linear-gradient(90deg,#9C2436 0 8px,#C1631A 8px 16px,#D6A419 16px 18px);}
-  .tone-ilkal-green{--saree-field:#1F5C45; --saree-kara:#9C2436; --saree-zari:#D4A017;
-    --saree-motif:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12'%3E%3Cpolygon points='0,12 7,0 14,12' fill='%239C2436'/%3E%3Cpolygon points='0,12 7,4 14,12' fill='%23D4A017'/%3E%3C/svg%3E");}
+  .tone-khana{--saree-field:#9C2436; --saree-kara:#D6A419; --saree-zari:#C1631A;}
+  .tone-ilkal-green{--saree-field:#1F5C45; --saree-kara:#9C2436; --saree-zari:#D4A017;}
   .tone-narayanpet{--saree-field:#C45C26; --saree-kara:#201C17; --saree-zari:#D6A419;}
   .tone-crepe{--saree-field:#E8D5A3; --saree-kara:#C45B7A; --saree-zari:#D6A419;}
-  .tone-navy-zari{--saree-field:#1A2744; --saree-kara:#D6A419; --saree-zari:#F0C550;
-    --saree-motif:radial-gradient(circle at 10px 8px,#D6A419 1.4px,transparent 1.6px);}
+  .tone-navy-zari{--saree-field:#1A2744; --saree-kara:#D6A419; --saree-zari:#F0C550;}
   .tone-peacock{--saree-field:#0E6B6A; --saree-kara:#D6A419; --saree-zari:#F6F1E4;}
   .tone-magenta{--saree-field:#9B1B4A; --saree-kara:#D6A419; --saree-zari:#F6F1E4;}
-  .saree-a{top:18%; left:-18vw;}
-  .saree-b{top:52%; left:-22vw;}
-  .saree-c.drop{top:-8vh; left:max(8px, calc(50% - 640px));}
-  .saree-d{top:34%; left:-16vw;}
-  .saree-e.drop{top:-10vh; right:max(6px, calc(50% - 650px)); left:auto;}
+  .saree-a{top:14%; left:-12vw;}
+  .saree-b{top:48%; left:-18vw;}
+  .saree-c.drop{top:-6vh; left:max(4px, calc(50% - 660px));}
+  .saree-d{top:31%; left:-14vw;}
+  .saree-e.drop{top:-8vh; right:max(4px, calc(50% - 660px)); left:auto;}
   .mala{--on:0.72;}
   .mala-h{
     top:86px; left:50%; width:min(92vw, 760px); height:78px;
@@ -880,7 +880,8 @@
   }
   @media (max-width:960px){
     .monument, .elephant-walk, .saree-c, .saree-e, .dabara-set, .mala-v{display:none;}
-    .saree-ribbon.horizon{height:26px; width:160vw;}
+    .saree-ribbon.horizon{height:96px; width:140vw;}
+    .saree-ribbon.drop{width:96px;}
   }
 
   /* ---------- guide data loader ---------- */
@@ -950,11 +951,11 @@
 </div>
 
 <div class="stage" id="pageStage" aria-hidden="true">
-  <div class="stage-actor saree-ribbon horizon saree-a tone-ilkal" data-cast="sareeA"></div>
-  <div class="stage-actor saree-ribbon horizon saree-b tone-jacaranda" data-cast="sareeB"></div>
-  <div class="stage-actor saree-ribbon drop saree-c tone-mysore" data-cast="sareeC"></div>
-  <div class="stage-actor saree-ribbon horizon saree-d tone-blr-silk" data-cast="sareeD"></div>
-  <div class="stage-actor saree-ribbon drop saree-e tone-khana" data-cast="sareeE"></div>
+  <svg class="stage-actor saree-ribbon horizon saree-a tone-ilkal" data-cast="sareeA" viewBox="0 0 900 180" preserveAspectRatio="none"></svg>
+  <svg class="stage-actor saree-ribbon horizon saree-b tone-jacaranda" data-cast="sareeB" viewBox="0 0 900 180" preserveAspectRatio="none"></svg>
+  <svg class="stage-actor saree-ribbon drop saree-c tone-mysore" data-cast="sareeC" viewBox="0 0 180 900" preserveAspectRatio="none"></svg>
+  <svg class="stage-actor saree-ribbon horizon saree-d tone-blr-silk" data-cast="sareeD" viewBox="0 0 900 180" preserveAspectRatio="none"></svg>
+  <svg class="stage-actor saree-ribbon drop saree-e tone-khana" data-cast="sareeE" viewBox="0 0 180 900" preserveAspectRatio="none"></svg>
   <svg class="stage-actor mala mala-h" data-cast="malaJasmine" viewBox="0 0 640 80">
     <path d="M8 42 Q80 10 160 42 T320 42 T480 42 T632 42" fill="none" stroke="#5A4638" stroke-width="1.4"/>
     <g fill="#F6F1E4" stroke="#9E1B32" stroke-width="0.4">
@@ -1194,6 +1195,7 @@
       <a href="#not-that">This, not that</a>
       <a href="#explore">Explore</a>
       <a href="#modern-blr">Today's Bengaluru</a>
+      <a href="#did-you-know">Did you know</a>
       <a href="#learn-kannada">Learn Kannada</a>
       <a href="#karnataka">Karnataka</a>
     </nav>
@@ -1557,6 +1559,20 @@
 
 <div class="saree-border" aria-hidden="true"></div>
 
+<section id="did-you-know">
+  <div class="section-head">
+    <div class="head-with-icon">
+      <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11 v6 M12 8 v.01"/></svg>
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ನಿಮಗೆ ಗೊತ್ತೇ?</span><span class="kn-en">did you know?</span></span>
+    </div>
+    <h2>Small things people usually get backwards</h2>
+    <p>Not trivia for a quiz night - the kind of aside you'd get from someone who has been here long enough to be annoyed by the usual explanation.</p>
+  </div>
+  <div class="quip-grid" id="quipGrid" data-reveal></div>
+</section>
+
+<div class="saree-border" aria-hidden="true"></div>
+
 <section class="kannada-section" id="learn-kannada">
   <div class="section-head">
     <div class="head-with-icon">
@@ -1713,48 +1729,51 @@
 
 <section id="add-yours">
   <div class="section-head">
-    <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ನಿಮ್ಮ ಸ್ಥಳ ಸೇರಿಸಿ</span><span class="kn-en">add a spot</span></span>
-    <h2>Know a place that should be here?</h2>
-    <p>Add it below - it'll appear in Explore right away and stay saved on this device for next time.</p>
+    <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಬರೆಯಿರಿ</span><span class="kn-en">write in</span></span>
+    <h2>Know a spot, or spot a mistake?</h2>
+    <p>Add a place for your own copy of the guide, or open a GitHub issue if something here is wrong or missing.</p>
   </div>
-  <form class="add-form" id="addForm">
-    <div>
-      <label>Name</label>
-      <input type="text" id="f-name" placeholder="e.g. Vidyarthi Bhavan" required>
+  <div class="write-in">
+    <div class="write-in-tabs" role="tablist" aria-label="Write in">
+      <button type="button" role="tab" id="tab-spot" aria-controls="panel-spot" aria-selected="true" onclick="setWriteIn('spot')">Know a spot</button>
+      <button type="button" role="tab" id="tab-ask" aria-controls="panel-ask" aria-selected="false" onclick="setWriteIn('ask')">Spot a mistake</button>
     </div>
-    <div>
-      <label>Neighbourhood / area</label>
-      <input type="text" id="f-area" placeholder="e.g. Basavanagudi" required>
+    <div class="write-in-panel" id="panel-spot" role="tabpanel" aria-labelledby="tab-spot">
+      <form class="add-form" id="addForm">
+        <div>
+          <label>Name</label>
+          <input type="text" id="f-name" placeholder="e.g. Vidyarthi Bhavan" required>
+        </div>
+        <div>
+          <label>Neighbourhood / area</label>
+          <input type="text" id="f-area" placeholder="e.g. Basavanagudi" required>
+        </div>
+        <div class="full">
+          <label>Kind</label>
+          <select id="f-category"></select>
+        </div>
+        <div class="full">
+          <label>One line on why it matters</label>
+          <textarea id="f-blurb" placeholder="What should someone expect, and why is it worth the trip?" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Add to the guide</button>
+      </form>
+      <p class="form-note">Custom spots are stored privately on your device using this page's built-in storage - nothing is shared or uploaded anywhere.</p>
     </div>
-    <div class="full">
-      <label>Kind</label>
-      <select id="f-category"></select>
+    <div class="write-in-panel" id="panel-ask" role="tabpanel" aria-labelledby="tab-ask" hidden>
+      <form class="add-form" id="issueForm">
+        <div class="full">
+          <label>Short summary</label>
+          <input type="text" id="i-title" placeholder="e.g. MTR's address has changed" required>
+        </div>
+        <div class="full">
+          <label>Details</label>
+          <textarea id="i-body" placeholder="What's wrong, or what would you like to ask?" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Open as GitHub issue</button>
+      </form>
+      <p class="form-note">This opens a prefilled GitHub issue on the guide's repo - you'll need a GitHub account to actually submit it. Nothing is sent from this page directly; you finish and post it yourself on the next screen.</p>
     </div>
-    <div class="full">
-      <label>One line on why it matters</label>
-      <textarea id="f-blurb" placeholder="What should someone expect, and why is it worth the trip?" required></textarea>
-    </div>
-    <button type="submit" class="submit-btn">Add to the guide</button>
-  </form>
-  <p class="form-note">Custom spots are stored privately on your device using this page's built-in storage - nothing is shared or uploaded anywhere.</p>
-
-  <div class="issue-form-block">
-    <div class="section-head">
-      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಪ್ರಶ್ನೆ ಇದೆಯೇ?</span><span class="kn-en">have a question?</span></span>
-      <h2>Spot a mistake, or have a question?</h2>
-      <p>This opens a prefilled GitHub issue on the guide's repo - you'll need a GitHub account to actually submit it. Nothing is sent from this page directly; you finish and post it yourself on the next screen.</p>
-    </div>
-    <form class="add-form" id="issueForm">
-      <div class="full">
-        <label>Short summary</label>
-        <input type="text" id="i-title" placeholder="e.g. MTR's address has changed" required>
-      </div>
-      <div class="full">
-        <label>Details</label>
-        <textarea id="i-body" placeholder="What's wrong, or what would you like to ask?" required></textarea>
-      </div>
-      <button type="submit" class="submit-btn">Open as GitHub issue</button>
-    </form>
   </div>
 </section>
 
@@ -1764,7 +1783,7 @@
 <footer>
   <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
   <p>Made for people spending time in Bengaluru, with <span class="footer-preethi"><span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಪ್ರೀತಿ</span><span class="kn-en">love</span></span> ❤️<button class="speak-btn speak-btn-sm" onclick="speakText('ಪ್ರೀತಿ')" aria-label="Hear pronunciation">🔊</button></span></p>
-    <p class="footer-meta">v2026-09-10.13 &middot; &copy; 2026, all rights reserved</p>
+    <p class="footer-meta">v2026-09-11.1 &middot; &copy; 2026, all rights reserved</p>
   <p class="footer-meta">Built with AI, edited and fact-checked by human.</p>
 </footer>
 
@@ -1797,6 +1816,7 @@ let FESTIVALS = [];
 let DISH_TAGS = [];
 let DISHES = [];
 let PHRASES = [];
+let QUIPS = [];
 
 const PICK_MARK = `<svg class="pick-mark" viewBox="0 0 40 26" role="img" aria-label="Personal pick"><title>Personal pick</title><ellipse cx="10.4" cy="7.2" rx="4.4" ry="4"/><ellipse cx="29.6" cy="7.2" rx="4.4" ry="4"/><path d="M6.6 6.2 L2.4 4.6 L7 9.2Z"/><path d="M33.4 6.2 L37.6 4.6 L33 9.2Z"/><path d="M20 10 C13 12 8.2 16.5 7 23 C13.5 20.2 17 22 20 26 C23 22 26.5 20.2 33 23 C31.8 16.5 27 12 20 10Z"/></svg>`;
 
@@ -1808,6 +1828,7 @@ const DATA_FILES = {
   festivals: 'data/festivals.json',
   dishes: 'data/dishes.json',
   phrases: 'data/phrases.json',
+  quips: 'data/did-you-know.json',
 };
 
 async function fetchJson(path){
@@ -1817,7 +1838,7 @@ async function fetchJson(path){
 }
 
 async function loadGuideData(){
-  const [categories, locations, karnatakaPlaces, notThat, festivals, dishes, phrases] = await Promise.all([
+  const [categories, locations, karnatakaPlaces, notThat, festivals, dishes, phrases, quips] = await Promise.all([
     fetchJson(DATA_FILES.categories),
     fetchJson(DATA_FILES.locations),
     fetchJson(DATA_FILES.karnatakaPlaces),
@@ -1825,6 +1846,7 @@ async function loadGuideData(){
     fetchJson(DATA_FILES.festivals),
     fetchJson(DATA_FILES.dishes),
     fetchJson(DATA_FILES.phrases),
+    fetchJson(DATA_FILES.quips),
   ]);
   CATEGORIES = categories.categories;
   DAYTRIP_COLOR = categories.daytripColor || DAYTRIP_COLOR;
@@ -1835,6 +1857,7 @@ async function loadGuideData(){
   DISH_TAGS = dishes.tags || [];
   DISHES = dishes.dishes || dishes;
   PHRASES = phrases;
+  QUIPS = quips;
 }
 
 function hideLoader(ok){
@@ -2144,6 +2167,22 @@ function renderFestivals(){
   `).join('');
 }
 
+/* ---------------- did you know ---------------- */
+function renderQuips(){
+  const wrap = document.getElementById('quipGrid');
+  if(!wrap) return;
+  wrap.innerHTML = QUIPS.map(q => `
+    <article class="quip-card${q.featured ? ' featured' : ''}">
+      <div>
+        <div class="quip-kicker">Did you know</div>
+        <h3>${q.q}</h3>
+        ${q.kn ? `<span class="kn quip-kn kn-cycle" tabindex="0"><span class="kn-native">${q.kn}</span><span class="kn-en">${q.q}</span></span>` : ''}
+      </div>
+      <p>${q.a}</p>
+    </article>
+  `).join('');
+}
+
 /* ---------------- dishes ---------------- */
 function renderDishPills(){
   const row = document.getElementById('dishPills');
@@ -2240,6 +2279,20 @@ function setEra(i){
   });
 }
 
+/* ---------------- write-in tabs ---------------- */
+function setWriteIn(which){
+  const spot = which === 'spot';
+  const tabSpot = document.getElementById('tab-spot');
+  const tabAsk = document.getElementById('tab-ask');
+  const panelSpot = document.getElementById('panel-spot');
+  const panelAsk = document.getElementById('panel-ask');
+  if(!tabSpot || !tabAsk) return;
+  tabSpot.setAttribute('aria-selected', spot ? 'true' : 'false');
+  tabAsk.setAttribute('aria-selected', spot ? 'false' : 'true');
+  if(panelSpot) panelSpot.hidden = !spot;
+  if(panelAsk) panelAsk.hidden = spot;
+}
+
 /* ---------------- add-your-own form ---------------- */
 function renderCategorySelect(){
   const sel = document.getElementById('f-category');
@@ -2298,6 +2351,67 @@ document.getElementById('issueForm').addEventListener('submit', function(e){
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const node = {};
   stage.querySelectorAll('[data-cast]').forEach(el => { node[el.dataset.cast] = el; });
+  const ribbonIds = ['sareeA','sareeB','sareeC','sareeD','sareeE'];
+  ribbonIds.forEach(id => {
+    const el = node[id];
+    if(!el) return;
+    const drop = el.classList.contains('drop');
+    el.innerHTML = drop
+      ? `<path class="wave"/><path class="kara"/><path class="zari"/><g class="coil"><ellipse class="coil-outer"/><ellipse class="coil-inner"/><ellipse class="coil-core"/></g>`
+      : `<path class="wave"/><path class="kara"/><path class="zari"/><g class="coil"><ellipse class="coil-outer"/><ellipse class="coil-inner"/><ellipse class="coil-core"/></g>`;
+  });
+  function ribbonPath(len, thick, amp, phase, vertical){
+    const step = 20;
+    const pts = [];
+    for(let s = 0; s <= len; s += step){
+      const wob = amp * Math.sin(s / 48 + phase);
+      pts.push(vertical ? [90 + wob, s] : [s, 90 + wob]);
+    }
+    if(!pts.length) return '';
+    const n = vertical ? [thick, 0] : [0, thick];
+    let d = `M ${pts[0][0]} ${pts[0][1]}`;
+    for(let i = 1; i < pts.length; i++) d += ` L ${pts[i][0]} ${pts[i][1]}`;
+    for(let i = pts.length - 1; i >= 0; i--){
+      d += ` L ${pts[i][0] + n[0]} ${pts[i][1] + n[1]}`;
+    }
+    return d + ' Z';
+  }
+  function edgePath(len, amp, phase, yOff, vertical){
+    const step = 20;
+    let d = '';
+    for(let s = 0, i = 0; s <= len; s += step, i++){
+      const wob = amp * Math.sin(s / 48 + phase);
+      const x = vertical ? 90 + wob + yOff : s;
+      const y = vertical ? s : 90 + wob + yOff;
+      d += (i ? ' L ' : 'M ') + x + ' ' + y;
+    }
+    return d;
+  }
+  function paintRibbon(el, k, phase, vertical){
+    if(!el) return;
+    const len = 140 + k * 720;
+    const amp = 10 + (1 - k) * 38;
+    const thick = 42 + (1 - k) * 36;
+    const wave = el.querySelector('.wave');
+    const kara = el.querySelector('.kara');
+    const zari = el.querySelector('.zari');
+    if(wave) wave.setAttribute('d', ribbonPath(len, thick, amp, phase, vertical));
+    if(kara) kara.setAttribute('d', edgePath(len, amp, phase, 0, vertical));
+    if(zari) zari.setAttribute('d', edgePath(len, amp, phase, thick, vertical));
+    const coil = el.querySelector('.coil');
+    if(!coil) return;
+    const endWob = amp * Math.sin(len / 48 + phase);
+    const cx = vertical ? 90 + endWob + thick / 2 : len;
+    const cy = vertical ? len : 90 + endWob + thick / 2;
+    const rx = vertical ? (28 + (1-k)*22) : (22 + (1-k)*28);
+    const ry = vertical ? (22 + (1-k)*28) : (34 + (1-k)*26);
+    const outer = coil.querySelector('.coil-outer');
+    const inner = coil.querySelector('.coil-inner');
+    const core = coil.querySelector('.coil-core');
+    if(outer){ outer.setAttribute('cx', cx); outer.setAttribute('cy', cy); outer.setAttribute('rx', rx); outer.setAttribute('ry', ry); }
+    if(inner){ inner.setAttribute('cx', cx + (vertical?0:6)); inner.setAttribute('cy', cy + (vertical?6:0)); inner.setAttribute('rx', rx*0.62); inner.setAttribute('ry', ry*0.62); }
+    if(core){ core.setAttribute('cx', cx + (vertical?0:10)); core.setAttribute('cy', cy + (vertical?10:0)); core.setAttribute('rx', rx*0.22); core.setAttribute('ry', ry*0.22); }
+  }
   const TONES = [
     'tone-ilkal','tone-mysore','tone-kasuti','tone-jacaranda','tone-coastal','tone-hampi',
     'tone-blr-silk','tone-molakalmuru','tone-kodagu','tone-khana','tone-ilkal-green',
@@ -2315,30 +2429,30 @@ document.getElementById('issueForm').addEventListener('submit', function(e){
     return 1;
   };
   const actors = [
-    {id:'sareeA', a:0, b:0.46, idle:8, pose(t,k,w){
+    {id:'sareeA', a:0, b:0.46, idle:8, pose(t,k,w,now){
       setTone(node.sareeA, pickTone(t, 0));
-      const open = 0.18 + k * 0.82;
-      return `perspective(820px) rotateX(${58 + w * 0.4}deg) rotateZ(${-6 + w * 0.2}deg) scaleX(${open}) translate(${(t - 0.2) * 80}px, ${w * 2}px)`;
+      paintRibbon(node.sareeA, k, now / 520, false);
+      return `perspective(900px) rotateX(${28 + w * 0.5}deg) rotateZ(${-5 + w * 0.25}deg) translate(${(t - 0.2) * 50}px, ${w * 3}px)`;
     }},
-    {id:'sareeB', a:0.1, b:0.62, idle:-6, pose(t,k,w){
+    {id:'sareeB', a:0.1, b:0.62, idle:-6, pose(t,k,w,now){
       setTone(node.sareeB, pickTone(t, 5));
-      const open = 0.2 + k * 0.8;
-      return `perspective(820px) rotateX(${62 + w * 0.3}deg) rotateZ(${5 + w * 0.15}deg) scaleX(${open}) translate(${(0.4 - t) * 70}px, ${w}px)`;
+      paintRibbon(node.sareeB, k, now / 480 + 1.2, false);
+      return `perspective(900px) rotateX(${32 + w * 0.4}deg) rotateZ(${4 + w * 0.2}deg) translate(${(0.4 - t) * 40}px, ${w * 2}px)`;
     }},
-    {id:'sareeC', a:0.22, b:0.7, idle:4, pose(t,k,w){
+    {id:'sareeC', a:0.22, b:0.7, idle:4, pose(t,k,w,now){
       setTone(node.sareeC, pickTone(t, 9));
-      const drop = 0.08 + k * 0.92;
-      return `scaleY(${drop}) translate(${w * 1.2}px, 0)`;
+      paintRibbon(node.sareeC, k, now / 540, true);
+      return `translate(${w * 1.4}px, 0)`;
     }},
-    {id:'sareeD', a:0.16, b:0.68, idle:5, pose(t,k,w){
+    {id:'sareeD', a:0.16, b:0.68, idle:5, pose(t,k,w,now){
       setTone(node.sareeD, pickTone(t, 3));
-      const open = 0.16 + k * 0.84;
-      return `perspective(820px) rotateX(${55 + w * 0.35}deg) rotateZ(${-2}deg) scaleX(${open}) translate(${(t - 0.4) * -60}px, ${w * 1.5}px)`;
+      paintRibbon(node.sareeD, k, now / 500 + 2.1, false);
+      return `perspective(900px) rotateX(${24 + w * 0.35}deg) rotateZ(${-2}deg) translate(${(t - 0.4) * -36}px, ${w * 2}px)`;
     }},
-    {id:'sareeE', a:0.48, b:1, idle:3, pose(t,k,w){
+    {id:'sareeE', a:0.48, b:1, idle:3, pose(t,k,w,now){
       setTone(node.sareeE, pickTone(t, 12));
-      const drop = 0.1 + k * 0.9;
-      return `scaleY(${drop}) translate(${w}px, 0)`;
+      paintRibbon(node.sareeE, k, now / 560 + 0.7, true);
+      return `translate(${w}px, 0)`;
     }},
     {id:'malaJasmine', a:0.02, b:0.26, a2:0.78, b2:0.96, idle:6, pose(t,k,w){
       return `translate(${(t - 0.12) * -40}px, ${w * 2}px)`;
@@ -2401,7 +2515,7 @@ document.getElementById('issueForm').addEventListener('submit', function(e){
         el.style.transform = '';
         return;
       }
-      el.style.transform = a.pose(t, k, w * (a.idle || 1));
+      el.style.transform = a.pose(t, k, w * (a.idle || 1), now);
     });
     if(!reduce) requestAnimationFrame(() => { ticking = true; frame(performance.now()); });
   }
@@ -2436,6 +2550,7 @@ document.getElementById('issueForm').addEventListener('submit', function(e){
     renderDaytrips();
     renderTNT();
     renderFestivals();
+    renderQuips();
     renderDishes();
     renderPhrases();
     renderAgendaCount();

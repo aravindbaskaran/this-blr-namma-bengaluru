@@ -3,7 +3,7 @@ Namma Bengaluru, not that
 
 This is a static GitHub Pages site. The published source is `docs/` (`docs/index.html` plus lists in `docs/data/*.json`).
 
-To change places, categories, phrases, dishes, festivals, or This-not-that rows, edit the matching file under `docs/data/` — not arrays in the HTML. Bengaluru spots live in `locations.json` (including `personalPick`, `skipCrowd`, and a `try` list of what to do there). Day trips live in `karnataka-places.json`. Dishes live in `dishes.json` with `tags` and optional `personalPick`. The page fetches those JSON files on load.
+To change places, categories, phrases, dishes, festivals, did-you-know quips, or This-not-that rows, edit the matching file under `docs/data/` — not arrays in the HTML. Bengaluru spots live in `locations.json` (including `personalPick`, `skipCrowd`, and a `try` list of what to do there). Day trips live in `karnataka-places.json`. Dishes live in `dishes.json` with `tags` and optional `personalPick`. Asides live in `did-you-know.json`. The page fetches those JSON files on load.
 
 ## Local preview
 
