@@ -1,0 +1,104 @@
+# Keeps docs/audio/kn/ in step with the Kannada strings in docs/data/.
+#
+# Add a Kannada phrase, push, and its clip is rendered and committed for you.
+# Rendering is incremental, so a new phrase costs one clip rather than all of them.
+#
+# Rendering needs an HF_TOKEN secret, because the voice model is gated. Without one
+# this still runs and still reports which phrases lack audio - it just cannot render
+# them, and says so rather than failing. Nothing here is required setup: the clips
+# already in the repo work regardless.
+name: Kannada audio
+
+on:
+  push:
+    branches-ignore: []
+    paths:
+      - 'docs/data/**.json'
+      - 'docs/index.html'
+      - 'scripts/build-kannada-audio.py'
+      - '.github/workflows/kannada-audio.yml'
+  pull_request:
+    paths:
+      - 'docs/data/**.json'
+      - 'docs/index.html'
+  workflow_dispatch:
+
+jobs:
+  # Cheap, needs no secrets, so it works on pull requests from forks as well.
+  # It only reports; the render job below is what actually fixes things.
+  check:
+    name: Report phrases with no clip
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/build-kannada-audio.py --check
+
+  render:
+    name: Render missing clips
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Skip the whole expensive setup when there is nothing to render.
+      - name: Is there anything to do?
+        id: todo
+        run: |
+          if python scripts/build-kannada-audio.py --check; then
+            echo "needed=false" >> "$GITHUB_OUTPUT"
+          elif [ -z "$HF_TOKEN" ]; then
+            echo "needed=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Some phrases have no audio and there is no HF_TOKEN secret, \
+            so they cannot be rendered here. They fall back to the device voice. To turn \
+            this on, add an HF_TOKEN secret (see the Kannada audio section of the README); \
+            otherwise run scripts/build-kannada-audio.py locally and commit the clips."
+          else
+            echo "needed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install ffmpeg
+        if: steps.todo.outputs.needed == 'true'
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python dependencies
+        if: steps.todo.outputs.needed == 'true'
+        run: |
+          pip install --quiet torch --index-url https://download.pytorch.org/whl/cpu
+          pip install --quiet numpy "git+https://github.com/huggingface/parler-tts.git"
+
+      # The model is about 3.5 GB. Without this, every run re-downloads it.
+      - name: Cache the voice model
+        if: steps.todo.outputs.needed == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-indic-parler-tts-v1
+
+      - name: Render
+        if: steps.todo.outputs.needed == 'true'
+        run: python scripts/build-kannada-audio.py
+
+      - name: Commit new clips
+        if: steps.todo.outputs.needed == 'true'
+        run: |
+          if [ -z "$(git status --porcelain docs/audio/kn)" ]; then
+            echo "nothing changed"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/audio/kn
+          git commit -m "Render Kannada audio for new phrases"
+          git push

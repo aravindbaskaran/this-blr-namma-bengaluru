@@ -442,7 +442,16 @@ function renderPhrases(){
   }).join('');
 }
 const SPEECH_OK = (typeof window !== 'undefined' && 'speechSynthesis' in window);
+/* Either voice needs one of these; kannada-voice.js only needs Web Audio. */
+const VOICE_OK = SPEECH_OK || (typeof window !== 'undefined' && ('AudioContext' in window || 'webkitAudioContext' in window));
 function speakText(text){
+  if(!text) return;
+  /* A pre-rendered Kannada clip takes it when there is one (see kannada-voice.js). */
+  if(window.NammaVoice && window.NammaVoice.speak(text)) return;
+  speakWithBrowserVoice(text);
+}
+/* Whatever Kannada voice the device happens to ship with - usually none. */
+function speakWithBrowserVoice(text){
   if(!SPEECH_OK || !text) return;
   try{
     const utter = new SpeechSynthesisUtterance(text);
@@ -456,7 +465,7 @@ function speakText(text){
   }catch(e){ /* speech not available - silently ignore */ }
 }
 function speakBtn(text, size){
-  if(!SPEECH_OK || !text) return '';
+  if(!VOICE_OK || !text) return '';
   const safe = text.replace(/'/g, "\\'");
   const cls = size==='sm' ? 'speak-btn speak-btn-sm' : 'speak-btn';
   return `<button class="${cls}" onclick="speakText('${safe}')" aria-label="Hear pronunciation">\uD83D\uDD0A</button>`;
