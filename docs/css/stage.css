@@ -12,22 +12,22 @@
   }
   .stage-actor.is-on{opacity:var(--on, 0.46);}
   .saree-ribbon{
-    width:110vw; height:92px;
-    --on:0.7;
+    width:125vw; height:168px;
+    --on:0.72;
     overflow:visible;
     transform-origin:8% 50%;
-    filter:drop-shadow(0 10px 16px rgba(62,42,28,0.18));
+    filter:drop-shadow(0 12px 18px rgba(62,42,28,0.2));
     --saree-field:#9C2436; --saree-kara:#D4A017; --saree-zari:#F6F1E4;
   }
   .saree-ribbon .cloth{fill:var(--saree-field);}
-  .saree-ribbon .kara{fill:none; stroke:var(--saree-kara); stroke-width:7; stroke-linecap:butt;}
-  .saree-ribbon .zari{fill:none; stroke:var(--saree-zari); stroke-width:2;}
-  .saree-ribbon .pleat{fill:none; stroke:rgba(247,238,218,0.22); stroke-width:1.4;}
-  .saree-ribbon .bolt-body{fill:var(--saree-field); stroke:var(--saree-kara); stroke-width:2.4;}
-  .saree-ribbon .bolt-ring{fill:none; stroke:var(--saree-zari); stroke-width:1.6; opacity:0.7;}
+  .saree-ribbon .kara{fill:none; stroke:var(--saree-kara); stroke-width:12; stroke-linecap:butt;}
+  .saree-ribbon .zari{fill:none; stroke:var(--saree-zari); stroke-width:2.4;}
+  .saree-ribbon .pleat{fill:none; stroke:rgba(247,238,218,0.22); stroke-width:1.6;}
+  .saree-ribbon .bolt-body{fill:var(--saree-field); stroke:var(--saree-kara); stroke-width:3;}
+  .saree-ribbon .bolt-ring{fill:none; stroke:var(--saree-zari); stroke-width:1.8; opacity:0.75;}
   .saree-ribbon .bolt-end{fill:var(--saree-kara);}
   .saree-ribbon.drop{
-    width:92px; height:110vh; transform-origin:50% 0;
+    width:168px; height:115vh; transform-origin:50% 0;
   }
   .tone-ilkal{--saree-field:#9C2436; --saree-kara:#D4A017; --saree-zari:#F6F1E4;}
   .tone-mysore{--saree-field:#5C1A4A; --saree-kara:#D6A419; --saree-zari:#F0C550;}
@@ -60,6 +60,18 @@
     top:18%; right:max(4px, calc(50% - 640px));
     width:72px; height:min(56vh, 420px);
   }
+  .mala-v.left{
+    right:auto; left:max(6px, calc(50% - 650px)); top:12%;
+  }
+  .mala-v.inner{
+    right:max(70px, calc(50% - 560px)); top:26%; height:min(48vh, 360px);
+  }
+  .mango-drift{
+    width:96px; height:108px; --on:0.55;
+    top:36%; left:max(80px, calc(50% - 420px));
+    filter:drop-shadow(0 8px 10px rgba(62,42,28,0.18));
+  }
+  .mango-drift.ripe{top:58%; left:auto; right:max(90px, calc(50% - 480px));}
   .veni{
     top:24%; left:max(10px, calc(50% - 600px));
     width:52px; height:300px; --on:0.7;
@@ -76,14 +88,14 @@
     top:16%; right:max(8px, calc(50% - 630px));
     width:120px; height:220px; --on:0.48;
   }
-  .dabara-set{width:158px; height:236px; --on:0.6;}
+  .dabara-set{width:118px; height:210px; --on:0.62;}
   .dabara-set.one{bottom:10%; left:max(8px, calc(50% - 660px));}
   .dabara-set.two{top:28%; right:max(8px, calc(50% - 650px));}
   .kaapi-steel{fill:#D4D7D3; stroke:#8A8E8A; stroke-width:1.1;}
   .kaapi-steel-hi{fill:#EEF0EE; stroke:#9AA09A; stroke-width:0.8;}
   .kaapi-bowl-in{fill:#B4B8B4; stroke:#7A807C; stroke-width:0.9;}
-  .kaapi-rim{fill:none; stroke:#C9CDC8; stroke-width:4.2;}
-  .kaapi-rim-in{fill:none; stroke:#9AA09A; stroke-width:1.2;}
+  .kaapi-rim{fill:none; stroke:#C9CDC8; stroke-width:3.2;}
+  .kaapi-rim-in{fill:none; stroke:#9AA09A; stroke-width:1;}
   .kaapi-coffee{fill:#3E2A1C;}
   .kaapi-coffee-skin{fill:#4E3426;}
   .kaapi-tumbler{
@@ -109,9 +121,9 @@
     72%{transform:rotate(-16deg) translate(1px, -1px);}
   }
   @keyframes kaapi-pull{
-    0%,100%{stroke-width:5.2;}
-    48%{stroke-width:2.1;}
-    72%{stroke-width:3.6;}
+    0%,100%{stroke-width:4.4;}
+    48%{stroke-width:1.8;}
+    72%{stroke-width:3;}
   }
   @keyframes kaapi-foam{
     0%,100%{transform:scale(1,1); opacity:0.7;}
@@ -137,13 +149,14 @@
     width:140px; height:90px; color:#4A3C32;
   }
   .elephant-walk{
-    bottom:10%; left:max(24px, calc(50% - 620px));
+    bottom:10%; left:auto; right:-28px;
     width:190px; height:130px; --on:0.44;
+    transform-origin:center bottom;
   }
   @media (max-width:960px){
-    .monument, .elephant-walk, .saree-c, .saree-e, .dabara-set.two, .mala-v{display:none;}
-    .saree-ribbon.horizon{height:72px; width:130vw;}
-    .saree-ribbon.drop{width:72px;}
+    .monument, .elephant-walk, .saree-c, .saree-e, .dabara-set.two, .mala-v, .mango-drift.ripe{display:none;}
+    .saree-ribbon.horizon{height:120px; width:140vw;}
+    .saree-ribbon.drop{width:120px;}
   }
 
   /* ---------- guide data loader ---------- */
