@@ -172,24 +172,61 @@
       <circle cx="96" cy="30" r="2.4"/><circle cx="12" cy="120" r="2"/><circle cx="104" cy="150" r="2.6"/>
     </g>
   </svg>
-  <svg class="stage-actor dabara-set one" data-cast="dabaraL" viewBox="0 0 88 88">
-    <ellipse cx="44" cy="72" rx="28" ry="8" fill="#C9CDC8" stroke="#7A8078" stroke-width="1.2"/>
-    <ellipse cx="44" cy="68" rx="22" ry="6" fill="#DDE0DC"/>
-    <path d="M30 28 L33 66 L55 66 L58 28 Z" fill="#E7EAE5" stroke="#7A8078" stroke-width="1.2"/>
-    <ellipse cx="44" cy="28" rx="14" ry="5" fill="#F6F1E4" stroke="#7A8078" stroke-width="1"/>
-    <ellipse cx="44" cy="28.5" rx="11" ry="3.4" fill="#3E2A1C"/>
-    <path class="dabara-steam" d="M38 22 C36 16 40 12 38 8"/>
-    <path class="dabara-steam b" d="M44 20 C43 14 46 11 44 6"/>
-    <path class="dabara-steam c" d="M50 22 C52 16 48 12 50 8"/>
+  <svg class="stage-actor dabara-set one" data-cast="dabaraL" viewBox="0 0 130 196">
+    <!-- davara: flared steel bowl, coffee sits below the rim -->
+    <path class="kaapi-steel" d="M16 122 L26 168 Q65 186 104 168 L114 122 Q65 136 16 122 Z"/>
+    <path class="kaapi-bowl-in" d="M24 124 L32 162 Q65 176 98 162 L106 124 Q65 136 24 124 Z"/>
+    <path class="kaapi-coffee" d="M34 146 L36 162 Q65 174 94 162 L96 146 Q65 156 34 146 Z"/>
+    <ellipse class="kaapi-coffee-skin" cx="65" cy="146" rx="31" ry="9"/>
+    <g class="kaapi-froth">
+      <ellipse class="b" cx="50" cy="144" rx="5.4" ry="2.3"/>
+      <ellipse cx="64" cy="142.5" rx="6.6" ry="2.8"/>
+      <ellipse class="c" cx="78" cy="144.2" rx="5.6" ry="2.2"/>
+      <ellipse class="b" cx="70" cy="146.5" rx="3.5" ry="1.5"/>
+    </g>
+    <ellipse class="kaapi-rim" cx="65" cy="122" rx="50" ry="13"/>
+    <ellipse class="kaapi-rim-in" cx="65" cy="122" rx="44" ry="10.5"/>
+    <path class="kaapi-stream" d="M72 72 C68 102 66 128 65 146">
+      <animate attributeName="d" dur="3.4s" repeatCount="indefinite"
+        values="M72 72 C68 102 66 128 65 146;M76 64 C52 108 78 132 65 146;M70 70 C67 102 65 128 65 146;M72 72 C68 102 66 128 65 146"/>
+    </path>
+    <g class="kaapi-tumbler">
+      <!-- mouth down toward the davara; closed base up -->
+      <path class="kaapi-steel" d="M62 16 L54 70 L90 68 L82 16 Z"/>
+      <ellipse class="kaapi-steel" cx="72" cy="16" rx="11" ry="4.5"/>
+      <ellipse class="kaapi-steel-hi" cx="72" cy="70" rx="18.5" ry="6"/>
+      <ellipse class="kaapi-coffee" cx="72" cy="69" rx="14" ry="4"/>
+      <path d="M68 22 L66 62" fill="none" stroke="#F6F1E4" stroke-width="1.4" opacity="0.45"/>
+    </g>
+    <path class="dabara-steam" d="M52 140 C50 128 56 122 52 112"/>
+    <path class="dabara-steam b" d="M65 138 C64 126 69 120 65 108"/>
+    <path class="dabara-steam c" d="M78 140 C81 128 76 122 80 112"/>
   </svg>
-  <svg class="stage-actor dabara-set two" data-cast="dabaraR" viewBox="0 0 88 88">
-    <ellipse cx="44" cy="72" rx="28" ry="8" fill="#C9CDC8" stroke="#7A8078" stroke-width="1.2"/>
-    <ellipse cx="44" cy="68" rx="22" ry="6" fill="#DDE0DC"/>
-    <path d="M30 28 L33 66 L55 66 L58 28 Z" fill="#E7EAE5" stroke="#7A8078" stroke-width="1.2"/>
-    <ellipse cx="44" cy="28" rx="14" ry="5" fill="#F6F1E4" stroke="#7A8078" stroke-width="1"/>
-    <ellipse cx="44" cy="28.5" rx="11" ry="3.4" fill="#3E2A1C"/>
-    <path class="dabara-steam" d="M38 22 C36 16 40 12 38 8"/>
-    <path class="dabara-steam b" d="M50 22 C52 16 48 12 50 8"/>
+  <svg class="stage-actor dabara-set two" data-cast="dabaraR" viewBox="0 0 130 196">
+    <path class="kaapi-steel" d="M16 122 L26 168 Q65 186 104 168 L114 122 Q65 136 16 122 Z"/>
+    <path class="kaapi-bowl-in" d="M24 124 L32 162 Q65 176 98 162 L106 124 Q65 136 24 124 Z"/>
+    <path class="kaapi-coffee" d="M34 146 L36 162 Q65 174 94 162 L96 146 Q65 156 34 146 Z"/>
+    <ellipse class="kaapi-coffee-skin" cx="65" cy="146" rx="31" ry="9"/>
+    <g class="kaapi-froth">
+      <ellipse class="b" cx="50" cy="144" rx="5.4" ry="2.3"/>
+      <ellipse cx="64" cy="142.5" rx="6.6" ry="2.8"/>
+      <ellipse class="c" cx="78" cy="144.2" rx="5.6" ry="2.2"/>
+    </g>
+    <ellipse class="kaapi-rim" cx="65" cy="122" rx="50" ry="13"/>
+    <ellipse class="kaapi-rim-in" cx="65" cy="122" rx="44" ry="10.5"/>
+    <path class="kaapi-stream" d="M72 72 C68 102 66 128 65 146">
+      <animate attributeName="d" dur="3.8s" begin="-1.1s" repeatCount="indefinite"
+        values="M72 72 C68 102 66 128 65 146;M76 64 C52 108 78 132 65 146;M70 70 C67 102 65 128 65 146;M72 72 C68 102 66 128 65 146"/>
+    </path>
+    <g class="kaapi-tumbler">
+      <path class="kaapi-steel" d="M62 16 L54 70 L90 68 L82 16 Z"/>
+      <ellipse class="kaapi-steel" cx="72" cy="16" rx="11" ry="4.5"/>
+      <ellipse class="kaapi-steel-hi" cx="72" cy="70" rx="18.5" ry="6"/>
+      <ellipse class="kaapi-coffee" cx="72" cy="69" rx="14" ry="4"/>
+      <path d="M68 22 L66 62" fill="none" stroke="#F6F1E4" stroke-width="1.4" opacity="0.45"/>
+    </g>
+    <path class="dabara-steam" d="M52 140 C50 128 56 122 52 112"/>
+    <path class="dabara-steam b" d="M78 140 C81 128 76 122 80 112"/>
   </svg>
   <svg class="stage-actor flower-cluster" data-cast="flowers" viewBox="0 0 140 90">
     <g fill="#6B4FA0" opacity="0.85">

@@ -76,14 +76,47 @@
     top:16%; right:max(8px, calc(50% - 630px));
     width:120px; height:220px; --on:0.48;
   }
-  .dabara-set{width:96px; height:96px; --on:0.52;}
-  .dabara-set.one{bottom:16%; left:max(12px, calc(50% - 640px));}
-  .dabara-set.two{top:36%; right:max(16px, calc(50% - 640px));}
-  .dabara-steam{stroke:var(--coffee); fill:none; stroke-width:1.1; stroke-linecap:round; opacity:0.45;
+  .dabara-set{width:158px; height:236px; --on:0.6;}
+  .dabara-set.one{bottom:10%; left:max(8px, calc(50% - 660px));}
+  .dabara-set.two{top:28%; right:max(8px, calc(50% - 650px));}
+  .kaapi-steel{fill:#D4D7D3; stroke:#8A8E8A; stroke-width:1.1;}
+  .kaapi-steel-hi{fill:#EEF0EE; stroke:#9AA09A; stroke-width:0.8;}
+  .kaapi-bowl-in{fill:#B4B8B4; stroke:#7A807C; stroke-width:0.9;}
+  .kaapi-rim{fill:none; stroke:#C9CDC8; stroke-width:4.2;}
+  .kaapi-rim-in{fill:none; stroke:#9AA09A; stroke-width:1.2;}
+  .kaapi-coffee{fill:#3E2A1C;}
+  .kaapi-coffee-skin{fill:#4E3426;}
+  .kaapi-tumbler{
+    transform-box:fill-box; transform-origin:50% 92%;
+    animation:kaapi-tilt 3.4s ease-in-out infinite;
+  }
+  .kaapi-stream{
+    fill:none; stroke:#4A3020; stroke-linecap:round;
+    animation:kaapi-pull 3.4s ease-in-out infinite;
+  }
+  .kaapi-froth ellipse{fill:#E8D5B0; transform-box:fill-box; transform-origin:center;
+    animation:kaapi-foam 1.6s ease-in-out infinite;}
+  .kaapi-froth .b{animation-delay:0.35s; fill:#C4A882;}
+  .kaapi-froth .c{animation-delay:0.7s; fill:#F6EBD4;}
+  .dabara-steam{stroke:#8A6A4A; fill:none; stroke-width:1.1; stroke-linecap:round; opacity:0.45;
     animation:steam 2.8s ease-in-out infinite;}
   .dabara-steam.b{animation-delay:0.7s;}
   .dabara-steam.c{animation-delay:1.3s;}
   @keyframes steam{0%,100%{transform:translateY(0); opacity:0.15;} 50%{transform:translateY(-6px); opacity:0.55;}}
+  @keyframes kaapi-tilt{
+    0%,100%{transform:rotate(-12deg) translate(0, 2px);}
+    48%{transform:rotate(-28deg) translate(4px, -6px);}
+    72%{transform:rotate(-16deg) translate(1px, -1px);}
+  }
+  @keyframes kaapi-pull{
+    0%,100%{stroke-width:5.2;}
+    48%{stroke-width:2.1;}
+    72%{stroke-width:3.6;}
+  }
+  @keyframes kaapi-foam{
+    0%,100%{transform:scale(1,1); opacity:0.7;}
+    50%{transform:scale(1.18,1.35); opacity:1;}
+  }
   .flower-cluster{
     bottom:20%; right:max(28px, calc(50% - 590px));
     width:150px; height:96px; --on:0.42;
@@ -108,7 +141,7 @@
     width:190px; height:130px; --on:0.44;
   }
   @media (max-width:960px){
-    .monument, .elephant-walk, .saree-c, .saree-e, .dabara-set, .mala-v{display:none;}
+    .monument, .elephant-walk, .saree-c, .saree-e, .dabara-set.two, .mala-v{display:none;}
     .saree-ribbon.horizon{height:72px; width:130vw;}
     .saree-ribbon.drop{width:72px;}
   }
@@ -145,6 +178,6 @@
   [data-reveal].is-in{opacity:1; transform:none;}
   @media (prefers-reduced-motion: reduce){
     *{transition:none !important; scroll-behavior:auto !important;}
-    .loader-torana, .loader-teni, .dabara-steam{animation:none !important;}
+    .loader-torana, .loader-teni, .dabara-steam, .kaapi-tumbler, .kaapi-stream, .kaapi-froth ellipse{animation:none !important;}
     [data-reveal]{opacity:1; transform:none;}
   }
