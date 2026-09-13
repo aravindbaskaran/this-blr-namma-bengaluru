@@ -17,7 +17,7 @@
     "variant": {
       "region": "Hubballi-Dharwad-Belagavi",
       "kn": "ಆರಾಮ ಇದ್ದೀರಾ?",
-      "translit": "Aaram idhira?",
+      "translit": "Aarama iddeera?",
       "say": "Aa-ram id-dee-raa"
     }
   },
@@ -57,7 +57,7 @@
     "group": "Everyday essentials",
     "kn": "ಬರ್ತೀನಿ",
     "translit": "Bartini",
-    "say": "Bar-thee-nee",
+    "say": "Bar-tee-nee",
     "meaning": "I'll get going",
     "tip": "The Kannada goodbye - it literally means \"I'll come [back].\""
   },
@@ -136,8 +136,8 @@
   {
     "group": "Food & warmth",
     "kn": "ಊಟ ಆಯ್ತಾ?",
-    "translit": "Oota aaytha?",
-    "say": "Oo-ta aai-tha",
+    "translit": "Oota aayta?",
+    "say": "Oo-ta aai-ta",
     "meaning": "Have you eaten?",
     "tip": "Asked as a genuine greeting, not small talk - answering \"illa\" (no) often gets you fed."
   },
@@ -163,7 +163,7 @@
     "translit": "Hogona",
     "say": "Ho-go-na",
     "meaning": "Let's go",
-    "tip": "The casual, friendly version - said among friends, not to elders."
+    "tip": "The casual, friendly version of \"let's go.\""
   },
   {
     "group": "Everyday essentials",

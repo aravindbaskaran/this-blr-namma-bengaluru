@@ -69,6 +69,24 @@
     ]
   },
   {
+    "id": "sakleshpur",
+    "name": "Sakleshpur",
+    "area": "~4-5 hrs west",
+    "category": "daytrip",
+    "blurb": "Karnataka's coffee country in the Western Ghats, about 220km from Bengaluru - shade-grown Arabica and Robusta estates, pepper vines climbing silver oak, and Manjarabad Fort, a star-shaped hilltop fort Tipu Sultan built in 1792. The old Sakleshpur-Subramanya railway line, threading 57 tunnels and 100-plus bridges, was a famous trek route only while trains weren't running on it - it's since been electrified and returned to active service, so it's a train line again, not a trail.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Fort%20of%20Sakleshpur.jpg"
+    ],
+    "kn": "ಸಕಲೇಶಪುರ",
+    "say": "Sakleshapura",
+    "lat": 12.893,
+    "lng": 75.725,
+    "try": [
+      "A coffee-estate walk and stay, not just a drive-through - pepper vines, cardamom, and the drying yards in season.",
+      "Manjarabad Fort's star-shaped ramparts, 5km out of town - free entry, 8am-6pm."
+    ]
+  },
+  {
     "id": "channapatna",
     "name": "Channapatna",
     "area": "~1.5 hrs south, on the Mysuru road",
@@ -91,7 +109,7 @@
     "name": "Babusingh Thakur Peda",
     "area": "Line Bazaar, Dharwad, ~7-8 hrs north",
     "category": "food",
-    "blurb": "The original Dharwad Peda shop - over 175 years on the same Line Bazaar spot, run by the sixth generation of the same family. The queues for it are reportedly why the street is called Line Bazaar in the first place.",
+    "blurb": "The original Dharwad Peda shop - over 175 years on the same Line Bazaar spot, still run by the same family across multiple generations. The queues for it are reportedly why the street is called Line Bazaar in the first place.",
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Dharwad%20peda.jpg"
     ],
@@ -107,7 +125,7 @@
   {
     "id": "chikmagalur",
     "name": "Chikmagalur",
-    "area": "~4 hrs west",
+    "area": "~5 hrs west",
     "category": "daytrip",
     "blurb": "Karnataka's coffee country - Western Ghats estates, waterfalls, and the trail up Mullayanagiri, the state's highest peak.",
     "photos": [
@@ -127,7 +145,7 @@
     "name": "Udupi & Mangaluru coast",
     "area": "~7 hrs west, or a short flight",
     "category": "daytrip",
-    "blurb": "Krishna Matt's temple kitchens, Malpe's beaches, and a coastal cuisine - neer dosa, kori rotti, Mangalorean seafood - worlds from Bengaluru's own. Eat at Mitra Samaj by the temple, where the Mangalore bun and goli baje reportedly started. Detour up NH66 to Maravanthe, where the road runs on a strip of land with the Arabian Sea on one side and the Souparnika river on the other - a geography not repeated anywhere else in India.",
+    "blurb": "Krishna Matt's temple kitchens, Malpe's beaches, and a coastal cuisine - neer dosa, kori rotti, Mangalorean seafood - worlds from Bengaluru's own. Eat at Mitra Samaj by the temple, where masala dosa was reportedly invented in 1949 - and try the Mangalore bun and goli baje while you're there. Detour up NH66 to Maravanthe, where the road runs on a strip of land with the Arabian Sea on one side and the Souparnika river on the other - a geography not repeated anywhere else in India.",
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Maravanthe%20Beach%281%29.jpg"
     ],
@@ -141,11 +159,29 @@
     ]
   },
   {
+    "id": "melkote",
+    "name": "Melkote (Melukote)",
+    "area": "~3 hrs southwest",
+    "category": "daytrip",
+    "blurb": "A Srivaishnavite pilgrimage town on a rocky hill above Mandya, older than its most famous legend - epigraphic evidence shows the deity was already worshipped here before Ramanuja arrived around 1098 CE and installed it as Tirunarayana. The Vairamudi festival every March/April draws 400,000-plus people to see the deity crowned with the Vairamudi, a diamond crown of unknown donor, alongside two Wodeyar-gifted crowns normally kept under state custody in the Mandya treasury.",
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Gorgious%20Sri%20Cheluvanarayana%20Swamy%20Temple%2C%20Melkote.jpg"
+    ],
+    "kn": "ಮೇಲುಕೋಟೆ",
+    "say": "Melu-kote",
+    "lat": 12.6602,
+    "lng": 76.6475,
+    "try": [
+      "Climb to the Yoga Narasimha temple on the hilltop - believed installed by Prahlada himself, and the better view.",
+      "Time it for Vairamudi habba (March/April) if you want to see all three royal crowns out at once."
+    ]
+  },
+  {
     "id": "yakshagana-kendra",
     "name": "Yakshagana Kendra",
     "area": "Udupi",
     "category": "culture",
-    "blurb": "A training school for Yakshagana, coastal Karnataka's all-night dance-drama - towering headgear, painted faces, a live Bhagavatha narrating epics to drums and cymbals. Ask locally for a mela performance nearby; the season runs roughly January to May.",
+    "blurb": "A training school for Yakshagana, coastal Karnataka's all-night dance-drama - towering headgear, painted faces, a live Bhagavatha narrating epics to drums and cymbals. Ask locally for a mela performance nearby; the season runs roughly November to May.",
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Yakshagana%20Performance.jpg"
     ],
@@ -199,7 +235,7 @@
     "name": "Aihole, Badami & Pattadakal",
     "area": "~9-10 hrs north, pair with Hampi or Vijayapura",
     "category": "daytrip",
-    "blurb": "Three Chalukya-era temple towns on the Malaprabha river - the \"primary school, secondary school and university\" of Indian temple architecture, centuries older than Hampi.",
+    "blurb": "Three Chalukya-era temple towns on the Malaprabha river - the \"primary school, secondary school and university\" of Indian temple architecture, centuries older than Hampi. Pinned here at Badami, the natural base for touring all three.",
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Agastya%20Lake%20with%20Badami%20Temples.jpg"
     ],

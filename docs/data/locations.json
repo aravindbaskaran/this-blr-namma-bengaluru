@@ -36,6 +36,22 @@
     ]
   },
   {
+    "id": "indian-music-experience",
+    "name": "Indian Music Experience",
+    "area": "JP Nagar 7th Phase",
+    "category": "culture",
+    "blurb": "India's first interactive music museum, opened in 2019 with backing from the Brigade Group - three floors and nine galleries running from classical to folk to Bollywood, plus an outdoor Sound Garden where the Humming Stone and Storm Drum turn the science of sound into something you touch.",
+    "kn": "ಇಂಡಿಯನ್ ಮ್ಯೂಸಿಕ್ ಎಕ್ಸ್‌ಪೀರಿಯನ್ಸ್",
+    "say": "Indian Music Experience",
+    "lat": 12.8918,
+    "lng": 77.5837,
+    "personalPick": true,
+    "try": [
+      "Walk the nine galleries in order, classical through Bollywood, before heading outside.",
+      "Play the Sound Garden yourself - Humming Stone and Storm Drum are hands-on, not behind glass."
+    ]
+  },
+  {
     "id": "chowdiah",
     "name": "Chowdiah Memorial Hall",
     "area": "Malleswaram",
@@ -69,6 +85,22 @@
     "try": [
       "Do the paved lakeside loop, then the open gym if you want a short daily circuit.",
       "Go at dusk when the water takes the last of the light."
+    ]
+  },
+  {
+    "id": "map-museum",
+    "name": "Museum of Art & Photography (MAP)",
+    "area": "Kasturba Road",
+    "category": "culture",
+    "blurb": "A private museum built on Abhishek Poddar's decades of collecting, opened February 2023 on Kasturba Road - five floors and 44,000 sq ft carrying Indian art, textiles, photography and design from the 12th century to now, with a rooftop cafe to end the visit.",
+    "kn": "ಮ್ಯೂಸಿಯಂ ಆಫ್ ಆರ್ಟ್ ಅಂಡ್ ಫೋಟೋಗ್ರಫಿ",
+    "say": "M A P",
+    "lat": 12.9745,
+    "lng": 77.5969,
+    "personalPick": true,
+    "try": [
+      "Start with the permanent collection, 12th century onward, then whatever's showing on top of it.",
+      "End at the rooftop cafe - the building is meant to be climbed floor by floor, not rushed."
     ]
   },
   {
@@ -108,6 +140,22 @@
     ]
   },
   {
+    "id": "mane-holige",
+    "name": "Bhaskar's Mane Holige",
+    "area": "D.V.G Road, Basavanagudi",
+    "category": "food",
+    "blurb": "Started in 2015 on D.V.G Road, next to Upahara Darshini - self-described as Bangalore's first shop built entirely around holige (puran poli). Grown since into multiple own and franchise outlets across the city, plus outposts in Hubballi, Mangaluru and Mumbai.",
+    "kn": "ಮನೆ ಹೋಳಿಗೆ",
+    "say": "Mane Holige",
+    "lat": 12.939287,
+    "lng": 77.571359,
+    "personalPick": true,
+    "try": [
+      "Try a few varieties beyond the classic - a wide holige menu is the whole point.",
+      "D.V.G Road, next to Upahara Darshini - the original the rest of the chain grew out of."
+    ]
+  },
+  {
     "id": "corner-house",
     "name": "Corner House",
     "area": "Residency Road (and branches citywide)",
@@ -126,17 +174,33 @@
     ]
   },
   {
+    "id": "vidhana-soudha",
+    "name": "Vidhana Soudha",
+    "area": "Ambedkar Veedhi, Sampangi Rama Nagara",
+    "category": "culture",
+    "blurb": "India's largest legislative building, built 1952-56 in granite and porphyry because Kengal Hanumanthaiah wanted it to read as a temple, not a bungalow - Neo-Dravidian in style, floodlit end to end on Sundays and public holidays. Guided interior walking tours only opened to the public in June 2025.",
+    "kn": "ವಿಧಾನ ಸೌಧ",
+    "say": "Vi-dhaana Sow-dha",
+    "lat": 12.9796,
+    "lng": 77.5906,
+    "personalPick": true,
+    "try": [
+      "Catch it floodlit on a Sunday evening or a public holiday - the whole facade lights up.",
+      "Book the guided walking tour (Sundays, 2nd/4th Saturdays) for the interior - Aadhaar and advance registration required."
+    ]
+  },
+  {
     "id": "ctr",
     "name": "CTR (Shri Sagar)",
     "area": "Malleswaram",
     "category": "food",
-    "blurb": "Opened as Shree Sagar in 1950, informally renamed Central Tiffin Room by regulars - the benne masale dosa reference point everyone else in the city gets compared to.",
+    "blurb": "Opened as Central Tiffin Room in the 1920s by Y.V. Subramanyam and his brothers - sold and re-established as Shree Sagar in the 1950s, then formally renamed Shri Sagar in 1992 by a new owner. Regulars still just call it CTR: the benne masale dosa reference point everyone else in the city gets compared to.",
     "kn": "ಸಿ.ಟಿ.ಆರ್",
     "say": "C T R",
     "lat": 13.0067,
     "lng": 77.5813,
     "try": [
-      "Benne masale dosa at the counter, standing, the way regulars have since 1950.",
+      "Benne masale dosa at the counter, standing - a tradition here across generations, whatever the sign out front said that decade.",
       "Don't expect seating theatre — this is a tiffin room that got famous."
     ]
   },
@@ -153,6 +217,22 @@
     "try": [
       "Four items only: idli, vada, kara bath, kesari bath. Order all of them.",
       "Drink the kaapi standing; that's the whole format."
+    ]
+  },
+  {
+    "id": "tipu-palace",
+    "name": "Tipu Sultan's Summer Palace",
+    "area": "Chamarajpet",
+    "category": "culture",
+    "blurb": "Started by Hyder Ali in 1781 inside Bangalore Fort's walls, finished by Tipu Sultan a decade later - an all-teakwood Indo-Islamic palace that served as the British secretariat until 1868. Now an ASI-run museum with Tipu-era weapons, jewellery, and a reproduction of his mechanical Tiger Throne.",
+    "kn": "ಟಿಪ್ಪು ಸುಲ್ತಾನನ ಬೇಸಿಗೆ ಅರಮನೆ",
+    "say": "Tippu Sultaana Besige Aramane",
+    "lat": 12.9595,
+    "lng": 77.5736,
+    "personalPick": true,
+    "try": [
+      "The museum upstairs - Tipu-era weapons, jewellery, and a reproduction of his mechanical Tiger Throne.",
+      "The palace still sits inside what's left of Bangalore Fort's walls - walk the old fort area while you're there."
     ]
   },
   {
@@ -186,6 +266,22 @@
     ]
   },
   {
+    "id": "freedom-park",
+    "name": "Freedom Park",
+    "area": "Central Business District, near City Railway Station",
+    "category": "culture",
+    "blurb": "Built on the site of Bengaluru's old Central Jail - the same walls that held Atal Bihari Vajpayee and L.K. Advani during the 1975 Emergency - and reopened as a public park in 2008. Part of the grounds is still formally set aside for protest; it hosted Anna Hazare's 2011 Lokpal fast. Freedom-fighter sculptures and a central tower anchor the rest of the space.",
+    "kn": "ಸ್ವಾತಂತ್ರ್ಯ ಉದ್ಯಾನ",
+    "say": "Swatantrya Udyana",
+    "lat": 12.9773,
+    "lng": 77.5818,
+    "personalPick": true,
+    "try": [
+      "Walk past the freedom-fighter sculptures and the central tower before deciding what you think of the space.",
+      "Check if anything's being protested that week - part of the park is formally kept for it, not just tolerated."
+    ]
+  },
+  {
     "id": "mangalore-pearl",
     "name": "Mangalore Pearl",
     "area": "Ulsoor",
@@ -198,6 +294,22 @@
     "try": [
       "Go for kori rotti or a fish curry if you want Mangalorean cooking without the drive.",
       "It's home-style, not plated for photographs."
+    ]
+  },
+  {
+    "id": "ngma",
+    "name": "National Gallery of Modern Art (NGMA)",
+    "area": "Palace Road",
+    "category": "culture",
+    "blurb": "Housed in Manikyavelu Mansion, a century-old Palace Road bungalow first built for merchant Haji Sir Ismail Sait - restored and opened as NGMA's southern branch in 2009. About 500 works across two floors, 18th century to now: Raja Ravi Varma, Jamini Roy, Amrita Sher-Gil and Tagore among them.",
+    "kn": "ರಾಷ್ಟ್ರೀಯ ಆಧುನಿಕ ಕಲಾ ಗ್ಯಾಲರಿ",
+    "say": "Raashtreeya Aadhunika Kala Gallery",
+    "lat": 12.989705,
+    "lng": 77.58815,
+    "personalPick": true,
+    "try": [
+      "Two floors, 18th century to now - Raja Ravi Varma and Amrita Sher-Gil are the names to look for.",
+      "The mansion itself is worth a slow look - a century-old Palace Road bungalow, not a purpose-built gallery."
     ]
   },
   {
@@ -231,9 +343,25 @@
     ]
   },
   {
+    "id": "visvesvaraya-museum",
+    "name": "Visvesvaraya Industrial and Technological Museum",
+    "area": "Kasturba Road",
+    "category": "culture",
+    "blurb": "Opened in 1962 on Kasturba Road, named for engineer Sir M. Visvesvaraya - hands-on galleries running from a jet engine and Tesla coils to a 1:1 Wright Flyer replica and an animatronic Spinosaurus, plus a planetarium on the same grounds.",
+    "kn": "ವಿಶ್ವೇಶ್ವರಯ್ಯ ಕೈಗಾರಿಕಾ ಮತ್ತು ತಾಂತ್ರಿಕ ವಸ್ತುಸಂಗ್ರಹಾಲಯ",
+    "say": "Vishveshwaraya Museum",
+    "lat": 12.9751,
+    "lng": 77.5964,
+    "personalPick": true,
+    "try": [
+      "Fun Science and the Electro Technic gallery - Tesla coils and Van de Graaff generators, hands-on.",
+      "The Wright Flyer replica and the animatronic Spinosaurus are the two that stop kids in their tracks."
+    ]
+  },
+  {
     "id": "halli-mane",
     "name": "Halli Mane",
-    "area": "JP Nagar / Malleswaram",
+    "area": "JP Nagar (also a Malleswaram branch)",
     "category": "food",
     "blurb": "Jolada rotti, ennegayi, and badanekayi palya served with a real village-mess feel - the kind of place people drive across the city for.",
     "kn": "ಹಳ್ಳಿ ಮನೆ",
@@ -258,6 +386,22 @@
     "try": [
       "The cheap Jolada Rotti Oota: two rotis, rice, sambar, rasam, curd.",
       "VV Puram after sunset if you want the street as well as the plate."
+    ]
+  },
+  {
+    "id": "rangoli-metro-art-center",
+    "name": "Rangoli Metro Art Center",
+    "area": "MG Road",
+    "category": "culture",
+    "blurb": "Built by BMRCL on top of the MG Road metro station and opened in 2013 - three galleries (Vismaya, Chaya, Belaku), a kids' play area called Chilipili, an upper walkway called Hoovina Haadi, and an open-air performance space called Bayalu, free to walk through.",
+    "kn": "ರಂಗೋಲಿ ಮೆಟ್ರೋ ಕಲಾ ಕೇಂದ್ರ",
+    "say": "Rangoli Metro Kala Kendra",
+    "lat": 12.9755,
+    "lng": 77.6068,
+    "personalPick": true,
+    "try": [
+      "Walk Hoovina Haadi, the upper walkway, then drop into whichever of the three galleries has a show up.",
+      "Free and partly open-air - an easy stop before or after an MG Road evening."
     ]
   },
   {
@@ -291,11 +435,27 @@
     ]
   },
   {
+    "id": "bannerghatta",
+    "name": "Bannerghatta National Park",
+    "area": "~22km south",
+    "category": "nature",
+    "blurb": "Established 1970, declared a national park in 1974 - 260 sq km of scrub and deciduous forest home to elephants, tigers, leopards and sloth bears, and part of a corridor linking the BR Hills and Sathyamangalam forests. The attached Biological Park (2002) runs the 6km safari loop most visitors actually come for.",
+    "kn": "ಬನ್ನೇರುಘಟ್ಟ ರಾಷ್ಟ್ರೀಯ ಉದ್ಯಾನ",
+    "say": "Bannerughatta Raashtreeya Udyana",
+    "lat": 12.8008,
+    "lng": 77.5756,
+    "personalPick": true,
+    "try": [
+      "The safari loop in the Biological Park - elephants, tigers and leopards from inside the bus.",
+      "Go early; it's a real forest corridor to BR Hills, not a zoo enclosure loop."
+    ]
+  },
+  {
     "id": "third-wave",
     "name": "Third Wave Coffee Roasters",
     "area": "Koramangala",
     "category": "food",
-    "blurb": "Founded 2016 by two childhood friends who left tech jobs to chase specialty coffee - the flagship that helped start Bengaluru's third-wave scene, roasting beans sourced from Chikmagalur.",
+    "blurb": "Founded 2016 by three childhood friends chasing specialty coffee in an industry still in its infancy in India - the flagship that helped start Bengaluru's third-wave scene, roasting beans sourced from Chikmagalur.",
     "kn": "ಥರ್ಡ್ ವೇವ್ ಕಾಫಿ ರೋಸ್ಟರ್ಸ್",
     "say": "Third Wave Coffee Roasters",
     "lat": 12.9352,
@@ -303,6 +463,22 @@
     "try": [
       "A single-origin pour-over if you want specialty, not filter-kaapi nostalgia.",
       "Laptop-friendly; pick a quieter outlet if you're working."
+    ]
+  },
+  {
+    "id": "attara-kacheri",
+    "name": "Attara Kacheri (Karnataka High Court)",
+    "area": "Dr. B.R. Ambedkar Road, opposite Vidhana Soudha",
+    "category": "culture",
+    "blurb": "Built 1864-68 by Richard Hieram Sankey as the Public Offices Building - Neoclassical, gneiss and brick under red-ochre plaster, twelve Ionic columns a side. The name comes from Chikka Devaraja Wadiyar's 18-department (attara-kacheri) Mughal-style administration, adopted in 1699. Became the Karnataka High Court's seat once the legislature and secretariat moved to Vidhana Soudha in 1956.",
+    "kn": "ಅಟ್ಟಾರ ಕಚೇರಿ",
+    "say": "Attara Kacheri",
+    "lat": 12.9779,
+    "lng": 77.5927,
+    "personalPick": true,
+    "try": [
+      "Look at it beside Vidhana Soudha across the road - same street, two very different colonial-to-independence stories.",
+      "It's a working High Court, not a museum - view from outside, don't expect to walk in."
     ]
   },
   {
@@ -336,6 +512,22 @@
     ]
   },
   {
+    "id": "someshwara-temple-halasuru",
+    "name": "Halasuru Someshwara Temple",
+    "area": "Halasuru (Ulsoor)",
+    "category": "culture",
+    "blurb": "Chola-era origins from around the 12th-13th century, expanded through the Hoysala and Vijayanagara periods, with major additions under Kempe Gowda II - one of the city's oldest surviving temples, in the Vijayanagara style. Its own founding story splits in two: one account has Kempegowda I dreaming of Someshwara after a hunting trip, another credits a different local chieftain, Jayappa Gowda.",
+    "kn": "ಹಲಸೂರು ಸೋಮೇಶ್ವರ ದೇವಸ್ಥಾನ",
+    "say": "Halasuru Someshwara Devasthana",
+    "lat": 12.9756,
+    "lng": 77.6239,
+    "personalPick": true,
+    "try": [
+      "The pillared mantapa carvings - Vijayanagara-era work, older than most of what's left in the city centre.",
+      "Pair it with Ulsoor Lake, a short walk away, for one Halasuru morning."
+    ]
+  },
+  {
     "id": "asha-sweets",
     "name": "Asha Sweet Center",
     "area": "Multiple outlets citywide",
@@ -353,16 +545,32 @@
   {
     "id": "atta-galatta",
     "name": "Atta Galatta",
-    "area": "Koramangala",
+    "area": "Indiranagar",
     "category": "craft",
-    "blurb": "A bookstore built around Indian and regional-language writing, with a steady calendar of readings and open mics - one of the city's real literary hubs, not just a shop.",
+    "blurb": "A bookstore built around Indian and regional-language writing, with a steady calendar of readings and open mics - one of the city's real literary hubs, not just a shop. Moved here from Koramangala in 2022.",
     "kn": "ಅಟ್ಟ ಗಲಾಟ",
     "say": "Atta Galatta",
-    "lat": 12.9351,
-    "lng": 77.6217,
+    "lat": 12.9801,
+    "lng": 77.6394,
     "try": [
       "Browse Indian and regional-language shelves; check what's on the events calendar.",
       "It's a bookshop that wants you to linger, not a cafe with books."
+    ]
+  },
+  {
+    "id": "panchalinga-nageshwara-temple",
+    "name": "Sri Panchalinga Nageshwara Temple",
+    "area": "Begur, beside Begur Lake",
+    "category": "culture",
+    "blurb": "Five Shiva lingas in one complex - Nageshwara and Nagareshwara, the oldest, were built by Ganga-dynasty rulers in the 9th-10th centuries. An inscription here from around 890 CE records a battle at 'Bengaluru' - the earliest known appearance of the city's name, centuries before Kempe Gowda.",
+    "kn": "ಶ್ರೀ ಪಂಚಲಿಂಗ ನಾಗೇಶ್ವರ ದೇವಸ್ಥಾನ",
+    "say": "Sri Panchalinga Nageshwara Devasthana",
+    "lat": 12.8745,
+    "lng": 77.6309,
+    "personalPick": true,
+    "try": [
+      "Find the 890 CE inscription - the oldest known written record of the name 'Bengaluru.'",
+      "Five lingas in one complex; take the time to see all five, not just the main shrine."
     ]
   },
   {
@@ -370,7 +578,7 @@
     "name": "Blossom Book House",
     "area": "Church Street",
     "category": "craft",
-    "blurb": "New and secondhand books since 1962, several floors deep, with a reputation for rare and out-of-print finds that keeps collectors coming back.",
+    "blurb": "New and secondhand books since 2002, several floors deep, with a reputation for rare and out-of-print finds that keeps collectors coming back.",
     "kn": "ಬ್ಲಾಸಂ ಬುಕ್ ಹೌಸ್",
     "say": "Blossom Book House",
     "lat": 12.9757,
@@ -378,6 +586,22 @@
     "try": [
       "Go upstairs for secondhand and odd finds; Church Street is the hunt.",
       "Budget time — several floors deep since 1962."
+    ]
+  },
+  {
+    "id": "gavi-gangadhareshwara-temple",
+    "name": "Sri Gavi Gangadhareshwara Swamy Temple",
+    "area": "Gavipuram",
+    "category": "culture",
+    "blurb": "A cave temple carved from a single natural rock, renovated by Kempe Gowda I in the 16th century after his release from a five-year imprisonment. Its real trick is astronomical: on Makar Sankranti and a few other dates, sunlight threads between the horns of the Nandi outside and lands directly on the linga inside the cave.",
+    "kn": "ಗವಿ ಗಂಗಾಧರೇಶ್ವರ ದೇವಸ್ಥಾನ",
+    "say": "Gavi Gangadhareshwara Devasthana",
+    "lat": 12.9482,
+    "lng": 77.563,
+    "personalPick": true,
+    "try": [
+      "Time a visit for Makar Sankranti if you can - the sunlight-through-Nandi's-horns alignment is the whole point.",
+      "Look at the monolithic stone discs in the forecourt; nobody's fully explained what they were for."
     ]
   },
   {
@@ -411,6 +635,22 @@
     ]
   },
   {
+    "id": "nandi-tirtha-kalyani",
+    "name": "Sri Dakshinamukha Nandi Tirtha Kalyaani Kshetra",
+    "area": "2nd Temple Street, Malleswaram",
+    "category": "culture",
+    "blurb": "A 400-year-old shrine that vanished under sand and silt as Malleswaram grew around it, with no gopuram tower to mark it from the road - only excavated back into view in 1997. Its south-facing stone Nandi has water flowing continuously from its mouth; where the water comes from is still unexplained.",
+    "kn": "ಶ್ರೀ ದಕ್ಷಿಣಮುಖ ನಂದಿ ತೀರ್ಥ ಕಲ್ಯಾಣಿ ಕ್ಷೇತ್ರ",
+    "say": "Dakshinamukha Nandi Teertha Kalyani Kshetra",
+    "lat": 13.005,
+    "lng": 77.5716,
+    "personalPick": true,
+    "try": [
+      "Find it below street level, opposite the Gangamma temple - there's no tower to spot it by.",
+      "Watch the water flow from the Nandi's mouth; nobody knows the source."
+    ]
+  },
+  {
     "id": "agara-lake",
     "name": "Agara Lake",
     "area": "HSR Layout",
@@ -438,6 +678,22 @@
     "try": [
       "A short walk maintained by the neighbourhood, not a destination park.",
       "Treat it as a local pause if you're already in JP Nagar."
+    ]
+  },
+  {
+    "id": "bull-temple",
+    "name": "Dodda Basavana Gudi (Bull Temple)",
+    "area": "Bull Temple Road, Basavanagudi",
+    "category": "culture",
+    "blurb": "Built by Kempe Gowda I in 1537 - the world's largest Nandi monolith, 4.5m tall and 6.5m long, carved from a single block of granite. The neighbourhood takes its name directly from this temple: basava is bull, gudi is temple. Still the anchor of Kadlekai Parishe every November-December, when farmers pile the season's first groundnut harvest around it.",
+    "kn": "ದೊಡ್ಡ ಬಸವನ ಗುಡಿ",
+    "say": "Dodda Basavana Gudi",
+    "lat": 12.9429,
+    "lng": 77.5682,
+    "personalPick": true,
+    "try": [
+      "Stand close enough to take in the scale - one block of granite, 4.5m tall.",
+      "Come back for Kadlekai Parishe if you're here between November and December."
     ]
   },
   {
@@ -471,6 +727,22 @@
     ]
   },
   {
+    "id": "kote-venkataramana-temple",
+    "name": "Kote Sri Prasanna Venkataramana Swamy Temple",
+    "area": "Krishnarajendra Road, Chamarajpet (old Bangalore Fort)",
+    "category": "culture",
+    "blurb": "Built in 1689 by Chikka Devaraja Wadiyar in Dravidian-Vijayanagara style, next to what was once the Wodeyar residence and later Tipu Sultan's palace - kote means fort in Kannada, and this is the temple inside the old one. Vaikuntha Ekadashi here draws crowds every year.",
+    "kn": "ಕೋಟೆ ಶ್ರೀ ಪ್ರಸನ್ನ ವೆಂಕಟರಮಣ ಸ್ವಾಮಿ ದೇವಸ್ಥಾನ",
+    "say": "Kote Sri Prasanna Venkataramana Swamy Devasthana",
+    "lat": 12.9596,
+    "lng": 77.5741,
+    "personalPick": true,
+    "try": [
+      "Pair it with Tipu Sultan's Summer Palace next door - same old fort, two very different buildings.",
+      "Time it for Vaikuntha Ekadashi if you want the temple at full crowd."
+    ]
+  },
+  {
     "id": "chitrakala-parishath",
     "name": "Karnataka Chitrakala Parishath",
     "area": "Kumara Krupa Road",
@@ -483,6 +755,22 @@
     "try": [
       "The Mysore painting rooms in the permanent collection, then whichever show is up.",
       "Eighteen galleries: pick two, don't march the lot."
+    ]
+  },
+  {
+    "id": "banashankari-devi-temple",
+    "name": "Shree Banashankari Devi Temple",
+    "area": "Banashankari (Kanakapura Road)",
+    "category": "culture",
+    "blurb": "Founded in 1915 when a devotee (sources give his name as either Subramanya Shetty or Somanna Shetty) brought the deity from the original 7th-century Banashankari Amma temple near Badami and installed her here. The south Bengaluru neighbourhood took its name from the temple, not the other way around.",
+    "kn": "ಶ್ರೀ ಬನಶಂಕರಿ ದೇವಿ ದೇವಸ್ಥಾನ",
+    "say": "Sri Banashankari Devi Devasthana",
+    "lat": 12.916,
+    "lng": 77.5731,
+    "personalPick": true,
+    "try": [
+      "Note the Badami connection - the deity here was carried from the 7th-century original near Badami in 1915.",
+      "The Banashankari neighbourhood and metro station both take their name from this temple, not the reverse."
     ]
   },
   {
@@ -503,16 +791,32 @@
   {
     "id": "thoms-bakery",
     "name": "Thom's Bakery",
-    "area": "Multiple outlets",
+    "area": "Frazer Town (and other outlets)",
     "category": "food",
     "blurb": "The city's reference point for the cream bun - an Iyengar-bakery classic, essentially a filled doughnut topped with coconut flakes and tutti-frutti, not a Western cream bun at all.",
     "kn": "ಥಾಮ್ಸ್ ಬೇಕರಿ",
     "say": "Thoms Bakery",
-    "lat": 12.9634,
-    "lng": 77.5951,
+    "lat": 12.9915,
+    "lng": 77.6142,
     "try": [
       "The cream bun is the city's reference version — that's the order.",
       "Take away; this is a bakery queue."
+    ]
+  },
+  {
+    "id": "st-marks-cathedral",
+    "name": "CSI St. Mark's Cathedral",
+    "area": "West end of MG Road, MacIver Town",
+    "category": "culture",
+    "blurb": "Foundation laid 1808, completed 1812, consecrated 1816 - English Baroque, modelled on St Paul's Cathedral in London, with a dome and semi-circular chancel. Church of South India (Anglican tradition) today, one of the oldest churches still standing in the city.",
+    "kn": "ಸೇಂಟ್ ಮಾರ್ಕ್ಸ್ ಕೆಥೆಡ್ರಲ್",
+    "say": "St. Mark's Cathedral",
+    "lat": 12.976,
+    "lng": 77.6002,
+    "personalPick": true,
+    "try": [
+      "Look up at the dome and chancel - a deliberate small echo of St Paul's in London.",
+      "One of the oldest churches standing in the city; check service and visiting hours before you go."
     ]
   },
   {
@@ -546,6 +850,22 @@
     ]
   },
   {
+    "id": "st-marys-basilica",
+    "name": "St. Mary's Basilica",
+    "area": "Shivajinagar",
+    "category": "culture",
+    "blurb": "Started as a thatched chapel in 1803, rebuilt in the current Gothic form between 1856 and 1882, and raised to Basilica status by Pope Paul VI in 1973. The September feast draws crowds estimated at half a million over ten days, ending in a chariot procession.",
+    "kn": "ಸಂತ ಮೇರಿ ಬೆಸಿಲಿಕಾ",
+    "say": "Santha Mary Basilica",
+    "lat": 12.9842,
+    "lng": 77.6039,
+    "personalPick": true,
+    "try": [
+      "Time it for the September feast if you want the chariot procession and the crowd it draws.",
+      "The Gothic structure took 26 years to build (1856-1882) - worth a slow look at the facade."
+    ]
+  },
+  {
     "id": "karnataka-bhel-house",
     "name": "Karnataka Bhel House",
     "area": "Chamarajapet",
@@ -558,6 +878,22 @@
     "try": [
       "One thing: Bengaluru-style bhel. That's the visit.",
       "Uma Theatre Road, standing, then move on."
+    ]
+  },
+  {
+    "id": "st-patricks-church",
+    "name": "St Patrick's Church",
+    "area": "Brigade Road",
+    "category": "culture",
+    "blurb": "Foundation laid 1841, completed 1844, Gothic in style - built for the Irish soldiers garrisoned nearby, and named after their patron saint even though it was formally dedicated to the Assumption. Still standing on Brigade Road after renovations in 2000 and 2012.",
+    "kn": "ಸೇಂಟ್ ಪ್ಯಾಟ್ರಿಕ್ ಚರ್ಚ್",
+    "say": "St. Patrick's Church",
+    "lat": 12.9705,
+    "lng": 77.6059,
+    "personalPick": true,
+    "try": [
+      "Note the mismatch - dedicated to the Assumption, but the Irish garrison's name for it is the one that stuck.",
+      "Brigade Road right outside; easy to fold into an evening on the strip."
     ]
   },
   {
@@ -593,6 +929,22 @@
     ]
   },
   {
+    "id": "st-francis-xavier-cathedral",
+    "name": "St. Francis Xavier's Cathedral",
+    "area": "Cleveland Town",
+    "category": "culture",
+    "blurb": "The first church here went up in 1851 under French Paris Foreign Missions Society priests; the current building was inaugurated in 1932. Became the cathedral seat when the Bangalore diocese split off from Mysore in 1940 - its twin facade domes were added for the platinum jubilee in 2009.",
+    "kn": "ಸೇಂಟ್ ಫ್ರಾನ್ಸಿಸ್ ಕ್ಸೇವಿಯರ್ ಕೆಥೆಡ್ರಲ್",
+    "say": "St. Francis Xavier's Cathedral",
+    "lat": 12.9927,
+    "lng": 77.6113,
+    "personalPick": true,
+    "try": [
+      "Look for the two domes on the facade - a 2009 addition, not part of the 1932 original.",
+      "It's the Bangalore diocese's cathedral, not just a parish church, since 1940."
+    ]
+  },
+  {
     "id": "mudde-mess",
     "name": "Mudde Madappa Mess",
     "area": "Gandhi Nagar, near Majestic",
@@ -612,14 +964,30 @@
     "name": "Halli Jonne Biriyani",
     "area": "Jayanagar",
     "category": "food",
-    "blurb": "The donne biryani style done properly - short-grain jonne rice, a green masala base, and the biryani served hot in an areca-leaf donne, not a foil box.",
+    "blurb": "The donne biryani style done properly - their own 'Jonne rice' blend (seeraga samba, slow-cooked), a green masala base, and the biryani served hot in an areca-leaf donne, not a foil box.",
     "kn": "ಹಳ್ಳಿ ಜೋಳ ಬಿರಿಯಾನಿ",
     "say": "Halli Jo-ne Biriyani",
     "lat": 12.925,
     "lng": 77.5938,
     "try": [
-      "Donne biryani in an areca-leaf cup: short-grain jonne rice, green masala.",
+      "Donne biryani in an areca-leaf cup: their seeraga samba 'Jonne rice,' green masala.",
       "Eat it hot in the donne, not packed for later."
+    ]
+  },
+  {
+    "id": "holy-trinity-church",
+    "name": "CSI Holy Trinity Church",
+    "area": "Trinity Circle, east end of MG Road",
+    "category": "culture",
+    "blurb": "Built by the East India Company from 1848, consecrated in 1852 - English Renaissance style, seats 700, and billed as the largest military church in south India. The stained glass and the baptismal font came from London, and even the bell was cast there, at the Mears Foundry, in 1847.",
+    "kn": "ಹೋಲಿ ಟ್ರಿನಿಟಿ ಚರ್ಚ್",
+    "say": "Holy Trinity Church",
+    "lat": 12.9724,
+    "lng": 77.6208,
+    "personalPick": true,
+    "try": [
+      "Find the stained-glass baptism window - shipped in from London along with the font.",
+      "Trinity Circle is the giveaway - the church gave the junction its name, not the other way round."
     ]
   },
   {
@@ -641,11 +1009,27 @@
     ]
   },
   {
+    "id": "st-johns-church",
+    "name": "C.S.I. St. John's Church",
+    "area": "St. John's Hill, Cleveland Town",
+    "category": "culture",
+    "blurb": "Ground broken in 1853 by Rev. R. Posnett, an assistant chaplain at St. Mark's who wanted a parish nearer the old 'Mootoocherry' area - completed by 1857, giving St. John's Hill its name. The fourth-oldest Protestant church in the city, with a distinctive red facade and steeple.",
+    "kn": "ಸೇಂಟ್ ಜಾನ್ಸ್ ಚರ್ಚ್",
+    "say": "St. John's Church",
+    "lat": 12.9918,
+    "lng": 77.613,
+    "personalPick": true,
+    "try": [
+      "The red facade and steeple are the landmark - hard to miss once you know the hill.",
+      "Fourth-oldest Protestant church in the city; go in expecting quiet, not a headline stop."
+    ]
+  },
+  {
     "id": "toit",
     "name": "Toit Brewpub",
     "area": "Indiranagar",
     "category": "night",
-    "blurb": "One of the city's original craft breweries, credited with starting Bengaluru's microbrewery culture in the 2010s.",
+    "blurb": "One of the city's first craft breweries, opened in 2010 as the microbrewery boom was just getting started here.",
     "kn": "ಟೊಯ್ಟ್",
     "say": "Toyt",
     "lat": 12.9716,
@@ -660,7 +1044,7 @@
     "name": "Amrut Distillery",
     "area": "Kambipura, Mysore Road",
     "category": "night",
-    "blurb": "The distillery behind India's first internationally launched single malt, Amrut Fusion, debuted in Glasgow in 2004 - Bengaluru's heat actually speeds up the ageing. Tours exist but are inconsistent; call ahead rather than showing up.",
+    "blurb": "The distillery behind India's first internationally launched single malt, which debuted in Glasgow in 2004 - Bengaluru's heat actually speeds up the ageing. Amrut Fusion, the label's best-known expression, followed in 2009. Tours exist but are inconsistent; call ahead rather than showing up.",
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Amrut%20singlemalt%20whisky%202013-06-11%2018-39.jpg"
     ],
@@ -674,21 +1058,68 @@
     ]
   },
   {
-    "id": "commercial",
-    "name": "Commercial Street & Chickpet",
-    "area": "Shivajinagar / Chickpet",
+    "id": "jumma-masjid",
+    "name": "Jumma Masjid (Sangeen Jamia)",
+    "area": "Jumma Masjid Road, Shivajinagar",
+    "category": "culture",
+    "blurb": "Bangalore's oldest mosque, built in 1790 by Haji Qazi Abdul Quddus Saheb with construction material brought specially from Srirangapatna under Tipu Sultan's patronage. Damaged by cannon fire during the Mysore wars and rebuilt in 1836 - still standing on the road that carries its name.",
+    "kn": "ಜುಮ್ಮಾ ಮಸೀದಿ",
+    "say": "Jumma Masjid",
+    "lat": 12.9826,
+    "lng": 77.6059,
+    "personalPick": true,
+    "try": [
+      "Note the Tipu Sultan connection - the stone came from Srirangapatna on his orders.",
+      "The road it's on is named after it, not the reverse - a sign of how long it's anchored the area."
+    ]
+  },
+  {
+    "id": "commercial-street",
+    "name": "Commercial Street",
+    "area": "Shivajinagar",
     "category": "craft",
-    "blurb": "Two markets, two moods: Commercial Street for fashion and export surplus, Chickpet's lanes for silk, bangles, and spice by weight.",
+    "blurb": "The city's fashion and export-surplus strip - clothing stores, footwear, and export-reject bargains packed into a few pedestrian-heavy lanes.",
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Commercial%20Street%2C%20Bangalore%20(7870991636).jpg"
     ],
-    "kn": "ಚಿಕ್ಕಪೇಟೆ",
-    "say": "Chik-ka-pete",
+    "kn": "ಕಮರ್ಷಿಯಲ್ ಸ್ಟ್ರೀಟ್",
+    "say": "Commercial Street",
     "lat": 12.9828,
     "lng": 77.6096,
     "try": [
-      "Commercial Street for clothes and surplus; Chickpet for fabric, jewellery, and old-city density.",
-      "Two markets, two moods — don't treat them as one mall."
+      "Walk it for clothes, shoes and export surplus, not a boutique browse.",
+      "Pair it with Chickpet a few km away for the two-mood contrast."
+    ]
+  },
+  {
+    "id": "chickpet",
+    "name": "Chickpet",
+    "area": "Old Bengaluru pete",
+    "category": "craft",
+    "blurb": "The old city's wholesale lanes - silk, bangles, and spice sold by weight, with a density Commercial Street doesn't try to match.",
+    "kn": "ಚಿಕ್ಕಪೇಟೆ",
+    "say": "Chik-ka-pete",
+    "lat": 12.9648,
+    "lng": 77.5897,
+    "try": [
+      "Go for fabric, bangles and spice by weight - old-city density, not a mall aisle.",
+      "Pair it with Commercial Street a few km away for the two-mood contrast."
+    ]
+  },
+  {
+    "id": "lakeview-milk-bar",
+    "name": "Lakeview Milk Bar",
+    "area": "MG Road (moved here in the 1970s)",
+    "category": "food",
+    "blurb": "Started in 1930 by an Englishman, James Meadow Charles, opposite Ulsoor Lake - where 1 MG Mall now stands - selling three flavours of ice cream from carts cycled around the city. Sold to a 19-year-old, Vrajlal Jamnadas, when Charles left for England in 1947; moved to its current MG Road spot in the 1970s.",
+    "kn": "ಲೇಕ್‌ವ್ಯೂ ಮಿಲ್ಕ್ ಬಾರ್",
+    "say": "Lakeview Milk Bar",
+    "lat": 12.976,
+    "lng": 77.6037,
+    "personalPick": true,
+    "try": [
+      "Order off the original three flavours - vanilla, chocolate, raspberry - before the newer menu.",
+      "Remember the name's origin: Ulsoor Lake used to be visible from the first branch, long before the MG Road move."
     ]
   },
   {
@@ -733,6 +1164,22 @@
     ]
   },
   {
+    "id": "koshys-restaurant",
+    "name": "Koshy's",
+    "area": "St. Mark's Road",
+    "category": "food",
+    "blurb": "P.O. Koshy opened a bakery here in 1940; the restaurant went up next to it in 1952 and became the city's best-known intellectual and political hangout - writers, artists and more than a few chief ministers have held court in its booths. Third-generation Koshys, Prem and Santosh, still run it. Same family as Koshy's Automatic Bakery, but a different venue.",
+    "kn": "ಕೋಶೀಸ್",
+    "say": "Koshy's",
+    "lat": 12.9756,
+    "lng": 77.6015,
+    "personalPick": true,
+    "try": [
+      "Sit in for a slow breakfast or coffee - the booths, not a takeaway counter, are the point here.",
+      "Notice who's at the next table before assuming it's just a cafe; this is where the city's political and literary crowd still meets."
+    ]
+  },
+  {
     "id": "iskcon",
     "name": "ISKCON Temple Bangalore",
     "area": "Rajajinagar",
@@ -753,6 +1200,22 @@
     "try": [
       "Evening aarti if you want the hill complex at full volume.",
       "Open Skip the crowd for Dodda Ganapathi if you want a quieter temple."
+    ]
+  },
+  {
+    "id": "shivaji-military-hotel",
+    "name": "Shivaji Military Hotel",
+    "area": "45th Cross, Jayanagar 8th Block",
+    "category": "food",
+    "blurb": "Opened in 1935 in Nagarthapet by a Maharashtrian, S Mannaji Rao - a 'military hotel' in the old South Indian sense: a non-vegetarian eatery named for the military crowd that first filled these places, not an army-run mess. Moved to Jayanagar as it grew popular; donne biryani is the dish it's known for now.",
+    "kn": "ಶಿವಾಜಿ ಮಿಲಿಟರಿ ಹೋಟೆಲ್",
+    "say": "Shivaji Military Hotel",
+    "lat": 12.9175,
+    "lng": 77.5764,
+    "personalPick": true,
+    "try": [
+      "Order the donne biryani - the dish that carried this place's reputation from Nagarthapet to Jayanagar.",
+      "Know the term going in: 'military hotel' means non-veg eatery here, not an army mess."
     ]
   },
   {
@@ -796,6 +1259,22 @@
     ]
   },
   {
+    "id": "new-modern-hotel",
+    "name": "New Modern Hotel",
+    "area": "Diagonal Road, VV Puram, Basavanagudi",
+    "category": "food",
+    "blurb": "Running since 1959, known less for its idli than for the bucket of sambar left on the table so you serve yourself as much as you want. Regulars have been bringing their children and grandchildren back for the same plate for decades; local lore even credits breakfast-table talk here with shaping two Kannada New Wave films, Samskara and Chomana Dudi.",
+    "kn": "ನ್ಯೂ ಮಾಡರ್ನ್ ಹೋಟೆಲ್",
+    "say": "New Modern Hotel",
+    "lat": 12.9543,
+    "lng": 77.5787,
+    "personalPick": true,
+    "try": [
+      "Order one idli and let the bucket of sambar do the rest - that's the actual move here, not a full thali.",
+      "Go for a slow morning, not a quick bite; this is a sit-and-talk institution, not a grab-and-go darshini."
+    ]
+  },
+  {
     "id": "cauvery-emporium",
     "name": "Cauvery Arts & Crafts Emporium",
     "area": "MG Road",
@@ -826,6 +1305,22 @@
     ]
   },
   {
+    "id": "pump-house",
+    "name": "The Pump House",
+    "area": "Outer Ring Road, JP Nagar",
+    "category": "night",
+    "blurb": "Opened December 2018, co-founded by Chef Vishal Atreya and designed by Jatin Hukkeri of WDA - a craft brewpub built on the bet that JP Nagar shouldn't have to travel to Indiranagar or Koramangala for a decent microbrewery. Picked up Best Regional Debutant Restro-Bar (South) at the 2019 Indian Restaurant Congress Awards; a second outlet has since opened in Whitefield.",
+    "kn": "ದ ಪಂಪ್ ಹೌಸ್",
+    "say": "The Pump House",
+    "lat": 12.9066,
+    "lng": 77.5985,
+    "personalPick": true,
+    "try": [
+      "Try the house craft beers rather than defaulting to a familiar bottle - that's the whole premise here.",
+      "JP Nagar, not Indiranagar - the founders built it precisely so you wouldn't have to make that drive."
+    ]
+  },
+  {
     "id": "vidyarthi-bhavan",
     "name": "Vidyarthi Bhavan",
     "area": "Basavanagudi",
@@ -843,6 +1338,22 @@
     "try": [
       "Masala dosa if you accept the wait; otherwise open Skip the crowd.",
       "It's famous. That's the whole problem and the whole reason to know the name."
+    ]
+  },
+  {
+    "id": "turahalli-forest",
+    "name": "Turahalli Forest",
+    "area": "~20km south, off Kanakapura Road",
+    "category": "nature",
+    "blurb": "590 acres of dry deciduous forest and granite outcrops on the city's southern edge, with leopards, spotted deer and 60-plus recorded bird species - often called Bengaluru's last real forest. The reserve forest section is now off-limits to the public to protect it from the trekking, cycling and littering that used to happen there; a separate Tree Park section stays open.",
+    "kn": "ತುರಹಳ್ಳಿ ಅರಣ್ಯ",
+    "say": "Turahalli Aranya",
+    "lat": 12.8817,
+    "lng": 77.525,
+    "personalPick": true,
+    "try": [
+      "Stick to the Tree Park section - the reserve forest itself is closed to visitors now, for the forest's sake.",
+      "Don't expect the cycling and bouldering trails from a few years ago; access has tightened since."
     ]
   },
   {
@@ -878,6 +1389,22 @@
     ]
   },
   {
+    "id": "mini-forest-hbr-layout",
+    "name": "Mini Forest, HBR Layout",
+    "area": "5th Block, HBR Layout",
+    "category": "nature",
+    "blurb": "A small Miyawaki-method plantation packed into a residential HBR Layout plot - dense, fast-growing native species doing in a few years what a conventional plantation takes decades to approximate. One of several such pocket forests that have gone up across the city.",
+    "kn": "ಮಿನಿ ಫಾರೆಸ್ಟ್, ಎಚ್‌ಬಿಆರ್ ಲೇಔಟ್",
+    "say": "Mini Forest, HBR Layout",
+    "lat": 13.0335,
+    "lng": 77.625,
+    "personalPick": true,
+    "try": [
+      "Walk the dense planting up close - the whole point of the Miyawaki method is packing native species tight, not spacing them out.",
+      "Compare it mentally to a regular park; this is doing a different job, not competing on lawn space."
+    ]
+  },
+  {
     "id": "chianti",
     "name": "Chianti",
     "area": "Koramangala",
@@ -903,6 +1430,22 @@
     "try": [
       "Donne-style biryani, family recipe since 1953 — Bengaluru's own, not Hyderabadi.",
       "Go hungry; this is the meal."
+    ]
+  },
+  {
+    "id": "doresanipalya-forest",
+    "name": "Doresanipalya Forest",
+    "area": "Off Bannerghatta Road, near Puttenahalli Lake",
+    "category": "nature",
+    "blurb": "Once part of Bannerghatta National Park before the city grew around it - now an island of forest wedged between Bannerghatta Road and Puttenahalli Lake, run as a research station for forest departments studying environmental policy and tiger conservation. Every tree is labelled, and it's known for butterfly species uncommon elsewhere in the city, including the Baronet and Large Oakblue.",
+    "kn": "ದೊರೆಸಾನಿಪಾಳ್ಯ ಅರಣ್ಯ",
+    "say": "Doresanipalya Aranya",
+    "lat": 12.8965,
+    "lng": 77.5921,
+    "personalPick": true,
+    "try": [
+      "Look for the Baronet and Large Oakblue butterflies - both uncommon elsewhere in Bengaluru.",
+      "Read the tree labels as you walk; the labelling is deliberate, meant for exactly this kind of slow visit."
     ]
   },
   {

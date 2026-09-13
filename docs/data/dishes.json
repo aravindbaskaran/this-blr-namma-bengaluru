@@ -62,7 +62,7 @@
       "name": "Mysore Mutton Curry",
       "kn": "ಮೈಸೂರು ಮಟನ್ ಕರಿ",
       "say": "My-sooru Mutton Curry",
-      "desc": "A dark, tangy mutton curry built on roasted spices rather than cream - it has since travelled as far as Singapore, picking up soy sauce along the way.",
+      "desc": "A dark, tangy mutton curry built on roasted spices rather than cream - popular in Singapore's Indian restaurants under this name, though food historians there dispute whether it has any real Mysuru origin at all.",
       "tags": [
         "meat",
         "mysuru"
@@ -109,7 +109,7 @@
       "kn": "ದಾವಣಗೆರೆ ಬೆಣ್ಣೆ ದೋಸೆ",
       "say": "Daavana-gere Ben-ne Dose",
       "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Davanagere%20Benne%20Dosa.jpg",
-      "desc": "A different animal from the Bengaluru version above - thicker and spongier, with puffed rice ground into the batter, first sold by a woman named Chennamma outside a Davanagere drama theatre in 1928.",
+      "desc": "A different animal from the Bengaluru version above - thicker and spongier, with puffed rice ground into the batter. First sold as a plain ragi dosa by a woman named Chennamma outside a Davanagere drama theatre in 1928; the buttery, puffed-rice version known today was developed later by her sons.",
       "tags": [
         "breakfast"
       ],
@@ -129,7 +129,7 @@
       "name": "Donne Biryani",
       "kn": "ದೊನ್ನೆ ಬಿರಿಯಾನಿ",
       "say": "Don-ne Biriyaani",
-      "desc": "Biryani made with short-grain jonne rice and a green masala base, served in a donne - a stitched areca-leaf cup.",
+      "desc": "Biryani made with short-grain jeerige sanna (seeraga samba) rice and a green masala base, served in a donne - a stitched areca-leaf cup.",
       "tags": [
         "rice",
         "meat"
@@ -292,7 +292,7 @@
       "name": "Belagavi Kunda",
       "kn": "ಬೆಳಗಾವಿ ಕುಂದಾ",
       "say": "Bela-gaavi Kundaa",
-      "desc": "A soft, caramelised milk-and-khoa sweet from Belagavi, invented by accident when a confectioner let a pot of milk boil too long - the city is sometimes called Kundagiri after it.",
+      "desc": "A soft, caramelised milk-and-khoa sweet from Belagavi - the story goes it was invented by accident when a confectioner let a pot of milk boil too long, though tellings disagree on who and when. The city is sometimes called Kundagiri after it.",
       "tags": [
         "sweet",
         "north"
@@ -359,7 +359,7 @@
     },
     {
       "name": "Kadambuttu",
-      "kn": "ಕಡುಬುಟ್ಟು",
+      "kn": "ಕಡಂಬುಟ್ಟು",
       "say": "Kadam-buttu",
       "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kadubu%20of%20Coorg.jpg",
       "desc": "Steamed rice dumplings from Kodagu, the traditional partner to pandi curry.",
@@ -397,7 +397,7 @@
       "name": "Nannari Sherbet",
       "kn": "ನನ್ನಾರಿ ಶರಬತ್",
       "say": "Nan-naari Sharabath",
-      "desc": "A deep red-brown cooling drink made from Indian sarsaparilla root syrup - a Mysuru street-cart classic.",
+      "desc": "A deep red-brown cooling drink made from Indian sarsaparilla root syrup - a South Indian street-cart classic, best documented in Tamil Nadu and Kerala but popular in Mysuru too.",
       "tags": [
         "drink",
         "mysuru"
