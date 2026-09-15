@@ -83,14 +83,31 @@ let agenda = [];
 let todoDone = {};
 let customLocations = [];
 
+const MODE_KEY = 'blr-guide-mode';
+let guideMode = 'stay';
+
+function isTourist(){ return guideMode === 'tourist'; }
+function forMode(list){
+  return list.filter(item => {
+    if(customLocations.some(c => c.id === item.id)) return true;
+    return isTourist() ? item.tourist === true : item.stay === true;
+  });
+}
+function modeLocations(){
+  return forMode(allLocations());
+}
+
 function allLocations(){ return LOCATIONS.concat(customLocations); }
+function locById(id){
+  return allLocations().find(l => l.id === id) || KARNATAKA_PLACES.find(l => l.id === id);
+}
 function catMeta(id){
   if(id === 'daytrip') return { id:'daytrip', label:'Day trip', color:DAYTRIP_COLOR };
   if(id === 'picks') return { id:'picks', label:'Personal picks', color:'var(--maroon)' };
   return CATEGORIES.find(c=>c.id===id) || CATEGORIES[0];
 }
 function exploreItems(){
-  return allLocations().filter(l => {
+  return modeLocations().filter(l => {
     if(activeCategory === 'all') return true;
     if(activeCategory === 'picks') return !!(l.personalPick || l.approved);
     return l.category === activeCategory;
@@ -120,10 +137,58 @@ function saveCustom(){
   try{ localStorage.setItem('blr-custom-locations', JSON.stringify(customLocations)); }catch(e){}
 }
 
+function readGuideMode(){
+  try{
+    const q = new URLSearchParams(location.search).get('mode');
+    if(q === 'tourist' || q === 'stay') return q;
+  }catch(e){}
+  try{
+    const s = localStorage.getItem(MODE_KEY);
+    if(s === 'tourist' || s === 'stay') return s;
+  }catch(e){}
+  return 'stay';
+}
+function setGuideMode(mode){
+  if(mode !== 'tourist' && mode !== 'stay') return;
+  guideMode = mode;
+  applyGuideMode(true);
+}
+function applyGuideMode(persist){
+  document.body.dataset.mode = guideMode;
+  document.querySelectorAll('.mode-toggle button').forEach(btn => {
+    btn.dataset.active = String(btn.getAttribute('data-mode') === guideMode);
+  });
+  if(persist){
+    try{ localStorage.setItem(MODE_KEY, guideMode); }catch(e){}
+    try{
+      const url = new URL(location.href);
+      if(guideMode === 'stay') url.searchParams.delete('mode');
+      else url.searchParams.set('mode', 'tourist');
+      history.replaceState({}, '', url);
+    }catch(e){}
+  }
+  if(isTourist() && activeCategory === 'picks') activeCategory = 'all';
+  if(isTourist() && activeDishTag === 'picks') activeDishTag = 'all';
+  if(LOCATIONS.length){
+    renderPills();
+    renderDishPills();
+    renderList();
+    renderDaytrips();
+    renderFestivals();
+    renderTNT();
+    renderQuips();
+    renderDishes();
+    renderPhrases();
+    renderMap();
+  }
+}
+window.setGuideMode = setGuideMode;
+
 /* ---------------- render: category pills ---------------- */
 function renderPills(){
   const row = document.getElementById('categoryPills');
-  const all = [{id:'all', label:'All'}, {id:'picks', label:'Personal picks'}].concat(CATEGORIES);
+  const extras = isTourist() ? [] : [{id:'picks', label:'Personal picks'}];
+  const all = [{id:'all', label:'All'}].concat(extras).concat(CATEGORIES);
   row.innerHTML = all.map(c =>
     `<button class="pill" data-active="${activeCategory===c.id}" onclick="setCategory('${c.id}')">${c.label}</button>`
   ).join('');
@@ -157,9 +222,11 @@ function buildLocationCard(l){
         </div>
         <span class="tag">${cat.label}</span>
       </div>
-      <p class="blurb">${l.blurb}</p>
-      ${tryHtml}
-      ${skipHtml}
+      <div class="card-body">
+        <p class="blurb">${l.blurb}</p>
+        ${tryHtml}
+        ${skipHtml}
+      </div>
       <div class="card-actions">
         <button class="add-btn" data-added="${added}" onclick="toggleAgenda('${l.id}')">${added ? 'On your list ✓' : '+ Add to list'}</button>
         ${mapLinkHtml}
@@ -184,6 +251,7 @@ function skipCrowdHtml(l){
   </details>`;
 }
 function focusPlace(id){
+  if(typeof setView === 'function') setView('list');
   setCategory('all');
   requestAnimationFrame(() => {
     const el = document.getElementById('card-' + id);
@@ -204,7 +272,7 @@ function renderList(){
 function renderDaytrips(){
   const wrap = document.getElementById('daytripGrid');
   if(!wrap) return;
-  wrap.innerHTML = KARNATAKA_PLACES.map(buildLocationCard).join('');
+  wrap.innerHTML = forMode(KARNATAKA_PLACES).map(buildLocationCard).join('');
 }
 
 /* ---------------- render: map view ---------------- */
@@ -435,7 +503,7 @@ async function copyAgenda(){ return copyTodo(); }
 /* ---------------- this, not that ---------------- */
 function renderTNT(){
   const wrap = document.getElementById('tntList');
-  wrap.innerHTML = NOT_THAT.map(row => `
+  wrap.innerHTML = forMode(NOT_THAT).map(row => `
     <article class="tnt-card">
       <p class="often"><span class="tnt-kicker">Often the default</span>${row.often}</p>
       <p class="also"><span class="tnt-kicker">Also true here</span>${row.also}</p>
@@ -446,7 +514,7 @@ function renderTNT(){
 /* ---------------- festivals ---------------- */
 function renderFestivals(){
   const wrap = document.getElementById('festivalGrid');
-  wrap.innerHTML = FESTIVALS.map(f => `
+  wrap.innerHTML = forMode(FESTIVALS).map(f => `
     <div class="festival-card" style="--fest-color:${f.color}">
       <div class="festival-top">
         <h3>${f.name}</h3>
@@ -463,7 +531,7 @@ function renderFestivals(){
 function renderQuips(){
   const wrap = document.getElementById('quipGrid');
   if(!wrap) return;
-  wrap.innerHTML = QUIPS.map(q => `
+  wrap.innerHTML = forMode(QUIPS).map(q => `
     <article class="quip-card${q.featured ? ' featured' : ''}">
       <div>
         <div class="quip-kicker">Did you know</div>
@@ -479,7 +547,8 @@ function renderQuips(){
 function renderDishPills(){
   const row = document.getElementById('dishPills');
   if(!row) return;
-  const all = [{id:'all', label:'All'}].concat(DISH_TAGS);
+  const tags = isTourist() ? DISH_TAGS.filter(t => t.id !== 'picks') : DISH_TAGS;
+  const all = [{id:'all', label:'All'}].concat(tags);
   row.innerHTML = all.map(t =>
     `<button class="pill" data-active="${activeDishTag===t.id}" onclick="setDishTag('${t.id}')">${t.label}</button>`
   ).join('');
@@ -487,7 +556,7 @@ function renderDishPills(){
 function setDishTag(id){ activeDishTag = id; renderDishPills(); renderDishes(); }
 function renderDishes(){
   const wrap = document.getElementById('dishGrid');
-  const items = DISHES.filter(d => {
+  const items = forMode(DISHES).filter(d => {
     if(activeDishTag === 'all') return true;
     if(activeDishTag === 'picks') return !!d.personalPick;
     return (d.tags || []).includes(activeDishTag);
@@ -501,12 +570,21 @@ function renderDishes(){
       return t ? `<span class="tag">${t.label}</span>` : '';
     }).join('');
     const pickMark = d.personalPick ? PICK_MARK : '';
+    const tryIds = d.tryIn || [];
+    const tryPlaces = tryIds.map(id => locById(id)).filter(Boolean);
+    const tryAttr = tryIds.length ? ` data-try-in="${esc(tryIds.join(' '))}"` : '';
+    const tryHtml = tryPlaces.length
+      ? `<div class="dish-try"><div class="dish-try-label">Where to try in Bengaluru</div><div class="dish-try-list">${tryPlaces.map(p =>
+          `<button type="button" onclick="focusPlace('${p.id}')">${p.name}</button>`
+        ).join('')}</div></div>`
+      : '';
     return `
-    <div class="dish-card">
+    <div class="dish-card"${tryAttr}>
       ${photoHtml}
       <div class="dish-name-row">${pickMark}<div class="dish-name">${d.name}</div></div>
       <div class="dish-kn-row"><span class="kn dish-kn">${d.kn}</span><span class="dish-say">${d.say}</span>${speakBtn(d.kn, 'sm')}</div>
       <p class="dish-desc">${d.desc}</p>
+      ${tryHtml}
       <div class="card-actions" style="margin-top:10px;flex-wrap:wrap">${tagsHtml}</div>
     </div>
   `;
@@ -534,7 +612,7 @@ function renderPhrases(){
     </div>`;
   };
   wrap.innerHTML = GROUP_ORDER.map(group => {
-    const items = PHRASES.filter(p => p.group === group);
+    const items = forMode(PHRASES).filter(p => p.group === group);
     if(!items.length) return '';
     return `<div class="phrase-group">
       <h3 class="phrase-group-title">${group}</h3>
@@ -719,6 +797,8 @@ document.getElementById('issueForm').addEventListener('submit', function(e){
     const remain = Math.max(0, 700 - (performance.now() - started));
     if(remain) await new Promise(r => setTimeout(r, remain));
     loadState();
+    guideMode = readGuideMode();
+    applyGuideMode(true);
     renderPills();
     renderDishPills();
     renderCategorySelect();

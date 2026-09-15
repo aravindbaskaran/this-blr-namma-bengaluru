@@ -12,7 +12,7 @@
       if(bandEl.dataset.init) return;
       bandEl.dataset.init = '1';
       const weave = SP.WEAVES[bandEl.dataset.band] ? bandEl.dataset.band
-        : ['ilkal','mysore','kasuti','molakalmuru','khana'][i % 5];
+        : ['ilkal','mysore','kasuti','molakalmuru','udupi','kodagu','khana'][i % 7];
       const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
       svg.setAttribute('class', 'saree-ribbon band-ribbon');
       svg.setAttribute('viewBox', '0 0 1000 200');

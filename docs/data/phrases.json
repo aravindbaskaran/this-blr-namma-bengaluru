@@ -5,7 +5,9 @@
     "translit": "Namaskara",
     "say": "Na-ma-skaa-ra",
     "meaning": "Hello",
-    "tip": "Works as a greeting any time of day, formal or casual."
+    "tip": "Works as a greeting any time of day, formal or casual.",
+    "tourist": true,
+    "stay": true
   },
   {
     "group": "Greetings & courtesy",
@@ -19,7 +21,9 @@
       "kn": "ಆರಾಮ ಇದ್ದೀರಾ?",
       "translit": "Aarama iddeera?",
       "say": "Aa-ram id-dee-raa"
-    }
+    },
+    "tourist": true,
+    "stay": true
   },
   {
     "group": "Everyday essentials",
@@ -27,7 +31,9 @@
     "translit": "Chennagide",
     "say": "Chen-naa-gi-de",
     "meaning": "It's good / nice",
-    "tip": "Use it for food, weather, a view - almost anything."
+    "tip": "Use it for food, weather, a view - almost anything.",
+    "tourist": true,
+    "stay": true
   },
   {
     "group": "Everyday essentials",
@@ -35,7 +41,9 @@
     "translit": "Eshtu?",
     "say": "Esh-tu",
     "meaning": "How much?",
-    "tip": "The single most useful word for markets and autos."
+    "tip": "The single most useful word for markets and autos.",
+    "tourist": true,
+    "stay": true
   },
   {
     "group": "Everyday essentials",
@@ -43,7 +51,9 @@
     "translit": "Swalpa adjust maadi",
     "say": "Swal-pa uh-just maa-di",
     "meaning": "Just adjust a little",
-    "tip": "Half Kannada, half English, entirely Bengaluru - said with a smile when asking for flexibility."
+    "tip": "Half Kannada, half English, entirely Bengaluru - said with a smile when asking for flexibility.",
+    "tourist": true,
+    "stay": true
   },
   {
     "group": "Everyday essentials",
@@ -51,7 +61,8 @@
     "translit": "Gottilla",
     "say": "Got-til-la",
     "meaning": "I don't know",
-    "tip": "A perfectly normal, honest answer here - no need to guess."
+    "tip": "A perfectly normal, honest answer here - no need to guess.",
+    "stay": true
   },
   {
     "group": "Everyday essentials",
@@ -59,7 +70,8 @@
     "translit": "Bartini",
     "say": "Bar-tee-nee",
     "meaning": "I'll get going",
-    "tip": "The Kannada goodbye - it literally means \"I'll come [back].\""
+    "tip": "The Kannada goodbye - it literally means \"I'll come [back].\"",
+    "stay": true
   },
   {
     "group": "Everyday essentials",
@@ -67,7 +79,9 @@
     "translit": "Ellide?",
     "say": "El-li-de",
     "meaning": "Where is it?",
-    "tip": "Pair with a place name - \"Lalbagh ellide?\""
+    "tip": "Pair with a place name - \"Lalbagh ellide?\"",
+    "tourist": true,
+    "stay": true
   },
   {
     "group": "Everyday essentials",
@@ -75,7 +89,9 @@
     "translit": "Illa",
     "say": "Il-la",
     "meaning": "No",
-    "tip": "Short, flat, and used constantly - not considered rude."
+    "tip": "Short, flat, and used constantly - not considered rude.",
+    "tourist": true,
+    "stay": true
   },
   {
     "group": "Everyday essentials",
@@ -83,7 +99,9 @@
     "translit": "Houdu",
     "say": "How-du",
     "meaning": "Yes",
-    "tip": "The flip side of Illa, used just as often - a firm, simple yes."
+    "tip": "The flip side of Illa, used just as often - a firm, simple yes.",
+    "tourist": true,
+    "stay": true
   },
   {
     "group": "Greetings & courtesy",
@@ -91,7 +109,9 @@
     "translit": "Dhanyavaadagalu",
     "say": "Dhan-ya-vaa-da-ga-lu",
     "meaning": "Thank you",
-    "tip": "A bit formal - a casual \"thanks\" in English lands just as well day to day."
+    "tip": "A bit formal - a casual \"thanks\" in English lands just as well day to day.",
+    "tourist": true,
+    "stay": true
   },
   {
     "group": "Greetings & courtesy",
@@ -99,7 +119,9 @@
     "translit": "Dayavittu",
     "say": "Da-ya-vit-tu",
     "meaning": "Please",
-    "tip": "Formal enough for most situations - \"Swalpa\" (a little) softens a request just as well and sounds more casual."
+    "tip": "Formal enough for most situations - \"Swalpa\" (a little) softens a request just as well and sounds more casual.",
+    "tourist": true,
+    "stay": true
   },
   {
     "group": "Greetings & courtesy",
@@ -107,7 +129,9 @@
     "translit": "Kshamisi",
     "say": "Ksha-mi-si",
     "meaning": "Sorry / excuse me",
-    "tip": "Doubles as a polite way to get someone's attention, not just to apologise."
+    "tip": "Doubles as a polite way to get someone's attention, not just to apologise.",
+    "tourist": true,
+    "stay": true
   },
   {
     "group": "Getting to know someone",
@@ -115,7 +139,8 @@
     "translit": "Nanna hesaru...",
     "say": "Nan-na he-sa-ru",
     "meaning": "My name is...",
-    "tip": "Follow it straight with your name - no extra words needed."
+    "tip": "Follow it straight with your name - no extra words needed.",
+    "stay": true
   },
   {
     "group": "Getting to know someone",
@@ -123,7 +148,8 @@
     "translit": "Nimma hesarenu?",
     "say": "Nim-ma he-sa-re-nu",
     "meaning": "What is your name?",
-    "tip": "Polite/plural form - safe to use with anyone you've just met."
+    "tip": "Polite/plural form - safe to use with anyone you've just met.",
+    "stay": true
   },
   {
     "group": "Getting to know someone",
@@ -131,7 +157,8 @@
     "translit": "Ellinda bandri?",
     "say": "El-lin-da band-ri",
     "meaning": "Where are you from?",
-    "tip": "A common icebreaker, and already carries the \"-ri\" respect ending."
+    "tip": "A common icebreaker, and already carries the \"-ri\" respect ending.",
+    "stay": true
   },
   {
     "group": "Food & warmth",
@@ -139,7 +166,8 @@
     "translit": "Oota aayitha?",
     "say": "Oo-ta aai-itha",
     "meaning": "Have you eaten?",
-    "tip": "Asked as a genuine greeting, not small talk - answering \"illa\" (no) often gets you fed."
+    "tip": "Asked as a genuine greeting, not small talk - answering \"illa\" (no) often gets you fed.",
+    "stay": true
   },
   {
     "group": "Food & warmth",
@@ -147,7 +175,9 @@
     "translit": "Ruchiyagide",
     "say": "Ru-chi-yaa-gi-de",
     "meaning": "It's delicious",
-    "tip": "The line that makes any darshini or amma's kitchen light up."
+    "tip": "The line that makes any darshini or amma's kitchen light up.",
+    "tourist": true,
+    "stay": true
   },
   {
     "group": "Food & warmth",
@@ -155,7 +185,8 @@
     "translit": "Chanda ide",
     "say": "Chan-da i-de",
     "meaning": "It's beautiful",
-    "tip": "Works for a view, a saree, a building - anything pleasing to look at."
+    "tip": "Works for a view, a saree, a building - anything pleasing to look at.",
+    "stay": true
   },
   {
     "group": "Everyday essentials",
@@ -163,7 +194,8 @@
     "translit": "Hogona",
     "say": "Ho-go-na",
     "meaning": "Let's go",
-    "tip": "The casual, friendly version of \"let's go.\""
+    "tip": "The casual, friendly version of \"let's go.\"",
+    "stay": true
   },
   {
     "group": "Everyday essentials",
@@ -171,7 +203,8 @@
     "translit": "Ondu, eradu, mooru",
     "say": "On-du, e-ra-du, moo-ru",
     "meaning": "One, two, three",
-    "tip": "Enough to order food or count change without switching to English."
+    "tip": "Enough to order food or count change without switching to English.",
+    "stay": true
   },
   {
     "group": "Respect & address",
@@ -179,7 +212,9 @@
     "translit": "Anna / Akka",
     "say": "An-na / Ak-ka",
     "meaning": "Elder brother / elder sister",
-    "tip": "The default respectful way to address a stranger close to your age - an auto driver, a shopkeeper, anyone. Warmer than any English equivalent."
+    "tip": "The default respectful way to address a stranger close to your age - an auto driver, a shopkeeper, anyone. Warmer than any English equivalent.",
+    "tourist": true,
+    "stay": true
   },
   {
     "group": "Respect & address",
@@ -219,7 +254,8 @@
         "translit": "Thanks-ri",
         "meaning": "Thanks (casual, half-English)"
       }
-    ]
+    ],
+    "stay": true
   },
   {
     "group": "Ordering food & coffee",
@@ -227,7 +263,9 @@
     "translit": "Ondu masale dose",
     "say": "On-du ma-saa-le do-say",
     "meaning": "One masala dosa",
-    "tip": "The most commonly mispronounced word on this whole list - it is \"do-say,\" not \"doh-sah.\" The final vowel is a clear, short \"eh,\" never silent."
+    "tip": "The most commonly mispronounced word on this whole list - it is \"do-say,\" not \"doh-sah.\" The final vowel is a clear, short \"eh,\" never silent.",
+    "tourist": true,
+    "stay": true
   },
   {
     "group": "Ordering food & coffee",
@@ -235,7 +273,9 @@
     "translit": "Ondu kaapi",
     "say": "On-du kaa-pi",
     "meaning": "One coffee",
-    "tip": "\"Kaapi,\" not \"coffee\" - the first vowel is long and drawn out. Order it this way at a darshini and it lands right."
+    "tip": "\"Kaapi,\" not \"coffee\" - the first vowel is long and drawn out. Order it this way at a darshini and it lands right.",
+    "tourist": true,
+    "stay": true
   },
   {
     "group": "Ordering food & coffee",
@@ -243,7 +283,9 @@
     "translit": "Ondu idli vade",
     "say": "On-du id-li va-day",
     "meaning": "One idli-vada",
-    "tip": "It is \"va-day\" in Kannada, not \"va-da\" - a small but telling difference if you have picked up the word elsewhere in India."
+    "tip": "It is \"va-day\" in Kannada, not \"va-da\" - a small but telling difference if you have picked up the word elsewhere in India.",
+    "tourist": true,
+    "stay": true
   },
   {
     "group": "Ordering food & coffee",
@@ -251,7 +293,8 @@
     "translit": "Swalpa benne haaki",
     "say": "Swal-pa BEN-ne haa-ki",
     "meaning": "Please add a little butter",
-    "tip": "\"Benne\" (butter) - the stress falls on the first syllable, BEN-ne, not ben-NE. Essential for ordering it right at a benne dosa counter."
+    "tip": "\"Benne\" (butter) - the stress falls on the first syllable, BEN-ne, not ben-NE. Essential for ordering it right at a benne dosa counter.",
+    "stay": true
   },
   {
     "group": "Ordering food & coffee",
@@ -259,7 +302,8 @@
     "translit": "Swalpa khara kadime maadi",
     "say": "Swal-pa khaa-ra ka-di-me maa-di",
     "meaning": "Please make it less spicy",
-    "tip": "\"Khara\" (spicy) often gets flattened to a plain \"kara\" - the \"kh\" wants a harder, breathier push, closer to gently clearing your throat."
+    "tip": "\"Khara\" (spicy) often gets flattened to a plain \"kara\" - the \"kh\" wants a harder, breathier push, closer to gently clearing your throat.",
+    "stay": true
   },
   {
     "group": "Ordering food & coffee",
@@ -267,7 +311,8 @@
     "translit": "Parcel maadi",
     "say": "Paar-sel maa-di",
     "meaning": "Please pack it to go",
-    "tip": "\"Parcel\" is the universal Bengaluru word for takeaway - not \"packet,\" not \"takeaway.\" Say this and nothing else is needed."
+    "tip": "\"Parcel\" is the universal Bengaluru word for takeaway - not \"packet,\" not \"takeaway.\" Say this and nothing else is needed.",
+    "stay": true
   },
   {
     "group": "Ordering food & coffee",
@@ -275,7 +320,8 @@
     "translit": "Innondu plate",
     "say": "In-non-du plate",
     "meaning": "One more plate",
-    "tip": "The line every darshini regular reaches for once the first round disappears."
+    "tip": "The line every darshini regular reaches for once the first round disappears.",
+    "stay": true
   },
   {
     "group": "Ordering food & coffee",
@@ -283,6 +329,8 @@
     "translit": "Bill kodi",
     "say": "Bill ko-di",
     "meaning": "Please bring the bill",
-    "tip": "Works everywhere, from a standing-only darshini to a sit-down restaurant."
+    "tip": "Works everywhere, from a standing-only darshini to a sit-down restaurant.",
+    "tourist": true,
+    "stay": true
   }
 ]

@@ -5,7 +5,9 @@
     "when": "Sep/Oct, 10 days",
     "where": "Mysuru",
     "color": "var(--jacaranda)",
-    "blurb": "Karnataka's state festival, Naada Habba - the Mysuru Palace lit end to end, the Wodeyar royal durbar, and the Jamboo Savari procession carrying Goddess Chamundeshwari through the streets in a 750kg golden howdah. Traced back to the Vijayanagara Empire and formalised by the Wodeyars in 1610."
+    "blurb": "Karnataka's state festival, Naada Habba - the Mysuru Palace lit end to end, the Wodeyar royal durbar, and the Jamboo Savari procession carrying Goddess Chamundeshwari through the streets in a 750kg golden howdah. Traced back to the Vijayanagara Empire and formalised by the Wodeyars in 1610.",
+    "tourist": true,
+    "stay": true
   },
   {
     "name": "Gombe Habba",
@@ -13,7 +15,8 @@
     "when": "Sep/Oct, during Dasara",
     "where": "Mysuru households, statewide",
     "color": "var(--jacaranda)",
-    "blurb": "The doll festival - the quieter, domestic side of Dasara. Families in Mysuru build tiered steps of dolls and figurines (bombe mane) in their homes, and neighbours are invited over to see each other's displays. A world away from the palace procession, in the same ten days."
+    "blurb": "The doll festival - the quieter, domestic side of Dasara. Families in Mysuru build tiered steps of dolls and figurines (bombe mane) in their homes, and neighbours are invited over to see each other's displays. A world away from the palace procession, in the same ten days.",
+    "stay": true
   },
   {
     "name": "Ugadi",
@@ -21,7 +24,9 @@
     "when": "March/April",
     "where": "Statewide",
     "color": "var(--terracotta)",
-    "blurb": "The Kannada New Year, marked with bevu-bella - a mix of neem and jaggery eaten together as a reminder that the year ahead will hold both bitterness and sweetness."
+    "blurb": "The Kannada New Year, marked with bevu-bella - a mix of neem and jaggery eaten together as a reminder that the year ahead will hold both bitterness and sweetness.",
+    "tourist": true,
+    "stay": true
   },
   {
     "name": "Bengaluru Karaga",
@@ -29,7 +34,9 @@
     "when": "March/April, 9 nights",
     "where": "Dharmaraya Swamy Temple, Bengaluru",
     "color": "var(--maroon)",
-    "blurb": "The city's own festival, older than its software reputation by centuries - a priest in women's attire carries a flower-pyramid through the old pete at midnight, escorted by sword-wielding Thigala Veerakumaras. The procession stops at a Sufi dargah each year - a long-standing tradition of Hindu-Muslim unity tied to the dargah's construction in the 1780s."
+    "blurb": "The city's own festival, older than its software reputation by centuries - a priest in women's attire carries a flower-pyramid through the old pete at midnight, escorted by sword-wielding Thigala Veerakumaras. The procession stops at a Sufi dargah each year - a long-standing tradition of Hindu-Muslim unity tied to the dargah's construction in the 1780s.",
+    "tourist": true,
+    "stay": true
   },
   {
     "name": "Kadalekai Parishe",
@@ -37,7 +44,9 @@
     "when": "Nov/Dec, 2-3 days",
     "where": "Basavanagudi & Malleswaram, Bengaluru",
     "color": "var(--hampi-stone)",
-    "blurb": "The groundnut fair - farmers bring the season's first harvest to offer at the Bull Temple, and the streets around it disappear under mounds of roasted and raw groundnuts, bangles, and clay toys."
+    "blurb": "The groundnut fair - farmers bring the season's first harvest to offer at the Bull Temple, and the streets around it disappear under mounds of roasted and raw groundnuts, bangles, and clay toys.",
+    "tourist": true,
+    "stay": true
   },
   {
     "name": "BLR Hubba",
@@ -46,8 +55,13 @@
     "where": "Citywide, Bengaluru",
     "color": "var(--gold)",
     "url": "https://blrhubba.in",
-    "also": {"label": "Subfestivals", "url": "https://blrhubba.in/subfestivals"},
-    "blurb": "A recent citywide arts habba, not the centuries-old kind - music, theatre, food, walks, folk showcases, and a stack of themed subfestivals in parks and neighbourhood venues. Anchored by UnboxingBLR, Fringe-shaped, aimed at people who already live here. Dates have moved (December, then January after Sankranti); read the year's programme rather than this card."
+    "also": {
+      "label": "Subfestivals",
+      "url": "https://blrhubba.in/subfestivals"
+    },
+    "blurb": "A recent citywide arts habba, not the centuries-old kind - music, theatre, food, walks, folk showcases, and a stack of themed subfestivals in parks and neighbourhood venues. Anchored by UnboxingBLR, Fringe-shaped, aimed at people who already live here. Dates have moved (December, then January after Sankranti); read the year's programme rather than this card.",
+    "tourist": true,
+    "stay": true
   },
   {
     "name": "Bhuta Kola",
@@ -55,7 +69,8 @@
     "when": "Dec-May, night-long",
     "where": "Dakshina Kannada & Udupi coast",
     "color": "var(--coastal-teal)",
-    "blurb": "Tulu Nadu's spirit-worship ritual, the tradition behind the film Kantara - a hereditary medium becomes possessed by a guardian daiva (deity) such as Panjurli, delivering counsel and settling disputes through the night, to torchlight, drums and paddana ballads sung in Tulu."
+    "blurb": "Tulu Nadu's spirit-worship ritual, the tradition behind the film Kantara - a hereditary medium becomes possessed by a guardian daiva (deity) such as Panjurli, delivering counsel and settling disputes through the night, to torchlight, drums and paddana ballads sung in Tulu.",
+    "stay": true
   },
   {
     "name": "Kambala",
@@ -63,7 +78,8 @@
     "when": "Nov-March",
     "where": "Dakshina Kannada & Udupi coast",
     "color": "var(--coastal-teal)",
-    "blurb": "Buffalo races down slushy paddy tracks, run in over 45 villages along the Tulu Nadu coast - handlers balance on wooden planks behind the animals, sometimes hitting 50 km/h. A farming-season thanksgiving, long before it was a spectator sport."
+    "blurb": "Buffalo races down slushy paddy tracks, run in over 45 villages along the Tulu Nadu coast - handlers balance on wooden planks behind the animals, sometimes hitting 50 km/h. A farming-season thanksgiving, long before it was a spectator sport.",
+    "stay": true
   },
   {
     "name": "Hampi Utsav",
@@ -71,6 +87,7 @@
     "when": "Usually Nov or Feb/Mar, 3 days",
     "where": "Hampi",
     "color": "var(--coffee)",
-    "blurb": "Also called Vijaya Utsava - the ruined capital of the Vijayanagara Empire lit up for dance, music and folk performance, reviving a Mahanavami tradition the empire itself once held on the same ground."
+    "blurb": "Also called Vijaya Utsava - the ruined capital of the Vijayanagara Empire lit up for dance, music and folk performance, reviving a Mahanavami tradition the empire itself once held on the same ground.",
+    "stay": true
   }
 ]

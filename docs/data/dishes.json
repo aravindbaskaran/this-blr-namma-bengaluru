@@ -56,7 +56,13 @@
         "sweet",
         "mysuru"
       ],
-      "id": "mysore-pak"
+      "id": "mysore-pak",
+      "tourist": true,
+      "tryIn": [
+        "asha-sweets",
+        "sv-sweetmeat"
+      ],
+      "stay": true
     },
     {
       "name": "Mysore Mutton Curry",
@@ -67,7 +73,8 @@
         "meat",
         "mysuru"
       ],
-      "id": "mysore-mutton-curry"
+      "id": "mysore-mutton-curry",
+      "stay": true
     },
     {
       "name": "Bisi Bele Bath",
@@ -79,7 +86,13 @@
         "rice",
         "breakfast"
       ],
-      "id": "bisi-bele-bath"
+      "id": "bisi-bele-bath",
+      "tourist": true,
+      "tryIn": [
+        "mtr",
+        "halli-mane"
+      ],
+      "stay": true
     },
     {
       "name": "Ragi Mudde",
@@ -90,7 +103,12 @@
       "tags": [
         "rice"
       ],
-      "id": "ragi-mudde"
+      "id": "ragi-mudde",
+      "tryIn": [
+        "mudde-mess",
+        "halli-jonne"
+      ],
+      "stay": true
     },
     {
       "name": "Benne Masale Dosa",
@@ -102,7 +120,14 @@
         "breakfast"
       ],
       "personalPick": true,
-      "id": "benne-masale-dosa"
+      "id": "benne-masale-dosa",
+      "tourist": true,
+      "tryIn": [
+        "ctr",
+        "vidyarthi-bhavan",
+        "veena-thindi"
+      ],
+      "stay": true
     },
     {
       "name": "Davanagere Benne Dose",
@@ -113,7 +138,8 @@
       "tags": [
         "breakfast"
       ],
-      "id": "davanagere-benne-dose"
+      "id": "davanagere-benne-dose",
+      "stay": true
     },
     {
       "name": "Khali Dose",
@@ -123,7 +149,12 @@
       "tags": [
         "breakfast"
       ],
-      "id": "khali-dose"
+      "id": "khali-dose",
+      "tryIn": [
+        "brahmins-coffee-bar",
+        "vidyarthi-bhavan"
+      ],
+      "stay": true
     },
     {
       "name": "Donne Biryani",
@@ -135,7 +166,14 @@
         "meat"
       ],
       "personalPick": true,
-      "id": "donne-biryani"
+      "id": "donne-biryani",
+      "tourist": true,
+      "tryIn": [
+        "rnr-biriyani",
+        "shivaji-military-hotel",
+        "namma-sln"
+      ],
+      "stay": true
     },
     {
       "name": "Kori Rotti",
@@ -147,7 +185,12 @@
         "meat",
         "coast"
       ],
-      "id": "kori-rotti"
+      "id": "kori-rotti",
+      "tryIn": [
+        "mangalore-pearl",
+        "karavalli"
+      ],
+      "stay": true
     },
     {
       "name": "Kori Gassi",
@@ -158,7 +201,12 @@
         "meat",
         "coast"
       ],
-      "id": "kori-gassi"
+      "id": "kori-gassi",
+      "tryIn": [
+        "karavalli",
+        "mangalore-pearl"
+      ],
+      "stay": true
     },
     {
       "name": "Neer Dosa",
@@ -170,7 +218,13 @@
         "breakfast",
         "coast"
       ],
-      "id": "neer-dosa"
+      "id": "neer-dosa",
+      "tourist": true,
+      "tryIn": [
+        "karavalli",
+        "mangalore-pearl"
+      ],
+      "stay": true
     },
     {
       "name": "Thatte Idli",
@@ -181,7 +235,13 @@
       "tags": [
         "breakfast"
       ],
-      "id": "thatte-idli"
+      "id": "thatte-idli",
+      "tourist": true,
+      "tryIn": [
+        "vvpuram",
+        "mtr"
+      ],
+      "stay": true
     },
     {
       "name": "Mangalore Buns",
@@ -194,7 +254,11 @@
         "coast",
         "sweet"
       ],
-      "id": "mangalore-buns"
+      "id": "mangalore-buns",
+      "tryIn": [
+        "mangalore-pearl"
+      ],
+      "stay": true
     },
     {
       "name": "Goli Baje",
@@ -206,7 +270,11 @@
         "breakfast",
         "coast"
       ],
-      "id": "goli-baje"
+      "id": "goli-baje",
+      "tryIn": [
+        "mangalore-pearl"
+      ],
+      "stay": true
     },
     {
       "name": "Jolada Rotti",
@@ -218,7 +286,12 @@
         "bread",
         "north"
       ],
-      "id": "jolada-rotti"
+      "id": "jolada-rotti",
+      "tryIn": [
+        "halli-mane",
+        "halli-jonne"
+      ],
+      "stay": true
     },
     {
       "name": "Akki Rotti",
@@ -230,7 +303,11 @@
         "bread",
         "breakfast"
       ],
-      "id": "akki-rotti"
+      "id": "akki-rotti",
+      "tryIn": [
+        "halli-mane"
+      ],
+      "stay": true
     },
     {
       "name": "Ragi Rotti",
@@ -241,7 +318,11 @@
       "tags": [
         "bread"
       ],
-      "id": "ragi-rotti"
+      "id": "ragi-rotti",
+      "tryIn": [
+        "halli-mane"
+      ],
+      "stay": true
     },
     {
       "name": "Yenne Badnekai",
@@ -251,7 +332,8 @@
       "tags": [
         "north"
       ],
-      "id": "yenne-badnekai"
+      "id": "yenne-badnekai",
+      "stay": true
     },
     {
       "name": "Girmit",
@@ -262,7 +344,8 @@
       "tags": [
         "north"
       ],
-      "id": "girmit"
+      "id": "girmit",
+      "stay": true
     },
     {
       "name": "Kalaburgi Tahari",
@@ -274,7 +357,8 @@
         "meat",
         "north"
       ],
-      "id": "kalaburgi-tahari"
+      "id": "kalaburgi-tahari",
+      "stay": true
     },
     {
       "name": "Dharwad Peda",
@@ -286,7 +370,8 @@
         "sweet",
         "north"
       ],
-      "id": "dharwad-peda"
+      "id": "dharwad-peda",
+      "stay": true
     },
     {
       "name": "Belagavi Kunda",
@@ -297,7 +382,8 @@
         "sweet",
         "north"
       ],
-      "id": "belagavi-kunda"
+      "id": "belagavi-kunda",
+      "stay": true
     },
     {
       "name": "Kesari Bath",
@@ -309,7 +395,12 @@
         "sweet",
         "breakfast"
       ],
-      "id": "kesari-bath"
+      "id": "kesari-bath",
+      "tryIn": [
+        "mtr",
+        "brahmins-coffee-bar"
+      ],
+      "stay": true
     },
     {
       "name": "Chow Chow Bath",
@@ -322,7 +413,13 @@
         "sweet"
       ],
       "personalPick": true,
-      "id": "chow-chow-bath"
+      "id": "chow-chow-bath",
+      "tourist": true,
+      "tryIn": [
+        "brahmins-coffee-bar",
+        "mtr"
+      ],
+      "stay": true
     },
     {
       "name": "Churmuri",
@@ -333,7 +430,11 @@
       "tags": [
         "mysuru"
       ],
-      "id": "churmuri"
+      "id": "churmuri",
+      "tryIn": [
+        "vvpuram"
+      ],
+      "stay": true
     },
     {
       "name": "Mylari Dosa",
@@ -344,7 +445,8 @@
         "breakfast",
         "mysuru"
       ],
-      "id": "mylari-dosa"
+      "id": "mylari-dosa",
+      "stay": true
     },
     {
       "name": "Pandi Curry",
@@ -355,7 +457,8 @@
         "meat",
         "kodagu"
       ],
-      "id": "pandi-curry"
+      "id": "pandi-curry",
+      "stay": true
     },
     {
       "name": "Kadambuttu",
@@ -367,7 +470,8 @@
         "rice",
         "kodagu"
       ],
-      "id": "kadambuttu"
+      "id": "kadambuttu",
+      "stay": true
     },
     {
       "name": "Filter Kaapi",
@@ -380,7 +484,14 @@
         "breakfast"
       ],
       "personalPick": true,
-      "id": "filter-kaapi"
+      "id": "filter-kaapi",
+      "tourist": true,
+      "tryIn": [
+        "ctr",
+        "vidyarthi-bhavan",
+        "brahmins-coffee-bar"
+      ],
+      "stay": true
     },
     {
       "name": "Majjige",
@@ -391,7 +502,12 @@
       "tags": [
         "drink"
       ],
-      "id": "majjige"
+      "id": "majjige",
+      "tryIn": [
+        "mtr",
+        "halli-mane"
+      ],
+      "stay": true
     },
     {
       "name": "Nannari Sherbet",
@@ -402,7 +518,8 @@
         "drink",
         "mysuru"
       ],
-      "id": "nannari-sherbet"
+      "id": "nannari-sherbet",
+      "stay": true
     },
     {
       "name": "Kashaya",
@@ -413,7 +530,8 @@
         "drink",
         "coast"
       ],
-      "id": "kashaya"
+      "id": "kashaya",
+      "stay": true
     }
   ]
 }

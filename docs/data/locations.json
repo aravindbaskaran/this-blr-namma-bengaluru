@@ -15,7 +15,9 @@
     "try": [
       "Walk the glass-house lawns before 8am, when it still belongs to walkers.",
       "Climb the Lalbagh rock — it's older than the city by a few billion years."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "cubbon",
@@ -33,7 +35,9 @@
     "try": [
       "Run or cycle the car-free roads 5:30–8am, or on Sunday mornings.",
       "Cut through to the High Court and State Library instead of looping the same path."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "indian-music-experience",
@@ -49,7 +53,8 @@
     "try": [
       "Walk the nine galleries in order, classical through Bollywood, before heading outside.",
       "Play the Sound Garden yourself - Humming Stone and Storm Drum are hands-on, not behind glass."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "chowdiah",
@@ -67,7 +72,8 @@
     "try": [
       "Catch an actual Carnatic or Hindustani concert, not just the violin-shaped exterior.",
       "Walk the 1:100-scale bow — it's a working hall, not a sculpture park."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "sankey-tank",
@@ -85,7 +91,8 @@
     "try": [
       "Do the paved lakeside loop, then the open gym if you want a short daily circuit.",
       "Go at dusk when the water takes the last of the light."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "map-museum",
@@ -101,7 +108,8 @@
     "try": [
       "Start with the permanent collection, 12th century onward, then whatever's showing on top of it.",
       "End at the rooftop cafe - the building is meant to be climbed floor by floor, not rushed."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "veena-thindi",
@@ -119,7 +127,9 @@
     "try": [
       "Stand at the counter for a benne masale dosa — there are no tables, on purpose.",
       "Grazing the rest of Thindi Beedi is the point; don't stop at one stall."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "mtr",
@@ -137,7 +147,9 @@
     "try": [
       "Order rava idli — they invented it here — and filter kaapi in a steel tumbler.",
       "Go on a weekday morning; weekends are a different restaurant."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "mane-holige",
@@ -153,7 +165,8 @@
     "try": [
       "Try a few varieties beyond the classic - a wide holige menu is the whole point.",
       "D.V.G Road, next to Upahara Darshini - the original the rest of the chain grew out of."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "corner-house",
@@ -171,7 +184,9 @@
     "try": [
       "The Death by Chocolate is the reason the city still uses this as a landmark.",
       "Any branch works; the Residency Road original is the story, not a better scoop."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "vidhana-soudha",
@@ -187,7 +202,9 @@
     "try": [
       "Catch it floodlit on a Sunday evening or a public holiday - the whole facade lights up.",
       "Book the guided walking tour (Sundays, 2nd/4th Saturdays) for the interior - Aadhaar and advance registration required."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "ctr",
@@ -202,7 +219,9 @@
     "try": [
       "Benne masale dosa at the counter, standing - a tradition here across generations, whatever the sign out front said that decade.",
       "Don't expect seating theatre — this is a tiffin room that got famous."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "brahmins-coffee-bar",
@@ -217,7 +236,9 @@
     "try": [
       "Four items only: idli, vada, kara bath, kesari bath. Order all of them.",
       "Drink the kaapi standing; that's the whole format."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "tipu-palace",
@@ -233,7 +254,9 @@
     "try": [
       "The museum upstairs - Tipu-era weapons, jewellery, and a reproduction of his mechanical Tiger Throne.",
       "The palace still sits inside what's left of Bangalore Fort's walls - walk the old fort area while you're there."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "airlines-hotel",
@@ -248,7 +271,8 @@
     "try": [
       "Sit under the banyan trees — the open-air tables are the point.",
       "Come for breakfast or a slow lunch, not a quick grab."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "karavalli",
@@ -263,7 +287,8 @@
     "try": [
       "Ask what's come in from the coast that day; the kitchen changes with the catch.",
       "This is a sit-down meal, not a darshini — budget the evening."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "freedom-park",
@@ -279,7 +304,8 @@
     "try": [
       "Walk past the freedom-fighter sculptures and the central tower before deciding what you think of the space.",
       "Check if anything's being protested that week - part of the park is formally kept for it, not just tolerated."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "mangalore-pearl",
@@ -294,7 +320,8 @@
     "try": [
       "Go for kori rotti or a fish curry if you want Mangalorean cooking without the drive.",
       "It's home-style, not plated for photographs."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "ngma",
@@ -310,7 +337,8 @@
     "try": [
       "Two floors, 18th century to now - Raja Ravi Varma and Amrita Sher-Gil are the names to look for.",
       "The mansion itself is worth a slow look - a century-old Palace Road bungalow, not a purpose-built gallery."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "searock",
@@ -325,7 +353,8 @@
     "try": [
       "Try a Kundapur or Karwar dish, not only the Mangalore hits.",
       "Share a few coastal plates rather than one heavy curry."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "kamat-bugle-rock",
@@ -340,7 +369,8 @@
     "try": [
       "Unlimited Jolada Rotti Oota on a banana leaf — eat with your hands.",
       "This is the North Karnataka thali reference; don't treat it as a snack."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "visvesvaraya-museum",
@@ -356,7 +386,8 @@
     "try": [
       "Fun Science and the Electro Technic gallery - Tesla coils and Van de Graaff generators, hands-on.",
       "The Wright Flyer replica and the animatronic Spinosaurus are the two that stop kids in their tracks."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "halli-mane",
@@ -371,7 +402,8 @@
     "try": [
       "Jolada rotti with ennegayi and badanekayi palya — the village-mess plates.",
       "It's a full meal; go hungry."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "sri-venkateshwara-nk",
@@ -386,7 +418,8 @@
     "try": [
       "The cheap Jolada Rotti Oota: two rotis, rice, sambar, rasam, curd.",
       "VV Puram after sunset if you want the street as well as the plate."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "rangoli-metro-art-center",
@@ -402,7 +435,8 @@
     "try": [
       "Walk Hoovina Haadi, the upper walkway, then drop into whichever of the three galleries has a show up.",
       "Free and partly open-air - an easy stop before or after an MG Road evening."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "sendhoor",
@@ -417,7 +451,8 @@
     "try": [
       "Idli, vada, and a strong filter kaapi — that's the whole visit.",
       "Neighbourhood pace; don't expect a menu tour."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "araku-coffee",
@@ -432,7 +467,8 @@
     "try": [
       "A pour-over or filter from the in-house roast, then browse the bookstore upstairs.",
       "This is a sit-and-stay cafe, not a stand-and-go kaapi."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "bannerghatta",
@@ -448,7 +484,8 @@
     "try": [
       "The safari loop in the Biological Park - elephants, tigers and leopards from inside the bus.",
       "Go early; it's a real forest corridor to BR Hills, not a zoo enclosure loop."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "third-wave",
@@ -463,7 +500,8 @@
     "try": [
       "A single-origin pour-over if you want specialty, not filter-kaapi nostalgia.",
       "Laptop-friendly; pick a quieter outlet if you're working."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "attara-kacheri",
@@ -479,7 +517,8 @@
     "try": [
       "Look at it beside Vidhana Soudha across the road - same street, two very different colonial-to-independence stories.",
       "It's a working High Court, not a museum - view from outside, don't expect to walk in."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "dyu-art-cafe",
@@ -494,7 +533,8 @@
     "try": [
       "Work or read downstairs; the paintings are the décor, not a gallery hop.",
       "Stay for a slow coffee rather than a photo of the façade."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "sv-sweetmeat",
@@ -509,7 +549,8 @@
     "try": [
       "Mysore Pak from the stall that's been arguing it's the best since 1954.",
       "Buy a box to take; this is not a sit-down sweet shop."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "someshwara-temple-halasuru",
@@ -525,7 +566,8 @@
     "try": [
       "The pillared mantapa carvings - Vijayanagara-era work, older than most of what's left in the city centre.",
       "Pair it with Ulsoor Lake, a short walk away, for one Halasuru morning."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "asha-sweets",
@@ -540,7 +582,8 @@
     "try": [
       "Mysore Pak or kaju katli, plus whatever the bakery counter has that day.",
       "Any outlet; it's an institution, not a single-room pilgrimage."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "atta-galatta",
@@ -555,7 +598,8 @@
     "try": [
       "Browse Indian and regional-language shelves; check what's on the events calendar.",
       "It's a bookshop that wants you to linger, not a cafe with books."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "panchalinga-nageshwara-temple",
@@ -571,7 +615,8 @@
     "try": [
       "Find the 890 CE inscription - the oldest known written record of the name 'Bengaluru.'",
       "Five lingas in one complex; take the time to see all five, not just the main shrine."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "blossom-books",
@@ -586,7 +631,8 @@
     "try": [
       "Go upstairs for secondhand and odd finds; Church Street is the hunt.",
       "Budget time — several floors deep since 1962."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "gavi-gangadhareshwara-temple",
@@ -602,7 +648,9 @@
     "try": [
       "Time a visit for Makar Sankranti if you can - the sunlight-through-Nandi's-horns alignment is the whole point.",
       "Look at the monolithic stone discs in the forecourt; nobody's fully explained what they were for."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "pecos",
@@ -617,7 +665,8 @@
     "try": [
       "Cheap drinks, classic rock, no redesign — that's the night.",
       "Go with people who like pubs that haven't been restyled."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "ulsoor-lake",
@@ -632,7 +681,8 @@
     "try": [
       "Walk the bund in the morning; it's one of Kempegowda's old tanks, enlarged later.",
       "Don't come for boating theatre — it's a city lake, used as a lake."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "nandi-tirtha-kalyani",
@@ -648,7 +698,8 @@
     "try": [
       "Find it below street level, opposite the Gangamma temple - there's no tower to spot it by.",
       "Watch the water flow from the Nandi's mouth; nobody knows the source."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "agara-lake",
@@ -663,7 +714,8 @@
     "try": [
       "The full perimeter jog, popular with HSR and Koramangala for a reason.",
       "Early or late; midday is just a hot loop."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "puttenahalli-lake",
@@ -678,7 +730,8 @@
     "try": [
       "A short walk maintained by the neighbourhood, not a destination park.",
       "Treat it as a local pause if you're already in JP Nagar."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "bull-temple",
@@ -694,7 +747,9 @@
     "try": [
       "Stand close enough to take in the scale - one block of granite, 4.5m tall.",
       "Come back for Kadlekai Parishe if you're here between November and December."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "gandhi-bazaar",
@@ -709,7 +764,9 @@
     "try": [
       "Buy flowers, coconut, and puja items the way the market has always sold them.",
       "Combine with a Gandhi Bazaar breakfast; the street is the visit."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "kr-market",
@@ -724,7 +781,9 @@
     "try": [
       "Go at dawn for flowers by the sack, not a boutique browse.",
       "It's wholesale chaos — wear shoes you don't mind."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "kote-venkataramana-temple",
@@ -740,7 +799,8 @@
     "try": [
       "Pair it with Tipu Sultan's Summer Palace next door - same old fort, two very different buildings.",
       "Time it for Vaikuntha Ekadashi if you want the temple at full crowd."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "chitrakala-parishath",
@@ -755,7 +815,8 @@
     "try": [
       "The Mysore painting rooms in the permanent collection, then whichever show is up.",
       "Eighteen galleries: pick two, don't march the lot."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "banashankari-devi-temple",
@@ -771,7 +832,8 @@
     "try": [
       "Note the Badami connection - the deity here was carried from the 7th-century original near Badami in 1915.",
       "The Banashankari neighbourhood and metro station both take their name from this temple, not the reverse."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "srinivasa-brahmins-bakery",
@@ -786,7 +848,8 @@
     "try": [
       "Iyengar bakery classics: toast, khara bun, and whatever just came out.",
       "It's a counter, not a cafe."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "thoms-bakery",
@@ -801,7 +864,8 @@
     "try": [
       "The cream bun is the city's reference version — that's the order.",
       "Take away; this is a bakery queue."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "st-marks-cathedral",
@@ -817,7 +881,8 @@
     "try": [
       "Look up at the dome and chancel - a deliberate small echo of St Paul's in London.",
       "One of the oldest churches standing in the city; check service and visiting hours before you go."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "vb-bakery",
@@ -832,7 +897,8 @@
     "try": [
       "Congress Khara Bun at the start of Thindi Beedi, then walk the lane.",
       "Butter and spice; don't overthink the rest of the tray."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "koshys-bakery",
@@ -847,7 +913,8 @@
     "try": [
       "Egg puffs and glazed doughnuts — people cross the city for those two.",
       "Any outlet; the 1940 story is the brand, not a single room."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "st-marys-basilica",
@@ -863,7 +930,8 @@
     "try": [
       "Time it for the September feast if you want the chariot procession and the crowd it draws.",
       "The Gothic structure took 26 years to build (1856-1882) - worth a slow look at the facade."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "karnataka-bhel-house",
@@ -878,7 +946,8 @@
     "try": [
       "One thing: Bengaluru-style bhel. That's the visit.",
       "Uma Theatre Road, standing, then move on."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "st-patricks-church",
@@ -894,7 +963,8 @@
     "try": [
       "Note the mismatch - dedicated to the Assumption, but the Irish garrison's name for it is the one that stuck.",
       "Brigade Road right outside; easy to fold into an evening on the strip."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "mltr",
@@ -909,7 +979,8 @@
     "try": [
       "Khali dose — the bare, buttery dosa almost nobody else still does.",
       "Same Gandhi Bazaar lane as the famous neighbour, without the queue theatre."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "atithyaa",
@@ -926,7 +997,8 @@
     "try": [
       "Unlimited Karnataka thali on a kansa plate — bisi bele bath, gojju, seasonal palya.",
       "Lunch crowd since 1986; this is a meal, not a tasting."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "st-francis-xavier-cathedral",
@@ -942,7 +1014,8 @@
     "try": [
       "Look for the two domes on the facade - a 2009 addition, not part of the 1932 original.",
       "It's the Bangalore diocese's cathedral, not just a parish church, since 1940."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "mudde-mess",
@@ -957,7 +1030,8 @@
     "try": [
       "Ragi mudde with saaru, rice and buttermilk — coupon at the counter, hands at the table.",
       "Don't come for dosa. Come for millet."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "halli-jonne",
@@ -972,7 +1046,8 @@
     "try": [
       "Donne biryani in an areca-leaf cup: their seeraga samba 'Jonne rice,' green masala.",
       "Eat it hot in the donne, not packed for later."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "holy-trinity-church",
@@ -988,7 +1063,8 @@
     "try": [
       "Find the stained-glass baptism window - shipped in from London along with the font.",
       "Trinity Circle is the giveaway - the church gave the junction its name, not the other way round."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "vvpuram",
@@ -1006,7 +1082,9 @@
     "try": [
       "After sunset: grilled corn, kebabs, and sweets that don't travel outside Karnataka.",
       "Walk the whole lane; one stall is a snack, the street is dinner."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "st-johns-church",
@@ -1022,7 +1100,8 @@
     "try": [
       "The red facade and steeple are the landmark - hard to miss once you know the hill.",
       "Fourth-oldest Protestant church in the city; go in expecting quiet, not a headline stop."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "toit",
@@ -1037,7 +1116,8 @@
     "try": [
       "A house beer and a long table — this is the brewpub that normalised craft here.",
       "Indiranagar evening, not a nightclub."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "amrut",
@@ -1055,7 +1135,8 @@
     "try": [
       "The tour if you care how Fusion gets made; otherwise drink it in the city, not the industrial estate.",
       "It's a distillery on Mysore Road — plan the trip, don't stumble in."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "jumma-masjid",
@@ -1071,7 +1152,8 @@
     "try": [
       "Note the Tipu Sultan connection - the stone came from Srirangapatna on his orders.",
       "The road it's on is named after it, not the reverse - a sign of how long it's anchored the area."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "commercial-street",
@@ -1089,7 +1171,9 @@
     "try": [
       "Walk it for clothes, shoes and export surplus, not a boutique browse.",
       "Pair it with Chickpet a few km away for the two-mood contrast."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "chickpet",
@@ -1104,7 +1188,9 @@
     "try": [
       "Go for fabric, bangles and spice by weight - old-city density, not a mall aisle.",
       "Pair it with Commercial Street a few km away for the two-mood contrast."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "lakeview-milk-bar",
@@ -1120,7 +1206,8 @@
     "try": [
       "Order off the original three flavours - vanilla, chocolate, raspberry - before the newer menu.",
       "Remember the name's origin: Ulsoor Lake used to be visible from the first branch, long before the MG Road move."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "malleswaram-market",
@@ -1138,7 +1225,8 @@
     "try": [
       "Flowers, filter-coffee powder, and produce the way the neighbourhood still shops.",
       "Pair it with Veena Stores or CTR on the same visit."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "ubcity",
@@ -1161,7 +1249,8 @@
     "try": [
       "Look at how Bengaluru jewellery and design houses present themselves — then leave for actual craft.",
       "Open Skip the crowd on the card if this was the royal-India photo stop."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "koshys-restaurant",
@@ -1177,7 +1266,8 @@
     "try": [
       "Sit in for a slow breakfast or coffee - the booths, not a takeaway counter, are the point here.",
       "Notice who's at the next table before assuming it's just a cafe; this is where the city's political and literary crowd still meets."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "iskcon",
@@ -1200,7 +1290,9 @@
     "try": [
       "Evening aarti if you want the hill complex at full volume.",
       "Open Skip the crowd for Dodda Ganapathi if you want a quieter temple."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "shivaji-military-hotel",
@@ -1216,7 +1308,8 @@
     "try": [
       "Order the donne biryani - the dish that carried this place's reputation from Nagarthapet to Jayanagar.",
       "Know the term going in: 'military hotel' means non-veg eatery here, not an army mess."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "palace",
@@ -1238,7 +1331,9 @@
     "try": [
       "A Tudor walk-through — useful as a reminder this isn't Rajasthan.",
       "Open Skip the crowd if you actually wanted a royal seat: that's Mysuru."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "rangashankara",
@@ -1256,7 +1351,8 @@
     "try": [
       "Check the week's Kannada, English, and regional plays and book a night.",
       "It's a theatre. Stay for the play, not the lobby."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "new-modern-hotel",
@@ -1272,7 +1368,8 @@
     "try": [
       "Order one idli and let the bucket of sambar do the rest - that's the actual move here, not a full thali.",
       "Go for a slow morning, not a quick bite; this is a sit-and-talk institution, not a grab-and-go darshini."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "cauvery-emporium",
@@ -1287,7 +1384,8 @@
     "try": [
       "Mysore silk, sandalwood, and Channapatna under one state-run roof, fixed prices.",
       "This is the craft shop; UB City is the mall."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "dodda-ganapathi",
@@ -1302,7 +1400,8 @@
     "try": [
       "Sit with the 16th-century monolithic Ganesha below Bull Temple hill.",
       "Unhurried on purpose — don't stack it with a temple-hopping checklist."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "pump-house",
@@ -1318,7 +1417,8 @@
     "try": [
       "Try the house craft beers rather than defaulting to a familiar bottle - that's the whole premise here.",
       "JP Nagar, not Indiranagar - the founders built it precisely so you wouldn't have to make that drive."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "vidyarthi-bhavan",
@@ -1338,7 +1438,8 @@
     "try": [
       "Masala dosa if you accept the wait; otherwise open Skip the crowd.",
       "It's famous. That's the whole problem and the whole reason to know the name."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "turahalli-forest",
@@ -1354,7 +1455,8 @@
     "try": [
       "Stick to the Tree Park section - the reserve forest itself is closed to visitors now, for the forest's sake.",
       "Don't expect the cycling and bouldering trails from a few years ago; access has tightened since."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "brigade-mg",
@@ -1372,7 +1474,8 @@
     "try": [
       "Walk it once so you know the postcard strip, then leave.",
       "Open Skip the crowd for Indiranagar if you wanted a night out."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "chinita",
@@ -1386,7 +1489,8 @@
     "try": [
       "Tacos and horchata; the mole if you want something that isn't mild-for-India.",
       "Indiranagar or Koramangala — same kitchen idea."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "mini-forest-hbr-layout",
@@ -1402,7 +1506,8 @@
     "try": [
       "Walk the dense planting up close - the whole point of the Miyawaki method is packing native species tight, not spacing them out.",
       "Compare it mentally to a regular park; this is doing a different job, not competing on lawn space."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "chianti",
@@ -1416,7 +1521,8 @@
     "try": [
       "Pasta or lasagna when you don't want to gamble on a new place.",
       "Tiramisu if you're already there; this is a consistent, not a trendy, room."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "rnr-biriyani",
@@ -1433,7 +1539,9 @@
     "try": [
       "Donne mutton or chicken biryani - the recipe is the point, not a new mash-up.",
       "Koramangala 4th B Block, near the BDA complex; other outlets exist, same donne style."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "doresanipalya-forest",
@@ -1449,7 +1557,8 @@
     "try": [
       "Look for the Baronet and Large Oakblue butterflies - both uncommon elsewhere in Bengaluru.",
       "Read the tree labels as you walk; the labelling is deliberate, meant for exactly this kind of slow visit."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "meghana-foods",
@@ -1463,7 +1572,8 @@
     "try": [
       "Boneless chicken biryani, spicier than most of the city's Andhra counters.",
       "Expect a queue; that's the cult, not a secret."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "namma-sln",
@@ -1479,7 +1589,9 @@
     "try": [
       "The muddanna palav, hot, on a banana leaf - that is the dish.",
       "Gandhi Bazaar Main Road - come early if you want the dosa side of the menu, not just the palav."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "umesh-dosa-point",
@@ -1494,6 +1606,8 @@
     "try": [
       "Pudi masala dosa or the bath dosa - those are the two that built the queue.",
       "Stand and eat; parking and seating are not the point of this stretch of road."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   }
 ]

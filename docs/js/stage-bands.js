@@ -24,7 +24,9 @@
     mysore: { tone:'tone-mysore', title:'Mysore silk', bit:'Wodeyar zari · Mysuru', inset:16, kind:'zari' },
     kasuti: { tone:'tone-kasuti', title:'Kasuti', bit:'Blackwork · Hubballi-Dharwad', inset:10, kind:'kasuti' },
     molakalmuru: { tone:'tone-molakalmuru', title:'Molakalmuru', bit:'Silk checks · Chitradurga', inset:12, kind:'check-fine' },
-    khana: { tone:'tone-khana', title:'Ilkal khana', bit:'Blouse-piece checks', inset:14, kind:'check-bold' }
+    khana: { tone:'tone-khana', title:'Ilkal khana', bit:'Blouse-piece checks', inset:14, kind:'check-bold' },
+    udupi: { tone:'tone-coastal', title:'Udupi', bit:'Temple cotton · the coast', inset:14, kind:'zari' },
+    kodagu: { tone:'tone-kodagu', title:'Kodagu', bit:'Coorg drape · Western Ghats', inset:12, kind:'check-fine', checkA:'#1A4A32', checkB:'#D6A419' }
   };
   const TONES = Object.values(WEAVES).map(w => w.tone).concat([
     'tone-jacaranda','tone-coastal','tone-hampi','tone-blr-silk','tone-kodagu',
@@ -39,6 +41,8 @@
     el.classList.toggle('weave-kasuti', weave === 'kasuti');
     el.classList.toggle('weave-molakalmuru', weave === 'molakalmuru');
     el.classList.toggle('weave-khana', weave === 'khana');
+    el.classList.toggle('weave-udupi', weave === 'udupi');
+    el.classList.toggle('weave-kodagu', weave === 'kodagu');
   }
   function bowAt(s, sag, len){
     return sag * Math.sin(Math.PI * Math.max(0, Math.min(1, s / len)));
@@ -112,8 +116,8 @@
     if(tile) tile.style.display = (spec.kind === 'check-fine' || spec.kind === 'check-bold') ? '' : 'none';
     if(spec.kind === 'check-fine' || spec.kind === 'check-bold'){
       const cell = spec.kind === 'check-fine' ? 12 : 22;
-      const a = spec.kind === 'check-fine' ? '#C41E3A' : '#9C2436';
-      const b = spec.kind === 'check-fine' ? '#1F6B3A' : '#D6A419';
+      const a = spec.checkA || (spec.kind === 'check-fine' ? '#C41E3A' : '#9C2436');
+      const b = spec.checkB || (spec.kind === 'check-fine' ? '#1F6B3A' : '#D6A419');
       if(pat){
         pat.setAttribute('width', cell * 2);
         pat.setAttribute('height', cell * 2);

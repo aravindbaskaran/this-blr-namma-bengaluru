@@ -12,7 +12,8 @@
     "try": [
       "One soft, ghee-roasted dosa at a six-table Mysuru room that's been doing only that.",
       "Don't ask for a masala stuffed the Bengaluru way."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "nandi",
@@ -30,7 +31,9 @@
     "try": [
       "Leave well before dawn for sunrise above the cloud line.",
       "It's a hill-fort drive, not a cafe with a view — start early or sit in traffic."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "mysuru",
@@ -48,7 +51,9 @@
     "try": [
       "The palace lit gold on a Sunday evening if you can time it.",
       "Walk the front, then the city market and a Mylari dosa, not only the ticketed rooms."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "coorg",
@@ -66,7 +71,9 @@
     "try": [
       "Estate coffee, pandi curry, kadambuttu — stay overnight if you can.",
       "This is Kodava country, not a Bengaluru weekend park."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "sakleshpur",
@@ -84,7 +91,8 @@
     "try": [
       "A coffee-estate walk and stay, not just a drive-through - pepper vines, cardamom, and the drying yards in season.",
       "Manjarabad Fort's star-shaped ramparts, 5km out of town - free entry, 8am-6pm."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "channapatna",
@@ -102,7 +110,8 @@
     "try": [
       "Watch lacquered toys turned on a lathe, then buy from the makers, not a mall shelf.",
       "A stop on the Mysuru road, not a full-day destination unless you linger at a workshop."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "babusingh-peda",
@@ -120,7 +129,8 @@
     "try": [
       "Dharwad Peda from the Line Bazaar shop that's been on the same spot 175 years.",
       "Cash, queue, take a box; that's the pilgrimage."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "chikmagalur",
@@ -138,7 +148,8 @@
     "try": [
       "An estate walk and the Mullayanagiri trail if you have the legs.",
       "Coffee country — stay a night, don't treat it as a day from Bengaluru unless you must."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "udupi-mangaluru",
@@ -156,7 +167,9 @@
     "try": [
       "Temple-kitchen Udupi food, Malpe beach, neer dosa and kori rotti.",
       "Coastal Karnataka is a trip, not a lunch."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "melkote",
@@ -174,7 +187,8 @@
     "try": [
       "Climb to the Yoga Narasimha temple on the hilltop - believed installed by Prahlada himself, and the better view.",
       "Time it for Vairamudi habba (March/April) if you want to see all three royal crowns out at once."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "yakshagana-kendra",
@@ -192,7 +206,8 @@
     "try": [
       "If a performance or rehearsal is on, that's the visit — costumes and all-night drama.",
       "It's a training school in Udupi, not a museum diorama."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "hampi",
@@ -210,7 +225,9 @@
     "try": [
       "Boulder ruins, temple streets, and the river — plan an overnight, not a day dash.",
       "Sunrise or late afternoon; midday on the rocks is punishment."
-    ]
+    ],
+    "tourist": true,
+    "stay": true
   },
   {
     "id": "vijayapura",
@@ -228,7 +245,8 @@
     "try": [
       "Gol Gumbaz first, then the other sultanate buildings if you still have light.",
       "Pair with Hampi or Aihole; it's a long north Karnataka haul."
-    ]
+    ],
+    "stay": true
   },
   {
     "id": "aihole",
@@ -246,6 +264,7 @@
     "try": [
       "Aihole, Badami, Pattadakal as one Chalukya chain along the Malaprabha.",
       "Temple-town hopping — start early, one site rushed is a waste."
-    ]
+    ],
+    "stay": true
   }
 ]

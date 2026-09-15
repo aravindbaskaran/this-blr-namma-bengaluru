@@ -12,8 +12,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Baloo+Tamma+2:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <link rel="stylesheet" href="css/tokens.css?v=20260915j">
-<link rel="stylesheet" href="css/layout.css?v=20260915s">
-<link rel="stylesheet" href="css/stage.css?v=20260915j">
+<link rel="stylesheet" href="css/layout.css?v=20260915x">
+<link rel="stylesheet" href="css/stage.css?v=20260915t">
 </head>
 <body class="is-loading">
 <div id="guide-loader" role="status" aria-live="polite" aria-busy="true">
@@ -77,6 +77,10 @@
       <a href="#add-yours">Write in</a>
     </nav>
     <div class="header-actions">
+      <div class="mode-toggle" role="group" aria-label="Guide depth">
+        <button type="button" data-mode="tourist" onclick="setGuideMode('tourist')">Tourist</button>
+        <button type="button" data-mode="stay" onclick="setGuideMode('stay')">Stay</button>
+      </div>
       <button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="siteNav" onclick="toggleNav()">Menu</button>
       <button class="agenda-pill" type="button" onclick="openDrawer()">To-do <span class="agenda-count" id="agendaCount">0</span></button>
     </div>
@@ -196,56 +200,12 @@
         <p><strong>None of this is a discovery, and none of it is "ours".</strong> We did not invent these places, weaves, histories, or dishes, and we did not find them. People have been living with them, writing them down, and passing them along for years - often centuries. This page gathers what was already there, and <a href="#sources">names where it came from</a>. Credit sits with the city, with the people who keep these things going, and with those sources.</p>
       </aside>
       <p>India is enormous. What gets billed as "Indian culture" is still overwhelmingly North Indian. South of the Vindhyas, a lot of that default starts to feel foreign to what's actually around you. This is a guide to this Bengaluru: history first, then what you can do here, then what's traditional here, then the Karnataka it sits inside.</p>
-    </div>
-    <div class="section-head about-side">
-      <div class="head-with-icon">
-        <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-2 2-1 4 0 5-3 0-5 2-5 5 0 4 3 6 5 8 2-2 5-4 5-8 0-3-2-5-5-5 1-1 2-3 0-5Z"/></svg>
-        <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಬರೆದವರ ಬಗ್ಗೆ</span><span class="kn-en">about the people behind this</span></span>
-      </div>
-      <h2>About the people behind this</h2>
-      <p>A group effort at compiling and pointing, not at claiming. It started as one outsider's notes after a decade-ish in the city, and it grows when someone files a spot, a correction, or a pull request.</p>
-      <article class="person-card person-card-lead">
-        <img class="person-avatar" src="https://github.com/aravindbaskaran.png" alt="" width="64" height="64">
-        <div>
-          <h3>Aravind Baskaran</h3>
-          <p class="person-role">Started the guide</p>
-          <p>Born in Pondicherry. On the way to Bengaluru I went through seven schools and one college - plus a three-day stint at another - across Uttar Pradesh, Andhra Pradesh, Telangana, Tamil Nadu, and Kolkata. I've moved around enough that I don't really belong anywhere, which, funnily enough, is a way of belonging a little bit everywhere. That's probably where this habit comes from.</p>
-          <p>I care about languages - not the grammar, but how they stay with a place and move with the people who speak them. I speak Tamil, Kannada, Hindi, English, French (oui, Pondicherry), Telugu, and whatever the room needs next. Clojure, Java, Go, and JavaScript have taken years of my life. They don't get a seat at this table.</p>
-          <p>Bengaluru is as representative of India as anywhere else, and it holds more than the last four decades of software parks. The older city deserves a space of its own.</p>
-          <p class="creator-links">Find me on <a href="https://www.linkedin.com/in/aravindbaskaran/" target="_blank" rel="noopener">LinkedIn</a> or <a href="https://x.com/aravind_baskara" target="_blank" rel="noopener">X</a> · <a href="https://github.com/aravindbaskaran" target="_blank" rel="noopener">GitHub</a></p>
-        </div>
-      </article>
-      <h3 class="people-more-head" id="peopleMoreHead" hidden>Also on this guide</h3>
-      <div class="people-grid" id="peopleList"></div>
-      <p class="creator-links">Want in? Read <a href="https://github.com/aravindbaskaran/this-blr-namma-bengaluru/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">how to contribute</a>, or use <a href="#add-yours">Write in</a> to open a GitHub issue.</p>
-    </div>
-  </div>
-</section>
-
-<div class="mala-divider" aria-hidden="true">
-  <svg viewBox="0 0 640 60">
-    <path d="M8 30 Q80 6 160 30 T320 30 T480 30 T632 30" fill="none" stroke="#5A4638" stroke-width="1.4"/>
-    <g fill="#F6F1E4" stroke="#9E1B32" stroke-width="0.4">
-      <g transform="translate(80 26)"><ellipse rx="6" ry="3.2"/><ellipse rx="6" ry="3.2" transform="rotate(60)"/><ellipse rx="6" ry="3.2" transform="rotate(120)"/><circle r="1.7" fill="#D6A419" stroke="none"/></g>
-      <g transform="translate(240 24)"><ellipse rx="6" ry="3.2"/><ellipse rx="6" ry="3.2" transform="rotate(60)"/><ellipse rx="6" ry="3.2" transform="rotate(120)"/><circle r="1.7" fill="#D6A419" stroke="none"/></g>
-      <g transform="translate(400 26)"><ellipse rx="6" ry="3.2"/><ellipse rx="6" ry="3.2" transform="rotate(60)"/><ellipse rx="6" ry="3.2" transform="rotate(120)"/><circle r="1.7" fill="#D6A419" stroke="none"/></g>
-      <g transform="translate(560 24)"><ellipse rx="6" ry="3.2"/><ellipse rx="6" ry="3.2" transform="rotate(60)"/><ellipse rx="6" ry="3.2" transform="rotate(120)"/><circle r="1.7" fill="#D6A419" stroke="none"/></g>
-    </g>
-  </svg>
-</div>
-
-<section id="sources">
-  <div class="section-head">
-    <div class="head-with-icon">
-      <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h10l4 4v14H6z M16 3v4h4 M9 12h8 M9 16h8 M9 8h3"/></svg>
-      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಆಕರಗಳು</span><span class="kn-en">sources &amp; further reading</span></span>
-    </div>
-    <h2>Sources</h2>
-    <p>Mostly Wikipedia, for stability and easy cross-checking - plus the work those pages rest on. If a fact here is worth repeating, the credit is due there.</p>
-  </div>
-  <details class="sources-details">
-    <summary>Show all sources</summary>
-    <div class="sources-grid">
+      <div id="sources" class="sources-under-why">
+        <h3>Sources</h3>
+        <p>Mostly Wikipedia, for stability and easy cross-checking - plus the work those pages rest on. If a fact here is worth repeating, the credit is due there.</p>
+        <details class="sources-details">
+          <summary>Show all sources</summary>
+          <div class="sources-grid">
     <div class="sources-col">
       <h4>History &amp; the city</h4>
       <ul>
@@ -295,8 +255,33 @@
         <li><a href="https://en.wikipedia.org/wiki/Udupi_cuisine" target="_blank" rel="noopener">Udupi cuisine</a></li>
       </ul>
     </div>
+          </div>
+        </details>
+      </div>
+    </div>
+    <div class="section-head about-side">
+      <div class="head-with-icon">
+        <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-2 2-1 4 0 5-3 0-5 2-5 5 0 4 3 6 5 8 2-2 5-4 5-8 0-3-2-5-5-5 1-1 2-3 0-5Z"/></svg>
+        <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಬರೆದವರ ಬಗ್ಗೆ</span><span class="kn-en">about the people behind this</span></span>
+      </div>
+      <h2>About the people behind this</h2>
+      <p>A group effort at compiling and pointing, not at claiming. It started as one outsider's notes after a decade-ish in the city, and it grows when someone files a spot, a correction, or a pull request.</p>
+      <article class="person-card person-card-lead">
+        <img class="person-avatar" src="https://github.com/aravindbaskaran.png" alt="" width="64" height="64">
+        <div>
+          <h3>Aravind Baskaran</h3>
+          <p class="person-role">Started the guide</p>
+          <p>Born in Pondicherry. On the way to Bengaluru I went through seven schools and one college - plus a three-day stint at another - across Uttar Pradesh, Andhra Pradesh, Telangana, Tamil Nadu, and Kolkata. I've moved around enough that I don't really belong anywhere, which, funnily enough, is a way of belonging a little bit everywhere. That's probably where this habit comes from.</p>
+          <p>I care about languages - not the grammar, but how they stay with a place and move with the people who speak them. I speak Tamil, Kannada, Hindi, English, French (oui, Pondicherry), Telugu, and whatever the room needs next. Clojure, Java, Go, and JavaScript have taken years of my life. They don't get a seat at this table.</p>
+          <p>Bengaluru is as representative of India as anywhere else, and it holds more than the last four decades of software parks. The older city deserves a space of its own.</p>
+          <p class="creator-links">Find me on <a href="https://www.linkedin.com/in/aravindbaskaran/" target="_blank" rel="noopener">LinkedIn</a> or <a href="https://x.com/aravind_baskara" target="_blank" rel="noopener">X</a> · <a href="https://github.com/aravindbaskaran" target="_blank" rel="noopener">GitHub</a></p>
+        </div>
+      </article>
+      <h3 class="people-more-head" id="peopleMoreHead" hidden>Also on this guide</h3>
+      <div class="people-grid" id="peopleList"></div>
+      <p class="creator-links">Want in? Read <a href="https://github.com/aravindbaskaran/this-blr-namma-bengaluru/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">how to contribute</a>, or use <a href="#add-yours">Write in</a> to open a GitHub issue.</p>
+    </div>
   </div>
-  </details>
 </section>
 
 <div class="stage-band-straight" data-band="mysore" aria-hidden="true"></div>
@@ -383,18 +368,7 @@
   </div>
 </section>
 
-<div class="mala-divider" aria-hidden="true">
-  <svg viewBox="0 0 640 60">
-    <path d="M8 28 Q80 48 160 28 T320 28 T480 28 T632 28" fill="none" stroke="#6B4A28" stroke-width="1.5"/>
-    <g>
-      <g transform="translate(80 28)"><circle r="10" fill="#E28A12"/><circle r="7" fill="#F0C550"/><circle r="3" fill="#C1631A"/></g>
-      <g transform="translate(208 34)"><circle r="9" fill="#E28A12"/><circle r="6.5" fill="#F0C550"/><circle r="2.6" fill="#C1631A"/></g>
-      <g transform="translate(336 26)"><circle r="10" fill="#E28A12"/><circle r="7" fill="#F0C550"/><circle r="3" fill="#C1631A"/></g>
-      <g transform="translate(464 34)"><circle r="9" fill="#E28A12"/><circle r="6.5" fill="#F0C550"/><circle r="2.6" fill="#C1631A"/></g>
-      <g transform="translate(576 28)"><circle r="10" fill="#E28A12"/><circle r="7" fill="#F0C550"/><circle r="3" fill="#C1631A"/></g>
-    </g>
-  </svg>
-</div>
+<div class="stage-band-straight" data-band="kodagu" aria-hidden="true"></div>
 
 <section class="tnt-section" id="not-that">
   <svg class="shalya-mark" viewBox="0 0 90 140" aria-hidden="true">
@@ -435,7 +409,8 @@
       <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಅನ್ವೇಷಿಸಿ</span><span class="kn-en">explore</span></span>
     </div>
     <h2>Places people would actually take you - not secret finds</h2>
-    <p>These are known rooms, lakes, shops and walks, compiled so you don't have to assemble the list from scratch. Filter by kind, or by personal picks (that's taste, not a claim of discovery). If a place is usually a queue, open Skip the crowd on the card for what to do instead.</p>
+    <p>Known rooms, lakes, shops and walks, compiled so you don't have to assemble the list from scratch. Filter by kind. If a place is usually a queue, open Skip the crowd on the card for what to do instead.</p>
+    <p class="stay-only">Personal picks are taste, not a claim of discovery.</p>
   </div>
 <div class="controls">
   <div class="controls-inner">
@@ -453,6 +428,8 @@
     <p class="map-note">Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors - real coordinates, click a pin for details.</p>
   </div>
 </section>
+
+<div class="stage-band-straight" data-band="molakalmuru" aria-hidden="true"></div>
 
 <section id="modern-blr">
   <div class="section-head">
@@ -544,8 +521,6 @@
   </div>
 </section>
 
-<div class="stage-band-straight" data-band="molakalmuru" aria-hidden="true"></div>
-
 <section id="did-you-know">
   <div class="section-head">
     <div class="head-with-icon">
@@ -581,10 +556,13 @@
       <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಕನ್ನಡ ಕಲಿಯಿರಿ</span><span class="kn-en">learn Kannada</span></span>
     </div>
     <h2>Words that go further than any guidebook</h2>
-    <p>Kannada is Karnataka's official language and Bengaluru's mother tongue - you can get away with some English and some Hindi, but the city itself runs on Kannada as the default, Tamil to a real extent, and a scatter of other languages after that. It's one of eleven languages in India with classical-language status - a list that also includes Tamil, Sanskrit, Telugu, Malayalam, Odia, Marathi, Bengali, Assamese, Pali, and Prakrit. The oldest surviving Kannada inscription is from 450 CE, and Kavirajamarga, the oldest surviving work of Kannada poetics, dates to 850 CE. That's a longer running conversation than most languages on earth get to have, and it's genuinely fun to pick up a few threads of it. Try a few of these in an auto, a darshini, or a market stall - people notice. Kannada, like most Indian languages, rewards the effort: a warmer smile, a warmer welcome, and sometimes even a warmer price. Tap the speaker icon next to any Kannada word to hear it - the audio is Kannada, not your phone reading Kannada letters in an American accent. Treat it as a rough guide rather than a lesson: it will get you understood, not mistaken for a local.</p>
+    <p>Kannada is the city's default. You can get away with some English, but try a few of these in an auto, a darshini, or a stall - people notice. Tap the speaker for audio. Treat it as a rough guide, not a lesson.</p>
+    <p class="stay-only">It's Karnataka's official language and one of eleven in India with classical-language status. The oldest surviving Kannada inscription is from 450 CE; Kavirajamarga, the oldest surviving work of Kannada poetics, dates to 850 CE. Tamil is also spoken here to a real extent, with a scatter of other languages after that. The audio is Kannada, not your phone reading Kannada letters in an American accent.</p>
   </div>
   <div class="phrase-grid" id="phraseGrid" data-reveal></div>
 </section>
+
+<div class="stage-band-straight" data-band="udupi" aria-hidden="true"></div>
 
 <section id="karnataka">
   <div class="section-head">
@@ -826,9 +804,9 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="js/guide.js?v=20260915s"></script>
+<script src="js/guide.js?v=20260915w"></script>
 <script type="module" src="kannada-voice.js"></script>
-<script src="js/stage-bands.js?v=20260915e"></script>
-<script src="js/stage-bands-straight.js?v=20260915e"></script>
+<script src="js/stage-bands.js?v=20260915t"></script>
+<script src="js/stage-bands-straight.js?v=20260915t"></script>
 </body>
 </html>
