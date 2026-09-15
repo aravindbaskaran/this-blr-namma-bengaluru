@@ -13,7 +13,8 @@
     --ink:#221A14;
     --ink-soft:#5B4E44;
     --line:rgba(36,28,24,0.16);
-    --header-h:71px;
+    --radius:3px;
+    --header-h:57px;
     --safe-bottom: env(safe-area-inset-bottom, 0px);
     --safe-top: env(safe-area-inset-top, 0px);
     --dot-line:rgba(36,28,24,0.06);
