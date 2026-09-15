@@ -1,3 +1,76 @@
 {
-  "photos": []
+  "photos": [
+    {
+      "id": "ragi-ambli-leaf",
+      "file": "IMG20260110122222.jpg",
+      "caption": "Ragi ambli in a paper cup, cucumber, a dried chilli, and fried bits on a banana leaf.",
+      "alt": "Cup of ragi ambli held above a banana leaf with cucumber, chilli, and fried pieces",
+      "lat": 12.943531,
+      "lng": 77.576719
+    },
+    {
+      "id": "mangalore-bun-plate",
+      "file": "IMG20260707130447.jpg",
+      "caption": "A Mangalore bun with coconut chutney, green chutney, and sambar. Elephant on the plate.",
+      "alt": "Puffed Mangalore bun on a hotel plate with two chutneys and sambar",
+      "lat": 12.988339,
+      "lng": 77.577239
+    },
+    {
+      "id": "lalbagh-gate-morning",
+      "file": "IMG20260804070305.jpg",
+      "caption": "Lalbagh Botanical Garden gate, Kannada above the English, wet morning.",
+      "alt": "Lalbagh Botanical Garden entrance arch under trees",
+      "lat": 12.951289,
+      "lng": 77.590417
+    },
+    {
+      "id": "lalbagh-rock-pigeons",
+      "file": "IMG20260804070658.jpg",
+      "caption": "Pigeons off the Lalbagh rock, the city behind the trees.",
+      "alt": "Flock of pigeons over the Lalbagh rock with the city skyline",
+      "lat": 12.948603,
+      "lng": 77.589444
+    },
+    {
+      "id": "cubbon-seshadri-hall",
+      "file": "IMG20260805161943.jpg",
+      "caption": "Seshadri Iyer Memorial Hall from Cubbon, up the stairs between the pines.",
+      "alt": "Red hall at the top of stairs between tall pines in Cubbon Park",
+      "lat": 12.974314,
+      "lng": 77.59645
+    },
+    {
+      "id": "cubbon-bandstand",
+      "file": "IMG20260805161948.jpg",
+      "caption": "The Cubbon Park bandstand under a heavy sky.",
+      "alt": "Red-roofed bandstand on a lawn in Cubbon Park",
+      "lat": 12.976978,
+      "lng": 77.593628
+    },
+    {
+      "id": "cubbon-chamarajendra",
+      "file": "IMG20260819173558.jpg",
+      "caption": "Chamarajendra on the horse in Cubbon, bronze fish at the base.",
+      "alt": "Equestrian statue in Cubbon Park with a bronze fish sculpture in front",
+      "lat": 12.976175,
+      "lng": 77.594375
+    },
+    {
+      "id": "cubbon-path",
+      "file": "IMG20260819174313.jpg",
+      "caption": "A Cubbon path, lawn, and the usual trees.",
+      "alt": "Paved path beside grass and trees in Cubbon Park",
+      "lat": 12.972717,
+      "lng": 77.592739
+    },
+    {
+      "id": "cubbon-canopy",
+      "file": "IMG20260819174324.jpg",
+      "caption": "Open ground under the Cubbon canopy.",
+      "alt": "Grassy clearing with spreading trees in Cubbon Park",
+      "lat": 12.972717,
+      "lng": 77.592739
+    }
+  ]
 }

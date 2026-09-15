@@ -125,14 +125,9 @@ function inBlrBox(lat, lng){
   return lat >= 12.72 && lat <= 13.20 && lng >= 77.35 && lng <= 77.85;
 }
 function locationPhotos(l){
-  const extra = GALLERY.filter(g => g.locationId === l.id).map(gallerySrc).filter(Boolean);
-  const base = (l.photos && l.photos.length) ? l.photos.slice() : [];
-  if(!base.length){
-    const d = dishesAt(l.id).find(x => x.photo);
-    if(d && d.photo) base.push(d.photo);
-  }
-  extra.forEach(src => { if(!base.includes(src)) base.push(src); });
-  return base;
+  if(l.photos && l.photos.length) return l.photos;
+  const d = dishesAt(l.id).find(x => x.photo);
+  return d && d.photo ? [d.photo] : [];
 }
 function catMeta(id){
   if(id === 'daytrip') return { id:'daytrip', label:'Day trip', color:DAYTRIP_COLOR };
@@ -379,7 +374,6 @@ function renderMap(){
     const lat = g.lat, lng = g.lng;
     if(!src || typeof lat !== 'number' || typeof lng !== 'number') return;
     if(!inBlrBox(lat, lng)) return;
-    if(g.locationId && items.some(l => l.id === g.locationId)) return;
     const title = galleryCaption(g) || 'Contributor photo';
     const icon = L.divIcon({
       className: 'map-pin-wrap',
@@ -887,11 +881,8 @@ function renderGallery(){
     const src = gallerySrc(g);
     const cap = galleryCaption(g);
     const alt = g.alt || cap || 'Contributor photo';
-    const loc = g.locationId ? locById(g.locationId) : null;
     let pin = '';
-    if(loc){
-      pin = `<button type="button" class="map-link-btn" onclick="focusPlace('${loc.id}')">${esc(loc.name)}</button>`;
-    } else if(typeof g.lat === 'number' && typeof g.lng === 'number' && inBlrBox(g.lat, g.lng)){
+    if(typeof g.lat === 'number' && typeof g.lng === 'number' && inBlrBox(g.lat, g.lng)){
       pin = `<button type="button" class="map-link-btn" onclick="viewGalleryPin(${g.lat},${g.lng},${JSON.stringify(g.id || '')})">View on map</button>`;
     }
     const by = g.by ? `<p class="gallery-by">${esc(g.by)}</p>` : '';
