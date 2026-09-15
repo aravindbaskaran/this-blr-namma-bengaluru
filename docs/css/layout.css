@@ -515,6 +515,13 @@
   .note-rename h4{color:var(--jacaranda);}
   .rename-note h4{font-size:14.5px; margin-bottom:6px; color:var(--hampi-stone);}
   .rename-note p{font-size:13.5px; color:var(--ink-soft); line-height:1.6; max-width:820px;}
+  .credit-note{
+    border:1px solid var(--line); border-left:4px solid var(--maroon);
+    background:var(--card-surface); border-radius:var(--radius);
+    padding:14px 16px; margin:16px 0 4px;
+  }
+  .credit-note p{color:var(--ink); font-size:15px; line-height:1.6; margin:0;}
+  .credit-note a{color:var(--maroon); font-weight:600; text-decoration:underline;}
   @media (max-width:800px){
     .note-pair{grid-template-columns:1fr;}
   }
