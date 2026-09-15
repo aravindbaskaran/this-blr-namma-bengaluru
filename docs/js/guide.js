@@ -295,6 +295,7 @@ function renderDrawer(){
   }).join('');
 }
 function openDrawer(){
+  toggleNav(false);
   document.getElementById('drawer').dataset.open = 'true';
   document.getElementById('drawerBackdrop').dataset.open = 'true';
   renderDrawer();
@@ -495,8 +496,64 @@ function setWriteIn(which){
   if(panelAsk) panelAsk.hidden = spot;
 }
 
-/* ---------------- add-your-own form ---------------- */
 const GUIDE_REPO = 'https://github.com/aravindbaskaran/this-blr-namma-bengaluru';
+const PEOPLE_NOTES = {
+  aravindbaskaran: { name: 'Aravind Baskaran', role: 'Started the guide' },
+  'vinaykarthikbaluguri-svg': { name: 'Vinay Karthik Baluguri', role: 'Kannada audio' },
+  'deepikarajan-swym': { name: 'Deepika Rajan', role: 'Contributor' }
+};
+
+function esc(s){
+  return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function toggleNav(force){
+  const nav = document.getElementById('siteNav');
+  const btn = document.getElementById('navToggle');
+  if(!nav || !btn) return;
+  const open = force == null ? !nav.classList.contains('is-open') : !!force;
+  nav.classList.toggle('is-open', open);
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+
+async function loadPeople(){
+  const host = document.getElementById('peopleList');
+  const moreHead = document.getElementById('peopleMoreHead');
+  if(!host) return;
+  let list = [];
+  try{
+    const res = await fetch(`https://api.github.com/repos/aravindbaskaran/this-blr-namma-bengaluru/contributors?per_page=100`);
+    if(res.ok) list = await res.json();
+  }catch(e){ list = []; }
+  if(!Array.isArray(list) || !list.length){
+    list = [
+      { login:'vinaykarthikbaluguri-svg', html_url:'https://github.com/vinaykarthikbaluguri-svg', avatar_url:'https://github.com/vinaykarthikbaluguri-svg.png' },
+      { login:'deepikarajan-swym', html_url:'https://github.com/deepikarajan-swym', avatar_url:'https://github.com/deepikarajan-swym.png' }
+    ];
+  }
+  const others = list.filter(p => p && p.type !== 'Bot' && p.login && p.login !== 'aravindbaskaran');
+  if(!others.length){
+    host.innerHTML = '';
+    if(moreHead) moreHead.hidden = true;
+    return;
+  }
+  if(moreHead) moreHead.hidden = false;
+  host.innerHTML = others.map(p => {
+    const note = PEOPLE_NOTES[p.login] || {};
+    const name = note.name || p.login;
+    const role = note.role || 'Contributor';
+    const url = p.html_url || ('https://github.com/' + p.login);
+    const avatar = p.avatar_url || ('https://github.com/' + p.login + '.png');
+    return `<a class="person-card" href="${esc(url)}" target="_blank" rel="noopener">
+      <img class="person-avatar" src="${esc(avatar)}" alt="" width="56" height="56">
+      <div>
+        <h3>${esc(name)}</h3>
+        <p class="person-role">${esc(role)}</p>
+        <p>@${esc(p.login)}</p>
+      </div>
+    </a>`;
+  }).join('');
+}
 function openGuideIssue(title, body){
   window.open(`${GUIDE_REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`, '_blank', 'noopener');
 }
@@ -547,7 +604,14 @@ document.getElementById('issueForm').addEventListener('submit', function(e){
     renderPhrases();
     renderAgendaCount();
     setEra(6);
+    loadPeople();
     hideLoader(true);
+    const nav = document.getElementById('siteNav');
+    if(nav) nav.addEventListener('click', e => { if(e.target.closest('a')) toggleNav(false); });
+    addEventListener('keydown', e => {
+      if(e.key === 'Escape'){ toggleNav(false); closeDrawer(); closeLightbox(); }
+    });
+    addEventListener('resize', () => { if(innerWidth > 720) toggleNav(false); }, {passive:true});
   } catch (err) {
     console.error(err);
     hideLoader(false);

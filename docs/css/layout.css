@@ -10,6 +10,7 @@
     position:sticky; top:0; z-index:40;
     background:var(--cream);
     border-bottom:none;
+    padding-top:var(--safe-top);
   }
   /* Ilkal Tope Teni as the site's one saree edge under the nav. */
   .saree-border, .pallu-strip{
@@ -25,6 +26,7 @@
   .header-inner{
     max-width:1180px; margin:0 auto; padding:16px 24px;
     display:flex; align-items:center; justify-content:space-between; gap:24px;
+    position:relative;
   }
   .brand{display:flex; align-items:center; gap:10px; cursor:pointer; text-decoration:none; color:inherit;}
   .brand-mark{width:52px;height:22px;flex:none;}
@@ -42,6 +44,12 @@
   }
   nav.main-nav a:hover{background:var(--cream-2); color:var(--ink);}
   .header-actions{display:flex; align-items:center; gap:10px; flex:none;}
+  .nav-toggle{
+    display:none;
+    border:1px solid var(--line); background:var(--cream-2); color:var(--ink);
+    padding:8px 14px; border-radius:20px; font-size:14px; font-weight:600;
+    min-height:40px;
+  }
   .agenda-pill{
     display:flex; align-items:center; gap:6px;
     background:var(--maroon); color:var(--on-accent); border:none;
@@ -562,6 +570,31 @@
   .creator-note p + p{margin-top:12px;}
   .creator-links{font-size:14px !important;}
   .creator-links a{color:var(--maroon); text-decoration:underline; font-weight:600;}
+  .person-card{
+    display:flex; gap:14px; align-items:flex-start;
+    background:var(--card-surface); border:1px solid var(--line);
+    border-left:4px solid var(--jacaranda); border-radius:var(--radius);
+    padding:16px; margin-top:16px;
+  }
+  .person-card-lead{flex-direction:column;}
+  .person-card-lead > div{min-width:0;}
+  @media (min-width:560px){
+    .person-card-lead{flex-direction:row;}
+  }
+  .person-avatar{
+    width:56px; height:56px; border-radius:50%; object-fit:cover;
+    border:2px solid var(--gold); background:var(--cream-2); flex:none;
+  }
+  .person-card h3{font-size:17px; margin:0 0 2px;}
+  .person-role{font-size:12.5px; font-weight:600; color:var(--maroon); margin:0 0 8px;}
+  .person-card p{font-size:14.5px; color:var(--ink-soft); line-height:1.6; margin:0;}
+  .person-card p + p{margin-top:10px;}
+  .people-more-head{font-size:15px; margin:22px 0 0; color:var(--ink);}
+  .people-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:12px; margin-top:12px;}
+  .people-grid .person-card{flex-direction:column; align-items:center; text-align:center; border-left-width:1px; padding:14px;}
+  .people-grid .person-card p{font-size:13px;}
+  .people-grid a.person-card{text-decoration:none; color:inherit;}
+  .people-grid a.person-card:hover{border-color:var(--maroon);}
 
   /* ---------- write in: spot + question ---------- */
   .write-in{
@@ -673,15 +706,45 @@
     .region-row{grid-template-columns:repeat(2,1fr);}
   }
   @media (max-width:720px){
+    .header-inner{padding:10px 14px; gap:10px;}
+    .brand-mark{width:42px;}
+    .brand-text .en{font-size:15px;}
+    .pallu-strip{top:56px; height:6px;}
+    .nav-toggle{display:inline-flex; align-items:center;}
+    nav.main-nav{
+      display:none; position:absolute; left:0; right:0; top:100%;
+      flex-direction:column; align-items:stretch; gap:0;
+      background:var(--cream); border-bottom:1px solid var(--line);
+      padding:8px 12px 12px; box-shadow:0 10px 20px rgba(34,26,20,0.08);
+    }
+    nav.main-nav.is-open{display:flex;}
+    nav.main-nav a{padding:12px 14px; min-height:44px; display:flex; align-items:center;}
+    .hero{padding:48px 16px 40px;}
+    .hero p.lede{font-size:16px;}
+    section{padding:40px 16px; scroll-margin-top:72px;}
+    .controls{
+      top:62px; padding:10px 10px; margin-left:-2px; margin-right:-2px;
+    }
+    .controls-inner{flex-direction:column; align-items:stretch; gap:10px;}
+    .pill-row{
+      flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch;
+      padding-bottom:4px; scrollbar-width:thin;
+    }
+    .pill, .view-toggle button, .add-btn, .map-link-btn{
+      min-height:40px; flex:none;
+    }
+    .view-toggle{align-self:stretch;}
+    .view-toggle button{flex:1;}
+    .grid{grid-template-columns:1fr; gap:14px;}
+    .map-wrap{height:min(70vh, 420px);}
+    .tnt-row, .skip-row{grid-template-columns:1fr; gap:6px; padding:14px;}
+    .tnt-arrow, .skip-arrow{display:none;}
+    .tnt-label-row{flex-direction:column; gap:4px;}
+    .tnt-row .often, .tnt-row .also{font-size:14.5px;}
     .region-row{grid-template-columns:1fr;}
-    nav.main-nav{display:none;}
     .add-form{grid-template-columns:1fr;}
     .about-grid{grid-template-columns:1fr;}
     .sources-grid{grid-template-columns:1fr;}
-    .tnt-row{grid-template-columns:1fr 20px 1fr; gap:8px;}
-    .tnt-row .often, .tnt-row .also{font-size:13.5px;}
-    .skip-row{grid-template-columns:1fr; }
-    .skip-arrow{display:none;}
     .skip-col.instead{border-top:1px dashed var(--line);}
     .berunda-mark{display:none;}
     .berunda-mark-v2{display:none;}
@@ -690,4 +753,9 @@
     .history-grid{grid-template-columns:1fr; gap:32px;}
     .areas-compare{position:static;}
     .history-side{position:static;}
+    .drawer{width:100%; padding-bottom:var(--safe-bottom);}
+    .lightbox{padding:16px;}
+    .write-in-tabs{overflow-x:auto; -webkit-overflow-scrolling:touch;}
+    .write-in-tabs button{flex:none; min-height:40px;}
+    .stage-say{display:none;}
   }

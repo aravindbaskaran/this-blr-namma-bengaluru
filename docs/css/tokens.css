@@ -13,7 +13,9 @@
     --ink:#221A14;
     --ink-soft:#5B4E44;
     --line:rgba(36,28,24,0.16);
-    --radius:3px;
+    --header-h:71px;
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-top: env(safe-area-inset-top, 0px);
     --dot-line:rgba(36,28,24,0.06);
     --card-surface:#fff;
     /* ---- regional palette, drawn from craft & textile traditions ---- */
@@ -38,9 +40,10 @@
     --on-accent:#F6F1E4;
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; overflow-x:clip;}
   body{
     margin:0;
+    overflow-x:clip;
     background-color:var(--cream);
     background-image: radial-gradient(var(--dot-line) 1px, transparent 1.4px);
     background-size: 20px 20px;
