@@ -1,16 +1,4 @@
-/* Scroll stage, loader */
-  /* ---------- page stage: scroll-driven sarees, coffee, monuments ---------- */
-  .stage{
-    position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden;
-  }
-  .stage svg{max-width:none;}
-  .stage-actor{
-    position:absolute;
-    opacity:0;
-    will-change:transform, opacity;
-    transition:opacity .55s ease;
-  }
-  .stage-actor.is-on{opacity:var(--on, 0.32);}
+/* Interstitial saree bands + loader */
   .saree-ribbon{
     width:125vw; height:168px;
     --on:0.72;
@@ -59,9 +47,6 @@
     font-size:13px; color:var(--maroon); font-weight:700;
   }
   .stage-say span{color:var(--ink-soft); font-size:10.5px;}
-  .saree-ribbon.drop{
-    width:168px; height:115vh; transform-origin:50% 0;
-  }
   .tone-ilkal{--saree-field:#9C2436; --saree-kara:#D4A017; --saree-zari:#F6F1E4;}
   .tone-mysore{--saree-field:#5C1A4A; --saree-kara:#D6A419; --saree-zari:#F0C550;}
   .tone-kasuti{--saree-field:#201C17; --saree-kara:#D6A419; --saree-zari:#9E1B32;}
@@ -78,151 +63,27 @@
   .tone-navy-zari{--saree-field:#1A2744; --saree-kara:#D6A419; --saree-zari:#F0C550;}
   .tone-peacock{--saree-field:#0E6B6A; --saree-kara:#D6A419; --saree-zari:#F6F1E4;}
   .tone-magenta{--saree-field:#9B1B4A; --saree-kara:#D6A419; --saree-zari:#F6F1E4;}
-  .saree-a{top:14%; left:-12vw;}
-  .saree-b{top:48%; left:-18vw;}
-  .saree-c.drop{top:-6vh; left:max(4px, calc(50% - 660px));}
-  .saree-d{top:31%; left:-14vw;}
-  .saree-e.drop{top:-8vh; right:max(4px, calc(50% - 660px)); left:auto;}
-  .mala{--on:0.72;}
-  .mala-h{
-    top:86px; left:50%; width:min(92vw, 760px); height:78px;
-    margin-left:max(-380px, -46vw);
+
+  /* Straight interstitial bands */
+  .stage-band-straight{
+    position:relative;
+    height:176px;
+    overflow:hidden;
+    pointer-events:none;
   }
-  .mala-h.low{top:auto; bottom:10%;}
-  .mala-v{
-    top:18%; right:max(4px, calc(50% - 640px));
-    width:72px; height:min(56vh, 420px);
+  .stage-band-straight .band-ribbon{
+    position:absolute; top:12px; left:0;
+    width:100%; height:152px;
+    opacity:0; transition:opacity .45s ease;
+    filter:drop-shadow(0 10px 14px rgba(62,42,28,0.2));
+    overflow:visible;
   }
-  .mala-v.left{
-    right:auto; left:max(6px, calc(50% - 650px)); top:12%;
-  }
-  .mala-v.inner{
-    right:max(70px, calc(50% - 560px)); top:26%; height:min(48vh, 360px);
-  }
-  .mango-drift{
-    width:96px; height:108px; --on:0.55;
-    top:36%; left:max(80px, calc(50% - 420px));
-    filter:drop-shadow(0 8px 10px rgba(62,42,28,0.18));
-  }
-  .mango-drift.ripe{top:58%; left:auto; right:max(90px, calc(50% - 480px));}
-  .veni{
-    top:24%; left:max(10px, calc(50% - 600px));
-    width:52px; height:300px; --on:0.7;
-  }
-  .petals{
-    top:30%; right:max(40px, calc(50% - 560px));
-    width:240px; height:300px; --on:0.55;
-  }
-  .torana-v{
-    top:72px; left:max(6px, calc(50% - 650px));
-    height:min(78vh, 640px); width:54px; --on:0.5;
-  }
-  .jasmine-drift{
-    top:16%; right:max(8px, calc(50% - 630px));
-    width:120px; height:220px; --on:0.48;
-  }
-  .dabara-set{width:118px; height:210px; --on:0.62;}
-  .dabara-set.one{bottom:10%; left:max(8px, calc(50% - 660px));}
-  .dabara-set.two{top:28%; right:max(8px, calc(50% - 650px));}
-  .kaapi-steel{fill:#D4D7D3; stroke:#8A8E8A; stroke-width:1.1;}
-  .kaapi-steel-hi{fill:#EEF0EE; stroke:#9AA09A; stroke-width:0.8;}
-  .kaapi-bowl-in{fill:#B4B8B4; stroke:#7A807C; stroke-width:0.9;}
-  .kaapi-rim{fill:none; stroke:#C9CDC8; stroke-width:3.2;}
-  .kaapi-rim-in{fill:none; stroke:#9AA09A; stroke-width:1;}
-  .kaapi-coffee{fill:#3E2A1C;}
-  .kaapi-coffee-skin{fill:#4E3426;}
-  .kaapi-tumbler{
-    transform-box:fill-box; transform-origin:50% 92%;
-    animation:kaapi-tilt 3.4s ease-in-out infinite;
-  }
-  .kaapi-stream{
-    fill:none; stroke:#4A3020; stroke-linecap:round;
-    animation:kaapi-pull 3.4s ease-in-out infinite;
-  }
-  .kaapi-froth ellipse{fill:#E8D5B0; transform-box:fill-box; transform-origin:center;
-    animation:kaapi-foam 1.6s ease-in-out infinite;}
-  .kaapi-froth .b{animation-delay:0.35s; fill:#C4A882;}
-  .kaapi-froth .c{animation-delay:0.7s; fill:#F6EBD4;}
-  .dabara-steam{stroke:#8A6A4A; fill:none; stroke-width:1.1; stroke-linecap:round; opacity:0.45;
-    animation:steam 2.8s ease-in-out infinite;}
-  .dabara-steam.b{animation-delay:0.7s;}
-  .dabara-steam.c{animation-delay:1.3s;}
-  @keyframes steam{0%,100%{transform:translateY(0); opacity:0.15;} 50%{transform:translateY(-6px); opacity:0.55;}}
-  @keyframes kaapi-tilt{
-    0%,100%{transform:rotate(-12deg) translate(0, 2px);}
-    48%{transform:rotate(-28deg) translate(4px, -6px);}
-    72%{transform:rotate(-16deg) translate(1px, -1px);}
-  }
-  @keyframes kaapi-pull{
-    0%,100%{stroke-width:4.4;}
-    48%{stroke-width:1.8;}
-    72%{stroke-width:3;}
-  }
-  @keyframes kaapi-foam{
-    0%,100%{transform:scale(1,1); opacity:0.7;}
-    50%{transform:scale(1.18,1.35); opacity:1;}
-  }
-  .food-dosa{
-    bottom:14%; left:max(16px, calc(50% - 520px));
-    width:168px; height:168px; --on:0.55;
-  }
-  .food-idli{
-    top:36%; right:max(18px, calc(50% - 620px));
-    width:108px; height:136px; --on:0.5;
-  }
-  .food-leaf{
-    bottom:16%; right:max(40px, calc(50% - 500px));
-    width:190px; height:108px; --on:0.48;
-  }
-  .dosa-batter{
-    fill:#E8D5A3; transform-box:fill-box; transform-origin:center;
-    animation:dosa-spread 4.2s ease-in-out infinite;
-  }
-  .dosa-spreader{
-    transform-box:view-box; transform-origin:80px 76px;
-    animation:dosa-spin 4.2s ease-in-out infinite;
-  }
-  .idli-puck ellipse{transform-box:fill-box; transform-origin:center;
-    animation:kaapi-foam 2.2s ease-in-out infinite;}
-  @keyframes dosa-spread{
-    0%,8%{transform:scale(0.12); fill:#F6F1E4; opacity:0.55;}
-    38%{transform:scale(1); fill:#E8D5A3; opacity:1;}
-    70%,100%{transform:scale(1); fill:#C4A882; opacity:1;}
-  }
-  @keyframes dosa-spin{
-    0%,8%{transform:rotate(0deg); opacity:0;}
-    12%{opacity:1;}
-    40%{transform:rotate(340deg); opacity:1;}
-    48%,100%{opacity:0; transform:rotate(360deg);}
-  }
-  .flower-cluster{
-    bottom:20%; right:max(28px, calc(50% - 590px));
-    width:150px; height:96px; --on:0.42;
-  }
-  .monument{
-    color:var(--hampi-stone); --on:0.38;
-  }
-  .monument.gopura{
-    bottom:12%; left:max(8px, calc(50% - 660px));
-    width:130px; height:200px;
-  }
-  .monument.vidhana{
-    top:22%; right:max(4px, calc(50% - 670px));
-    width:200px; height:130px; color:var(--maroon-dark);
-  }
-  .monument.nandi{
-    bottom:28%; right:max(20px, calc(50% - 620px));
-    width:140px; height:90px; color:#4A3C32;
-  }
-  .elephant-walk{
-    bottom:10%; left:auto; right:-28px;
-    width:190px; height:130px; --on:0.44;
-    transform-origin:center bottom;
-  }
-  @media (max-width:960px){
-    .monument, .elephant-walk, .saree-c, .saree-e, .dabara-set.two, .mala-v, .mango-drift.ripe, .food-idli, .food-leaf{display:none;}
-    .saree-ribbon.horizon{height:120px; width:140vw;}
-    .saree-ribbon.drop{width:120px;}
+  .stage-band-straight.is-on .band-ribbon{opacity:1;}
+  .stage-band-straight .stage-say{z-index:4;}
+  .stage-band-straight.is-on .stage-say{opacity:0.96; visibility:visible;}
+  @media (max-width:720px){
+    .stage-band-straight{height:128px;}
+    .stage-band-straight .band-ribbon{height:112px; top:8px;}
   }
 
   /* ---------- guide data loader ---------- */
@@ -257,6 +118,6 @@
   [data-reveal].is-in{opacity:1; transform:none;}
   @media (prefers-reduced-motion: reduce){
     *{transition:none !important; scroll-behavior:auto !important;}
-    .loader-torana, .loader-teni, .dabara-steam, .kaapi-tumbler, .kaapi-stream, .kaapi-froth ellipse, .dosa-batter, .dosa-spreader, .idli-puck ellipse{animation:none !important;}
+    .loader-torana, .loader-teni{animation:none !important;}
     [data-reveal]{opacity:1; transform:none;}
   }
