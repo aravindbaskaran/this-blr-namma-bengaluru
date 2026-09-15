@@ -9,13 +9,14 @@ GitHub Pages serves `docs/` as the site. There is no build step and no CMS. List
 ## How the site is built
 
 - `docs/index.html` - page chrome, sections, Write in forms
+- `docs/photos.html` - full contributor photo roll (the guide only shows a preview)
 - `docs/css/` - `tokens.css` (palette and type), `layout.css` (chrome and cards), `stage.css` (saree bands and loader)
 - `docs/js/guide.js` - loads the JSON, filters Tourist / Local / Both, map, to-do, forms
 - `docs/js/stage-bands.js` and `stage-bands-straight.js` - the cloth bands between sections
 - `docs/data/locations.json` - Bengaluru spots (`tourist`, `stay`, `personalPick`, `skipCrowd`, `try`)
 - `docs/data/karnataka-places.json` - day trips
 - `docs/data/dishes.json`, `phrases.json`, `festivals.json`, `did-you-know.json`, `not-that.json`, `gallery.json`
-- `docs/gallery/` - contributor photos. Add the file here, then a row in `gallery.json` (caption, optional `locationId` or `lat`/`lng`)
+- `docs/gallery/` - contributor photos. Add the file here, then a row in `gallery.json` (caption, optional `lat`/`lng`). They show on `photos.html`, with a short preview on the guide.
 - `docs/audio/kn/` - one small clip per Kannada phrase, plus `manifest.json`
 - `docs/kannada-voice.js` - looks up a phrase's clip and plays it
 

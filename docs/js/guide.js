@@ -868,34 +868,53 @@ function viewGalleryPin(lat, lng, id){
 function renderGallery(){
   const sec = document.getElementById('contribGallery');
   const host = document.getElementById('galleryGrid');
+  const more = document.getElementById('galleryMore');
   if(!sec || !host) return;
   const items = GALLERY.filter(g => gallerySrc(g));
-  const nav = document.getElementById('galleryNav');
-  if(nav) nav.hidden = !items.length;
   if(!items.length){
     sec.hidden = true;
+    if(more) more.hidden = true;
     return;
   }
   sec.hidden = false;
-  host.innerHTML = items.map(g => {
-    const src = gallerySrc(g);
-    const cap = galleryCaption(g);
-    const alt = g.alt || cap || 'Contributor photo';
-    let pin = '';
-    if(typeof g.lat === 'number' && typeof g.lng === 'number' && inBlrBox(g.lat, g.lng)){
-      pin = `<button type="button" class="map-link-btn" onclick="viewGalleryPin(${g.lat},${g.lng},${JSON.stringify(g.id || '')})">View on map</button>`;
-    }
-    const by = g.by ? `<p class="gallery-by">${esc(g.by)}</p>` : '';
-    return `<article class="card gallery-card">
-      ${waitPhoto(src, alt, '', `tabindex="0" role="button" aria-label="${esc(alt)}" onclick="openLightbox('${esc(src)}', '${esc(alt)}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('${esc(src)}', '${esc(alt)}')}"`)}
-      <div class="card-body">
-        <p class="blurb">${esc(cap)}</p>
-        ${by}
-        ${pin}
-      </div>
-    </article>`;
-  }).join('');
-  armPhotoWaits(host);
+  const limit = (window.GuidePhotos && GuidePhotos.PREVIEW) || 4;
+  const preview = items.slice(0, limit);
+  if(window.GuidePhotos && GuidePhotos.fillGrid){
+    GuidePhotos.fillGrid(host, preview, 'pin');
+  } else {
+    host.innerHTML = preview.map(g => {
+      const src = gallerySrc(g);
+      const cap = galleryCaption(g);
+      const alt = g.alt || cap || 'Contributor photo';
+      const wide = !!g.wide;
+      let pin = '';
+      if(typeof g.lat === 'number' && typeof g.lng === 'number' && inBlrBox(g.lat, g.lng)){
+        pin = `<button type="button" class="gallery-map" onclick="viewGalleryPin(${g.lat},${g.lng},${JSON.stringify(g.id || '')})">Map</button>`;
+      }
+      const by = g.by ? `<span class="gallery-by">${esc(g.by)}</span>` : '';
+      return `<figure class="gallery-shot${wide ? ' is-wide' : ''}">
+      ${waitPhoto(src, alt, 'gallery-img', `tabindex="0" role="button" aria-label="${esc(alt)}" onclick="openLightbox('${esc(src)}', '${esc(alt)}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('${esc(src)}', '${esc(alt)}')}"`)}
+      <figcaption>
+        <p>${esc(cap)}</p>
+        ${(by || pin) ? `<p class="gallery-shot-meta">${by}${by && pin ? ' ' : ''}${pin}</p>` : ''}
+      </figcaption>
+    </figure>`;
+    }).join('');
+    armPhotoWaits(host);
+  }
+  if(more){
+    more.hidden = false;
+    const a = more.querySelector('a');
+    if(a) a.textContent = items.length > limit ? `See all ${items.length} photos` : 'See all photos';
+  }
+}
+
+function openPhotoFromQuery(){
+  const id = new URLSearchParams(location.search).get('photo');
+  if(!id) return;
+  const g = GALLERY.find(x => x.id === id);
+  if(!g || typeof g.lat !== 'number' || typeof g.lng !== 'number') return;
+  viewGalleryPin(g.lat, g.lng, g.id);
 }
 
 function renderPhotoCredits(){
@@ -1013,9 +1032,11 @@ function openGuideIssue(title, body){
 }
 function renderCategorySelect(){
   const sel = document.getElementById('f-category');
+  if(!sel) return;
   sel.innerHTML = CATEGORIES.map(c=>`<option value="${c.id}">${c.label}</option>`).join('');
 }
-document.getElementById('addForm').addEventListener('submit', function(e){
+const addFormEl = document.getElementById('addForm');
+if(addFormEl) addFormEl.addEventListener('submit', function(e){
   e.preventDefault();
   const name = document.getElementById('f-name').value.trim();
   const area = document.getElementById('f-area').value.trim();
@@ -1029,7 +1050,8 @@ document.getElementById('addForm').addEventListener('submit', function(e){
   this.reset();
 });
 
-document.getElementById('issueForm').addEventListener('submit', function(e){
+const issueFormEl = document.getElementById('issueForm');
+if(issueFormEl) issueFormEl.addEventListener('submit', function(e){
   e.preventDefault();
   const title = document.getElementById('i-title').value.trim();
   const body = document.getElementById('i-body').value.trim();
@@ -1068,6 +1090,7 @@ document.getElementById('issueForm').addEventListener('submit', function(e){
     setEra(6);
     loadPeople();
     hideLoader(true);
+    openPhotoFromQuery();
     syncHeaderOffset();
     const nav = document.getElementById('siteNav');
     if(nav) nav.addEventListener('click', e => { if(e.target.closest('a')) toggleNav(false); });

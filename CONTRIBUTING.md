@@ -20,7 +20,7 @@ Fork, edit, and open a PR against `main`.
 - Bengaluru spots: `docs/data/locations.json`. Set `tourist: true` for the visitor shortlist, `stay: true` for the local list. **Both** (the default on the page) shows either flag. Custom spots from the to-do list always show.
 - Day trips: `docs/data/karnataka-places.json`. Same `tourist` / `stay` flags.
 - Dishes, Kannada phrases, habbas, asides, and This not that: `dishes.json`, `phrases.json`, `festivals.json`, `did-you-know.json`, `not-that.json`.
-- Your own photos: drop the file in `docs/gallery/`, then add a row to `docs/data/gallery.json` (caption, optional `lat`/`lng`). They show in their own section on the page. Details are in `docs/gallery/README.md`.
+- Your own photos: drop the file in `docs/gallery/`, then add a row to `docs/data/gallery.json` (caption, optional `lat`/`lng`). They show on `photos.html`, with a short preview on the guide. Details are in `docs/gallery/README.md`.
 - Do not dump new lists into `docs/index.html`.
 - Markup is `docs/index.html`. Styles are `docs/css/`. Guide behaviour is `docs/js/guide.js`. Saree bands are `docs/js/stage-bands.js` and `stage-bands-straight.js`.
 - Keep the voice: Bengaluru-first, specific, no generic India filler. Follow `AGENTS.md` and run `python3 scripts/check-copy.py` before you open a PR.

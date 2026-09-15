@@ -22,7 +22,8 @@
       "caption": "Lalbagh Botanical Garden gate, Kannada above the English, wet morning.",
       "alt": "Lalbagh Botanical Garden entrance arch under trees",
       "lat": 12.951289,
-      "lng": 77.590417
+      "lng": 77.590417,
+      "wide": true
     },
     {
       "id": "lalbagh-rock-pigeons",
@@ -30,7 +31,8 @@
       "caption": "Pigeons off the Lalbagh rock, the city behind the trees.",
       "alt": "Flock of pigeons over the Lalbagh rock with the city skyline",
       "lat": 12.948603,
-      "lng": 77.589444
+      "lng": 77.589444,
+      "wide": true
     },
     {
       "id": "cubbon-seshadri-hall",
@@ -62,7 +64,8 @@
       "caption": "A Cubbon path, lawn, and the usual trees.",
       "alt": "Paved path beside grass and trees in Cubbon Park",
       "lat": 12.972717,
-      "lng": 77.592739
+      "lng": 77.592739,
+      "wide": true
     },
     {
       "id": "cubbon-canopy",
@@ -70,7 +73,8 @@
       "caption": "Open ground under the Cubbon canopy.",
       "alt": "Grassy clearing with spreading trees in Cubbon Park",
       "lat": 12.972717,
-      "lng": 77.592739
+      "lng": 77.592739,
+      "wide": true
     }
   ]
 }
