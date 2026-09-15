@@ -17,18 +17,58 @@
     "tourist": true
   },
   {
-    "id": "congress-kadlekai",
-    "q": "Why are the spiced peanuts called Congress kadlekai?",
-    "kn": "ಕಾಂಗ್ರೆಸ್ ಕಡಲೆಕಾಯಿ",
-    "a": "The story goes that Iyengar bakeries' masala peanuts took the name after the 1969 split in the Indian National Congress - two factions, two colours of spice mix in one packet, though other tellings link the name to Gandhi caps or party chits smuggled in peanut sacks. Whatever the source, it stuck as a joke you can still eat with a khara bun.",
+    "id": "dose-not-dosha",
+    "q": "Dosa, dose, or dosha?",
+    "kn": "ದೋಸೆ",
+    "a": "In Kannada the food is dose (ದೋಸೆ), said roughly DOH-say. Dosa is the English spelling on most boards. Dosha (ದೋಷ) is another word: a fault, a blemish, or the Ayurvedic humours. A cute origin story says the batter was a mistake. It is still a different word from the crepe.",
     "stay": true,
     "tourist": true
   },
   {
-    "id": "karaga-dargah",
-    "q": "Why does Bengaluru Karaga stop at a dargah?",
-    "kn": "ಕರಗ",
-    "a": "On the main night, the Karaga procession from Dharmaraya Swamy Temple pauses at the Hazrat Tawakkal Mastan dargah in Cottonpet. Devotees have long asked the saint's blessing here so the karaga will not fall, a practice tied to the dargah built in the 1780s under Hyder Ali and Tipu Sultan. The city's oldest living festival still walks that agreement.",
+    "id": "rava-idli-war",
+    "q": "Was rava idli invented because rice ran out?",
+    "kn": "ರವೆ ಇಡ್ಲಿ",
+    "a": "That is the MTR telling, and it is the one worth keeping. During the Second World War rice was scarce, so the Lalbagh Road kitchen steamed idli from rava (semolina) instead. The rice-and-urad moulded idli is older and wider than Bengaluru. Rava idli is a wartime workaround that became a menu item.",
+    "stay": true,
+    "tourist": true
+  },
+  {
+    "id": "thatte-idli",
+    "q": "Why is some idli the size of a plate?",
+    "kn": "ತಟ್ಟೆ ಇಡ್ಲಿ",
+    "a": "Thatte means plate. On the Bidadi-Ramanagara side of the Mysuru road, batter is steamed in a wide plate rather than in small moulds, then cut and stacked. Softer and broader than a hotel idli, usually with chutney and sambar you pour yourself. A highway breakfast that leaked into the city.",
+    "stay": true,
+    "tourist": true
+  },
+  {
+    "id": "ragi-mudde",
+    "q": "Do you chew ragi mudde?",
+    "kn": "ರಾಗಿ ಮುದ್ದೆ",
+    "a": "You don't, if you eat it the usual way. Pinch a bit of the finger-millet lump, dip it in saaru or bassaru, and swallow. Chewing it dry is how it turns to paste in your mouth. Mudde is everyday food in south Karnataka, not a festival special, and the ragi is the grain, not a garnish.",
+    "stay": true,
+    "tourist": true
+  },
+  {
+    "id": "iyengar-bakery",
+    "q": "Why is every other corner an Iyengar bakery?",
+    "kn": "ಅಯ್ಯಂಗಾರ್ ಬೇಕರಿ",
+    "a": "They are mostly independent shops opened by Iyengar families from the Hassan belt across the 20th century, not one branded chain. Khara bun, dilkush, vegetable puff, ladi pav, and a tray of whatever just left the oven. The city's everyday bakery, next to the darshini, not a sourdough counter.",
+    "stay": true,
+    "tourist": true
+  },
+  {
+    "id": "majestic-cinema",
+    "q": "Is Majestic named for something royal?",
+    "kn": "ಮೆಜೆಸ್ಟಿಕ್",
+    "a": "The bus station and the knot of roads took the name from the old Majestic cinema (and hotel) on Kempegowda Road. The theatre is gone. The word stuck to the interchange. Nothing to do with a palace.",
+    "stay": true,
+    "tourist": true
+  },
+  {
+    "id": "congress-kadlekai",
+    "q": "Why are the spiced peanuts called Congress kadlekai?",
+    "kn": "ಕಾಂಗ್ರೆಸ್ ಕಡಲೆಕಾಯಿ",
+    "a": "The story goes that Iyengar bakeries' masala peanuts took the name after the 1969 split in the Indian National Congress - two factions, two colours of spice mix in one packet, though other tellings link the name to Gandhi caps or party chits smuggled in peanut sacks. Whatever the source, it stuck as a joke you can still eat with a khara bun.",
     "stay": true,
     "tourist": true
   },
@@ -109,54 +149,6 @@
     "q": "Why is a traffic junction called Silk Board?",
     "kn": "ಸಿಲ್ಕ್ ಬೋರ್ಡ್",
     "a": "It sits by the Central Silk Board / Karnataka silk-industry campus, not because anyone holds a board meeting in the flyover. Bengaluru's silk story is real - mulberry, Tipu-era encouragement, later mills - but the junction is named for the office next to it. You will still be late.",
-    "stay": true,
-    "tourist": true
-  },
-  {
-    "id": "dose-not-dosha",
-    "q": "Dosa, dose, or dosha?",
-    "kn": "ದೋಸೆ",
-    "a": "In Kannada the food is dose (ದೋಸೆ), said roughly DOH-say. Dosa is the English spelling on most boards. Dosha (ದೋಷ) is another word: a fault, a blemish, or the Ayurvedic humours. A cute origin story says the batter was a mistake. It is still a different word from the crepe.",
-    "stay": true,
-    "tourist": true
-  },
-  {
-    "id": "rava-idli-war",
-    "q": "Was rava idli invented because rice ran out?",
-    "kn": "ರವೆ ಇಡ್ಲಿ",
-    "a": "That is the MTR telling, and it is the one worth keeping. During the Second World War rice was scarce, so the Lalbagh Road kitchen steamed idli from rava (semolina) instead. The rice-and-urad moulded idli is older and wider than Bengaluru. Rava idli is a wartime workaround that became a menu item.",
-    "stay": true,
-    "tourist": true
-  },
-  {
-    "id": "thatte-idli",
-    "q": "Why is some idli the size of a plate?",
-    "kn": "ತಟ್ಟೆ ಇಡ್ಲಿ",
-    "a": "Thatte means plate. On the Bidadi-Ramanagara side of the Mysuru road, batter is steamed in a wide plate rather than in small moulds, then cut and stacked. Softer and broader than a hotel idli, usually with chutney and sambar you pour yourself. A highway breakfast that leaked into the city.",
-    "stay": true,
-    "tourist": true
-  },
-  {
-    "id": "ragi-mudde",
-    "q": "Do you chew ragi mudde?",
-    "kn": "ರಾಗಿ ಮುದ್ದೆ",
-    "a": "You don't, if you eat it the usual way. Pinch a bit of the finger-millet lump, dip it in saaru or bassaru, and swallow. Chewing it dry is how it turns to paste in your mouth. Mudde is everyday food in south Karnataka, not a festival special, and the ragi is the grain, not a garnish.",
-    "stay": true,
-    "tourist": true
-  },
-  {
-    "id": "iyengar-bakery",
-    "q": "Why is every other corner an Iyengar bakery?",
-    "kn": "ಅಯ್ಯಂಗಾರ್ ಬೇಕರಿ",
-    "a": "They are mostly independent shops opened by Iyengar families from the Hassan belt across the 20th century, not one branded chain. Khara bun, dilkush, vegetable puff, ladi pav, and a tray of whatever just left the oven. The city's everyday bakery, next to the darshini, not a sourdough counter.",
-    "stay": true,
-    "tourist": true
-  },
-  {
-    "id": "majestic-cinema",
-    "q": "Is Majestic named for something royal?",
-    "kn": "ಮೆಜೆಸ್ಟಿಕ್",
-    "a": "The bus station and the knot of roads took the name from the old Majestic cinema (and hotel) on Kempegowda Road. The theatre is gone. The word stuck to the interchange. Nothing to do with a palace.",
     "stay": true,
     "tourist": true
   },

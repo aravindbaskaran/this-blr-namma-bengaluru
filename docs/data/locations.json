@@ -12,6 +12,7 @@
     "say": "Laal Baag",
     "lat": 12.9507,
     "lng": 77.5848,
+    "personalPick": true,
     "try": [
       "Walk the glass-house lawns before 8am, when it still belongs to walkers.",
       "Climb the Lalbagh rock - it's older than the city by a few billion years."
@@ -32,6 +33,7 @@
     "say": "Kabban Paark",
     "lat": 12.9763,
     "lng": 77.5929,
+    "personalPick": true,
     "try": [
       "Run or cycle the car-free roads 5:30-8am, or on Sunday mornings.",
       "Cut through to the High Court and State Library instead of looping the same path."
@@ -69,6 +71,7 @@
     "say": "Chow-dayya Smaaraka Bhavana",
     "lat": 12.9977,
     "lng": 77.5773,
+    "personalPick": true,
     "try": [
       "Catch an actual Carnatic or Hindustani concert, not just the violin-shaped exterior.",
       "Walk the 1:100-scale bow - it's a working hall, not a sculpture park."
@@ -448,6 +451,7 @@
     "say": "Sendhoor Coffee House",
     "lat": 12.9418,
     "lng": 77.5732,
+    "personalPick": true,
     "try": [
       "Idli, vada, and a strong filter kaapi. That is the visit.",
       "Neighbourhood pace; don't expect a menu tour."
@@ -531,7 +535,7 @@
     "lat": 12.9345,
     "lng": 77.621,
     "try": [
-      "Work or read downstairs; the paintings are the décor, not a gallery hop.",
+      "Work or read downstairs; the paintings are the décor, not a gallery hop. Try the banoffee pie, heavy sugar all worth it",
       "Stay for a slow coffee rather than a photo of the façade."
     ],
     "stay": true
@@ -761,6 +765,7 @@
     "say": "Gandhi Bazaar",
     "lat": 12.9447,
     "lng": 77.5735,
+    "personalPick": true,
     "try": [
       "Buy flowers, coconut, and puja items the way the market has always sold them.",
       "Combine with a Gandhi Bazaar breakfast; the street is the visit."
@@ -845,6 +850,7 @@
     "say": "Shreenivasa Brahmins Bakery",
     "lat": 12.9421,
     "lng": 77.5738,
+    "personalPick": true,
     "try": [
       "Iyengar bakery classics: toast, khara bun, and whatever just came out.",
       "It's a counter, not a cafe."
@@ -897,22 +903,6 @@
     "try": [
       "Congress Khara Bun at the start of Thindi Beedi, then walk the lane.",
       "Butter and spice; don't overthink the rest of the tray."
-    ],
-    "stay": true
-  },
-  {
-    "id": "koshys-bakery",
-    "name": "Koshy's Automatic Bakery",
-    "area": "Multiple outlets",
-    "category": "food",
-    "blurb": "Baking since 1940 - egg puffs and glazed doughnuts are the reason people cross the city for this one, plum cake included every December.",
-    "kn": "ಕೋಶೀಸ್ ಆಟೋಮ್ಯಾಟಿಕ್ ಬೇಕರಿ",
-    "say": "Koshys Automatic Bakery",
-    "lat": 12.9634,
-    "lng": 77.5951,
-    "try": [
-      "Egg puffs and glazed doughnuts - people cross the city for those two.",
-      "Any outlet; the 1940 story is the brand, not a single room."
     ],
     "stay": true
   },
@@ -1113,6 +1103,11 @@
     "say": "Toyt",
     "lat": 12.9716,
     "lng": 77.6412,
+    "skipCrowd": {
+      "why": "A long wait awaits you.",
+      "insteadId": "pump-house",
+      "insteadNote": "Go to a quieter, more accessible place, skip the brewery part and you will have a great time"
+    },
     "try": [
       "A house beer and a long table - this is the brewpub that normalised craft here.",
       "Indiranagar evening, not a nightclub."
@@ -1262,7 +1257,6 @@
     "say": "Koshy's",
     "lat": 12.9756,
     "lng": 77.6015,
-    "personalPick": true,
     "try": [
       "Sit in for a slow breakfast or coffee - the booths, not a takeaway counter, are the point here.",
       "Notice who's at the next table before assuming it's just a cafe; this is where the city's political and literary crowd still meets."
@@ -1364,7 +1358,6 @@
     "say": "New Modern Hotel",
     "lat": 12.9543,
     "lng": 77.5787,
-    "personalPick": true,
     "try": [
       "Order one idli and let the bucket of sambar do the rest - that's the actual move here, not a full thali.",
       "Go for a slow morning, not a quick bite; this is a sit-and-talk institution, not a grab-and-go darshini."

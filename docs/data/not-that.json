@@ -6,6 +6,12 @@
     "tourist": true
   },
   {
+    "often": "Bollywood",
+    "also": "Sandalwood is the Kannada movie world. Other languages have their own movie industries - Kollywood, Tollywood and Mollywood all run alongside it",
+    "stay": true,
+    "tourist": true
+  },
+  {
     "often": "Butter chicken and naan",
     "also": "Ragi mudde, bisi bele bath, chow-chow bath, ghee roast, filter kaapi in a steel tumbler-davara set",
     "stay": true,
@@ -14,12 +20,6 @@
   {
     "often": "Dal chawal",
     "also": "Pappu anna, bele saaru with rice, tovve - every part of Karnataka has its own lentil-and-rice combination, and none of them go by 'dal chawal'",
-    "stay": true,
-    "tourist": true
-  },
-  {
-    "often": "Bollywood",
-    "also": "Sandalwood is the Kannada movie world. Other languages have their own movie industries - Kollywood, Tollywood and Mollywood all run alongside it",
     "stay": true,
     "tourist": true
   },

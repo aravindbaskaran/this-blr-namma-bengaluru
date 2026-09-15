@@ -84,13 +84,16 @@ let todoDone = {};
 let customLocations = [];
 
 const MODE_KEY = 'blr-guide-mode';
-let guideMode = 'stay';
+const MODES = ['tourist', 'stay', 'both'];
+let guideMode = 'both';
 
 function isTourist(){ return guideMode === 'tourist'; }
 function forMode(list){
   return list.filter(item => {
     if(customLocations.some(c => c.id === item.id)) return true;
-    return isTourist() ? item.tourist === true : item.stay === true;
+    if(guideMode === 'both') return item.tourist === true || item.stay === true;
+    if(guideMode === 'tourist') return item.tourist === true;
+    return item.stay === true;
   });
 }
 function modeLocations(){
@@ -140,16 +143,16 @@ function saveCustom(){
 function readGuideMode(){
   try{
     const q = new URLSearchParams(location.search).get('mode');
-    if(q === 'tourist' || q === 'stay') return q;
+    if(MODES.includes(q)) return q;
   }catch(e){}
   try{
     const s = localStorage.getItem(MODE_KEY);
-    if(s === 'tourist' || s === 'stay') return s;
+    if(MODES.includes(s)) return s;
   }catch(e){}
-  return 'stay';
+  return 'both';
 }
 function setGuideMode(mode){
-  if(mode !== 'tourist' && mode !== 'stay') return;
+  if(!MODES.includes(mode)) return;
   guideMode = mode;
   applyGuideMode(true);
 }
@@ -162,8 +165,8 @@ function applyGuideMode(persist){
     try{ localStorage.setItem(MODE_KEY, guideMode); }catch(e){}
     try{
       const url = new URL(location.href);
-      if(guideMode === 'stay') url.searchParams.delete('mode');
-      else url.searchParams.set('mode', 'tourist');
+      if(guideMode === 'both') url.searchParams.delete('mode');
+      else url.searchParams.set('mode', guideMode);
       history.replaceState({}, '', url);
     }catch(e){}
   }
@@ -748,7 +751,7 @@ async function loadPeople(){
   host.innerHTML = others.map(p => {
     const note = PEOPLE_NOTES[p.login] || {};
     const name = note.name || p.login;
-    const role = note.role || (contribLogins.has(p.login) ? 'Contributor' : 'Wrote in');
+    const role = note.role || (contribLogins.has(p.login) ? 'Pushed to this repo' : 'Opened a Write in issue');
     const url = p.html_url || ('https://github.com/' + p.login);
     const avatar = p.avatar_url || ('https://github.com/' + p.login + '.png');
     return `<details class="person-card">

@@ -1,20 +1,26 @@
-# namma-blr-not-that
-Namma Bengaluru, not that
+# Namma Bengaluru field guide
 
-This is a static GitHub Pages site. The published source is `docs/`.
+Live site: [aravindbaskaran.github.io/this-blr-namma-bengaluru](https://aravindbaskaran.github.io/this-blr-namma-bengaluru/)
 
-- `docs/index.html` - markup only
-- `docs/css/` - `tokens.css` (palette and type), `layout.css` (chrome and cards), `stage.css` (background stage and loader)
-- `docs/js/` - `guide.js` (data, rendering, forms), `stage.js` (scroll decorations)
-- `docs/audio/kn/` - a small audio clip per Kannada phrase, plus `manifest.json`
+This repo is that page. It is a Bengaluru-first field guide, not a generic India itinerary. History, This not that, places and food, Kannada with speaker buttons, Karnataka day trips. The shortlists are **Tourist**, **Local**, and **Both** (the default). Local is the stay list. Tourist is the visitor shortlist. Both is the union.
+
+GitHub Pages serves `docs/` as the site. There is no build step and no CMS. Lists live in JSON. Markup, CSS, and JS stay in their own files. Do not put new lists back into `docs/index.html`.
+
+## How the site is built
+
+- `docs/index.html` - page chrome, sections, Write in forms
+- `docs/css/` - `tokens.css` (palette and type), `layout.css` (chrome and cards), `stage.css` (saree bands and loader)
+- `docs/js/guide.js` - loads the JSON, filters Tourist / Local / Both, map, to-do, forms
+- `docs/js/stage-bands.js` and `stage-bands-straight.js` - the cloth bands between sections
+- `docs/data/locations.json` - Bengaluru spots (`tourist`, `stay`, `personalPick`, `skipCrowd`, `try`)
+- `docs/data/karnataka-places.json` - day trips
+- `docs/data/dishes.json`, `phrases.json`, `festivals.json`, `did-you-know.json`, `not-that.json`
+- `docs/audio/kn/` - one small clip per Kannada phrase, plus `manifest.json`
 - `docs/kannada-voice.js` - looks up a phrase's clip and plays it
-- `docs/data/*.json` - lists. Bengaluru spots live in `locations.json` (including `personalPick`, `skipCrowd`, and a `try` list). Day trips live in `karnataka-places.json`. Dishes live in `dishes.json`. Asides live in `did-you-know.json`. The page fetches those files on load.
-
-Do not put new lists back into the HTML.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). The short version: use **Write in** on the site to open a GitHub issue, or send a PR that edits `docs/data/*.json`.
+See [CONTRIBUTING.md](CONTRIBUTING.md). On the site, **Write in** opens a GitHub issue. A PR that edits `docs/data/*.json` is the other path. After copy changes, run `python3 scripts/check-copy.py`.
 
 ## Kannada audio
 
@@ -97,7 +103,7 @@ variables, Actions, with the name `HF_TOKEN`. Or from a terminal:
 gh secret set HF_TOKEN
 ```
 
-It is a repo secret rather than a person's, so it keeps working when contributors come and
+It is a repo secret rather than a person's, so it keeps working when people come and
 go.
 
 Nothing breaks if it is never set. The Action still tells you which phrases
@@ -186,13 +192,14 @@ In Cursor / VS Code, run the **Preview GitHub Pages** task (default build task).
 
 Override the port with `PORT=8080 ./scripts/preview.sh` if 5600 is already in use.
 
-## Contributors
+## Who has worked on this repo
 
-Names also appear on the live guide. Known so far:
+The live guide's **About the people behind this** rail is loaded from this GitHub repo: people who have pushed commits, plus people who opened issues (including **Write in**). Named so far, with what they did here:
 
-- Aravind Baskaran - started the guide
-- Vinay Karthik Baluguri - Kannada audio
-- Deepika Rajan - places, day trips, and fact-check
-- Hassan - layout and saree bands
+- Aravind Baskaran (`aravindbaskaran`) - started the repo and the page
+- Vinay Karthik Baluguri - Kannada speaker clips in `docs/audio/kn/` and the playback wiring
+- Deepika Varadarajan - places, Karnataka day trips, and fact-check on the lists
+- Hassan - page layout and the saree bands between sections
+- Namita Raddi - spots, food, habbas, and craft rooms (Desi, Varnam, Channapatna)
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) to add yourself.
+If you want a name or a one-line role other than your GitHub login, say so in the PR or issue. That note lives in `PEOPLE_NOTES` in `docs/js/guide.js`.

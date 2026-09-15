@@ -29,7 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Baloo+Tamma+2:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <link rel="stylesheet" href="css/tokens.css?v=20260915j">
-<link rel="stylesheet" href="css/layout.css?v=20260916k">
+<link rel="stylesheet" href="css/layout.css?v=20260916l">
 <link rel="stylesheet" href="css/stage.css?v=20260916l">
 <script type="application/ld+json">
 {
@@ -44,7 +44,7 @@
 }
 </script>
 </head>
-<body class="is-loading">
+<body class="is-loading" data-mode="both">
 <a class="skip-link" href="#main">Skip to content</a>
 <div id="guide-loader" role="status" aria-live="polite" aria-busy="true">
   <div class="loader-inner">
@@ -106,9 +106,10 @@
       <a href="#add-yours">Write in</a>
     </nav>
     <div class="header-actions">
-      <div class="mode-toggle header-mode" role="group" aria-label="Guide depth">
+      <div class="mode-toggle header-mode" role="group" aria-label="Tourist, local, or both">
         <button type="button" data-mode="tourist" onclick="setGuideMode('tourist')">Tourist</button>
-        <button type="button" data-mode="stay" onclick="setGuideMode('stay')">Stay</button>
+        <button type="button" data-mode="stay" onclick="setGuideMode('stay')">Local</button>
+        <button type="button" data-mode="both" onclick="setGuideMode('both')">Both</button>
       </div>
       <button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="siteNav" onclick="toggleNav()">Menu</button>
       <button class="agenda-pill" type="button" onclick="openDrawer()">To-do <span class="agenda-count" id="agendaCount">0</span></button>
@@ -116,9 +117,10 @@
   </div>
 </header>
 <div class="mode-dock">
-  <div class="mode-toggle" role="group" aria-label="Guide depth">
+  <div class="mode-toggle" role="group" aria-label="Tourist, local, or both">
     <button type="button" data-mode="tourist" onclick="setGuideMode('tourist')">Tourist</button>
-    <button type="button" data-mode="stay" onclick="setGuideMode('stay')">Stay</button>
+    <button type="button" data-mode="stay" onclick="setGuideMode('stay')">Local</button>
+    <button type="button" data-mode="both" onclick="setGuideMode('both')">Both</button>
   </div>
 </div>
 
@@ -301,7 +303,7 @@
         <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಬರೆದವರ ಬಗ್ಗೆ</span><span class="kn-en">about the people behind this</span></span>
       </div>
       <h2>About the people behind this</h2>
-      <p>A group effort at compiling and pointing, not at claiming. It started as one outsider's notes after a decade-ish in the city, and it grows when someone files a spot, a correction, or a pull request.</p>
+      <p>This page is the GitHub repo <a href="https://github.com/aravindbaskaran/this-blr-namma-bengaluru" target="_blank" rel="noopener">this-blr-namma-bengaluru</a>. The names below are people who have pushed to it, opened a Write in issue, or both. Aravind started the repo. Everyone else is listed as GitHub knows them, plus a line if they asked for one.</p>
       <article class="person-card person-card-lead">
         <img class="person-avatar" src="https://github.com/aravindbaskaran.png" alt="Aravind Baskaran" width="64" height="64">
         <div>
@@ -317,11 +319,11 @@
           </details>
         </div>
       </article>
-      <h3 class="people-more-head" id="peopleMoreHead" hidden>Contributors</h3>
+      <h3 class="people-more-head" id="peopleMoreHead" hidden>On this repo</h3>
       <div class="rail-clip">
         <div class="people-grid" id="peopleList"></div>
       </div>
-      <p class="creator-links">Want in? Read <a href="https://github.com/aravindbaskaran/this-blr-namma-bengaluru/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">how to contribute</a>, or use <a href="#add-yours">Write in</a> to open a GitHub issue.</p>
+      <p class="creator-links">Want a name on this rail? Read <a href="https://github.com/aravindbaskaran/this-blr-namma-bengaluru/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">how to contribute</a>, or use <a href="#add-yours">Write in</a> to open an issue on this repo.</p>
     </div>
   </div>
 </section>
@@ -892,7 +894,7 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="js/guide.js?v=20260916i"></script>
+<script src="js/guide.js?v=20260916k"></script>
 <script type="module" src="kannada-voice.js"></script>
 <script src="js/stage-bands.js?v=20260916k"></script>
 <script src="js/stage-bands-straight.js?v=20260916l"></script>

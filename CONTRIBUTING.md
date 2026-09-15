@@ -1,31 +1,36 @@
-# How to contribute
+# How to contribute to this guide
 
-This is a static GitHub Pages field guide. The live site is built from `docs/`. If you know a spot, spotted a mistake, or want to add a Kannada phrase, there is a path for that.
+This repo is the Namma Bengaluru field guide. The live page is [aravindbaskaran.github.io/this-blr-namma-bengaluru](https://aravindbaskaran.github.io/this-blr-namma-bengaluru/). GitHub Pages publishes `docs/` from `main`.
 
-## The easy way: open an issue from the site
+If you know a Bengaluru or Karnataka spot, spotted a wrong fact, or want to add a Kannada phrase, there is a path for that.
 
-On [the guide](https://aravindbaskaran.github.io/this-blr-namma-bengaluru/), scroll to **Write in**.
+## The easy way: Write in on the site
 
-- **Know a spot** pre-fills a GitHub issue with the name, area, kind, and why it matters.
+On the guide, scroll to **Write in**.
+
+- **Know a spot** pre-fills a GitHub issue on this repo with the name, area, kind, and why it matters.
 - **Spot a mistake** does the same for a correction or a missing fact.
 
-You need a GitHub account to submit. Nothing is posted until you press submit on GitHub.
+You need a GitHub account. Nothing is posted until you press submit on GitHub. Those issues show up on the page's people rail as well.
 
 ## Pull requests
 
-Fork the repo, edit, and open a PR against `main`.
+Fork, edit, and open a PR against `main`.
 
-- Lists live in `docs/data/*.json`. Bengaluru spots are `locations.json`. Day trips are `karnataka-places.json`. Dishes, phrases, festivals, and asides have their own files. Do not put new lists back into `docs/index.html`.
-- Markup is `docs/index.html`. Styles are `docs/css/`. Behaviour is `docs/js/guide.js` (the guide) and `docs/js/stage.js` (the background).
-- Keep the voice: Bengaluru-first, specific, no generic "Incredible India" filler. Follow `AGENTS.md` and run `python3 scripts/check-copy.py` before you open a PR.
-- Preview locally with `./scripts/preview.sh`, then open http://127.0.0.1:5600/
+- Bengaluru spots: `docs/data/locations.json`. Set `tourist: true` for the visitor shortlist, `stay: true` for the local list. **Both** (the default on the page) shows either flag. Custom spots from the to-do list always show.
+- Day trips: `docs/data/karnataka-places.json`. Same `tourist` / `stay` flags.
+- Dishes, Kannada phrases, habbas, asides, and This not that: `dishes.json`, `phrases.json`, `festivals.json`, `did-you-know.json`, `not-that.json`.
+- Do not dump new lists into `docs/index.html`.
+- Markup is `docs/index.html`. Styles are `docs/css/`. Guide behaviour is `docs/js/guide.js`. Saree bands are `docs/js/stage-bands.js` and `stage-bands-straight.js`.
+- Keep the voice: Bengaluru-first, specific, no generic India filler. Follow `AGENTS.md` and run `python3 scripts/check-copy.py` before you open a PR.
+- Preview with `./scripts/preview.sh`, then open http://127.0.0.1:5600/
 
-A location entry usually looks like: `id`, `name`, `area`, `category`, `blurb`, optional `kn`, `photos`, `personalPick`, `skipCrowd`, and a short `try` list.
+A location entry usually looks like: `id`, `name`, `area`, `category`, `blurb`, optional `kn`, `photos`, `tourist`, `stay`, `personalPick`, `skipCrowd`, and a short `try` list.
 
 ## Kannada audio
 
 Speaker buttons play clips in `docs/audio/kn/`. If you add a Kannada string to the data files, a GitHub Action can build the missing clip. Details, including how to record a real voice, are in the README.
 
-## Credit
+## Credit on the page
 
-GitHub contributors and people who open issues show up on the guide's **About the people behind this** section. If you want a name or a one-line role other than your GitHub login, say so in the PR or issue.
+GitHub commits and issues on **this** repo (`aravindbaskaran/this-blr-namma-bengaluru`) fill the **About the people behind this** rail. Aravind is the lead card. Everyone else is listed from the GitHub API, plus a name and one-line role if they asked for one (`PEOPLE_NOTES` in `docs/js/guide.js`). Say what you want written in the PR or issue.

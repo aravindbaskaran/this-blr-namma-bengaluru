@@ -73,6 +73,7 @@
         "meat",
         "mysuru"
       ],
+      "personalPick": true,
       "id": "mysore-mutton-curry",
       "stay": true,
       "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mutton%20curry-Provident%20Welworth%20City-Karnataka.jpg"
@@ -104,6 +105,7 @@
       "tags": [
         "rice"
       ],
+      "personalPick": true,
       "id": "ragi-mudde",
       "tryIn": [
         "mudde-mess",
@@ -120,7 +122,6 @@
       "tags": [
         "breakfast"
       ],
-      "personalPick": true,
       "id": "benne-masale-dosa",
       "tourist": true,
       "tryIn": [
@@ -146,6 +147,7 @@
       "name": "Khali Dose",
       "kn": "ಖಾಲಿ ದೋಸೆ",
       "say": "Khaali Dose",
+      "personalPick": true,
       "desc": "A plain, unstuffed dosa - thin, buttery, and a Bengaluru darshini specialty in its own right.",
       "tags": [
         "breakfast"
@@ -291,6 +293,7 @@
         "north"
       ],
       "id": "jolada-rotti",
+      "personalPick": true,
       "tryIn": [
         "halli-mane",
         "halli-jonne"
@@ -308,6 +311,7 @@
         "breakfast"
       ],
       "id": "akki-rotti",
+      "personalPick": true,
       "tryIn": [
         "halli-mane"
       ],
@@ -350,6 +354,7 @@
         "north"
       ],
       "id": "girmit",
+      "personalPick": true,
       "stay": true
     },
     {
@@ -377,6 +382,7 @@
         "north"
       ],
       "id": "dharwad-peda",
+      "personalPick": true,
       "stay": true
     },
     {
@@ -516,6 +522,7 @@
         "mtr",
         "halli-mane"
       ],
+      "personalPick": true,
       "stay": true
     },
     {
