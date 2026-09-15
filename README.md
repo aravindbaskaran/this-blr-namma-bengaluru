@@ -40,12 +40,13 @@ not useful. So it is worth making sure every phrase has a clip.
 Add it to the right file in `docs/data/` like you would any other entry, with its `kn`
 field. Commit and push.
 
-That is it. A GitHub Action notices the new phrase, makes the audio for it, and commits
-the file back to your branch a few minutes later. You do not need Python, the model, or
-any of the rest of this page.
+That is it. Then render the clip yourself:
 
-If you open a pull request, a check tells you whether every phrase has audio yet. If it
-says one is missing, either wait for the Action to finish or make it yourself, below.
+- Locally: `python scripts/build-kannada-audio.py` (see below)
+- Or, on GitHub: **Actions → Kannada audio → Run workflow**. It is manual on purpose. It used to run on every `docs/index.html` push and fail on GitHub-hosted runners (CUDA torchaudio / `libcudart`).
+
+If you open a pull request, make the audio locally (or run that workflow) so every phrase has a clip. If
+the check script says one is missing, either wait for a manual run to finish or make it yourself, below.
 
 ### Making the audio yourself
 
@@ -84,10 +85,10 @@ Other useful flags:
   manifest entry whose file is gone
 - `--voice Anu` uses a different speaker. The choices are Suresh, Anu, Chetan and Vidya
 
-### Turning on the automatic rebuilds
+### Hugging Face token for the Action
 
 The Action needs one secret to work, because the model is gated. Whoever owns the repo
-sets it once, and then anyone can add phrases without installing anything.
+sets it once. Then anyone with write access can run **Kannada audio** from the Actions tab.
 
 Do steps 1 to 3 above to get a token, then add it to the repo under Settings, Secrets and
 variables, Actions, with the name `HF_TOKEN`. Or from a terminal:
@@ -99,7 +100,7 @@ gh secret set HF_TOKEN
 It is a repo secret rather than a person's, so it keeps working when contributors come and
 go.
 
-Nothing breaks if it is never set. The Action still runs and still tells you which phrases
+Nothing breaks if it is never set. The Action still tells you which phrases
 have no audio, it just cannot make them. The clips already in the repo play either way.
 
 ### Mixing in a real person's voice

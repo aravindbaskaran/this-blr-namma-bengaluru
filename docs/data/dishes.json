@@ -74,7 +74,8 @@
         "mysuru"
       ],
       "id": "mysore-mutton-curry",
-      "stay": true
+      "stay": true,
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mutton%20curry-Provident%20Welworth%20City-Karnataka.jpg"
     },
     {
       "name": "Bisi Bele Bath",
@@ -154,7 +155,8 @@
         "brahmins-coffee-bar",
         "vidyarthi-bhavan"
       ],
-      "stay": true
+      "stay": true,
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Dosa%20%28Plain%29.jpg"
     },
     {
       "name": "Donne Biryani",
@@ -173,7 +175,8 @@
         "shivaji-military-hotel",
         "namma-sln"
       ],
-      "stay": true
+      "stay": true,
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken%20Donne%20Biriyani.jpg"
     },
     {
       "name": "Kori Rotti",
@@ -206,7 +209,8 @@
         "karavalli",
         "mangalore-pearl"
       ],
-      "stay": true
+      "stay": true,
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kori%20Roti%20Gassi.jpg"
     },
     {
       "name": "Neer Dosa",
@@ -333,7 +337,8 @@
         "north"
       ],
       "id": "yenne-badnekai",
-      "stay": true
+      "stay": true,
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Stuffed%20Brinjal.jpg"
     },
     {
       "name": "Girmit",
@@ -358,7 +363,8 @@
         "north"
       ],
       "id": "kalaburgi-tahari",
-      "stay": true
+      "stay": true,
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Tahari%20Pulao.jpg"
     },
     {
       "name": "Dharwad Peda",
@@ -383,7 +389,8 @@
         "north"
       ],
       "id": "belagavi-kunda",
-      "stay": true
+      "stay": true,
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kunda%20mithai.jpg"
     },
     {
       "name": "Kesari Bath",
@@ -446,7 +453,8 @@
         "mysuru"
       ],
       "id": "mylari-dosa",
-      "stay": true
+      "stay": true,
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mylari%20dosa%2001.jpg"
     },
     {
       "name": "Pandi Curry",
@@ -458,7 +466,8 @@
         "kodagu"
       ],
       "id": "pandi-curry",
-      "stay": true
+      "stay": true,
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pandi%20Curry.jpg"
     },
     {
       "name": "Kadambuttu",
@@ -519,7 +528,8 @@
         "mysuru"
       ],
       "id": "nannari-sherbet",
-      "stay": true
+      "stay": true,
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Nannari%20sarbath.jpg"
     },
     {
       "name": "Kashaya",

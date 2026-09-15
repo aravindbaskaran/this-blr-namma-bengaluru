@@ -1,21 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>ಬೆಂಗಳೂರು - A Field Guide</title>
-<meta name="description" content="A community field guide to Bengaluru and South India - locations, food, craft, and a look past the usual idea of 'India'.">
+<title>Explore the Namma Bengaluru way</title>
+<meta name="description" content="A community field guide to Bengaluru and Karnataka — places, food, Kannada, and what is true here beyond the default picture of India.">
+<link rel="canonical" href="https://aravindbaskaran.github.io/this-blr-namma-bengaluru/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta property="og:title" content="ಬೆಂಗಳೂರು - A Field Guide">
-<meta property="og:description" content="A community field guide to Bengaluru and South India - locations, food, craft, and a look past the usual idea of 'India'.">
+<meta name="theme-color" content="#F7EEDA">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_IN">
+<meta property="og:site_name" content="Namma Bengaluru Field Guide">
+<meta property="og:title" content="Explore the Namma Bengaluru way">
+<meta property="og:description" content="A community field guide to Bengaluru and Karnataka — places, food, Kannada, and what is true here beyond the default picture of India.">
+<meta property="og:url" content="https://aravindbaskaran.github.io/this-blr-namma-bengaluru/">
+<meta property="og:image" content="https://aravindbaskaran.github.io/this-blr-namma-bengaluru/og.png">
+<meta property="og:image:alt" content="Explore the Namma Bengaluru way">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Explore the Namma Bengaluru way">
+<meta name="twitter:description" content="A community field guide to Bengaluru and Karnataka — places, food, Kannada, and what is true here beyond the default picture of India.">
+<meta name="twitter:image" content="https://aravindbaskaran.github.io/this-blr-namma-bengaluru/og.png">
+<meta name="twitter:image:alt" content="Explore the Namma Bengaluru way">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Baloo+Tamma+2:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <link rel="stylesheet" href="css/tokens.css?v=20260915j">
-<link rel="stylesheet" href="css/layout.css?v=20260916a">
+<link rel="stylesheet" href="css/layout.css?v=20260916h">
 <link rel="stylesheet" href="css/stage.css?v=20260915z">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Namma Bengaluru Field Guide",
+  "alternateName": ["ಬೆಂಗಳೂರು", "Explore the Namma Bengaluru way"],
+  "url": "https://aravindbaskaran.github.io/this-blr-namma-bengaluru/",
+  "description": "A community field guide to Bengaluru and Karnataka — places, food, Kannada, and what is true here beyond the default picture of India.",
+  "inLanguage": ["en-IN", "kn"],
+  "isAccessibleForFree": true
+}
+</script>
 </head>
 <body class="is-loading">
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="guide-loader" role="status" aria-live="polite" aria-busy="true">
   <div class="loader-inner">
     <svg class="loader-torana" viewBox="0 0 160 36" aria-hidden="true">
@@ -46,7 +76,7 @@
 
 <header>
   <div class="header-inner">
-    <a class="brand" href="#" onclick="event.preventDefault(); window.scrollTo({top:0, behavior:'smooth'});" aria-label="Welcome to namma Bengaluru, field guide">
+    <a class="brand" href="./" onclick="event.preventDefault(); window.scrollTo({top:0, behavior:'smooth'});" aria-label="Explore the Namma Bengaluru way">
       <svg class="brand-mark" viewBox="0 0 48 20" aria-hidden="true">
         <line class="cord" x1="1.5" y1="4.5" x2="46.5" y2="4.5"/>
         <path class="leaf" d="M8 4.5 C5 10 5.5 15.5 8 19 C10.8 15.5 11 10 8 4.5Z"/>
@@ -63,10 +93,9 @@
       </svg>
       <div class="brand-text">
         <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ನಮ್ಮ ಬೆಂಗಳೂರು</span><span class="kn-en">Namma Bengaluru</span></span>
-        <span class="en">Field Guide</span>
       </div>
     </a>
-    <nav class="main-nav" id="siteNav">
+    <nav class="main-nav" id="siteNav" aria-label="Primary">
       <a href="#history">History</a>
       <a href="#not-that">This, not that</a>
       <a href="#explore">Explore</a>
@@ -87,6 +116,7 @@
   </div>
 </header>
 
+<main id="main">
 <div class="hero">
   <svg class="hero-ornament side-l" data-secplx="0.05" aria-hidden="true" viewBox="0 0 54 640" preserveAspectRatio="xMidYMin meet">
     <line x1="27" y1="0" x2="27" y2="640" stroke="#201C17" stroke-width="1.4"/>
@@ -267,14 +297,18 @@
       <h2>About the people behind this</h2>
       <p>A group effort at compiling and pointing, not at claiming. It started as one outsider's notes after a decade-ish in the city, and it grows when someone files a spot, a correction, or a pull request.</p>
       <article class="person-card person-card-lead">
-        <img class="person-avatar" src="https://github.com/aravindbaskaran.png" alt="" width="64" height="64">
+        <img class="person-avatar" src="https://github.com/aravindbaskaran.png" alt="Aravind Baskaran" width="64" height="64">
         <div>
           <h3>Aravind Baskaran</h3>
           <p class="person-role">Started the guide</p>
-          <p>Born in Pondicherry. On the way to Bengaluru I went through seven schools and one college - plus a three-day stint at another - across Uttar Pradesh, Andhra Pradesh, Telangana, Tamil Nadu, and Kolkata. I've moved around enough that I don't really belong anywhere, which, funnily enough, is a way of belonging a little bit everywhere. That's probably where this habit comes from.</p>
-          <p>I care about languages - not the grammar, but how they stay with a place and move with the people who speak them. I speak Tamil, Kannada, Hindi, English, French (oui, Pondicherry), Telugu, and whatever the room needs next. Clojure, Java, Go, and JavaScript have taken years of my life. They don't get a seat at this table.</p>
-          <p>Bengaluru is as representative of India as anywhere else, and it holds more than the last four decades of software parks. The older city deserves a space of its own.</p>
-          <p class="creator-links">Find me on <a href="https://www.linkedin.com/in/aravindbaskaran/" target="_blank" rel="noopener">LinkedIn</a> or <a href="https://x.com/aravind_baskara" target="_blank" rel="noopener">X</a> · <a href="https://github.com/aravindbaskaran" target="_blank" rel="noopener">GitHub</a></p>
+          <p class="person-brief">Not from Bengaluru. Born in Pondicherry (not really from there either I suppose), then a long way around, then this city.</p>
+          <details class="person-more">
+            <summary>More</summary>
+            <p>I am not from Bengaluru. Born in Pondicherry. On the way here I went through seven schools and one college — plus a three-day stint at another — across Uttar Pradesh, Andhra Pradesh, Telangana, Tamil Nadu, and Kolkata. I've moved around enough that I don't really belong anywhere, which, funnily enough, is a way of belonging a little bit everywhere. That's probably where this habit comes from.</p>
+            <p>I care about languages — not the grammar, but how they stay with a place and move with the people who speak them. The human ones: Tamil, Kannada, Hindi, English, French (oui, Pondicherry), Telugu, and whatever the room needs next. The machine ones: Clojure, JavaScript, TypeScript, Python, Java, Go, C#, and SQL - Those don't get a seat at this table.</p>
+            <p>Bengaluru is as representative of India as anywhere else, and it holds more than the last four decades of software parks. The older city deserves a space of its own.</p>
+            <p class="creator-links">Find me on <a href="https://www.linkedin.com/in/aravindbaskaran/" target="_blank" rel="noopener">LinkedIn</a> or <a href="https://x.com/aravind_baskara" target="_blank" rel="noopener">X</a> · <a href="https://github.com/aravindbaskaran" target="_blank" rel="noopener">GitHub</a></p>
+          </details>
         </div>
       </article>
       <h3 class="people-more-head" id="peopleMoreHead" hidden>Also on this guide</h3>
@@ -396,8 +430,10 @@
       <p>Everything on this list lives that far south, or further, a day's drive from Bengaluru at most.</p>
     </div>
   </div>
-  <div class="tnt-label-row"><span>Often the default picture</span><span>Also true, an hour or a language away</span></div>
-  <div class="tnt-list" id="tntList" data-reveal></div>
+  <div class="tnt-table">
+    <div class="tnt-label-row"><span>Assumption</span><span>Reality, often misrepresented or not corrected in enough places</span></div>
+    <div class="tnt-list" id="tntList" data-reveal></div>
+  </div>
 </section>
 
 <div class="stage-band-straight" data-band="kasuti"></div>
@@ -422,7 +458,9 @@
   </div>
 </div>
 
-  <div id="listView" class="grid" data-reveal></div>
+  <div class="rail-clip">
+    <div id="listView" class="grid" data-reveal></div>
+  </div>
   <div id="mapView" style="display:none;">
     <div class="map-wrap" id="mapWrap"></div>
     <p class="map-note">Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors - real coordinates, click a pin for details.</p>
@@ -530,7 +568,9 @@
     <h2>Small things people usually get backwards</h2>
     <p>Not trivia for a quiz night - the kind of aside you'd get from someone who has been here long enough to be annoyed by the usual explanation.</p>
   </div>
-  <div class="quip-grid" id="quipGrid" data-reveal></div>
+  <div class="rail-clip">
+    <div class="quip-grid" id="quipGrid" data-reveal></div>
+  </div>
 </section>
 
 <div class="mala-divider" aria-hidden="true">
@@ -576,6 +616,7 @@
 
   <div class="karnataka-sub">
     <div class="sub-head"><h3>Locations</h3></div>
+    <div class="rail-clip">
     <div class="region-row">
       <div class="region-card" style="--region-bg:#5B3F7A; --region-color:var(--gold-light); --region-pattern-opacity:0.55; --region-pattern:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34'%3E%3Cpath d='M17 6c5 1 8 5 7 10-1 4-4 6-7 8-2 1-3 3-2 6-3-2-4-4-4-7 0-3 2-5 4-6 3-2 4-4 3-8-0.4-1.5-0.6-2.5-1-3z' fill='none' stroke='%23D4A017' stroke-width='1.1'/%3E%3C/svg%3E&quot;); --region-pattern-size:34px 34px">
         <div class="region-card-inner">
@@ -676,6 +717,7 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
 
   <div class="karnataka-sub">
@@ -683,7 +725,9 @@
       <h3>Day trips</h3>
       <p>Specific places to go within the regions above - day trips and overnights, kept separate from the city so this stays easy to scan.</p>
     </div>
-    <div id="daytripGrid" class="grid" data-reveal></div>
+    <div class="rail-clip">
+      <div id="daytripGrid" class="grid" data-reveal></div>
+    </div>
   </div>
 
   <div class="karnataka-sub">
@@ -692,7 +736,9 @@
       <p>Every dish named on this page, in one place - what each one is, how it's written in Kannada, and roughly how to say it. Filter by tag the same way as Explore.</p>
     </div>
     <div class="pill-row dish-controls" id="dishPills" data-reveal></div>
-    <div class="dish-grid" id="dishGrid" data-reveal></div>
+    <div class="rail-clip">
+      <div class="dish-grid" id="dishGrid" data-reveal></div>
+    </div>
   </div>
 
   <div class="karnataka-sub festivals-sub">
@@ -712,7 +758,9 @@
       <h3>Festivals</h3>
       <p>Some of these are city-specific, some run the length of the coast for months - check dates before you go, since most follow the lunar calendar and move every year.</p>
     </div>
-    <div class="festival-grid" id="festivalGrid" data-reveal></div>
+    <div class="rail-clip">
+      <div class="festival-grid" id="festivalGrid" data-reveal></div>
+    </div>
   </div>
 </section>
 
@@ -768,7 +816,7 @@
   </div>
 </section>
 
-
+</main>
 
 <div class="saree-border" aria-hidden="true"></div>
 <footer>
@@ -804,7 +852,7 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="js/guide.js?v=20260915z"></script>
+<script src="js/guide.js?v=20260916f"></script>
 <script type="module" src="kannada-voice.js"></script>
 <script src="js/stage-bands.js?v=20260915z"></script>
 <script src="js/stage-bands-straight.js?v=20260915z"></script>

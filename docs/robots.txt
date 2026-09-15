@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aravindbaskaran.github.io/this-blr-namma-bengaluru/sitemap.xml

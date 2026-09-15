@@ -432,6 +432,7 @@ function closeLightbox(){
   box.dataset.open = 'false';
   const img = document.getElementById('lightboxImg');
   img.src = '';
+  img.alt = '';
 }
 document.addEventListener('keydown', (e) => {
   if(e.key === 'Escape'){
@@ -505,8 +506,8 @@ function renderTNT(){
   const wrap = document.getElementById('tntList');
   wrap.innerHTML = forMode(NOT_THAT).map(row => `
     <article class="tnt-card">
-      <p class="often"><span class="tnt-kicker">Often the default</span>${row.often}</p>
-      <p class="also"><span class="tnt-kicker">Also true here</span>${row.also}</p>
+      <p class="often"><span class="tnt-kicker">Assumption</span>${row.often}</p>
+      <p class="also"><span class="tnt-kicker">Reality</span>${row.also}</p>
     </article>
   `).join('');
 }
@@ -554,6 +555,13 @@ function renderDishPills(){
   ).join('');
 }
 function setDishTag(id){ activeDishTag = id; renderDishPills(); renderDishes(); }
+function dishPhotoHtml(d){
+  const empty = `<div class="dish-photo dish-photo-empty" aria-hidden="true">No photo yet</div>`;
+  if(!d.photo) return empty;
+  const src = esc(d.photo);
+  const name = esc(d.name);
+  return `<img class="dish-photo" src="${src}" loading="lazy" alt="${name}" tabindex="0" role="button" aria-label="View larger photo of ${d.name}" onclick="openLightbox('${src}', '${name}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('${src}', '${name}')}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'dish-photo dish-photo-empty',textContent:'No photo yet'}))">`;
+}
 function renderDishes(){
   const wrap = document.getElementById('dishGrid');
   const items = forMode(DISHES).filter(d => {
@@ -562,9 +570,7 @@ function renderDishes(){
     return (d.tags || []).includes(activeDishTag);
   });
   wrap.innerHTML = items.map(d => {
-    const photoHtml = d.photo
-      ? `<img class="dish-photo" src="${d.photo}" loading="lazy" alt="${d.name}" tabindex="0" role="button" aria-label="View larger photo of ${d.name}" onclick="openLightbox('${d.photo}', '${d.name}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('${d.photo}', '${d.name}')}">`
-      : `<div class="dish-photo" aria-hidden="true"></div>`;
+    const photoHtml = dishPhotoHtml(d);
     const tagsHtml = (d.tags || []).map(id => {
       const t = DISH_TAGS.find(x => x.id === id);
       return t ? `<span class="tag">${t.label}</span>` : '';
@@ -596,7 +602,7 @@ function renderPhrases(){
   const wrap = document.getElementById('phraseGrid');
   const GROUP_ORDER = ['Greetings & courtesy', 'Getting to know someone', 'Everyday essentials', 'Food & warmth', 'Ordering food & coffee', 'Respect & address'];
   const cardHtml = (p) => {
-    const variantHtml = p.variant ? `<div class="p-variant"><span class="p-variant-label">${p.variant.region}</span> "${p.variant.kn}" - ${p.variant.translit}${p.variant.say ? ` (say: ${p.variant.say})` : ''} ${speakBtn(p.variant.kn, 'sm')}</div>` : '';
+    const variantHtml = p.variant ? `<div class="p-variant"><span class="p-variant-label">${p.variant.region}</span><span class="p-variant-line">"${p.variant.kn}" — ${p.variant.translit}${p.variant.say ? ` (say: ${p.variant.say})` : ''} ${speakBtn(p.variant.kn, 'sm')}</span></div>` : '';
     const examplesHtml = p.examples ? `<div class="p-examples">${p.examples.map(ex => `
         <div class="p-example"><span class="p-ex-kn">${ex.kn}</span><span class="p-ex-translit">${ex.translit}</span> - ${ex.meaning} ${speakBtn(ex.kn, 'sm')}</div>
       `).join('')}</div>` : '';
@@ -677,11 +683,11 @@ function setWriteIn(which){
 const GUIDE_REPO = 'https://github.com/aravindbaskaran/this-blr-namma-bengaluru';
 const PEOPLE_NOTES = {
   aravindbaskaran: { name: 'Aravind Baskaran', role: 'Started the guide' },
-  'vinaykarthikbaluguri-svg': { name: 'Vinay Karthik Baluguri', role: 'Kannada audio' },
+  'vinaykarthikbaluguri-svg': { name: 'Vinay Karthik Baluguri', role: 'Kannada audio', blurb: 'Recorded and wired the spoken Kannada on this page.' },
   karthik4222: { name: 'Vinay Karthik Baluguri', role: 'Kannada audio', sameAs: 'vinaykarthikbaluguri-svg' },
-  'deepikarajan-swym': { name: 'Deepika Rajan', role: 'Places, day trips, and fact-check' },
-  hassanrelated: { name: 'Hassan', role: 'Layout and saree bands' },
-  'namita-raddi': { name: 'Namita Raddi', role: 'Spots, food, and habbas' }
+  'deepikarajan-swym': { name: 'Deepika Rajan', role: 'Places, day trips, and fact-check', blurb: 'Spots, day trips, and catching what the notes got wrong.' },
+  hassanrelated: { name: 'Hassan', role: 'Layout and saree bands', blurb: 'Page layout and the saree bands that sit between sections.' },
+  'namita-raddi': { name: 'Namita Raddi', role: 'Spots, food, and habbas', blurb: 'Places to eat, places to go, and the habbas that mark the year.' }
 };
 
 function esc(s){
@@ -745,14 +751,19 @@ async function loadPeople(){
     const role = note.role || (contribLogins.has(p.login) ? 'Contributor' : 'Wrote in');
     const url = p.html_url || ('https://github.com/' + p.login);
     const avatar = p.avatar_url || ('https://github.com/' + p.login + '.png');
-    return `<a class="person-card" href="${esc(url)}" target="_blank" rel="noopener">
-      <img class="person-avatar" src="${esc(avatar)}" alt="" width="56" height="56">
-      <div>
-        <h3>${esc(name)}</h3>
-        <p class="person-role">${esc(role)}</p>
-        <p>@${esc(p.login)}</p>
+    return `<details class="person-card">
+      <summary>
+        <img class="person-avatar" src="${esc(avatar)}" alt="${esc(name)}" width="56" height="56">
+        <div>
+          <h3>${esc(name)}</h3>
+          <p class="person-role">${esc(role)}</p>
+        </div>
+      </summary>
+      <div class="person-more-body">
+        ${note.blurb ? `<p>${esc(note.blurb)}</p>` : ''}
+        <p><a href="${esc(url)}" target="_blank" rel="noopener">@${esc(p.login)} on GitHub</a></p>
       </div>
-    </a>`;
+    </details>`;
   }).join('');
 }
 function openGuideIssue(title, body){
