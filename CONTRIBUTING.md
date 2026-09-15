@@ -17,7 +17,7 @@ Fork the repo, edit, and open a PR against `main`.
 
 - Lists live in `docs/data/*.json`. Bengaluru spots are `locations.json`. Day trips are `karnataka-places.json`. Dishes, phrases, festivals, and asides have their own files. Do not put new lists back into `docs/index.html`.
 - Markup is `docs/index.html`. Styles are `docs/css/`. Behaviour is `docs/js/guide.js` (the guide) and `docs/js/stage.js` (the background).
-- Keep the voice: Bengaluru-first, specific, no generic "Incredible India" filler.
+- Keep the voice: Bengaluru-first, specific, no generic "Incredible India" filler. Follow `AGENTS.md` and run `python3 scripts/check-copy.py` before you open a PR.
 - Preview locally with `./scripts/preview.sh`, then open http://127.0.0.1:5600/
 
 A location entry usually looks like: `id`, `name`, `area`, `category`, `blurb`, optional `kn`, `photos`, `personalPick`, `skipCrowd`, and a short `try` list.

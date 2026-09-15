@@ -1,0 +1,21 @@
+name: Copy check
+
+on:
+  pull_request:
+  push:
+    paths:
+      - 'docs/**'
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+      - 'scripts/check-copy.py'
+      - '.github/workflows/copy-check.yml'
+      - '.cursor/rules/**'
+
+jobs:
+  copy:
+    name: Voice and dash check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan copy for AI-isms and dashes
+        run: python3 scripts/check-copy.py

@@ -24,7 +24,7 @@ recording of that word.
 The recordings are made ahead of time, not in the browser. They live in `docs/audio/kn/`
 as small `.m4a` files, one per phrase, about 10 KB each. `manifest.json` in that folder
 says which file belongs to which Kannada string, and `docs/kannada-voice.js` looks it up
-and plays it. That is the whole thing.
+and plays it. That is all it does.
 
 We do it this way because the list of Kannada phrases is fixed. There are 147 of them and
 they rarely change, so there is no reason to make every visitor's phone work them out.

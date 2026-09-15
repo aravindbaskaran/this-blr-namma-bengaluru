@@ -69,7 +69,7 @@ const NammaVoice = {
 
   /**
    * Returns true if a clip has taken the phrase, false to tell the caller to use
-   * the device voice. Synchronous on purpose - speakText() needs the answer before
+   * the device voice. Synchronous because speakText() needs the answer before
    * it decides - so a tap in the first moment after load can miss and fall back.
    */
   speak(text) {

@@ -1,0 +1,24 @@
+---
+description: Write like a person from this city. Ban LLM punchlines and filler cadence.
+alwaysApply: true
+---
+
+# No AI-isms
+
+This guide's voice is specific, Bengaluru-first, and slightly impatient. Do not write like a model wrapping up a paragraph.
+
+Banned cadence (restate, do not synonym-swap):
+
+- Punchlines: `that's the whole visit/format/premise/problem/point`.
+- Tags: `on purpose`, `worth knowing`, `kind of place`, `kind of aside`.
+- Soft riffs: `funnily enough`, `belonging a little bit everywhere`, `deserves a space of its own`.
+- Manifesto slogans: `Credit, not discovery`, `None of this is a discovery`, `trivia for a quiz night`.
+- Stock travel nouns: `photo-op`, `postcard` (as metaphor), `cult following`, `headline stop`.
+- Stock verdicts: `playing it safe`, `never came back down`, `unhurried`, `in the useful sense`.
+- Clever-but-hollow: `weather is geography, not a personality trait`.
+
+Antithesis (`not a X, it's Y`) is allowed only when it tells you how to show up (`sit-down meal, not a darshini`). Do not stack it as style.
+
+TNT columns may contrast. Do not turn every blurb into a slogan.
+
+Before you finish copy in `docs/`, `README.md`, or `CONTRIBUTING.md`, run `python3 scripts/check-copy.py`.
