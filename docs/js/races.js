@@ -1,4 +1,4 @@
-/* Race list: preview on the guide, full list on marathons.html */
+/* Race list: preview on the guide, full list on runs.html */
 const RACE_KIND_LABEL = {
   '10k': '10K',
   half: 'Half',
@@ -22,7 +22,6 @@ function raceMatches(r, filter){
   if(!filter || filter === 'all') return true;
   if(filter === 'trail' || filter === 'road') return r.terrain === filter;
   if(filter === 'bengaluru') return r.where === 'bengaluru';
-  if(filter === 'outside') return r.where === 'outside';
   return raceKindsOf(r).includes(filter);
 }
 

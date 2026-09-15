@@ -1,11 +1,14 @@
 {
-  "intro": "One way to know a place is to run in it. Twenty-plus halves, about fifteen fulls, a fair number of them in Karnataka. This is not a calendar of every bib in the state. It is races I have already run and races I still want: 10K, half, full, and ultra. The 10Ks here are the ones worth racing, not the ones with the biggest banner. Dates move. Check the organiser before you book a train.",
+  "intro": "Run a place and you meet it early, before the shutters go up. This is the Karnataka list: canal path at Srirangapatna, the Chamundi climb, coffee estates in the Malnad, boulders at Hampi, coast road at Udupi. 10K to 100 km, road and trail. Dates move every year, so check the organiser before you book a train.",
   "races": [
     {
       "id": "wipro-bengaluru-marathon",
       "name": "Wipro Bengaluru Marathon",
       "area": "Sree Kanteerava Stadium",
-      "kinds": ["full", "half"],
+      "kinds": [
+        "full",
+        "half"
+      ],
       "distances": "42.2 km, 21.1 km",
       "terrain": "road",
       "where": "bengaluru",
@@ -18,7 +21,9 @@
       "id": "tcs-world-10k",
       "name": "TCS World 10K Bengaluru",
       "area": "Sree Kanteerava Stadium",
-      "kinds": ["10k"],
+      "kinds": [
+        "10k"
+      ],
       "distances": "10 km",
       "terrain": "road",
       "where": "bengaluru",
@@ -31,7 +36,9 @@
       "id": "bengaluru-10k-challenge",
       "name": "Bengaluru 10K Challenge",
       "area": "NICE Road, Nayandahalli toll",
-      "kinds": ["10k"],
+      "kinds": [
+        "10k"
+      ],
       "distances": "10 km, 5 km",
       "terrain": "road",
       "where": "bengaluru",
@@ -43,7 +50,11 @@
       "id": "bengaluru-midnight-marathon",
       "name": "Bengaluru Midnight Marathon",
       "area": "KTPO, Whitefield",
-      "kinds": ["full", "half", "10k"],
+      "kinds": [
+        "full",
+        "half",
+        "10k"
+      ],
       "distances": "42.2 km, 31.6 km, 21.1 km, 10 km",
       "terrain": "road",
       "where": "bengaluru",
@@ -55,7 +66,9 @@
       "id": "bangalore-ultra",
       "name": "Bangalore Ultra",
       "area": "GKVK campus, Yelahanka",
-      "kinds": ["ultra"],
+      "kinds": [
+        "ultra"
+      ],
       "distances": "50 km, 37.5 km, 25 km",
       "terrain": "trail",
       "where": "bengaluru",
@@ -67,7 +80,11 @@
       "id": "kaveri-trail-marathon",
       "name": "Kaveri Trail Marathon",
       "area": "Srirangapatna, Mandya",
-      "kinds": ["full", "half", "10k"],
+      "kinds": [
+        "full",
+        "half",
+        "10k"
+      ],
       "distances": "42.2 km, 21.1 km, 10 km",
       "terrain": "trail",
       "where": "karnataka",
@@ -80,7 +97,11 @@
       "id": "mysuru-marathon",
       "name": "Mysuru Marathon",
       "area": "Chamundi Hills, Mysuru",
-      "kinds": ["full", "half", "10k"],
+      "kinds": [
+        "full",
+        "half",
+        "10k"
+      ],
       "distances": "42.2 km, 21.1 km, 10 km",
       "terrain": "road",
       "where": "karnataka",
@@ -92,7 +113,9 @@
       "id": "malnad-ultra",
       "name": "Malnad Ultra",
       "area": "Mallanduru, Chikkamagaluru",
-      "kinds": ["ultra"],
+      "kinds": [
+        "ultra"
+      ],
       "distances": "100 km, 50 km, 30 km",
       "terrain": "trail",
       "where": "karnataka",
@@ -105,7 +128,9 @@
       "id": "hampi-ultra",
       "name": "Hampi Ultra",
       "area": "Hampi, Vijayanagara",
-      "kinds": ["ultra"],
+      "kinds": [
+        "ultra"
+      ],
       "distances": "75 km, 50 km, 25 km",
       "terrain": "trail",
       "where": "karnataka",
@@ -116,7 +141,9 @@
       "id": "coorg-coffee-trails",
       "name": "The Coffee Trails",
       "area": "Kodagu",
-      "kinds": ["ultra"],
+      "kinds": [
+        "ultra"
+      ],
       "distances": "65 km, 35 km",
       "terrain": "trail",
       "where": "karnataka",
@@ -127,7 +154,11 @@
       "id": "manipal-marathon",
       "name": "Manipal Marathon",
       "area": "KMC Greens, Manipal",
-      "kinds": ["full", "half", "10k"],
+      "kinds": [
+        "full",
+        "half",
+        "10k"
+      ],
       "distances": "42.2 km, 21.1 km, 10 km",
       "terrain": "road",
       "where": "karnataka",
@@ -139,7 +170,11 @@
       "id": "udupi-marathon",
       "name": "Udupi Marathon",
       "area": "Mahatma Gandhi District Stadium, Udupi",
-      "kinds": ["full", "half", "10k"],
+      "kinds": [
+        "full",
+        "half",
+        "10k"
+      ],
       "distances": "42.2 km, 21.1 km, 10 km",
       "terrain": "road",
       "where": "karnataka",
@@ -151,7 +186,10 @@
       "id": "mangalore-marathon",
       "name": "Mangalore Marathon",
       "area": "Mangaluru",
-      "kinds": ["full", "half"],
+      "kinds": [
+        "full",
+        "half"
+      ],
       "distances": "42.2 km, 21.1 km",
       "terrain": "road",
       "where": "karnataka",
@@ -162,7 +200,9 @@
       "id": "nandi-hills-run",
       "name": "Nandi Hills Run",
       "area": "Nandi Hills, Chikkaballapur",
-      "kinds": ["half"],
+      "kinds": [
+        "half"
+      ],
       "distances": "21.1 km",
       "terrain": "road",
       "where": "karnataka",
@@ -173,7 +213,10 @@
       "id": "vrukshathon-vijayapura",
       "name": "Vrukshathon Heritage Run",
       "area": "Vijayapura",
-      "kinds": ["half", "10k"],
+      "kinds": [
+        "half",
+        "10k"
+      ],
       "distances": "21.1 km, 10 km, 5 km",
       "terrain": "road",
       "where": "karnataka",
@@ -185,7 +228,10 @@
       "id": "rotary-belagavi",
       "name": "Rotary Belagavi Half Marathon",
       "area": "Belagavi",
-      "kinds": ["half", "10k"],
+      "kinds": [
+        "half",
+        "10k"
+      ],
       "distances": "21.1 km, 10 km, 5 km",
       "terrain": "road",
       "where": "karnataka",
@@ -196,56 +242,14 @@
       "id": "hubballi-half",
       "name": "Hubballi Half Marathon",
       "area": "Hubballi",
-      "kinds": ["half"],
+      "kinds": [
+        "half"
+      ],
       "distances": "21.1 km",
       "terrain": "road",
       "where": "karnataka",
       "when": "January",
       "blurb": "North Karnataka road half. Cooler winter morning than Bengaluru's April. Kasuti country, not Cubbon."
-    },
-    {
-      "id": "tata-mumbai-marathon",
-      "name": "Tata Mumbai Marathon",
-      "area": "Mumbai",
-      "kinds": ["full", "half"],
-      "distances": "42.2 km, 21.1 km",
-      "terrain": "road",
-      "where": "outside",
-      "when": "January",
-      "blurb": "The big-city full most Indian marathoners put on the list. Sea, flyovers, crowd. Not Karnataka. Still a race I keep on the board."
-    },
-    {
-      "id": "auroville-marathon",
-      "name": "Auroville Marathon",
-      "area": "Auroville, near Puducherry",
-      "kinds": ["full", "half"],
-      "distances": "42.2 km, 21.1 km",
-      "terrain": "trail",
-      "where": "outside",
-      "when": "December",
-      "blurb": "Red earth, casuarina, and a start that is not a stadium. Pondicherry is where I was born. This one is personal geography as much as a bib."
-    },
-    {
-      "id": "hyderabad-marathon",
-      "name": "Hyderabad Marathon",
-      "area": "Hyderabad",
-      "kinds": ["full", "half"],
-      "distances": "42.2 km, 21.1 km",
-      "terrain": "road",
-      "where": "outside",
-      "when": "late August",
-      "blurb": "Deccan plateau, tank bund air. I have lived in Telangana for work. The course is a way back into that city that is not an office."
-    },
-    {
-      "id": "chennai-marathon",
-      "name": "Chennai Marathon",
-      "area": "Chennai",
-      "kinds": ["full", "half"],
-      "distances": "42.2 km, 21.1 km",
-      "terrain": "road",
-      "where": "outside",
-      "when": "January",
-      "blurb": "Marina humidity even in January. Tamil Nadu is on the school-and-company map. Run it for the coast, not for a cool morning."
     }
   ]
 }

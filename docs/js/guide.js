@@ -911,7 +911,7 @@ function renderGallery(){
   if(more){
     more.hidden = false;
     const a = more.querySelector('a');
-    if(a) a.textContent = items.length > limit ? `See all ${items.length} in the gallery` : 'See the full gallery';
+    if(a) a.textContent = items.length > limit ? `See all ${items.length} photos` : 'See all photos';
   }
 }
 
@@ -936,7 +936,7 @@ function renderRacesPreview(){
   if(more){
     more.hidden = false;
     const a = more.querySelector('a');
-    if(a) a.textContent = items.length > 4 ? `See all ${items.length} races` : 'See all races';
+    if(a) a.textContent = items.length > 4 ? `See all ${items.length} runs` : 'See all runs';
   }
 }
 
@@ -993,7 +993,7 @@ function toggleNav(force){
   const open = force == null ? !nav.classList.contains('is-open') : !!force;
   nav.classList.toggle('is-open', open);
   btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  if(!open && innerWidth > 720) closeNavSub();
+  if(!open) closeNavSub();
 }
 function closeNavSub(){
   const btn = document.getElementById('navSubBtn');

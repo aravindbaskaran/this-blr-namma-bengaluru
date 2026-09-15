@@ -31,13 +31,15 @@
     background-size:12px 8px;
   }
   .header-inner{
-    max-width:1180px; margin:0 auto; padding:10px 20px;
+    max-width:1180px; margin:0 auto; padding:10px 24px;
     display:flex; align-items:center; gap:12px;
     flex-wrap:nowrap; position:relative;
   }
   .brand{display:flex; align-items:center; gap:10px; flex:none; min-height:40px; cursor:pointer; text-decoration:none; color:inherit;}
   .brand:hover{color:inherit;}
-  .brand-mark{width:48px;height:20px;flex:none;}
+  /* the toran cord sits 4.5 units into a 20-unit viewBox, so the drawn leaves
+     hang below the box centre. Lift it to sit on the Kannada text's optical centre. */
+  .brand-mark{width:48px;height:20px;flex:none;transform:translateY(-2px);}
   .brand-mark .cord{stroke:var(--kasuti-black); fill:none; stroke-width:1.4; stroke-linecap:round;}
   .brand-mark .leaf{fill:var(--leaf);}
   .brand-mark .rib{stroke:#143d22; fill:none; stroke-width:0.6;}
@@ -1230,7 +1232,7 @@
     .dish-grid, .festival-grid, .grid, .modern-list, .phrase-group-grid, .quip-grid, .region-row, .people-grid{ --rail-cols: 2; }
   }
   @media (max-width:720px){
-    .header-inner{padding:10px 14px; gap:10px;}
+    .header-inner{padding:10px 16px; gap:10px;}
     .brand-mark{width:42px;}
     .pallu-strip{top:56px; height:6px;}
     .nav-toggle{display:inline-flex; align-items:center;}
@@ -1243,13 +1245,18 @@
     }
     nav.main-nav.is-open{display:flex;}
     nav.main-nav a{padding:12px 14px; min-height:44px; display:flex; align-items:center;}
-    .nav-sub{display:contents;}
-    .nav-sub-btn{display:none;}
+    /* same disclosure as desktop, so the label stays attached to its links */
+    .nav-sub{display:block;}
+    .nav-sub-btn{
+      display:flex; width:100%; justify-content:space-between; align-items:center;
+      padding:12px 14px; min-height:44px; font-size:13px;
+      border:0; background:transparent; border-radius:0;
+    }
     .nav-sub-list{
       display:flex; position:static; min-width:0; border:0; border-radius:0;
-      padding:0; box-shadow:none; background:transparent;
+      padding:0 0 6px; box-shadow:none; background:transparent;
     }
-    .nav-sub-list[hidden]{display:flex !important;}
+    nav.main-nav .nav-sub-list a{padding-left:28px;}
     .hero{padding:48px 16px 40px;}
     .hero p.lede{font-size:16px;}
     section{padding:40px 16px; scroll-margin-top:72px;}
@@ -1294,4 +1301,12 @@
     .lightbox{padding:16px;}
     .write-in-tabs{overflow-x:auto; -webkit-overflow-scrolling:touch;}
     .write-in-tabs button{flex:none; min-height:40px;}
+  }
+  /* brand + Menu + To-do stop fitting on one line on a phone */
+  @media (max-width:430px){
+    .brand-text .kn-cycle{font-size:15px;}
+    .brand-mark{width:38px;}
+    .nav-toggle{padding:8px 12px;}
+    .agenda-pill{padding:6px 10px;}
+    .agenda-label{display:none;}
   }
