@@ -10,7 +10,7 @@
     will-change:transform, opacity;
     transition:opacity .55s ease;
   }
-  .stage-actor.is-on{opacity:var(--on, 0.46);}
+  .stage-actor.is-on{opacity:var(--on, 0.32);}
   .saree-ribbon{
     width:125vw; height:168px;
     --on:0.72;

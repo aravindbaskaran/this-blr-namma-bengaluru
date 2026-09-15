@@ -89,9 +89,7 @@
   /* ---------- controls (sticky only while Explore is on screen) ---------- */
   .controls{
     position:sticky; top:71px; z-index:30;
-    background:color-mix(in srgb, var(--cream) 72%, transparent);
-    backdrop-filter:blur(12px) saturate(1.08);
-    -webkit-backdrop-filter:blur(12px) saturate(1.08);
+    background:var(--cream);
     border:1px solid var(--line); border-radius:var(--radius);
     padding:12px 14px; margin-bottom:24px;
   }
@@ -113,7 +111,7 @@
   }
   .view-toggle button[data-active="true"]{background:var(--maroon); color:var(--on-accent);}
 
-  section{max-width:1180px; margin:0 auto; padding:56px 24px; scroll-margin-top:88px;}
+  section{max-width:1180px; margin:0 auto; padding:56px 24px; scroll-margin-top:88px; background:var(--cream);}
   .section-head{max-width:640px; margin-bottom:32px;}
   .why-about-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start;}
   .why-about-grid .section-head{max-width:none; margin-bottom:0;}
@@ -132,9 +130,7 @@
     display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:18px;
   }
   .card{
-    background:color-mix(in srgb, var(--cream) 58%, transparent);
-    backdrop-filter:blur(9px) saturate(1.06);
-    -webkit-backdrop-filter:blur(9px) saturate(1.06);
+    background:var(--card-surface);
     border:1px solid var(--line); border-left:5px solid var(--cat-color, var(--maroon));
     border-radius:var(--radius); padding:22px 18px 16px;
     display:flex; flex-direction:column; gap:10px; position:relative; overflow:hidden;
@@ -240,9 +236,7 @@
   .karnataka-sub{margin-top:44px;}
   .modern-list{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:18px;}
   .modern-item{
-    background:color-mix(in srgb, var(--cream) 58%, transparent);
-    backdrop-filter:blur(9px);
-    -webkit-backdrop-filter:blur(9px);
+    background:var(--card-surface);
     border:1px solid var(--line); border-radius:var(--radius);
     padding:18px 20px; border-top:3px solid var(--terracotta);
   }
@@ -332,9 +326,7 @@
   /* ---------- festivals ---------- */
   .festival-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:18px;}
   .festival-card{
-    background:color-mix(in srgb, var(--imperial-bg) 62%, transparent);
-    backdrop-filter:blur(9px);
-    -webkit-backdrop-filter:blur(9px);
+    background:var(--card-surface);
     border:1px solid var(--line); border-radius:var(--radius); padding:22px 20px 18px;
     position:relative; overflow:hidden;
   }
@@ -356,9 +348,7 @@
     display:grid; grid-template-columns:1fr 1fr; gap:16px;
   }
   .quip-card{
-    background:color-mix(in srgb, var(--cream) 58%, transparent);
-    backdrop-filter:blur(9px);
-    -webkit-backdrop-filter:blur(9px);
+    background:var(--card-surface);
     border:1px solid var(--line); border-radius:var(--radius);
     padding:20px 20px 18px; border-top:3px solid var(--gold);
   }
@@ -382,9 +372,7 @@
   .dish-controls{margin-bottom:18px;}
   .dish-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:16px;}
   .dish-card{
-    background:color-mix(in srgb, var(--cream) 58%, transparent);
-    backdrop-filter:blur(9px);
-    -webkit-backdrop-filter:blur(9px);
+    background:var(--card-surface);
     border:1px solid var(--line); border-radius:var(--radius); padding:16px 18px; overflow:hidden;
   }
   .dish-photo{width:calc(100% + 36px); margin:-16px -18px 12px; display:block; height:140px; object-fit:cover;}
@@ -458,7 +446,7 @@
   .skip-arrow{display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:15px; background:var(--cream-2);}
 
   /* ---------- learn kannada ---------- */
-  .kannada-section{background:transparent; color:var(--ink);}
+  .kannada-section{background:var(--cream); color:var(--ink);}
   .kannada-section .section-head .kn{color:var(--maroon);}
   .kannada-section .section-head .motif-icon{color:var(--maroon);}
   .kannada-section .section-head p{color:var(--ink-soft);}
@@ -470,9 +458,7 @@
   }
   .phrase-group-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px;}
   .phrase-card{
-    background:color-mix(in srgb, var(--cream) 58%, transparent);
-    backdrop-filter:blur(9px);
-    -webkit-backdrop-filter:blur(9px);
+    background:var(--card-surface);
     border:1px solid var(--line); border-radius:var(--radius);
     padding:16px 18px;
   }
@@ -514,7 +500,7 @@
   .p-variant-label{font-weight:600; color:var(--maroon);}
 
   /* ---------- history timeline ---------- */
-  .history-section{background:color-mix(in srgb, var(--cream-2) 28%, transparent);}
+  .history-section{background:var(--cream-2);}
   .history-section .section-head .kn{color:var(--hampi-stone);}
   .history-section .section-head .motif-icon{color:var(--hampi-stone);}
   .history-grid{display:grid; grid-template-columns:1.1fr 1fr; gap:48px; align-items:start;}
@@ -598,9 +584,7 @@
 
   /* ---------- write in: spot + question ---------- */
   .write-in{
-    background:color-mix(in srgb, var(--cream) 58%, transparent);
-    backdrop-filter:blur(9px);
-    -webkit-backdrop-filter:blur(9px);
+    background:var(--card-surface);
     border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
   }
   .write-in-tabs{
@@ -622,7 +606,7 @@
   .add-form label{font-size:12.5px; font-weight:600; color:var(--ink-soft); display:block; margin-bottom:6px;}
   .add-form input, .add-form select, .add-form textarea{
     width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:var(--radius);
-    font-family:inherit; font-size:14px; background:color-mix(in srgb, var(--cream) 80%, transparent);
+    font-family:inherit; font-size:14px; background:var(--cream);
   }
   .add-form textarea{resize:vertical; min-height:56px;}
   .submit-btn{
@@ -697,7 +681,7 @@
   .sources-col a{font-size:13.5px; color:var(--ink-soft); text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:2px;}
   .sources-col a:hover{color:var(--maroon); text-decoration-color:var(--maroon);}
 
-  footer{border-top:1px solid var(--line); padding:32px 24px; text-align:center;}
+  footer{border-top:1px solid var(--line); padding:32px 24px; text-align:center; background:var(--cream);}
   footer .kn{color:var(--maroon); font-weight:600; margin-bottom:6px; display:block;}
   footer p{color:var(--ink-soft); font-size:13px;}
   .footer-meta{font-size:11px !important; color:var(--ink-soft); opacity:0.6; margin-top:8px;}
