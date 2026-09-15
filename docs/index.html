@@ -78,7 +78,7 @@
     </nav>
     <div class="header-actions">
       <button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="siteNav" onclick="toggleNav()">Menu</button>
-      <button class="agenda-pill" type="button" onclick="openDrawer()">My Agenda <span class="agenda-count" id="agendaCount">0</span></button>
+      <button class="agenda-pill" type="button" onclick="openDrawer()">To-do <span class="agenda-count" id="agendaCount">0</span></button>
     </div>
   </div>
 </header>
@@ -810,18 +810,23 @@
   <div class="drawer-head">
     <div>
       <span class="kn drawer-kicker">ನನ್ನ ಪಟ್ಟಿ</span>
-      <h3>My Agenda</h3>
+      <h3>To-do</h3>
     </div>
     <button class="drawer-close" onclick="closeDrawer()" aria-label="Close">✕</button>
   </div>
   <div class="drawer-body" id="drawerBody"></div>
   <div class="drawer-foot">
-    <button class="copy-btn" onclick="copyAgenda()">Copy agenda as text</button>
+    <button class="copy-btn" type="button" onclick="copyTodo()">Copy checklist</button>
+    <button class="copy-btn copy-btn-alt" type="button" onclick="downloadTodoIcs()">Download for Reminders / Calendar</button>
+    <button class="copy-btn copy-btn-alt" type="button" onclick="shareTodo()">Send to another app</button>
+    <p class="drawer-hint">Check things off here. Copy a markdown checklist, or download an .ics file, for Reminders, Todoist, Things, or Notion.</p>
+    <button class="drawer-clear" type="button" onclick="clearDoneTodos()">Clear checked</button>
+  </div>
   </div>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="js/guide.js?v=20260915i"></script>
+<script src="js/guide.js?v=20260915j"></script>
 <script type="module" src="kannada-voice.js"></script>
 <script src="js/stage-bands.js?v=20260915e"></script>
 <script src="js/stage-bands-straight.js?v=20260915e"></script>

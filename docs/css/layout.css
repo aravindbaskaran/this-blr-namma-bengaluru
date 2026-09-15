@@ -687,14 +687,22 @@
     background:#fff; border:1px solid var(--line); border-left:3px solid var(--gold);
     border-radius:var(--radius); padding:10px 12px;
   }
+  .drawer-item.is-done{opacity:0.55; border-left-color:var(--leaf);}
+  .drawer-item.is-done .todo-name{text-decoration:line-through;}
+  .todo-check{display:flex; align-items:flex-start; gap:10px; flex:1; min-width:0; cursor:pointer;}
+  .todo-check input{margin-top:4px; flex:none; width:16px; height:16px;}
+  .todo-name{display:block; font-weight:600; font-size:14px;}
   .drawer-item .meta{font-size:12px; color:var(--ink-soft);}
   .drawer-item button{background:none; border:none; color:var(--maroon); font-size:13px; font-weight:600;}
   .drawer-empty{color:var(--ink-soft); font-size:14px; padding-top:20px;}
-  .drawer-foot{padding:16px 20px; border-top:1px solid var(--line);}
+  .drawer-foot{padding:16px 20px; border-top:1px solid var(--line); display:flex; flex-direction:column; gap:8px;}
   .copy-btn{
     width:100%; background:var(--leaf); color:#fff; border:none; padding:11px; border-radius:20px;
     font-weight:600; font-size:14px;
   }
+  .copy-btn-alt{background:var(--cream-2); color:var(--ink); border:1px solid var(--line);}
+  .drawer-hint{font-size:12px; color:var(--ink-soft); line-height:1.45; margin:4px 0 0;}
+  .drawer-clear{background:none; border:none; color:var(--maroon); font-size:13px; font-weight:600; padding:4px 0;}
 
   /* ---------- about / customize ---------- */
   .about-grid{display:grid; grid-template-columns:1fr; max-width:640px; gap:32px;}

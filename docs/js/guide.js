@@ -80,6 +80,7 @@ let currentView = 'list';
 let activeCategory = 'all';
 let activeDishTag = 'all';
 let agenda = [];
+let todoDone = {};
 let customLocations = [];
 
 function allLocations(){ return LOCATIONS.concat(customLocations); }
@@ -103,12 +104,17 @@ function loadState(){
     if(a) agenda = JSON.parse(a);
   }catch(e){ agenda = []; }
   try{
+    const d = localStorage.getItem('blr-todo-done');
+    if(d) todoDone = JSON.parse(d) || {};
+  }catch(e){ todoDone = {}; }
+  try{
     const c = localStorage.getItem('blr-custom-locations');
     if(c) customLocations = JSON.parse(c);
   }catch(e){ customLocations = []; }
 }
 function saveAgenda(){
   try{ localStorage.setItem('blr-agenda-ids', JSON.stringify(agenda)); }catch(e){}
+  try{ localStorage.setItem('blr-todo-done', JSON.stringify(todoDone)); }catch(e){}
 }
 function saveCustom(){
   try{ localStorage.setItem('blr-custom-locations', JSON.stringify(customLocations)); }catch(e){}
@@ -153,7 +159,7 @@ function buildLocationCard(l){
       ${photosHtml}
       ${skipHtml}
       <div class="card-actions">
-        <button class="add-btn" data-added="${added}" onclick="toggleAgenda('${l.id}')">${added ? 'Added ✓' : '+ Add to agenda'}</button>
+        <button class="add-btn" data-added="${added}" onclick="toggleAgenda('${l.id}')">${added ? 'On your list ✓' : '+ Add to list'}</button>
         ${mapLinkHtml}
       </div>
     </div>`;
@@ -272,33 +278,66 @@ function viewOnMap(id){
   }, 200);
 }
 
-/* ---------------- agenda ---------------- */
+/* ---------------- to-do list ---------------- */
 function toggleAgenda(id){
-  if(agenda.includes(id)) agenda = agenda.filter(x=>x!==id);
-  else agenda.push(id);
+  if(agenda.includes(id)){
+    agenda = agenda.filter(x=>x!==id);
+    delete todoDone[id];
+  } else {
+    agenda.push(id);
+  }
   saveAgenda();
   renderList();
   renderDaytrips();
   renderAgendaCount();
   renderDrawer();
 }
+function toggleTodoDone(id){
+  todoDone[id] = !todoDone[id];
+  saveAgenda();
+  renderAgendaCount();
+  renderDrawer();
+}
+function clearDoneTodos(){
+  agenda = agenda.filter(id => !todoDone[id]);
+  todoDone = {};
+  saveAgenda();
+  renderList();
+  renderDaytrips();
+  renderAgendaCount();
+  renderDrawer();
+}
+function todoItems(){
+  return agenda.map(id => {
+    const l = allLocations().find(x => x.id === id);
+    if(!l) return null;
+    return { loc: l, done: !!todoDone[id] };
+  }).filter(Boolean);
+}
 function renderAgendaCount(){
-  document.getElementById('agendaCount').textContent = agenda.length;
+  const open = agenda.filter(id => !todoDone[id]).length;
+  const el = document.getElementById('agendaCount');
+  if(el) el.textContent = String(open);
 }
 function renderDrawer(){
   const body = document.getElementById('drawerBody');
+  if(!body) return;
   if(agenda.length===0){
-    body.innerHTML = `<p class="drawer-empty">Nothing added yet. Tap "+ Add to agenda" on any card in Explore.</p>`;
+    body.innerHTML = `<p class="drawer-empty">Nothing on the list yet. Tap "+ Add to list" on any card in Explore or Karnataka.</p>`;
     return;
   }
-  body.innerHTML = agenda.map(id=>{
-    const l = allLocations().find(x=>x.id===id);
-    if(!l) return '';
-    return `<div class="drawer-item">
-      <div><div style="font-weight:600;font-size:14px;">${l.name}</div><div class="meta">${l.area}</div></div>
-      <button onclick="toggleAgenda('${id}')">Remove</button>
-    </div>`;
-  }).join('');
+  body.innerHTML = todoItems().map(({loc:l, done}) => `
+    <div class="drawer-item${done ? ' is-done' : ''}">
+      <label class="todo-check">
+        <input type="checkbox" ${done ? 'checked' : ''} onchange="toggleTodoDone('${l.id}')">
+        <span>
+          <span class="todo-name">${esc(l.name)}</span>
+          <span class="meta">${esc(l.area)}</span>
+        </span>
+      </label>
+      <button type="button" onclick="toggleAgenda('${l.id}')">Remove</button>
+    </div>
+  `).join('');
 }
 function openDrawer(){
   toggleNav(false);
@@ -330,19 +369,65 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-async function copyAgenda(){
-  const items = agenda.map(id => allLocations().find(x=>x.id===id)).filter(Boolean);
-  const text = 'My Bengaluru agenda\\n\\n' + items.map(l=>`- ${l.name} (${l.area})`).join('\\n');
+function todoChecklistText(){
+  const items = todoItems();
+  return ['Bengaluru to-do', ''].concat(items.map(({loc:l, done}) => `- [${done ? 'x' : ' '}] ${l.name} (${l.area})`)).join('\n');
+}
+function icsEscape(s){
+  return String(s || '').replace(/\\/g,'\\\\').replace(/\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;');
+}
+async function copyTodo(){
+  const text = todoChecklistText();
+  const btn = document.querySelector('.copy-btn');
   try{
     await navigator.clipboard.writeText(text);
-    const btn = document.querySelector('.copy-btn');
-    const original = btn.textContent;
-    btn.textContent = 'Copied ✓';
-    setTimeout(()=>{ btn.textContent = original; }, 1500);
+    if(btn){
+      const original = btn.textContent;
+      btn.textContent = 'Copied ✓';
+      setTimeout(()=>{ btn.textContent = original; }, 1500);
+    }
   }catch(e){
     alert(text);
   }
 }
+function downloadTodoIcs(){
+  const items = todoItems();
+  if(!items.length) return;
+  const stamp = new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');
+  const lines = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//namma-blr//guide//EN','CALSCALE:GREGORIAN'];
+  items.forEach(({loc:l, done}) => {
+    lines.push(
+      'BEGIN:VTODO',
+      'UID:blr-' + l.id + '@namma-bengaluru',
+      'DTSTAMP:' + stamp,
+      'SUMMARY:' + icsEscape(l.name + ' (' + l.area + ')'),
+      l.blurb ? 'DESCRIPTION:' + icsEscape(l.blurb) : '',
+      'STATUS:' + (done ? 'COMPLETED' : 'NEEDS-ACTION'),
+      'END:VTODO'
+    );
+  });
+  lines.push('END:VCALENDAR');
+  const blob = new Blob([lines.filter(Boolean).join('\r\n')], {type:'text/calendar;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'bengaluru-todo.ics';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+async function shareTodo(){
+  const text = todoChecklistText();
+  if(navigator.share){
+    try{
+      await navigator.share({ title: 'Bengaluru to-do', text });
+      return;
+    }catch(e){
+      if(e && e.name === 'AbortError') return;
+    }
+  }
+  copyTodo();
+}
+
+async function copyAgenda(){ return copyTodo(); }
 
 /* ---------------- this, not that ---------------- */
 function renderTNT(){
