@@ -28,8 +28,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Baloo+Tamma+2:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-<link rel="stylesheet" href="css/tokens.css?v=20260915j">
-<link rel="stylesheet" href="css/layout.css?v=20260916l">
+<link rel="stylesheet" href="css/tokens.css?v=20260916m">
+<link rel="stylesheet" href="css/layout.css?v=20260916p">
 <link rel="stylesheet" href="css/stage.css?v=20260916l">
 <script type="application/ld+json">
 {
@@ -67,7 +67,7 @@
         <circle cx="86" cy="8" r="2.1"/><circle cx="106" cy="8" r="2.1"/><circle cx="126" cy="8" r="2.1"/>
       </g>
     </svg>
-    <p class="kn">ನಮ್ಮ ಬೆಂಗಳೂರಿಗೆ ಸ್ವಾಗತ</p>
+    <p class="kn kn-cycle" tabindex="0"><span class="kn-native">ನಮ್ಮ ಬೆಂಗಳೂರಿಗೆ ಸ್ವಾಗತ</span><span class="kn-en">Welcome to namma Bengaluru</span></p>
     <p class="loader-copy">Welcome to namma Bengaluru</p>
     <div class="loader-teni" aria-hidden="true"></div>
     <p class="loader-error">Couldn&rsquo;t load the lists. Refresh, or check that <code>docs/data/</code> is being served.</p>
@@ -106,10 +106,13 @@
       <a href="#add-yours">Write in</a>
     </nav>
     <div class="header-actions">
-      <div class="mode-toggle header-mode" role="group" aria-label="Tourist, local, or both">
-        <button type="button" data-mode="tourist" onclick="setGuideMode('tourist')">Tourist</button>
-        <button type="button" data-mode="stay" onclick="setGuideMode('stay')">Local</button>
-        <button type="button" data-mode="both" onclick="setGuideMode('both')">Both</button>
+      <div class="mode-cluster header-mode">
+        <div class="mode-toggle" role="group" aria-label="Tourist, local, or both">
+          <button type="button" data-mode="tourist" onclick="setGuideMode('tourist')">Tourist</button>
+          <button type="button" data-mode="stay" onclick="setGuideMode('stay')">Local</button>
+          <button type="button" data-mode="both" onclick="setGuideMode('both')">Both</button>
+        </div>
+        <button type="button" class="mode-tip-btn" aria-expanded="false" aria-controls="modeTip" title="What Tourist, Local, and Both mean" onclick="toggleModeTip(event)">?</button>
       </div>
       <button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="siteNav" onclick="toggleNav()">Menu</button>
       <button class="agenda-pill" type="button" onclick="openDrawer()">To-do <span class="agenda-count" id="agendaCount">0</span></button>
@@ -117,11 +120,19 @@
   </div>
 </header>
 <div class="mode-dock">
-  <div class="mode-toggle" role="group" aria-label="Tourist, local, or both">
-    <button type="button" data-mode="tourist" onclick="setGuideMode('tourist')">Tourist</button>
-    <button type="button" data-mode="stay" onclick="setGuideMode('stay')">Local</button>
-    <button type="button" data-mode="both" onclick="setGuideMode('both')">Both</button>
+  <div class="mode-cluster">
+    <div class="mode-toggle" role="group" aria-label="Tourist, local, or both">
+      <button type="button" data-mode="tourist" onclick="setGuideMode('tourist')">Tourist</button>
+      <button type="button" data-mode="stay" onclick="setGuideMode('stay')">Local</button>
+      <button type="button" data-mode="both" onclick="setGuideMode('both')">Both</button>
+    </div>
+    <button type="button" class="mode-tip-btn" aria-expanded="false" aria-controls="modeTip" title="What Tourist, Local, and Both mean" onclick="toggleModeTip(event)">?</button>
   </div>
+</div>
+<div id="modeTip" class="mode-tip" hidden>
+  <p><strong>Tourist</strong> is the visitor shortlist: rooms you can actually do on a trip, without the stay-only notes.</p>
+  <p><strong>Local</strong> is the stay list: neighbourhood spots, personal picks, and the notes a flying visit skips.</p>
+  <p><strong>Both</strong> is the union of those two flags. That is the default.</p>
 </div>
 
 <main id="main">
@@ -663,7 +674,7 @@
       <div class="region-card" style="--region-bg:#5B3F7A; --region-color:var(--gold-light); --region-pattern-opacity:0.55; --region-pattern:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34'%3E%3Cpath d='M17 6c5 1 8 5 7 10-1 4-4 6-7 8-2 1-3 3-2 6-3-2-4-4-4-7 0-3 2-5 4-6 3-2 4-4 3-8-0.4-1.5-0.6-2.5-1-3z' fill='none' stroke='%23D4A017' stroke-width='1.1'/%3E%3C/svg%3E&quot;); --region-pattern-size:34px 34px">
         <div class="region-card-inner">
         <h4>Mysuru</h4>
-        <div class="region-pronounce"><span class="kn region-kn">ಮೈಸೂರು</span><span class="region-say">My-sooru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಮೈಸೂರು')" aria-label="Hear pronunciation">🔊</button></div>
+        <div class="region-pronounce"><span class="kn kn-cycle region-kn" tabindex="0"><span class="kn-native">ಮೈಸೂರು</span><span class="kn-en">Mysuru</span></span><span class="region-say">My-sooru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಮೈಸೂರು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Wodeyar palaces, Mysore silk shot through with gold zari, sandalwood and Dasara's elephant processions.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Mysore Pak</div>
@@ -677,7 +688,7 @@
       <div class="region-card" style="--region-bg:var(--coastal-teal); --region-color:var(--gold-light); --region-pattern-opacity:0.45; --region-pattern:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M4 18 L8 13 L12 18 L8 23 Z' fill='none' stroke='%23F0C550' stroke-width='1.1'/%3E%3Cpath d='M16 18 L20 13 L24 18 L20 23 Z' fill='none' stroke='%23F0C550' stroke-width='1.1'/%3E%3C/svg%3E&quot;), repeating-linear-gradient(0deg, #F0C550 0 3px, transparent 3px 28px); --region-pattern-size:24px 24px, 100% 28px;">
         <div class="region-card-inner">
         <h4>Udupi &amp; Mangaluru</h4>
-        <div class="region-pronounce"><span class="kn region-kn">ಉಡುಪಿ - ಮಂಗಳೂರು</span><span class="region-say">Udupi - Mangaluru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಉಡುಪಿ ಮಂಗಳೂರು')" aria-label="Hear pronunciation">🔊</button></div>
+        <div class="region-pronounce"><span class="kn kn-cycle region-kn" tabindex="0"><span class="kn-native">ಉಡುಪಿ - ಮಂಗಳೂರು</span><span class="kn-en">Udupi - Mangaluru</span></span><span class="region-say">Udupi - Mangaluru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಉಡುಪಿ ಮಂಗಳೂರು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Kasavu-bordered cottons, red-tiled roofs, Yakshagana masks, and a coastline running on neer dosa and kori rotti.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Mangalore buns</div>
@@ -691,7 +702,7 @@
       <div class="region-card" style="--region-bg:var(--kasuti-black); --region-color:var(--gold-light); --region-pattern-opacity:0.5; --region-pattern:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg fill='none' stroke='%23D6A419' stroke-width='1.6' stroke-linecap='square'%3E%3Cpath d='M24 5 L24 9 M20 9 L28 9 M17 13 L31 13 M14 17 L34 17 M11 21 L37 21'/%3E%3Cpath d='M6 34 L9.5 30.5 L13 34 L9.5 37.5 Z'/%3E%3Cpath d='M35 34 L38.5 30.5 L42 34 L38.5 37.5 Z'/%3E%3Cpath d='M22 40 L25.5 36.5 L29 40 L25.5 43.5 Z'/%3E%3C/g%3E%3C/svg%3E&quot;); --region-pattern-size:48px 48px;">
         <div class="region-card-inner">
         <h4>Hubballi-Dharwad-Belagavi</h4>
-        <div class="region-pronounce"><span class="kn region-kn">ಹುಬ್ಬಳ್ಳಿ-ಧಾರವಾಡ-ಬೆಳಗಾವಿ</span><span class="region-say">Hubballi-Dhaarwaad-Belagaavi</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಹುಬ್ಬಳ್ಳಿ ಧಾರವಾಡ ಬೆಳಗಾವಿ')" aria-label="Hear pronunciation">🔊</button></div>
+        <div class="region-pronounce"><span class="kn kn-cycle region-kn" tabindex="0"><span class="kn-native">ಹುಬ್ಬಳ್ಳಿ-ಧಾರವಾಡ-ಬೆಳಗಾವಿ</span><span class="kn-en">Hubballi-Dharwad-Belagavi</span></span><span class="region-say">Hubballi-Dhaarwaad-Belagaavi</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಹುಬ್ಬಳ್ಳಿ ಧಾರವಾಡ ಬೆಳಗಾವಿ')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Kasuti embroidery worked in black cotton, Ilkal sarees with their temple-tower pallu, jowar rotti country.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Dharwad peda &amp; Belagavi kunda</div>
@@ -705,7 +716,7 @@
       <div class="region-card" style="--region-bg:var(--hampi-stone); --region-color:var(--gold-light); --region-pattern-opacity:0.42; --region-pattern:radial-gradient(circle at 22% 28%, color-mix(in srgb, var(--on-accent) 55%, transparent) 7px, transparent 8px), radial-gradient(circle at 72% 62%, color-mix(in srgb, var(--gold-light) 45%, transparent) 9px, transparent 10px); --region-pattern-size:60px 60px;">
         <div class="region-card-inner">
         <h4>Hampi &amp; Vijayapura</h4>
-        <div class="region-pronounce"><span class="kn region-kn">ಹಂಪಿ - ವಿಜಯಪುರ</span><span class="region-say">Hampi - Vijayapura</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಹಂಪಿ ವಿಜಯಪುರ')" aria-label="Hear pronunciation">🔊</button></div>
+        <div class="region-pronounce"><span class="kn kn-cycle region-kn" tabindex="0"><span class="kn-native">ಹಂಪಿ - ವಿಜಯಪುರ</span><span class="kn-en">Hampi - Vijayapura</span></span><span class="region-say">Hampi - Vijayapura</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಹಂಪಿ ವಿಜಯಪುರ')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Vijayanagara boulder-ruins and Deccan sultanate domes - two very different empires, one dry northern landscape.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Kesari bath</div>
@@ -719,7 +730,7 @@
       <div class="region-card" style="--region-bg:var(--coffee); --region-color:var(--gold-light); --region-pattern-opacity:0.48; --region-pattern:radial-gradient(ellipse 4px 6px at 14px 14px, color-mix(in srgb, var(--gold-light) 70%, transparent) 40%, transparent 41%); --region-pattern-size:24px 24px;">
         <div class="region-card-inner">
         <h4>Chikmagalur</h4>
-        <div class="region-pronounce"><span class="kn region-kn">ಚಿಕ್ಕಮಗಳೂರು</span><span class="region-say">Chikka-magaluru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಚಿಕ್ಕಮಗಳೂರು')" aria-label="Hear pronunciation">🔊</button></div>
+        <div class="region-pronounce"><span class="kn kn-cycle region-kn" tabindex="0"><span class="kn-native">ಚಿಕ್ಕಮಗಳೂರು</span><span class="kn-en">Chikkamagaluru</span></span><span class="region-say">Chikka-magaluru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಚಿಕ್ಕಮಗಳೂರು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Where Indian coffee began - Baba Budan planted the first beans on these hills in the 1670s, and Mullayanagiri, Karnataka's highest peak, rises right beside them.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Coffee halwa</div>
@@ -733,7 +744,7 @@
       <div class="region-card" style="--region-bg:#1A4A32; --region-color:var(--gold-light); --region-pattern-opacity:0.55; --region-pattern:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath d='M0 8 L8 0 L16 8 L8 16 Z' fill='none' stroke='%23D4A017' stroke-width='1'/%3E%3C/svg%3E&quot;), repeating-linear-gradient(115deg, transparent 0 50px, #9C2436 50px 62px, transparent 62px 112px); --region-pattern-size:16px 16px, 100% 100%;">
         <div class="region-card-inner">
         <h4>Kodagu</h4>
-        <div class="region-pronounce"><span class="kn region-kn">ಕೊಡಗು</span><span class="region-say">Kodagu</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಕೊಡಗು')" aria-label="Hear pronunciation">🔊</button></div>
+        <div class="region-pronounce"><span class="kn kn-cycle region-kn" tabindex="0"><span class="kn-native">ಕೊಡಗು</span><span class="kn-en">Kodagu</span></span><span class="region-say">Kodagu</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಕೊಡಗು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>The Kodava homeland - misty coffee estates, the black-and-gold kupya with its red chele sash, a martial tradition, and a cuisine found nowhere else in Karnataka.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Coorg orange</div>
@@ -747,7 +758,7 @@
       <div class="region-card" style="--region-bg:var(--maroon); --region-color:var(--gold-light); --region-pattern-opacity:0.32; --region-pattern:repeating-linear-gradient(0deg, color-mix(in srgb, var(--gold-light) 55%, transparent) 0 1.5px, transparent 1.5px 15px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--gold-light) 55%, transparent) 0 1.5px, transparent 1.5px 15px);">
         <div class="region-card-inner">
         <h4>Bengaluru</h4>
-        <div class="region-pronounce"><span class="kn region-kn">ಬೆಂಗಳೂರು</span><span class="region-say">Bengaluru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಬೆಂಗಳೂರು')" aria-label="Hear pronunciation">🔊</button></div>
+        <div class="region-pronounce"><span class="kn kn-cycle region-kn" tabindex="0"><span class="kn-native">ಬೆಂಗಳೂರು</span><span class="kn-en">Bengaluru</span></span><span class="region-say">Bengaluru</span><button class="speak-btn speak-btn-sm" onclick="speakText('ಬೆಂಗಳೂರು')" aria-label="Hear pronunciation">🔊</button></div>
         <p>Where all of the above land in one city - in its markets, its emporiums, and its Kannadiga kitchens.</p>
         <div class="flavor-list">
           <div class="flavor-item"><span class="flavor-dot sweet"></span><b>Sweet</b> - Iyengar bakery benne biscuit</div>
@@ -864,6 +875,16 @@
 <footer>
   <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
   <p>Made for people spending time in Bengaluru, with <span class="footer-preethi"><span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಪ್ರೀತಿ</span><span class="kn-en">love</span></span> ❤️<button class="speak-btn speak-btn-sm" onclick="speakText('ಪ್ರೀತಿ')" aria-label="Hear pronunciation">🔊</button></span></p>
+  <div class="photo-credits" id="photoCredits">
+    <h2>Photo credits</h2>
+    <p>Pictures on this page are hot-linked from Wikimedia Commons. Author, camera, and licence (usually CC BY or CC BY-SA) sit on the file page. Restaurant review photos are not used.</p>
+    <details class="sources-details">
+      <summary>Show all photo credits</summary>
+      <div class="photo-credit-list">
+        <ul id="photoCreditList"></ul>
+      </div>
+    </details>
+  </div>
     <p class="footer-meta">v2026-09-15 &middot; &copy; 2026, all rights reserved</p>
   <p class="footer-meta">Built with AI, edited and fact-checked by human.</p>
 </footer>
@@ -877,7 +898,7 @@
 <div class="drawer" id="drawer">
   <div class="drawer-head">
     <div>
-      <span class="kn drawer-kicker">ನನ್ನ ಪಟ್ಟಿ</span>
+      <span class="kn kn-cycle drawer-kicker" tabindex="0"><span class="kn-native">ನನ್ನ ಪಟ್ಟಿ</span><span class="kn-en">My list</span></span>
       <h3>To-do</h3>
     </div>
     <button class="drawer-close" onclick="closeDrawer()" aria-label="Close">✕</button>
@@ -894,7 +915,7 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="js/guide.js?v=20260916k"></script>
+<script src="js/guide.js?v=20260916r"></script>
 <script type="module" src="kannada-voice.js"></script>
 <script src="js/stage-bands.js?v=20260916k"></script>
 <script src="js/stage-bands-straight.js?v=20260916l"></script>

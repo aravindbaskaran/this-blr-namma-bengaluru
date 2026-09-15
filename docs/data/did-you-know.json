@@ -3,6 +3,7 @@
     "id": "kadlekai-parishe",
     "q": "Why is Kadlekai Parishe a thing?",
     "kn": "ಕಡಲೆಕಾಯಿ ಪರಿಷೆ",
+    "knEn": "Kadlekai Parishe",
     "a": "Basavanagudi's Bull Temple sits on what used to be groundnut country. The story goes that a bull would wreck the crop until farmers offered the first harvest at Dodda Basavana Gudi - and the animal stopped. Kadlekai Parishe is still that offering: when the new groundnut comes in (Karthika, usually Nov/Dec), farmers pile it around the temple, and the streets turn into a fair of roasted kadlekai, clay toys and bangles. It is a harvest thanksgiving that the city grew around, not a tourist calendar invention.",
     "stay": true,
     "tourist": true
@@ -11,6 +12,7 @@
     "id": "benda-kaalu",
     "q": "Is Bengaluru actually named after boiled beans?",
     "kn": "ಬೆಂಡಕಾಳು ಊರು",
+    "knEn": "Benda kaalu ooru",
     "a": "The folk tale is charming: a Hoysala king is served boiled beans (benda kaalu) by an old woman, and names the place Benda-kaalu-ooru. Inscriptions are less romantic. A 9th-century stone at Begur already records Benguluru, centuries before that story is told. Keep the beans as a story people like; the name is older than the anecdote.",
     "featured": true,
     "stay": true,
@@ -20,6 +22,7 @@
     "id": "dose-not-dosha",
     "q": "Dosa, dose, or dosha?",
     "kn": "ದೋಸೆ",
+    "knEn": "Dose",
     "a": "In Kannada the food is dose (ದೋಸೆ), said roughly DOH-say. Dosa is the English spelling on most boards. Dosha (ದೋಷ) is another word: a fault, a blemish, or the Ayurvedic humours. A cute origin story says the batter was a mistake. It is still a different word from the crepe.",
     "stay": true,
     "tourist": true
@@ -28,6 +31,7 @@
     "id": "rava-idli-war",
     "q": "Was rava idli invented because rice ran out?",
     "kn": "ರವೆ ಇಡ್ಲಿ",
+    "knEn": "Rave idli",
     "a": "That is the MTR telling, and it is the one worth keeping. During the Second World War rice was scarce, so the Lalbagh Road kitchen steamed idli from rava (semolina) instead. The rice-and-urad moulded idli is older and wider than Bengaluru. Rava idli is a wartime workaround that became a menu item.",
     "stay": true,
     "tourist": true
@@ -36,6 +40,7 @@
     "id": "thatte-idli",
     "q": "Why is some idli the size of a plate?",
     "kn": "ತಟ್ಟೆ ಇಡ್ಲಿ",
+    "knEn": "Tatte idli",
     "a": "Thatte means plate. On the Bidadi-Ramanagara side of the Mysuru road, batter is steamed in a wide plate rather than in small moulds, then cut and stacked. Softer and broader than a hotel idli, usually with chutney and sambar you pour yourself. A highway breakfast that leaked into the city.",
     "stay": true,
     "tourist": true
@@ -44,6 +49,7 @@
     "id": "ragi-mudde",
     "q": "Do you chew ragi mudde?",
     "kn": "ರಾಗಿ ಮುದ್ದೆ",
+    "knEn": "Ragi mudde",
     "a": "You don't, if you eat it the usual way. Pinch a bit of the finger-millet lump, dip it in saaru or bassaru, and swallow. Chewing it dry is how it turns to paste in your mouth. Mudde is everyday food in south Karnataka, not a festival special, and the ragi is the grain, not a garnish.",
     "stay": true,
     "tourist": true
@@ -52,6 +58,7 @@
     "id": "iyengar-bakery",
     "q": "Why is every other corner an Iyengar bakery?",
     "kn": "ಅಯ್ಯಂಗಾರ್ ಬೇಕರಿ",
+    "knEn": "Iyengar bakery",
     "a": "They are mostly independent shops opened by Iyengar families from the Hassan belt across the 20th century, not one branded chain. Khara bun, dilkush, vegetable puff, ladi pav, and a tray of whatever just left the oven. The city's everyday bakery, next to the darshini, not a sourdough counter.",
     "stay": true,
     "tourist": true
@@ -60,6 +67,7 @@
     "id": "majestic-cinema",
     "q": "Is Majestic named for something royal?",
     "kn": "ಮೆಜೆಸ್ಟಿಕ್",
+    "knEn": "Majestic",
     "a": "The bus station and the knot of roads took the name from the old Majestic cinema (and hotel) on Kempegowda Road. The theatre is gone. The word stuck to the interchange. Nothing to do with a palace.",
     "stay": true,
     "tourist": true
@@ -68,6 +76,7 @@
     "id": "congress-kadlekai",
     "q": "Why are the spiced peanuts called Congress kadlekai?",
     "kn": "ಕಾಂಗ್ರೆಸ್ ಕಡಲೆಕಾಯಿ",
+    "knEn": "Congress kadlekai",
     "a": "The story goes that Iyengar bakeries' masala peanuts took the name after the 1969 split in the Indian National Congress - two factions, two colours of spice mix in one packet, though other tellings link the name to Gandhi caps or party chits smuggled in peanut sacks. Whatever the source, it stuck as a joke you can still eat with a khara bun.",
     "stay": true,
     "tourist": true
@@ -76,6 +85,7 @@
     "id": "dabara-pour",
     "q": "Why the two-metal-cup filter coffee set?",
     "kn": "ದಬರಾ",
+    "knEn": "Dabara",
     "a": "The tumbler and the wide dabara are a cooling kit. You pour back and forth so the decoction-and-milk mix drops from scalding to drinkable without watering it down. The stretch between the two cups is how you drink it.",
     "stay": true,
     "tourist": true
@@ -84,6 +94,7 @@
     "id": "nine-hundred-metres",
     "q": "Why is Bengaluru milder than the rest of the south?",
     "kn": "ಎತ್ತರ",
+    "knEn": "Elevation",
     "a": "The city sits on the Deccan plateau at about 900 metres (roughly 3,000 ft). That height is why evenings cool off, and why colonial officers called it a station they could stand. Sea breeze has little to do with it.",
     "stay": true,
     "tourist": true
@@ -92,6 +103,7 @@
     "id": "vidhana-stone",
     "q": "Why is Vidhana Soudha stone, not concrete?",
     "kn": "ವಿಧಾನ ಸೌಧ",
+    "knEn": "Vidhana Soudha",
     "a": "Kengal Hanumanthaiah, who pushed the 1950s building through, wanted a legislature that would last like a temple, not a bungalow. Granite and porphyry were the brief. The result is still the largest legislative building in India, and it reads as a palace because it was meant to.",
     "stay": true,
     "tourist": true
@@ -100,6 +112,7 @@
     "id": "mysore-pak",
     "q": "Is Mysore pak actually from the palace?",
     "kn": "ಮೈಸೂರು ಪಾಕ್",
+    "knEn": "Mysore pak",
     "a": "Yes. Around 1935, Kakasura Madappa, a cook in the Mysore palace, is credited with a ghee-besan-sugar sweet made for Krishna Raja Wadiyar IV. The 'pak' is the sugar-syrup stage. The origin is a palace kitchen, not a packet brand.",
     "stay": true,
     "tourist": true
@@ -108,6 +121,7 @@
     "id": "jacaranda-guest",
     "q": "Are the purple trees native?",
     "kn": "ಜಕರಾಂಡಾ",
+    "knEn": "Jacaranda",
     "a": "Jacaranda is South American. It was planted here in the colonial gardening era and now defines a few late-spring streets. The pink avenue trumpets (Tabebuia) are guests too. Garden city was a planting project, not a forest that happened to be purple.",
     "stay": true,
     "tourist": true
@@ -116,6 +130,7 @@
     "id": "basavanagudi-name",
     "q": "What does Basavanagudi actually mean?",
     "kn": "ಬಸವನಗುಡಿ",
+    "knEn": "Basavanagudi",
     "a": "Basava is the bull, gudi is the temple. The neighbourhood is named for Dodda Basavana Gudi, the 16th-century Nandi that Kadlekai Parishe still orients around. A lot of pete names are still this literal if you read them in Kannada.",
     "stay": true,
     "tourist": true
@@ -124,6 +139,7 @@
     "id": "ilkal-teni",
     "q": "What is that temple-spire edge on an Ilkal saree?",
     "kn": "ತೋಪೆ ತೆನಿ",
+    "knEn": "Tope teni",
     "a": "Tope Teni is the pallu weaving: red, white and gold triangles that read as a row of temple towers. Ilkal (Bagalkot belt) is a GI-tagged Karnataka weave, not a generic 'south silk'. The teni is how you spot one without a label.",
     "stay": true,
     "tourist": true
@@ -132,6 +148,7 @@
     "id": "gombe-vs-palace",
     "q": "Is Dasara only the palace procession?",
     "kn": "ಗೊಂಬೆ ಹಬ್ಬ",
+    "knEn": "Gombe habba",
     "a": "Jamboo Savari is the procession everyone photographs. In the same ten days, Mysuru households build gombe mane - stepped dolls and figurines - and invite neighbours in. Gombe Habba is how most families actually mark Dasara.",
     "stay": true,
     "tourist": true
@@ -140,6 +157,7 @@
     "id": "nicknames",
     "q": "Pensioner's paradise, garden city, Silicon Valley - which stuck?",
     "kn": "ಹೆಸರುಗಳು",
+    "knEn": "Nicknames",
     "a": "All three, in order of marketing eras. Cool weather and parks made a retirement station; Lalbagh and the lakes made 'garden city'; software parks from the 1990s made the Silicon Valley tag. The older names are still true on a weekday evening. The newest one is a district, not the whole map.",
     "stay": true,
     "tourist": true
@@ -148,6 +166,7 @@
     "id": "silk-board",
     "q": "Why is a traffic junction called Silk Board?",
     "kn": "ಸಿಲ್ಕ್ ಬೋರ್ಡ್",
+    "knEn": "Silk Board",
     "a": "It sits by the Central Silk Board / Karnataka silk-industry campus, not because anyone holds a board meeting in the flyover. Bengaluru's silk story is real - mulberry, Tipu-era encouragement, later mills - but the junction is named for the office next to it. You will still be late.",
     "stay": true,
     "tourist": true
@@ -156,6 +175,7 @@
     "id": "halasuru",
     "q": "Why do maps still say Ulsoor?",
     "kn": "ಹಲಸೂರು",
+    "knEn": "Halasuru",
     "a": "Halasuru is the Kannada name, from halasina, jackfruit. Ulsoor is the cantonment spelling that English maps kept. Same lake, same neighbourhood. You will hear both in one auto ride.",
     "stay": true,
     "tourist": true
@@ -164,6 +184,7 @@
     "id": "pete-names",
     "q": "What do Chickpete and Akkipete actually mean?",
     "kn": "ಪೇಟೆ",
+    "knEn": "Pete",
     "a": "Pete is a market quarter. Doddapete was the larger street, Chickpete the smaller. Akkipete sold rice, Cottonpet cotton, and so on. A lot of old-city names are still the stall that used to stand there, even when the goods have changed.",
     "stay": true,
     "tourist": true
@@ -172,6 +193,7 @@
     "id": "whitefield-person",
     "q": "Was Whitefield always an IT suburb?",
     "kn": "ವೈಟ್‌ಫೀಲ್ಡ್",
+    "knEn": "Whitefield",
     "a": "It was named for David Emmanuel White, who helped set up an Anglo-Indian settlement there in the 1880s. The tech parks and the Outer Ring Road came a century later. The word on the sign is a person, not a campus.",
     "stay": true,
     "tourist": true

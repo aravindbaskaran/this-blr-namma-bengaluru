@@ -60,9 +60,27 @@
       "tourist": true,
       "tryIn": [
         "asha-sweets",
-        "sv-sweetmeat"
+        "sv-sweetmeat",
+        "mtr"
       ],
       "stay": true
+    },
+    {
+      "name": "Holige",
+      "kn": "ಹೋಳಿಗೆ",
+      "say": "Ho-li-ge",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kadle%20Bele%20Holige.jpg",
+      "desc": "A stuffed sweet flatbread: chana dal and jaggery inside a thin dough, cooked on a tawa with ghee. Also called obbattu. Bhaskar's Mane Holige on D.V.G Road is a shop built around it.",
+      "tags": [
+        "sweet"
+      ],
+      "id": "holige",
+      "tourist": true,
+      "stay": true,
+      "tryIn": [
+        "mane-holige",
+        "halli-mane"
+      ]
     },
     {
       "name": "Mysore Mutton Curry",
@@ -76,7 +94,10 @@
       "personalPick": true,
       "id": "mysore-mutton-curry",
       "stay": true,
-      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mutton%20curry-Provident%20Welworth%20City-Karnataka.jpg"
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mutton%20curry-Provident%20Welworth%20City-Karnataka.jpg",
+      "tryIn": [
+        "shivaji-military-hotel"
+      ]
     },
     {
       "name": "Bisi Bele Bath",
@@ -92,9 +113,27 @@
       "tourist": true,
       "tryIn": [
         "mtr",
-        "halli-mane"
+        "halli-mane",
+        "atithyaa",
+        "airlines-hotel"
       ],
       "stay": true
+    },
+    {
+      "name": "Veg Palav",
+      "kn": "ತರಕಾರಿ ಪಲಾವ್",
+      "say": "Tarakari Palaav",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Vegetable%20Pulao%20as%20served%20in%20South%20India.jpg",
+      "desc": "Karnataka hotel-style vegetable rice, sona masuri and a green masala, sold as palav or rice bath. At Namma SLN it is the muddanna plate, ghee-heavy, vegetarian, on a banana leaf, next to the sabakki dose and idli.",
+      "tags": [
+        "rice"
+      ],
+      "id": "veg-palav",
+      "tourist": true,
+      "stay": true,
+      "tryIn": [
+        "namma-sln"
+      ]
     },
     {
       "name": "Ragi Mudde",
@@ -108,8 +147,7 @@
       "personalPick": true,
       "id": "ragi-mudde",
       "tryIn": [
-        "mudde-mess",
-        "halli-jonne"
+        "mudde-mess"
       ],
       "stay": true
     },
@@ -127,7 +165,8 @@
       "tryIn": [
         "ctr",
         "vidyarthi-bhavan",
-        "veena-thindi"
+        "veena-thindi",
+        "umesh-dosa-point"
       ],
       "stay": true
     },
@@ -141,7 +180,10 @@
         "breakfast"
       ],
       "id": "davanagere-benne-dose",
-      "stay": true
+      "stay": true,
+      "tryIn": [
+        "davanagere-benne-dose-mane"
+      ]
     },
     {
       "name": "Khali Dose",
@@ -154,8 +196,9 @@
       ],
       "id": "khali-dose",
       "tryIn": [
-        "brahmins-coffee-bar",
-        "vidyarthi-bhavan"
+        "vidyarthi-bhavan",
+        "ctr",
+        "mltr"
       ],
       "stay": true,
       "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Dosa%20%28Plain%29.jpg"
@@ -175,10 +218,26 @@
       "tryIn": [
         "rnr-biriyani",
         "shivaji-military-hotel",
-        "namma-sln"
+        "halli-jonne"
       ],
       "stay": true,
       "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken%20Donne%20Biriyani.jpg"
+    },
+    {
+      "name": "Andhra Biryani",
+      "kn": "ಆಂಧ್ರ ಬಿರಿಯಾನಿ",
+      "say": "Aandra Biriyaani",
+      "desc": "Long-grain, chilli-forward biryani of the Andhra/Hyderabadi counter, not Karnataka donne. Meghana in Koramangala is the city's usual queue for the boneless chicken plate.",
+      "tags": [
+        "rice",
+        "meat"
+      ],
+      "id": "andhra-biryani",
+      "stay": true,
+      "tryIn": [
+        "meghana-foods"
+      ],
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken%20Hyderabadi%20Biryani.JPG"
     },
     {
       "name": "Kori Rotti",
@@ -228,7 +287,8 @@
       "tourist": true,
       "tryIn": [
         "karavalli",
-        "mangalore-pearl"
+        "mangalore-pearl",
+        "searock"
       ],
       "stay": true
     },
@@ -245,9 +305,93 @@
       "tourist": true,
       "tryIn": [
         "vvpuram",
-        "mtr"
+        "mtr",
+        "airlines-hotel"
       ],
       "stay": true
+    },
+    {
+      "name": "Idli",
+      "kn": "ಇಡ್ಲಿ",
+      "say": "Idli",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Idli.jpg",
+      "desc": "Steamed rice-and-urad cakes, the default Bengaluru breakfast with chutney. At Brahmins Coffee Bar they are one of four items on the board; New Modern Hotel puts a bucket of sambar on the table and lets you pour.",
+      "tags": [
+        "breakfast"
+      ],
+      "id": "idli",
+      "tourist": true,
+      "stay": true,
+      "tryIn": [
+        "brahmins-coffee-bar",
+        "new-modern-hotel",
+        "sendhoor",
+        "mtr"
+      ]
+    },
+    {
+      "name": "Rava Idli",
+      "kn": "ರವೆ ಇಡ್ಲಿ",
+      "say": "Rave Idli",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Rava%20Idli%20-%20MTR%20-%20Karnataka%20-%20KaedeNaga001.jpg",
+      "desc": "Semolina idli MTR made during the WWII rice shortage, when rava stood in for rice. Lalbagh Road is still the address for that plate.",
+      "tags": [
+        "breakfast"
+      ],
+      "id": "rava-idli",
+      "tourist": true,
+      "stay": true,
+      "tryIn": [
+        "mtr"
+      ]
+    },
+    {
+      "name": "Sabakki Dose",
+      "kn": "ಸಬ್ಬಕ್ಕಿ ದೋಸೆ",
+      "say": "Sab-bak-ki Dose",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Dosa%20%28Plain%29.jpg",
+      "desc": "A dosa with sabakki (sago) in the batter, crisp, often as masale dose. Namma SLN's Muddanna counters are the Bengaluru address people name for it.",
+      "tags": [
+        "breakfast"
+      ],
+      "id": "sabakki-dose",
+      "tourist": true,
+      "stay": true,
+      "tryIn": [
+        "namma-sln"
+      ]
+    },
+    {
+      "name": "Sabakki Idli",
+      "kn": "ಸಬ್ಬಕ್ಕಿ ಇಡ್ಲಿ",
+      "say": "Sab-bak-ki Idli",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Idli.jpg",
+      "desc": "Soft idli with sabakki mixed through, served with chutney and saagu. Same Muddanna kitchen as the sabakki dose and the veg pulav.",
+      "tags": [
+        "breakfast"
+      ],
+      "id": "sabakki-idli",
+      "stay": true,
+      "tryIn": [
+        "namma-sln"
+      ]
+    },
+    {
+      "name": "Bath Dose",
+      "kn": "ಭಾತ್ ದೋಸೆ",
+      "say": "Bhaath Dose",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Dosa%20%28Plain%29.jpg",
+      "desc": "A dosa stuffed with veg pulav or rice bath, not potato palya. Namma SLN folds the muddanna rice into it; Umesh Dosa Point does a bath dosa with the same idea.",
+      "tags": [
+        "breakfast",
+        "rice"
+      ],
+      "id": "bath-dose",
+      "stay": true,
+      "tryIn": [
+        "namma-sln",
+        "umesh-dosa-point"
+      ]
     },
     {
       "name": "Mangalore Buns",
@@ -262,9 +406,44 @@
       ],
       "id": "mangalore-buns",
       "tryIn": [
-        "mangalore-pearl"
+        "mangalore-pearl",
+        "searock"
       ],
       "stay": true
+    },
+    {
+      "name": "Congress Kadlekai",
+      "kn": "ಕಾಂಗ್ರೆಸ್ ಕಡ್ಲೇಕಾಯಿ",
+      "say": "Congress Kadlekai",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Congress%20Kadlekai.jpg",
+      "desc": "Spiced split peanuts from Iyengar bakeries, named after the 1969 Congress split. Best stuffed into a butter khara bun at the counter, not plated.",
+      "tags": [
+        "breakfast",
+        "picks"
+      ],
+      "id": "congress-kadlekai",
+      "personalPick": true,
+      "tryIn": [
+        "srinivasa-brahmins-bakery",
+        "vb-bakery"
+      ],
+      "stay": true
+    },
+    {
+      "name": "Cream Bun",
+      "kn": "ಕ್ರೀಮ್ ಬನ್",
+      "say": "Cream Bun",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Two%20Sweet%20Cream%20Buns%20at%20WikiConference%20India%202026.jpg",
+      "desc": "An Iyengar-bakery filled bun, closer to a doughnut with cream, coconut flakes, and tutti-frutti than to a Western cream bun. Thom's in Frazer Town is the city's usual reference.",
+      "tags": [
+        "breakfast",
+        "sweet"
+      ],
+      "id": "cream-bun",
+      "stay": true,
+      "tryIn": [
+        "thoms-bakery"
+      ]
     },
     {
       "name": "Goli Baje",
@@ -278,7 +457,8 @@
       ],
       "id": "goli-baje",
       "tryIn": [
-        "mangalore-pearl"
+        "mangalore-pearl",
+        "searock"
       ],
       "stay": true
     },
@@ -296,7 +476,8 @@
       "personalPick": true,
       "tryIn": [
         "halli-mane",
-        "halli-jonne"
+        "kamat-bugle-rock",
+        "sri-venkateshwara-nk"
       ],
       "stay": true
     },
@@ -328,7 +509,8 @@
       ],
       "id": "ragi-rotti",
       "tryIn": [
-        "halli-mane"
+        "halli-mane",
+        "mudde-mess"
       ],
       "stay": true
     },
@@ -342,7 +524,12 @@
       ],
       "id": "yenne-badnekai",
       "stay": true,
-      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Stuffed%20Brinjal.jpg"
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Stuffed%20Brinjal.jpg",
+      "tryIn": [
+        "sri-venkateshwara-nk",
+        "halli-mane",
+        "kamat-bugle-rock"
+      ]
     },
     {
       "name": "Girmit",
@@ -355,7 +542,11 @@
       ],
       "id": "girmit",
       "personalPick": true,
-      "stay": true
+      "stay": true,
+      "tryIn": [
+        "sri-venkateshwara-nk",
+        "karnataka-bhel-house"
+      ]
     },
     {
       "name": "Kalaburgi Tahari",
@@ -369,7 +560,10 @@
       ],
       "id": "kalaburgi-tahari",
       "stay": true,
-      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Tahari%20Pulao.jpg"
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Tahari%20Pulao.jpg",
+      "tryIn": [
+        "sri-venkateshwara-nk"
+      ]
     },
     {
       "name": "Dharwad Peda",
@@ -383,7 +577,12 @@
       ],
       "id": "dharwad-peda",
       "personalPick": true,
-      "stay": true
+      "stay": true,
+      "tryIn": [
+        "sv-sweetmeat",
+        "asha-sweets",
+        "babusingh-peda"
+      ]
     },
     {
       "name": "Belagavi Kunda",
@@ -396,7 +595,11 @@
       ],
       "id": "belagavi-kunda",
       "stay": true,
-      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kunda%20mithai.jpg"
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kunda%20mithai.jpg",
+      "tryIn": [
+        "sv-sweetmeat",
+        "asha-sweets"
+      ]
     },
     {
       "name": "Kesari Bath",
@@ -411,7 +614,8 @@
       "id": "kesari-bath",
       "tryIn": [
         "mtr",
-        "brahmins-coffee-bar"
+        "brahmins-coffee-bar",
+        "airlines-hotel"
       ],
       "stay": true
     },
@@ -430,7 +634,9 @@
       "tourist": true,
       "tryIn": [
         "brahmins-coffee-bar",
-        "mtr"
+        "mtr",
+        "mltr",
+        "airlines-hotel"
       ],
       "stay": true
     },
@@ -445,7 +651,8 @@
       ],
       "id": "churmuri",
       "tryIn": [
-        "vvpuram"
+        "vvpuram",
+        "karnataka-bhel-house"
       ],
       "stay": true
     },
@@ -460,7 +667,10 @@
       ],
       "id": "mylari-dosa",
       "stay": true,
-      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mylari%20dosa%2001.jpg"
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Mylari%20dosa%2001.jpg",
+      "tryIn": [
+        "mylari"
+      ]
     },
     {
       "name": "Pandi Curry",
@@ -473,7 +683,10 @@
       ],
       "id": "pandi-curry",
       "stay": true,
-      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pandi%20Curry.jpg"
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pandi%20Curry.jpg",
+      "tryIn": [
+        "coorg"
+      ]
     },
     {
       "name": "Kadambuttu",
@@ -486,7 +699,10 @@
         "kodagu"
       ],
       "id": "kadambuttu",
-      "stay": true
+      "stay": true,
+      "tryIn": [
+        "coorg"
+      ]
     },
     {
       "name": "Filter Kaapi",
@@ -504,7 +720,13 @@
       "tryIn": [
         "ctr",
         "vidyarthi-bhavan",
-        "brahmins-coffee-bar"
+        "brahmins-coffee-bar",
+        "sendhoor",
+        "mltr",
+        "koshys-restaurant",
+        "airlines-hotel",
+        "umesh-dosa-point",
+        "veena-thindi"
       ],
       "stay": true
     },
@@ -520,7 +742,8 @@
       "id": "majjige",
       "tryIn": [
         "mtr",
-        "halli-mane"
+        "halli-mane",
+        "atithyaa"
       ],
       "personalPick": true,
       "stay": true
@@ -536,7 +759,10 @@
       ],
       "id": "nannari-sherbet",
       "stay": true,
-      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Nannari%20sarbath.jpg"
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Nannari%20sarbath.jpg",
+      "tryIn": [
+        "vvpuram"
+      ]
     },
     {
       "name": "Kashaya",
@@ -548,7 +774,149 @@
         "coast"
       ],
       "id": "kashaya",
-      "stay": true
+      "stay": true,
+      "tryIn": [
+        "mangalore-pearl",
+        "udupi-mangaluru"
+      ],
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Aati%20Amavase%20kashaya%20%281%29.jpg"
+    },
+    {
+      "name": "Specialty Coffee",
+      "kn": "ಸ್ಪೆಷಾಲಿಟಿ ಕಾಫಿ",
+      "say": "Specialty Coffee",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20shade%20coffee%20plantation%20Chikmagalur%201.jpg",
+      "desc": "Pour-over and single-origin, not tumbler-davara kaapi. Araku roasts beans from its own valley estates; Third Wave started roasting Chikmagalur lots out of Koramangala in 2016.",
+      "tags": [
+        "drink",
+        "picks"
+      ],
+      "id": "specialty-coffee",
+      "personalPick": true,
+      "stay": true,
+      "tryIn": [
+        "araku-coffee",
+        "third-wave"
+      ]
+    },
+    {
+      "name": "Craft Beer",
+      "kn": "ಕ್ರಾಫ್ಟ್ ಬಿಯರ್",
+      "say": "Craft Beer",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ipa%20beer%20155%20ibus.jpg",
+      "desc": "House pours from Bengaluru brewpubs, not a familiar bottle. Toit in Indiranagar opened the city's microbrewery habit in 2010; The Pump House did the same job for JP Nagar in 2018.",
+      "tags": [
+        "drink",
+        "picks"
+      ],
+      "id": "craft-beer",
+      "personalPick": true,
+      "stay": true,
+      "tryIn": [
+        "toit",
+        "pump-house"
+      ]
+    },
+    {
+      "name": "Death by Chocolate",
+      "kn": "ಡೆತ್ ಬೈ ಚಾಕೊಲೇಟ್",
+      "say": "Death by Chocolate",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Death%20by%20chocolate.jpg",
+      "desc": "Corner House's piled ice-cream plate. The fudge is named Sheila's Fudge, after the family matriarch; the Residency Road shop opened in 1982.",
+      "tags": [
+        "sweet",
+        "picks"
+      ],
+      "id": "death-by-chocolate",
+      "tourist": true,
+      "stay": true,
+      "personalPick": true,
+      "tryIn": [
+        "corner-house"
+      ]
+    },
+    {
+      "name": "Ice Cream Cake",
+      "kn": "ಐಸ್ ಕ್ರೀಮ್ ಕೇಕ್",
+      "say": "Ice Cream Cake",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/An%20icecream-cake%20in%20Lakeview%20Milk%20Bar%2C%20MG%20Road%2C%20Bangalore%202025.jpg",
+      "desc": "Lakeview Milk Bar's MG Road cake, from a parlour that started opposite Ulsoor Lake in 1930. Vanilla, chocolate, and raspberry were the original three flavours.",
+      "tags": [
+        "sweet",
+        "picks"
+      ],
+      "id": "ice-cream-cake",
+      "stay": true,
+      "tryIn": [
+        "lakeview-milk-bar"
+      ]
+    },
+    {
+      "name": "Tacos",
+      "kn": "ಟಾಕೋಸ್",
+      "say": "Tacos",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Tacos%202.jpg",
+      "desc": "Chinita's order: tacos, then horchata, mole that is not mild-for-India. Indiranagar or Koramangala, same kitchen.",
+      "tags": [
+        "picks"
+      ],
+      "id": "tacos",
+      "personalPick": true,
+      "stay": true,
+      "tryIn": [
+        "chinita"
+      ]
+    },
+    {
+      "name": "Tiramisu",
+      "kn": "ಟಿರಮಿಸು",
+      "say": "Tiramisu",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Dessert%20Tiramisu.jpg",
+      "desc": "Chianti in Koramangala plates pasta, lasagna, then this. Order it after the meal, not as the reason to skip dinner.",
+      "tags": [
+        "sweet",
+        "picks"
+      ],
+      "id": "tiramisu",
+      "personalPick": true,
+      "stay": true,
+      "tryIn": [
+        "chianti"
+      ]
+    },
+    {
+      "name": "Banoffee Pie",
+      "kn": "ಬನಾಫಿ ಪೈ",
+      "say": "Banoffee Pie",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Banoffeepie.jpg",
+      "desc": "Dyu Art Cafe's dessert people stay for: banana, toffee, cream, heavy sugar. Downstairs is for working; the pie is why the hours stretch.",
+      "tags": [
+        "sweet",
+        "picks"
+      ],
+      "id": "banoffee-pie",
+      "personalPick": true,
+      "stay": true,
+      "tryIn": [
+        "dyu-art-cafe"
+      ]
+    },
+    {
+      "name": "Amrut Fusion",
+      "kn": "ಅಮೃತ್ ಫ್ಯೂಷನ್",
+      "say": "Amrut Fusion",
+      "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Amrut%20singlemalt%20whisky%202013-06-11%2018-39.jpg",
+      "desc": "Bengaluru-distilled single malt, launched internationally in 2009, aged faster in this heat. Drink it in the city; the Mysore Road tour is inconsistent, so call ahead.",
+      "tags": [
+        "drink",
+        "picks"
+      ],
+      "id": "amrut-fusion",
+      "personalPick": true,
+      "stay": true,
+      "tryIn": [
+        "amrut"
+      ]
     }
   ]
 }

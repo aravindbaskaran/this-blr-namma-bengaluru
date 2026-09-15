@@ -13,7 +13,10 @@
       "One soft, ghee-roasted dosa at a six-table Mysuru room that's been doing only that.",
       "Don't ask for a masala stuffed the Bengaluru way."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Mylari%20dosa%2001.jpg"
+    ]
   },
   {
     "id": "nandi",

@@ -56,7 +56,10 @@
       "Walk the nine galleries in order, classical through Bollywood, before heading outside.",
       "Play the Sound Garden yourself - Humming Stone and Storm Drum are hands-on, not behind glass."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Saraswati%20veena%20-%20Collections%20of%20the%20Government%20Museum%20(Bangalore)-TTT17%20(9).jpg"
+    ]
   },
   {
     "id": "chowdiah",
@@ -112,7 +115,10 @@
       "Start with the permanent collection, 12th century onward, then whatever's showing on top of it.",
       "End at the rooftop cafe - the building is meant to be climbed floor by floor, not rushed."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Museum_of_Art_and_Photography%2C_Bangalore_%282025%29_109.jpg"
+    ]
   },
   {
     "id": "veena-thindi",
@@ -141,7 +147,8 @@
     "category": "food",
     "blurb": "Opened as the Brahmin Coffee Club in 1924, renamed MTR in 1960 - the place that invented rava idli by accident, during a WWII rice shortage. Shut for six years after the 1975 Emergency's price caps rather than cut quality, and reopened in 1981. Still run by the same family, four generations on.",
     "photos": [
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Mavalli%20Tiffin%20Room%20(6)%2C%20Lalbagh%20Road%2C%20Bengaluru.jpg"
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Mavalli%20Tiffin%20Room%20(6)%2C%20Lalbagh%20Road%2C%20Bengaluru.jpg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/MTR%20Coffee.jpg"
     ],
     "kn": "ಎಂಟಿಆರ್",
     "say": "M T R",
@@ -169,7 +176,10 @@
       "Try a few varieties beyond the classic - a wide holige menu is the whole point.",
       "D.V.G Road, next to Upahara Darshini - the original the rest of the chain grew out of."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Kadle%20Bele%20Holige.jpg"
+    ]
   },
   {
     "id": "corner-house",
@@ -207,7 +217,10 @@
       "Book the guided walking tour (Sundays, 2nd/4th Saturdays) for the interior - Aadhaar and advance registration required."
     ],
     "tourist": true,
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Vidhan%20Soudha%20Bangalore%20Front%20view.JPG"
+    ]
   },
   {
     "id": "ctr",
@@ -224,7 +237,10 @@
       "Don't expect seating theatre - this is a tiffin room that got famous."
     ],
     "tourist": true,
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Filter%20Coffee%20-%20CTR%20Shri%20Sagar%2C%20Bangalore%20-%20Karnataka%20-%20PXL0254.jpg"
+    ]
   },
   {
     "id": "brahmins-coffee-bar",
@@ -241,7 +257,10 @@
       "Drink the kaapi standing. That is how this counter works."
     ],
     "tourist": true,
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Idli.jpg"
+    ]
   },
   {
     "id": "tipu-palace",
@@ -259,7 +278,10 @@
       "The palace still sits inside what's left of Bangalore Fort's walls - walk the old fort area while you're there."
     ],
     "tourist": true,
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Tipu%20Sultan%20Summer%20Palace%2C%20Bangalore.jpg"
+    ]
   },
   {
     "id": "airlines-hotel",
@@ -275,7 +297,10 @@
       "Sit under the banyan trees - the open-air tables are the point.",
       "Come for breakfast or a slow lunch, not a quick grab."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Bisi%20Bele%20Bath%20(Bisibelebath).JPG"
+    ]
   },
   {
     "id": "karavalli",
@@ -291,7 +316,10 @@
       "Ask what's come in from the coast that day; the kitchen changes with the catch.",
       "This is a sit-down meal, not a darshini - budget the evening."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Kori%20Rotti.jpg"
+    ]
   },
   {
     "id": "freedom-park",
@@ -308,7 +336,10 @@
       "Walk past the freedom-fighter sculptures and the central tower before deciding what you think of the space.",
       "Check if anything's being protested that week - part of the park is formally kept for it, not just tolerated."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Freedom%20park%2C%20Bengaluru.jpg"
+    ]
   },
   {
     "id": "mangalore-pearl",
@@ -324,7 +355,10 @@
       "Go for kori rotti or a fish curry if you want Mangalorean cooking without the drive.",
       "It's home-style, not plated for photographs."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Kori%20Rotti.jpg"
+    ]
   },
   {
     "id": "ngma",
@@ -341,7 +375,10 @@
       "Two floors, 18th century to now - Raja Ravi Varma and Amrita Sher-Gil are the names to look for.",
       "The mansion itself is worth a slow look - a century-old Palace Road bungalow, not a purpose-built gallery."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/National%20Gallery%20of%20Modern%20Art%20-%20NGMA%20-%20Bangalore%206645.JPG"
+    ]
   },
   {
     "id": "searock",
@@ -357,7 +394,10 @@
       "Try a Kundapur or Karwar dish, not only the Mangalore hits.",
       "Share a few coastal plates rather than one heavy curry."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Neer%20Dosa%20%28%E0%B2%A8%E0%B3%80%E0%B2%B0%E0%B3%81%20%E0%B2%A6%E0%B3%8B%E0%B2%B8%E0%B3%86%29.jpg"
+    ]
   },
   {
     "id": "kamat-bugle-rock",
@@ -373,7 +413,10 @@
       "Unlimited Jolada Rotti Oota on a banana leaf - eat with your hands.",
       "This is the North Karnataka thali reference; don't treat it as a snack."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Another%20Vegetarian%20Meal.jpg"
+    ]
   },
   {
     "id": "visvesvaraya-museum",
@@ -390,7 +433,10 @@
       "Fun Science and the Electro Technic gallery - Tesla coils and Van de Graaff generators, hands-on.",
       "The Wright Flyer replica and the animatronic Spinosaurus are the two that stop kids in their tracks."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Visvesvaraya%20Industrial%20and%20Technological%20Museum%20Bangalore.jpg"
+    ]
   },
   {
     "id": "halli-mane",
@@ -406,7 +452,10 @@
       "Jolada rotti with ennegayi and badanekayi palya - the village-mess plates.",
       "It's a full meal; go hungry."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Bisi%20Bele%20Bath%20(Bisibelebath).JPG"
+    ]
   },
   {
     "id": "sri-venkateshwara-nk",
@@ -422,7 +471,10 @@
       "The cheap Jolada Rotti Oota: two rotis, rice, sambar, rasam, curd.",
       "VV Puram after sunset if you want the street as well as the plate."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Another%20Vegetarian%20Meal.jpg"
+    ]
   },
   {
     "id": "rangoli-metro-art-center",
@@ -439,7 +491,10 @@
       "Walk Hoovina Haadi, the upper walkway, then drop into whichever of the three galleries has a show up.",
       "Free and partly open-air - an easy stop before or after an MG Road evening."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Rangoli_-_Namma_Metro_Art_Center.jpg"
+    ]
   },
   {
     "id": "sendhoor",
@@ -456,7 +511,10 @@
       "Idli, vada, and a strong filter kaapi. That is the visit.",
       "Neighbourhood pace; don't expect a menu tour."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Filter%20Coffee%20-%20CTR%20Shri%20Sagar%2C%20Bangalore%20-%20Karnataka%20-%20PXL0254.jpg"
+    ]
   },
   {
     "id": "araku-coffee",
@@ -472,7 +530,10 @@
       "A pour-over or filter from the in-house roast, then browse the bookstore upstairs.",
       "This is a sit-and-stay cafe, not a stand-and-go kaapi."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Araku%20Valley%20coffee%20plantations%20in%20Ananthagiri%20hills%20in%20Andhra%20Pradesh%2004.jpg"
+    ]
   },
   {
     "id": "bannerghatta",
@@ -489,7 +550,10 @@
       "The safari loop in the Biological Park - elephants, tigers and leopards from inside the bus.",
       "Go early; it's a real forest corridor to BR Hills, not a zoo enclosure loop."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Bannerghatta%20zoo%20lake-1-bannerghatta%20zoo-bangalore-India.jpg"
+    ]
   },
   {
     "id": "third-wave",
@@ -505,7 +569,10 @@
       "A single-origin pour-over if you want specialty, not filter-kaapi nostalgia.",
       "Laptop-friendly; pick a quieter outlet if you're working."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20shade%20coffee%20plantation%20Chikmagalur%201.jpg"
+    ]
   },
   {
     "id": "attara-kacheri",
@@ -522,7 +589,10 @@
       "Look at it beside Vidhana Soudha across the road - same street, two very different colonial-to-independence stories.",
       "It's a working High Court, not a museum - view from outside, don't expect to walk in."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Attara%20Kacheri%20wide.jpg"
+    ]
   },
   {
     "id": "dyu-art-cafe",
@@ -535,10 +605,13 @@
     "lat": 12.9345,
     "lng": 77.621,
     "try": [
-      "Work or read downstairs; the paintings are the décor, not a gallery hop. Try the banoffee pie, heavy sugar all worth it",
+      "Work or read downstairs; the paintings are the décor, not a gallery hop. Try the banoffee pie, heavy sugar, all worth it.",
       "Stay for a slow coffee rather than a photo of the façade."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Banoffeepie.jpg"
+    ]
   },
   {
     "id": "sv-sweetmeat",
@@ -554,7 +627,10 @@
       "Mysore Pak from the stall that's been arguing it's the best since 1954.",
       "Buy a box to take; this is not a sit-down sweet shop."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Mysore%20pak.jpg"
+    ]
   },
   {
     "id": "someshwara-temple-halasuru",
@@ -571,7 +647,10 @@
       "The pillared mantapa carvings - Vijayanagara-era work, older than most of what's left in the city centre.",
       "Pair it with Ulsoor Lake, a short walk away, for one Halasuru morning."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Halasuru%20Someshwara%20Temple.jpg"
+    ]
   },
   {
     "id": "asha-sweets",
@@ -587,7 +666,10 @@
       "Mysore Pak or kaju katli, plus whatever the bakery counter has that day.",
       "Any outlet; it's an institution, not a single-room pilgrimage."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Mysore%20pak.jpg"
+    ]
   },
   {
     "id": "atta-galatta",
@@ -603,7 +685,10 @@
       "Browse Indian and regional-language shelves; check what's on the events calendar.",
       "It's a bookshop that wants you to linger, not a cafe with books."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Hasiru%20Honnu%20by%20B.G.L%20Swamy%20(Kannada%20Book).jpg"
+    ]
   },
   {
     "id": "panchalinga-nageshwara-temple",
@@ -620,7 +705,10 @@
       "Find the 890 CE inscription - the oldest known written record of the name 'Bengaluru.'",
       "Five lingas in one complex; take the time to see all five, not just the main shrine."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Naganatheshvara_Temple_%289th_century%29_at_Begur%2C_Bengaluru.JPG"
+    ]
   },
   {
     "id": "blossom-books",
@@ -636,7 +724,10 @@
       "Go upstairs for secondhand and odd finds; Church Street is the hunt.",
       "Budget time - several floors deep since 1962."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Blossom%20Book%20House.JPG"
+    ]
   },
   {
     "id": "gavi-gangadhareshwara-temple",
@@ -654,7 +745,10 @@
       "Look at the monolithic stone discs in the forecourt; nobody's fully explained what they were for."
     ],
     "tourist": true,
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Gavi%20Gangadhareshwara%20temple%2C%20Bengaluru.jpg"
+    ]
   },
   {
     "id": "pecos",
@@ -670,7 +764,10 @@
       "Cheap drinks, classic rock, no redesign - that's the night.",
       "Go with people who like pubs that haven't been restyled."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Pecos%20Bangalore.jpg"
+    ]
   },
   {
     "id": "ulsoor-lake",
@@ -686,7 +783,10 @@
       "Walk the bund in the morning; it's one of Kempegowda's old tanks, enlarged later.",
       "Don't come for boating theatre - it's a city lake, used as a lake."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Ulsoor%20Lake%2C%20Bangalore.jpg"
+    ]
   },
   {
     "id": "nandi-tirtha-kalyani",
@@ -703,7 +803,10 @@
       "Find it below street level, opposite the Gangamma temple - there's no tower to spot it by.",
       "Watch the water flow from the Nandi's mouth; nobody knows the source."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Nandi-Tirtha-Temple-Malleswaram-Bangalore%20%283%29.jpg"
+    ]
   },
   {
     "id": "agara-lake",
@@ -719,7 +822,10 @@
       "The full perimeter jog, popular with HSR and Koramangala for a reason.",
       "Early or late; midday is just a hot loop."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Agara%20Lake.jpg"
+    ]
   },
   {
     "id": "puttenahalli-lake",
@@ -735,7 +841,10 @@
       "A short walk maintained by the neighbourhood, not a destination park.",
       "Treat it as a local pause if you're already in JP Nagar."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Puttenahalli%20Lake%2C%20JP%20Nagar%2C%20Bangalore.jpg"
+    ]
   },
   {
     "id": "bull-temple",
@@ -753,7 +862,10 @@
       "Come back for Kadlekai Parishe if you're here between November and December."
     ],
     "tourist": true,
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Garudagamba%20of%20Doddabasavanna%20temple.jpg"
+    ]
   },
   {
     "id": "gandhi-bazaar",
@@ -771,7 +883,10 @@
       "Combine with a Gandhi Bazaar breakfast; the street is the visit."
     ],
     "tourist": true,
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Gandhi_Bazaar_Circle.jpg"
+    ]
   },
   {
     "id": "kr-market",
@@ -788,7 +903,10 @@
       "It's wholesale chaos - wear shoes you don't mind."
     ],
     "tourist": true,
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20view%20of%20KR%20Market%20and%20the%20Mysore%20Road%20Flyover.jpg"
+    ]
   },
   {
     "id": "kote-venkataramana-temple",
@@ -805,7 +923,10 @@
       "Pair it with Tipu Sultan's Summer Palace next door - same old fort, two very different buildings.",
       "Time it for Vaikuntha Ekadashi if you want the temple at full crowd."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Gopura_%28tower%29_over_shrine_in_Kote_Venkataramana_Swamy_Temple_%2817th_century%29_at_Bengaluru.JPG"
+    ]
   },
   {
     "id": "chitrakala-parishath",
@@ -821,7 +942,10 @@
       "The Mysore painting rooms in the permanent collection, then whichever show is up.",
       "Eighteen galleries: pick two, don't march the lot."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Citrakala%20Parishat.jpg"
+    ]
   },
   {
     "id": "banashankari-devi-temple",
@@ -838,7 +962,10 @@
       "Note the Badami connection - the deity here was carried from the 7th-century original near Badami in 1915.",
       "The Banashankari neighbourhood and metro station both take their name from this temple, not the reverse."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Banashankari%20temple%2C%20Banashankari%2C%20Bengaluru%2C%20Karnataka%2C%20India%20%282012%29.jpg"
+    ]
   },
   {
     "id": "srinivasa-brahmins-bakery",
@@ -855,7 +982,10 @@
       "Iyengar bakery classics: toast, khara bun, and whatever just came out.",
       "It's a counter, not a cafe."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Congress%20Kadlekai.jpg"
+    ]
   },
   {
     "id": "thoms-bakery",
@@ -871,7 +1001,10 @@
       "The cream bun is the city's reference version - that's the order.",
       "Take away; this is a bakery queue."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Two%20Sweet%20Cream%20Buns%20at%20WikiConference%20India%202026.jpg"
+    ]
   },
   {
     "id": "st-marks-cathedral",
@@ -888,7 +1021,10 @@
       "Look up at the dome and chancel - a deliberate small echo of St Paul's in London.",
       "One of the oldest churches standing in the city; check service and visiting hours before you go."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/St.%20Marks%20Cathedral%2C%20Bangalore.%20%28Old%20Postcard%20Re-print%29%2C%20India%20Post%20%282014%29.jpg"
+    ]
   },
   {
     "id": "vb-bakery",
@@ -904,7 +1040,10 @@
       "Congress Khara Bun at the start of Thindi Beedi, then walk the lane.",
       "Butter and spice; don't overthink the rest of the tray."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Vad%20Pav%20-%20Food%20Street%2C%20VV%20puram%2C%20Bengaluru%20-%20Karnataka%20023.jpg"
+    ]
   },
   {
     "id": "st-marys-basilica",
@@ -921,7 +1060,10 @@
       "Time it for the September feast if you want the chariot procession and the crowd it draws.",
       "The Gothic structure took 26 years to build (1856-1882) - worth a slow look at the facade."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/St.%20Marys%20Basilica%20Bangalore2.jpg"
+    ]
   },
   {
     "id": "karnataka-bhel-house",
@@ -937,7 +1079,10 @@
       "One thing: Bengaluru-style bhel. That's the visit.",
       "Uma Theatre Road, standing, then move on."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Masala%20Puffed%20rice.jpg"
+    ]
   },
   {
     "id": "st-patricks-church",
@@ -954,7 +1099,10 @@
       "Note the mismatch - dedicated to the Assumption, but the Irish garrison's name for it is the one that stuck.",
       "Brigade Road right outside; easy to fold into an evening on the strip."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/St.%20Patrick%27s%20Church%2C%20Bangalore.jpg"
+    ]
   },
   {
     "id": "mltr",
@@ -970,7 +1118,10 @@
       "Khali dose - the bare, buttery dosa almost nobody else still does.",
       "Same Gandhi Bazaar lane as the famous neighbour, without the queue theatre."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Dosa%20%28Plain%29.jpg"
+    ]
   },
   {
     "id": "atithyaa",
@@ -988,7 +1139,10 @@
       "Unlimited Karnataka thali on a kansa plate - bisi bele bath, gojju, seasonal palya.",
       "Lunch crowd since 1986; this is a meal, not a tasting."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Bisi%20Bele%20Bath%20(Bisibelebath).JPG"
+    ]
   },
   {
     "id": "st-francis-xavier-cathedral",
@@ -1005,7 +1159,10 @@
       "Look for the two domes on the facade - a 2009 addition, not part of the 1932 original.",
       "It's the Bangalore diocese's cathedral, not just a parish church, since 1940."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/St_Francis_Xavier_Cathedral%2C_Bangalore_oblique.jpg"
+    ]
   },
   {
     "id": "mudde-mess",
@@ -1021,7 +1178,10 @@
       "Ragi mudde with saaru, rice and buttermilk - coupon at the counter, hands at the table.",
       "Don't come for dosa. Come for millet."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/RAGI%20MUDDE.JPG"
+    ]
   },
   {
     "id": "halli-jonne",
@@ -1037,7 +1197,10 @@
       "Donne biryani in an areca-leaf cup: their seeraga samba 'Jonne rice,' green masala.",
       "Eat it hot in the donne, not packed for later."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken%20Donne%20Biriyani.jpg"
+    ]
   },
   {
     "id": "holy-trinity-church",
@@ -1054,7 +1217,10 @@
       "Find the stained-glass baptism window - shipped in from London along with the font.",
       "Trinity Circle is the giveaway - the church gave the junction its name, not the other way round."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Holy_Trinity_Church%2C_Bangalore_Inside.jpg"
+    ]
   },
   {
     "id": "vvpuram",
@@ -1091,7 +1257,10 @@
       "The red facade and steeple are the landmark - hard to miss once you know the hill.",
       "Fourth-oldest Protestant church in the city. Go in expecting quiet."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/St._Johns_Church_Bangalore_Drone_View.jpg"
+    ]
   },
   {
     "id": "toit",
@@ -1112,7 +1281,10 @@
       "A house beer and a long table - this is the brewpub that normalised craft here.",
       "Indiranagar evening, not a nightclub."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Toit%20Brewpub%2C%20Bengaluru%2001.jpg"
+    ]
   },
   {
     "id": "amrut",
@@ -1148,7 +1320,10 @@
       "Note the Tipu Sultan connection - the stone came from Srirangapatna on his orders.",
       "The road it's on is named after it, not the reverse - a sign of how long it's anchored the area."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Jama-masjid-bangalore%200.jpg"
+    ]
   },
   {
     "id": "commercial-street",
@@ -1185,7 +1360,10 @@
       "Pair it with Commercial Street a few km away for the two-mood contrast."
     ],
     "tourist": true,
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Entrance%20arch%20of%20the%20oldest%20Jain%20temple%20in%20Chickpete%20in%20Banagalore.JPG"
+    ]
   },
   {
     "id": "lakeview-milk-bar",
@@ -1202,7 +1380,10 @@
       "Order off the original three flavours - vanilla, chocolate, raspberry - before the newer menu.",
       "Remember the name's origin: Ulsoor Lake used to be visible from the first branch, long before the MG Road move."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/An%20icecream-cake%20in%20Lakeview%20Milk%20Bar%2C%20MG%20Road%2C%20Bangalore%202025.jpg"
+    ]
   },
   {
     "id": "malleswaram-market",
@@ -1261,7 +1442,10 @@
       "Sit in for a slow breakfast or coffee - the booths, not a takeaway counter, are the point here.",
       "Notice who's at the next table before assuming it's just a cafe; this is where the city's political and literary crowd still meets."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Koshys.jpg"
+    ]
   },
   {
     "id": "iskcon",
@@ -1303,7 +1487,10 @@
       "Order the donne biryani - the dish that carried this place's reputation from Nagarthapet to Jayanagar.",
       "Know the term going in: 'military hotel' means non-veg eatery here, not an army mess."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken%20Donne%20Biriyani.jpg"
+    ]
   },
   {
     "id": "palace",
@@ -1362,7 +1549,10 @@
       "Order one idli and let the bucket of sambar do the rest - that's the actual move here, not a full thali.",
       "Go for a slow morning, not a quick bite; this is a sit-and-talk institution, not a grab-and-go darshini."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Idli%20Sambar.JPG"
+    ]
   },
   {
     "id": "cauvery-emporium",
@@ -1378,7 +1568,10 @@
       "Mysore silk, sandalwood, and Channapatna under one state-run roof, fixed prices.",
       "This is the craft shop; UB City is the mall."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Mysore%20Silk%20Saree.jpg"
+    ]
   },
   {
     "id": "dodda-ganapathi",
@@ -1394,7 +1587,10 @@
       "Sit with the 16th-century monolithic Ganesha below Bull Temple hill.",
       "Give it time. Don't stack it with a temple-hopping checklist."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Dodda%20Ganesha%20temple%20basavanagudi.jpg"
+    ]
   },
   {
     "id": "pump-house",
@@ -1411,7 +1607,10 @@
       "Try the house craft beers rather than defaulting to a familiar bottle.",
       "JP Nagar, not Indiranagar - the founders built it precisely so you wouldn't have to make that drive."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Ipa%20beer%20155%20ibus.jpg"
+    ]
   },
   {
     "id": "vidyarthi-bhavan",
@@ -1432,7 +1631,11 @@
       "Masala dosa if you accept the wait; otherwise open Skip the crowd.",
       "It's famous. That is why the queue exists, and why the name still matters."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Vidyarthi%20Bhavan%20Masala%20Dosa.jpg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/VidyarthiBhavanEntrance.jpg"
+    ]
   },
   {
     "id": "turahalli-forest",
@@ -1449,7 +1652,10 @@
       "Stick to the Tree Park section - the reserve forest itself is closed to visitors now, for the forest's sake.",
       "Don't expect the cycling and bouldering trails from a few years ago; access has tightened since."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Thurahalli%2C_Bengaluru%2C_Karnataka_560062%2C_India_-_panoramio_%282%29.jpg"
+    ]
   },
   {
     "id": "brigade-mg",
@@ -1468,7 +1674,10 @@
       "Walk it once so you know the strip, then leave.",
       "Open Skip the crowd for Indiranagar if you wanted a night out."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Brigade_Road_Bengaluru.jpg"
+    ]
   },
   {
     "id": "chinita",
@@ -1483,24 +1692,30 @@
       "Tacos and horchata; the mole if you want something that isn't mild-for-India.",
       "Indiranagar or Koramangala - same kitchen idea."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Tacos%202.jpg"
+    ]
   },
   {
     "id": "mini-forest-hbr-layout",
     "name": "Mini Forest, HBR Layout",
-    "area": "5th Block, HBR Layout",
+    "area": "Hennur lakebed, HBR Layout",
     "category": "nature",
-    "blurb": "A small Miyawaki-method plantation packed into a residential HBR Layout plot - dense, fast-growing native species doing in a few years what a conventional plantation takes decades to approximate. One of several such pocket forests that have gone up across the city.",
-    "kn": "ಮಿನಿ ಫಾರೆಸ್ಟ್, ಎಚ್‌ಬಿಆರ್ ಲೇಔಟ್",
-    "say": "Mini Forest, HBR Layout",
-    "lat": 13.0335,
-    "lng": 77.625,
+    "blurb": "Hennur Lake Biodiversity Park: about 32 acres of trees on the old Hennur lakebed, opened in 2016. HBR walkers call it the mini forest. Jacaranda, sandal, rosewood, pongam, a 2km path. This is the Forest Department plot, not a pocket Miyawaki in a house site.",
+    "kn": "ಹೆಣ್ಣೂರು ಕೆರೆ ಜೀವ ವೈವಿಧ್ಯ ವನ",
+    "say": "Hennuru Kere Jeeva Vaividhya Vana",
+    "lat": 13.0353,
+    "lng": 77.6264,
     "personalPick": true,
     "try": [
-      "Walk the dense planting up close - the whole point of the Miyawaki method is packing native species tight, not spacing them out.",
-      "Compare it mentally to a regular park; this is doing a different job, not competing on lawn space."
+      "Walk the path. The planting is a tree park on a dry lakebed, not lawn.",
+      "Go early; after work it fills with the same HBR walking crowd as any neighbourhood park."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Indian%20Chamaeleon%20Sleeping1.jpg"
+    ]
   },
   {
     "id": "chianti",
@@ -1515,7 +1730,10 @@
       "Pasta or lasagna when you don't want to gamble on a new place.",
       "Tiramisu if you're already there; this is a consistent, not a trendy, room."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Dessert%20Tiramisu.jpg"
+    ]
   },
   {
     "id": "rnr-biriyani",
@@ -1534,7 +1752,10 @@
       "Koramangala 4th B Block, near the BDA complex; other outlets exist, same donne style."
     ],
     "tourist": true,
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken%20Donne%20Biriyani.jpg"
+    ]
   },
   {
     "id": "doresanipalya-forest",
@@ -1551,7 +1772,10 @@
       "Look for the Baronet and Large Oakblue butterflies - both uncommon elsewhere in Bengaluru.",
       "Read the tree labels as you walk; the labelling is deliberate, meant for exactly this kind of slow visit."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Doresanipalya%20reserve%20forest%20board.jpg"
+    ]
   },
   {
     "id": "meghana-foods",
@@ -1566,7 +1790,10 @@
       "Boneless chicken biryani, spicier than most of the city's Andhra counters.",
       "Expect a queue; that's the cult, not a secret."
     ],
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken%20Hyderabadi%20Biryani.JPG"
+    ]
   },
   {
     "id": "namma-sln",
@@ -1574,17 +1801,20 @@
     "area": "Gandhi Bazaar, Basavanagudi",
     "category": "food",
     "url": "https://maps.app.goo.gl/hCDBr4qa9rMfPL2o9",
-    "blurb": "The Cubbonpet Muddanna line, this counter on Gandhi Bazaar Main Road - vegetarian, standing-room more often than not, built around a ghee-heavy veg palav that people in this city will argue is better than most biryani. Banana leaf, paper plate, and a sabbakki dosa if you come early enough that breakfast is still on.",
+    "blurb": "The Cubbonpet Muddanna line on Gandhi Bazaar Main Road: vegetarian, standing-room, banana leaf or paper plate. The order is sabakki dose, sabakki idli, and veg pulav, plus a bath dose stuffed with the palav when you want rice inside the dosa.",
     "kn": "ನಮ್ಮ ಎಸ್.ಎಲ್.ಎನ್",
     "say": "Namma S L N",
     "lat": 12.9447822,
     "lng": 77.5719199,
     "try": [
-      "The muddanna palav, hot, on a banana leaf - that is the dish.",
-      "Gandhi Bazaar Main Road - come early if you want the dosa side of the menu, not just the palav."
+      "Sabakki dose and sabakki idli first; veg pulav when you want the muddanna rice plate.",
+      "Bath dose if the palav is going into a dosa instead of onto the leaf."
     ],
     "tourist": true,
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Vegetable%20Pulao%20as%20served%20in%20South%20India.jpg"
+    ]
   },
   {
     "id": "umesh-dosa-point",
@@ -1601,7 +1831,10 @@
       "Stand and eat; parking and seating are not the point of this stretch of road."
     ],
     "tourist": true,
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/%22Butter%22%20Masala%20Dosai%20(1602609238).jpg"
+    ]
   },
   {
     "id": "desi",
@@ -1619,7 +1852,10 @@
       "Other Desi rooms: Malleswaram, Seetha Circle, Vijayanagar."
     ],
     "tourist": true,
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Weaving%20ilkal%20saree.jpg"
+    ]
   },
   {
     "id": "varnam",
@@ -1637,6 +1873,28 @@
       "Jayanagar 5th Block if Indiranagar is the wrong side of town."
     ],
     "tourist": true,
-    "stay": true
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Channapatna%20artist%20making%20toy.jpg"
+    ]
+  },
+  {
+    "id": "davanagere-benne-dose-mane",
+    "name": "Davanagere Benne Dose Mane",
+    "area": "JP Nagar 1st Phase",
+    "category": "food",
+    "blurb": "A counter for the thicker, spongier Davanagere benne dose, not the Bengaluru masale dosa. This pin is the JP Nagar 1st Phase stall near Indira Gandhi Circle; other Dose Mane rooms sit in Rajajinagar and Chamrajpet.",
+    "kn": "ದಾವಣಗೆರೆ ಬೆಣ್ಣೆ ದೋಸೆ ಮನೆ",
+    "say": "Daavana-gere Ben-ne Dose Mane",
+    "lat": 12.9112,
+    "lng": 77.5854,
+    "try": [
+      "The benne dose, thick and spongy, with puffed rice in the batter.",
+      "Don't order it like a CTR masale dosa; the filling and the sponge are a different recipe."
+    ],
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Davanagere%20Benne%20Dosa.jpg"
+    ]
   }
 ]

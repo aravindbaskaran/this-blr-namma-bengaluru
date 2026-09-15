@@ -201,5 +201,6 @@ The live guide's **About the people behind this** rail is loaded from this GitHu
 - Deepika Varadarajan - places, Karnataka day trips, and fact-check on the lists
 - Hassan - page layout and the saree bands between sections
 - Namita Raddi - spots, food, habbas, and craft rooms (Desi, Varnam, Channapatna)
+- Sakshi Gupta (`sakshigupta1996`) - location photos as a full card band, not a 60px thumbnail
 
 If you want a name or a one-line role other than your GitHub login, say so in the PR or issue. That note lives in `PEOPLE_NOTES` in `docs/js/guide.js`.

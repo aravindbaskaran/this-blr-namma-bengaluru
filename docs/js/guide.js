@@ -104,6 +104,14 @@ function allLocations(){ return LOCATIONS.concat(customLocations); }
 function locById(id){
   return allLocations().find(l => l.id === id) || KARNATAKA_PLACES.find(l => l.id === id);
 }
+function dishesAt(placeId){
+  return forMode(DISHES).filter(d => (d.tryIn || []).includes(placeId));
+}
+function locationPhotos(l){
+  if(l.photos && l.photos.length) return l.photos;
+  const d = dishesAt(l.id).find(x => x.photo);
+  return d && d.photo ? [d.photo] : [];
+}
 function catMeta(id){
   if(id === 'daytrip') return { id:'daytrip', label:'Day trip', color:DAYTRIP_COLOR };
   if(id === 'picks') return { id:'picks', label:'Personal picks', color:'var(--maroon)' };
@@ -202,15 +210,22 @@ function setCategory(id){ activeCategory = id; renderPills(); renderList(); rend
 function buildLocationCard(l){
   const cat = catMeta(l.category);
   const added = agenda.includes(l.id);
-  const photosHtml = (l.photos && l.photos.length)
-    ? `<div class="camera-roll">${l.photos.map(src => `<img src="${src}" loading="lazy" onerror="this.remove()" alt="${l.name}" tabindex="0" role="button" aria-label="View larger photo of ${l.name}" onclick="openLightbox('${src}', '${l.name}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('${src}', '${l.name}')}">`).join('')}</div>`
+  const photos = locationPhotos(l);
+  const photosHtml = photos.length
+    ? `<div class="camera-roll">${photos.map(src => waitPhoto(src, l.name, '', `tabindex="0" role="button" aria-label="View larger photo of ${esc(l.name)}" onclick="openLightbox('${esc(src)}', '${esc(l.name)}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('${esc(src)}', '${esc(l.name)}')}"`)).join('')}</div>`
     : `<div class="camera-roll-empty">No photo yet. <a href="#add-yours">Write in</a> if you can add one.</div>`;
   const pickHtml = (l.personalPick || l.approved) ? PICK_MARK : '';
+  const eat = dishesAt(l.id);
+  const eatHtml = eat.length
+    ? `<div class="try-block eat-here"><div class="try-label">Eat here</div><div class="dish-try-list">${eat.map(d =>
+        `<button type="button" onclick="focusDish('${d.id}')">${d.name}</button>`
+      ).join('')}</div></div>`
+    : '';
   const tryHtml = (l.try && l.try.length)
     ? `<div class="try-block"><div class="try-label">Try</div><ul class="try-list">${l.try.map(t => `<li>${t}</li>`).join('')}</ul></div>`
     : '';
   const skipHtml = skipCrowdHtml(l);
-  const pronounceHtml = l.kn ? `<div class="card-pronounce"><span class="kn card-kn">${l.kn}</span><span class="card-say">${l.say}</span>${speakBtn(l.kn, 'sm')}</div>` : '';
+  const pronounceHtml = l.kn ? `<div class="card-pronounce">${knCycle(l.kn, l.name, 'card-kn')}<span class="card-say">${l.say || ''}</span>${speakBtn(l.kn, 'sm')}</div>` : '';
   const onCityMap = LOCATIONS.some(x => x.id === l.id) || customLocations.some(x => x.id === l.id);
   const mapLinkHtml = onCityMap && (typeof l.lat === 'number' && typeof l.lng === 'number')
     ? `<button class="map-link-btn" onclick="viewOnMap('${l.id}')">📍 View on map</button>` : '';
@@ -228,6 +243,7 @@ function buildLocationCard(l){
       <div class="card-body">
         <p class="blurb">${l.blurb}</p>
         ${tryHtml}
+        ${eatHtml}
         ${skipHtml}
       </div>
       <div class="card-actions">
@@ -253,6 +269,18 @@ function skipCrowdHtml(l){
     </div>
   </details>`;
 }
+function focusDish(id){
+  const section = document.getElementById('karnataka');
+  if(section) section.scrollIntoView({behavior:'smooth', block:'start'});
+  requestAnimationFrame(() => {
+    const el = document.getElementById('dish-' + id);
+    if(el){
+      el.scrollIntoView({behavior:'smooth', block:'center'});
+      el.style.outline = '2px solid var(--leaf)';
+      window.setTimeout(() => { el.style.outline = ''; }, 1600);
+    }
+  });
+}
 function focusPlace(id){
   if(typeof setView === 'function') setView('list');
   setCategory('all');
@@ -271,11 +299,13 @@ function renderList(){
   const wrap = document.getElementById('listView');
   const items = exploreItems();
   wrap.innerHTML = items.map(buildLocationCard).join('') || `<p style="color:var(--ink-soft);">No spots in this filter yet.</p>`;
+  armPhotoWaits(wrap);
 }
 function renderDaytrips(){
   const wrap = document.getElementById('daytripGrid');
   if(!wrap) return;
   wrap.innerHTML = forMode(KARNATAKA_PLACES).map(buildLocationCard).join('');
+  armPhotoWaits(wrap);
 }
 
 /* ---------------- render: map view ---------------- */
@@ -524,7 +554,7 @@ function renderFestivals(){
         <h3>${f.name}</h3>
         <span class="festival-when">${f.when}</span>
       </div>
-      <div class="festival-where">${f.where} · <span class="kn" style="color:inherit;font-size:12px;">${f.kn}</span></div>
+      <div class="festival-where">${f.where} · ${knCycle(f.kn, f.name)}</div>
       <p>${f.blurb}</p>
       ${f.url ? `<p class="festival-credit"><a href="${f.url}" target="_blank" rel="noopener">Programme</a>${f.also ? ` · <a href="${f.also.url}" target="_blank" rel="noopener">${f.also.label}</a>` : ''}</p>` : ''}
     </div>
@@ -540,7 +570,7 @@ function renderQuips(){
       <div>
         <div class="quip-kicker">Did you know</div>
         <h3>${q.q}</h3>
-        ${q.kn ? `<span class="kn quip-kn">${q.kn}</span>` : ''}
+        ${q.kn ? knCycle(q.kn, q.knEn || q.q, 'quip-kn') : ''}
       </div>
       <p>${q.a}</p>
     </article>
@@ -561,9 +591,9 @@ function setDishTag(id){ activeDishTag = id; renderDishPills(); renderDishes(); 
 function dishPhotoHtml(d){
   const empty = `<div class="dish-photo dish-photo-empty" aria-hidden="true">No photo yet</div>`;
   if(!d.photo) return empty;
-  const src = esc(d.photo);
-  const name = esc(d.name);
-  return `<img class="dish-photo" src="${src}" loading="lazy" alt="${name}" tabindex="0" role="button" aria-label="View larger photo of ${d.name}" onclick="openLightbox('${src}', '${name}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('${src}', '${name}')}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'dish-photo dish-photo-empty',textContent:'No photo yet'}))">`;
+  const src = d.photo;
+  const name = d.name;
+    return waitPhoto(src, name, 'dish-photo', `tabindex="0" role="button" aria-label="View larger photo of ${esc(name)}" onclick="openLightbox('${esc(src)}', '${esc(name)}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('${esc(src)}', '${esc(name)}')}"`, 'dish');
 }
 function renderDishes(){
   const wrap = document.getElementById('dishGrid');
@@ -582,22 +612,26 @@ function renderDishes(){
     const tryIds = d.tryIn || [];
     const tryPlaces = tryIds.map(id => locById(id)).filter(Boolean);
     const tryAttr = tryIds.length ? ` data-try-in="${esc(tryIds.join(' '))}"` : '';
+    const locIds = new Set(allLocations().map(l => l.id));
+    const allInCity = tryPlaces.length && tryPlaces.every(p => locIds.has(p.id));
+    const tryLabel = allInCity ? 'Where to try in Bengaluru' : 'Where to try';
     const tryHtml = tryPlaces.length
-      ? `<div class="dish-try"><div class="dish-try-label">Where to try in Bengaluru</div><div class="dish-try-list">${tryPlaces.map(p =>
+      ? `<div class="dish-try"><div class="dish-try-label">${tryLabel}</div><div class="dish-try-list">${tryPlaces.map(p =>
           `<button type="button" onclick="focusPlace('${p.id}')">${p.name}</button>`
         ).join('')}</div></div>`
       : '';
     return `
-    <div class="dish-card"${tryAttr}>
+    <div class="dish-card" id="dish-${d.id}"${tryAttr}>
       ${photoHtml}
       <div class="dish-name-row">${pickMark}<div class="dish-name">${d.name}</div></div>
-      <div class="dish-kn-row"><span class="kn dish-kn">${d.kn}</span><span class="dish-say">${d.say}</span>${speakBtn(d.kn, 'sm')}</div>
+      <div class="dish-kn-row">${knCycle(d.kn, d.name, 'dish-kn')}<span class="dish-say">${d.say || ''}</span>${speakBtn(d.kn, 'sm')}</div>
       <p class="dish-desc">${d.desc}</p>
       ${tryHtml}
       <div class="card-actions" style="margin-top:10px;flex-wrap:wrap">${tagsHtml}</div>
     </div>
   `;
   }).join('') || `<p style="color:var(--ink-soft);">No dishes in this tag yet.</p>`;
+  armPhotoWaits(wrap);
 }
 
 /* ---------------- learn kannada ---------------- */
@@ -611,7 +645,7 @@ function renderPhrases(){
       `).join('')}</div>` : '';
     const sayHtml = p.say ? `<div class="p-say">say: ${p.say}</div>` : '';
     return `<div class="phrase-card">
-      <div class="p-kn-row"><div class="p-kn">${p.kn}</div>${speakBtn(p.kn)}</div>
+      <div class="p-kn-row">${knCycle(p.kn, p.meaning, 'p-kn')}${speakBtn(p.kn)}</div>
       <div class="p-translit">${p.translit}</div>
       ${sayHtml}
       <div class="p-meaning">${p.meaning}</div>
@@ -690,11 +724,110 @@ const PEOPLE_NOTES = {
   karthik4222: { name: 'Vinay Karthik Baluguri', role: 'Kannada audio', sameAs: 'vinaykarthikbaluguri-svg' },
   'deepikarajan-swym': { name: 'Deepika Varadarajan', role: 'Places, day trips, and fact-check', blurb: "I've called Bengaluru home for eight years now. Most weekends find me at a local darshini for breakfast, working through a dosa and filter coffee. I'm particularly drawn to the city's colonial-era layer: the cantonment bungalows, churches, and civic buildings that were here long before the tech parks. Bengaluru has a way of making room for everyone who comes here with its warmth and working on this guide has been a good excuse to reminisce about a city I've come to call home." },
   hassanrelated: { name: 'Hassan', role: 'Layout and saree bands', blurb: 'Page layout and the saree bands that sit between sections.' },
-  'namita-raddi': { name: 'Namita Raddi', role: 'Spots, food, habbas, and craft', blurb: 'Places to eat, places to go, the habbas that mark the year, and craft rooms: Desi, Varnam, and Channapatna.' }
+  'namita-raddi': { name: 'Namita Raddi', role: 'Spots, food, habbas, and craft', blurb: 'Places to eat, places to go, the habbas that mark the year, and craft rooms: Desi, Varnam, and Channapatna.' },
+  sakshigupta1996: { name: 'Sakshi Gupta', role: 'Location photo cards', blurb: 'Turned the 60px thumbnail under Try into a full-bleed photo band on each spot card. When a Commons file fails, the band collapses instead of leaving a hole.' }
 };
 
 function esc(s){
   return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function knCycle(kn, en, extraClass){
+  if(!kn) return '';
+  const native = esc(kn);
+  const cls = extraClass ? `kn kn-cycle ${extraClass}` : 'kn kn-cycle';
+  if(!en) return `<span class="${cls}">${native}</span>`;
+  return `<span class="${cls}" tabindex="0"><span class="kn-native">${native}</span><span class="kn-en">${esc(en)}</span></span>`;
+}
+
+function photoWaitReady(img){
+  const wrap = img && img.closest('.photo-wait');
+  if(wrap) wrap.classList.add('is-ready');
+}
+function photoWaitFail(img, kind){
+  const wrap = img && img.closest('.photo-wait');
+  if(!wrap) return;
+  if(kind === 'dish'){
+    wrap.outerHTML = '<div class="dish-photo dish-photo-empty" aria-hidden="true">No photo yet</div>';
+  } else {
+    wrap.remove();
+  }
+}
+function waitPhoto(src, alt, extraClass, attrs, kind){
+  const cls = extraClass || '';
+  const failKind = kind === 'dish' ? 'dish' : '';
+  return `<div class="photo-wait"><span class="photo-wait-deco" aria-hidden="true"></span><span class="photo-wait-copy kn kn-cycle" tabindex="0"><span class="kn-native">ಸ್ವಲ್ಪ ನಿಲ್ಲಿ</span><span class="kn-en">hold on</span></span><img class="${cls}" src="${esc(src)}" alt="${esc(alt)}" loading="lazy" ${attrs || ''} onload="photoWaitReady(this)" onerror="photoWaitFail(this, '${failKind}')"></div>`;
+}
+function armPhotoWaits(root){
+  (root || document).querySelectorAll('.photo-wait img').forEach(img => {
+    if(img.complete && img.naturalWidth) photoWaitReady(img);
+    else if(img.complete) photoWaitFail(img, img.classList.contains('dish-photo') ? 'dish' : '');
+  });
+}
+function toggleModeTip(e){
+  e.stopPropagation();
+  const tip = document.getElementById('modeTip');
+  const btn = e.currentTarget;
+  if(!tip || !btn) return;
+  const willOpen = tip.hidden;
+  closeModeTip();
+  if(!willOpen) return;
+  tip.hidden = false;
+  btn.setAttribute('aria-expanded', 'true');
+  const r = btn.getBoundingClientRect();
+  const width = Math.min(320, window.innerWidth - 24);
+  let left = r.right - width;
+  if(left < 12) left = 12;
+  if(left + width > window.innerWidth - 12) left = window.innerWidth - width - 12;
+  let top = r.bottom + 8;
+  if(top + 180 > window.innerHeight) top = Math.max(12, r.top - 188);
+  tip.style.top = top + 'px';
+  tip.style.left = left + 'px';
+}
+function closeModeTip(){
+  const tip = document.getElementById('modeTip');
+  if(tip) tip.hidden = true;
+  document.querySelectorAll('.mode-tip-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+}
+function commonsFilePage(src){
+  if(!src) return null;
+  try{
+    const u = new URL(src, 'https://commons.wikimedia.org');
+    const path = decodeURIComponent(u.pathname);
+    if(path.includes('Special:FilePath/')){
+      const file = decodeURIComponent(path.split('Special:FilePath/')[1]).replace(/ /g, '_');
+      return 'https://commons.wikimedia.org/wiki/File:' + file;
+    }
+    if(path.includes('/wiki/File:')){
+      return 'https://commons.wikimedia.org/wiki/File:' + path.split('/wiki/File:')[1].replace(/ /g, '_');
+    }
+    const m = path.match(/\/([^/]+\.(?:jpe?g|png|gif|webp))$/i);
+    if(m && /wikimedia\.org/.test(u.host)){
+      return 'https://commons.wikimedia.org/wiki/File:' + m[1].replace(/ /g, '_');
+    }
+  }catch(err){ /* skip */ }
+  return null;
+}
+function renderPhotoCredits(){
+  const host = document.getElementById('photoCreditList');
+  if(!host) return;
+  const rows = [];
+  const seen = new Set();
+  const add = (label, src) => {
+    const page = commonsFilePage(src);
+    if(!page || seen.has(page)) return;
+    seen.add(page);
+    const file = page.split('/wiki/File:')[1] || src;
+    rows.push({ label, page, file: file.replace(/_/g, ' ') });
+  };
+  LOCATIONS.concat(KARNATAKA_PLACES).forEach(l => {
+    (l.photos || []).forEach(src => add(l.name, src));
+  });
+  DISHES.forEach(d => { if(d.photo) add(d.name, d.photo); });
+  rows.sort((a, b) => a.label.localeCompare(b.label));
+  host.innerHTML = rows.map(r =>
+    `<li><a href="${esc(r.page)}" target="_blank" rel="noopener">${esc(r.label)}</a> <span class="credit-file">${esc(r.file)}</span></li>`
+  ).join('');
 }
 
 function toggleNav(force){
@@ -823,6 +956,7 @@ document.getElementById('issueForm').addEventListener('submit', function(e){
     renderQuips();
     renderDishes();
     renderPhrases();
+    renderPhotoCredits();
     renderAgendaCount();
     setEra(6);
     loadPeople();
@@ -831,7 +965,10 @@ document.getElementById('issueForm').addEventListener('submit', function(e){
     const nav = document.getElementById('siteNav');
     if(nav) nav.addEventListener('click', e => { if(e.target.closest('a')) toggleNav(false); });
     addEventListener('keydown', e => {
-      if(e.key === 'Escape'){ toggleNav(false); closeDrawer(); closeLightbox(); }
+      if(e.key === 'Escape'){ toggleNav(false); closeDrawer(); closeLightbox(); closeModeTip(); }
+    });
+    addEventListener('click', e => {
+      if(!e.target.closest('.mode-tip') && !e.target.closest('.mode-tip-btn')) closeModeTip();
     });
     addEventListener('resize', () => {
       syncHeaderOffset();
