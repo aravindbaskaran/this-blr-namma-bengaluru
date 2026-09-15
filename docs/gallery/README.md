@@ -1,6 +1,6 @@
 # Contributor photos
 
-Drop image files in this folder (`docs/gallery/`). Then add a row to `docs/data/gallery.json`. They show on **photos.html**, with a short preview on the guide. They do not replace the photos on place cards.
+Drop image files in this folder (`docs/gallery/`). Then add a row to `docs/data/gallery.json`. They show in the **contributor gallery** (`photos.html`), with a short preview on the guide. They do not replace the photos on place cards.
 
 GitHub Pages cannot list the folder by itself. The JSON is the list the page reads.
 

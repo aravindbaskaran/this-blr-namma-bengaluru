@@ -906,7 +906,7 @@ function renderGallery(){
   if(more){
     more.hidden = false;
     const a = more.querySelector('a');
-    if(a) a.textContent = items.length > limit ? `See all ${items.length} photos` : 'See all photos';
+    if(a) a.textContent = items.length > limit ? `See all ${items.length} in the gallery` : 'See the full gallery';
   }
 }
 
