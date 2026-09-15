@@ -81,7 +81,7 @@
   function paintRibbon(el, k, vertical, weave, phase, opts){
     if(!el) return;
     opts = opts || {};
-    const len = 220 + k * 720;
+    const len = vertical ? (220 + k * 720) : 1240;
     const thick = RIBBON_THICK;
     const sag = 14;
     const y0 = RIBBON_PAD;
