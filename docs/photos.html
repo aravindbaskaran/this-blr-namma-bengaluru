@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Baloo+Tamma+2:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/tokens.css?v=20260916m">
-<link rel="stylesheet" href="css/layout.css?v=20260916t">
+<link rel="stylesheet" href="css/layout.css?v=20260916x">
 <link rel="stylesheet" href="css/stage.css?v=20260916m">
 </head>
 <body data-page="photos">
@@ -48,13 +48,18 @@
       </div>
     </a>
     <nav class="main-nav" id="siteNav" aria-label="Primary">
-      <a href="./#history">History</a>
-      <a href="./#not-that">This, not that</a>
-      <a href="./#explore">Explore</a>
-      <a href="./#modern-blr">Today</a>
-      <a href="./#did-you-know">Did you know</a>
-      <a href="./#learn-kannada">Learn Kannada</a>
-      <a href="./#karnataka">Karnataka</a>
+      <div class="nav-sub">
+        <button type="button" class="nav-sub-btn" id="navSubBtn" aria-expanded="false" aria-controls="navSubList" aria-haspopup="true" onclick="toggleNavSub(event)">On this page</button>
+        <div class="nav-sub-list" id="navSubList" hidden>
+          <a href="./#history">History</a>
+          <a href="./#not-that">This, not that</a>
+          <a href="./#explore">Explore</a>
+          <a href="./#modern-blr">Today</a>
+          <a href="./#did-you-know">Did you know</a>
+          <a href="./#learn-kannada">Learn Kannada</a>
+          <a href="./#karnataka">Karnataka</a>
+        </div>
+      </div>
       <a href="photos.html" aria-current="page">Photos</a>
       <a href="./#add-yours">Write in</a>
     </nav>
@@ -92,6 +97,6 @@
   <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()">
 </div>
 
-<script src="js/gallery.js?v=20260916a"></script>
+<script src="js/gallery.js?v=20260916c"></script>
 </body>
 </html>

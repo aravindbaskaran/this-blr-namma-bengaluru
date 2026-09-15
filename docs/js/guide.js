@@ -963,6 +963,24 @@ function toggleNav(force){
   const open = force == null ? !nav.classList.contains('is-open') : !!force;
   nav.classList.toggle('is-open', open);
   btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  if(!open && innerWidth > 720) closeNavSub();
+}
+function closeNavSub(){
+  const btn = document.getElementById('navSubBtn');
+  const list = document.getElementById('navSubList');
+  if(list) list.hidden = true;
+  if(btn) btn.setAttribute('aria-expanded', 'false');
+}
+function toggleNavSub(e){
+  if(e) e.stopPropagation();
+  const btn = document.getElementById('navSubBtn');
+  const list = document.getElementById('navSubList');
+  if(!btn || !list) return;
+  const willOpen = list.hidden;
+  closeNavSub();
+  if(!willOpen) return;
+  list.hidden = false;
+  btn.setAttribute('aria-expanded', 'true');
 }
 
 async function loadPeople(){
@@ -1094,12 +1112,15 @@ if(issueFormEl) issueFormEl.addEventListener('submit', function(e){
     openPhotoFromQuery();
     syncHeaderOffset();
     const nav = document.getElementById('siteNav');
-    if(nav) nav.addEventListener('click', e => { if(e.target.closest('a')) toggleNav(false); });
+    if(nav) nav.addEventListener('click', e => {
+      if(e.target.closest('a')){ toggleNav(false); closeNavSub(); }
+    });
     addEventListener('keydown', e => {
-      if(e.key === 'Escape'){ toggleNav(false); closeDrawer(); closeLightbox(); closeModeTip(); }
+      if(e.key === 'Escape'){ toggleNav(false); closeNavSub(); closeDrawer(); closeLightbox(); closeModeTip(); }
     });
     addEventListener('click', e => {
       if(!e.target.closest('.mode-tip') && !e.target.closest('.mode-tip-btn')) closeModeTip();
+      if(!e.target.closest('.nav-sub')) closeNavSub();
     });
     addEventListener('resize', () => {
       syncHeaderOffset();
