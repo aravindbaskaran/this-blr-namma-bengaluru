@@ -602,7 +602,7 @@ function renderPhrases(){
   const wrap = document.getElementById('phraseGrid');
   const GROUP_ORDER = ['Greetings & courtesy', 'Getting to know someone', 'Everyday essentials', 'Food & warmth', 'Ordering food & coffee', 'Respect & address'];
   const cardHtml = (p) => {
-    const variantHtml = p.variant ? `<div class="p-variant"><span class="p-variant-label">${p.variant.region}</span><span class="p-variant-line">"${p.variant.kn}" — ${p.variant.translit}${p.variant.say ? ` (say: ${p.variant.say})` : ''} ${speakBtn(p.variant.kn, 'sm')}</span></div>` : '';
+    const variantHtml = p.variant ? `<div class="p-variant"><span class="p-variant-label">${p.variant.region}</span><span class="p-variant-line">"${p.variant.kn}" - ${p.variant.translit}${p.variant.say ? ` (say: ${p.variant.say})` : ''} ${speakBtn(p.variant.kn, 'sm')}</span></div>` : '';
     const examplesHtml = p.examples ? `<div class="p-examples">${p.examples.map(ex => `
         <div class="p-example"><span class="p-ex-kn">${ex.kn}</span><span class="p-ex-translit">${ex.translit}</span> - ${ex.meaning} ${speakBtn(ex.kn, 'sm')}</div>
       `).join('')}</div>` : '';

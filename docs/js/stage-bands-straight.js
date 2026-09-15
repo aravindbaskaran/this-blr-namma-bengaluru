@@ -5,6 +5,7 @@
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const state = [];
   let io = null;
+  let rippleRaf = 0;
   function init(){
     const SP = window.SareePaint;
     if(!SP) return false;
@@ -31,7 +32,7 @@
         tag.rel = 'noopener noreferrer';
       }
       bandEl.appendChild(tag);
-      const s = {bandEl, svg, tag, weave, p:0, raf:0};
+      const s = {bandEl, svg, tag, weave, p:0, raf:0, phase0: i * 0.9};
       state.push(s);
       paint(s, reduce ? 1 : 0);
       if(io) io.observe(bandEl);
@@ -58,15 +59,29 @@
     }
     return true;
   }
-  function paint(s, p){
+  function paint(s, p, phase){
     s.p = p;
-    window.SareePaint.paintRibbon(s.svg, p, false, s.weave);
+    window.SareePaint.paintRibbon(s.svg, p, false, s.weave, phase || 0);
     pin(s);
+  }
+  function tickRipple(now){
+    rippleRaf = 0;
+    let any = false;
+    state.forEach(s => {
+      if(!s.bandEl.classList.contains('is-on') || s.p < 0.999) return;
+      any = true;
+      window.SareePaint.paintRibbon(s.svg, 1, false, s.weave, s.phase0 + now / 1800, {skipBolt:true});
+    });
+    if(any) rippleRaf = requestAnimationFrame(tickRipple);
+  }
+  function startRipple(){
+    if(reduce || rippleRaf) return;
+    rippleRaf = requestAnimationFrame(tickRipple);
   }
   function unfold(s){
     cancelAnimationFrame(s.raf);
     const from = s.p;
-    if(from >= 1) return;
+    if(from >= 1){ startRipple(); return; }
     const t0 = performance.now();
     const dur = Math.max(200, 1500 * (1 - from));
     const step = now => {
@@ -74,6 +89,7 @@
       const e = 1 - Math.pow(1 - t, 3);
       paint(s, from + (1 - from) * e);
       if(t < 1) s.raf = requestAnimationFrame(step);
+      else startRipple();
     };
     s.raf = requestAnimationFrame(step);
   }

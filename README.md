@@ -3,12 +3,12 @@ Namma Bengaluru, not that
 
 This is a static GitHub Pages site. The published source is `docs/`.
 
-- `docs/index.html` — markup only
-- `docs/css/` — `tokens.css` (palette and type), `layout.css` (chrome and cards), `stage.css` (background stage and loader)
-- `docs/js/` — `guide.js` (data, rendering, forms), `stage.js` (scroll decorations)
-- `docs/audio/kn/` — a small audio clip per Kannada phrase, plus `manifest.json`
-- `docs/kannada-voice.js` — looks up a phrase's clip and plays it
-- `docs/data/*.json` — lists. Bengaluru spots live in `locations.json` (including `personalPick`, `skipCrowd`, and a `try` list). Day trips live in `karnataka-places.json`. Dishes live in `dishes.json`. Asides live in `did-you-know.json`. The page fetches those files on load.
+- `docs/index.html` - markup only
+- `docs/css/` - `tokens.css` (palette and type), `layout.css` (chrome and cards), `stage.css` (background stage and loader)
+- `docs/js/` - `guide.js` (data, rendering, forms), `stage.js` (scroll decorations)
+- `docs/audio/kn/` - a small audio clip per Kannada phrase, plus `manifest.json`
+- `docs/kannada-voice.js` - looks up a phrase's clip and plays it
+- `docs/data/*.json` - lists. Bengaluru spots live in `locations.json` (including `personalPick`, `skipCrowd`, and a `try` list). Day trips live in `karnataka-places.json`. Dishes live in `dishes.json`. Asides live in `did-you-know.json`. The page fetches those files on load.
 
 Do not put new lists back into the HTML.
 
@@ -190,9 +190,9 @@ Override the port with `PORT=8080 ./scripts/preview.sh` if 5600 is already in us
 
 Names also appear on the live guide. Known so far:
 
-- Aravind Baskaran — started the guide
-- Vinay Karthik Baluguri — Kannada audio
-- Deepika Rajan — places, day trips, and fact-check
-- Hassan — layout and saree bands
+- Aravind Baskaran - started the guide
+- Vinay Karthik Baluguri - Kannada audio
+- Deepika Rajan - places, day trips, and fact-check
+- Hassan - layout and saree bands
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) to add yourself.

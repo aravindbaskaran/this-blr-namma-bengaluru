@@ -438,7 +438,7 @@
   }
   .berunda-mark-v2 path{stroke:currentColor; fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round;}
 
-  /* Tiny Hase Chittara — only used once, as the threshold into Karnataka. */
+  /* Tiny Hase Chittara - only used once, as the threshold into Karnataka. */
   .chittara-divider{
     height:16px;
     background-color:var(--maroon);

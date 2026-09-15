@@ -1,0 +1,25 @@
+---
+description: Never use em dashes. Prefer periods, commas, colons, or ASCII hyphens.
+alwaysApply: true
+---
+
+# No em dashes
+
+Do not use an em dash or en dash in copy, comments, README, JSON, or UI strings.
+
+Replace them:
+
+- Clause break: use a period, comma, or colon. Restate if needed.
+- List or aside: use space-hyphen-space, matching existing guide copy.
+- Ranges and compounds: use a hyphen (`5:30-8am`, `Udupi-Mangaluru`, `35-40`).
+
+```
+Bad:  Climb the rock [em dash] it's older than the city.
+Good: Climb the rock. It's older than the city.
+Good: Climb the rock - it's older than the city.
+
+Bad:  35 [en dash] 40 years
+Good: 35-40 years
+```
+
+Unicode to reject: U+2014 (em dash), U+2013 (en dash). Do not introduce them when editing or adding text.

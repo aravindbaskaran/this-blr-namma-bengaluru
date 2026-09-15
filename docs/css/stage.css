@@ -77,7 +77,7 @@
   .stage-band-straight{
     position:relative;
     height:176px;
-    overflow:hidden;
+    overflow:visible;
     pointer-events:none;
   }
   .stage-band-straight .band-ribbon{
