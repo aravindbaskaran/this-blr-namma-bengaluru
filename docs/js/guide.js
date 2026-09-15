@@ -10,6 +10,7 @@ let DISH_TAGS = [];
 let DISHES = [];
 let PHRASES = [];
 let QUIPS = [];
+let GALLERY = [];
 
 const PICK_MARK = `<svg class="pick-mark" viewBox="0 0 40 26" role="img" aria-label="Personal pick"><title>Personal pick</title><ellipse cx="10.4" cy="7.2" rx="4.4" ry="4"/><ellipse cx="29.6" cy="7.2" rx="4.4" ry="4"/><path d="M6.6 6.2 L2.4 4.6 L7 9.2Z"/><path d="M33.4 6.2 L37.6 4.6 L33 9.2Z"/><path d="M20 10 C13 12 8.2 16.5 7 23 C13.5 20.2 17 22 20 26 C23 22 26.5 20.2 33 23 C31.8 16.5 27 12 20 10Z"/></svg>`;
 
@@ -22,6 +23,7 @@ const DATA_FILES = {
   dishes: 'data/dishes.json',
   phrases: 'data/phrases.json',
   quips: 'data/did-you-know.json',
+  gallery: 'data/gallery.json',
 };
 
 async function fetchJson(path){
@@ -31,7 +33,7 @@ async function fetchJson(path){
 }
 
 async function loadGuideData(){
-  const [categories, locations, karnatakaPlaces, notThat, festivals, dishes, phrases, quips] = await Promise.all([
+  const [categories, locations, karnatakaPlaces, notThat, festivals, dishes, phrases, quips, gallery] = await Promise.all([
     fetchJson(DATA_FILES.categories),
     fetchJson(DATA_FILES.locations),
     fetchJson(DATA_FILES.karnatakaPlaces),
@@ -40,6 +42,7 @@ async function loadGuideData(){
     fetchJson(DATA_FILES.dishes),
     fetchJson(DATA_FILES.phrases),
     fetchJson(DATA_FILES.quips),
+    fetchJson(DATA_FILES.gallery),
   ]);
   CATEGORIES = categories.categories;
   DAYTRIP_COLOR = categories.daytripColor || DAYTRIP_COLOR;
@@ -51,6 +54,7 @@ async function loadGuideData(){
   DISHES = dishes.dishes || dishes;
   PHRASES = phrases;
   QUIPS = quips;
+  GALLERY = Array.isArray(gallery) ? gallery : (gallery && gallery.photos) || [];
 }
 
 function hideLoader(ok){
@@ -107,10 +111,28 @@ function locById(id){
 function dishesAt(placeId){
   return forMode(DISHES).filter(d => (d.tryIn || []).includes(placeId));
 }
+function gallerySrc(g){
+  if(!g) return '';
+  const raw = g.src || g.file;
+  if(!raw) return '';
+  if(/^https?:/i.test(raw)) return raw;
+  return 'gallery/' + String(raw).replace(/^\/?gallery\//, '');
+}
+function galleryCaption(g){
+  return (g && (g.caption || g.description || g.alt)) || '';
+}
+function inBlrBox(lat, lng){
+  return lat >= 12.72 && lat <= 13.20 && lng >= 77.35 && lng <= 77.85;
+}
 function locationPhotos(l){
-  if(l.photos && l.photos.length) return l.photos;
-  const d = dishesAt(l.id).find(x => x.photo);
-  return d && d.photo ? [d.photo] : [];
+  const extra = GALLERY.filter(g => g.locationId === l.id).map(gallerySrc).filter(Boolean);
+  const base = (l.photos && l.photos.length) ? l.photos.slice() : [];
+  if(!base.length){
+    const d = dishesAt(l.id).find(x => x.photo);
+    if(d && d.photo) base.push(d.photo);
+  }
+  extra.forEach(src => { if(!base.includes(src)) base.push(src); });
+  return base;
 }
 function catMeta(id){
   if(id === 'daytrip') return { id:'daytrip', label:'Day trip', color:DAYTRIP_COLOR };
@@ -190,6 +212,7 @@ function applyGuideMode(persist){
     renderQuips();
     renderDishes();
     renderPhrases();
+    renderGallery();
     renderMap();
   }
 }
@@ -350,6 +373,25 @@ function renderMap(){
     const dlat = l.lat - BLR_CENTER[0];
     const dlng = (l.lng - BLR_CENTER[1]) * Math.cos(BLR_CENTER[0] * Math.PI/180);
     if((dlat*dlat + dlng*dlng) < 0.12*0.12) cityBounds.push([l.lat, l.lng]);
+  });
+  GALLERY.forEach(g => {
+    const src = gallerySrc(g);
+    const lat = g.lat, lng = g.lng;
+    if(!src || typeof lat !== 'number' || typeof lng !== 'number') return;
+    if(!inBlrBox(lat, lng)) return;
+    if(g.locationId && items.some(l => l.id === g.locationId)) return;
+    const title = galleryCaption(g) || 'Contributor photo';
+    const icon = L.divIcon({
+      className: 'map-pin-wrap',
+      html: `<span class="map-pin-icon" style="background:var(--maroon)"></span>`,
+      iconSize:[18,18], iconAnchor:[9,16], popupAnchor:[0,-12],
+    });
+    const marker = L.marker([lat, lng], { icon, title }).addTo(leafletMap);
+    marker.bindPopup(`<div class="map-popup-title">${esc(title)}</div>${g.by ? `<div class="map-popup-area">${esc(g.by)}</div>` : ''}`);
+    marker.galleryId = g.id;
+    leafletMarkers.push(marker);
+    bounds.push([lat, lng]);
+    cityBounds.push([lat, lng]);
   });
   const fit = cityBounds.length ? cityBounds : bounds;
   if(fit.length){
@@ -808,6 +850,63 @@ function commonsFilePage(src){
   }catch(err){ /* skip */ }
   return null;
 }
+function viewGalleryPin(lat, lng, id){
+  if(typeof lat !== 'number' || typeof lng !== 'number' || !inBlrBox(lat, lng)) return;
+  setView('map');
+  document.getElementById('mapWrap').scrollIntoView({behavior:'smooth', block:'center'});
+  setTimeout(()=>{
+    let marker = leafletMarkers.find(m => m.galleryId === id);
+    if(!marker && leafletMap){
+      marker = leafletMarkers.find(m => {
+        const p = m.getLatLng && m.getLatLng();
+        return p && Math.abs(p.lat - lat) < 1e-5 && Math.abs(p.lng - lng) < 1e-5;
+      });
+    }
+    if(marker && leafletMap){
+      leafletMap.setView(marker.getLatLng(), 15);
+      marker.openPopup();
+    } else if(leafletMap){
+      leafletMap.setView([lat, lng], 15);
+    }
+  }, 200);
+}
+
+function renderGallery(){
+  const sec = document.getElementById('contribGallery');
+  const host = document.getElementById('galleryGrid');
+  if(!sec || !host) return;
+  const items = GALLERY.filter(g => gallerySrc(g));
+  const nav = document.getElementById('galleryNav');
+  if(nav) nav.hidden = !items.length;
+  if(!items.length){
+    sec.hidden = true;
+    return;
+  }
+  sec.hidden = false;
+  host.innerHTML = items.map(g => {
+    const src = gallerySrc(g);
+    const cap = galleryCaption(g);
+    const alt = g.alt || cap || 'Contributor photo';
+    const loc = g.locationId ? locById(g.locationId) : null;
+    let pin = '';
+    if(loc){
+      pin = `<button type="button" class="map-link-btn" onclick="focusPlace('${loc.id}')">${esc(loc.name)}</button>`;
+    } else if(typeof g.lat === 'number' && typeof g.lng === 'number' && inBlrBox(g.lat, g.lng)){
+      pin = `<button type="button" class="map-link-btn" onclick="viewGalleryPin(${g.lat},${g.lng},${JSON.stringify(g.id || '')})">View on map</button>`;
+    }
+    const by = g.by ? `<p class="gallery-by">${esc(g.by)}</p>` : '';
+    return `<article class="card gallery-card">
+      ${waitPhoto(src, alt, '', `tabindex="0" role="button" aria-label="${esc(alt)}" onclick="openLightbox('${esc(src)}', '${esc(alt)}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('${esc(src)}', '${esc(alt)}')}"`)}
+      <div class="card-body">
+        <p class="blurb">${esc(cap)}</p>
+        ${by}
+        ${pin}
+      </div>
+    </article>`;
+  }).join('');
+  armPhotoWaits(host);
+}
+
 function renderPhotoCredits(){
   const host = document.getElementById('photoCreditList');
   if(!host) return;
@@ -824,9 +923,25 @@ function renderPhotoCredits(){
     (l.photos || []).forEach(src => add(l.name, src));
   });
   DISHES.forEach(d => { if(d.photo) add(d.name, d.photo); });
+  GALLERY.forEach(g => {
+    const src = gallerySrc(g);
+    if(!src) return;
+    const label = galleryCaption(g) || g.by || g.id || 'Contributor photo';
+    const page = commonsFilePage(src);
+    if(page){
+      add(label, src);
+      return;
+    }
+    if(seen.has(src)) return;
+    seen.add(src);
+    const who = g.by ? ` (${g.by})` : '';
+    rows.push({ label: label + who, page: src, file: g.file || src, local: true });
+  });
   rows.sort((a, b) => a.label.localeCompare(b.label));
   host.innerHTML = rows.map(r =>
-    `<li><a href="${esc(r.page)}" target="_blank" rel="noopener">${esc(r.label)}</a> <span class="credit-file">${esc(r.file)}</span></li>`
+    r.local
+      ? `<li>${esc(r.label)} <span class="credit-file">${esc(r.file)}</span></li>`
+      : `<li><a href="${esc(r.page)}" target="_blank" rel="noopener">${esc(r.label)}</a> <span class="credit-file">${esc(r.file)}</span></li>`
   ).join('');
 }
 
@@ -956,6 +1071,7 @@ document.getElementById('issueForm').addEventListener('submit', function(e){
     renderQuips();
     renderDishes();
     renderPhrases();
+    renderGallery();
     renderPhotoCredits();
     renderAgendaCount();
     setEra(6);

@@ -14,7 +14,8 @@ GitHub Pages serves `docs/` as the site. There is no build step and no CMS. List
 - `docs/js/stage-bands.js` and `stage-bands-straight.js` - the cloth bands between sections
 - `docs/data/locations.json` - Bengaluru spots (`tourist`, `stay`, `personalPick`, `skipCrowd`, `try`)
 - `docs/data/karnataka-places.json` - day trips
-- `docs/data/dishes.json`, `phrases.json`, `festivals.json`, `did-you-know.json`, `not-that.json`
+- `docs/data/dishes.json`, `phrases.json`, `festivals.json`, `did-you-know.json`, `not-that.json`, `gallery.json`
+- `docs/gallery/` - contributor photos. Add the file here, then a row in `gallery.json` (caption, optional `locationId` or `lat`/`lng`)
 - `docs/audio/kn/` - one small clip per Kannada phrase, plus `manifest.json`
 - `docs/kannada-voice.js` - looks up a phrase's clip and plays it
 

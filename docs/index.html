@@ -29,8 +29,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Baloo+Tamma+2:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <link rel="stylesheet" href="css/tokens.css?v=20260916m">
-<link rel="stylesheet" href="css/layout.css?v=20260916p">
-<link rel="stylesheet" href="css/stage.css?v=20260916l">
+<link rel="stylesheet" href="css/layout.css?v=20260916q">
+<link rel="stylesheet" href="css/stage.css?v=20260916m">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -67,7 +67,7 @@
         <circle cx="86" cy="8" r="2.1"/><circle cx="106" cy="8" r="2.1"/><circle cx="126" cy="8" r="2.1"/>
       </g>
     </svg>
-    <p class="kn kn-cycle" tabindex="0"><span class="kn-native">ನಮ್ಮ ಬೆಂಗಳೂರಿಗೆ ಸ್ವಾಗತ</span><span class="kn-en">Welcome to namma Bengaluru</span></p>
+    <p class="kn loader-title">ನಮ್ಮ ಬೆಂಗಳೂರಿಗೆ ಸ್ವಾಗತ</p>
     <p class="loader-copy">Welcome to namma Bengaluru</p>
     <div class="loader-teni" aria-hidden="true"></div>
     <p class="loader-error">Couldn&rsquo;t load the lists. Refresh, or check that <code>docs/data/</code> is being served.</p>
@@ -103,6 +103,7 @@
       <a href="#did-you-know">Did you know</a>
       <a href="#learn-kannada">Learn Kannada</a>
       <a href="#karnataka">Karnataka</a>
+      <a href="#contribGallery" id="galleryNav" hidden>Photos</a>
       <a href="#add-yours">Write in</a>
     </nav>
     <div class="header-actions">
@@ -314,7 +315,7 @@
         <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಬರೆದವರ ಬಗ್ಗೆ</span><span class="kn-en">about the people behind this</span></span>
       </div>
       <h2>About the people behind this</h2>
-      <p>This page is the GitHub repo <a href="https://github.com/aravindbaskaran/this-blr-namma-bengaluru" target="_blank" rel="noopener">this-blr-namma-bengaluru</a>. The names below are people who have pushed to it, opened a Write in issue, or both. Aravind started the repo. Everyone else is listed as GitHub knows them, plus a line if they asked for one.</p>
+      <p>A group effort at compiling and pointing, not at claiming. It started as one outsider's notes after a decade-ish in the city, and it grows when someone files a spot, a correction, or a pull request.</p>
       <article class="person-card person-card-lead">
         <img class="person-avatar" src="https://github.com/aravindbaskaran.png" alt="Aravind Baskaran" width="64" height="64">
         <div>
@@ -330,11 +331,11 @@
           </details>
         </div>
       </article>
-      <h3 class="people-more-head" id="peopleMoreHead" hidden>On this repo</h3>
+      <h3 class="people-more-head" id="peopleMoreHead" hidden>Contributors</h3>
       <div class="rail-clip">
         <div class="people-grid" id="peopleList"></div>
       </div>
-      <p class="creator-links">Want a name on this rail? Read <a href="https://github.com/aravindbaskaran/this-blr-namma-bengaluru/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">how to contribute</a>, or use <a href="#add-yours">Write in</a> to open an issue on this repo.</p>
+      <p class="creator-links">Want in? Read <a href="https://github.com/aravindbaskaran/this-blr-namma-bengaluru/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">how to contribute</a>, or use <a href="#add-yours">Write in</a> to open a GitHub issue.</p>
     </div>
   </div>
 </section>
@@ -819,6 +820,20 @@
 
 <div class="stage-band-straight" data-band="khana"></div>
 
+<section id="contribGallery" hidden>
+  <div class="section-head">
+    <div class="head-with-icon">
+      <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4Z M8 7 V5 h8 v2 M9 11 h.01 M8 16 l3-3 2 2 3-4 3 5H8Z"/></svg>
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ನಮ್ಮ ಚಿತ್ರಗಳು</span><span class="kn-en">photos from this lot</span></span>
+    </div>
+    <h2>Photos sent in for this guide</h2>
+    <p>Files dropped in the repo's gallery folder, with a caption. If they named a spot or a pin, it is wired to that card or the city map.</p>
+  </div>
+  <div class="rail-clip">
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
 <section id="add-yours">
   <div class="section-head">
     <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಬರೆಯಿರಿ</span><span class="kn-en">write in</span></span>
@@ -877,7 +892,7 @@
   <p>Made for people spending time in Bengaluru, with <span class="footer-preethi"><span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಪ್ರೀತಿ</span><span class="kn-en">love</span></span> ❤️<button class="speak-btn speak-btn-sm" onclick="speakText('ಪ್ರೀತಿ')" aria-label="Hear pronunciation">🔊</button></span></p>
   <div class="photo-credits" id="photoCredits">
     <h2>Photo credits</h2>
-    <p>Pictures on this page are hot-linked from Wikimedia Commons. Author, camera, and licence (usually CC BY or CC BY-SA) sit on the file page. Restaurant review photos are not used.</p>
+    <p>Pictures on this page are hot-linked from Wikimedia Commons unless someone on this guide sent a file. Author, camera, and licence for Commons shots sit on the file page. Restaurant review photos are not used.</p>
     <details class="sources-details">
       <summary>Show all photo credits</summary>
       <div class="photo-credit-list">
@@ -915,7 +930,7 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="js/guide.js?v=20260916r"></script>
+<script src="js/guide.js?v=20260916s"></script>
 <script type="module" src="kannada-voice.js"></script>
 <script src="js/stage-bands.js?v=20260916k"></script>
 <script src="js/stage-bands-straight.js?v=20260916l"></script>
