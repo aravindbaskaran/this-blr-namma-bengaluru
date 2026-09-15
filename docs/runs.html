@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Baloo+Tamma+2:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/tokens.css?v=20260916m">
-<link rel="stylesheet" href="css/layout.css?v=20260916ae">
+<link rel="stylesheet" href="css/layout.css?v=20260916ah">
 <link rel="stylesheet" href="css/stage.css?v=20260916m">
 <script type="application/ld+json">
 {
@@ -52,7 +52,7 @@
 
 <header>
   <div class="header-inner">
-    <a class="brand" href="./" aria-label="Explore the Namma Bengaluru way">
+    <a class="brand" href="./" aria-label="Namma Bengaluru field guide">
       <svg class="brand-mark" viewBox="0 0 48 20" aria-hidden="true">
         <line class="cord" x1="1.5" y1="4.5" x2="46.5" y2="4.5"/>
         <path class="leaf" d="M8 4.5 C5 10 5.5 15.5 8 19 C10.8 15.5 11 10 8 4.5Z"/>
@@ -72,22 +72,18 @@
       </div>
     </a>
     <nav class="main-nav" id="siteNav" aria-label="Primary">
+      <a href="./#explore">Explore</a>
+      <a href="./#history">Culture &amp; history</a>
+      <a href="./#learn-kannada">Kannada</a>
       <div class="nav-sub">
-        <button type="button" class="nav-sub-btn" id="navSubBtn" aria-expanded="false" aria-controls="navSubList" aria-haspopup="true" onclick="toggleNavSub(event)">In the guide</button>
+        <button type="button" class="nav-sub-btn" id="navSubBtn" aria-expanded="false" aria-controls="navSubList" aria-haspopup="true" onclick="toggleNavSub(event)">Annexes</button>
         <div class="nav-sub-list" id="navSubList" hidden>
-          <a href="./">Start of the guide</a>
-          <a href="./#history">History</a>
-          <a href="./#not-that">This, not that</a>
-          <a href="./#explore">Explore</a>
-          <a href="./#modern-blr">Today</a>
-          <a href="./#did-you-know">Did you know</a>
-          <a href="./#learn-kannada">Learn Kannada</a>
-          <a href="./#karnataka">Karnataka</a>
+          <a href="runs.html" aria-current="page">Runs</a>
+          <a href="photos.html">Our photos</a>
+          <a href="./#beyond-city">Beyond the city gate</a>
+          <a href="./#colophon">About / Colophon</a>
         </div>
       </div>
-      <a href="runs.html" aria-current="page">Runs</a>
-      <a href="photos.html">Our photos</a>
-      <a href="./#add-yours">Write in</a>
     </nav>
     <div class="header-actions">
       <button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="siteNav" onclick="toggleNav()">Menu</button>

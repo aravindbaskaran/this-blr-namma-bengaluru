@@ -122,7 +122,7 @@
   .mode-tip p:last-child{margin-bottom:0;}
   .mode-tip strong{color:var(--ink); font-weight:600;}
   .mode-dock{display:none;}
-  body[data-mode="tourist"] .stay-only{display:none !important;}
+  body[data-mode="quickstart"] .stay-only{display:none !important;}
 
   /* ---------- hero ---------- */
   .hero{
@@ -400,6 +400,22 @@
     padding:3px 8px; border-radius:10px; white-space:nowrap;
   }
   .card p.blurb{font-size:14px; color:var(--ink-soft);}
+  .field-anchors{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:6px;
+    margin:12px 0 0;
+  }
+  .field-anchors > div{
+    min-width:0; padding:8px 9px; border:1px solid var(--line);
+    border-radius:8px; background:var(--cream-2);
+  }
+  .field-anchors dt{
+    margin:0 0 3px; color:var(--maroon); font-size:10px; font-weight:700;
+    text-transform:uppercase; letter-spacing:0.04em;
+  }
+  .field-anchors dd{
+    margin:0; color:var(--ink); font-size:11.5px; line-height:1.35;
+    display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
+  }
   /* full-bleed to the card edges, like .dish-photo. one photo fills the band;
      extra photos become a swipeable strip rather than a row of thumbnails. */
   .camera-roll{
@@ -512,6 +528,19 @@
 
   /* ---------- karnataka: locations, food, festivals ---------- */
   .karnataka-sub{margin-top:44px;}
+  .beyond-tabs{
+    max-width:1180px; margin:0 auto 12px; padding:0 24px;
+    display:flex; gap:8px; overflow-x:auto; scrollbar-width:thin;
+  }
+  .beyond-tabs button{
+    flex:none; border:1px solid color-mix(in srgb, var(--on-accent) 55%, transparent);
+    background:transparent; color:var(--on-accent); border-radius:99px;
+    padding:8px 14px; font:600 13px inherit;
+  }
+  .beyond-tabs button[aria-selected="true"]{
+    background:var(--on-accent); color:var(--kannada-bg); border-color:var(--on-accent);
+  }
+  .beyond-panel[hidden]{display:none;}
   .modern-item{
     background:var(--card-surface);
     border:1px solid var(--line); border-radius:var(--radius);
@@ -610,6 +639,14 @@
     background:color-mix(in srgb, var(--on-accent) 12%, transparent);
   }
   .region-card .speak-btn-sm:hover{background:color-mix(in srgb, var(--on-accent) 22%, transparent);}
+  .region-highlights{
+    position:relative; margin:12px 0 0; padding:10px 0 0 18px;
+    border-top:1px dashed color-mix(in srgb, var(--on-accent) 32%, transparent);
+  }
+  .region-highlights li{
+    margin:0 0 6px; font-size:11.5px; line-height:1.45;
+    color:color-mix(in srgb, var(--on-accent) 88%, transparent);
+  }
   .flavor-list{margin-top:11px; display:flex; flex-direction:column; gap:4px; position:relative; flex:1;}
   .region-movie{margin-top:auto; padding-top:8px; border-top:1px dashed color-mix(in srgb, var(--on-accent) 32%, transparent); font-size:11.5px; color:color-mix(in srgb, var(--on-accent) 82%, transparent);}
   .flavor-item{font-size:11px; color:color-mix(in srgb, var(--on-accent) 82%, transparent); display:flex; align-items:baseline; gap:6px; line-height:1.4;}
@@ -1009,6 +1046,18 @@
   }
   .submit-btn:hover{background:var(--maroon-dark);}
   .form-note{font-size:12.5px; color:var(--ink-soft); margin-top:12px;}
+  .write-in-ways{
+    display:flex; flex-wrap:wrap; gap:10px; margin:0 0 18px;
+  }
+  .write-in-ways a{
+    display:inline-flex; align-items:center; min-height:42px; padding:9px 16px;
+    border:1px solid var(--maroon); border-radius:99px; font-size:13px; font-weight:600;
+  }
+  .write-in-mail{background:var(--maroon); color:var(--on-accent);}
+  .write-in-repo{color:var(--maroon); background:transparent;}
+
+  /* Colophon lives at the end of the notebook. */
+  #colophon{border-top:1px solid var(--line);}
 
   /* ---------- agenda drawer ---------- */
   .drawer-backdrop{
@@ -1092,33 +1141,33 @@
   .sources-col a{font-size:13.5px; color:var(--ink-soft); text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:2px;}
   .sources-col a:hover{color:var(--maroon); text-decoration-color:var(--maroon);}
 
-  /* ---------- karnataka field ---------- */
-  section#karnataka{
+  /* ---------- beyond the city gate ---------- */
+  section#beyond-city{
     max-width:none; background:var(--kannada-bg); color:var(--on-accent);
     padding:56px 0;
     --rail-fade:var(--kannada-bg);
   }
-  #karnataka .section-head,
-  #karnataka .karnataka-sub{
+  #beyond-city .section-head,
+  #beyond-city .karnataka-sub{
     max-width:1180px; margin-left:auto; margin-right:auto; padding-left:24px; padding-right:24px;
     min-width:0;
   }
-  #karnataka .section-head{max-width:1180px;}
-  #karnataka .section-head .kn{color:var(--gold-light);}
-  #karnataka .section-head .motif-icon{color:var(--gold-light);}
-  #karnataka .section-head h2{color:var(--on-accent);}
-  #karnataka .section-head p{color:var(--on-accent);}
-  #karnataka .sub-head h3{color:var(--on-accent);}
-  #karnataka .sub-head p{color:var(--on-accent);}
-  #karnataka .festivals-sub .sub-head h3{color:var(--ink);}
-  #karnataka .festivals-sub .sub-head p{color:var(--ink-soft);}
-  #karnataka .pill{
+  #beyond-city .section-head{max-width:1180px;}
+  #beyond-city .section-head .kn{color:var(--gold-light);}
+  #beyond-city .section-head .motif-icon{color:var(--gold-light);}
+  #beyond-city .section-head h2{color:var(--on-accent);}
+  #beyond-city .section-head p{color:var(--on-accent);}
+  #beyond-city .sub-head h3{color:var(--on-accent);}
+  #beyond-city .sub-head p{color:var(--on-accent);}
+  #beyond-city .festivals-sub .sub-head h3{color:var(--ink);}
+  #beyond-city .festivals-sub .sub-head p{color:var(--ink-soft);}
+  #beyond-city .pill{
     background:#fff; color:var(--ink); border-color:rgba(255,255,255,0.7);
   }
-  #karnataka .pill[data-active="true"]{
+  #beyond-city .pill[data-active="true"]{
     background:var(--ink); color:var(--cream); border-color:var(--ink);
   }
-  #karnataka .region-card{border-radius:var(--radius);}
+  #beyond-city .region-card{border-radius:var(--radius);}
 
   /* ---------- mala / section ornaments ---------- */
   .mala-divider{

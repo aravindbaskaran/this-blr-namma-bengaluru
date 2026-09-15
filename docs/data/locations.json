@@ -17,6 +17,10 @@
       "Walk the glass-house lawns before 8am, when it still belongs to walkers.",
       "Climb the Lalbagh rock - it's older than the city by a few billion years."
     ],
+    "fieldNotes": {
+      "timing": "Best before 8am",
+      "order": "Glass-house lawns and the rock outcrop"
+    },
     "tourist": true,
     "stay": true
   },
@@ -38,6 +42,10 @@
       "Run or cycle the car-free roads 5:30-8am, or on Sunday mornings.",
       "Cut through to the High Court and State Library instead of looping the same path."
     ],
+    "fieldNotes": {
+      "timing": "Car-free 5:30-8am; Sunday mornings",
+      "order": "Run the roads, then cut through to the library"
+    },
     "tourist": true,
     "stay": true
   },
@@ -57,9 +65,7 @@
       "Play the Sound Garden yourself - Humming Stone and Storm Drum are hands-on, not behind glass."
     ],
     "stay": true,
-    "photos": [
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Saraswati%20veena%20-%20Collections%20of%20the%20Government%20Museum%20(Bangalore)-TTT17%20(9).jpg"
-    ]
+    "photos": []
   },
   {
     "id": "chowdiah",
@@ -158,6 +164,10 @@
       "Order rava idli - they invented it here - and filter kaapi in a steel tumbler.",
       "Go on a weekday morning; weekends are a different restaurant."
     ],
+    "fieldNotes": {
+      "timing": "Weekday morning; weekends get crowded",
+      "order": "Rava idli and filter kaapi"
+    },
     "tourist": true,
     "stay": true
   },
@@ -902,6 +912,9 @@
       "Go at dawn for flowers by the sack, not a boutique browse.",
       "It's wholesale chaos - wear shoes you don't mind."
     ],
+    "fieldNotes": {
+      "timing": "Dawn to 8am"
+    },
     "tourist": true,
     "stay": true,
     "photos": [
@@ -1239,6 +1252,9 @@
       "After sunset: grilled corn, kebabs, and sweets that don't travel outside Karnataka.",
       "Walk the whole lane; one stall is a snack, the street is dinner."
     ],
+    "fieldNotes": {
+      "timing": "After sunset"
+    },
     "tourist": true,
     "stay": true
   },
@@ -1281,6 +1297,9 @@
       "A house beer and a long table - this is the brewpub that normalised craft here.",
       "Indiranagar evening, not a nightclub."
     ],
+    "fieldNotes": {
+      "timing": "Expect a long wait at busy hours"
+    },
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Toit%20Brewpub%2C%20Bengaluru%2001.jpg"
@@ -1631,6 +1650,10 @@
       "Masala dosa if you accept the wait; otherwise open Skip the crowd.",
       "It's famous. That is why the queue exists, and why the name still matters."
     ],
+    "fieldNotes": {
+      "timing": "Weekend waits can reach an hour",
+      "order": "Masala dosa, if you accept the queue"
+    },
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Vidyarthi%20Bhavan%20Masala%20Dosa.jpg",

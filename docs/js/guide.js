@@ -83,6 +83,15 @@ function syncHeaderOffset(){
   document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
 }
 
+function moveColophonToEnd(){
+  const main = document.getElementById('main');
+  const colophon = document.getElementById('colophon');
+  if(!main || !colophon) return;
+  const band = colophon.previousElementSibling;
+  if(band && band.classList.contains('stage-band-straight')) main.appendChild(band);
+  main.appendChild(colophon);
+}
+
 /* ---------------- state ---------------- */
 let currentView = 'list';
 let activeCategory = 'all';
@@ -92,16 +101,24 @@ let todoDone = {};
 let customLocations = [];
 
 const MODE_KEY = 'blr-guide-mode';
-const MODES = ['tourist', 'stay', 'both'];
-let guideMode = 'both';
+const MODES = ['quickstart', 'full'];
+let guideMode = 'quickstart';
+const QUICKSTART_LOCATION_IDS = new Set([
+  'lalbagh', 'cubbon', 'ulsoor-lake', 'veena-thindi', 'ctr',
+  'brahmins-coffee-bar', 'vvpuram', 'namma-sln', 'gandhi-bazaar',
+  'kr-market', 'cauvery-emporium', 'blossom-books', 'koshys-restaurant',
+  'pecos', 'tipu-palace', 'vidhana-soudha', 'attara-kacheri',
+  'bull-temple', 'map-museum', 'someshwara-temple-halasuru',
+]);
 
-function isTourist(){ return guideMode === 'tourist'; }
+function isQuickstart(){ return guideMode === 'quickstart'; }
 function forMode(list){
+  if(guideMode === 'full') return list;
+  if(list === FESTIVALS || list === NOT_THAT || list === QUIPS) return list;
   return list.filter(item => {
     if(customLocations.some(c => c.id === item.id)) return true;
-    if(guideMode === 'both') return item.tourist === true || item.stay === true;
-    if(guideMode === 'tourist') return item.tourist === true;
-    return item.stay === true;
+    if(LOCATIONS.includes(item)) return QUICKSTART_LOCATION_IDS.has(item.id);
+    return item.quickstart === true || item.tourist === true;
   });
 }
 function modeLocations(){
@@ -128,7 +145,25 @@ function galleryCaption(g){
 function inBlrBox(lat, lng){
   return lat >= 12.72 && lat <= 13.20 && lng >= 77.35 && lng <= 77.85;
 }
+const VERIFIED_PLACE_PHOTO_IDS = new Set([
+  'lalbagh', 'cubbon', 'chowdiah', 'sankey-tank', 'map-museum', 'veena-thindi',
+  'mtr', 'vidhana-soudha', 'tipu-palace', 'freedom-park', 'ngma',
+  'visvesvaraya-museum', 'rangoli-metro-art-center', 'someshwara-temple-halasuru',
+  'panchalinga-nageshwara-temple', 'blossom-books', 'gavi-gangadhareshwara-temple',
+  'pecos', 'ulsoor-lake', 'nandi-tirtha-kalyani', 'agara-lake', 'puttenahalli-lake',
+  'bull-temple', 'gandhi-bazaar', 'kr-market', 'kote-venkataramana-temple',
+  'chitrakala-parishath', 'banashankari-devi-temple', 'st-marks-cathedral',
+  'st-marys-basilica', 'st-patricks-church', 'st-francis-xavier-cathedral',
+  'holy-trinity-church', 'st-johns-church', 'toit', 'jumma-masjid',
+  'commercial-street', 'chickpet', 'lakeview-milk-bar', 'malleswaram-market',
+  'ubcity', 'koshys-restaurant', 'iskcon', 'palace', 'rangashankara',
+  'dodda-ganapathi', 'vidyarthi-bhavan', 'turahalli-forest', 'brigade-mg',
+  'doresanipalya-forest', 'desi', 'varnam',
+]);
 function locationPhotos(l){
+  if(LOCATIONS.some(item => item.id === l.id)){
+    return l.photos && VERIFIED_PLACE_PHOTO_IDS.has(l.id) ? l.photos : [];
+  }
   if(l.photos && l.photos.length) return l.photos;
   const d = dishesAt(l.id).find(x => x.photo);
   return d && d.photo ? [d.photo] : [];
@@ -138,11 +173,26 @@ function catMeta(id){
   if(id === 'picks') return { id:'picks', label:'Personal picks', color:'var(--maroon)' };
   return CATEGORIES.find(c=>c.id===id) || CATEGORIES[0];
 }
+const CATEGORY_MAP = {
+  food: 'eat',
+  craft: 'streets',
+  nature: 'green',
+  culture: 'history',
+  night: 'evenings',
+};
+const ADDA_IDS = new Set([
+  'dyu-art-cafe', 'atta-galatta', 'blossom-books',
+  'araku-coffee', 'third-wave', 'koshys-restaurant',
+]);
+function categoryIdOf(location){
+  if(ADDA_IDS.has(location.id)) return 'addas';
+  return CATEGORY_MAP[location.category] || location.category;
+}
 function exploreItems(){
   return modeLocations().filter(l => {
     if(activeCategory === 'all') return true;
     if(activeCategory === 'picks') return !!(l.personalPick || l.approved);
-    return l.category === activeCategory;
+    return categoryIdOf(l) === activeCategory;
   });
 }
 
@@ -178,7 +228,7 @@ function readGuideMode(){
     const s = localStorage.getItem(MODE_KEY);
     if(MODES.includes(s)) return s;
   }catch(e){}
-  return 'both';
+  return 'quickstart';
 }
 function setGuideMode(mode){
   if(!MODES.includes(mode)) return;
@@ -194,13 +244,13 @@ function applyGuideMode(persist){
     try{ localStorage.setItem(MODE_KEY, guideMode); }catch(e){}
     try{
       const url = new URL(location.href);
-      if(guideMode === 'both') url.searchParams.delete('mode');
+      if(guideMode === 'quickstart') url.searchParams.delete('mode');
       else url.searchParams.set('mode', guideMode);
       history.replaceState({}, '', url);
     }catch(e){}
   }
-  if(isTourist() && activeCategory === 'picks') activeCategory = 'all';
-  if(isTourist() && activeDishTag === 'picks') activeDishTag = 'all';
+  if(isQuickstart() && activeCategory === 'picks') activeCategory = 'all';
+  if(isQuickstart() && activeDishTag === 'picks') activeDishTag = 'all';
   if(LOCATIONS.length){
     renderPills();
     renderDishPills();
@@ -221,7 +271,7 @@ window.setGuideMode = setGuideMode;
 /* ---------------- render: category pills ---------------- */
 function renderPills(){
   const row = document.getElementById('categoryPills');
-  const extras = isTourist() ? [] : [{id:'picks', label:'Personal picks'}];
+  const extras = isQuickstart() ? [] : [{id:'picks', label:'Personal picks'}];
   const all = [{id:'all', label:'All'}].concat(extras).concat(CATEGORIES);
   row.innerHTML = all.map(c =>
     `<button class="pill" data-active="${activeCategory===c.id}" onclick="setCategory('${c.id}')">${c.label}</button>`
@@ -231,7 +281,7 @@ function setCategory(id){ activeCategory = id; renderPills(); renderList(); rend
 
 /* ---------------- render: list view ---------------- */
 function buildLocationCard(l){
-  const cat = catMeta(l.category);
+  const cat = catMeta(categoryIdOf(l));
   const added = agenda.includes(l.id);
   const photos = locationPhotos(l);
   const photosHtml = photos.length
@@ -244,8 +294,17 @@ function buildLocationCard(l){
         `<button type="button" onclick="focusDish('${d.id}')">${d.name}</button>`
       ).join('')}</div></div>`
     : '';
-  const tryHtml = (l.try && l.try.length)
-    ? `<div class="try-block"><div class="try-label">Try</div><ul class="try-list">${l.try.map(t => `<li>${t}</li>`).join('')}</ul></div>`
+  const fieldNotes = l.fieldNotes || {};
+  const goFor = fieldNotes.order || fieldNotes.goFor || (l.try && l.try[0]) || '';
+  const fieldAnchorItems = [
+    ['Timing', fieldNotes.timing],
+    ['Go for', goFor],
+    ['Day off', fieldNotes.dayOff],
+  ].filter(([, value]) => value);
+  const fieldNotesHtml = fieldAnchorItems.length
+    ? `<dl class="field-anchors" aria-label="Peer field notes">${fieldAnchorItems.map(([label, value]) =>
+        `<div><dt>${label}</dt><dd>${value}</dd></div>`
+      ).join('')}</dl>`
     : '';
   const skipHtml = skipCrowdHtml(l);
   const pronounceHtml = l.kn ? `<div class="card-pronounce">${knCycle(l.kn, l.name, 'card-kn')}<span class="card-say">${l.say || ''}</span>${speakBtn(l.kn, 'sm')}</div>` : '';
@@ -265,7 +324,7 @@ function buildLocationCard(l){
       </div>
       <div class="card-body">
         <p class="blurb">${l.blurb}</p>
-        ${tryHtml}
+        ${fieldNotesHtml}
         ${eatHtml}
         ${skipHtml}
       </div>
@@ -293,7 +352,7 @@ function skipCrowdHtml(l){
   </details>`;
 }
 function focusDish(id){
-  const section = document.getElementById('karnataka');
+  const section = document.getElementById('beyond-city');
   if(section) section.scrollIntoView({behavior:'smooth', block:'start'});
   requestAnimationFrame(() => {
     const el = document.getElementById('dish-' + id);
@@ -359,7 +418,7 @@ function renderMap(){
   const bounds = [];
   const cityBounds = [];
   items.forEach(l=>{
-    const cat = catMeta(l.category);
+    const cat = catMeta(categoryIdOf(l));
     const icon = L.divIcon({
       className: 'map-pin-wrap',
       html: `<span class="map-pin-icon" style="background:${cat.color}"></span>`,
@@ -622,7 +681,7 @@ function renderQuips(){
 function renderDishPills(){
   const row = document.getElementById('dishPills');
   if(!row) return;
-  const tags = isTourist() ? DISH_TAGS.filter(t => t.id !== 'picks') : DISH_TAGS;
+  const tags = isQuickstart() ? DISH_TAGS.filter(t => t.id !== 'picks') : DISH_TAGS;
   const all = [{id:'all', label:'All'}].concat(tags);
   row.innerHTML = all.map(t =>
     `<button class="pill" data-active="${activeDishTag===t.id}" onclick="setDishTag('${t.id}')">${t.label}</button>`
@@ -757,6 +816,16 @@ function setWriteIn(which){
   if(panelSpot) panelSpot.hidden = !spot;
   if(panelAsk) panelAsk.hidden = spot;
 }
+
+function setBeyondTab(which){
+  document.querySelectorAll('[data-beyond-tab]').forEach(btn => {
+    btn.setAttribute('aria-selected', String(btn.dataset.beyondTab === which));
+  });
+  document.querySelectorAll('[data-beyond-panel]').forEach(panel => {
+    panel.hidden = panel.dataset.beyondPanel !== which;
+  });
+}
+window.setBeyondTab = setBeyondTab;
 
 const GUIDE_REPO = 'https://github.com/aravindbaskaran/this-blr-namma-bengaluru';
 const PEOPLE_NOTES = {
@@ -1112,6 +1181,7 @@ if(issueFormEl) issueFormEl.addEventListener('submit', function(e){
 /* ---------------- init ---------------- */
 (async function init(){
   const started = performance.now();
+  moveColophonToEnd();
   syncHeaderOffset();
   if(document.fonts && document.fonts.ready){
     document.fonts.ready.then(syncHeaderOffset).catch(() => {});
