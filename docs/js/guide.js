@@ -685,7 +685,7 @@ const PEOPLE_NOTES = {
   aravindbaskaran: { name: 'Aravind Baskaran', role: 'Started the guide' },
   'vinaykarthikbaluguri-svg': { name: 'Vinay Karthik Baluguri', role: 'Kannada audio', blurb: 'Recorded and wired the spoken Kannada on this page.' },
   karthik4222: { name: 'Vinay Karthik Baluguri', role: 'Kannada audio', sameAs: 'vinaykarthikbaluguri-svg' },
-  'deepikarajan-swym': { name: 'Deepika Rajan', role: 'Places, day trips, and fact-check', blurb: 'Spots, day trips, and catching what the notes got wrong.' },
+  'deepikarajan-swym': { name: 'Deepika Varadarajan', role: 'Places, day trips, and fact-check', blurb: "I've called Bengaluru home for eight years now. Most weekends find me at a local darshini for breakfast, working through a dosa and filter coffee. I'm particularly drawn to the city's colonial-era layer: the cantonment bungalows, churches, and civic buildings that were here long before the tech parks. Bengaluru has a way of making room for everyone who comes here with its warmth and working on this guide has been a good excuse to reminisce about a city I've come to call home." },
   hassanrelated: { name: 'Hassan', role: 'Layout and saree bands', blurb: 'Page layout and the saree bands that sit between sections.' },
   'namita-raddi': { name: 'Namita Raddi', role: 'Spots, food, habbas, and craft', blurb: 'Places to eat, places to go, the habbas that mark the year, and craft rooms: Desi, Varnam, and Channapatna.' }
 };
