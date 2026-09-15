@@ -135,7 +135,7 @@ function buildLocationCard(l){
   const cat = catMeta(l.category);
   const added = agenda.includes(l.id);
   const photosHtml = (l.photos && l.photos.length)
-    ? `<div class="camera-roll">${l.photos.map(src => `<img src="${src}" loading="lazy" alt="${l.name}" tabindex="0" role="button" aria-label="View larger photo of ${l.name}" onclick="openLightbox('${src}', '${l.name}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('${src}', '${l.name}')}">`).join('')}</div>`
+    ? `<div class="camera-roll">${l.photos.map(src => `<img src="${src}" loading="lazy" onerror="this.remove()" alt="${l.name}" tabindex="0" role="button" aria-label="View larger photo of ${l.name}" onclick="openLightbox('${src}', '${l.name}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('${src}', '${l.name}')}">`).join('')}</div>`
     : `<div class="camera-roll-empty">No photos yet - <a href="https://commons.wikimedia.org/w/index.php?search=${encodeURIComponent(l.name + ' ' + l.area)}&title=Special:MediaSearch&type=image" target="_blank" rel="noopener">search Wikimedia Commons for ${l.name}</a> (openly licensed, free to use) and drop the image URL into this spot's "photos" array.</div>`;
   const pickHtml = (l.personalPick || l.approved) ? PICK_MARK : '';
   const tryHtml = (l.try && l.try.length)
