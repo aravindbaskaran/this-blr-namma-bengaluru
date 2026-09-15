@@ -40,6 +40,16 @@
     "blurb": "The groundnut fair - farmers bring the season's first harvest to offer at the Bull Temple, and the streets around it disappear under mounds of roasted and raw groundnuts, bangles, and clay toys."
   },
   {
+    "name": "BLR Hubba",
+    "kn": "ಬಿಎಲ್‌ಆರ್ ಹಬ್ಬ",
+    "when": "Usually Jan, ~10 days",
+    "where": "Citywide, Bengaluru",
+    "color": "var(--gold)",
+    "url": "https://blrhubba.in",
+    "also": {"label": "Subfestivals", "url": "https://blrhubba.in/subfestivals"},
+    "blurb": "A recent citywide arts habba, not the centuries-old kind - music, theatre, food, walks, folk showcases, and a stack of themed subfestivals in parks and neighbourhood venues. Anchored by UnboxingBLR, Fringe-shaped, aimed at people who already live here. Dates have moved (December, then January after Sankranti); read the year's programme rather than this card."
+  },
+  {
     "name": "Bhuta Kola",
     "kn": "ಭೂತ ಕೋಲ",
     "when": "Dec-May, night-long",

@@ -146,6 +146,8 @@ function buildLocationCard(l){
   const onCityMap = LOCATIONS.some(x => x.id === l.id) || customLocations.some(x => x.id === l.id);
   const mapLinkHtml = onCityMap && (typeof l.lat === 'number' && typeof l.lng === 'number')
     ? `<button class="map-link-btn" onclick="viewOnMap('${l.id}')">📍 View on map</button>` : '';
+  const webLabel = l.url && /maps\.(app\.)?goo|google\.com\/maps/i.test(l.url) ? 'Google Maps' : 'Website';
+  const webHtml = l.url ? `<a class="map-link-btn" href="${esc(l.url)}" target="_blank" rel="noopener">${webLabel}</a>` : '';
   return `<div class="card" id="card-${l.id}" style="--cat-color:${cat.color}">
       <div class="card-top">
         <div>
@@ -161,6 +163,7 @@ function buildLocationCard(l){
       <div class="card-actions">
         <button class="add-btn" data-added="${added}" onclick="toggleAgenda('${l.id}')">${added ? 'On your list ✓' : '+ Add to list'}</button>
         ${mapLinkHtml}
+        ${webHtml}
       </div>
     </div>`;
 }
@@ -452,6 +455,7 @@ function renderFestivals(){
       </div>
       <div class="festival-where">${f.where} · <span class="kn" style="color:inherit;font-size:12px;">${f.kn}</span></div>
       <p>${f.blurb}</p>
+      ${f.url ? `<p class="festival-credit"><a href="${f.url}" target="_blank" rel="noopener">Programme</a>${f.also ? ` · <a href="${f.also.url}" target="_blank" rel="noopener">${f.also.label}</a>` : ''}</p>` : ''}
     </div>
   `).join('');
 }
@@ -597,7 +601,8 @@ const PEOPLE_NOTES = {
   'vinaykarthikbaluguri-svg': { name: 'Vinay Karthik Baluguri', role: 'Kannada audio' },
   karthik4222: { name: 'Vinay Karthik Baluguri', role: 'Kannada audio', sameAs: 'vinaykarthikbaluguri-svg' },
   'deepikarajan-swym': { name: 'Deepika Rajan', role: 'Places, day trips, and fact-check' },
-  hassanrelated: { name: 'Hassan', role: 'Layout and saree bands' }
+  hassanrelated: { name: 'Hassan', role: 'Layout and saree bands' },
+  'namita-raddi': { name: 'Namita Raddi', role: 'Spots, food, and habbas' }
 };
 
 function esc(s){
@@ -626,17 +631,27 @@ async function loadPeople(){
       type: 'User'
     }));
   const byLogin = new Map(seed.map(p => [p.login, p]));
+  const contribLogins = new Set();
+  const remember = (p) => {
+    if(!p || !p.login || p.type === 'Bot') return;
+    const note = PEOPLE_NOTES[p.login];
+    if(note && note.sameAs) return;
+    byLogin.set(p.login, Object.assign({}, byLogin.get(p.login) || {}, p));
+  };
   try{
-    const res = await fetch(`https://api.github.com/repos/aravindbaskaran/this-blr-namma-bengaluru/contributors?per_page=100`);
-    const list = res.ok ? await res.json() : [];
-    if(Array.isArray(list)){
-      list.forEach(p => {
-        if(!p || !p.login || p.type === 'Bot') return;
-        const note = PEOPLE_NOTES[p.login];
-        if(note && note.sameAs) return;
-        byLogin.set(p.login, Object.assign({}, byLogin.get(p.login) || {}, p));
+    const [contribRes, issueRes] = await Promise.all([
+      fetch('https://api.github.com/repos/aravindbaskaran/this-blr-namma-bengaluru/contributors?per_page=100'),
+      fetch('https://api.github.com/repos/aravindbaskaran/this-blr-namma-bengaluru/issues?state=all&per_page=100')
+    ]);
+    const contribs = contribRes.ok ? await contribRes.json() : [];
+    const issues = issueRes.ok ? await issueRes.json() : [];
+    if(Array.isArray(contribs)){
+      contribs.forEach(p => {
+        remember(p);
+        if(p && p.login) contribLogins.add(p.login);
       });
     }
+    if(Array.isArray(issues)) issues.forEach(issue => remember(issue && issue.user));
   }catch(e){ /* keep the seeded list */ }
   const others = [...byLogin.values()].filter(p => p.login !== 'aravindbaskaran');
   if(!others.length){
@@ -648,7 +663,7 @@ async function loadPeople(){
   host.innerHTML = others.map(p => {
     const note = PEOPLE_NOTES[p.login] || {};
     const name = note.name || p.login;
-    const role = note.role || 'Contributor';
+    const role = note.role || (contribLogins.has(p.login) ? 'Contributor' : 'Wrote in');
     const url = p.html_url || ('https://github.com/' + p.login);
     const avatar = p.avatar_url || ('https://github.com/' + p.login + '.png');
     return `<a class="person-card" href="${esc(url)}" target="_blank" rel="noopener">

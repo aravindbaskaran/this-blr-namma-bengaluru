@@ -28,4 +28,4 @@ Speaker buttons play clips in `docs/audio/kn/`. If you add a Kannada string to t
 
 ## Credit
 
-GitHub contributors show up on the guide's **About the people behind this** section. If you want a name or a one-line role other than your GitHub login, say so in the PR.
+GitHub contributors and people who open issues show up on the guide's **About the people behind this** section. If you want a name or a one-line role other than your GitHub login, say so in the PR or issue.

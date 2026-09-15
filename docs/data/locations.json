@@ -1421,15 +1421,18 @@
   {
     "id": "rnr-biriyani",
     "name": "RnR Biriyani",
-    "area": "Jayanagar",
+    "area": "Koramangala (and other outlets)",
     "category": "food",
     "personalPick": true,
-    "blurb": "\"Taste of 1953\" — donne-style biryani on a family recipe that's stayed more or less untouched for three generations. Namma Bengaluru's own biryani, not the Hyderabadi kind.",
-    "lat": 12.9254,
-    "lng": 77.5839,
+    "url": "https://rnrbiryani.com/",
+    "blurb": "Donne-style biryani on a grandmother's recipe they still sell as \"Taste of 1953\" - short-grain, green masala, Bengaluru's own, not the Hyderabadi kind. The kitchen behind it is SRR Foods; the original counter is near the Koramangala BDA complex.",
+    "kn": "ಆರ್ ಎನ್ ಆರ್ ಬಿರಿಯಾನಿ",
+    "say": "R n R Biriyani",
+    "lat": 12.93073,
+    "lng": 77.62267,
     "try": [
-      "Donne-style biryani, family recipe since 1953 — Bengaluru's own, not Hyderabadi.",
-      "Go hungry; this is the meal."
+      "Donne mutton or chicken biryani - the recipe is the point, not a new mash-up.",
+      "Koramangala 4th B Block, near the BDA complex; other outlets exist, same donne style."
     ]
   },
   {
@@ -1460,6 +1463,37 @@
     "try": [
       "Boneless chicken biryani, spicier than most of the city's Andhra counters.",
       "Expect a queue; that's the cult, not a secret."
+    ]
+  },
+  {
+    "id": "namma-sln",
+    "name": "Namma SLN (Muddanna)",
+    "area": "Gandhi Bazaar, Basavanagudi",
+    "category": "food",
+    "url": "https://maps.app.goo.gl/hCDBr4qa9rMfPL2o9",
+    "blurb": "The Cubbonpet Muddanna line, this counter on Gandhi Bazaar Main Road - vegetarian, standing-room more often than not, built around a ghee-heavy veg palav that people in this city will argue is better than most biryani. Banana leaf, paper plate, and a sabbakki dosa if you come early enough that breakfast is still on.",
+    "kn": "ನಮ್ಮ ಎಸ್.ಎಲ್.ಎನ್",
+    "say": "Namma S L N",
+    "lat": 12.9447822,
+    "lng": 77.5719199,
+    "try": [
+      "The muddanna palav, hot, on a banana leaf - that is the dish.",
+      "Gandhi Bazaar Main Road - come early if you want the dosa side of the menu, not just the palav."
+    ]
+  },
+  {
+    "id": "umesh-dosa-point",
+    "name": "Umesh Dosa Point",
+    "area": "Kumara Park West, Seshadripuram",
+    "category": "food",
+    "blurb": "A standing-room dosa counter on Nehru Nagar Main Road, known for ghee, pudi masala, and a bath dosa stuffed with rice bath. Not a heritage tiffin room - a neighbourhood point that people keep going back to because the dosa is actually good.",
+    "kn": "ಉಮೇಶ್ ದೋಸೆ ಪಾಯಿಂಟ್",
+    "say": "Umesh Dose Point",
+    "lat": 12.99103,
+    "lng": 77.57793,
+    "try": [
+      "Pudi masala dosa or the bath dosa - those are the two that built the queue.",
+      "Stand and eat; parking and seating are not the point of this stretch of road."
     ]
   }
 ]
