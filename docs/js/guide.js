@@ -828,7 +828,8 @@ function closeModeTip(){
 function commonsFilePage(src){
   if(!src) return null;
   try{
-    const u = new URL(src, 'https://commons.wikimedia.org');
+    const u = new URL(src, (typeof location !== 'undefined' && location.origin) || 'https://example.invalid');
+    if(!/(^|\.)wikimedia\.org$/i.test(u.hostname)) return null;
     const path = decodeURIComponent(u.pathname);
     if(path.includes('Special:FilePath/')){
       const file = decodeURIComponent(path.split('Special:FilePath/')[1]).replace(/ /g, '_');
@@ -838,7 +839,7 @@ function commonsFilePage(src){
       return 'https://commons.wikimedia.org/wiki/File:' + path.split('/wiki/File:')[1].replace(/ /g, '_');
     }
     const m = path.match(/\/([^/]+\.(?:jpe?g|png|gif|webp))$/i);
-    if(m && /wikimedia\.org/.test(u.host)){
+    if(m){
       return 'https://commons.wikimedia.org/wiki/File:' + m[1].replace(/ /g, '_');
     }
   }catch(err){ /* skip */ }
