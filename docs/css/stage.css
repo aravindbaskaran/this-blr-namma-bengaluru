@@ -31,7 +31,7 @@
   .saree-ribbon.weave-mysore .zari{stroke-width:1.6;}
   .stage-say{
     position:absolute; left:0; top:0; margin:0; z-index:4;
-    width:max-content; max-width:168px;
+    width:max-content; max-width:188px;
     padding:7px 10px 8px;
     background:var(--cream);
     color:var(--ink);
@@ -42,6 +42,13 @@
     opacity:0; visibility:hidden;
     transform-origin:0 0;
     transition:opacity .3s ease, visibility .3s ease;
+    text-decoration:none;
+    pointer-events:auto;
+  }
+  a.stage-say:hover b{text-decoration:underline;}
+  .stage-say-ref{
+    display:block; margin-top:5px; font-size:10px; font-weight:600;
+    color:var(--maroon); text-decoration:underline; text-underline-offset:2px;
   }
   .stage-say.is-on{opacity:0.96; visibility:visible;}
   .stage-say b{
@@ -81,7 +88,7 @@
     overflow:visible;
   }
   .stage-band-straight.is-on .band-ribbon{opacity:1;}
-  .stage-band-straight .stage-say{z-index:4;}
+  .stage-band-straight .stage-say{z-index:4; pointer-events:auto; cursor:pointer;}
   .stage-band-straight.is-on .stage-say{opacity:0.96; visibility:visible;}
   @media (max-width:720px){
     .stage-band-straight{height:128px;}

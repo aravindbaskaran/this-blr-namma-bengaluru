@@ -4,7 +4,6 @@
     "q": "Why is Kadlekai Parishe a thing?",
     "kn": "ಕಡಲೆಕಾಯಿ ಪರಿಷೆ",
     "a": "Basavanagudi's Bull Temple sits on what used to be groundnut country. The story goes that a bull would wreck the crop until farmers offered the first harvest at Dodda Basavana Gudi - and the animal stopped. Kadlekai Parishe is still that offering: when the new groundnut comes in (Karthika, usually Nov/Dec), farmers pile it around the temple, and the streets turn into a fair of roasted kadlekai, clay toys and bangles. It is a harvest thanksgiving that the city grew around, not a tourist calendar invention.",
-    "featured": true,
     "stay": true,
     "tourist": true
   },
@@ -13,6 +12,7 @@
     "q": "Is Bengaluru actually named after boiled beans?",
     "kn": "ಬೆಂಡಕಾಳು ಊರು",
     "a": "The folk tale is charming: a Hoysala king is served boiled beans (benda kaalu) by an old woman, and names the place Benda-kaalu-ooru. Inscriptions are less romantic. A 9th-century stone at Begur already records Benguluru, centuries before that story is told. Keep the beans as a story people like; the name is older than the anecdote.",
+    "featured": true,
     "stay": true,
     "tourist": true
   },
@@ -21,14 +21,16 @@
     "q": "Why are the spiced peanuts called Congress kadlekai?",
     "kn": "ಕಾಂಗ್ರೆಸ್ ಕಡಲೆಕಾಯಿ",
     "a": "The story goes that Iyengar bakeries' masala peanuts took the name after the 1969 split in the Indian National Congress - two factions, two colours of spice mix in one packet, though other tellings link the name to Gandhi caps or party chits smuggled in peanut sacks. Whatever the source, it stuck as a joke you can still eat with a khara bun.",
-    "stay": true
+    "stay": true,
+    "tourist": true
   },
   {
     "id": "karaga-dargah",
     "q": "Why does Bengaluru Karaga stop at a dargah?",
     "kn": "ಕರಗ",
     "a": "On the main night, the Karaga procession from Dharmaraya Swamy Temple pauses at the Hazrat Tawakkal Mastan dargah in Cottonpet. The stop is not a modern interfaith photo-op: devotees have long sought the saint's blessing here so the karaga won't fall, a practice tied to the dargah built in the 1780s under Hyder Ali and Tipu Sultan. The city's oldest living festival still walks that agreement.",
-    "stay": true
+    "stay": true,
+    "tourist": true
   },
   {
     "id": "dabara-pour",
@@ -43,14 +45,16 @@
     "q": "Why is Bengaluru milder than the rest of the south?",
     "kn": "ಎತ್ತರ",
     "a": "The city sits on the Deccan plateau at about 900 metres (roughly 3,000 ft). That height, not sea breeze, is why evenings cool off and why colonial officers called it a station they could stand. The weather is geography, not a personality trait.",
-    "stay": true
+    "stay": true,
+    "tourist": true
   },
   {
     "id": "vidhana-stone",
     "q": "Why is Vidhana Soudha stone, not concrete?",
     "kn": "ವಿಧಾನ ಸೌಧ",
     "a": "Kengal Hanumanthaiah, who pushed the 1950s building through, wanted a legislature that would last like a temple, not a bungalow. Granite and porphyry were the brief. The result is still the largest legislative building in India, and it reads as a palace because it was meant to.",
-    "stay": true
+    "stay": true,
+    "tourist": true
   },
   {
     "id": "mysore-pak",
@@ -65,35 +69,40 @@
     "q": "Are the purple trees native?",
     "kn": "ಜಕರಾಂಡಾ",
     "a": "Jacaranda is South American. It was planted here in the colonial gardening era and now defines a few late-spring streets. The pink avenue trumpets (Tabebuia) are guests too. Garden city was a planting project, not a forest that happened to be purple.",
-    "stay": true
+    "stay": true,
+    "tourist": true
   },
   {
     "id": "basavanagudi-name",
     "q": "What does Basavanagudi actually mean?",
     "kn": "ಬಸವನಗುಡಿ",
     "a": "Basava is the bull, gudi is the temple. The neighbourhood is named for Dodda Basavana Gudi, the 16th-century Nandi that Kadlekai Parishe still orients around. A lot of pete names are still this literal if you read them in Kannada.",
-    "stay": true
+    "stay": true,
+    "tourist": true
   },
   {
     "id": "ilkal-teni",
     "q": "What is that temple-spire edge on an Ilkal saree?",
     "kn": "ತೋಪೆ ತೆನಿ",
     "a": "Tope Teni is the pallu weaving: red, white and gold triangles that read as a row of temple towers. Ilkal (Bagalkot belt) is a GI-tagged Karnataka weave, not a generic 'south silk'. The teni is how you spot one without a label.",
-    "stay": true
+    "stay": true,
+    "tourist": true
   },
   {
     "id": "gombe-vs-palace",
     "q": "Is Dasara only the palace procession?",
     "kn": "ಗೊಂಬೆ ಹಬ್ಬ",
     "a": "Jamboo Savari is the public postcard. In the same ten days, Mysuru households build gombe mane - stepped dolls and figurines - and invite neighbours in. Gombe Habba is Dasara at domestic scale, which is how most families actually mark it.",
-    "stay": true
+    "stay": true,
+    "tourist": true
   },
   {
     "id": "nicknames",
     "q": "Pensioner's paradise, garden city, Silicon Valley - which stuck?",
     "kn": "ಹೆಸರುಗಳು",
     "a": "All three, in order of marketing eras. Cool weather and parks made a retirement station; Lalbagh and the lakes made 'garden city'; software parks from the 1990s made the Silicon Valley tag. The older names are still true on a weekday evening. The newest one is a district, not the whole map.",
-    "stay": true
+    "stay": true,
+    "tourist": true
   },
   {
     "id": "silk-board",

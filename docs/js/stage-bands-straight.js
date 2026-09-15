@@ -22,9 +22,14 @@
       bandEl.appendChild(svg);
       SP.setWeave(svg, weave);
       const spec = SP.WEAVES[weave];
-      const tag = document.createElement('p');
+      const tag = document.createElement(spec.href ? 'a' : 'p');
       tag.className = 'stage-say';
-      tag.innerHTML = `<b>${spec.title}</b><span>${spec.bit}</span>`;
+      tag.innerHTML = `<b>${spec.title}</b><span>${spec.bit}</span>${spec.href ? '<span class="stage-say-ref">About this weave</span>' : ''}`;
+      if(spec.href){
+        tag.href = spec.href;
+        tag.target = '_blank';
+        tag.rel = 'noopener noreferrer';
+      }
       bandEl.appendChild(tag);
       const s = {bandEl, svg, tag, weave, p:0, raf:0};
       state.push(s);

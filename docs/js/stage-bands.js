@@ -20,13 +20,13 @@
     return `M 0 ${y} C ${len*0.35} ${y+sag}, ${len*0.65} ${y+sag}, ${len} ${y}`;
   }
   const WEAVES = {
-    ilkal: { tone:'tone-ilkal', title:'Ilkal', bit:'Tope Teni pallu · Bagalkot', inset:22, kind:'teni' },
-    mysore: { tone:'tone-mysore', title:'Mysore silk', bit:'Wodeyar zari · Mysuru', inset:16, kind:'zari' },
-    kasuti: { tone:'tone-kasuti', title:'Kasuti', bit:'Blackwork · Hubballi-Dharwad', inset:10, kind:'kasuti' },
-    molakalmuru: { tone:'tone-molakalmuru', title:'Molakalmuru', bit:'Silk checks · Chitradurga', inset:12, kind:'check-fine' },
-    khana: { tone:'tone-khana', title:'Ilkal khana', bit:'Blouse-piece checks', inset:14, kind:'check-bold' },
-    udupi: { tone:'tone-coastal', title:'Udupi', bit:'Temple cotton · the coast', inset:14, kind:'zari' },
-    kodagu: { tone:'tone-kodagu', title:'Kodagu', bit:'Coorg drape · Western Ghats', inset:12, kind:'check-fine', checkA:'#1A4A32', checkB:'#D6A419' }
+    ilkal: { tone:'tone-ilkal', title:'Ilkal', bit:'Tope Teni pallu · Bagalkot', inset:22, kind:'teni', href:'https://en.wikipedia.org/wiki/Ilkal_sari' },
+    mysore: { tone:'tone-mysore', title:'Mysore silk', bit:'Wodeyar zari · Mysuru', inset:16, kind:'zari', href:'https://en.wikipedia.org/wiki/Mysore_silk' },
+    kasuti: { tone:'tone-kasuti', title:'Kasuti', bit:'Blackwork · Hubballi-Dharwad', inset:10, kind:'kasuti', href:'https://en.wikipedia.org/wiki/Kasuti' },
+    molakalmuru: { tone:'tone-molakalmuru', title:'Molakalmuru', bit:'Silk checks · Chitradurga', inset:12, kind:'check-fine', href:'https://en.wikipedia.org/wiki/Molakalmuru_sari' },
+    khana: { tone:'tone-khana', title:'Ilkal khana', bit:'Blouse-piece checks', inset:14, kind:'check-bold', href:'https://en.wikipedia.org/wiki/Ilkal_sari' },
+    udupi: { tone:'tone-coastal', title:'Udupi', bit:'Temple cotton · the coast', inset:14, kind:'zari', href:'https://en.wikipedia.org/wiki/Udupi#Culture' },
+    kodagu: { tone:'tone-kodagu', title:'Kodagu', bit:'Coorg drape · Western Ghats', inset:12, kind:'check-fine', checkA:'#1A4A32', checkB:'#D6A419', href:'https://en.wikipedia.org/wiki/Kodava_people' }
   };
   const TONES = Object.values(WEAVES).map(w => w.tone).concat([
     'tone-jacaranda','tone-coastal','tone-hampi','tone-blr-silk','tone-kodagu',

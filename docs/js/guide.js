@@ -536,7 +536,7 @@ function renderQuips(){
       <div>
         <div class="quip-kicker">Did you know</div>
         <h3>${q.q}</h3>
-        ${q.kn ? `<span class="kn quip-kn kn-cycle" tabindex="0"><span class="kn-native">${q.kn}</span><span class="kn-en">${q.q}</span></span>` : ''}
+        ${q.kn ? `<span class="kn quip-kn">${q.kn}</span>` : ''}
       </div>
       <p>${q.a}</p>
     </article>
