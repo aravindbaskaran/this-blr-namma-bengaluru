@@ -69,6 +69,12 @@ function hideLoader(ok){
   });
 }
 
+function syncHeaderOffset(){
+  const header = document.querySelector('header');
+  if(!header) return;
+  document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+}
+
 /* ---------------- state ---------------- */
 let currentView = 'list';
 let activeCategory = 'all';
@@ -591,6 +597,10 @@ document.getElementById('issueForm').addEventListener('submit', function(e){
 /* ---------------- init ---------------- */
 (async function init(){
   const started = performance.now();
+  syncHeaderOffset();
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(syncHeaderOffset).catch(() => {});
+  }
   try {
     await loadGuideData();
     const remain = Math.max(0, 700 - (performance.now() - started));
@@ -610,12 +620,16 @@ document.getElementById('issueForm').addEventListener('submit', function(e){
     setEra(6);
     loadPeople();
     hideLoader(true);
+    syncHeaderOffset();
     const nav = document.getElementById('siteNav');
     if(nav) nav.addEventListener('click', e => { if(e.target.closest('a')) toggleNav(false); });
     addEventListener('keydown', e => {
       if(e.key === 'Escape'){ toggleNav(false); closeDrawer(); closeLightbox(); }
     });
-    addEventListener('resize', () => { if(innerWidth > 720) toggleNav(false); }, {passive:true});
+    addEventListener('resize', () => {
+      syncHeaderOffset();
+      if(innerWidth > 720) toggleNav(false);
+    }, {passive:true});
   } catch (err) {
     console.error(err);
     hideLoader(false);

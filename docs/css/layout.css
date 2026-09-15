@@ -107,7 +107,7 @@
     background:color-mix(in srgb, var(--cream) 72%, transparent);
     backdrop-filter:blur(12px) saturate(1.08);
     -webkit-backdrop-filter:blur(12px) saturate(1.08);
-    border:1px solid var(--line); border-radius:var(--radius);
+    border:1px solid var(--line); border-top:none; border-radius:0 0 var(--radius) var(--radius);
     padding:12px 14px; margin-bottom:24px;
   }
   .controls-inner{
@@ -298,8 +298,8 @@
   /* ---------- region strip: six threads of karnataka ---------- */
   .region-row{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; background:transparent; border:none;}
   .region-card{
-    background:var(--cream-2); padding:22px 16px 14px; border-top:none;
-    position:relative; overflow:hidden;
+    background:var(--region-bg, var(--cream-2)); padding:20px 14px 14px; border-top:none;
+    position:relative; overflow:hidden; color:var(--on-accent);
   }
   .region-card::after{
     content:''; position:absolute; top:0; left:0; right:0; height:8px; z-index:2; pointer-events:none;
@@ -312,30 +312,39 @@
     content:''; position:absolute; inset:0;
     background-image:var(--region-pattern, none);
     background-size:var(--region-pattern-size, 20px 20px);
-    opacity:var(--region-pattern-opacity, 0.14); pointer-events:none;
+    opacity:var(--region-pattern-opacity, 0.38); pointer-events:none;
   }
-  .region-card > *{position:relative; z-index:1;}
-  /* dark-ground region cards (rich silk / kupya ground) need light text */
-  .region-card.region-dark h4, .region-card.region-dark p,
-  .region-card.region-dark .region-say, .region-card.region-dark .flavor-item,
-  .region-card.region-dark .region-movie{color:var(--on-accent, #F6F1E4);}
-  .region-card.region-dark .flavor-item b, .region-card.region-dark .region-movie b{color:var(--on-accent, #F6F1E4);}
-  .region-card.region-dark .speak-btn-sm{color:var(--on-accent, #F6F1E4);}
-  .region-card h4{font-family:'Baloo 2',sans-serif; font-size:15.5px; font-weight:600; margin-bottom:6px; display:flex; align-items:center; gap:6px;}
-  .region-card p{font-size:12.5px; color:var(--ink-soft); line-height:1.45; position:relative;}
+  .region-card-inner{
+    position:relative; z-index:1;
+    padding:16px 16px 14px;
+    background:color-mix(in srgb, var(--region-bg, #201C17) 38%, transparent);
+    backdrop-filter:blur(4px) saturate(1.15);
+    -webkit-backdrop-filter:blur(12px) saturate(1.15);
+    border-radius:12px;
+  }
+  .region-card h4{
+    font-family:'Baloo 2',sans-serif; font-size:15.5px; font-weight:600; margin-bottom:6px;
+    display:flex; align-items:center; gap:6px; color:var(--on-accent);
+  }
+  .region-card p{font-size:12.5px; color:color-mix(in srgb, var(--on-accent) 86%, transparent); line-height:1.45; position:relative;}
   .region-pronounce{display:flex; align-items:baseline; gap:6px; margin-bottom:6px; position:relative; flex-wrap:wrap;}
-  .region-kn{font-size:13px; color:var(--region-color, var(--maroon));}
-  .region-say{font-size:11px; color:var(--ink-soft); font-style:italic;}
+  .region-kn{font-size:13px; color:var(--region-color, var(--gold-light));}
+  .region-say{font-size:11px; color:color-mix(in srgb, var(--on-accent) 78%, transparent); font-style:italic;}
+  .region-card .speak-btn-sm{
+    color:var(--on-accent); border-color:color-mix(in srgb, var(--on-accent) 35%, transparent);
+    background:color-mix(in srgb, var(--on-accent) 12%, transparent);
+  }
+  .region-card .speak-btn-sm:hover{background:color-mix(in srgb, var(--on-accent) 22%, transparent);}
   .flavor-list{margin-top:11px; display:flex; flex-direction:column; gap:4px; position:relative;}
-  .flavor-item{font-size:11px; color:var(--ink-soft); display:flex; align-items:baseline; gap:6px; line-height:1.4;}
-  .flavor-item b{color:var(--ink); font-weight:600;}
+  .flavor-item{font-size:11px; color:color-mix(in srgb, var(--on-accent) 82%, transparent); display:flex; align-items:baseline; gap:6px; line-height:1.4;}
+  .flavor-item b{color:var(--on-accent); font-weight:600;}
   .flavor-dot{width:7px; height:7px; border-radius:50%; flex:none; margin-top:2px;}
   .flavor-dot.sweet{background:var(--gold);}
-  .flavor-dot.spicy{background:var(--ilkal-red);}
-  .flavor-dot.cold{background:var(--coastal-teal);}
-  .flavor-dot.hot{background:var(--terracotta);}
-  .region-movie{margin-top:10px; padding-top:8px; border-top:1px dashed var(--line); font-size:11.5px; color:var(--ink-soft);}
-  .region-movie b{color:var(--ink); font-weight:600;}
+  .flavor-dot.spicy{background:#F0A3AE;}
+  .flavor-dot.cold{background:#8ED4C8;}
+  .flavor-dot.hot{background:#F0B27A;}
+  .region-movie{margin-top:10px; padding-top:8px; border-top:1px dashed color-mix(in srgb, var(--on-accent) 32%, transparent); font-size:11.5px; color:color-mix(in srgb, var(--on-accent) 82%, transparent);}
+  .region-movie b{color:var(--on-accent); font-weight:600;}
 
   /* ---------- festivals ---------- */
   .festival-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:18px;}
@@ -763,7 +772,7 @@
     .hero p.lede{font-size:16px;}
     section{padding:40px 16px; scroll-margin-top:72px;}
     .controls{
-      top:62px; padding:10px 10px; margin-left:-2px; margin-right:-2px;
+      padding:10px 10px; margin-left:-2px; margin-right:-2px;
     }
     .controls-inner{flex-direction:column; align-items:stretch; gap:10px;}
     .pill-row{
