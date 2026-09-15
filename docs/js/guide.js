@@ -317,8 +317,12 @@ function closeLightbox(){
   img.src = '';
 }
 document.addEventListener('keydown', (e) => {
-  if(e.key === 'Escape') closeLightbox();
+  if(e.key === 'Escape'){
+    closeLightbox();
+    closeDrawer();
+  }
 });
+
 async function copyAgenda(){
   const items = agenda.map(id => allLocations().find(x=>x.id===id)).filter(Boolean);
   const text = 'My Bengaluru agenda\\n\\n' + items.map(l=>`- ${l.name} (${l.area})`).join('\\n');
