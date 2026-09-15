@@ -99,7 +99,7 @@
     "name": "Channapatna",
     "area": "~1.5 hrs south, on the Mysuru road",
     "category": "craft",
-    "blurb": "The \"town of toys\" - lacquered wooden toys turned on a lathe, a craft old enough to have a GI tag. Workshops will let you watch.",
+    "blurb": "The GI-tagged toy town on the Mysuru road. Softwood (aale mara) turned on a lathe, then lacquered in vegetable dyes. Workshops still sit on the highway; you can watch a toy take shape and buy from the turner. If you cannot make the drive, Varnam in the city and Cauvery on MG Road both stock the craft.",
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Channapatna%20artist%20making%20toy.jpg"
     ],
@@ -108,9 +108,10 @@
     "lat": 12.6514,
     "lng": 77.2064,
     "try": [
-      "Watch lacquered toys turned on a lathe, then buy from the makers, not a mall shelf.",
-      "A stop on the Mysuru road, not a full-day destination unless you linger at a workshop."
+      "Watch a toy turned and lacquered, then buy from that workshop.",
+      "A stop on the Mysuru road. Linger only if a workshop lets you in."
     ],
+    "tourist": true,
     "stay": true
   },
   {

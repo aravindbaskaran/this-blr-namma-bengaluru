@@ -1609,5 +1609,41 @@
     ],
     "tourist": true,
     "stay": true
+  },
+  {
+    "id": "desi",
+    "name": "Desi",
+    "area": "South End Circle, Basavanagudi",
+    "category": "craft",
+    "blurb": "The Bengaluru shops for Charaka, the women's handloom cooperative in Honnesara, Shivamogga district. Naturally dyed cotton, sold here since Desi Trust opened in 1997 to give that cloth a city market. Other rooms in Malleswaram, Banashankari (Seetha Circle), and Vijayanagar. This pin is the South End one.",
+    "kn": "ದೇಸಿ",
+    "say": "Desi",
+    "url": "https://www.desitrust.org/",
+    "lat": 12.9368,
+    "lng": 77.5805,
+    "try": [
+      "Naturally dyed Charaka cotton. Ask which pieces came from Honnesara.",
+      "Other Desi rooms: Malleswaram, Seetha Circle, Vijayanagar."
+    ],
+    "tourist": true,
+    "stay": true
+  },
+  {
+    "id": "varnam",
+    "name": "Varnam Craft Collective",
+    "area": "Indiranagar",
+    "category": "craft",
+    "blurb": "A Bengaluru social enterprise that put Channapatna lac-turnery on a city shelf: toys, jewellery, and household pieces by named artisans, including turners from the toy town. Founded by Karthik Vaidyanathan. There is a second room in Jayanagar 5th Block.",
+    "kn": "ವರ್ಣಮ್",
+    "say": "Varnam",
+    "url": "https://varnamstore.in/",
+    "lat": 12.9781,
+    "lng": 77.6408,
+    "try": [
+      "Channapatna pieces first, then the Kolar ceramics and other crafts they stock.",
+      "Jayanagar 5th Block if Indiranagar is the wrong side of town."
+    ],
+    "tourist": true,
+    "stay": true
   }
 ]

@@ -687,7 +687,7 @@ const PEOPLE_NOTES = {
   karthik4222: { name: 'Vinay Karthik Baluguri', role: 'Kannada audio', sameAs: 'vinaykarthikbaluguri-svg' },
   'deepikarajan-swym': { name: 'Deepika Rajan', role: 'Places, day trips, and fact-check', blurb: 'Spots, day trips, and catching what the notes got wrong.' },
   hassanrelated: { name: 'Hassan', role: 'Layout and saree bands', blurb: 'Page layout and the saree bands that sit between sections.' },
-  'namita-raddi': { name: 'Namita Raddi', role: 'Spots, food, and habbas', blurb: 'Places to eat, places to go, and the habbas that mark the year.' }
+  'namita-raddi': { name: 'Namita Raddi', role: 'Spots, food, habbas, and craft', blurb: 'Places to eat, places to go, the habbas that mark the year, and craft rooms: Desi, Varnam, and Channapatna.' }
 };
 
 function esc(s){
