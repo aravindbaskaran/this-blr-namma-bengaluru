@@ -12,6 +12,10 @@ This is a static GitHub Pages site. The published source is `docs/`.
 
 Do not put new lists back into the HTML.
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). The short version: use **Write in** on the site to open a GitHub issue, or send a PR that edits `docs/data/*.json`.
+
 ## Kannada audio
 
 Next to every Kannada word on the site there is a speaker button. Tapping it plays a
@@ -183,4 +187,10 @@ Override the port with `PORT=8080 ./scripts/preview.sh` if 5600 is already in us
 
 ## Contributors
 
+Names also appear on the live guide. Known so far:
+
+- Aravind Baskaran — started the guide
 - Vinay Karthik Baluguri — Kannada audio
+- Deepika Rajan
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) to add yourself.

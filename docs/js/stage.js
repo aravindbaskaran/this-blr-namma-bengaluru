@@ -356,7 +356,7 @@
       let k = kWin(t, a.a, a.b);
       if(a.a2 != null) k = Math.max(k, kWin(t, a.a2, a.b2));
       el.classList.toggle('is-on', k > 0.04);
-      el.style.setProperty('--on', String((0.4 + 0.4 * k).toFixed(3)));
+      el.style.setProperty('--on', String((0.28 + 0.22 * k).toFixed(3)));
       if(reduce){
         el.style.transform = '';
         return;
