@@ -261,9 +261,9 @@
     "group": "Ordering food & coffee",
     "kn": "ಒಂದು ಮಸಾಲೆ ದೋಸೆ",
     "translit": "Ondu masale dose",
-    "say": "On-du ma-saa-le doh-se",
+    "say": "On-du ma-saa-le tho-se",
     "meaning": "One masala dosa",
-    "tip": "Last vowel is Kannada e, short, like get: doh-se. The board's dosa ends in -a. Tamil dosai ends in -ay. Same crepe, three endings.",
+    "tip": "Kannada tho-se (Telugu too). Tamil tho-sai, Malayalam tho-sha. Not DOH-sa, D as in dog. th as in this, not think.",
     "tourist": true,
     "stay": true
   },
@@ -283,7 +283,7 @@
     "translit": "Ondu idli vade",
     "say": "On-du id-li va-de",
     "meaning": "One idli-vada",
-    "tip": "Kannada is vade: va-de, e in get. The -a ending is the English/Hindi board spelling, same trap as dosa.",
+    "tip": "Kannada is vade: va-de, e in get. Vada is the mispronunciation, same habit as dosa.",
     "tourist": true,
     "stay": true
   },

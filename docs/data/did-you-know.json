@@ -20,10 +20,10 @@
   },
   {
     "id": "dose-not-dosha",
-    "q": "Dosa, dose, or dosha?",
+    "q": "Dosa or dose?",
     "kn": "ದೋಸೆ",
     "knEn": "Dose",
-    "a": "In Kannada the food is dose (ದೋಸೆ): two beats, long o then a short e, DOH-se, the e in get. English boards print dosa, which lands as doh-sah. Tamil is dosai, which lands as DOH-say. Those are neighbouring endings, not this word. Dosha (ದೋಷ) is another word: a fault, a blemish, or the Ayurvedic humours. A cute origin story says the batter was a mistake. It is still a different word from the crepe.",
+    "a": "The English D is the mistake. Outside the south it comes out DOH-sa, D as in dog. In the south the start is dental, th in this (not think). Kannada ದೋಸೆ is tho-se, short e like get. Telugu దోసె is tho-se too. Tamil தோசை is tho-sai. Malayalam ദೋശ is tho-sha. There is no Hindi word to copy. The board may still write dosa.",
     "stay": true,
     "tourist": true
   },
