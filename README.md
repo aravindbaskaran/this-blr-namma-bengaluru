@@ -191,6 +191,7 @@ Names also appear on the live guide. Known so far:
 
 - Aravind Baskaran — started the guide
 - Vinay Karthik Baluguri — Kannada audio
-- Deepika Rajan
+- Deepika Rajan — places, day trips, and fact-check
+- Hassan — layout and saree bands
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) to add yourself.

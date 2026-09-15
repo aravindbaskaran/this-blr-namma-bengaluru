@@ -510,7 +510,9 @@ const GUIDE_REPO = 'https://github.com/aravindbaskaran/this-blr-namma-bengaluru'
 const PEOPLE_NOTES = {
   aravindbaskaran: { name: 'Aravind Baskaran', role: 'Started the guide' },
   'vinaykarthikbaluguri-svg': { name: 'Vinay Karthik Baluguri', role: 'Kannada audio' },
-  'deepikarajan-swym': { name: 'Deepika Rajan', role: 'Contributor' }
+  karthik4222: { name: 'Vinay Karthik Baluguri', role: 'Kannada audio', sameAs: 'vinaykarthikbaluguri-svg' },
+  'deepikarajan-swym': { name: 'Deepika Rajan', role: 'Places, day trips, and fact-check' },
+  hassanrelated: { name: 'Hassan', role: 'Layout and saree bands' }
 };
 
 function esc(s){
@@ -530,18 +532,28 @@ async function loadPeople(){
   const host = document.getElementById('peopleList');
   const moreHead = document.getElementById('peopleMoreHead');
   if(!host) return;
-  let list = [];
+  const seed = Object.entries(PEOPLE_NOTES)
+    .filter(([login, n]) => login !== 'aravindbaskaran' && !n.sameAs)
+    .map(([login]) => ({
+      login,
+      html_url: 'https://github.com/' + login,
+      avatar_url: 'https://github.com/' + login + '.png',
+      type: 'User'
+    }));
+  const byLogin = new Map(seed.map(p => [p.login, p]));
   try{
     const res = await fetch(`https://api.github.com/repos/aravindbaskaran/this-blr-namma-bengaluru/contributors?per_page=100`);
-    if(res.ok) list = await res.json();
-  }catch(e){ list = []; }
-  if(!Array.isArray(list) || !list.length){
-    list = [
-      { login:'vinaykarthikbaluguri-svg', html_url:'https://github.com/vinaykarthikbaluguri-svg', avatar_url:'https://github.com/vinaykarthikbaluguri-svg.png' },
-      { login:'deepikarajan-swym', html_url:'https://github.com/deepikarajan-swym', avatar_url:'https://github.com/deepikarajan-swym.png' }
-    ];
-  }
-  const others = list.filter(p => p && p.type !== 'Bot' && p.login && p.login !== 'aravindbaskaran');
+    const list = res.ok ? await res.json() : [];
+    if(Array.isArray(list)){
+      list.forEach(p => {
+        if(!p || !p.login || p.type === 'Bot') return;
+        const note = PEOPLE_NOTES[p.login];
+        if(note && note.sameAs) return;
+        byLogin.set(p.login, Object.assign({}, byLogin.get(p.login) || {}, p));
+      });
+    }
+  }catch(e){ /* keep the seeded list */ }
+  const others = [...byLogin.values()].filter(p => p.login !== 'aravindbaskaran');
   if(!others.length){
     host.innerHTML = '';
     if(moreHead) moreHead.hidden = true;
