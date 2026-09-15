@@ -111,5 +111,77 @@
     "a": "It sits by the Central Silk Board / Karnataka silk-industry campus, not because anyone holds a board meeting in the flyover. Bengaluru's silk story is real - mulberry, Tipu-era encouragement, later mills - but the junction is named for the office next to it. You will still be late.",
     "stay": true,
     "tourist": true
+  },
+  {
+    "id": "dose-not-dosha",
+    "q": "Dosa, dose, or dosha?",
+    "kn": "ದೋಸೆ",
+    "a": "In Kannada the food is dose (ದೋಸೆ), said roughly DOH-say. Dosa is the English spelling on most boards. Dosha (ದೋಷ) is another word: a fault, a blemish, or the Ayurvedic humours. A cute origin story says the batter was a mistake. It is still a different word from the crepe.",
+    "stay": true,
+    "tourist": true
+  },
+  {
+    "id": "rava-idli-war",
+    "q": "Was rava idli invented because rice ran out?",
+    "kn": "ರವೆ ಇಡ್ಲಿ",
+    "a": "That is the MTR telling, and it is the one worth keeping. During the Second World War rice was scarce, so the Lalbagh Road kitchen steamed idli from rava (semolina) instead. The rice-and-urad moulded idli is older and wider than Bengaluru. Rava idli is a wartime workaround that became a menu item.",
+    "stay": true,
+    "tourist": true
+  },
+  {
+    "id": "thatte-idli",
+    "q": "Why is some idli the size of a plate?",
+    "kn": "ತಟ್ಟೆ ಇಡ್ಲಿ",
+    "a": "Thatte means plate. On the Bidadi-Ramanagara side of the Mysuru road, batter is steamed in a wide plate rather than in small moulds, then cut and stacked. Softer and broader than a hotel idli, usually with chutney and sambar you pour yourself. A highway breakfast that leaked into the city.",
+    "stay": true,
+    "tourist": true
+  },
+  {
+    "id": "ragi-mudde",
+    "q": "Do you chew ragi mudde?",
+    "kn": "ರಾಗಿ ಮುದ್ದೆ",
+    "a": "You don't, if you eat it the usual way. Pinch a bit of the finger-millet lump, dip it in saaru or bassaru, and swallow. Chewing it dry is how it turns to paste in your mouth. Mudde is everyday food in south Karnataka, not a festival special, and the ragi is the grain, not a garnish.",
+    "stay": true,
+    "tourist": true
+  },
+  {
+    "id": "iyengar-bakery",
+    "q": "Why is every other corner an Iyengar bakery?",
+    "kn": "ಅಯ್ಯಂಗಾರ್ ಬೇಕರಿ",
+    "a": "They are mostly independent shops opened by Iyengar families from the Hassan belt across the 20th century, not one branded chain. Khara bun, dilkush, vegetable puff, ladi pav, and a tray of whatever just left the oven. The city's everyday bakery, next to the darshini, not a sourdough counter.",
+    "stay": true,
+    "tourist": true
+  },
+  {
+    "id": "majestic-cinema",
+    "q": "Is Majestic named for something royal?",
+    "kn": "ಮೆಜೆಸ್ಟಿಕ್",
+    "a": "The bus station and the knot of roads took the name from the old Majestic cinema (and hotel) on Kempegowda Road. The theatre is gone. The word stuck to the interchange. Nothing to do with a palace.",
+    "stay": true,
+    "tourist": true
+  },
+  {
+    "id": "halasuru",
+    "q": "Why do maps still say Ulsoor?",
+    "kn": "ಹಲಸೂರು",
+    "a": "Halasuru is the Kannada name, from halasina, jackfruit. Ulsoor is the cantonment spelling that English maps kept. Same lake, same neighbourhood. You will hear both in one auto ride.",
+    "stay": true,
+    "tourist": true
+  },
+  {
+    "id": "pete-names",
+    "q": "What do Chickpete and Akkipete actually mean?",
+    "kn": "ಪೇಟೆ",
+    "a": "Pete is a market quarter. Doddapete was the larger street, Chickpete the smaller. Akkipete sold rice, Cottonpet cotton, and so on. A lot of old-city names are still the stall that used to stand there, even when the goods have changed.",
+    "stay": true,
+    "tourist": true
+  },
+  {
+    "id": "whitefield-person",
+    "q": "Was Whitefield always an IT suburb?",
+    "kn": "ವೈಟ್‌ಫೀಲ್ಡ್",
+    "a": "It was named for David Emmanuel White, who helped set up an Anglo-Indian settlement there in the 1880s. The tech parks and the Outer Ring Road came a century later. The word on the sign is a person, not a campus.",
+    "stay": true,
+    "tourist": true
   }
 ]

@@ -32,9 +32,9 @@
         tag.rel = 'noopener noreferrer';
       }
       bandEl.appendChild(tag);
-      const s = {bandEl, svg, tag, weave, p:0, raf:0, phase0: i * 0.9};
+      const s = {bandEl, svg, tag, weave, p:1, raf:0, phase0: i * 0.9};
       state.push(s);
-      paint(s, reduce ? 1 : 0);
+      paint(s, 1, s.phase0, true);
       if(io) io.observe(bandEl);
     });
     if(!io && state.length){
@@ -44,31 +44,27 @@
           if(!s) return;
           if(en.isIntersecting){
             s.bandEl.classList.add('is-on');
-            if(reduce) paint(s, 1); else unfold(s);
+            if(!reduce) startRipple();
           } else {
             s.bandEl.classList.remove('is-on');
-            if(!reduce){
-              cancelAnimationFrame(s.raf);
-              setTimeout(() => { if(!s.bandEl.classList.contains('is-on')) paint(s, 0); }, 500);
-            }
           }
         });
       }, {rootMargin: '-40px 0px', threshold: 0.01});
       state.forEach(s => io.observe(s.bandEl));
-      addEventListener('resize', () => state.forEach(s => paint(s, s.p)), {passive:true});
+      addEventListener('resize', () => state.forEach(s => paint(s, 1, s.phase0, true)), {passive:true});
     }
     return true;
   }
-  function paint(s, p, phase){
-    s.p = p;
-    window.SareePaint.paintRibbon(s.svg, p, false, s.weave, phase || 0);
+  function paint(s, p, phase, skipBolt){
+    s.p = 1;
+    window.SareePaint.paintRibbon(s.svg, 1, false, s.weave, phase || 0, {skipBolt: skipBolt !== false});
     pin(s);
   }
   function tickRipple(now){
     rippleRaf = 0;
     let any = false;
     state.forEach(s => {
-      if(!s.bandEl.classList.contains('is-on') || s.p < 0.999) return;
+      if(!s.bandEl.classList.contains('is-on')) return;
       any = true;
       window.SareePaint.paintRibbon(s.svg, 1, false, s.weave, s.phase0 + now / 1800, {skipBolt:true});
     });
@@ -78,35 +74,11 @@
     if(reduce || rippleRaf) return;
     rippleRaf = requestAnimationFrame(tickRipple);
   }
-  function unfold(s){
-    cancelAnimationFrame(s.raf);
-    const from = s.p;
-    if(from >= 1){ startRipple(); return; }
-    const t0 = performance.now();
-    const dur = Math.max(200, 1500 * (1 - from));
-    const step = now => {
-      const t = Math.min(1, (now - t0) / dur);
-      const e = 1 - Math.pow(1 - t, 3);
-      paint(s, from + (1 - from) * e);
-      if(t < 1) s.raf = requestAnimationFrame(step);
-      else startRipple();
-    };
-    s.raf = requestAnimationFrame(step);
-  }
   function pin(s){
-    const bolt = s.svg.querySelector('.bolt-body');
     const r = s.bandEl.getBoundingClientRect();
     if(r.width < 12) return;
-    let x = r.width * 0.72, y = 10;
-    const ctm = bolt && bolt.getScreenCTM && bolt.getScreenCTM();
-    if(ctm){
-      const cx = +bolt.getAttribute('cx');
-      const cy = +bolt.getAttribute('cy');
-      x = ctm.a * cx + ctm.c * cy + ctm.e - r.left - 168;
-      y = ctm.b * cx + ctm.d * cy + ctm.f - r.top - 62;
-    }
-    x = Math.max(10, Math.min(r.width - 186, x));
-    y = Math.max(2, Math.min(r.height - 62, y));
+    const x = Math.max(12, Math.min(r.width * 0.14, r.width - 196));
+    const y = r.height > 140 ? 14 : 6;
     s.tag.style.transform = `translate(${x}px, ${y}px)`;
   }
   function initSecplx(){

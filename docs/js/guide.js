@@ -622,7 +622,7 @@ function renderPhrases(){
     if(!items.length) return '';
     return `<div class="phrase-group">
       <h3 class="phrase-group-title">${group}</h3>
-      <div class="phrase-group-grid">${items.map(cardHtml).join('')}</div>
+      <div class="rail-clip"><div class="phrase-group-grid">${items.map(cardHtml).join('')}</div></div>
     </div>`;
   }).join('');
 }

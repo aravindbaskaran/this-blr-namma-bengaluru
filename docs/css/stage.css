@@ -77,22 +77,29 @@
   .stage-band-straight{
     position:relative;
     height:176px;
-    overflow:visible;
+    overflow-x:hidden;
+    overflow-y:visible;
     pointer-events:none;
   }
   .stage-band-straight .band-ribbon{
     position:absolute; top:12px; left:0;
-    width:100%; height:152px;
-    opacity:0; transition:opacity .45s ease;
+    width:152%; height:152px;
+    opacity:1;
     filter:drop-shadow(0 10px 14px rgba(62,42,28,0.2));
     overflow:visible;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1.35s cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .stage-band-straight.is-on .band-ribbon{opacity:1;}
+  .stage-band-straight .bolt{display:none;}
+  .stage-band-straight.is-on .band-ribbon{clip-path: inset(0 0 0 0);}
   .stage-band-straight .stage-say{z-index:4; pointer-events:auto; cursor:pointer;}
   .stage-band-straight.is-on .stage-say{opacity:0.96; visibility:visible;}
   @media (max-width:720px){
     .stage-band-straight{height:128px;}
-    .stage-band-straight .band-ribbon{height:112px; top:8px;}
+    .stage-band-straight .band-ribbon{height:112px; top:8px; width:168%;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .stage-band-straight .band-ribbon{transition:none; clip-path:none;}
   }
 
   /* ---------- guide data loader ---------- */

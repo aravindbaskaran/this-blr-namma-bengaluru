@@ -29,8 +29,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Baloo+Tamma+2:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <link rel="stylesheet" href="css/tokens.css?v=20260915j">
-<link rel="stylesheet" href="css/layout.css?v=20260916h">
-<link rel="stylesheet" href="css/stage.css?v=20260916j">
+<link rel="stylesheet" href="css/layout.css?v=20260916j">
+<link rel="stylesheet" href="css/stage.css?v=20260916k">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -106,7 +106,7 @@
       <a href="#add-yours">Write in</a>
     </nav>
     <div class="header-actions">
-      <div class="mode-toggle" role="group" aria-label="Guide depth">
+      <div class="mode-toggle header-mode" role="group" aria-label="Guide depth">
         <button type="button" data-mode="tourist" onclick="setGuideMode('tourist')">Tourist</button>
         <button type="button" data-mode="stay" onclick="setGuideMode('stay')">Stay</button>
       </div>
@@ -115,6 +115,12 @@
     </div>
   </div>
 </header>
+<div class="mode-dock">
+  <div class="mode-toggle" role="group" aria-label="Guide depth">
+    <button type="button" data-mode="tourist" onclick="setGuideMode('tourist')">Tourist</button>
+    <button type="button" data-mode="stay" onclick="setGuideMode('stay')">Stay</button>
+  </div>
+</div>
 
 <main id="main">
 <div class="hero">
@@ -484,7 +490,7 @@
       <h3>Work</h3>
       <p>You don't need to base yourself near a business district for any of this - all of it is spread across the city, so pick by neighbourhood, not by proximity to an office park.</p>
     </div>
-    <div class="modern-list">
+    <div class="rail-clip"><div class="modern-list">
       <div class="modern-item">
         <h4>BHIVE</h4>
         <p>Bengaluru's own coworking brand, not an import - homegrown, community-first, with locations across the city so you're never far from one. Day passes are easy; you don't need a membership to just show up and work.</p>
@@ -497,22 +503,46 @@
         <h4>The meetup calendar</h4>
         <p>Bengaluru's tech and founder meetup scene runs continuously, not just around big conferences - check Meetup or Luma for what's on during your actual dates. Showing up to one is often the fastest way into the city's working life.</p>
       </div>
-    </div>
+    </div></div>
   </div>
 
   <div class="karnataka-sub">
     <div class="sub-head">
       <h3>Typical and atypical cafés</h3>
-      <p>The stand-and-go filter pour, and the rooms you sit down in. Everyday cups, and a few that aren't - both worth knowing by name.</p>
+      <p>Stand-and-go filter, old rooms that never left, and a lot of new specialty counters. The map keeps growing.</p>
     </div>
-    <div class="modern-list">
+    <div class="rail-clip"><div class="modern-list">
+      <div class="modern-item">
+        <h4>Brahmin's Coffee Bar</h4>
+        <p>Basavanagudi stand-and-go, older than the specialty scene by decades. Khara thatte idli, coffee, and a counter you don't sit at. The everyday pour the new cafés are in conversation with, whether they admit it or not.</p>
+      </div>
       <div class="modern-item">
         <h4>Hatti Kaapi</h4>
         <p>A Bengaluru-born, stand-and-go filter coffee chain - outlets across the city and at the airport, so it's often the first and last coffee of a trip. Try the Bella Kaapi, filter coffee sweetened with jaggery instead of sugar. The brand is also notable for employing specially-abled staff and senior citizens at many outlets.</p>
       </div>
       <div class="modern-item">
+        <h4>Koshy's</h4>
+        <p>St Mark's Road since 1952. Filter coffee, breakfast, and a room that has outlasted every café wave around it. Same family as Koshy's Automatic Bakery, different door. Come to sit, not to sample a tasting flight.</p>
+      </div>
+      <div class="modern-item">
+        <h4>Matteo Coffea</h4>
+        <p>Church Street, one of the earlier specialty coffee rooms in the centre. Still a sit-down between Brigade and St Mark's when you want espresso and a table, not a darshini tumbler.</p>
+      </div>
+      <div class="modern-item">
         <h4>Blue Tokai</h4>
         <p>A specialty roaster with real depth in the city, especially around Indiranagar - closer to a sit-down work session than a quick cup, with proper single-origin pour-overs if that's what you're after.</p>
+      </div>
+      <div class="modern-item">
+        <h4>Benki</h4>
+        <p>A small Jayanagar specialty bar that roasts in-house. Pour-overs, odd lattes, beans from Karnataka estates. Tight space, often a queue, not built for a three-hour laptop session. Go for the coffee.</p>
+      </div>
+      <div class="modern-item">
+        <h4>Third Wave Coffee</h4>
+        <p>Started in Bengaluru and now has rooms across the city. Flat whites and a reliable table when you need to work. The chain version of the new coffee habit, useful even if it isn't the most particular cup.</p>
+      </div>
+      <div class="modern-item">
+        <h4>Maverick &amp; Farmer</h4>
+        <p>A Bengaluru roaster with tasting rooms attached. Estate lots and pour-overs, more particular than a high-street chain, less tiny than Benki. Good when you want the beans explained without standing in a doorway.</p>
       </div>
       <div class="modern-item">
         <h4>Katte Kulture</h4>
@@ -520,13 +550,21 @@
       </div>
       <div class="modern-item">
         <h4>Alchemy Coffee Roasters</h4>
-        <p>Also Jayanagar, and a direct thread back to Chikmagalur - single-origin beans from the Baarbara Estate, roasted in-house, in a brick-and-wood space that reads more coffee-nerd than photo-op.</p>
+        <p>Also Jayanagar, and a direct thread back to Chikmagalur - single-origin beans from the Baarbara Estate, roasted in-house, in a brick-and-wood space that cares more about the cup than the room.</p>
       </div>
       <div class="modern-item">
         <h4>Calm Coffee</h4>
         <p>Also in Jayanagar - a striking, deliberately minimal building carved from deep earth tones, built to feel like a pause from the street outside. Worth a visit for the architecture as much as the coffee.</p>
       </div>
-    </div>
+      <div class="modern-item">
+        <h4>Hole in the Wall Café</h4>
+        <p>Koramangala brunch from the 2000s, still packed for eggs, pancakes, and a long breakfast. Not filter-coffee culture. The other morning habit, from when the city's café map was still short.</p>
+      </div>
+      <div class="modern-item">
+        <h4>Dyu Art Café</h4>
+        <p>A JP Nagar courtyard room that opened when independent cafés were still unusual here. Art on the walls, slow tables, filter and espresso. One of the older 'sit with a book' addresses, before every block had three new ones.</p>
+      </div>
+    </div></div>
   </div>
 
   <div class="karnataka-sub">
@@ -534,7 +572,7 @@
       <h3>City</h3>
       <p>Bengaluru's mild elevation and morning weather make outdoor exercise genuinely pleasant most of the year - go early, before both the heat and the traffic build up.</p>
     </div>
-    <div class="modern-list">
+    <div class="rail-clip"><div class="modern-list">
       <div class="modern-item">
         <h4>Cubbon Park</h4>
         <p>Closed to traffic 5:30-8am daily, so it's one of the few places in the city you can run or cycle on open road. A regular crowd of walkers and joggers who mostly know each other by face.</p>
@@ -555,7 +593,7 @@
         <h4>Nandi Hills, for cyclists</h4>
         <p>The city's classic weekend hill climb - about 60km out, best started well before sunrise to beat both the heat and the return traffic. Turahalli forest, off Kanakapura Road, is the shorter, closer alternative for off-road trail riding.</p>
       </div>
-    </div>
+    </div></div>
   </div>
 </section>
 
@@ -852,9 +890,9 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="js/guide.js?v=20260916f"></script>
+<script src="js/guide.js?v=20260916g"></script>
 <script type="module" src="kannada-voice.js"></script>
 <script src="js/stage-bands.js?v=20260916j"></script>
-<script src="js/stage-bands-straight.js?v=20260916k"></script>
+<script src="js/stage-bands-straight.js?v=20260916l"></script>
 </body>
 </html>
