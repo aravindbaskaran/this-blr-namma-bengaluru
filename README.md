@@ -43,7 +43,7 @@ field. Commit and push.
 That is it. Then render the clip yourself:
 
 - Locally: `python scripts/build-kannada-audio.py` (see below)
-- Or, on GitHub: **Actions → Kannada audio → Run workflow**. It is manual on purpose. It used to run on every `docs/index.html` push and fail on GitHub-hosted runners (CUDA torchaudio / `libcudart`).
+- Or, on GitHub: **Actions → Kannada audio → Run workflow**. It is manual because it used to run on every `docs/index.html` push and fail on GitHub-hosted runners (CUDA torchaudio / `libcudart`).
 
 If you open a pull request, make the audio locally (or run that workflow) so every phrase has a clip. If
 the check script says one is missing, either wait for a manual run to finish or make it yourself, below.
@@ -147,10 +147,10 @@ the ones that catch a bad voice. We tried three others before this one and all t
 failed on exactly those, because they read words out rather than speak them, and the
 colloquial `-ri` ending is where that shows up worst.
 
-### A few things worth knowing
+### Cache-busting the clips
 
 Clip filenames contain a hash of the audio, so if you change the voice, every filename
-changes. That is on purpose. Without it a browser would keep playing the copy it had
+changes. That is so a browser cannot keep playing the copy it had
 already saved and nobody would ever hear the new voice.
 
 The hash comes from the audio before it is compressed, not from the finished file,

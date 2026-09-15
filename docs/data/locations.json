@@ -125,7 +125,7 @@
     "lat": 13.0035,
     "lng": 77.573,
     "try": [
-      "Stand at the counter for a benne masale dosa - there are no tables, on purpose.",
+      "Stand at the counter for a benne masale dosa. There are no tables.",
       "Grazing the rest of Thindi Beedi is the point; don't stop at one stall."
     ],
     "tourist": true,
@@ -235,7 +235,7 @@
     "lng": 77.5711,
     "try": [
       "Four items only: idli, vada, kara bath, kesari bath. Order all of them.",
-      "Drink the kaapi standing; that's the whole format."
+      "Drink the kaapi standing. That is how this counter works."
     ],
     "tourist": true,
     "stay": true
@@ -394,7 +394,7 @@
     "name": "Halli Mane",
     "area": "JP Nagar (also a Malleswaram branch)",
     "category": "food",
-    "blurb": "Jolada rotti, ennegayi, and badanekayi palya served with a real village-mess feel - the kind of place people drive across the city for.",
+    "blurb": "Jolada rotti, ennegayi, and badanekayi palya with a village-mess feel. People drive across the city for it.",
     "kn": "ಹಳ್ಳಿ ಮನೆ",
     "say": "Halli Mane",
     "lat": 12.9089,
@@ -449,7 +449,7 @@
     "lat": 12.9418,
     "lng": 77.5732,
     "try": [
-      "Idli, vada, and a strong filter kaapi - that's the whole visit.",
+      "Idli, vada, and a strong filter kaapi. That is the visit.",
       "Neighbourhood pace; don't expect a menu tour."
     ],
     "stay": true
@@ -722,7 +722,7 @@
     "name": "Puttenahalli Lake",
     "area": "JP Nagar",
     "category": "nature",
-    "blurb": "A small lake restored and maintained by the neighbourhood around it rather than the city - quiet, good for birdwatching, and a genuine community effort worth knowing about.",
+    "blurb": "A small lake restored and maintained by the neighbourhood around it rather than the city. Quiet, good for birdwatching, a genuine community effort.",
     "kn": "ಪುಟ್ಟೇನಹಳ್ಳಿ ಕೆರೆ",
     "say": "Puttenahalli Kere",
     "lat": 12.9089,
@@ -1099,7 +1099,7 @@
     "personalPick": true,
     "try": [
       "The red facade and steeple are the landmark - hard to miss once you know the hill.",
-      "Fourth-oldest Protestant church in the city; go in expecting quiet, not a headline stop."
+      "Fourth-oldest Protestant church in the city. Go in expecting quiet."
     ],
     "stay": true
   },
@@ -1285,7 +1285,7 @@
     "skipCrowd": {
       "why": "Long security queues and a shuffle-through pace that leaves little room to sit with it.",
       "insteadId": "dodda-ganapathi",
-      "insteadNote": "A 16th-century monolithic Ganesha, unhurried, tucked below Bull Temple hill."
+      "insteadNote": "A 16th-century monolithic Ganesha, tucked below Bull Temple hill, usually quieter than the climb above."
     },
     "try": [
       "Evening aarti if you want the hill complex at full volume.",
@@ -1399,7 +1399,7 @@
     "lng": 77.5683,
     "try": [
       "Sit with the 16th-century monolithic Ganesha below Bull Temple hill.",
-      "Unhurried on purpose - don't stack it with a temple-hopping checklist."
+      "Give it time. Don't stack it with a temple-hopping checklist."
     ],
     "stay": true
   },
@@ -1415,7 +1415,7 @@
     "lng": 77.5985,
     "personalPick": true,
     "try": [
-      "Try the house craft beers rather than defaulting to a familiar bottle - that's the whole premise here.",
+      "Try the house craft beers rather than defaulting to a familiar bottle.",
       "JP Nagar, not Indiranagar - the founders built it precisely so you wouldn't have to make that drive."
     ],
     "stay": true
@@ -1425,7 +1425,7 @@
     "name": "Vidyarthi Bhavan",
     "area": "Basavanagudi",
     "category": "food",
-    "blurb": "The masala dosa that went viral and never came back down - worth knowing by name, and worth knowing when to skip the queue.",
+    "blurb": "The masala dosa that went viral and stayed that way. Know the name, and know when to skip the queue.",
     "kn": "ವಿದ್ಯಾರ್ಥಿ ಭವನ",
     "say": "Vidyaarthi Bhavan",
     "lat": 12.9451,
@@ -1437,7 +1437,7 @@
     },
     "try": [
       "Masala dosa if you accept the wait; otherwise open Skip the crowd.",
-      "It's famous. That's the whole problem and the whole reason to know the name."
+      "It's famous. That is why the queue exists, and why the name still matters."
     ],
     "stay": true
   },
@@ -1463,7 +1463,7 @@
     "name": "Brigade Road / MG Road",
     "area": "Central Bengaluru",
     "category": "night",
-    "blurb": "The postcard nightlife strip - mall-brand shopping and chain restaurants you could swap for any Indian metro.",
+    "blurb": "The nightlife strip of mall-brand shopping and chain restaurants you could swap for any Indian metro.",
     "lat": 12.9738,
     "lng": 77.607,
     "skipCrowd": {
@@ -1472,7 +1472,7 @@
       "insteadNote": "Independent kitchens and bars on Indiranagar's 12th Main, run by Bengaluru people, not franchise counters."
     },
     "try": [
-      "Walk it once so you know the postcard strip, then leave.",
+      "Walk it once so you know the strip, then leave.",
       "Open Skip the crowd for Indiranagar if you wanted a night out."
     ],
     "stay": true
@@ -1483,7 +1483,7 @@
     "area": "Indiranagar / Koramangala",
     "category": "food",
     "personalPick": true,
-    "blurb": "Real Mexican food - proper horchata, churros, and a mole that isn't playing it safe for an Indian palate. Go for the tacos, stay for the horchata.",
+    "blurb": "Mexican food with proper horchata, churros, and a mole that is not watered down for an Indian palate. Go for the tacos, stay for the horchata.",
     "lat": 12.978,
     "lng": 77.6408,
     "try": [
@@ -1515,7 +1515,7 @@
     "area": "Koramangala",
     "category": "food",
     "personalPick": true,
-    "blurb": "An Italian spot that's been consistently good for years - pasta, lasagna, tiramisu, the kind of place you take someone when you don't want to gamble.",
+    "blurb": "An Italian spot that's been consistently good for years: pasta, lasagna, tiramisu. A safe room when you don't want to gamble.",
     "lat": 12.9342,
     "lng": 77.6156,
     "try": [
@@ -1566,7 +1566,7 @@
     "area": "Koramangala (and other outlets)",
     "category": "food",
     "personalPick": true,
-    "blurb": "Andhra-style biryani with a genuine cult following - spicier than most, and the boneless chicken biryani is the one people queue for.",
+    "blurb": "Andhra-style biryani that people actually queue for. Spicier than most. The boneless chicken biryani is the usual order.",
     "lat": 12.9348,
     "lng": 77.6226,
     "try": [
