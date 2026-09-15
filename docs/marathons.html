@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Contributor gallery · Namma Bengaluru</title>
-<meta name="description" content="Shots sent in for the Namma Bengaluru field guide. Lalbagh, Cubbon, plates, and pins on the map.">
-<link rel="canonical" href="https://aravindbaskaran.github.io/this-blr-namma-bengaluru/photos.html">
+<title>Marathons · Namma Bengaluru</title>
+<meta name="description" content="10K, half, full, and ultra races I have run or still want, with a fair number in Karnataka. A runner's list next to the field guide.">
+<link rel="canonical" href="https://aravindbaskaran.github.io/this-blr-namma-bengaluru/marathons.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#F7EEDA">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_IN">
 <meta property="og:site_name" content="Namma Bengaluru Field Guide">
-<meta property="og:title" content="Contributor gallery · Namma Bengaluru">
-<meta property="og:description" content="Shots sent in for this guide. Tap a picture to open it. Map opens the pin on the field guide.">
-<meta property="og:url" content="https://aravindbaskaran.github.io/this-blr-namma-bengaluru/photos.html">
+<meta property="og:title" content="Marathons · Namma Bengaluru">
+<meta property="og:description" content="10K, half, full, and ultra. Some already run, some still queued. A fair number in Karnataka.">
+<meta property="og:url" content="https://aravindbaskaran.github.io/this-blr-namma-bengaluru/marathons.html">
 <meta property="og:image" content="https://aravindbaskaran.github.io/this-blr-namma-bengaluru/og.png">
 <meta property="og:image:alt" content="Namma Bengaluru field guide">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Contributor gallery · Namma Bengaluru">
-<meta name="twitter:description" content="Shots sent in for this guide. Tap a picture to open it. Map opens the pin on the field guide.">
+<meta name="twitter:title" content="Marathons · Namma Bengaluru">
+<meta name="twitter:description" content="10K, half, full, and ultra. Some already run, some still queued. A fair number in Karnataka.">
 <meta name="twitter:image" content="https://aravindbaskaran.github.io/this-blr-namma-bengaluru/og.png">
 <meta name="twitter:image:alt" content="Namma Bengaluru field guide">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,10 +33,10 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ImageGallery",
-  "name": "Contributor gallery",
-  "url": "https://aravindbaskaran.github.io/this-blr-namma-bengaluru/photos.html",
-  "description": "Shots sent in for the Namma Bengaluru field guide.",
+  "@type": "WebPage",
+  "name": "Marathons",
+  "url": "https://aravindbaskaran.github.io/this-blr-namma-bengaluru/marathons.html",
+  "description": "10K, half, full, and ultra races for the Namma Bengaluru field guide.",
   "inLanguage": ["en-IN", "kn"],
   "isAccessibleForFree": true,
   "isPartOf": {
@@ -47,7 +47,7 @@
 }
 </script>
 </head>
-<body data-page="photos">
+<body data-page="races">
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header>
@@ -84,8 +84,8 @@
           <a href="./#karnataka">Karnataka</a>
         </div>
       </div>
-      <a href="marathons.html">Marathons</a>
-      <a href="photos.html" aria-current="page">Contributor gallery</a>
+      <a href="marathons.html" aria-current="page">Marathons</a>
+      <a href="photos.html">Contributor gallery</a>
       <a href="./#add-yours">Write in</a>
     </nav>
     <div class="header-actions">
@@ -95,17 +95,27 @@
 </header>
 
 <main id="main">
-<section id="contribGallery">
+<section id="races">
   <div class="section-head">
     <div class="head-with-icon">
-      <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4Z M8 7 V5 h8 v2 M9 11 h.01 M8 16 l3-3 2 2 3-4 3 5H8Z"/></svg>
-      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ನಮ್ಮ ಚಿತ್ರಗಳು</span><span class="kn-en">contributor gallery</span></span>
+      <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 4 l7 16 H6 Z M9 14 h6"/></svg>
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಓಟ</span><span class="kn-en">marathons</span></span>
     </div>
-    <h1>Contributor gallery</h1>
-    <p>A roll of shots from people on this guide. Tap a picture to open it. Map opens the pin on the field guide.</p>
+    <h1>Marathons</h1>
+    <p id="raceIntro">10K, half, full, and ultra. Some already run, some still queued.</p>
   </div>
-  <p id="galleryEmpty" hidden>No photos in the roll yet.</p>
-  <div class="gallery-grid" id="galleryGrid"></div>
+  <div class="pill-row race-pills" id="racePills" role="group" aria-label="Filter races">
+    <button type="button" class="pill" data-filter="all" data-active="true">All</button>
+    <button type="button" class="pill" data-filter="10k">10K</button>
+    <button type="button" class="pill" data-filter="half">Half</button>
+    <button type="button" class="pill" data-filter="full">Full</button>
+    <button type="button" class="pill" data-filter="ultra">Ultra</button>
+    <button type="button" class="pill" data-filter="trail">Trail</button>
+    <button type="button" class="pill" data-filter="bengaluru">In Bengaluru</button>
+    <button type="button" class="pill" data-filter="outside">Outside Karnataka</button>
+  </div>
+  <p id="raceEmpty" hidden>No races in the list yet.</p>
+  <div class="race-grid" id="raceGrid"></div>
 </section>
 </main>
 
@@ -113,15 +123,11 @@
 <footer>
   <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
   <p><a href="./">Back to the guide</a></p>
-  <p class="footer-meta">These files were sent in for the guide. They are not Wikimedia Commons.</p>
+  <p class="footer-meta">Dates move. Confirm on the race site before you travel.</p>
   <p class="footer-meta">v2026-09-16 &middot; &copy; 2026, all rights reserved</p>
 </footer>
 
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
-  <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()">
-</div>
-
 <script src="js/gallery.js?v=20260916c"></script>
+<script src="js/races.js?v=20260917b"></script>
 </body>
 </html>

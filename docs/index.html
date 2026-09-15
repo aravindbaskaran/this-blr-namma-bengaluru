@@ -29,7 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Baloo+Tamma+2:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <link rel="stylesheet" href="css/tokens.css?v=20260916m">
-<link rel="stylesheet" href="css/layout.css?v=20260916x">
+<link rel="stylesheet" href="css/layout.css?v=20260916z">
 <link rel="stylesheet" href="css/stage.css?v=20260916m">
 <script type="application/ld+json">
 {
@@ -108,6 +108,7 @@
           <a href="#karnataka">Karnataka</a>
         </div>
       </div>
+      <a href="marathons.html">Runs</a>
       <a href="photos.html">Contributor gallery</a>
       <a href="#add-yours">Write in</a>
     </nav>
@@ -331,6 +332,7 @@
             <summary>More</summary>
             <p>Not really like talking/writing about self too much, so briefly - not from Bengaluru. Born in Pondicherry, then seven schools, one college, plus a three-day stint at another, ~3-ish companies across Uttar Pradesh, Andhra Pradesh, Telangana, Tamil Nadu, and Kolkata. Moved around enough that I don't really feel like I am from one place. That's probably why I wanted to make this.</p>
             <p>Languages are beautiful - not the grammar, but how they stay with a place and move with the people who speak them. I am glad to have know a few - Tamil, Kannada, Hindi, English, French (mais oui, Pondicherry), Telugu, and whatever the room needs next. It extends to machine ones as well (Clojure, JavaScript, TypeScript, Python, Java, Go, C#, SQL, etc), but that's not relevant, shouldn't be.</p>
+            <p>One way to know a place is to run in it. Twenty-plus halves, about fifteen fulls, a fair number of them in Karnataka. You get 5am roads, the climbs, the bad pavement, the first filter coffee after. Some races on the <a href="marathons.html">marathons</a> list I have already run, some I still want.</p>
             <p>Bengaluru is as representative of India as anywhere else and it holds more than the last four decades of software. The older city is still here, under the layers and hype, when you look for it.</p>
             <p class="creator-links">Find me on <a href="https://www.linkedin.com/in/aravindbaskaran/" target="_blank" rel="noopener">LinkedIn</a> or <a href="https://x.com/aravind_baskara" target="_blank" rel="noopener">X</a> · <a href="https://github.com/aravindbaskaran" target="_blank" rel="noopener">GitHub</a></p>
           </details>
@@ -825,6 +827,19 @@
 
 <div class="stage-band-straight" data-band="khana"></div>
 
+<section id="racesPreview">
+  <div class="section-head">
+    <div class="head-with-icon">
+      <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9H12Z"/><circle cx="12" cy="12" r="2"/></svg>
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಓಟ</span><span class="kn-en">marathons</span></span>
+    </div>
+    <h2>Marathons</h2>
+    <p>One way to know a place is to run in it. A short Karnataka-heavy list: 10Ks worth racing, halves, fulls, ultras. Some already run, some still queued.</p>
+  </div>
+  <div class="race-grid race-grid-preview" id="racePreviewGrid"></div>
+  <p class="gallery-more" id="raceMore" hidden><a href="marathons.html">See more runs</a></p>
+</section>
+
 <section id="contribGallery" hidden>
   <div class="section-head">
     <div class="head-with-icon">
@@ -935,7 +950,8 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="js/gallery.js?v=20260916c"></script>
-<script src="js/guide.js?v=20260916z"></script>
+<script src="js/races.js?v=20260917b"></script>
+<script src="js/guide.js?v=20260917a"></script>
 <script type="module" src="kannada-voice.js"></script>
 <script src="js/stage-bands.js?v=20260916k"></script>
 <script src="js/stage-bands-straight.js?v=20260916l"></script>

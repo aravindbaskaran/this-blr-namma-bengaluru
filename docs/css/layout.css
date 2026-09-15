@@ -1161,6 +1161,30 @@
   .gallery-map:hover{text-decoration:underline;}
   .gallery-more{margin:18px 0 0; max-width:1180px; font-size:15px;}
   .gallery-more a{color:var(--maroon); font-weight:700;}
+  .race-pills{max-width:1180px; margin:0 0 22px;}
+  .race-grid{
+    display:grid; grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:16px; max-width:1180px;
+  }
+  .race-grid-preview{grid-template-columns:repeat(2, minmax(0, 1fr));}
+  .race-card{
+    background:#fff; border:1px solid var(--line); border-left:3px solid var(--maroon);
+    border-radius:var(--radius); padding:16px 18px; min-width:0;
+  }
+  .race-kinds{display:flex; flex-wrap:wrap; gap:6px; margin:0 0 8px;}
+  .race-kind{
+    font-size:11px; font-weight:600; letter-spacing:0.02em;
+    padding:2px 8px; border-radius:99px; background:var(--cream-2); color:var(--ink);
+  }
+  .race-kind.is-trail{background:var(--leaf); color:#fff;}
+  .race-card h3{font-size:18px; margin:0 0 4px;}
+  .race-where, .race-dist{margin:0; font-size:13px; color:var(--ink-soft);}
+  .race-blurb{margin:10px 0 0; font-size:14.5px; color:var(--ink); line-height:1.45;}
+  .race-link{margin:10px 0 0; font-size:13px; font-weight:600;}
+  .race-empty{color:var(--ink-soft);}
+  @media (max-width:800px){
+    .race-grid, .race-grid-preview{grid-template-columns:1fr;}
+  }
   body[data-page="photos"] #contribGallery{padding-top:36px;}
   body[data-page="photos"] #galleryEmpty{max-width:1180px; margin:0 24px; color:var(--ink-soft);}
   @media (max-width:800px){

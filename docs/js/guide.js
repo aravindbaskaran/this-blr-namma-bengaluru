@@ -11,6 +11,7 @@ let DISHES = [];
 let PHRASES = [];
 let QUIPS = [];
 let GALLERY = [];
+let RACES = [];
 
 const PICK_MARK = `<svg class="pick-mark" viewBox="0 0 40 26" role="img" aria-label="Personal pick"><title>Personal pick</title><ellipse cx="10.4" cy="7.2" rx="4.4" ry="4"/><ellipse cx="29.6" cy="7.2" rx="4.4" ry="4"/><path d="M6.6 6.2 L2.4 4.6 L7 9.2Z"/><path d="M33.4 6.2 L37.6 4.6 L33 9.2Z"/><path d="M20 10 C13 12 8.2 16.5 7 23 C13.5 20.2 17 22 20 26 C23 22 26.5 20.2 33 23 C31.8 16.5 27 12 20 10Z"/></svg>`;
 
@@ -24,6 +25,7 @@ const DATA_FILES = {
   phrases: 'data/phrases.json',
   quips: 'data/did-you-know.json',
   gallery: 'data/gallery.json',
+  races: 'data/races.json',
 };
 
 async function fetchJson(path){
@@ -33,7 +35,7 @@ async function fetchJson(path){
 }
 
 async function loadGuideData(){
-  const [categories, locations, karnatakaPlaces, notThat, festivals, dishes, phrases, quips, gallery] = await Promise.all([
+  const [categories, locations, karnatakaPlaces, notThat, festivals, dishes, phrases, quips, gallery, races] = await Promise.all([
     fetchJson(DATA_FILES.categories),
     fetchJson(DATA_FILES.locations),
     fetchJson(DATA_FILES.karnatakaPlaces),
@@ -43,6 +45,7 @@ async function loadGuideData(){
     fetchJson(DATA_FILES.phrases),
     fetchJson(DATA_FILES.quips),
     fetchJson(DATA_FILES.gallery),
+    fetchJson(DATA_FILES.races),
   ]);
   CATEGORIES = categories.categories;
   DAYTRIP_COLOR = categories.daytripColor || DAYTRIP_COLOR;
@@ -55,6 +58,7 @@ async function loadGuideData(){
   PHRASES = phrases;
   QUIPS = quips;
   GALLERY = Array.isArray(gallery) ? gallery : (gallery && gallery.photos) || [];
+  RACES = (races && races.races) || (Array.isArray(races) ? races : []);
 }
 
 function hideLoader(ok){
@@ -208,6 +212,7 @@ function applyGuideMode(persist){
     renderDishes();
     renderPhrases();
     renderGallery();
+    renderRacesPreview();
     renderMap();
   }
 }
@@ -910,6 +915,31 @@ function renderGallery(){
   }
 }
 
+function renderRacesPreview(){
+  const sec = document.getElementById('racesPreview');
+  const host = document.getElementById('racePreviewGrid');
+  const more = document.getElementById('raceMore');
+  if(!sec || !host) return;
+  const items = RACES.filter(r => r && r.name);
+  if(!items.length){
+    sec.hidden = true;
+    if(more) more.hidden = true;
+    return;
+  }
+  sec.hidden = false;
+  const preview = items.filter(r => r.preview).concat(items.filter(r => !r.preview)).slice(0, 4);
+  if(window.GuideRaces && GuideRaces.fill){
+    GuideRaces.fill(host, preview);
+  } else {
+    host.innerHTML = preview.map(r => `<article class="race-card"><h3>${esc(r.name)}</h3><p class="race-blurb">${esc(r.blurb || '')}</p></article>`).join('');
+  }
+  if(more){
+    more.hidden = false;
+    const a = more.querySelector('a');
+    if(a) a.textContent = items.length > 4 ? `See all ${items.length} races` : 'See all races';
+  }
+}
+
 function openPhotoFromQuery(){
   const id = new URLSearchParams(location.search).get('photo');
   if(!id) return;
@@ -1104,6 +1134,7 @@ if(issueFormEl) issueFormEl.addEventListener('submit', function(e){
     renderDishes();
     renderPhrases();
     renderGallery();
+    renderRacesPreview();
     renderPhotoCredits();
     renderAgendaCount();
     setEra(6);
