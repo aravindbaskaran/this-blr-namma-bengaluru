@@ -194,6 +194,16 @@ In Cursor / VS Code, run the **Preview GitHub Pages** task (default build task).
 
 Override the port with `PORT=8080 ./scripts/preview.sh` if 5600 is already in use.
 
+## Share card
+
+`docs/og.png` is the picture WhatsApp, Slack, and Twitter show when someone pastes a link. Both pages point at it. Rebuild it with:
+
+```bash
+python3 scripts/make-og.py
+```
+
+The script draws the card at 1200x630 in the site palette, with the page's own motifs: the Ilkal temple-tower pallu band, the mango-leaf toran with jasmine and gold beads, and the jasmine-and-marigold mala. Fonts (Baloo Tamma 2 and Baloo 2) are fetched to `/tmp/ogfonts` on first run, so that run needs network. Edit the text or motifs there, not the PNG. Previews stay stale until each app recrawls the URL.
+
 ## Who has worked on this repo
 
 The live guide's **About the people behind this** rail is loaded from this GitHub repo: people who have pushed commits, plus people who opened issues (including **Write in**). Named so far, with what they did here:
