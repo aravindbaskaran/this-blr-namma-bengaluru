@@ -142,10 +142,151 @@
   .section-head h2{font-size:clamp(24px,3vw,34px);}
   .section-head p{color:var(--ink-soft); margin-top:10px; font-size:15.5px;}
 
-  /* ---------- list view ---------- */
-  .grid{
-    display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:18px;
+  /* ---------- sticky card rails ---------- */
+  .grid,
+  .festival-grid,
+  .dish-grid,
+  .quip-grid,
+  .phrase-group-grid,
+  .region-row,
+  .tnt-list{
+    --rail-card: 280px;
+    display:flex;
+    align-items:stretch;
+    gap:16px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    scroll-padding-inline:8px;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-x:contain;
+    scrollbar-width:thin;
+    padding:0 0 12px;
+    max-width:100%;
+    min-width:0;
   }
+  .grid > *,
+  .festival-grid > *,
+  .dish-grid > *,
+  .quip-grid > *,
+  .phrase-group-grid > *,
+  .region-row > *,
+  .tnt-list > *{
+    flex:0 0 var(--rail-card);
+    width:var(--rail-card);
+    max-width:calc(100vw - 48px);
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+  }
+  .grid > p,
+  .dish-grid > p{
+    flex:1 1 auto;
+    width:auto;
+    max-width:none;
+    scroll-snap-align:none;
+  }
+  .dish-grid{ --rail-card: 260px; }
+  .festival-grid{ --rail-card: 270px; }
+  .quip-grid{ --rail-card: 320px; }
+  .phrase-group-grid{ --rail-card: 260px; }
+  .region-row{ --rail-card: 280px; }
+  .tnt-list{ --rail-card: 300px; }
+
+  /* compact poster cards in a rail: media, identity, short blurb, actions */
+  .grid .card{
+    padding:0 0 12px;
+    gap:0;
+    height:340px;
+  }
+  .grid .card > *{padding-left:14px; padding-right:14px;}
+  .grid .card .card-top{padding-top:12px; margin-bottom:6px;}
+  .grid .card h3{font-size:16px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
+  .grid .card .card-pronounce{display:none;}
+  .grid .card p.blurb{
+    flex:none;
+    font-size:13px;
+    line-height:1.45;
+    display:-webkit-box;
+    -webkit-line-clamp:4;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    margin:0 0 10px;
+    min-height:calc(13px * 1.45 * 4);
+  }
+  .grid .card .try-block,
+  .grid .card .skip-details{display:none;}
+  .grid .card .camera-roll,
+  .grid .card .camera-roll-empty{
+    padding:0;
+    width:100%;
+    margin:0;
+    order:-1;
+    overflow:hidden;
+    flex:none;
+    height:128px;
+    background:var(--cream-2);
+  }
+  .grid .card .camera-roll-empty{
+    font-size:0;
+    pointer-events:none;
+  }
+  .grid .card .camera-roll img{
+    display:block;
+    width:100%;
+    height:128px;
+    object-fit:cover;
+    flex:none;
+  }
+  .grid .card .camera-roll img + img{display:none;}
+  .grid .card .card-actions{
+    padding-top:0;
+    margin-top:auto;
+  }
+  .grid .card .add-btn,
+  .grid .card .map-link-btn{height:28px; font-size:11.5px; padding:0 11px;}
+
+  .dish-grid .dish-card{
+    display:flex;
+    flex-direction:column;
+    padding:0 0 14px;
+    height:auto;
+    overflow:visible;
+  }
+  .dish-grid .dish-photo{
+    width:100%;
+    margin:0 0 10px;
+    height:120px;
+    background:var(--cream-2);
+  }
+  .dish-grid .dish-name-row,
+  .dish-grid .dish-kn-row,
+  .dish-grid .dish-desc,
+  .dish-grid .card-actions{padding-left:14px; padding-right:14px;}
+  .dish-grid .dish-desc{
+    display:block;
+    overflow:visible;
+    flex:none;
+    margin-top:6px;
+    min-height:0;
+  }
+  .dish-grid .dish-card .card-actions{margin-top:10px;}
+
+  .festival-grid .festival-card{
+    display:flex;
+    flex-direction:column;
+    padding:18px 16px 14px;
+    height:auto;
+    overflow:visible;
+  }
+  .festival-grid .festival-card p{
+    display:block;
+    overflow:visible;
+    flex:none;
+    min-height:0;
+  }
+  .festival-grid .festival-credit{margin-top:10px; padding-top:0;}
+
+  /* ---------- list view ---------- */
   .card{
     background:var(--card-surface);
     border:1px solid var(--line); border-top:3px solid var(--cat-color, var(--maroon));
@@ -273,7 +414,7 @@
 
   /* ---------- ganda berunda watermark, v2 (for comparison) ---------- */
   .festivals-sub{
-    position:relative; overflow:hidden;
+    position:relative; overflow:visible;
     background:var(--imperial-bg); border-radius:var(--radius); color:var(--imperial-text);
     padding:32px 28px;
     /* Imperial Weave palette applied locally: these overrides only affect
@@ -306,7 +447,7 @@
   .head-with-icon .kn{margin-bottom:0 !important;}
 
   /* ---------- region strip: six threads of karnataka ---------- */
-  .region-row{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; background:transparent; border:none;}
+  .region-row{background:transparent; border:none;}
   .region-card{
     background:var(--region-bg, var(--cream-2)); padding:20px 14px 14px; border-top:none;
     position:relative; overflow:hidden; color:var(--on-accent);
@@ -357,7 +498,6 @@
   .region-movie b{color:var(--on-accent); font-weight:600;}
 
   /* ---------- festivals ---------- */
-  .festival-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:18px;}
   .festival-card{
     background:var(--card-surface);
     border:1px solid var(--line); border-radius:var(--radius); padding:22px 20px 18px;
@@ -379,36 +519,32 @@
   .festival-card a{color:var(--maroon); font-weight:600;}
 
   /* ---------- did you know ---------- */
-  .quip-grid{
-    display:grid; grid-template-columns:1fr 1fr; gap:16px;
-  }
   .quip-card{
     background:var(--card-surface);
     border:1px solid var(--line); border-radius:var(--radius);
     padding:16px 18px; border-top:3px solid var(--gold);
   }
   .quip-card.featured{
-    grid-column:1 / -1;
-    display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1.15fr); gap:28px; align-items:start;
-    padding:28px 26px 24px;
+    display:flex;
+    flex-direction:column;
+    padding:20px 18px 18px;
     border-top-color:var(--maroon);
   }
   .quip-kicker{font-size:11px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--maroon); margin-bottom:8px;}
   .quip-card h3{font-size:20px; line-height:1.25; margin:0;}
-  .quip-card.featured h3{font-size:clamp(22px, 2.6vw, 30px);}
+  .quip-card.featured h3{font-size:20px;}
   .quip-kn{display:block; color:var(--maroon); font-size:13px; margin-top:6px;}
   .quip-card p{font-size:14.5px; color:var(--ink-soft); line-height:1.55; margin:10px 0 0;}
   .quip-card.featured p{margin-top:0; font-size:15.5px;}
   @media (max-width:800px){
-    .quip-grid, .quip-card.featured{grid-template-columns:1fr;}
+    .quip-card.featured h3{font-size:20px;}
   }
 
   /* ---------- dishes ---------- */
   .dish-controls{margin-bottom:18px;}
-  .dish-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:16px;}
   .dish-card{
     background:var(--card-surface);
-    border:1px solid var(--line); border-radius:var(--radius); padding:16px 18px; overflow:hidden;
+    border:1px solid var(--line); border-radius:var(--radius); padding:16px 18px; overflow:visible;
     color:var(--ink);
   }
   .dish-photo{width:calc(100% + 36px); margin:-16px -18px 12px; display:block; height:140px; object-fit:cover;}
@@ -423,7 +559,7 @@
   /* ---------- this not that ---------- */
   .tnt-section{
     background:transparent; color:var(--ink);
-    position:relative; overflow:hidden;
+    position:relative; overflow:visible;
   }
   .shalya-mark{
     position:absolute; right:-18px; top:36px; width:168px; height:auto;
@@ -434,7 +570,19 @@
   .tnt-section .section-head .kn{color:var(--maroon);}
   .tnt-section .section-head .motif-icon{color:var(--maroon);}
   .tnt-section .section-head p{color:var(--ink-soft);}
-  .tnt-list{display:flex; flex-direction:column; gap:10px;}
+  .tnt-label-row{display:none;}
+  .tnt-card{
+    background:var(--card-surface);
+    border:1px solid var(--line); border-radius:var(--radius);
+    padding:16px 16px 14px;
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .tnt-kicker{
+    display:block; font-size:11px; font-weight:600; letter-spacing:0.04em;
+    text-transform:uppercase; color:var(--maroon); margin-bottom:6px;
+  }
+  .tnt-card .often{color:var(--ink); font-size:15px; font-family:'Baloo 2',sans-serif; font-weight:600; line-height:1.35;}
+  .tnt-card .also{color:var(--ink-soft); font-size:13.5px; font-weight:400; line-height:1.45;}
   .tnt-row{
     display:grid; grid-template-columns:1fr 1.4fr; gap:24px; align-items:start;
     padding:14px 18px;
@@ -496,7 +644,6 @@
     text-transform:none; letter-spacing:0.02em; margin-bottom:10px;
     padding-bottom:6px; border-bottom:1px solid var(--line);
   }
-  .phrase-group-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px;}
   .phrase-card{
     background:var(--card-surface);
     border:1px solid var(--line); border-radius:var(--radius);
@@ -560,6 +707,7 @@
     background:var(--card-surface); border-radius:var(--radius);
     padding:14px 16px; margin:16px 0 4px;
   }
+  .why-section h3{font-size:18px; margin:20px 0 8px;}
   .credit-note p{color:var(--ink); font-size:15px; line-height:1.6; margin:0;}
   .credit-note a{color:var(--maroon); font-weight:600; text-decoration:underline;}
   @media (max-width:800px){
@@ -746,6 +894,7 @@
   #karnataka .section-head,
   #karnataka .karnataka-sub{
     max-width:1180px; margin-left:auto; margin-right:auto; padding-left:24px; padding-right:24px;
+    min-width:0;
   }
   #karnataka .section-head{max-width:1180px;}
   #karnataka .section-head .kn{color:var(--gold-light);}
@@ -778,9 +927,6 @@
   footer p{color:var(--ink-soft); font-size:13px;}
   .footer-meta{font-size:11px !important; color:var(--ink-soft); opacity:0.6; margin-top:8px;}
 
-  @media (max-width:960px){
-    .region-row{grid-template-columns:repeat(2,1fr);}
-  }
   @media (max-width:720px){
     .header-inner{padding:10px 14px; gap:10px;}
     .brand-mark{width:42px;}
@@ -811,14 +957,13 @@
     }
     .view-toggle{align-self:stretch;}
     .view-toggle button{flex:1;}
-    .grid{grid-template-columns:1fr; gap:14px;}
     .map-wrap{height:min(70vh, 420px);}
     .tnt-row, .skip-row{grid-template-columns:1fr; gap:6px; padding:14px;}
     .tnt-arrow, .skip-arrow{display:none;}
     .tnt-label-row{flex-direction:column; gap:4px;}
     .tnt-row .often, .tnt-row .also{font-size:14.5px;}
-    .region-row{grid-template-columns:1fr;}
     .add-form{grid-template-columns:1fr;}
+    .grid .add-btn, .grid .map-link-btn{min-height:28px; height:28px;}
     .about-grid{grid-template-columns:1fr;}
     .sources-grid{grid-template-columns:1fr;}
     .hero-ornament.side-l, .hero-ornament.side-r{display:none;}

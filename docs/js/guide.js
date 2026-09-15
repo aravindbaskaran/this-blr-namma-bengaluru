@@ -149,6 +149,7 @@ function buildLocationCard(l){
   const webLabel = l.url && /maps\.(app\.)?goo|google\.com\/maps/i.test(l.url) ? 'Google Maps' : 'Website';
   const webHtml = l.url ? `<a class="map-link-btn" href="${esc(l.url)}" target="_blank" rel="noopener">${webLabel}</a>` : '';
   return `<div class="card" id="card-${l.id}" style="--cat-color:${cat.color}">
+      ${photosHtml}
       <div class="card-top">
         <div>
           <div class="card-title-row">${pickHtml}<h3>${l.name}</h3></div>
@@ -158,7 +159,6 @@ function buildLocationCard(l){
       </div>
       <p class="blurb">${l.blurb}</p>
       ${tryHtml}
-      ${photosHtml}
       ${skipHtml}
       <div class="card-actions">
         <button class="add-btn" data-added="${added}" onclick="toggleAgenda('${l.id}')">${added ? 'On your list ✓' : '+ Add to list'}</button>
@@ -262,7 +262,7 @@ function renderMap(){
 /* ---------------- view toggle ---------------- */
 function setView(v){
   currentView = v;
-  document.getElementById('listView').style.display = v==='list' ? 'grid' : 'none';
+  document.getElementById('listView').style.display = v==='list' ? 'flex' : 'none';
   document.getElementById('mapView').style.display = v==='map' ? 'block' : 'none';
   document.querySelectorAll('.view-toggle button').forEach(b=>{
     b.dataset.active = (b.dataset.view === v);
@@ -436,11 +436,10 @@ async function copyAgenda(){ return copyTodo(); }
 function renderTNT(){
   const wrap = document.getElementById('tntList');
   wrap.innerHTML = NOT_THAT.map(row => `
-    <div class="tnt-row">
-      <div class="often">${row.often}</div>
-      <div class="tnt-arrow">→</div>
-      <div class="also">${row.also}</div>
-    </div>
+    <article class="tnt-card">
+      <p class="often"><span class="tnt-kicker">Often the default</span>${row.often}</p>
+      <p class="also"><span class="tnt-kicker">Also true here</span>${row.also}</p>
+    </article>
   `).join('');
 }
 
@@ -494,7 +493,9 @@ function renderDishes(){
     return (d.tags || []).includes(activeDishTag);
   });
   wrap.innerHTML = items.map(d => {
-    const photoHtml = d.photo ? `<img class="dish-photo" src="${d.photo}" loading="lazy" alt="${d.name}" tabindex="0" role="button" aria-label="View larger photo of ${d.name}" onclick="openLightbox('${d.photo}', '${d.name}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('${d.photo}', '${d.name}')}">` : '';
+    const photoHtml = d.photo
+      ? `<img class="dish-photo" src="${d.photo}" loading="lazy" alt="${d.name}" tabindex="0" role="button" aria-label="View larger photo of ${d.name}" onclick="openLightbox('${d.photo}', '${d.name}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('${d.photo}', '${d.name}')}">`
+      : `<div class="dish-photo" aria-hidden="true"></div>`;
     const tagsHtml = (d.tags || []).map(id => {
       const t = DISH_TAGS.find(x => x.id === id);
       return t ? `<span class="tag">${t.label}</span>` : '';
