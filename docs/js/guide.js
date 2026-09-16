@@ -161,7 +161,7 @@ const VERIFIED_PLACE_PHOTO_IDS = new Set([
   'commercial-street', 'chickpet', 'lakeview-milk-bar', 'malleswaram-market',
   'ubcity', 'koshys-restaurant', 'iskcon', 'palace', 'rangashankara',
   'dodda-ganapathi', 'vidyarthi-bhavan', 'turahalli-forest', 'brigade-mg',
-  'doresanipalya-forest', 'desi', 'varnam',
+  'doresanipalya-forest', 'desi', 'varnam', 'sugandh-lok',
 ]);
 function locationPhotos(l){
   if(LOCATIONS.some(item => item.id === l.id)){
@@ -850,6 +850,16 @@ function setWriteIn(which){
   if(panelAsk) panelAsk.hidden = spot;
 }
 
+function scrollToHashTarget(){
+  const id = decodeURIComponent((location.hash || '').slice(1));
+  if(!id) return;
+  const target = document.getElementById(id);
+  if(!target) return;
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    target.scrollIntoView({block:'start'});
+  }));
+}
+
 function setBeyondTab(which){
   document.querySelectorAll('[data-beyond-tab]').forEach(btn => {
     btn.setAttribute('aria-selected', String(btn.dataset.beyondTab === which));
@@ -1254,9 +1264,16 @@ if(issueFormEl) issueFormEl.addEventListener('submit', function(e){
     openPhotoFromQuery();
     focusPlaceFromQuery();
     syncHeaderOffset();
+    scrollToHashTarget();
+    addEventListener('hashchange', scrollToHashTarget);
     const nav = document.getElementById('siteNav');
     if(nav) nav.addEventListener('click', e => {
-      if(e.target.closest('a')){ toggleNav(false); closeNavSub(); }
+      const link = e.target.closest('a');
+      if(link){
+        toggleNav(false);
+        closeNavSub();
+        if(link.hash && link.hash === location.hash) scrollToHashTarget();
+      }
     });
     addEventListener('keydown', e => {
       if(e.key === 'Escape'){ toggleNav(false); closeNavSub(); closeDrawer(); closeLightbox(); closeModeTip(); }

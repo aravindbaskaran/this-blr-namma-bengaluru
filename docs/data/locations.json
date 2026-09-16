@@ -2001,6 +2001,28 @@
     ]
   },
   {
+    "id": "sugandh-lok",
+    "name": "Sugandh Lok",
+    "area": "Gandhi Bazaar, Basavanagudi",
+    "category": "craft",
+    "blurb": "The Sarathi family's flagship agarbathi shop, built around a Bengaluru incense business that dates to 1945. The Gandhi Bazaar room carries more than a hundred fragrances, with testers for sticks, cones, dhoop, and incense blends.",
+    "kn": "ಸುಗಂಧ್ ಲೋಕ್",
+    "say": "Su-gandh Lok",
+    "url": "https://sugandhlok.com/pages/store-locator",
+    "lat": 12.945967,
+    "lng": 77.56923,
+    "try": [
+      "Use the testers before buying. The shelves run from sandalwood and floral blends to coffee, chocolate, and fruit fragrances.",
+      "984, Gandhi Bazaar Main Road, near the Vidyarthi Bhavan end of the bazaar."
+    ],
+    "tourist": true,
+    "photos": [
+      "gallery/agarbathi-showroom.jpg",
+      "gallery/agarbathi-carved-box.jpg",
+      "gallery/agarbathi-flavour-row.jpg"
+    ]
+  },
+  {
     "id": "chikmagalur-queens-coffee",
     "name": "Chikmagalur Queen's Coffee",
     "area": "Jayanagar 4th T Block",

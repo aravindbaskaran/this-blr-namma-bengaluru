@@ -416,8 +416,8 @@
     {
       "file": "thatte-idli-benne-dose.jpg",
       "id": "thatte-idli-benne-dose",
-      "caption": "Thatte idli sitting in chutney, and a Davangere benne dose with the butter still on top.",
-      "alt": "Thatte idli in chutney on a banana leaf and a benne dose topped with butter"
+      "caption": "Thatte idli sitting in chutney, and a Davangere benne dose with the palya on top.",
+      "alt": "Thatte idli in chutney on a banana leaf and a benne dose topped with palya and butter"
     },
     {
       "file": "benne-dose-board.jpg",
@@ -465,8 +465,8 @@
     {
       "file": "red-poori-saagu.jpg",
       "id": "red-poori-saagu",
-      "caption": "Deep red poori with saagu and two chutneys, banana leaf under it.",
-      "alt": "Puffed red poori on a banana leaf with a steel cup of saagu and two chutneys"
+      "caption": "Mangalore Buns with saagu and two chutneys, banana leaf under it.",
+      "alt": "Puffed Mangalore Buns on a banana leaf with a steel cup of saagu and two chutneys"
     },
     {
       "file": "calm-coffee-sunburst.jpg",
@@ -638,26 +638,34 @@
     {
       "file": "agarbathi-cones-shelf.jpg",
       "id": "agarbathi-cones-shelf",
-      "caption": "Agarbathi cones and packs on the shelf, testers open.",
-      "alt": "Shop shelves stacked with agarbathi cone boxes and packets"
+      "caption": "Agarbathi cones and packs at Sugandh Lok, Gandhi Bazaar, testers open.",
+      "alt": "Sugandh Lok shelves stacked with agarbathi cone boxes and packets",
+      "lat": 12.945967,
+      "lng": 77.56923
     },
     {
       "file": "agarbathi-showroom.jpg",
       "id": "agarbathi-showroom",
-      "caption": "Incense boxes and dhoop across a showroom wall.",
-      "alt": "Wooden showroom shelves filled with incense boxes"
+      "caption": "Incense boxes and dhoop across a wall at Sugandh Lok.",
+      "alt": "Wooden shelves at Sugandh Lok filled with incense boxes",
+      "lat": 12.945967,
+      "lng": 77.56923
     },
     {
       "file": "agarbathi-carved-box.jpg",
       "id": "agarbathi-carved-box",
-      "caption": "A carved wooden agarbathi stand next to the pack on the counter.",
-      "alt": "Carved wooden incense box beside a boxed agarbathi pack"
+      "caption": "A carved wooden agarbathi stand next to a Sugandh Lok pack.",
+      "alt": "Carved wooden incense box beside a boxed Sugandh Lok agarbathi pack",
+      "lat": 12.945967,
+      "lng": 77.56923
     },
     {
       "file": "agarbathi-flavour-row.jpg",
       "id": "agarbathi-flavour-row",
-      "caption": "Pineapple, orange, coffee, chocolate: the flavoured agarbathi row.",
-      "alt": "Rows of flavoured agarbathi boxes on wooden shelves"
+      "caption": "Pineapple, orange, coffee, chocolate: the flavoured agarbathi row at Sugandh Lok.",
+      "alt": "Rows of flavoured Sugandh Lok agarbathi boxes on wooden shelves",
+      "lat": 12.945967,
+      "lng": 77.56923
     },
     {
       "file": "coffee-cocktail-courtyard.jpg",
