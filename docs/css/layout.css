@@ -761,12 +761,39 @@
   }
   .dish-try-label{font-size:11px; font-weight:600; color:var(--maroon); margin-bottom:6px;}
   .dish-try-list{display:flex; flex-wrap:wrap; gap:6px;}
-  .dish-try-list button{
+  .dish-try-list button,
+  .dish-try-list a{
     border:1.5px solid var(--line); background:transparent; color:var(--ink);
     border-radius:99px; padding:4px 10px; font-size:12px; font-weight:600; cursor:pointer;
+    text-decoration:none; line-height:1.4;
   }
-  .dish-try-list button:hover{border-color:var(--maroon); color:var(--maroon);}
+  .dish-try-list button:hover,
+  .dish-try-list a:hover{border-color:var(--maroon); color:var(--maroon);}
+  .dish-try-list .dish-try-static{
+    padding:4px 2px; font-size:12px; font-weight:600; color:var(--ink-soft);
+  }
   .dish-card .card-actions{margin-top:auto; padding-top:10px;}
+
+  /* the notebook page and the guide preview both wrap instead of scrolling sideways */
+  .dish-grid-page, .dish-grid-preview{
+    display:grid; grid-template-columns:repeat(4, minmax(0, 1fr));
+    gap:16px; max-width:1180px; overflow:visible; padding:0;
+  }
+  .dish-grid-page{grid-template-columns:repeat(3, minmax(0, 1fr));}
+  .dish-grid-page > *, .dish-grid-preview > *{flex:none; width:auto;}
+  /* rows already even out the card heights, so let the description run */
+  .dish-grid-page .dish-desc, .dish-grid-preview .dish-desc{
+    display:block; -webkit-line-clamp:none; overflow:visible;
+  }
+  .dish-grid-page{margin-top:4px;}
+  #dishEmpty{max-width:1180px; color:var(--ink-soft);}
+  @media (max-width:1000px){
+    .dish-grid-page{grid-template-columns:repeat(2, minmax(0, 1fr));}
+    .dish-grid-preview{grid-template-columns:repeat(2, minmax(0, 1fr));}
+  }
+  @media (max-width:620px){
+    .dish-grid-page, .dish-grid-preview{grid-template-columns:1fr;}
+  }
 
   /* ---------- this not that ---------- */
   .tnt-section{
@@ -1172,12 +1199,6 @@
   #beyond-city .sub-head p{color:var(--on-accent);}
   #beyond-city .festivals-sub .sub-head h3{color:var(--ink);}
   #beyond-city .festivals-sub .sub-head p{color:var(--ink-soft);}
-  #beyond-city .pill{
-    background:#fff; color:var(--ink); border-color:rgba(255,255,255,0.7);
-  }
-  #beyond-city .pill[data-active="true"]{
-    background:var(--ink); color:var(--cream); border-color:var(--ink);
-  }
   #beyond-city .region-card{border-radius:var(--radius);}
 
   /* ---------- mala / section ornaments ---------- */

@@ -29,7 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Baloo+Tamma+2:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <link rel="stylesheet" href="css/tokens.css?v=20260916m">
-<link rel="stylesheet" href="css/layout.css?v=20260916ak">
+<link rel="stylesheet" href="css/layout.css?v=20260917a">
 <link rel="stylesheet" href="css/stage.css?v=20260916m">
 <script type="application/ld+json">
 {
@@ -99,6 +99,7 @@
       <a href="#explore">Explore</a>
       <a href="#history">Culture &amp; history</a>
       <a href="#learn-kannada">Kannada</a>
+      <a href="food.html">Food</a>
       <a href="runs.html">Runs</a>
       <a href="photos.html">Our photos</a>
     </nav>
@@ -644,13 +645,12 @@
       <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಕರ್ನಾಟಕ</span><span class="kn-en">karnataka, in three parts</span></span>
     </div>
     <h2>Beyond the city gate</h2>
-    <p>Weekend routes into Karnataka: distinct regions, food worth travelling for, and festivals that set the calendar.</p>
+    <p>Weekend routes into Karnataka: five regions that do not look or eat alike, and festivals that set the calendar. Dishes moved to the <a href="food.html">food notebook</a>.</p>
   </div>
 
   <div class="beyond-tabs" role="tablist" aria-label="Beyond the city gate">
     <button type="button" role="tab" aria-selected="true" data-beyond-tab="regions" onclick="setBeyondTab('regions')">Regions</button>
     <button type="button" role="tab" aria-selected="false" data-beyond-tab="weekends" onclick="setBeyondTab('weekends')">Weekend routes</button>
-    <button type="button" role="tab" aria-selected="false" data-beyond-tab="food" onclick="setBeyondTab('food')">Food notebook</button>
     <button type="button" role="tab" aria-selected="false" data-beyond-tab="festivals" onclick="setBeyondTab('festivals')">Festivals</button>
   </div>
 
@@ -738,17 +738,6 @@
     </div>
   </div>
 
-  <div class="karnataka-sub beyond-panel" data-beyond-panel="food" role="tabpanel" hidden>
-    <div class="sub-head">
-      <h3>Food notebook</h3>
-      <p>What the dishes are, how they are written in Kannada, and where to try them. Open this when food is the route.</p>
-    </div>
-    <div class="pill-row dish-controls" id="dishPills" data-reveal></div>
-    <div class="rail-clip">
-      <div class="dish-grid" id="dishGrid" data-reveal></div>
-    </div>
-  </div>
-
   <div class="karnataka-sub festivals-sub beyond-panel" data-beyond-panel="festivals" role="tabpanel" hidden>
     <svg class="berunda-mark-v2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M100,50 L100,160 M100,80 C85,90 70,110 70,140 C70,165 100,175 100,175 C100,175 130,165 130,140 C130,110 115,90 100,80 Z" />
@@ -773,6 +762,19 @@
 </section>
 
 <div class="stage-band-straight" data-band="khana"></div>
+
+<section id="foodPreview">
+  <div class="section-head">
+    <div class="head-with-icon">
+      <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13h18a9 9 0 0 1-18 0Z M8 9c0-2 2-2 2-4 M14 9c0-2 2-2 2-4"/></svg>
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಊಟ</span><span class="kn-en">food</span></span>
+    </div>
+    <h2>Food notebook</h2>
+    <p>Fifty Karnataka dishes with the Kannada name, how to say it, and where to try it. A few here, the rest on its own page.</p>
+  </div>
+  <div class="dish-grid dish-grid-preview" id="dishPreviewGrid"></div>
+  <p class="gallery-more" id="dishMore" hidden><a href="food.html">See the whole food notebook</a></p>
+</section>
 
 <section id="racesPreview">
   <div class="section-head">
@@ -901,7 +903,8 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="js/gallery.js?v=20260916e"></script>
 <script src="js/races.js?v=20260917b"></script>
-<script src="js/guide.js?v=20260917k"></script>
+<script src="js/food.js?v=20260917a"></script>
+<script src="js/guide.js?v=20260917l"></script>
 <script type="module" src="kannada-voice.js"></script>
 <script src="js/stage-bands.js?v=20260916k"></script>
 <script src="js/stage-bands-straight.js?v=20260916l"></script>

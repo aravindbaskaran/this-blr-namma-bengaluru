@@ -11,12 +11,14 @@ GitHub Pages serves `docs/` as the site. There is no build step and no CMS. List
 - `docs/index.html` - page chrome, sections, Write in forms
 - `docs/photos.html` - our photos, the shots people sent in (the guide only shows a preview)
 - `docs/runs.html` - Karnataka races, 10K to ultra (the guide shows four)
+- `docs/food.html` - the food notebook, all 50 dishes with tag filters (the guide shows four)
 - `docs/css/` - `tokens.css` (palette and type), `layout.css` (chrome and cards), `stage.css` (saree bands and loader)
 - `docs/js/guide.js` - loads the JSON, filters First 48 hours / Full notebook, map, to-do, forms
 - `docs/js/stage-bands.js` and `stage-bands-straight.js` - the cloth bands between sections
 - `docs/data/locations.json` - Bengaluru spots (`personalPick`, `personalNote`, `skipCrowd`, `try`, optional `fieldNotes`)
 - `docs/data/karnataka-places.json` - weekend routes and overnights
-- `docs/data/dishes.json`, `phrases.json`, `festivals.json`, `did-you-know.json`, `not-that.json`, `gallery.json`
+- `docs/data/dishes.json` - dishes and their tags. `tryIn` holds place ids, `personalPick: true` marks a pick. Shows on the food notebook page (`food.html`), with four cards on the guide
+- `docs/data/phrases.json`, `festivals.json`, `did-you-know.json`, `not-that.json`, `gallery.json`
 - `docs/data/races.json` - races. `kinds` is any of `10k`, `half`, `full`, `ultra`; `terrain` is `road` or `trail`; `where` is `bengaluru` or `karnataka`. `preview: true` puts it in the four cards on the guide
 - `docs/gallery/` - contributor photos. Add the file here, then a row in `gallery.json` (caption, optional `lat`/`lng`). They show on the our photos page (`photos.html`), with a short preview on the guide.
 - `docs/audio/kn/` - one small clip per Kannada phrase, plus `manifest.json`

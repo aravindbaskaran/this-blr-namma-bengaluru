@@ -95,7 +95,6 @@ function moveColophonToEnd(){
 /* ---------------- state ---------------- */
 let currentView = 'list';
 let activeCategory = 'all';
-let activeDishTag = 'all';
 let agenda = [];
 let todoDone = {};
 let customLocations = [];
@@ -253,16 +252,14 @@ function applyGuideMode(persist){
     }catch(e){}
   }
   if(isQuickstart() && activeCategory === 'picks') activeCategory = 'all';
-  if(isQuickstart() && activeDishTag === 'picks') activeDishTag = 'all';
   if(LOCATIONS.length){
     renderPills();
-    renderDishPills();
     renderList();
     renderDaytrips();
     renderFestivals();
     renderTNT();
     renderQuips();
-    renderDishes();
+    renderFoodPreview();
     renderPhrases();
     renderGallery();
     renderRacesPreview();
@@ -356,17 +353,7 @@ function skipCrowdHtml(l){
   </details>`;
 }
 function focusDish(id){
-  const section = document.getElementById('beyond-city');
-  setBeyondTab('food');
-  if(section) section.scrollIntoView({behavior:'smooth', block:'start'});
-  requestAnimationFrame(() => {
-    const el = document.getElementById('dish-' + id);
-    if(el){
-      el.scrollIntoView({behavior:'smooth', block:'center'});
-      el.style.outline = '2px solid var(--leaf)';
-      window.setTimeout(() => { el.style.outline = ''; }, 1600);
-    }
-  });
+  location.href = 'food.html#dish-' + encodeURIComponent(id);
 }
 function focusPlace(id){
   if(typeof setView === 'function') setView('list');
@@ -682,61 +669,39 @@ function renderQuips(){
   `).join('');
 }
 
-/* ---------------- dishes ---------------- */
-function renderDishPills(){
-  const row = document.getElementById('dishPills');
-  if(!row) return;
-  const tags = isQuickstart() ? DISH_TAGS.filter(t => t.id !== 'picks') : DISH_TAGS;
-  const all = [{id:'all', label:'All'}].concat(tags);
-  row.innerHTML = all.map(t =>
-    `<button class="pill" data-active="${activeDishTag===t.id}" onclick="setDishTag('${t.id}')">${t.label}</button>`
-  ).join('');
-}
-function setDishTag(id){ activeDishTag = id; renderDishPills(); renderDishes(); }
-function dishPhotoHtml(d){
-  const empty = `<div class="dish-photo dish-photo-empty" aria-hidden="true">No photo yet</div>`;
-  if(!d.photo) return empty;
-  const src = d.photo;
-  const name = d.name;
-    return waitPhoto(src, name, 'dish-photo', `tabindex="0" role="button" aria-label="View larger photo of ${esc(name)}" onclick="openLightbox('${esc(src)}', '${esc(name)}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('${esc(src)}', '${esc(name)}')}"`, 'dish');
-}
-function renderDishes(){
-  const wrap = document.getElementById('dishGrid');
-  const items = forMode(DISHES).filter(d => {
-    if(activeDishTag === 'all') return true;
-    if(activeDishTag === 'picks') return !!d.personalPick;
-    return (d.tags || []).includes(activeDishTag);
-  });
-  wrap.innerHTML = items.map(d => {
-    const photoHtml = dishPhotoHtml(d);
-    const tagsHtml = (d.tags || []).map(id => {
-      const t = DISH_TAGS.find(x => x.id === id);
-      return t ? `<span class="tag">${t.label}</span>` : '';
-    }).join('');
-    const pickMark = d.personalPick ? PICK_MARK : '';
-    const tryIds = d.tryIn || [];
-    const tryPlaces = tryIds.map(id => locById(id)).filter(Boolean);
-    const tryAttr = tryIds.length ? ` data-try-in="${esc(tryIds.join(' '))}"` : '';
-    const locIds = new Set(allLocations().map(l => l.id));
-    const allInCity = tryPlaces.length && tryPlaces.every(p => locIds.has(p.id));
-    const tryLabel = allInCity ? 'Where to try in Bengaluru' : 'Where to try';
-    const tryHtml = tryPlaces.length
-      ? `<div class="dish-try"><div class="dish-try-label">${tryLabel}</div><div class="dish-try-list">${tryPlaces.map(p =>
-          `<button type="button" onclick="focusPlace('${p.id}')">${p.name}</button>`
-        ).join('')}</div></div>`
-      : '';
-    return `
-    <div class="dish-card" id="dish-${d.id}"${tryAttr}>
-      ${photoHtml}
-      <div class="dish-name-row">${pickMark}<div class="dish-name">${d.name}</div></div>
-      <div class="dish-kn-row">${knCycle(d.kn, d.name, 'dish-kn')}<span class="dish-say">${d.say || ''}</span>${speakBtn(d.kn, 'sm')}</div>
-      <p class="dish-desc">${d.desc}</p>
-      ${tryHtml}
-      <div class="card-actions" style="margin-top:10px;flex-wrap:wrap">${tagsHtml}</div>
-    </div>
-  `;
-  }).join('') || `<p style="color:var(--ink-soft);">No dishes in this tag yet.</p>`;
-  armPhotoWaits(wrap);
+/* ---------------- dishes: preview, full notebook lives on food.html ---------------- */
+function renderFoodPreview(){
+  const sec = document.getElementById('foodPreview');
+  const host = document.getElementById('dishPreviewGrid');
+  const more = document.getElementById('dishMore');
+  if(!sec || !host) return;
+  const items = forMode(DISHES).filter(d => d && d.name);
+  if(!items.length){
+    sec.hidden = true;
+    if(more) more.hidden = true;
+    return;
+  }
+  sec.hidden = false;
+  const limit = (window.GuideFood && GuideFood.PREVIEW) || 4;
+  const preview = items.filter(d => d.personalPick).concat(items.filter(d => !d.personalPick)).slice(0, limit);
+  const locIds = new Set(allLocations().map(l => l.id));
+  const ctx = {
+    tags: DISH_TAGS,
+    place(id){
+      const p = locById(id);
+      return p ? { id: p.id, name: p.name, inCity: locIds.has(p.id) } : null;
+    }
+  };
+  if(window.GuideFood && GuideFood.fill){
+    GuideFood.fill(host, preview, ctx);
+  } else {
+    host.innerHTML = preview.map(d => `<div class="dish-card" id="dish-${d.id}"><div class="dish-name-row"><div class="dish-name">${esc(d.name)}</div></div><p class="dish-desc">${esc(d.desc || '')}</p></div>`).join('');
+  }
+  if(more){
+    more.hidden = false;
+    const a = more.querySelector('a');
+    if(a) a.textContent = DISHES.length > limit ? `See all ${DISHES.length} dishes` : 'See the whole food notebook';
+  }
 }
 
 /* ---------------- learn kannada ---------------- */
@@ -1014,6 +979,15 @@ function renderRacesPreview(){
   }
 }
 
+/* food.html links back to a place by id; open the full notebook if it is not in Quickstart */
+function focusPlaceFromQuery(){
+  const id = new URLSearchParams(location.search).get('place');
+  if(!id) return;
+  if(!allLocations().some(l => l.id === id)) return;
+  if(!modeLocations().some(l => l.id === id)) setGuideMode('full');
+  focusPlace(id);
+}
+
 function openPhotoFromQuery(){
   const id = new URLSearchParams(location.search).get('photo');
   if(!id) return;
@@ -1199,14 +1173,13 @@ if(issueFormEl) issueFormEl.addEventListener('submit', function(e){
     guideMode = readGuideMode();
     applyGuideMode(true);
     renderPills();
-    renderDishPills();
     renderCategorySelect();
     renderList();
     renderDaytrips();
     renderTNT();
     renderFestivals();
     renderQuips();
-    renderDishes();
+    renderFoodPreview();
     renderPhrases();
     renderGallery();
     renderRacesPreview();
@@ -1216,6 +1189,7 @@ if(issueFormEl) issueFormEl.addEventListener('submit', function(e){
     loadPeople();
     hideLoader(true);
     openPhotoFromQuery();
+    focusPlaceFromQuery();
     syncHeaderOffset();
     const nav = document.getElementById('siteNav');
     if(nav) nav.addEventListener('click', e => {

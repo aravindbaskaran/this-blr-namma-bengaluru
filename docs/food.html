@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Our photos · Namma Bengaluru</title>
-<meta name="description" content="Shots sent in for the Namma Bengaluru field guide. Lalbagh, Cubbon, plates, and pins on the map.">
-<link rel="canonical" href="https://aravindbaskaran.github.io/this-blr-namma-bengaluru/photos.html">
+<title>Food notebook · Namma Bengaluru</title>
+<meta name="description" content="Fifty Karnataka dishes: what each one is, how the name is written in Kannada, how to say it, and where to try it.">
+<link rel="canonical" href="https://aravindbaskaran.github.io/this-blr-namma-bengaluru/food.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#F7EEDA">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_IN">
 <meta property="og:site_name" content="Namma Bengaluru Field Guide">
-<meta property="og:title" content="Our photos · Namma Bengaluru">
-<meta property="og:description" content="Shots sent in for this guide. Tap a picture to open it. Map opens the pin on the field guide.">
-<meta property="og:url" content="https://aravindbaskaran.github.io/this-blr-namma-bengaluru/photos.html">
+<meta property="og:title" content="Food notebook · Namma Bengaluru">
+<meta property="og:description" content="Fifty Karnataka dishes, the Kannada name for each, and where to try them.">
+<meta property="og:url" content="https://aravindbaskaran.github.io/this-blr-namma-bengaluru/food.html">
 <meta property="og:image" content="https://aravindbaskaran.github.io/this-blr-namma-bengaluru/og.png">
 <meta property="og:image:alt" content="Namma Bengaluru field guide">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Our photos · Namma Bengaluru">
-<meta name="twitter:description" content="Shots sent in for this guide. Tap a picture to open it. Map opens the pin on the field guide.">
+<meta name="twitter:title" content="Food notebook · Namma Bengaluru">
+<meta name="twitter:description" content="Fifty Karnataka dishes, the Kannada name for each, and where to try them.">
 <meta name="twitter:image" content="https://aravindbaskaran.github.io/this-blr-namma-bengaluru/og.png">
 <meta name="twitter:image:alt" content="Namma Bengaluru field guide">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,10 +33,10 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ImageGallery",
-  "name": "Our photos",
-  "url": "https://aravindbaskaran.github.io/this-blr-namma-bengaluru/photos.html",
-  "description": "Shots sent in for the Namma Bengaluru field guide.",
+  "@type": "WebPage",
+  "name": "Food notebook",
+  "url": "https://aravindbaskaran.github.io/this-blr-namma-bengaluru/food.html",
+  "description": "Karnataka dishes with Kannada names, pronunciation and places to try them, for the Namma Bengaluru field guide.",
   "inLanguage": ["en-IN", "kn"],
   "isAccessibleForFree": true,
   "isPartOf": {
@@ -47,7 +47,7 @@
 }
 </script>
 </head>
-<body data-page="photos">
+<body data-page="food">
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header>
@@ -75,9 +75,9 @@
       <a href="./#explore">Explore</a>
       <a href="./#history">Culture &amp; history</a>
       <a href="./#learn-kannada">Kannada</a>
-      <a href="food.html">Food</a>
+      <a href="food.html" aria-current="page">Food</a>
       <a href="runs.html">Runs</a>
-      <a href="photos.html" aria-current="page">Our photos</a>
+      <a href="photos.html">Our photos</a>
     </nav>
     <div class="header-actions">
       <button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="siteNav" onclick="toggleNav()">Menu</button>
@@ -86,17 +86,18 @@
 </header>
 
 <main id="main">
-<section id="contribGallery">
+<section id="food">
   <div class="section-head">
     <div class="head-with-icon">
-      <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4Z M8 7 V5 h8 v2 M9 11 h.01 M8 16 l3-3 2 2 3-4 3 5H8Z"/></svg>
-      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ನಮ್ಮ ಚಿತ್ರಗಳು</span><span class="kn-en">our photos</span></span>
+      <svg class="motif-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13h18a9 9 0 0 1-18 0Z M8 9c0-2 2-2 2-4 M14 9c0-2 2-2 2-4"/></svg>
+      <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಊಟ</span><span class="kn-en">food</span></span>
     </div>
-    <h1>Our photos</h1>
-    <p>A roll of shots from people on this guide. Tap a picture to open it. Map opens the pin on the field guide.</p>
+    <h1>Food notebook</h1>
+    <p id="foodIntro">Karnataka does not cook one way. Fifty dishes here, from darshini tiffin to coast fish to north Karnataka rotti: what each one is, how the name is written in Kannada, how to say it, and where to try it. Tap the speaker to hear the name, tap a photo to open it. Filter by meal or by region.</p>
   </div>
-  <p id="galleryEmpty" hidden>No photos in the roll yet.</p>
-  <div class="gallery-grid" id="galleryGrid"></div>
+  <div class="pill-row dish-controls" id="dishPills" role="group" aria-label="Filter dishes"></div>
+  <p id="dishEmpty" hidden>No dishes in the notebook yet.</p>
+  <div class="dish-grid dish-grid-page" id="dishGrid"></div>
 </section>
 </main>
 
@@ -104,7 +105,7 @@
 <footer>
   <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಧನ್ಯವಾದಗಳು</span><span class="kn-en">thank you</span></span>
   <p><a href="./">Back to the guide</a></p>
-  <p class="footer-meta">These files were sent in for the guide. They are not Wikimedia Commons.</p>
+  <p class="footer-meta">Dish photos are from Wikimedia Commons. Kitchens change their menu, so ask before you sit.</p>
   <p class="footer-meta">v2026-09-16 &middot; &copy; 2026, all rights reserved</p>
 </footer>
 
@@ -114,5 +115,7 @@
 </div>
 
 <script src="js/gallery.js?v=20260916e"></script>
+<script src="js/food.js?v=20260917a"></script>
+<script type="module" src="kannada-voice.js"></script>
 </body>
 </html>

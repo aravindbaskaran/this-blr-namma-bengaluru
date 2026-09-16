@@ -19,7 +19,8 @@ Fork, edit, and open a PR against `main`.
 
 - Bengaluru spots: `docs/data/locations.json`. First 48 hours uses the curated starter ID set in `docs/js/guide.js`; Full notebook shows every place. Custom spots from the to-do list always show.
 - Weekend routes: `docs/data/karnataka-places.json`. The old `tourist` flag supplies its First 48 hours subset for now.
-- Dishes, Kannada phrases, habbas, asides, and This not that: `dishes.json`, `phrases.json`, `festivals.json`, `did-you-know.json`, `not-that.json`.
+- Dishes: `dishes.json`. `tags` uses the tag ids at the top of that file, `tryIn` holds place ids from `locations.json` or `karnataka-places.json`. The whole list is on `docs/food.html`, with four cards on the guide.
+- Kannada phrases, habbas, asides, and This not that: `phrases.json`, `festivals.json`, `did-you-know.json`, `not-that.json`.
 - Races: `races.json`. Tag `kinds` (`10k`, `half`, `full`, `ultra`), `terrain` (`road` / `trail`), and `where` (`bengaluru` / `karnataka`). Karnataka races only. Only add a `url` that loads, and only claim AIMS certification if the organiser publishes the certificate.
 - Your own photos: drop the file in `docs/gallery/`, then add a row to `docs/data/gallery.json` (caption, optional `lat`/`lng`). They show on the our photos page (`photos.html`), with a short preview on the guide. Details are in `docs/gallery/README.md`.
 - Do not dump new lists into `docs/index.html`.
