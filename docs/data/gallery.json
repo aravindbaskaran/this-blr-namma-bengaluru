@@ -94,14 +94,6 @@
       "wide": true
     },
     {
-      "file": "lalbagh-red-board.jpg",
-      "id": "lalbagh-red-board",
-      "caption": "Lalbagh board in Kannada, red on white, before the lawns.",
-      "alt": "Red Kannada sign at Lalbagh Botanical Garden",
-      "lat": 12.9507,
-      "lng": 77.5848
-    },
-    {
       "file": "park-wooden-arch.jpg",
       "id": "park-wooden-arch",
       "caption": "Wooden arch on a Lalbagh walk. Shade first.",
@@ -182,14 +174,6 @@
       "id": "lalbagh-show-zinnias",
       "caption": "Zinnias at the Lalbagh flower show.",
       "alt": "Beds of orange and pink zinnias",
-      "lat": 12.9507,
-      "lng": 77.5848
-    },
-    {
-      "file": "lalbagh-show-peacock.jpg",
-      "id": "lalbagh-show-peacock",
-      "caption": "Peacock built from flowers at the Lalbagh show.",
-      "alt": "Floral peacock display at Lalbagh",
       "lat": 12.9507,
       "lng": 77.5848
     },
@@ -314,12 +298,6 @@
       "alt": "Two steel tumblers of coffee on a table"
     },
     {
-      "file": "dose-manjanna-tava.jpg",
-      "id": "dose-manjanna-tava",
-      "caption": "The tava at Dose Manjanna, Jayanagar.",
-      "alt": "Cook tossing a dosa on a large tava"
-    },
-    {
       "file": "dose-manjanna-khali-dose.jpg",
       "id": "dose-manjanna-khali-dose",
       "caption": "Khali dose at Dose Manjanna.",
@@ -407,13 +385,6 @@
       "alt": "Two glasses of coffee and a rusk held on a napkin"
     },
     {
-      "file": "coffee-autos.jpg",
-      "id": "coffee-autos",
-      "caption": "Coffee and rusk on a round table, autos on the street.",
-      "alt": "Coffee glasses and a rusk at a pavement table with autorickshaws",
-      "wide": true
-    },
-    {
       "file": "thatte-idli-benne-dose.jpg",
       "id": "thatte-idli-benne-dose",
       "caption": "Thatte idli sitting in chutney, and a Davangere benne dose with the palya on top.",
@@ -451,12 +422,6 @@
       "wide": true
     },
     {
-      "file": "ragi-ambli-two-cups.jpg",
-      "id": "ragi-ambli-two-cups",
-      "caption": "Two cups of ragi ambli on the street, raw mango and fried chillies on the leaf.",
-      "alt": "Two paper cups of ragi ambli held over a banana leaf with mango and dried chillies"
-    },
-    {
       "file": "halwa-kesari-trays.jpg",
       "id": "halwa-kesari-trays",
       "caption": "Carrot halwa and kesari bath in trays behind the counter.",
@@ -467,42 +432,6 @@
       "id": "red-poori-saagu",
       "caption": "Mangalore Buns with saagu and two chutneys, banana leaf under it.",
       "alt": "Puffed Mangalore Buns on a banana leaf with a steel cup of saagu and two chutneys"
-    },
-    {
-      "file": "calm-coffee-sunburst.jpg",
-      "id": "calm-coffee-sunburst",
-      "caption": "Calm Coffee, Jayanagar. Espresso, an iced one, and the card for Baarbara's Sunburst lot.",
-      "alt": "Espresso and iced coffee on a Calm Coffee table with a tasting card"
-    },
-    {
-      "file": "chalukya-pongal-street.jpg",
-      "id": "chalukya-pongal-street",
-      "caption": "Khara pongal at Chalukya Samrat, Jayanagar, a Dr. Rajkumar banner on the street outside.",
-      "alt": "Bowl of khara pongal on a banana leaf with a street banner behind"
-    },
-    {
-      "file": "chalukya-pongal-bowl.jpg",
-      "id": "chalukya-pongal-bowl",
-      "caption": "The same pongal from above, ghee sitting on top.",
-      "alt": "Steel bowl of khara pongal on a banana leaf seen from above"
-    },
-    {
-      "file": "chalukya-table-street.jpg",
-      "id": "chalukya-table-street",
-      "caption": "Breakfast at Chalukya Samrat with the Jayanagar street through the opening.",
-      "alt": "Breakfast plates on a marble table with an open shopfront and street behind"
-    },
-    {
-      "file": "chalukya-poori-saagu.jpg",
-      "id": "chalukya-poori-saagu",
-      "caption": "Red poori and saagu at Chalukya Samrat, pongal on the next plate.",
-      "alt": "Red poori with saagu beside a bowl of pongal on a marble table"
-    },
-    {
-      "file": "ragi-ambli-parapet.jpg",
-      "id": "ragi-ambli-parapet",
-      "caption": "Ragi ambli on a parapet, fried chillies and mango pickle on the leaf.",
-      "alt": "Two cups of ragi ambli on a concrete parapet with a banana leaf of chillies and pickle"
     },
     {
       "file": "queens-coffee-glass.jpg",
@@ -525,14 +454,6 @@
       "alt": "Two paper trays of bun filled with sliced potato bajji and red chutney powder"
     },
     {
-      "file": "queens-coffee-kerb.jpg",
-      "id": "queens-coffee-kerb",
-      "caption": "Queen's Coffee on the kerb: milk coffee, black coffee, a biscuit in the paper cup.",
-      "alt": "Hands holding a glass of milk coffee and a glass of black coffee on a street kerb",
-      "lat": 12.92197,
-      "lng": 77.58833
-    },
-    {
       "file": "queens-coffee-biscuit.jpg",
       "id": "queens-coffee-biscuit",
       "caption": "The same round at Queen's Coffee, biscuit still in its paper cup.",
@@ -541,40 +462,12 @@
       "lng": 77.58833
     },
     {
-      "file": "roadside-coffee-tray.jpg",
-      "id": "roadside-coffee-tray",
-      "caption": "Coffee, black coffee, and a rusk on a steel tray at a roadside counter.",
-      "alt": "Steel tray with a glass of milk coffee, a glass of black coffee, and a rusk"
-    },
-    {
-      "file": "churumuri-cone-street.jpg",
-      "id": "churumuri-cone-street",
-      "caption": "Churumuri in a paper cone, carrot and raw mango through it.",
-      "alt": "Paper cone of churumuri held on a street"
-    },
-    {
       "file": "cubbon-bench-grove.jpg",
       "id": "cubbon-bench-grove",
       "caption": "A bench under the Cubbon grove, early enough to have it to yourself.",
       "alt": "Wooden bench among old trees in Cubbon Park",
       "lat": 12.9763,
       "lng": 77.5929
-    },
-    {
-      "file": "lalbagh-bench-grove.jpg",
-      "id": "lalbagh-bench-grove",
-      "caption": "Green bench under the Lalbagh trees before the crowd.",
-      "alt": "Green bench under spreading trees at Lalbagh",
-      "lat": 12.9507,
-      "lng": 77.5848
-    },
-    {
-      "file": "lalbagh-red-block.jpg",
-      "id": "lalbagh-red-block",
-      "caption": "The red block at Lalbagh, beds laid out in front of it.",
-      "alt": "Red colonial-era building at Lalbagh with formal flower beds",
-      "lat": 12.9507,
-      "lng": 77.5848
     },
     {
       "file": "lalbagh-rock-tower.jpg",
@@ -601,12 +494,6 @@
       "id": "katte-kulture-bynemara",
       "caption": "Bynemara filter coffee bags on the shelf at Katte Kulture.",
       "alt": "Shelves of Bynemara coffee bags beside a Katte Kulture poster"
-    },
-    {
-      "file": "katte-kulture-planters.jpg",
-      "id": "katte-kulture-planters",
-      "caption": "Concrete planters and stools in the Katte Kulture yard.",
-      "alt": "Round concrete planters with plants and stools on gravel"
     },
     {
       "file": "flower-market-lotus.jpg",
@@ -636,14 +523,6 @@
       "wide": true
     },
     {
-      "file": "agarbathi-cones-shelf.jpg",
-      "id": "agarbathi-cones-shelf",
-      "caption": "Agarbathi cones and packs at Sugandh Lok, Gandhi Bazaar, testers open.",
-      "alt": "Sugandh Lok shelves stacked with agarbathi cone boxes and packets",
-      "lat": 12.945967,
-      "lng": 77.56923
-    },
-    {
       "file": "agarbathi-showroom.jpg",
       "id": "agarbathi-showroom",
       "caption": "Incense boxes and dhoop across a wall at Sugandh Lok.",
@@ -660,24 +539,10 @@
       "lng": 77.56923
     },
     {
-      "file": "agarbathi-flavour-row.jpg",
-      "id": "agarbathi-flavour-row",
-      "caption": "Pineapple, orange, coffee, chocolate: the flavoured agarbathi row at Sugandh Lok.",
-      "alt": "Rows of flavoured Sugandh Lok agarbathi boxes on wooden shelves",
-      "lat": 12.945967,
-      "lng": 77.56923
-    },
-    {
       "file": "coffee-cocktail-courtyard.jpg",
       "id": "coffee-cocktail-courtyard",
       "caption": "A coffee cocktail with a dried orange wheel, held out in the gravel courtyard.",
       "alt": "Coupe glass of coffee cocktail held up in a gravel courtyard"
-    },
-    {
-      "file": "udupi-ruchi-kadubu-leaf.jpg",
-      "id": "udupi-ruchi-kadubu-leaf",
-      "caption": "Kadubu still in its leaf at Cafe Udupi Ruchi, honey on the spoon.",
-      "alt": "Leaf-wrapped kadubu on a plate with a spoon of honey"
     },
     {
       "file": "block-two-takeaway.jpg",
@@ -686,30 +551,10 @@
       "alt": "Plastic cup of frothy cold coffee on a steel counter"
     },
     {
-      "file": "churumuri-leaf-tray.jpg",
-      "id": "churumuri-leaf-tray",
-      "caption": "Churumuri in a leaf tray, evening stall.",
-      "alt": "Leaf-shaped paper tray of churumuri held on a street"
-    },
-    {
-      "file": "blossom-stacks.jpg",
-      "id": "blossom-stacks",
-      "caption": "Second-hand stacks to the ceiling at Blossom Book House.",
-      "alt": "Tall racks packed with second-hand books at Blossom Book House",
-      "lat": 12.9757,
-      "lng": 77.6051
-    },
-    {
       "file": "brahmin-tiffins-kitchen.jpg",
       "id": "brahmin-tiffins-kitchen",
       "caption": "Parcel boxes stacked by the counter at Brahmin Tiffins, vada tray behind.",
       "alt": "Stacked parcel boxes beside a tray of vada in a tiffin room kitchen"
-    },
-    {
-      "file": "brahmin-tiffins-chutney.jpg",
-      "id": "brahmin-tiffins-chutney",
-      "caption": "Khali dose and coriander chutney, two plates at Brahmin Tiffins.",
-      "alt": "Two steel plates of plain dosa with coriander chutney"
     },
     {
       "file": "kerbside-coffee-bike.jpg",
@@ -724,32 +569,12 @@
       "alt": "Large tava with several dosas cooking at once"
     },
     {
-      "file": "cubbonpete-menu-board.jpg",
-      "id": "cubbonpete-menu-board",
-      "caption": "The Cubbonpete Tiffin Room list, Kannada under each English line: idly, vade, bathu, lemon rice, puliyogare, thrimurthy, ghee masala dose, pudi masala dose, khali dose.",
-      "alt": "Yellow menu board at Cubbonpete Tiffin Room in Kannada and English",
-      "lat": 12.9695,
-      "lng": 77.5778
-    },
-    {
       "file": "champaca-shelves.jpg",
       "id": "champaca-shelves",
       "caption": "Champaca's shelves, handwritten notes tucked in under the books.",
       "alt": "Bookshop shelves with section labels and handwritten recommendation cards",
       "lat": 12.9873,
       "lng": 77.596
-    },
-    {
-      "file": "ground-up-gopuram.jpg",
-      "id": "ground-up-gopuram",
-      "caption": "Cold coffee at Ground Up, a painted gopuram across the street.",
-      "alt": "Two glasses of coffee on a wooden board with a temple gopuram through the window"
-    },
-    {
-      "file": "ground-up-window.jpg",
-      "id": "ground-up-window",
-      "caption": "The window seat at Ground Up, autos and the temple tower outside.",
-      "alt": "Cafe window view of a street with autorickshaws and a painted gopuram"
     },
     {
       "file": "ground-up-glasses.jpg",
