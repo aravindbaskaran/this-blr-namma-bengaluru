@@ -2,7 +2,7 @@
 
 Live site: [aravindbaskaran.github.io/this-blr-namma-bengaluru](https://aravindbaskaran.github.io/this-blr-namma-bengaluru/)
 
-This repo is that page. It is a public, Bengaluru-first field guide built from peer notes rather than ratings. **Full notebook** is the default view and opens all 97 Bengaluru places plus the deeper regional material. **Day or two stay** is a 21-place starter list.
+This repo is that page. It is a public, Bengaluru-first field guide built from peer notes rather than ratings. **Full notebook** is the default view and opens all 98 Bengaluru places plus the deeper regional material. **Day or two stay** is a 21-place starter list.
 
 GitHub Pages serves `docs/` as the site. There is no build step and no CMS. Lists live in JSON. Markup, CSS, and JS stay in their own files. Do not put new lists back into `docs/index.html`.
 
@@ -216,7 +216,7 @@ The live guide's **About the people behind this** rail is loaded from this GitHu
 - Vinay Karthik Baluguri - Kannada speaker clips in `docs/audio/kn/` and the playback wiring
 - Deepika Varadarajan - places, Karnataka day trips, and fact-check on the lists
 - Hassan - page layout and the saree bands between sections
-- Namita Raddi - spots, food, habbas, and craft rooms (Desi, Varnam, Channapatna)
+- Namita Gudaraddi (`namita-raddi`) - spots, food, habbas, craft rooms (Desi, Varnam, Channapatna), and Chikmagalur Queen's Coffee
 - Sakshi Gupta (`sakshigupta1996`) - location photos as a full card band, not a 60px thumbnail
 
 If you want a name or a one-line role other than your GitHub login, say so in the PR or issue. That note lives in `PEOPLE_NOTES` in `docs/js/guide.js`.

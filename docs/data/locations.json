@@ -2021,6 +2021,25 @@
     ]
   },
   {
+    "id": "chikmagalur-queens-coffee",
+    "name": "Chikmagalur Queen's Coffee",
+    "area": "Jayanagar 4th T Block",
+    "category": "food",
+    "blurb": "Listed as Leesmith's Chikmagalur Queen's Coffee. A Jayanagar 4th T Block counter for estate coffee powder from Chikmagalur, not a sit-down specialty bar. The visit is the pudi you take home for the steel filter.",
+    "kn": "ಚಿಕ್ಕಮಗಳೂರು ಕ್ವೀನ್ಸ್ ಕಾಫಿ",
+    "say": "Chikkamagaluru Queens Coffee",
+    "lat": 12.92197,
+    "lng": 77.58833,
+    "try": [
+      "Ask for the filter-coffee in big glass",
+      "729, 38th Cross, 16th A Main, opposite Cosmopolitan Dental Clinic."
+    ],
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20shade%20coffee%20plantation%20Chikmagalur%201.jpg"
+    ]
+  },
+  {
     "id": "davanagere-benne-dose-mane",
     "name": "Davanagere Benne Dose Mane",
     "area": "JP Nagar 1st Phase",
