@@ -116,17 +116,9 @@ if(!window.speakText){
   const host = document.getElementById('dishGrid');
   const pills = document.getElementById('dishPills');
   const empty = document.getElementById('dishEmpty');
-  const nav = document.getElementById('siteNav');
-  if(nav) nav.addEventListener('click', e => { if(e.target.closest('a')){ toggleNav(false); closeNavSub(); } });
   addEventListener('keydown', e => {
-    if(e.key === 'Escape'){ toggleNav(false); closeNavSub(); closeLightbox(); }
+    if(e.key === 'Escape') closeLightbox();
   });
-  addEventListener('click', e => {
-    if(!e.target.closest('.nav-sub')) closeNavSub();
-  });
-  addEventListener('resize', () => {
-    if(innerWidth > 720) toggleNav(false);
-  }, {passive:true});
 
   let dishes = [];
   let tags = [];

@@ -65,17 +65,6 @@ window.GuideRaces = {
   const host = document.getElementById('raceGrid');
   const pills = document.getElementById('racePills');
   const empty = document.getElementById('raceEmpty');
-  const nav = document.getElementById('siteNav');
-  if(nav) nav.addEventListener('click', e => { if(e.target.closest('a')) toggleNav(false); });
-  addEventListener('keydown', e => {
-    if(e.key === 'Escape'){ toggleNav(false); if(typeof closeNavSub === 'function') closeNavSub(); }
-  });
-  addEventListener('click', e => {
-    if(!e.target.closest('.nav-sub') && typeof closeNavSub === 'function') closeNavSub();
-  });
-  addEventListener('resize', () => {
-    if(innerWidth > 720) toggleNav(false);
-  }, {passive:true});
   let races = [];
   let filter = 'all';
   function paint(){

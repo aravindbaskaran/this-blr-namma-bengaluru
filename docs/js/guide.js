@@ -1107,32 +1107,7 @@ function renderPhotoCredits(){
   ).join('');
 }
 
-function toggleNav(force){
-  const nav = document.getElementById('siteNav');
-  const btn = document.getElementById('navToggle');
-  if(!nav || !btn) return;
-  const open = force == null ? !nav.classList.contains('is-open') : !!force;
-  nav.classList.toggle('is-open', open);
-  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  if(!open) closeNavSub();
-}
-function closeNavSub(){
-  const btn = document.getElementById('navSubBtn');
-  const list = document.getElementById('navSubList');
-  if(list) list.hidden = true;
-  if(btn) btn.setAttribute('aria-expanded', 'false');
-}
-function toggleNavSub(e){
-  if(e) e.stopPropagation();
-  const btn = document.getElementById('navSubBtn');
-  const list = document.getElementById('navSubList');
-  if(!btn || !list) return;
-  const willOpen = list.hidden;
-  closeNavSub();
-  if(!willOpen) return;
-  list.hidden = false;
-  btn.setAttribute('aria-expanded', 'true');
-}
+/* toggleNav, closeNavSub and toggleNavSub live in gallery.js, which every page loads first. */
 
 async function loadPeople(){
   const host = document.getElementById('peopleList');
@@ -1269,23 +1244,15 @@ if(issueFormEl) issueFormEl.addEventListener('submit', function(e){
     const nav = document.getElementById('siteNav');
     if(nav) nav.addEventListener('click', e => {
       const link = e.target.closest('a');
-      if(link){
-        toggleNav(false);
-        closeNavSub();
-        if(link.hash && link.hash === location.hash) scrollToHashTarget();
-      }
+      if(link && link.hash && link.hash === location.hash) scrollToHashTarget();
     });
     addEventListener('keydown', e => {
-      if(e.key === 'Escape'){ toggleNav(false); closeNavSub(); closeDrawer(); closeLightbox(); closeModeTip(); }
+      if(e.key === 'Escape'){ closeDrawer(); closeLightbox(); closeModeTip(); }
     });
     addEventListener('click', e => {
       if(!e.target.closest('.mode-tip') && !e.target.closest('.mode-tip-btn')) closeModeTip();
-      if(!e.target.closest('.nav-sub')) closeNavSub();
     });
-    addEventListener('resize', () => {
-      syncHeaderOffset();
-      if(innerWidth > 720) toggleNav(false);
-    }, {passive:true});
+    addEventListener('resize', syncHeaderOffset, {passive:true});
   } catch (err) {
     console.error(err);
     hideLoader(false);

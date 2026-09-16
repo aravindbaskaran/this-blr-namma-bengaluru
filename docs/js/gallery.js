@@ -147,21 +147,36 @@ window.toggleNavSub = function(e){
   btn.setAttribute('aria-expanded', 'true');
 };
 
-(async function initPhotosPage(){
-  if(document.body.dataset.page !== 'photos') return;
-  const host = document.getElementById('galleryGrid');
-  const empty = document.getElementById('galleryEmpty');
+/* Header menu wiring for every page. This runs as soon as the script loads, not
+   after page data arrives, so the mobile menu still closes during a slow load. */
+(function wireNav(){
   const nav = document.getElementById('siteNav');
-  if(nav) nav.addEventListener('click', e => { if(e.target.closest('a')){ toggleNav(false); closeNavSub(); } });
-  addEventListener('keydown', e => {
-    if(e.key === 'Escape'){ toggleNav(false); closeNavSub(); closeLightbox(); }
+  if(!nav || nav.dataset.wired === 'true') return;
+  nav.dataset.wired = 'true';
+  nav.addEventListener('click', e => {
+    if(e.target.closest('a')){ toggleNav(false); closeNavSub(); }
   });
   addEventListener('click', e => {
+    if(e.target.closest('#siteNav') || e.target.closest('#navToggle')) return;
+    toggleNav(false);
     if(!e.target.closest('.nav-sub')) closeNavSub();
+  });
+  addEventListener('keydown', e => {
+    if(e.key === 'Escape'){ toggleNav(false); closeNavSub(); }
   });
   addEventListener('resize', () => {
     if(innerWidth > 720) toggleNav(false);
   }, {passive:true});
+  addEventListener('pageshow', () => { toggleNav(false); closeNavSub(); });
+})();
+
+(async function initPhotosPage(){
+  if(document.body.dataset.page !== 'photos') return;
+  const host = document.getElementById('galleryGrid');
+  const empty = document.getElementById('galleryEmpty');
+  addEventListener('keydown', e => {
+    if(e.key === 'Escape') closeLightbox();
+  });
   try {
     const res = await fetch('data/gallery.json', { cache: 'no-cache' });
     if(!res.ok) throw new Error(res.status);
