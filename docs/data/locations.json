@@ -17,6 +17,7 @@
       "Walk the glass-house lawns before 8am, when it still belongs to walkers.",
       "Climb the Lalbagh rock - it's older than the city by a few billion years."
     ],
+    "personalNote": "Run inside it, around it. Both are good fun.",
     "fieldNotes": {
       "timing": "Best before 8am",
       "order": "Glass-house lawns and the rock outcrop"
@@ -42,6 +43,7 @@
       "Run or cycle the car-free roads 5:30-8am, or on Sunday mornings.",
       "Cut through to the High Court and State Library instead of looping the same path."
     ],
+    "personalNote": "Run evenings. Different crowd, less of it.",
     "fieldNotes": {
       "timing": "Car-free 5:30-8am; Sunday mornings",
       "order": "Run the roads, then cut through to the library"
@@ -170,6 +172,7 @@
       "Order rava idli - they invented it here - and filter kaapi in a steel tumbler.",
       "Go on a weekday morning; weekends are a different restaurant."
     ],
+    "personalNote": "Don't go if you have work after. The food coma is real.",
     "fieldNotes": {
       "timing": "Weekday morning; weekends get crowded",
       "order": "Rava idli and filter kaapi"
@@ -773,6 +776,25 @@
     ]
   },
   {
+    "id": "bookworm",
+    "name": "Bookworm",
+    "area": "Church Street",
+    "category": "craft",
+    "blurb": "Independent shop on Church Street, a few doors from Blossom: smaller floor, slower browse, shelves chosen rather than piled.",
+    "kn": "ಬುಕ್ ವರ್ಮ್",
+    "say": "Bookworm",
+    "lat": 12.9759,
+    "lng": 77.6055,
+    "url": "https://thebookworm.co.in/",
+    "personalPick": true,
+    "personalNote": "Different and deeper space than the pile-up next door.",
+    "try": [
+      "Browse here when you want a quieter Church Street bookshop, not a hunt through stacks.",
+      "Pair it with Blossom if you want both kinds of browse on the same street."
+    ],
+    "stay": true
+  },
+  {
     "id": "gavi-gangadhareshwara-temple",
     "name": "Sri Gavi Gangadhareshwara Swamy Temple",
     "area": "Gavipuram",
@@ -903,6 +925,7 @@
     "lat": 12.9429,
     "lng": 77.5682,
     "personalPick": true,
+    "personalNote": "Look for the Nandi.",
     "try": [
       "Stand close enough to take in the scale - one block of granite, 4.5m tall.",
       "Come back for Kadlekai Parishe if you're here between November and December."
@@ -1193,10 +1216,15 @@
     "lat": 12.943,
     "lng": 77.5735,
     "personalPick": true,
+    "personalNote": "Mornings are happy hours. Come before 9am and the coffee is half-price.",
     "try": [
       "Unlimited Karnataka thali on a kansa plate - bisi bele bath, gojju, seasonal palya.",
       "Lunch crowd since 1986; this is a meal, not a tasting."
     ],
+    "fieldNotes": {
+      "timing": "Coffee half-price before 9am",
+      "order": "Karnataka thali on a kansa plate"
+    },
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Bisi%20Bele%20Bath%20(Bisibelebath).JPG"
@@ -1703,6 +1731,7 @@
       "insteadId": "veena-thindi",
       "insteadNote": "The same benne masale dosa culture, no influencer queue, and a whole lane of breakfast stalls to graze."
     },
+    "personalNote": "A bit overrated. Eat next door instead.",
     "try": [
       "Masala dosa if you accept the wait; otherwise open Skip the crowd.",
       "It's famous. That is why the queue exists, and why the name still matters."

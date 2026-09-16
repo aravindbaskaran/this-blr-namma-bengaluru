@@ -17,7 +17,7 @@ The issue forms need a GitHub account. Nothing is posted until you press submit 
 
 Fork, edit, and open a PR against `main`.
 
-- Bengaluru spots: `docs/data/locations.json`. First 48 hours uses the curated 20-place ID set in `docs/js/guide.js`; Full notebook shows every place. Custom spots from the to-do list always show.
+- Bengaluru spots: `docs/data/locations.json`. First 48 hours uses the curated starter ID set in `docs/js/guide.js`; Full notebook shows every place. Custom spots from the to-do list always show.
 - Weekend routes: `docs/data/karnataka-places.json`. The old `tourist` flag supplies its First 48 hours subset for now.
 - Dishes, Kannada phrases, habbas, asides, and This not that: `dishes.json`, `phrases.json`, `festivals.json`, `did-you-know.json`, `not-that.json`.
 - Races: `races.json`. Tag `kinds` (`10k`, `half`, `full`, `ultra`), `terrain` (`road` / `trail`), and `where` (`bengaluru` / `karnataka`). Karnataka races only. Only add a `url` that loads, and only claim AIMS certification if the organiser publishes the certificate.
@@ -27,7 +27,7 @@ Fork, edit, and open a PR against `main`.
 - Keep the voice: Bengaluru-first, specific, no generic India filler. Follow `AGENTS.md` and run `python3 scripts/check-copy.py` before you open a PR.
 - Preview with `./scripts/preview.sh`, then open http://127.0.0.1:5600/
 
-A location entry usually looks like: `id`, `name`, `area`, `category`, `blurb`, optional `kn`, `photos`, `personalPick`, `skipCrowd`, a short `try` list, and optional `fieldNotes` with `timing`, `order`, and `dayOff`. Leave an operational field out when it has not been verified.
+A location entry usually looks like: `id`, `name`, `area`, `category`, `blurb`, optional `kn`, `photos`, `personalPick`, `personalNote`, `skipCrowd`, a short `try` list, and optional `fieldNotes` with `timing`, `order`, and `dayOff`. Leave an operational field out when it has not been verified. `personalNote` is one first-person line from Aravind.
 
 ## Kannada audio
 

@@ -406,6 +406,12 @@
     padding:3px 8px; border-radius:10px; white-space:nowrap;
   }
   .card p.blurb{font-size:14px; color:var(--ink-soft);}
+  .personal-note{
+    margin:12px 0 0; padding:9px 11px;
+    border-left:3px solid var(--gold); background:var(--cream-2);
+    font-size:13.5px; line-height:1.45; color:var(--ink);
+  }
+  .personal-note .try-label{display:block; margin-bottom:2px;}
   .field-anchors{
     display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:6px;
     margin:12px 0 0;

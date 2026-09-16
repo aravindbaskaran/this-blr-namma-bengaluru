@@ -107,7 +107,7 @@ const QUICKSTART_LOCATION_IDS = new Set([
   'lalbagh', 'cubbon', 'ulsoor-lake',
   'veena-thindi', 'mtr', 'vidyarthi-bhavan', 'gandhi-bazaar',
   'kr-market', 'chickpet', 'commercial-street',
-  'blossom-books', 'koshys-restaurant',
+  'blossom-books', 'bookworm', 'koshys-restaurant',
   'pecos', 'toit',
   'tipu-palace', 'vidhana-soudha', 'bull-temple',
   'map-museum', 'someshwara-temple-halasuru', 'rangoli-metro-art-center',
@@ -184,7 +184,7 @@ const CATEGORY_MAP = {
   night: 'evenings',
 };
 const ADDA_IDS = new Set([
-  'dyu-art-cafe', 'atta-galatta', 'blossom-books',
+  'dyu-art-cafe', 'atta-galatta', 'blossom-books', 'bookworm',
   'araku-coffee', 'third-wave', 'koshys-restaurant',
 ]);
 function categoryIdOf(location){
@@ -327,6 +327,7 @@ function buildLocationCard(l){
       </div>
       <div class="card-body">
         <p class="blurb">${l.blurb}</p>
+        ${l.personalNote ? `<aside class="personal-note"><span class="try-label">Aravind's note</span> ${esc(l.personalNote)}</aside>` : ''}
         ${fieldNotesHtml}
         ${eatHtml}
         ${skipHtml}
