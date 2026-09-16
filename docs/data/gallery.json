@@ -75,6 +75,386 @@
       "lat": 12.972717,
       "lng": 77.592739,
       "wide": true
+    },
+    {
+      "file": "vidyarthi-bhavan-sign.jpg",
+      "id": "vidyarthi-bhavan-sign",
+      "caption": "Vidyarthi Bhavan, Gandhi Bazaar. The 1943 board is still on the wall.",
+      "alt": "Vidyarthi Bhavan sign with 1943 on a cream wall",
+      "lat": 12.9451,
+      "lng": 77.5716
+    },
+    {
+      "file": "cubbon-posts.jpg",
+      "id": "cubbon-posts",
+      "caption": "Cubbon path with the green-and-white posts.",
+      "alt": "Park path with green and white posts under trees",
+      "lat": 12.9763,
+      "lng": 77.5929,
+      "wide": true
+    },
+    {
+      "file": "lalbagh-red-board.jpg",
+      "id": "lalbagh-red-board",
+      "caption": "Lalbagh board in Kannada, red on white, before the lawns.",
+      "alt": "Red Kannada sign at Lalbagh Botanical Garden",
+      "lat": 12.9507,
+      "lng": 77.5848
+    },
+    {
+      "file": "park-wooden-arch.jpg",
+      "id": "park-wooden-arch",
+      "caption": "Wooden arch on a Lalbagh walk. Shade first.",
+      "alt": "Wooden park arch with trees behind it",
+      "lat": 12.9507,
+      "lng": 77.5848,
+      "wide": true
+    },
+    {
+      "file": "bougainvillea-mural.jpg",
+      "id": "bougainvillea-mural",
+      "caption": "Bougainvillea against a painted tree on a park wall.",
+      "alt": "Pink bougainvillea next to a mural of a tree",
+      "lat": 12.9507,
+      "lng": 77.5848
+    },
+    {
+      "file": "lalbagh-rock-glasshouse.jpg",
+      "id": "lalbagh-rock-glasshouse",
+      "caption": "Lalbagh rock, Glass House in the trees.",
+      "alt": "Rock outcrop with a glasshouse visible through trees",
+      "lat": 12.9486,
+      "lng": 77.5894,
+      "wide": true
+    },
+    {
+      "file": "cubbon-twisted-tree.jpg",
+      "id": "cubbon-twisted-tree",
+      "caption": "A Cubbon tree that grew around itself.",
+      "alt": "Twisted trunk of an old tree in Cubbon Park",
+      "lat": 12.9763,
+      "lng": 77.5929
+    },
+    {
+      "file": "lalbagh-brick-palm.jpg",
+      "id": "lalbagh-brick-palm",
+      "caption": "Red brick and a palm on the Lalbagh museum side.",
+      "alt": "Red brick building with a palm tree at Lalbagh",
+      "lat": 12.9507,
+      "lng": 77.5848
+    },
+    {
+      "file": "market-bangles.jpg",
+      "id": "market-bangles",
+      "caption": "Bangle bunches at the market, stacked tight.",
+      "alt": "Hanging bunches of glass bangles in red and green",
+      "lat": 12.9652,
+      "lng": 77.5765
+    },
+    {
+      "file": "market-jasmine.jpg",
+      "id": "market-jasmine",
+      "caption": "Loose jasmine at the flower market. You smell it before you see the stall.",
+      "alt": "Piles of jasmine buds at a flower stall",
+      "lat": 12.9652,
+      "lng": 77.5765
+    },
+    {
+      "file": "market-malas.jpg",
+      "id": "market-malas",
+      "caption": "Malas hanging at the flower market.",
+      "alt": "Vendor under hanging flower garlands at a market stall",
+      "lat": 12.9652,
+      "lng": 77.5765,
+      "wide": true
+    },
+    {
+      "file": "lalbagh-show-tree.jpg",
+      "id": "lalbagh-show-tree",
+      "caption": "Lalbagh flower show, a tree done up for August.",
+      "alt": "Flowering tree on a lawn at the Lalbagh flower show",
+      "lat": 12.9507,
+      "lng": 77.5848,
+      "wide": true
+    },
+    {
+      "file": "lalbagh-show-zinnias.jpg",
+      "id": "lalbagh-show-zinnias",
+      "caption": "Zinnias at the Lalbagh flower show.",
+      "alt": "Beds of orange and pink zinnias",
+      "lat": 12.9507,
+      "lng": 77.5848
+    },
+    {
+      "file": "lalbagh-show-peacock.jpg",
+      "id": "lalbagh-show-peacock",
+      "caption": "Peacock built from flowers at the Lalbagh show.",
+      "alt": "Floral peacock display at Lalbagh",
+      "lat": 12.9507,
+      "lng": 77.5848
+    },
+    {
+      "file": "lalbagh-show-arch.jpg",
+      "id": "lalbagh-show-arch",
+      "caption": "Flower arch at the Lalbagh show.",
+      "alt": "Archway of flowers at the Lalbagh flower show",
+      "lat": 12.9507,
+      "lng": 77.5848,
+      "wide": true
+    },
+    {
+      "file": "katte-kulture-coffee.jpg",
+      "id": "katte-kulture-coffee",
+      "caption": "Coffee at Katte Kulture. Sit on the katte.",
+      "alt": "Cups of coffee on a wooden table at Katte Kulture"
+    },
+    {
+      "file": "katte-kulture-bowl.jpg",
+      "id": "katte-kulture-bowl",
+      "caption": "Fruit bowl at Katte Kulture.",
+      "alt": "Smoothie bowl with fruit on a cafe table"
+    },
+    {
+      "file": "udupi-ruchi-board.jpg",
+      "id": "udupi-ruchi-board",
+      "caption": "Cafe Udupi Ruchi. The board is Kannada first.",
+      "alt": "Cafe Udupi Ruchi shopfront sign"
+    },
+    {
+      "file": "udupi-ruchi-rotti.jpg",
+      "id": "udupi-ruchi-rotti",
+      "caption": "Akki rotti and neer dosa at Cafe Udupi Ruchi.",
+      "alt": "Akki rotti and neer dosa on steel plates"
+    },
+    {
+      "file": "udupi-ruchi-kadubu.jpg",
+      "id": "udupi-ruchi-kadubu",
+      "caption": "Kadubu unwrapped at Cafe Udupi Ruchi.",
+      "alt": "Steamed kadubu opened on a steel plate"
+    },
+    {
+      "file": "udupi-ruchi-coffee.jpg",
+      "id": "udupi-ruchi-coffee",
+      "caption": "Filter coffee in a davara at Cafe Udupi Ruchi.",
+      "alt": "Steel davara of filter coffee"
+    },
+    {
+      "file": "jammi-block-two.jpg",
+      "id": "jammi-block-two",
+      "caption": "Block Two, the ಜಾಮು board.",
+      "alt": "Cafe facade with Block Two and Kannada jamu sign"
+    },
+    {
+      "file": "bun-ghee-rice.jpg",
+      "id": "bun-ghee-rice",
+      "caption": "Mangalore bun and ghee rice on areca plates.",
+      "alt": "Mangalore bun and ghee rice on leaf plates"
+    },
+    {
+      "file": "churumuri-mysore-pak.jpg",
+      "id": "churumuri-mysore-pak",
+      "caption": "Mysore pak rolls and a cone of churumuri.",
+      "alt": "Paper cone of churumuri next to mysore pak rolls"
+    },
+    {
+      "file": "blossom-aisle.jpg",
+      "id": "blossom-aisle",
+      "caption": "Blossom Book House, Church Street. Stacks in the aisle.",
+      "alt": "Narrow aisle of stacked books at Blossom Book House",
+      "lat": 12.9757,
+      "lng": 77.6051
+    },
+    {
+      "file": "blossom-church-street.jpg",
+      "id": "blossom-church-street",
+      "caption": "Church Street from a balcony, Blossom's board below.",
+      "alt": "View down Church Street with Blossom Book House sign",
+      "lat": 12.9757,
+      "lng": 77.6051,
+      "wide": true
+    },
+    {
+      "file": "bookworm-corner.jpg",
+      "id": "bookworm-corner",
+      "caption": "Bookworm, Church Street. Corner chair, blue rug.",
+      "alt": "Reading corner with a blue rug at Bookworm",
+      "lat": 12.9759,
+      "lng": 77.6055
+    },
+    {
+      "file": "rebel-english-chai.jpg",
+      "id": "rebel-english-chai",
+      "caption": "Rebel English Academy board and a chai window off Church Street.",
+      "alt": "Shopfront with Rebel English Academy sign and chai counter",
+      "lat": 12.9759,
+      "lng": 77.6055
+    },
+    {
+      "file": "veena-stores-sign.jpg",
+      "id": "veena-stores-sign",
+      "caption": "Veena Stores, Malleswaram 8th Cross. The board is the queue.",
+      "alt": "Veena Stores shop sign in Malleswaram",
+      "lat": 13.0035,
+      "lng": 77.573
+    },
+    {
+      "file": "veena-stores-vada.jpg",
+      "id": "veena-stores-vada",
+      "caption": "Vada and sweet boxes at Veena Stores.",
+      "alt": "Plate of vada in front of packed sweet boxes",
+      "lat": 13.0035,
+      "lng": 77.573
+    },
+    {
+      "file": "veena-stores-khali-dose.jpg",
+      "id": "veena-stores-khali-dose",
+      "caption": "Khali dose at Veena Stores. Crisp, no masala in the way.",
+      "alt": "Crisp plain dosa on a steel plate",
+      "lat": 13.0035,
+      "lng": 77.573
+    },
+    {
+      "file": "veena-stores-coffee.jpg",
+      "id": "veena-stores-coffee",
+      "caption": "Black and milk coffee in steel tumblers at Veena Stores.",
+      "alt": "Two steel tumblers of coffee on a table",
+      "lat": 13.0035,
+      "lng": 77.573
+    },
+    {
+      "file": "ctr-tava.jpg",
+      "id": "ctr-tava",
+      "caption": "CTR tava, Malleswaram.",
+      "alt": "Cook tossing a dosa on a large tava",
+      "lat": 13.0067,
+      "lng": 77.5813
+    },
+    {
+      "file": "ctr-khali-dose.jpg",
+      "id": "ctr-khali-dose",
+      "caption": "Khali dose at CTR (Shri Sagar).",
+      "alt": "Plates of plain dosa at CTR",
+      "lat": 13.0067,
+      "lng": 77.5813
+    },
+    {
+      "file": "ctr-sign.jpg",
+      "id": "ctr-sign",
+      "caption": "Shri Sagar, the round CTR board.",
+      "alt": "Round CTR Shri Sagar sign",
+      "lat": 13.0067,
+      "lng": 77.5813
+    },
+    {
+      "file": "cubbonpete-board.jpg",
+      "id": "cubbonpete-board",
+      "caption": "Cubbonpete Tiffin Room. Thatte idli is why you came.",
+      "alt": "Cubbonpete Tiffin Room wall board",
+      "lat": 12.9695,
+      "lng": 77.5778
+    },
+    {
+      "file": "cubbonpete-thatte-idli.jpg",
+      "id": "cubbonpete-thatte-idli",
+      "caption": "Thatte idli and chutneys at Cubbonpete Tiffin Room.",
+      "alt": "Thatte idli with bowls of chutney",
+      "lat": 12.9695,
+      "lng": 77.5778
+    },
+    {
+      "file": "chalukya-samrat.jpg",
+      "id": "chalukya-samrat",
+      "caption": "Hotel Chalukya Samrat, Infantry Road.",
+      "alt": "Hotel Chalukya Samrat facade",
+      "lat": 12.9814,
+      "lng": 77.5995
+    },
+    {
+      "file": "chalukya-coffee.jpg",
+      "id": "chalukya-coffee",
+      "caption": "Coffee at Chalukya Samrat.",
+      "alt": "Coffee cups in front of the Chalukya Samrat sign",
+      "lat": 12.9814,
+      "lng": 77.5995
+    },
+    {
+      "file": "umesh-dosa-point.jpg",
+      "id": "umesh-dosa-point",
+      "caption": "Umesh Dosa Point. The plate and the board in one frame.",
+      "alt": "Dosa plate in front of the Umesh Dosa Point sign",
+      "lat": 12.99103,
+      "lng": 77.57793
+    },
+    {
+      "file": "umesh-dosa-bhath.jpg",
+      "id": "umesh-dosa-bhath",
+      "caption": "Dosa and bhath at Umesh Dosa Point.",
+      "alt": "Dosa and rice bath plates at Umesh Dosa Point",
+      "lat": 12.99103,
+      "lng": 77.57793
+    },
+    {
+      "file": "vada-pav.jpg",
+      "id": "vada-pav",
+      "caption": "Vada pav, bun still warm.",
+      "alt": "Vada pav in a paper wrap"
+    },
+    {
+      "file": "jowar-rotti-thali.jpg",
+      "id": "jowar-rotti-thali",
+      "caption": "Jowar rotti thali, soppu, pickle, a dried chilli on the side.",
+      "alt": "Jowar roti meal on a steel plate"
+    },
+    {
+      "file": "sln-pongal-bun.jpg",
+      "id": "sln-pongal-bun",
+      "caption": "Pongal and a Mangalore bun at Namma SLN. Gandhi Bazaar through the glass.",
+      "alt": "Pongal and a fried bun on banana leaves",
+      "lat": 12.9447822,
+      "lng": 77.5719199
+    },
+    {
+      "file": "calm-coffee.jpg",
+      "id": "calm-coffee",
+      "caption": "Iced latte and espresso at Calm Coffee.",
+      "alt": "Iced coffee and espresso on a cork tray with a Calm Coffee napkin"
+    },
+    {
+      "file": "filter-coffee-bun.jpg",
+      "id": "filter-coffee-bun",
+      "caption": "Filter coffee, black coffee, and half a bun.",
+      "alt": "Two glasses of coffee and a bun on a napkin"
+    },
+    {
+      "file": "coffee-autos.jpg",
+      "id": "coffee-autos",
+      "caption": "Coffee and bun on a round table, autos on the street.",
+      "alt": "Coffee glasses and bun at a pavement table with autorickshaws",
+      "wide": true
+    },
+    {
+      "file": "street-idli-neer-dosa.jpg",
+      "id": "street-idli-neer-dosa",
+      "caption": "Idli in saaru and a neer dosa off a banana leaf.",
+      "alt": "Hands holding idli in gravy and a plate of neer dosa"
+    },
+    {
+      "file": "raashige-neer-dose.jpg",
+      "id": "raashige-neer-dose",
+      "caption": "ರಾಶಿಗೆ ನೀರುದೋಸೆ and ಜಡೆ ತಟ್ಟೆ ಇಡ್ಲಿ on the board.",
+      "alt": "Kannada shop sign for neer dosa and thatte idli"
+    },
+    {
+      "file": "pani-puri-chaat.jpg",
+      "id": "pani-puri-chaat",
+      "caption": "Pani puri and a bowl of chaat.",
+      "alt": "Plate of pani puri next to a bowl of chaat"
+    },
+    {
+      "file": "street-juice-bowls.jpg",
+      "id": "street-juice-bowls",
+      "caption": "Juice and salad in steel bowls at a street stall.",
+      "alt": "Steel bowls of juice and chopped salad at a stall"
     }
   ]
 }
