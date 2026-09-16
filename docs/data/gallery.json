@@ -274,12 +274,12 @@
       "wide": true
     },
     {
-      "file": "bookworm-corner.jpg",
-      "id": "bookworm-corner",
-      "caption": "Bookworm, Church Street. Corner chair, blue rug.",
-      "alt": "Reading corner with a blue rug at Bookworm",
-      "lat": 12.9759,
-      "lng": 77.6055
+      "file": "champaca-corner.jpg",
+      "id": "champaca-corner",
+      "caption": "Champaca, Vasanth Nagar. Two floor cushions on the blue rug, bamboo overhead.",
+      "alt": "Reading corner with a blue rug and two green floor cushions at Champaca",
+      "lat": 12.9873,
+      "lng": 77.596
     },
     {
       "file": "rebel-english-chai.jpg",

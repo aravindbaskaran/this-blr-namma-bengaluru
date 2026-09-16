@@ -99,9 +99,9 @@ let agenda = [];
 let todoDone = {};
 let customLocations = [];
 
-const MODE_KEY = 'blr-guide-mode';
+const MODE_KEY = 'blr-guide-mode-v2';
 const MODES = ['quickstart', 'full'];
-let guideMode = 'quickstart';
+let guideMode = 'full';
 const QUICKSTART_LOCATION_IDS = new Set([
   'lalbagh', 'cubbon', 'ulsoor-lake',
   'veena-thindi', 'mtr', 'vidyarthi-bhavan', 'gandhi-bazaar',
@@ -230,7 +230,7 @@ function readGuideMode(){
     const s = localStorage.getItem(MODE_KEY);
     if(MODES.includes(s)) return s;
   }catch(e){}
-  return 'quickstart';
+  return 'full';
 }
 function setGuideMode(mode){
   if(!MODES.includes(mode)) return;
@@ -246,7 +246,7 @@ function applyGuideMode(persist){
     try{ localStorage.setItem(MODE_KEY, guideMode); }catch(e){}
     try{
       const url = new URL(location.href);
-      if(guideMode === 'quickstart') url.searchParams.delete('mode');
+      if(guideMode === 'full') url.searchParams.delete('mode');
       else url.searchParams.set('mode', guideMode);
       history.replaceState({}, '', url);
     }catch(e){}

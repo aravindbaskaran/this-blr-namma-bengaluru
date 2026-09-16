@@ -17,8 +17,8 @@ The issue forms need a GitHub account. Nothing is posted until you press submit 
 
 Fork, edit, and open a PR against `main`.
 
-- Bengaluru spots: `docs/data/locations.json`. First 48 hours uses the curated starter ID set in `docs/js/guide.js`; Full notebook shows every place. Custom spots from the to-do list always show.
-- Weekend routes: `docs/data/karnataka-places.json`. The old `tourist` flag supplies its First 48 hours subset for now.
+- Bengaluru spots: `docs/data/locations.json`. Day or two stay uses the curated starter ID set in `docs/js/guide.js`; Full notebook (the default) shows every place. Custom spots from the to-do list always show.
+- Weekend routes: `docs/data/karnataka-places.json`. The old `tourist` flag supplies its Day or two stay subset for now.
 - Dishes: `dishes.json`. `tags` uses the tag ids at the top of that file, `tryIn` holds place ids from `locations.json` or `karnataka-places.json`. The whole list is on `docs/food.html`, with four cards on the guide.
 - Kannada phrases, habbas, asides, and This not that: `phrases.json`, `festivals.json`, `did-you-know.json`, `not-that.json`.
 - Races: `races.json`. Tag `kinds` (`10k`, `half`, `full`, `ultra`), `terrain` (`road` / `trail`), and `where` (`bengaluru` / `karnataka`). Karnataka races only. Only add a `url` that loads, and only claim AIMS certification if the organiser publishes the certificate.

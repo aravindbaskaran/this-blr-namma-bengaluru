@@ -44,7 +44,7 @@
 }
 </script>
 </head>
-<body class="is-loading" data-mode="quickstart">
+<body class="is-loading" data-mode="full">
 <a class="skip-link" href="#main">Skip to content</a>
 <div id="guide-loader" role="status" aria-live="polite" aria-busy="true">
   <div class="loader-inner">
@@ -110,8 +110,8 @@
   </div>
 </header>
 <div id="modeTip" class="mode-tip" hidden>
-  <p><strong>First 48 hours</strong> - 21 places and the Kannada you will use.</p>
   <p><strong>Full notebook</strong> - all places, phrases, food, and regional notes.</p>
+  <p><strong>Day or two stay</strong> - 21 places and the Kannada you will use.</p>
 </div>
 
 <main id="main">
@@ -440,12 +440,12 @@
       <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಅನ್ವೇಷಿಸಿ</span><span class="kn-en">explore</span></span>
     </div>
     <h2>Places people would actually take you</h2>
-    <p>First 48 hours keeps this to 21 places across mornings, markets, museums, and a night out. Full notebook opens all 96. Timing appears only when the current notes support it.</p>
+    <p>Full notebook opens all 96. Day or two stay keeps this to 21 places across mornings, markets, museums, and a night out. Timing appears only when the current notes support it.</p>
     <p class="stay-only">Personal picks are one person's taste.</p>
     <div class="mode-cluster explore-mode">
       <div class="mode-toggle" role="group" aria-label="Guide depth">
-        <button type="button" data-mode="quickstart" onclick="setGuideMode('quickstart')">First 48 hours</button>
         <button type="button" data-mode="full" onclick="setGuideMode('full')">Full notebook</button>
+        <button type="button" data-mode="quickstart" onclick="setGuideMode('quickstart')">Day or two stay</button>
       </div>
       <button type="button" class="mode-tip-btn" aria-expanded="false" aria-controls="modeTip" title="What these mean" onclick="toggleModeTip(event)">?</button>
     </div>
@@ -904,7 +904,7 @@
 <script src="js/gallery.js?v=20260917a"></script>
 <script src="js/races.js?v=20260917b"></script>
 <script src="js/food.js?v=20260917a"></script>
-<script src="js/guide.js?v=20260917l"></script>
+<script src="js/guide.js?v=20260917m"></script>
 <script type="module" src="kannada-voice.js"></script>
 <script src="js/stage-bands.js?v=20260916k"></script>
 <script src="js/stage-bands-straight.js?v=20260916l"></script>
