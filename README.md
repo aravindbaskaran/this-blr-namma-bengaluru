@@ -2,7 +2,7 @@
 
 Live site: [aravindbaskaran.github.io/this-blr-namma-bengaluru](https://aravindbaskaran.github.io/this-blr-namma-bengaluru/)
 
-This repo is that page. It is a public, Bengaluru-first field guide built from peer notes rather than ratings. **Full notebook** is the default view and opens all 96 Bengaluru places plus the deeper regional material. **Day or two stay** is a 21-place starter list.
+This repo is that page. It is a public, Bengaluru-first field guide built from peer notes rather than ratings. **Full notebook** is the default view and opens all 97 Bengaluru places plus the deeper regional material. **Day or two stay** is a 21-place starter list.
 
 GitHub Pages serves `docs/` as the site. There is no build step and no CMS. Lists live in JSON. Markup, CSS, and JS stay in their own files. Do not put new lists back into `docs/index.html`.
 

@@ -70,10 +70,10 @@
     cursor:help;
   }
   .kn-cycle > *{grid-area:1/1; transition:opacity .25s ease; line-height:inherit;}
-  .kn-cycle .kn-native{font-family:'Baloo Tamma 2', sans-serif; opacity:1;}
-  .kn-cycle .kn-en{font-family:'Baloo 2', sans-serif; font-weight:600; opacity:0; pointer-events:none;}
-  .kn-cycle:hover .kn-native, .kn-cycle:focus-within .kn-native{opacity:0;}
-  .kn-cycle:hover .kn-en, .kn-cycle:focus-within .kn-en{opacity:1;}
+  .kn-cycle .kn-native{font-family:'Baloo Tamma 2', sans-serif; opacity:1; visibility:visible;}
+  .kn-cycle .kn-en{font-family:'Baloo 2', sans-serif; font-weight:600; opacity:0; visibility:hidden; pointer-events:none;}
+  .kn-cycle:hover .kn-native, .kn-cycle:focus-within .kn-native{opacity:0; visibility:hidden;}
+  .kn-cycle:hover .kn-en, .kn-cycle:focus-within .kn-en{opacity:1; visibility:visible;}
   a{color:inherit;}
   img,svg{display:block;max-width:100%;}
   button{font-family:inherit;cursor:pointer;}

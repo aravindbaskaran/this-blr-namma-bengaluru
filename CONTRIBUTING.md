@@ -28,7 +28,7 @@ Fork, edit, and open a PR against `main`.
 - Keep the voice: Bengaluru-first, specific, no generic India filler. Follow `AGENTS.md` and run `python3 scripts/check-copy.py` before you open a PR.
 - Preview with `./scripts/preview.sh`, then open http://127.0.0.1:5600/
 
-A location entry usually looks like: `id`, `name`, `area`, `category`, `blurb`, optional `kn`, `photos`, `personalPick`, `personalNote`, `skipCrowd`, a short `try` list, and optional `fieldNotes` with `timing`, `order`, and `dayOff`. Leave an operational field out when it has not been verified. `personalNote` is one first-person line from Aravind.
+A location entry usually looks like: `id`, `name`, `area`, `category`, `blurb`, optional `kn`, `photos`, `personalPick`, `personalNote`, `skipCrowd`, a short `try` list, and optional `fieldNotes` with `timing`, `order`, and `dayOff`. Leave an operational field out when it has not been verified. `personalNote` is one first-person line from Aravind. If you add a `culture` place, assign its ID to the museum or worship set in `docs/js/guide.js`; unassigned culture places appear under Civic & historic.
 
 ## Kannada audio
 

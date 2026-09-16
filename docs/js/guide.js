@@ -95,6 +95,7 @@ function moveColophonToEnd(){
 /* ---------------- state ---------------- */
 let currentView = 'list';
 let activeCategory = 'all';
+let activeHistorySubfilter = 'all';
 let agenda = [];
 let todoDone = {};
 let customLocations = [];
@@ -186,15 +187,40 @@ const ADDA_IDS = new Set([
   'dyu-art-cafe', 'atta-galatta', 'blossom-books', 'bookworm',
   'araku-coffee', 'third-wave', 'koshys-restaurant',
 ]);
+const HISTORY_SUBFILTERS = [
+  { id:'all', label:'All history, art & worship' },
+  { id:'museums-arts', label:'Museums & arts' },
+  { id:'civic-history', label:'Civic & historic' },
+  { id:'worship', label:'Places of worship' },
+];
+const HISTORY_MUSEUM_ART_IDS = new Set([
+  'indian-music-experience', 'chowdiah', 'map-museum', 'ngma',
+  'visvesvaraya-museum', 'hmt-heritage-centre', 'rangoli-metro-art-center',
+  'chitrakala-parishath', 'rangashankara',
+]);
+const HISTORY_WORSHIP_IDS = new Set([
+  'someshwara-temple-halasuru', 'panchalinga-nageshwara-temple',
+  'gavi-gangadhareshwara-temple', 'nandi-tirtha-kalyani', 'bull-temple',
+  'kote-venkataramana-temple', 'banashankari-devi-temple',
+  'st-marks-cathedral', 'st-marys-basilica', 'st-patricks-church',
+  'st-francis-xavier-cathedral', 'holy-trinity-church', 'st-johns-church',
+  'jumma-masjid', 'iskcon', 'dodda-ganapathi',
+]);
 function categoryIdOf(location){
   if(ADDA_IDS.has(location.id)) return 'addas';
   return CATEGORY_MAP[location.category] || location.category;
+}
+function historySubfilterOf(location){
+  if(HISTORY_MUSEUM_ART_IDS.has(location.id)) return 'museums-arts';
+  if(HISTORY_WORSHIP_IDS.has(location.id)) return 'worship';
+  return 'civic-history';
 }
 function exploreItems(){
   return modeLocations().filter(l => {
     if(activeCategory === 'all') return true;
     if(activeCategory === 'picks') return !!(l.personalPick || l.approved);
-    return categoryIdOf(l) === activeCategory;
+    if(categoryIdOf(l) !== activeCategory) return false;
+    return activeCategory !== 'history' || activeHistorySubfilter === 'all' || historySubfilterOf(l) === activeHistorySubfilter;
   });
 }
 
@@ -268,6 +294,20 @@ function applyGuideMode(persist){
 }
 window.setGuideMode = setGuideMode;
 
+function openInfoDialog(id){
+  const dialog = document.getElementById(id);
+  if(!dialog) return;
+  if(typeof dialog.showModal === 'function') dialog.showModal();
+  else dialog.setAttribute('open', '');
+}
+function closeInfoDialog(dialog){
+  if(!dialog) return;
+  if(typeof dialog.close === 'function') dialog.close();
+  else dialog.removeAttribute('open');
+}
+window.openInfoDialog = openInfoDialog;
+window.closeInfoDialog = closeInfoDialog;
+
 /* ---------------- render: category pills ---------------- */
 function renderPills(){
   const row = document.getElementById('categoryPills');
@@ -276,8 +316,31 @@ function renderPills(){
   row.innerHTML = all.map(c =>
     `<button class="pill" data-active="${activeCategory===c.id}" onclick="setCategory('${c.id}')">${c.label}</button>`
   ).join('');
+  renderHistorySubfilters();
 }
-function setCategory(id){ activeCategory = id; renderPills(); renderList(); renderMap(); }
+function renderHistorySubfilters(){
+  const row = document.getElementById('historySubfilters');
+  if(!row) return;
+  row.hidden = activeCategory !== 'history';
+  row.innerHTML = HISTORY_SUBFILTERS.map(item =>
+    `<button class="pill" data-active="${activeHistorySubfilter===item.id}" onclick="setHistorySubfilter('${item.id}')">${item.label}</button>`
+  ).join('');
+}
+function setHistorySubfilter(id){
+  if(!HISTORY_SUBFILTERS.some(item => item.id === id)) return;
+  activeHistorySubfilter = id;
+  renderHistorySubfilters();
+  renderList();
+  renderMap();
+}
+function setCategory(id){
+  activeCategory = id;
+  if(id !== 'history') activeHistorySubfilter = 'all';
+  renderPills();
+  renderList();
+  renderMap();
+}
+window.setHistorySubfilter = setHistorySubfilter;
 
 /* ---------------- render: list view ---------------- */
 function buildLocationCard(l){

@@ -470,6 +470,27 @@
     ]
   },
   {
+    "id": "hmt-heritage-centre",
+    "name": "HMT Heritage Centre & Museum",
+    "area": "HMT Estate, Jalahalli",
+    "category": "culture",
+    "blurb": "HMT's industrial archive in the former chairman's bungalow, open to the public since 2019. The collection runs from Janata, Pilot and Sona watches to clocks, machine tools and tractors, with more machinery outside on the old factory campus.",
+    "kn": "ಎಚ್‌ಎಂಟಿ ಹೆರಿಟೇಜ್ ಸೆಂಟರ್ ಮತ್ತು ಮ್ಯೂಸಿಯಂ",
+    "say": "HMT Heritage Centre and Museum",
+    "lat": 13.0532558,
+    "lng": 77.5503448,
+    "url": "https://www.hmtindia.com/location-of-facilities/",
+    "try": [
+      "Look beyond the watch cases: the machine tools and tractors put HMT's place in public-sector Bengaluru together.",
+      "The souvenir shop is one of HMT's own listed watch-purchase locations."
+    ],
+    "stay": true,
+    "fieldNotes": {
+      "timing": "Check current hours before going north to Jalahalli",
+      "order": "Janata, Pilot and Sona watches, then the outdoor machinery"
+    }
+  },
+  {
     "id": "halli-mane",
     "name": "Halli Mane",
     "area": "JP Nagar (also a Malleswaram branch)",

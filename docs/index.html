@@ -28,8 +28,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Baloo+Tamma+2:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-<link rel="stylesheet" href="css/tokens.css?v=20260916m">
-<link rel="stylesheet" href="css/layout.css?v=20260917a">
+<link rel="stylesheet" href="css/tokens.css?v=20260917a">
+<link rel="stylesheet" href="css/layout.css?v=20260917b">
 <link rel="stylesheet" href="css/stage.css?v=20260916m">
 <script type="application/ld+json">
 {
@@ -102,6 +102,7 @@
       <a href="food.html">Food</a>
       <a href="runs.html">Runs</a>
       <a href="photos.html">Our photos</a>
+      <a href="#add-yours">Write in</a>
     </nav>
     <div class="header-actions">
       <button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="siteNav" onclick="toggleNav()">Menu</button>
@@ -182,7 +183,7 @@
     <h1>India is not one story.<br>Bengaluru isn't either.</h1>
     <p class="lede">Start with jacaranda, filter kaapi, Kannada, old tanks, granite, and a city much older than its software campuses. These are field notes from ten years here, checked against public sources and corrected by people who know the place.</p>
     <div class="hero-stats">
-      <div class="hero-stat">
+      <button class="hero-stat" type="button" aria-haspopup="dialog" aria-controls="alphabetDialog" onclick="openInfoDialog('alphabetDialog')">
         <svg width="88" height="58" viewBox="0 0 140 94" aria-hidden="true">
           <rect x="6" y="24" width="128" height="48" rx="5" fill="#E8D5A3" stroke="#A66A32" stroke-width="1.5"/>
           <line x1="18" y1="24" x2="18" y2="72" stroke="#A66A32" stroke-width="1" opacity="0.5"/>
@@ -195,9 +196,9 @@
           <circle cx="106" cy="14" r="3.4" fill="#F6F1E4" stroke="#9E1B32" stroke-width="0.6"/>
           <path d="M28 84 Q70 76 112 84" fill="none" stroke="#5A4638" stroke-width="1.3"/>
         </svg>
-        <div class="hero-stat-copy"><strong>6</strong><span>in a day's hearing: Kannada default, then Tamil, Telugu, Hindi, English, Urdu</span></div>
-      </div>
-      <div class="hero-stat">
+        <div class="hero-stat-copy"><strong>6</strong><span>in a day's hearing: Kannada default, then Tamil, Telugu, Hindi, English, Urdu</span><small>Open the Kannada alphabet</small></div>
+      </button>
+      <button class="hero-stat" type="button" aria-haspopup="dialog" aria-controls="elevationDialog" onclick="openInfoDialog('elevationDialog')">
         <svg width="88" height="58" viewBox="0 0 140 94" aria-hidden="true">
           <circle cx="116" cy="20" r="11" fill="#D6A419"/>
           <path d="M0 88 Q26 52 52 66 Q78 34 104 62 Q124 50 140 64 L140 94 L0 94 Z" fill="#A66A32" opacity="0.55"/>
@@ -206,11 +207,56 @@
           <line x1="76" y1="36" x2="76" y2="52" stroke="#9E1B32" stroke-width="1.4"/>
           <path d="M8 30 H44 M14 38 H38" stroke="#5A4638" stroke-width="1.2" stroke-dasharray="3 4" fill="none"/>
         </svg>
-        <div class="hero-stat-copy"><strong>900+ m</strong><span>elevation (2,950+ ft) - why it stays mild</span></div>
-      </div>
+        <div class="hero-stat-copy"><strong>900+ m</strong><span>elevation (2,950+ ft) - why it stays mild</span><small>Compare major Indian cities</small></div>
+      </button>
     </div>
   </div>
 </div>
+
+<dialog class="info-dialog" id="alphabetDialog" aria-labelledby="alphabetDialogTitle" onclick="if(event.target===this) closeInfoDialog(this)">
+  <div class="info-dialog-inner">
+    <button class="info-dialog-close" type="button" aria-label="Close Kannada alphabet" onclick="closeInfoDialog(this.closest('dialog'))">&times;</button>
+    <p class="info-dialog-kicker">ಕನ್ನಡ ಅಕ್ಷರಮಾಲೆ</p>
+    <h2 id="alphabetDialogTitle">Modern Kannada alphabet</h2>
+    <p>Kannada has 49 basic characters: 13 vowels, two yogavahas, and 34 consonants. A consonant carries an inherent <em>a</em> sound until a vowel sign or halant changes it.</p>
+    <h3>Vowels <span>ಸ್ವರಗಳು</span></h3>
+    <div class="akshara-grid akshara-vowels" aria-label="Kannada vowels">
+      <span>ಅ</span><span>ಆ</span><span>ಇ</span><span>ಈ</span><span>ಉ</span><span>ಊ</span><span>ಋ</span><span>ಎ</span><span>ಏ</span><span>ಐ</span><span>ಒ</span><span>ಓ</span><span>ಔ</span>
+    </div>
+    <h3>Yogavahas <span>ಯೋಗವಾಹಗಳು</span></h3>
+    <div class="akshara-grid akshara-short" aria-label="Kannada yogavahas"><span>ಅಂ</span><span>ಅಃ</span></div>
+    <h3>Consonants <span>ವ್ಯಂಜನಗಳು</span></h3>
+    <div class="akshara-grid" aria-label="Kannada consonants">
+      <span>ಕ</span><span>ಖ</span><span>ಗ</span><span>ಘ</span><span>ಙ</span>
+      <span>ಚ</span><span>ಛ</span><span>ಜ</span><span>ಝ</span><span>ಞ</span>
+      <span>ಟ</span><span>ಠ</span><span>ಡ</span><span>ಢ</span><span>ಣ</span>
+      <span>ತ</span><span>ಥ</span><span>ದ</span><span>ಧ</span><span>ನ</span>
+      <span>ಪ</span><span>ಫ</span><span>ಬ</span><span>ಭ</span><span>ಮ</span>
+      <span>ಯ</span><span>ರ</span><span>ಲ</span><span>ವ</span><span>ಶ</span>
+      <span>ಷ</span><span>ಸ</span><span>ಹ</span><span>ಳ</span>
+    </div>
+    <p class="info-dialog-source">Reference: <a href="https://www.icann.org/sites/default/files/packages/lgr/lgr-second-level-kannada-script-25oct24-en.html" target="_blank" rel="noopener">Kannada script reference LGR</a>, based on work by the Neo-Brahmi Generation Panel.</p>
+  </div>
+</dialog>
+
+<dialog class="info-dialog" id="elevationDialog" aria-labelledby="elevationDialogTitle" onclick="if(event.target===this) closeInfoDialog(this)">
+  <div class="info-dialog-inner">
+    <button class="info-dialog-close" type="button" aria-label="Close elevation comparison" onclick="closeInfoDialog(this.closest('dialog'))">&times;</button>
+    <p class="info-dialog-kicker">Above mean sea level</p>
+    <h2 id="elevationDialogTitle">Bengaluru sits higher</h2>
+    <p>These are representative city elevations. Heights vary within every city.</p>
+    <div class="elevation-list" aria-label="Elevation comparison in metres">
+      <div><span>Bengaluru</span><i style="--elevation:92%"></i><strong>920 m</strong></div>
+      <div><span>Pune</span><i style="--elevation:56%"></i><strong>560 m</strong></div>
+      <div><span>Hyderabad</span><i style="--elevation:54.2%"></i><strong>542 m</strong></div>
+      <div><span>New Delhi</span><i style="--elevation:21%"></i><strong>210 m</strong></div>
+      <div><span>Mumbai</span><i style="--elevation:1.4%"></i><strong>14 m</strong></div>
+      <div><span>Chennai</span><i style="--elevation:.6%"></i><strong>6 m</strong></div>
+    </div>
+    <p>The plateau height helps moderate temperatures. It does not make the city immune to hot days.</p>
+    <p class="info-dialog-source">Reference: <a href="https://en.wikipedia.org/wiki/List_of_cities_by_elevation" target="_blank" rel="noopener">city elevations</a> and <a href="https://www.geonames.org/1277333/bengaluru.html" target="_blank" rel="noopener">GeoNames for Bengaluru</a>.</p>
+  </div>
+</dialog>
 
 <div class="stage-band-straight" data-band="ilkal"></div>
 
@@ -440,7 +486,7 @@
       <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಅನ್ವೇಷಿಸಿ</span><span class="kn-en">explore</span></span>
     </div>
     <h2>Places people would actually take you</h2>
-    <p>Full notebook opens all 96. Day or two stay keeps this to 21 places across mornings, markets, museums, and a night out. Timing appears only when the current notes support it.</p>
+    <p>Full notebook opens all 97. Day or two stay keeps this to 21 places across mornings, markets, museums, and a night out. Timing appears only when the current notes support it.</p>
     <p class="stay-only">Personal picks are one person's taste.</p>
     <div class="mode-cluster explore-mode">
       <div class="mode-toggle" role="group" aria-label="Guide depth">
@@ -453,12 +499,21 @@
 <div class="controls">
   <div class="controls-inner">
     <div class="pill-row" id="categoryPills" data-reveal></div>
+    <div class="pill-row subfilter-row" id="historySubfilters" aria-label="History, art and worship filters" hidden></div>
     <div class="view-toggle">
       <button data-view="list" data-active="true" onclick="setView('list')">List view</button>
       <button data-view="map" onclick="setView('map')">Map view</button>
     </div>
   </div>
 </div>
+
+  <aside class="tour-note">
+    <div>
+      <strong>Want one bus for the old circuit?</strong>
+      <p>KSTDC's full-day Bengaluru City Tour leaves Yeshwanthpura at 8am and covers Bull Temple, Gavi Gangadhareshwara, Tipu Palace, Lalbagh, museums, Bangalore Palace, Vidhana Soudha, and the High Court. Food and entry tickets cost extra.</p>
+    </div>
+    <a href="https://kstdc.co/tour_packages/bengaluru-city-tour/" target="_blank" rel="noopener">Check the current route and fare</a>
+  </aside>
 
   <div class="rail-clip">
     <div id="listView" class="grid" data-reveal></div>
@@ -904,7 +959,7 @@
 <script src="js/gallery.js?v=20260917a"></script>
 <script src="js/races.js?v=20260917b"></script>
 <script src="js/food.js?v=20260917a"></script>
-<script src="js/guide.js?v=20260917m"></script>
+<script src="js/guide.js?v=20260917n"></script>
 <script type="module" src="kannada-voice.js"></script>
 <script src="js/stage-bands.js?v=20260916k"></script>
 <script src="js/stage-bands-straight.js?v=20260916l"></script>
