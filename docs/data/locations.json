@@ -294,7 +294,6 @@
     "say": "Tippu Sultaana Besige Aramane",
     "lat": 12.9595,
     "lng": 77.5736,
-    "personalPick": true,
     "try": [
       "The museum upstairs - Tipu-era weapons, jewellery, and a reproduction of his mechanical Tiger Throne.",
       "The palace still sits inside what's left of Bangalore Fort's walls - walk the old fort area while you're there."
@@ -359,7 +358,6 @@
     "say": "Swatantrya Udyana",
     "lat": 12.9773,
     "lng": 77.5818,
-    "personalPick": true,
     "try": [
       "Walk past the freedom-fighter sculptures and the central tower before deciding what you think of the space.",
       "Check if anything's being protested that week - part of the park is formally kept for it, not just tolerated."
@@ -459,7 +457,6 @@
     "say": "Vishveshwaraya Museum",
     "lat": 12.9751,
     "lng": 77.5964,
-    "personalPick": true,
     "try": [
       "Fun Science and the Electro Technic gallery - Tesla coils and Van de Graaff generators, hands-on.",
       "The Wright Flyer replica and the animatronic Spinosaurus are the two that stop kids in their tracks."
@@ -541,7 +538,6 @@
     "say": "Rangoli Metro Kala Kendra",
     "lat": 12.9755,
     "lng": 77.6068,
-    "personalPick": true,
     "try": [
       "Walk Hoovina Haadi, the upper walkway, then drop into whichever of the three galleries has a show up.",
       "Free and partly open-air - an easy stop before or after an MG Road evening."
@@ -561,7 +557,6 @@
     "say": "Sendhoor Coffee House",
     "lat": 12.9418,
     "lng": 77.5732,
-    "personalPick": true,
     "try": [
       "Idli, vada, and a strong filter kaapi. That is the visit.",
       "Neighbourhood pace; don't expect a menu tour."
@@ -706,7 +701,6 @@
     "say": "Halasuru Someshwara Devasthana",
     "lat": 12.9756,
     "lng": 77.6239,
-    "personalPick": true,
     "try": [
       "The pillared mantapa carvings - Vijayanagara-era work, older than most of what's left in the city centre.",
       "Pair it with Ulsoor Lake, a short walk away, for one Halasuru morning."
@@ -767,7 +761,6 @@
     "say": "Sri Panchalinga Nageshwara Devasthana",
     "lat": 12.8745,
     "lng": 77.6309,
-    "personalPick": true,
     "try": [
       "Find the 890 CE inscription - the oldest known written record of the name 'Bengaluru.'",
       "Five lingas in one complex; take the time to see all five, not just the main shrine."
@@ -825,7 +818,6 @@
     "say": "Gavi Gangadhareshwara Devasthana",
     "lat": 12.9482,
     "lng": 77.563,
-    "personalPick": true,
     "try": [
       "Time a visit for Makar Sankranti if you can - the sunlight-through-Nandi's-horns alignment is the whole point.",
       "Look at the monolithic stone discs in the forecourt; nobody's fully explained what they were for."
@@ -887,7 +879,6 @@
     "say": "Dakshinamukha Nandi Teertha Kalyani Kshetra",
     "lat": 13.005,
     "lng": 77.5716,
-    "personalPick": true,
     "try": [
       "Find it below street level, opposite the Gangamma temple - there's no tower to spot it by.",
       "Watch the water flow from the Nandi's mouth; nobody knows the source."
@@ -1014,7 +1005,6 @@
     "say": "Kote Sri Prasanna Venkataramana Swamy Devasthana",
     "lat": 12.9596,
     "lng": 77.5741,
-    "personalPick": true,
     "try": [
       "Pair it with Tipu Sultan's Summer Palace next door - same old fort, two very different buildings.",
       "Time it for Vaikuntha Ekadashi if you want the temple at full crowd."
@@ -1115,7 +1105,6 @@
     "say": "St. Mark's Cathedral",
     "lat": 12.976,
     "lng": 77.6002,
-    "personalPick": true,
     "try": [
       "Look up at the dome and chancel - a deliberate small echo of St Paul's in London.",
       "One of the oldest churches standing in the city; check service and visiting hours before you go."
@@ -1154,7 +1143,6 @@
     "say": "Santha Mary Basilica",
     "lat": 12.9842,
     "lng": 77.6039,
-    "personalPick": true,
     "try": [
       "Time it for the September feast if you want the chariot procession and the crowd it draws.",
       "The Gothic structure took 26 years to build (1856-1882) - worth a slow look at the facade."
@@ -1193,7 +1181,6 @@
     "say": "St. Patrick's Church",
     "lat": 12.9705,
     "lng": 77.6059,
-    "personalPick": true,
     "try": [
       "Note the mismatch - dedicated to the Assumption, but the Irish garrison's name for it is the one that stuck.",
       "Brigade Road right outside; easy to fold into an evening on the strip."
@@ -1261,7 +1248,6 @@
     "say": "St. Francis Xavier's Cathedral",
     "lat": 12.9927,
     "lng": 77.6113,
-    "personalPick": true,
     "try": [
       "Look for the two domes on the facade - a 2009 addition, not part of the 1932 original.",
       "It's the Bangalore diocese's cathedral, not just a parish church, since 1940."
@@ -1319,7 +1305,6 @@
     "say": "Holy Trinity Church",
     "lat": 12.9724,
     "lng": 77.6208,
-    "personalPick": true,
     "try": [
       "Find the stained-glass baptism window - shipped in from London along with the font.",
       "Trinity Circle is the giveaway - the church gave the junction its name, not the other way round."
@@ -1362,7 +1347,6 @@
     "say": "St. John's Church",
     "lat": 12.9918,
     "lng": 77.613,
-    "personalPick": true,
     "try": [
       "The red facade and steeple are the landmark - hard to miss once you know the hill.",
       "Fourth-oldest Protestant church in the city. Go in expecting quiet."
@@ -1428,7 +1412,6 @@
     "say": "Jumma Masjid",
     "lat": 12.9826,
     "lng": 77.6059,
-    "personalPick": true,
     "try": [
       "Note the Tipu Sultan connection - the stone came from Srirangapatna on his orders.",
       "The road it's on is named after it, not the reverse - a sign of how long it's anchored the area."
@@ -1488,7 +1471,6 @@
     "say": "Lakeview Milk Bar",
     "lat": 12.976,
     "lng": 77.6037,
-    "personalPick": true,
     "try": [
       "Order off the original three flavours - vanilla, chocolate, raspberry - before the newer menu.",
       "Remember the name's origin: Ulsoor Lake used to be visible from the first branch, long before the MG Road move."
@@ -1777,7 +1759,6 @@
     "say": "Turahalli Aranya",
     "lat": 12.8817,
     "lng": 77.525,
-    "personalPick": true,
     "try": [
       "Stick to the Tree Park section - the reserve forest itself is closed to visitors now, for the forest's sake.",
       "Don't expect the cycling and bouldering trails from a few years ago; access has tightened since."
@@ -1840,7 +1821,6 @@
     "say": "Hennuru Kere Jeeva Vaividhya Vana",
     "lat": 13.0353,
     "lng": 77.6264,
-    "personalPick": true,
     "try": [
       "Walk the path. The planting is a tree park on a dry lakebed, not lawn.",
       "Go early; after work it fills with the same HBR walking crowd as any neighbourhood park."
