@@ -104,17 +104,20 @@ const MODE_KEY = 'blr-guide-mode';
 const MODES = ['quickstart', 'full'];
 let guideMode = 'quickstart';
 const QUICKSTART_LOCATION_IDS = new Set([
-  'lalbagh', 'cubbon', 'ulsoor-lake', 'veena-thindi', 'ctr',
-  'brahmins-coffee-bar', 'vvpuram', 'namma-sln', 'gandhi-bazaar',
-  'kr-market', 'cauvery-emporium', 'blossom-books', 'koshys-restaurant',
-  'pecos', 'tipu-palace', 'vidhana-soudha', 'attara-kacheri',
-  'bull-temple', 'map-museum', 'someshwara-temple-halasuru',
+  'lalbagh', 'cubbon', 'ulsoor-lake',
+  'veena-thindi', 'mtr', 'vidyarthi-bhavan', 'gandhi-bazaar',
+  'kr-market', 'chickpet', 'commercial-street',
+  'blossom-books', 'koshys-restaurant',
+  'pecos', 'toit',
+  'tipu-palace', 'vidhana-soudha', 'bull-temple',
+  'map-museum', 'someshwara-temple-halasuru', 'rangoli-metro-art-center',
 ]);
 
 function isQuickstart(){ return guideMode === 'quickstart'; }
 function forMode(list){
   if(guideMode === 'full') return list;
   if(list === FESTIVALS || list === NOT_THAT || list === QUIPS) return list;
+  if(list === PHRASES) return list.filter(item => item.quickstart === true);
   return list.filter(item => {
     if(customLocations.some(c => c.id === item.id)) return true;
     if(LOCATIONS.includes(item)) return QUICKSTART_LOCATION_IDS.has(item.id);
@@ -353,6 +356,7 @@ function skipCrowdHtml(l){
 }
 function focusDish(id){
   const section = document.getElementById('beyond-city');
+  setBeyondTab('food');
   if(section) section.scrollIntoView({behavior:'smooth', block:'start'});
   requestAnimationFrame(() => {
     const el = document.getElementById('dish-' + id);
@@ -739,7 +743,7 @@ function renderPhrases(){
   const wrap = document.getElementById('phraseGrid');
   const GROUP_ORDER = ['Greetings & courtesy', 'Getting to know someone', 'Everyday essentials', 'Food & warmth', 'Ordering food & coffee', 'Respect & address'];
   const cardHtml = (p) => {
-    const variantHtml = p.variant ? `<div class="p-variant"><span class="p-variant-label">${p.variant.region}</span><span class="p-variant-line">"${p.variant.kn}" - ${p.variant.translit}${p.variant.say ? ` (say: ${p.variant.say})` : ''} ${speakBtn(p.variant.kn, 'sm')}</span></div>` : '';
+    const variantHtml = p.variant && !isQuickstart() ? `<div class="p-variant"><span class="p-variant-label">${p.variant.region}</span><span class="p-variant-line">"${p.variant.kn}" - ${p.variant.translit}${p.variant.say ? ` (say: ${p.variant.say})` : ''} ${speakBtn(p.variant.kn, 'sm')}</span></div>` : '';
     const examplesHtml = p.examples ? `<div class="p-examples">${p.examples.map(ex => `
         <div class="p-example"><span class="p-ex-kn">${ex.kn}</span><span class="p-ex-translit">${ex.translit}</span> - ${ex.meaning} ${speakBtn(ex.kn, 'sm')}</div>
       `).join('')}</div>` : '';

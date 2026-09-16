@@ -2,7 +2,7 @@
 
 Live site: [aravindbaskaran.github.io/this-blr-namma-bengaluru](https://aravindbaskaran.github.io/this-blr-namma-bengaluru/)
 
-This repo is that page. It is a public, Bengaluru-first field guide built from peer notes rather than ratings. **Quickstart** gives a 20-place first-48-hours list. **Full notebook** opens all 95 Bengaluru places and the deeper regional material.
+This repo is that page. It is a public, Bengaluru-first field guide built from peer notes rather than ratings. **First 48 hours** gives a 20-place starter list. **Full notebook** opens all 95 Bengaluru places and the deeper regional material.
 
 GitHub Pages serves `docs/` as the site. There is no build step and no CMS. Lists live in JSON. Markup, CSS, and JS stay in their own files. Do not put new lists back into `docs/index.html`.
 
@@ -12,7 +12,7 @@ GitHub Pages serves `docs/` as the site. There is no build step and no CMS. List
 - `docs/photos.html` - our photos, the shots people sent in (the guide only shows a preview)
 - `docs/runs.html` - Karnataka races, 10K to ultra (the guide shows four)
 - `docs/css/` - `tokens.css` (palette and type), `layout.css` (chrome and cards), `stage.css` (saree bands and loader)
-- `docs/js/guide.js` - loads the JSON, filters Quickstart / Full notebook, map, to-do, forms
+- `docs/js/guide.js` - loads the JSON, filters First 48 hours / Full notebook, map, to-do, forms
 - `docs/js/stage-bands.js` and `stage-bands-straight.js` - the cloth bands between sections
 - `docs/data/locations.json` - Bengaluru spots (`personalPick`, `skipCrowd`, `try`, optional `fieldNotes`)
 - `docs/data/karnataka-places.json` - weekend routes and overnights

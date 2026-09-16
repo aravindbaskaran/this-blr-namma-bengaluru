@@ -2,22 +2,22 @@
   "categories": [
     {
       "id": "eat",
-      "label": "Old kitchens & good tables",
+      "label": "Old kitchens",
       "color": "var(--maroon)"
     },
     {
       "id": "streets",
-      "label": "Bazaars, shops & old streets",
+      "label": "Bazaars & old streets",
       "color": "var(--gold)"
     },
     {
       "id": "addas",
-      "label": "Bookshops & quiet addas",
+      "label": "Bookshops & addas",
       "color": "var(--terracotta)"
     },
     {
       "id": "green",
-      "label": "Rocks, lakes & green spaces",
+      "label": "Rocks, lakes & parks",
       "color": "var(--leaf)"
     },
     {
@@ -27,7 +27,7 @@
     },
     {
       "id": "evenings",
-      "label": "Pubs & evening rooms",
+      "label": "Pubs & evenings",
       "color": "var(--jacaranda-dark)"
     }
   ],

@@ -121,7 +121,8 @@
   .mode-tip p{margin:0 0 8px; font-size:13px; color:var(--ink-soft); line-height:1.45;}
   .mode-tip p:last-child{margin-bottom:0;}
   .mode-tip strong{color:var(--ink); font-weight:600;}
-  .mode-dock{display:none;}
+  .explore-mode{margin-top:18px;}
+  .explore-mode .mode-toggle button{padding:8px 14px;}
   body[data-mode="quickstart"] .stay-only{display:none !important;}
 
   /* ---------- hero ---------- */
@@ -175,6 +176,11 @@
     display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
   }
   .pill-row{display:flex; gap:8px; flex-wrap:wrap;}
+  #categoryPills{
+    width:100%; flex-wrap:nowrap; overflow-x:auto; padding-bottom:2px;
+    scrollbar-width:thin;
+  }
+  #categoryPills .pill{flex:none;}
   .pill{
     border:1px solid var(--line); background:transparent;
     padding:7px 14px; border-radius:20px; font-size:13px; font-weight:500; color:var(--ink-soft);
@@ -1255,27 +1261,6 @@
     .photo-credits ul{columns:1;}
   }
 
-  @media (max-width:1280px){
-    .header-mode{display:none;}
-    .mode-dock{
-      display:block;
-      position:fixed;
-      left:max(12px, env(safe-area-inset-left, 0px));
-      bottom:max(16px, calc(12px + var(--safe-bottom)));
-      z-index:36;
-    }
-    .mode-dock .mode-cluster{
-      background:transparent;
-    }
-    .mode-dock .mode-toggle{
-      background:var(--cream);
-      box-shadow:0 6px 24px rgba(34,26,20,0.18);
-    }
-    .mode-dock .mode-tip-btn{
-      background:var(--cream);
-      box-shadow:0 6px 24px rgba(34,26,20,0.18);
-    }
-  }
   @media (max-width:900px){
     .dish-grid, .festival-grid, .grid, .modern-list, .phrase-group-grid, .quip-grid, .region-row, .people-grid{ --rail-cols: 2; }
   }

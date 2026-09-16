@@ -29,7 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Baloo+Tamma+2:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <link rel="stylesheet" href="css/tokens.css?v=20260916m">
-<link rel="stylesheet" href="css/layout.css?v=20260916ai">
+<link rel="stylesheet" href="css/layout.css?v=20260916aj">
 <link rel="stylesheet" href="css/stage.css?v=20260916m">
 <script type="application/ld+json">
 {
@@ -99,41 +99,18 @@
       <a href="#explore">Explore</a>
       <a href="#history">Culture &amp; history</a>
       <a href="#learn-kannada">Kannada</a>
-      <div class="nav-sub">
-        <button type="button" class="nav-sub-btn" id="navSubBtn" aria-expanded="false" aria-controls="navSubList" aria-haspopup="true" onclick="toggleNavSub(event)">Annexes</button>
-        <div class="nav-sub-list" id="navSubList" hidden>
-          <a href="runs.html">Runs</a>
-          <a href="photos.html">Our photos</a>
-          <a href="#beyond-city">Beyond the city gate</a>
-          <a href="#colophon">About / Colophon</a>
-        </div>
-      </div>
+      <a href="runs.html">Runs</a>
+      <a href="photos.html">Our photos</a>
     </nav>
     <div class="header-actions">
-      <div class="mode-cluster header-mode">
-        <div class="mode-toggle" role="group" aria-label="Guide depth">
-          <button type="button" data-mode="quickstart" onclick="setGuideMode('quickstart')">Quickstart</button>
-          <button type="button" data-mode="full" onclick="setGuideMode('full')">Full notebook</button>
-        </div>
-        <button type="button" class="mode-tip-btn" aria-expanded="false" aria-controls="modeTip" title="What these mean" onclick="toggleModeTip(event)">?</button>
-      </div>
       <button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="siteNav" onclick="toggleNav()">Menu</button>
       <button class="agenda-pill" type="button" aria-label="To-do list" onclick="openDrawer()"><span class="agenda-label">To-do</span> <span class="agenda-count" id="agendaCount">0</span></button>
     </div>
   </div>
 </header>
-<div class="mode-dock">
-  <div class="mode-cluster">
-    <div class="mode-toggle" role="group" aria-label="Guide depth">
-      <button type="button" data-mode="quickstart" onclick="setGuideMode('quickstart')">Quickstart</button>
-      <button type="button" data-mode="full" onclick="setGuideMode('full')">Full notebook</button>
-    </div>
-    <button type="button" class="mode-tip-btn" aria-expanded="false" aria-controls="modeTip" title="What these mean" onclick="toggleModeTip(event)">?</button>
-  </div>
-</div>
 <div id="modeTip" class="mode-tip" hidden>
-  <p><strong>Quickstart</strong> - Bengaluru for your first 48 hours.</p>
-  <p><strong>Full notebook</strong> - every field note.</p>
+  <p><strong>First 48 hours</strong> - 20 places and the Kannada you will use.</p>
+  <p><strong>Full notebook</strong> - all places, phrases, food, and regional notes.</p>
 </div>
 
 <main id="main">
@@ -202,7 +179,7 @@
   <div class="hero-inner">
     <div class="eyebrow">A peer-curated field guide to Bengaluru</div>
     <h1>India is not one story.<br>Bengaluru isn't either.</h1>
-    <p class="lede">This is a public notebook built against generic travel blogs: history first, local context, and field notes from ten years on the ground.</p>
+    <p class="lede">Start with jacaranda, filter kaapi, Kannada, old tanks, granite, and a city much older than its software campuses. These are field notes from ten years here, checked against public sources and corrected by people who know the place.</p>
     <div class="hero-stats">
       <div class="hero-stat">
         <svg width="88" height="58" viewBox="0 0 140 94" aria-hidden="true">
@@ -244,15 +221,11 @@
         <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಈ ಮಾರ್ಗದರ್ಶಿ ಬಗ್ಗೆ</span><span class="kn-en">about this guide</span></span>
       </div>
       <h2>About / Colophon</h2>
-      <p>A public notebook assembled from lived notes, corrections, public sources, and contributions. Browse it, question it, and send a better field note.</p>
-      <h3>Credit</h3>
-      <aside class="credit-note">
-        <p>This page did not invent these places, weaves, histories, or dishes, and it did not find them. People have been living with them, writing them down, and passing them along for years, often centuries. What you see here is gathered from what was already there, and <a href="#sources">named back to where it came from</a>. Credit sits with the city, with the people who keep these things going, and with those sources.</p>
-      </aside>
-      <p>India is enormous. What gets billed as "Indian culture" is still overwhelmingly North Indian. South of the Vindhyas, a lot of that default starts to feel foreign to what's actually around you. This is a guide to this Bengaluru: history first, then what you can do here, then what's traditional here, then the Karnataka it sits inside.</p>
+      <p>Field notes come from lived experience, contributors, and the public record. Credit belongs to the people who keep these places, languages, dishes, and traditions going.</p>
+      <p>Corrections are welcome. Claims that need checking link back to their sources below.</p>
       <div id="sources" class="sources-under-why">
         <h3>Sources</h3>
-        <p>Mostly Wikipedia, for stability and easy cross-checking - plus the work those pages rest on. If a fact here is worth repeating, the credit is due there.</p>
+        <p>Mostly Wikipedia for stable links and quick cross-checking, plus the references those pages cite.</p>
         <details class="sources-details">
           <summary>Show all sources</summary>
           <div class="sources-grid">
@@ -315,19 +288,17 @@
         <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಬರೆದವರ ಬಗ್ಗೆ</span><span class="kn-en">about the people behind this</span></span>
       </div>
       <h2>About the people behind this</h2>
-      <p>A group effort at compiling and pointing, not at claiming. It started as one outsider's notes after a decade-ish in the city, and it grows when someone files a spot, a correction, or a pull request.</p>
+      <p>Started from Aravind's notes after ten years in the city. Contributors add places, Kannada audio, photographs, corrections, and design.</p>
       <article class="person-card person-card-lead">
         <img class="person-avatar" src="https://github.com/aravindbaskaran.png" alt="Aravind Baskaran" width="64" height="64">
         <div>
           <h3>Aravind Baskaran</h3>
           <p class="person-role">Started the guide</p>
-          <p class="person-brief">Not from Bengaluru. Born in Pondicherry (not really from there either I suppose)</p>
+          <p class="person-brief">Ten years in Bengaluru, with a habit of learning places on foot.</p>
           <details class="person-more">
             <summary>More</summary>
-            <p>Not really like talking/writing about self too much, so briefly - not from Bengaluru. Born in Pondicherry, then seven schools, one college, plus a three-day stint at another, ~3-ish companies across Uttar Pradesh, Andhra Pradesh, Telangana, Tamil Nadu, and Kolkata. Moved around enough that I don't really feel like I am from one place. That's probably why I wanted to make this.</p>
-            <p>Languages are beautiful - not the grammar, but how they stay with a place and move with the people who speak them. I am glad to have know a few - Tamil, Kannada, Hindi, English, French (mais oui, Pondicherry), Telugu, and whatever the room needs next. It extends to machine ones as well (Clojure, JavaScript, TypeScript, Python, Java, Go, C#, SQL, etc), but that's not relevant, shouldn't be.</p>
-            <p>One way to know a place is to run in it. Twenty-plus halves, about fifteen fulls, a fair number of them in Karnataka. You get 5am roads, the climbs, the bad pavement, the first filter coffee after. Some races on the <a href="runs.html">runs</a> list I have already done, some I still want.</p>
-            <p>Bengaluru is as representative of India as anywhere else and it holds more than the last four decades of software. The older city is still here, under the layers and hype, when you look for it.</p>
+            <p>Born in Pondicherry and moved through several parts of India before Bengaluru. Languages, food, streets, and running became ways to understand where each place differs.</p>
+            <p>One way to know a place is to run in it. Twenty-plus halves and about fifteen full marathons include a fair number in Karnataka. The <a href="runs.html">runs list</a> mixes completed races with the ones still ahead.</p>
             <p class="creator-links">Find me on <a href="https://www.linkedin.com/in/aravindbaskaran/" target="_blank" rel="noopener">LinkedIn</a> or <a href="https://x.com/aravind_baskara" target="_blank" rel="noopener">X</a> · <a href="https://github.com/aravindbaskaran" target="_blank" rel="noopener">GitHub</a></p>
           </details>
         </div>
@@ -468,8 +439,15 @@
       <span class="kn kn-cycle" tabindex="0"><span class="kn-native">ಅನ್ವೇಷಿಸಿ</span><span class="kn-en">explore</span></span>
     </div>
     <h2>Places people would actually take you</h2>
-    <p>Quickstart keeps this to 20 places for a first 48 hours. Full notebook opens all 95. Each card keeps the local story, then gives you the timing, what to do there, and the day off when someone has verified it.</p>
+    <p>First 48 hours keeps this to 20 places across mornings, markets, museums, and a night out. Full notebook opens all 95. Timing appears only when the current notes support it.</p>
     <p class="stay-only">Personal picks are one person's taste.</p>
+    <div class="mode-cluster explore-mode">
+      <div class="mode-toggle" role="group" aria-label="Guide depth">
+        <button type="button" data-mode="quickstart" onclick="setGuideMode('quickstart')">First 48 hours</button>
+        <button type="button" data-mode="full" onclick="setGuideMode('full')">Full notebook</button>
+      </div>
+      <button type="button" class="mode-tip-btn" aria-expanded="false" aria-controls="modeTip" title="What these mean" onclick="toggleModeTip(event)">?</button>
+    </div>
   </div>
 <div class="controls">
   <div class="controls-inner">
@@ -652,7 +630,7 @@
     </div>
     <h2>Words that go further than any guidebook</h2>
     <p>Kannada is the city's default. You can get away with some English, but try a few of these in an auto, a darshini, or a stall - people notice. Tap the speaker for audio. Treat it as a rough guide, not a lesson.</p>
-    <p class="stay-only">It's Karnataka's official language and one of eleven in India with classical-language status. The oldest surviving Kannada inscription is from 450 CE; Kavirajamarga, the oldest surviving work of Kannada poetics, dates to 850 CE. Tamil is also spoken here to a real extent, with a scatter of other languages after that. The audio is Kannada as much as possible, please flag in case it's missing.</p>
+    <p>It's Karnataka's official language and one of eleven in India with classical-language status. The oldest surviving Kannada inscription is from 450 CE; Kavirajamarga, the oldest surviving work of Kannada poetics, dates to 850 CE. Tamil is also spoken here to a real extent, with a scatter of other languages after that. The audio is Kannada as much as possible, please flag in case it's missing.</p>
   </div>
   <div class="phrase-grid" id="phraseGrid" data-reveal></div>
 </section>
@@ -923,7 +901,7 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="js/gallery.js?v=20260916e"></script>
 <script src="js/races.js?v=20260917b"></script>
-<script src="js/guide.js?v=20260917h"></script>
+<script src="js/guide.js?v=20260917i"></script>
 <script type="module" src="kannada-voice.js"></script>
 <script src="js/stage-bands.js?v=20260916k"></script>
 <script src="js/stage-bands-straight.js?v=20260916l"></script>
