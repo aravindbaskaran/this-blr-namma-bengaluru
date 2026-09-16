@@ -6,20 +6,21 @@ If you know a Bengaluru or Karnataka spot, spotted a wrong fact, or want to add 
 
 ## The easy way: Write in on the site
 
-On the guide, scroll to **Write in**.
+On the guide, scroll to **Write in** and use one of the two forms.
 
 - **Know a spot** pre-fills a GitHub issue on this repo with the name, area, kind, and why it matters.
 - **Spot a mistake** does the same for a correction or a missing fact.
 
-You need a GitHub account. Nothing is posted until you press submit on GitHub. Those issues show up on the page's people rail as well.
+The issue forms need a GitHub account. Nothing is posted until you press submit on GitHub. Those issues show up on the page's people rail as well.
 
 ## Pull requests
 
 Fork, edit, and open a PR against `main`.
 
-- Bengaluru spots: `docs/data/locations.json`. Set `tourist: true` for the visitor shortlist, `stay: true` for the local list. **Both** (the default on the page) shows either flag. Custom spots from the to-do list always show.
-- Day trips: `docs/data/karnataka-places.json`. Same `tourist` / `stay` flags.
-- Dishes, Kannada phrases, habbas, asides, and This not that: `dishes.json`, `phrases.json`, `festivals.json`, `did-you-know.json`, `not-that.json`.
+- Bengaluru spots: `docs/data/locations.json`. Day or two stay uses the curated starter ID set in `docs/js/guide.js`; Full notebook (the default) shows every place. Custom spots from the to-do list always show.
+- Weekend routes: `docs/data/karnataka-places.json`. The old `tourist` flag supplies its Day or two stay subset for now.
+- Dishes: `dishes.json`. `tags` uses the tag ids at the top of that file, `tryIn` holds place ids from `locations.json` or `karnataka-places.json`. The whole list is on `docs/food.html`, with four cards on the guide.
+- Kannada phrases, habbas, asides, and This not that: `phrases.json`, `festivals.json`, `did-you-know.json`, `not-that.json`.
 - Races: `races.json`. Tag `kinds` (`10k`, `half`, `full`, `ultra`), `terrain` (`road` / `trail`), and `where` (`bengaluru` / `karnataka`). Karnataka races only. Only add a `url` that loads, and only claim AIMS certification if the organiser publishes the certificate.
 - Your own photos: drop the file in `docs/gallery/`, then add a row to `docs/data/gallery.json` (caption, optional `lat`/`lng`). They show on the our photos page (`photos.html`), with a short preview on the guide. Details are in `docs/gallery/README.md`.
 - Do not dump new lists into `docs/index.html`.
@@ -27,7 +28,7 @@ Fork, edit, and open a PR against `main`.
 - Keep the voice: Bengaluru-first, specific, no generic India filler. Follow `AGENTS.md` and run `python3 scripts/check-copy.py` before you open a PR.
 - Preview with `./scripts/preview.sh`, then open http://127.0.0.1:5600/
 
-A location entry usually looks like: `id`, `name`, `area`, `category`, `blurb`, optional `kn`, `photos`, `tourist`, `stay`, `personalPick`, `skipCrowd`, and a short `try` list.
+A location entry usually looks like: `id`, `name`, `area`, `category`, `blurb`, optional `kn`, `photos`, `personalPick`, `personalNote`, `skipCrowd`, a short `try` list, and optional `fieldNotes` with `timing`, `order`, and `dayOff`. Leave an operational field out when it has not been verified. `personalNote` is one first-person line from Aravind.
 
 ## Kannada audio
 

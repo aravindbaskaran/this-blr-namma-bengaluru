@@ -17,6 +17,11 @@
       "Walk the glass-house lawns before 8am, when it still belongs to walkers.",
       "Climb the Lalbagh rock - it's older than the city by a few billion years."
     ],
+    "personalNote": "Run inside it, around it. Both are good fun.",
+    "fieldNotes": {
+      "timing": "Best before 8am",
+      "order": "Glass-house lawns and the rock outcrop"
+    },
     "tourist": true,
     "stay": true
   },
@@ -38,6 +43,11 @@
       "Run or cycle the car-free roads 5:30-8am, or on Sunday mornings.",
       "Cut through to the High Court and State Library instead of looping the same path."
     ],
+    "personalNote": "Run evenings. Different crowd, less of it.",
+    "fieldNotes": {
+      "timing": "Car-free 5:30-8am; Sunday mornings",
+      "order": "Run the roads, then cut through to the library"
+    },
     "tourist": true,
     "stay": true
   },
@@ -57,9 +67,7 @@
       "Play the Sound Garden yourself - Humming Stone and Storm Drum are hands-on, not behind glass."
     ],
     "stay": true,
-    "photos": [
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Saraswati%20veena%20-%20Collections%20of%20the%20Government%20Museum%20(Bangalore)-TTT17%20(9).jpg"
-    ]
+    "photos": []
   },
   {
     "id": "chowdiah",
@@ -98,7 +106,10 @@
       "Do the paved lakeside loop, then the open gym if you want a short daily circuit.",
       "Go at dusk when the water takes the last of the light."
     ],
-    "stay": true
+    "stay": true,
+    "fieldNotes": {
+      "timing": "Morning walkers early, dusk for the light"
+    }
   },
   {
     "id": "map-museum",
@@ -138,7 +149,10 @@
       "Grazing the rest of Thindi Beedi is the point; don't stop at one stall."
     ],
     "tourist": true,
-    "stay": true
+    "stay": true,
+    "fieldNotes": {
+      "timing": "Breakfast hours, standing at the counter"
+    }
   },
   {
     "id": "mtr",
@@ -158,6 +172,11 @@
       "Order rava idli - they invented it here - and filter kaapi in a steel tumbler.",
       "Go on a weekday morning; weekends are a different restaurant."
     ],
+    "personalNote": "Don't go if you have work after. The food coma is real.",
+    "fieldNotes": {
+      "timing": "Weekday morning; weekends get crowded",
+      "order": "Rava idli and filter kaapi"
+    },
     "tourist": true,
     "stay": true
   },
@@ -220,7 +239,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Vidhan%20Soudha%20Bangalore%20Front%20view.JPG"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "Floodlit Sunday and public-holiday evenings"
+    }
   },
   {
     "id": "ctr",
@@ -300,7 +322,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Bisi%20Bele%20Bath%20(Bisibelebath).JPG"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "Breakfast or a slow lunch, not a quick grab"
+    }
   },
   {
     "id": "karavalli",
@@ -319,7 +344,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Kori%20Rotti.jpg"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "A sit-down evening meal, so budget the time"
+    }
   },
   {
     "id": "freedom-park",
@@ -416,7 +444,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Another%20Vegetarian%20Meal.jpg"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "Lunch, when the Carnatic music is playing"
+    }
   },
   {
     "id": "visvesvaraya-museum",
@@ -474,7 +505,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Another%20Vegetarian%20Meal.jpg"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "After sunset, so you get the VV Puram street too"
+    }
   },
   {
     "id": "rangoli-metro-art-center",
@@ -514,7 +548,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Filter%20Coffee%20-%20CTR%20Shri%20Sagar%2C%20Bangalore%20-%20Karnataka%20-%20PXL0254.jpg"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "Any time, without the queues next door"
+    }
   },
   {
     "id": "araku-coffee",
@@ -553,7 +590,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Bannerghatta%20zoo%20lake-1-bannerghatta%20zoo-bangalore-India.jpg"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "Go early for the safari loop"
+    }
   },
   {
     "id": "third-wave",
@@ -611,7 +651,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Banoffeepie.jpg"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "Breakfast to dessert, built for a long sit"
+    }
   },
   {
     "id": "sv-sweetmeat",
@@ -650,7 +693,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Halasuru%20Someshwara%20Temple.jpg"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "A Halasuru morning, walked over from Ulsoor Lake"
+    }
   },
   {
     "id": "asha-sweets",
@@ -730,6 +776,25 @@
     ]
   },
   {
+    "id": "bookworm",
+    "name": "Bookworm",
+    "area": "Church Street",
+    "category": "craft",
+    "blurb": "Independent shop on Church Street, a few doors from Blossom: smaller floor, slower browse, shelves chosen rather than piled.",
+    "kn": "ಬುಕ್ ವರ್ಮ್",
+    "say": "Bookworm",
+    "lat": 12.9759,
+    "lng": 77.6055,
+    "url": "https://thebookworm.co.in/",
+    "personalPick": true,
+    "personalNote": "Different and deeper space than the pile-up next door.",
+    "try": [
+      "Browse here when you want a quieter Church Street bookshop, not a hunt through stacks.",
+      "Pair it with Blossom if you want both kinds of browse on the same street."
+    ],
+    "stay": true
+  },
+  {
     "id": "gavi-gangadhareshwara-temple",
     "name": "Sri Gavi Gangadhareshwara Swamy Temple",
     "area": "Gavipuram",
@@ -786,7 +851,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Ulsoor%20Lake%2C%20Bangalore.jpg"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "Morning, walking the bund"
+    }
   },
   {
     "id": "nandi-tirtha-kalyani",
@@ -857,6 +925,7 @@
     "lat": 12.9429,
     "lng": 77.5682,
     "personalPick": true,
+    "personalNote": "Look for the Nandi.",
     "try": [
       "Stand close enough to take in the scale - one block of granite, 4.5m tall.",
       "Come back for Kadlekai Parishe if you're here between November and December."
@@ -886,7 +955,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Gandhi_Bazaar_Circle.jpg"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "Morning, folded into a Basavanagudi breakfast"
+    }
   },
   {
     "id": "kr-market",
@@ -902,6 +974,9 @@
       "Go at dawn for flowers by the sack, not a boutique browse.",
       "It's wholesale chaos - wear shoes you don't mind."
     ],
+    "fieldNotes": {
+      "timing": "Dawn to 8am"
+    },
     "tourist": true,
     "stay": true,
     "photos": [
@@ -1004,7 +1079,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Two%20Sweet%20Cream%20Buns%20at%20WikiConference%20India%202026.jpg"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "A takeaway bakery queue, not a sit-down"
+    }
   },
   {
     "id": "st-marks-cathedral",
@@ -1121,7 +1199,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Dosa%20%28Plain%29.jpg"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "Any time, no queue theatre next door"
+    }
   },
   {
     "id": "atithyaa",
@@ -1135,10 +1216,15 @@
     "lat": 12.943,
     "lng": 77.5735,
     "personalPick": true,
+    "personalNote": "Mornings are happy hours. Come before 9am and the coffee is half-price.",
     "try": [
       "Unlimited Karnataka thali on a kansa plate - bisi bele bath, gojju, seasonal palya.",
       "Lunch crowd since 1986; this is a meal, not a tasting."
     ],
+    "fieldNotes": {
+      "timing": "Coffee half-price before 9am",
+      "order": "Karnataka thali on a kansa plate"
+    },
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Bisi%20Bele%20Bath%20(Bisibelebath).JPG"
@@ -1239,6 +1325,9 @@
       "After sunset: grilled corn, kebabs, and sweets that don't travel outside Karnataka.",
       "Walk the whole lane; one stall is a snack, the street is dinner."
     ],
+    "fieldNotes": {
+      "timing": "After sunset"
+    },
     "tourist": true,
     "stay": true
   },
@@ -1281,6 +1370,9 @@
       "A house beer and a long table - this is the brewpub that normalised craft here.",
       "Indiranagar evening, not a nightclub."
     ],
+    "fieldNotes": {
+      "timing": "Expect a long wait at busy hours"
+    },
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Toit%20Brewpub%2C%20Bengaluru%2001.jpg"
@@ -1424,7 +1516,7 @@
     },
     "try": [
       "Look at how Bengaluru jewellery and design houses present themselves - then leave for actual craft.",
-      "Open Skip the crowd on the card if this was the royal-India photo stop."
+      "If this was the royal-India photo stop, use Skip the crowd for a Karnataka craft counterpoint."
     ],
     "stay": true
   },
@@ -1445,7 +1537,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Koshys.jpg"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "A slow breakfast or a long coffee"
+    }
   },
   {
     "id": "iskcon",
@@ -1467,10 +1562,13 @@
     },
     "try": [
       "Evening aarti if you want the hill complex at full volume.",
-      "Open Skip the crowd for Dodda Ganapathi if you want a quieter temple."
+      "Use Skip the crowd for Dodda Ganapathi if you want a quieter temple."
     ],
     "tourist": true,
-    "stay": true
+    "stay": true,
+    "fieldNotes": {
+      "timing": "Evening aarti"
+    }
   },
   {
     "id": "shivaji-military-hotel",
@@ -1511,7 +1609,7 @@
     },
     "try": [
       "A Tudor walk-through - useful as a reminder this isn't Rajasthan.",
-      "Open Skip the crowd if you actually wanted a royal seat: that's Mysuru."
+      "If you wanted a royal seat, use Skip the crowd for Mysuru."
     ],
     "tourist": true,
     "stay": true
@@ -1533,7 +1631,10 @@
       "Check the week's Kannada, English, and regional plays and book a night.",
       "It's a theatre. Stay for the play, not the lobby."
     ],
-    "stay": true
+    "stay": true,
+    "fieldNotes": {
+      "timing": "Plays most nights, so check the week first"
+    }
   },
   {
     "id": "new-modern-hotel",
@@ -1552,7 +1653,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Idli%20Sambar.JPG"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "A slow morning, not a grab-and-go"
+    }
   },
   {
     "id": "cauvery-emporium",
@@ -1624,13 +1728,18 @@
     "lng": 77.5716,
     "skipCrowd": {
       "why": "An hour-long wait for a table on weekends is the usual story now.",
-      "insteadId": "veena-thindi",
+      "insteadId": "atithyaa",
       "insteadNote": "The same benne masale dosa culture, no influencer queue, and a whole lane of breakfast stalls to graze."
     },
+    "personalNote": "A bit overrated. Find places on the same road instead.",
     "try": [
       "Masala dosa if you accept the wait; otherwise open Skip the crowd.",
       "It's famous. That is why the queue exists, and why the name still matters."
     ],
+    "fieldNotes": {
+      "timing": "Weekend waits can reach an hour",
+      "order": "Masala dosa, if you accept the queue"
+    },
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Vidyarthi%20Bhavan%20Masala%20Dosa.jpg",
@@ -1655,7 +1764,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Thurahalli%2C_Bengaluru%2C_Karnataka_560062%2C_India_-_panoramio_%282%29.jpg"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "Tree Park section only, the reserve forest is closed"
+    }
   },
   {
     "id": "brigade-mg",
@@ -1672,7 +1784,7 @@
     },
     "try": [
       "Walk it once so you know the strip, then leave.",
-      "Open Skip the crowd for Indiranagar if you wanted a night out."
+      "Use Skip the crowd for Indiranagar if you wanted a night out."
     ],
     "stay": true,
     "photos": [
@@ -1715,7 +1827,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Indian%20Chamaeleon%20Sleeping1.jpg"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "Early, before the after-work walking crowd"
+    }
   },
   {
     "id": "chianti",
@@ -1793,7 +1908,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Chicken%20Hyderabadi%20Biryani.JPG"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "Expect a queue"
+    }
   },
   {
     "id": "namma-sln",
@@ -1834,7 +1952,10 @@
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/%22Butter%22%20Masala%20Dosai%20(1602609238).jpg"
-    ]
+    ],
+    "fieldNotes": {
+      "timing": "Standing room, expect a queue"
+    }
   },
   {
     "id": "desi",

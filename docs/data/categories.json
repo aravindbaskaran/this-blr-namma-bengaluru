@@ -1,28 +1,33 @@
 {
   "categories": [
     {
-      "id": "food",
-      "label": "Food & drink",
+      "id": "eat",
+      "label": "Old kitchens",
       "color": "var(--maroon)"
     },
     {
-      "id": "craft",
-      "label": "Craft & markets",
+      "id": "streets",
+      "label": "Bazaars & old streets",
       "color": "var(--gold)"
     },
     {
-      "id": "nature",
-      "label": "Nature & parks",
+      "id": "addas",
+      "label": "Bookshops & addas",
+      "color": "var(--terracotta)"
+    },
+    {
+      "id": "green",
+      "label": "Rocks, lakes & parks",
       "color": "var(--leaf)"
     },
     {
-      "id": "culture",
-      "label": "Art & culture",
+      "id": "history",
+      "label": "History, art & worship",
       "color": "var(--jacaranda)"
     },
     {
-      "id": "night",
-      "label": "Evenings out",
+      "id": "evenings",
+      "label": "Pubs & evenings",
       "color": "var(--jacaranda-dark)"
     }
   ],

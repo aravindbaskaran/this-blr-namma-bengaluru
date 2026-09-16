@@ -163,7 +163,7 @@ window.toggleNavSub = function(e){
     if(innerWidth > 720) toggleNav(false);
   }, {passive:true});
   try {
-    const res = await fetch('data/gallery.json');
+    const res = await fetch('data/gallery.json', { cache: 'no-cache' });
     if(!res.ok) throw new Error(res.status);
     const data = await res.json();
     const items = galleryUsable(Array.isArray(data) ? data : (data.photos || []));
