@@ -239,10 +239,10 @@
       "alt": "Steel davara of filter coffee"
     },
     {
-      "file": "jammi-block-two.jpg",
-      "id": "jammi-block-two",
-      "caption": "Block Two, the ಜಾಮು board.",
-      "alt": "Cafe facade with Block Two and Kannada jamu sign"
+      "file": "block-two-coffee.jpg",
+      "id": "block-two-coffee",
+      "caption": "Block Two coffee downstairs, Jam rehearsal studio above. Both names are spelled out in Kannada script, not translated.",
+      "alt": "Block Two coffee shopfront with the Jam studio board above it"
     },
     {
       "file": "bun-ghee-rice.jpg",
@@ -290,60 +290,46 @@
       "lng": 77.6055
     },
     {
-      "file": "veena-stores-sign.jpg",
-      "id": "veena-stores-sign",
-      "caption": "Veena Stores, Malleswaram 8th Cross. The board is the queue.",
-      "alt": "Veena Stores shop sign in Malleswaram",
-      "lat": 13.0035,
-      "lng": 77.573
+      "file": "brahmin-tiffins-board.jpg",
+      "id": "brahmin-tiffins-board",
+      "caption": "Brahmin Tiffins and Coffee, Jayanagar. The board is Kannada only, and it reads Brahmins' coffee and tiffin.",
+      "alt": "Kannada shop board above the red brick front of Brahmin Tiffins and Coffee"
     },
     {
-      "file": "veena-stores-vada.jpg",
-      "id": "veena-stores-vada",
-      "caption": "Vada and sweet boxes at Veena Stores.",
-      "alt": "Plate of vada in front of packed sweet boxes",
-      "lat": 13.0035,
-      "lng": 77.573
+      "file": "brahmin-tiffins-vada.jpg",
+      "id": "brahmin-tiffins-vada",
+      "caption": "Vada and sweet boxes at Brahmin Tiffins, Jayanagar.",
+      "alt": "Plate of vada in front of packed sweet boxes"
     },
     {
-      "file": "veena-stores-khali-dose.jpg",
-      "id": "veena-stores-khali-dose",
-      "caption": "Khali dose at Veena Stores. Crisp, no masala in the way.",
-      "alt": "Crisp plain dosa on a steel plate",
-      "lat": 13.0035,
-      "lng": 77.573
+      "file": "brahmin-tiffins-khali-dose.jpg",
+      "id": "brahmin-tiffins-khali-dose",
+      "caption": "Khali dose at Brahmin Tiffins. Crisp, no masala in the way.",
+      "alt": "Crisp plain dosa on a steel plate"
     },
     {
-      "file": "veena-stores-coffee.jpg",
-      "id": "veena-stores-coffee",
-      "caption": "Black and milk coffee in steel tumblers at Veena Stores.",
-      "alt": "Two steel tumblers of coffee on a table",
-      "lat": 13.0035,
-      "lng": 77.573
+      "file": "brahmin-tiffins-coffee.jpg",
+      "id": "brahmin-tiffins-coffee",
+      "caption": "Black and milk coffee in steel tumblers at Brahmin Tiffins.",
+      "alt": "Two steel tumblers of coffee on a table"
     },
     {
-      "file": "ctr-tava.jpg",
-      "id": "ctr-tava",
-      "caption": "CTR tava, Malleswaram.",
-      "alt": "Cook tossing a dosa on a large tava",
-      "lat": 13.0067,
-      "lng": 77.5813
+      "file": "dose-manjanna-tava.jpg",
+      "id": "dose-manjanna-tava",
+      "caption": "The tava at Dose Manjanna, Jayanagar.",
+      "alt": "Cook tossing a dosa on a large tava"
     },
     {
-      "file": "ctr-khali-dose.jpg",
-      "id": "ctr-khali-dose",
-      "caption": "Khali dose at CTR (Shri Sagar).",
-      "alt": "Plates of plain dosa at CTR",
-      "lat": 13.0067,
-      "lng": 77.5813
+      "file": "dose-manjanna-khali-dose.jpg",
+      "id": "dose-manjanna-khali-dose",
+      "caption": "Khali dose at Dose Manjanna.",
+      "alt": "Plates of plain dosa at Dose Manjanna"
     },
     {
-      "file": "ctr-sign.jpg",
-      "id": "ctr-sign",
-      "caption": "Shri Sagar, the round CTR board.",
-      "alt": "Round CTR Shri Sagar sign",
-      "lat": 13.0067,
-      "lng": 77.5813
+      "file": "dose-manjanna-sign.jpg",
+      "id": "dose-manjanna-sign",
+      "caption": "The round DM board at Dose Manjanna. The Kannada reads Dose Manjanna.",
+      "alt": "Round red board with the DM logo and the shop name in Kannada"
     },
     {
       "file": "cubbonpete-board.jpg",
@@ -364,18 +350,15 @@
     {
       "file": "chalukya-samrat.jpg",
       "id": "chalukya-samrat",
-      "caption": "Hotel Chalukya Samrat, Infantry Road.",
-      "alt": "Hotel Chalukya Samrat facade",
-      "lat": 12.9814,
-      "lng": 77.5995
+      "caption": "Chalukya Samrat, Jayanagar. Kannada above the English, since 1977, mysore pak counter inside.",
+      "alt": "Chalukya Samrat facade with bunting and the shop name in Kannada and English",
+      "wide": true
     },
     {
       "file": "chalukya-coffee.jpg",
       "id": "chalukya-coffee",
-      "caption": "Coffee at Chalukya Samrat.",
-      "alt": "Coffee cups in front of the Chalukya Samrat sign",
-      "lat": 12.9814,
-      "lng": 77.5995
+      "caption": "Coffee at Chalukya Samrat, Jayanagar.",
+      "alt": "Coffee cups in front of the Chalukya Samrat sign"
     },
     {
       "file": "umesh-dosa-point.jpg",
@@ -406,12 +389,10 @@
       "alt": "Jowar roti meal on a steel plate"
     },
     {
-      "file": "sln-pongal-bun.jpg",
-      "id": "sln-pongal-bun",
-      "caption": "Pongal and a Mangalore bun at Namma SLN. Gandhi Bazaar through the glass.",
-      "alt": "Pongal and a fried bun on banana leaves",
-      "lat": 12.9447822,
-      "lng": 77.5719199
+      "file": "chalukya-pongal-bun.jpg",
+      "id": "chalukya-pongal-bun",
+      "caption": "Pongal and a Mangalore bun at Chalukya Samrat, Jayanagar. The street through the glass.",
+      "alt": "Pongal and a fried bun on banana leaves with the street visible through glass"
     },
     {
       "file": "calm-coffee.jpg",
@@ -420,29 +401,29 @@
       "alt": "Iced coffee and espresso on a cork tray with a Calm Coffee napkin"
     },
     {
-      "file": "filter-coffee-bun.jpg",
-      "id": "filter-coffee-bun",
-      "caption": "Filter coffee, black coffee, and half a bun.",
-      "alt": "Two glasses of coffee and a bun on a napkin"
+      "file": "filter-coffee-rusk.jpg",
+      "id": "filter-coffee-rusk",
+      "caption": "Filter coffee, black coffee, and a rusk.",
+      "alt": "Two glasses of coffee and a rusk held on a napkin"
     },
     {
       "file": "coffee-autos.jpg",
       "id": "coffee-autos",
-      "caption": "Coffee and bun on a round table, autos on the street.",
-      "alt": "Coffee glasses and bun at a pavement table with autorickshaws",
+      "caption": "Coffee and rusk on a round table, autos on the street.",
+      "alt": "Coffee glasses and a rusk at a pavement table with autorickshaws",
       "wide": true
     },
     {
-      "file": "street-idli-neer-dosa.jpg",
-      "id": "street-idli-neer-dosa",
-      "caption": "Idli in saaru and a neer dosa off a banana leaf.",
-      "alt": "Hands holding idli in gravy and a plate of neer dosa"
+      "file": "thatte-idli-benne-dose.jpg",
+      "id": "thatte-idli-benne-dose",
+      "caption": "Thatte idli sitting in chutney, and a Davangere benne dose with the butter still on top.",
+      "alt": "Thatte idli in chutney on a banana leaf and a benne dose topped with butter"
     },
     {
-      "file": "raashige-neer-dose.jpg",
-      "id": "raashige-neer-dose",
-      "caption": "ರಾಶಿಗೆ ನೀರುದೋಸೆ and ಜಡೆ ತಟ್ಟೆ ಇಡ್ಲಿ on the board.",
-      "alt": "Kannada shop sign for neer dosa and thatte idli"
+      "file": "benne-dose-board.jpg",
+      "id": "benne-dose-board",
+      "caption": "The board for the same shop: Bidadi thatte idli on the blue half, Davangere benne dose in red below.",
+      "alt": "Kannada shop board reading Bidadi thatte idli and Davangere benne dose"
     },
     {
       "file": "pani-puri-chaat.jpg",
