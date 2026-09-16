@@ -1053,7 +1053,6 @@
     display:inline-flex; align-items:center; min-height:42px; padding:9px 16px;
     border:1px solid var(--maroon); border-radius:99px; font-size:13px; font-weight:600;
   }
-  .write-in-mail{background:var(--maroon); color:var(--on-accent);}
   .write-in-repo{color:var(--maroon); background:transparent;}
 
   /* Colophon lives at the end of the notebook. */

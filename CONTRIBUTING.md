@@ -6,7 +6,7 @@ If you know a Bengaluru or Karnataka spot, spotted a wrong fact, or want to add 
 
 ## The easy way: Write in on the site
 
-On the guide, scroll to **Write in**. Email works without an account. Use the forms when you want the suggestion recorded as a GitHub issue.
+On the guide, scroll to **Write in** and use one of the two forms.
 
 - **Know a spot** pre-fills a GitHub issue on this repo with the name, area, kind, and why it matters.
 - **Spot a mistake** does the same for a correction or a missing fact.

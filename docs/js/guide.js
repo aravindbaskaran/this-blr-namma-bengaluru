@@ -286,7 +286,7 @@ function buildLocationCard(l){
   const photos = locationPhotos(l);
   const photosHtml = photos.length
     ? `<div class="camera-roll">${photos.map(src => waitPhoto(src, l.name, '', `tabindex="0" role="button" aria-label="View larger photo of ${esc(l.name)}" onclick="openLightbox('${esc(src)}', '${esc(l.name)}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox('${esc(src)}', '${esc(l.name)}')}"`)).join('')}</div>`
-    : `<div class="camera-roll-empty">No photo yet. <a href="#add-yours">Write in</a> if you can add one.</div>`;
+    : `<div class="camera-roll-empty"><span>No photo yet. <a href="#add-yours">Write in</a> if you can add one.</span></div>`;
   const pickHtml = (l.personalPick || l.approved) ? PICK_MARK : '';
   const eat = dishesAt(l.id);
   const eatHtml = eat.length

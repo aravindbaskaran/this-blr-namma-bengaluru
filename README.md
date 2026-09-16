@@ -24,7 +24,7 @@ GitHub Pages serves `docs/` as the site. There is no build step and no CMS. List
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). On the site, **Write in** offers email without an account and GitHub for structured changes. After copy changes, run `python3 scripts/check-copy.py`.
+See [CONTRIBUTING.md](CONTRIBUTING.md). On the site, **Write in** opens a pre-filled GitHub issue for a spot or a correction. After copy changes, run `python3 scripts/check-copy.py`.
 
 ## Kannada audio
 
