@@ -52,13 +52,20 @@ not useful. So it is worth making sure every phrase has a clip.
 Add it to the right file in `docs/data/` like you would any other entry, with its `kn`
 field. Commit and push.
 
-That is it. Then render the clip yourself:
+Then make the clip. Rendering needs a GPU, so it happens on your machine rather than in
+CI:
 
 - Locally: `python scripts/build-kannada-audio.py` (see below)
-- Or, on GitHub: **Actions → Kannada audio → Run workflow**. It is manual because it used to run on every `docs/index.html` push and fail on GitHub-hosted runners (CUDA torchaudio / `libcudart`).
+- Or on a Colab GPU: `scripts/render-audio-colab.ipynb`, which clones your branch, renders
+  and pushes back. A whole voice is a couple of hours on a laptop and a good deal less there.
 
-If you open a pull request, make the audio locally (or run that workflow) so every phrase has a clip. If
-the check script says one is missing, either wait for a manual run to finish or make it yourself, below.
+On every push, the **Kannada audio** workflow reports which phrases have no clip. It does
+not render: GitHub-hosted runners have no GPU, and parler-tts pulls a CUDA torchaudio there
+that cannot load, so the old render job only ever failed. The check needs no token and no
+install, so it works on pull requests from forks too.
+
+A phrase with no clip is not broken. It falls back to whatever Kannada voice the device
+has, which is usually none, so it is worth filling in.
 
 ### Making the audio yourself
 
@@ -97,23 +104,14 @@ Other useful flags:
   manifest entry whose file is gone
 - `--voice Anu` uses a different speaker. The choices are Suresh, Anu, Chetan and Vidya
 
-### Hugging Face token for the Action
+### Hugging Face token
 
-The Action needs one secret to work, because the model is gated. Whoever owns the repo
-sets it once. Then anyone with write access can run **Kannada audio** from the Actions tab.
+The voice model is gated, so whoever renders needs their own free token. That is a
+contributor thing now, not a repository secret: sign in at <https://huggingface.co>,
+accept the terms at <https://huggingface.co/ai4bharat/indic-parler-tts>, make a read
+token, and `hf auth login` with it. In Colab it goes in the notebook secrets.
 
-Do steps 1 to 3 above to get a token, then add it to the repo under Settings, Secrets and
-variables, Actions, with the name `HF_TOKEN`. Or from a terminal:
-
-```bash
-gh secret set HF_TOKEN
-```
-
-It is a repo secret rather than a person's, so it keeps working when people come and
-go.
-
-Nothing breaks if it is never set. The Action still tells you which phrases
-have no audio, it just cannot make them. The clips already in the repo play either way.
+Nothing in CI needs a token, because nothing in CI renders.
 
 ### Mixing in a real person's voice
 
