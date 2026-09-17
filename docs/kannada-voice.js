@@ -133,22 +133,27 @@ window.NammaVoice = NammaVoice;
 /* ---------------- the voice switch in the Kannada section ---------------- */
 
 function mount() {
-  const host = document.getElementById('voicePicker');
-  if (!host) return;
+  /* One control per section that has audio, all showing the same choice. */
+  const hosts = Array.from(document.querySelectorAll('.voice-picker'));
+  if (!hosts.length) return;
 
   NammaVoice.onChange((current, voices) => {
-    /* Nothing to choose between with one voice, so no control. */
-    if (voices.length < 2) { host.hidden = true; return; }
-    host.hidden = false;
-    host.innerHTML = '<span class="voice-label">Voice</span>' + voices.map((name) =>
-      `<button type="button" class="voice-choice" data-voice="${name}" ` +
-      `aria-pressed="${name === current}">${name}</button>`).join('');
+    for (const host of hosts) {
+      /* Nothing to choose between with one voice, so no control. */
+      if (voices.length < 2) { host.hidden = true; continue; }
+      host.hidden = false;
+      host.innerHTML = '<span class="voice-label">Voice</span>' + voices.map((name) =>
+        `<button type="button" class="voice-choice" data-voice="${name}" ` +
+        `aria-pressed="${name === current}">${name}</button>`).join('');
+    }
   });
 
-  host.addEventListener('click', (event) => {
-    const button = event.target.closest('.voice-choice');
-    if (button) NammaVoice.use(button.dataset.voice);
-  });
+  for (const host of hosts) {
+    host.addEventListener('click', (event) => {
+      const button = event.target.closest('.voice-choice');
+      if (button) NammaVoice.use(button.dataset.voice);
+    });
+  }
 }
 
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount);

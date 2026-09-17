@@ -700,7 +700,25 @@
   .region-pronounce{display:flex; align-items:baseline; gap:6px; margin-bottom:6px; position:relative; flex-wrap:wrap;}
   .region-kn{font-size:13px; color:var(--region-color, var(--gold-light));}
   .region-say{font-size:11px; color:color-mix(in srgb, var(--on-accent) 78%, transparent); font-style:italic;}
-  .region-card .speak-btn-sm{
+  .region-card .voice-picker{
+  display:flex; align-items:center; flex-wrap:wrap; gap:8px;
+  margin:0 0 18px; font-size:13px;
+}
+.voice-label{color:var(--ink-soft); letter-spacing:0.04em; text-transform:uppercase; font-size:11px;}
+.voice-choice{
+  background:transparent; border:1px solid var(--line); color:var(--maroon);
+  border-radius:999px; padding:5px 13px; font:inherit; font-size:13px; cursor:pointer;
+}
+.voice-choice:hover{background:color-mix(in srgb, var(--maroon) 10%, transparent);}
+.voice-choice[aria-pressed="true"]{
+  background:color-mix(in srgb, var(--maroon) 16%, transparent);
+  border-color:var(--maroon); font-weight:600;
+}
+/* Hidden until kannada-voice.js confirms there is a second voice. */
+.speak-alt{display:none; font-size:12px;}
+body.has-voice-choice .speak-alt{display:inline-flex;}
+.p-kn-row .speak-alt{margin-left:6px;}
+.speak-btn-sm{
     color:var(--on-accent); border-color:color-mix(in srgb, var(--on-accent) 35%, transparent);
     background:color-mix(in srgb, var(--on-accent) 12%, transparent);
   }
