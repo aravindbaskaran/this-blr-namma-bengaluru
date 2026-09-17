@@ -216,5 +216,6 @@ The live guide's **About the people behind this** rail is loaded from this GitHu
 - Hassan - page layout and the saree bands between sections
 - Namita Gudaraddi (`namita-raddi`) - spots, food, habbas, craft rooms (Desi, Varnam, Channapatna), and Chikmagalur Queen's Coffee
 - Sakshi Gupta (`sakshigupta1996`) - location photos as a full card band, not a 60px thumbnail
+- Yogesh (`Yogesh-mb`) - Hari Super Sandwich, Chalukya Samrat, and Sri Raghavendra Stores
 
 If you want a name or a one-line role other than your GitHub login, say so in the PR or issue. That note lives in `PEOPLE_NOTES` in `docs/js/guide.js`.

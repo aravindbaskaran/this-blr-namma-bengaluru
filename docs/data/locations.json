@@ -2058,5 +2058,60 @@
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Davanagere%20Benne%20Dosa.jpg"
     ]
+  },
+  {
+    "id": "hari-super-sandwich",
+    "name": "Hari Super Sandwich",
+    "area": "Jayanagar 3rd Block",
+    "category": "food",
+    "blurb": "A tawa-grilled sandwich counter that started around 1999 on 8th Main, near NMKRV. Veg fillings, Amul cheese, cut into six. The board people argue over: chocolate sandwich, Hari special, cheese gulkand, American sweetcorn. Other rooms exist now; this pin is the Jayanagar 3rd Block original.",
+    "kn": "ಹರಿ ಸೂಪರ್ ಸ್ಯಾಂಡ್‌ವಿಚ್",
+    "say": "Hari Super Sandwich",
+    "lat": 12.9335,
+    "lng": 77.5827,
+    "try": [
+      "Chocolate sandwich if you have not had one; Hari special and cheese gulkand if you have.",
+      "121/A, 8th Main, Jayanagar 3rd Block, near NMKRV."
+    ],
+    "stay": true,
+    "photos": []
+  },
+  {
+    "id": "chalukya-samrat",
+    "name": "Chalukya Samrat",
+    "area": "Sheshadripuram",
+    "category": "food",
+    "blurb": "Sit-down tiffin and meals since 1977, on Nagappa Street at Nehru Circle. Badam halwa is the house sweet. Butter masala dosa and rava idli with ghee are the usual plate. A Jayanagar 4th Block room carries the same 1977 board; the photos here are that facade.",
+    "kn": "ಚಾಲುಕ್ಯ ಸಾಮ್ರಾಟ್",
+    "say": "Chaa-luk-ya Saam-raat",
+    "lat": 12.9969,
+    "lng": 77.5783,
+    "try": [
+      "Badam halwa, then butter masala dosa or rava idli with ghee.",
+      "30-33 Nagappa Street, Nehru Circle. Jayanagar 4th Block if you are already south."
+    ],
+    "stay": true,
+    "photos": [
+      "gallery/chalukya-samrat.jpg",
+      "gallery/chalukya-coffee.jpg",
+      "gallery/chalukya-pongal-bun.jpg"
+    ]
+  },
+  {
+    "id": "sri-raghavendra-stores",
+    "name": "Sri Raghavendra Stores",
+    "area": "Malleswaram",
+    "category": "food",
+    "blurb": "A small stall opposite Manipal Northside Hospital, by Malleswaram railway station. K. Ramanth from Udupi opened it in 1975 and named it for his son. Soft idli in a runny coconut-fried gram chutney; khara bath, shavige, coffee. No sambar. Standing, cash, parcel if you need it.",
+    "kn": "ಶ್ರೀ ರಾಘವೇಂದ್ರ ಸ್ಟೋರ್ಸ್",
+    "say": "Shree Raaghavendra Stores",
+    "lat": 13.0006,
+    "lng": 77.5635,
+    "try": [
+      "Idli with that chutney. Ask for extra if the first pour is shy.",
+      "Opposite Manipal Northside Hospital, near Malleswaram railway station. Do not look for tables."
+    ],
+    "stay": true,
+    "photos": []
   }
 ]

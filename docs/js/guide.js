@@ -161,7 +161,7 @@ const VERIFIED_PLACE_PHOTO_IDS = new Set([
   'commercial-street', 'chickpet', 'lakeview-milk-bar', 'malleswaram-market',
   'ubcity', 'koshys-restaurant', 'iskcon', 'palace', 'rangashankara',
   'dodda-ganapathi', 'vidyarthi-bhavan', 'turahalli-forest', 'brigade-mg',
-  'doresanipalya-forest', 'desi', 'varnam', 'sugandh-lok',
+  'doresanipalya-forest', 'desi', 'varnam', 'sugandh-lok', 'chalukya-samrat',
 ]);
 function locationPhotos(l){
   if(LOCATIONS.some(item => item.id === l.id)){
@@ -887,7 +887,8 @@ const PEOPLE_NOTES = {
   'deepikarajan-swym': { name: 'Deepika Varadarajan', role: 'Places, day trips, and fact-check', blurb: "I've called Bengaluru home for eight years now. Most weekends find me at a local darshini for breakfast, working through a dosa and filter coffee. I'm particularly drawn to the city's colonial-era layer: the cantonment bungalows, churches, and civic buildings that were here long before the tech parks. Bengaluru has a way of making room for everyone who comes here with its warmth and working on this guide has been a good excuse to reminisce about a city I've come to call home." },
   hassanrelated: { name: 'Hassan', role: 'Layout and saree bands', blurb: 'Page layout and the saree bands that sit between sections.' },
   'namita-raddi': { name: 'Namita Gudaraddi', role: 'Spots, food, habbas, and craft', blurb: 'Places to eat, places to go, the habbas that mark the year, craft rooms (Desi, Varnam, Channapatna), and Chikmagalur Queen\'s Coffee in Jayanagar.' },
-  sakshigupta1996: { name: 'Sakshi Gupta', role: 'Location photo cards', blurb: 'Turned the 60px thumbnail under Try into a full-bleed photo band on each spot card. When a Commons file fails, the band collapses instead of leaving a hole.' }
+  sakshigupta1996: { name: 'Sakshi Gupta', role: 'Location photo cards', blurb: 'Turned the 60px thumbnail under Try into a full-bleed photo band on each spot card. When a Commons file fails, the band collapses instead of leaving a hole.' },
+  'Yogesh-mb': { name: 'Yogesh', role: 'Old kitchens', blurb: 'Hari Super Sandwich in Jayanagar, Chalukya Samrat in Sheshadripuram, and Sri Raghavendra Stores in Malleswaram.' }
 };
 
 function esc(s){
