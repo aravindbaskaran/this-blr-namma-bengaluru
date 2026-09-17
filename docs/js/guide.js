@@ -823,7 +823,16 @@ function speakBtn(text, size){
   if(!VOICE_OK || !text) return '';
   const safe = text.replace(/'/g, "\\'");
   const cls = size==='sm' ? 'speak-btn speak-btn-sm' : 'speak-btn';
-  return `<button class="${cls}" onclick="speakText('${safe}')" aria-label="Hear pronunciation">\uD83D\uDD0A</button>`;
+  const main = `<button class="${cls}" onclick="speakText('${safe}')" aria-label="Hear pronunciation">\uD83D\uDD0A</button>`;
+  if(size === 'sm') return main;
+  /* Phrase cards also offer the other voice for that one phrase, without changing the
+     choice above the grid. CSS keeps it hidden until kannada-voice.js confirms there is
+     a second voice to swap to. */
+  return main + `<button class="speak-btn speak-alt" onclick="speakOther('${safe}')" aria-label="Hear this in the other voice" title="Hear this in the other voice">\u21C4</button>`;
+}
+function speakOther(text){
+  if(window.NammaVoice && window.NammaVoice.speakOther(text)) return;
+  speakWithBrowserVoice(text);
 }
 function speakPhrase(i){ speakText(PHRASES[i].kn); }
 
@@ -873,7 +882,7 @@ window.setBeyondTab = setBeyondTab;
 const GUIDE_REPO = 'https://github.com/aravindbaskaran/this-blr-namma-bengaluru';
 const PEOPLE_NOTES = {
   aravindbaskaran: { name: 'Aravind Baskaran', role: 'Started the guide' },
-  'vinaykarthikbaluguri-svg': { name: 'Vinay Karthik Baluguri', role: 'Kannada audio', blurb: 'Recorded and wired the spoken Kannada on this page.' },
+  'vinaykarthikbaluguri-svg': { name: 'Vinay Karthik Baluguri', role: 'Kannada audio', blurb: "The speaker buttons here originally relied on whatever voice your phone happened to have, which usually meant silence or an American accent trying to read Kannada. I started looking for a better way and ended up spending way too much time listening to the same few sentences. Some voices sounded close but never quite right, and one had a habit of quietly adding words that weren't even there. I ended up caring most about the small, everyday phrases, the kind of Kannada you hear in an auto, at a darshini, or just chatting with someone. When those finally started sounding natural, it stopped feeling like a voice reading Kannada and started feeling like someone actually saying it." },
   karthik4222: { name: 'Vinay Karthik Baluguri', role: 'Kannada audio', sameAs: 'vinaykarthikbaluguri-svg' },
   'deepikarajan-swym': { name: 'Deepika Varadarajan', role: 'Places, day trips, and fact-check', blurb: "I've called Bengaluru home for eight years now. Most weekends find me at a local darshini for breakfast, working through a dosa and filter coffee. I'm particularly drawn to the city's colonial-era layer: the cantonment bungalows, churches, and civic buildings that were here long before the tech parks. Bengaluru has a way of making room for everyone who comes here with its warmth and working on this guide has been a good excuse to reminisce about a city I've come to call home." },
   hassanrelated: { name: 'Hassan', role: 'Layout and saree bands', blurb: 'Page layout and the saree bands that sit between sections.' },
