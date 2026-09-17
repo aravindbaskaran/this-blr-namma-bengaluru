@@ -22,6 +22,8 @@ on:
       - 'docs/data/**.json'
       - 'docs/index.html'
       - 'docs/audio/kn/**'
+      - 'scripts/build-kannada-audio.py'
+      - '.github/workflows/kannada-audio.yml'
   workflow_dispatch:
 
 jobs:
