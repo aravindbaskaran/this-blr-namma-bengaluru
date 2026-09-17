@@ -285,15 +285,37 @@ def finish(clips, new_count):
           f'{total/1e6:.2f} MB total, manifest at {os.path.relpath(MANIFEST, ROOT)}')
 
 
+def annotate(level, message):
+    """Surface a line on the Actions run itself. Plain stdout everywhere else."""
+    if os.environ.get('GITHUB_ACTIONS') == 'true':
+        print(f'::{level}::{message}')
+
+
+def write_output(name, value):
+    """Job outputs for a later `if:` so a follow-up can skip instead of fail."""
+    path = os.environ.get('GITHUB_OUTPUT')
+    if not path:
+        return
+    with open(path, 'a', encoding='utf-8') as handle:
+        handle.write(f'{name}={value}\n')
+
+
 def check(phrases, clips):
-    """Every phrase needs one clip in every voice, and nothing spare lying around."""
+    """Two different things, so they are reported apart.
+
+    A phrase nobody has rendered yet is pending, not broken: the page falls back to
+    the device voice, and rendering needs a GPU and a gated model that CI has neither
+    of. Anything else here is the audio on disk disagreeing with the manifest, which
+    no amount of rendering fixes and which does break playback.
+    """
     problems = []
+    pending = []
 
     for text in phrases:
         for voice in VOICES:
             name = clips.get(text, {}).get(voice)
             if not name:
-                problems.append(f'no {voice} clip: {phrase_id(text)}  {text}')
+                pending.append(f'no {voice} clip: {phrase_id(text)}  {text}')
             elif not os.path.exists(clip_path(voice, name)):
                 problems.append(f'manifest points at a missing file: {voice}/{name}  ({text})')
 
@@ -317,7 +339,7 @@ def check(phrases, clips):
         for name in sorted(on_disk - wanted):
             problems.append(f'clip no phrase points at: {voice}/{name}')
 
-    return problems
+    return problems, pending
 
 
 def main():
@@ -332,7 +354,8 @@ def main():
     parser.add_argument('--force', action='store_true',
                         help='re-render every clip, not just the ones that are missing')
     parser.add_argument('--check', action='store_true',
-                        help='exit non-zero if anything is out of order; renders nothing')
+                        help='exit non-zero if the audio on disk disagrees with the '
+                             'manifest; unrendered phrases are listed, not a failure')
     args = parser.parse_args()
 
     voices = tuple(args.voices) if args.voices else VOICES
@@ -351,13 +374,28 @@ def main():
              if text in phrases}
 
     if args.check:
-        problems = check(phrases, clips)
+        problems, pending = check(phrases, clips)
+        write_output('pending', len(pending))
+        write_output('problems', len(problems))
+
+        if pending:
+            print(f'{len(pending)} clip(s) still to render:')
+            for item in pending:
+                print(f'   {item}')
+            print('Render on a machine with a GPU: python scripts/build-kannada-audio.py'
+                  ' (see the README), or scripts/render-audio-colab.ipynb')
+            annotate('notice', f'{len(pending)} Kannada clip(s) still to render; '
+                               'the clips-ready job will skip until they exist')
+
         if problems:
             print(f'{len(problems)} problem(s):')
             for problem in problems:
                 print(f'   {problem}')
+                annotate('error', problem)
             sys.exit(1)
-        print(f'{len(phrases)} phrases, {len(VOICES)} voices, all accounted for')
+
+        if not pending:
+            print(f'{len(phrases)} phrases, {len(VOICES)} voices, all accounted for')
         return
 
     # A phrase with a recording waiting is never reused: re-encoding a WAV is instant

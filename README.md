@@ -67,6 +67,15 @@ install, so it works on pull requests from forks too.
 A phrase with no clip is not broken. It falls back to whatever Kannada voice the device
 has, which is usually none, so it is worth filling in.
 
+The **Kannada audio** workflow splits that into two jobs so a pause is a skip, not a red
+X. Inventory always runs: it lists phrases still waiting and fails only when the audio
+on disk contradicts `manifest.json` (an entry pointing at a file that is not there, two
+clips for one phrase, or a clip no phrase points at). The second job, **Every phrase has
+a clip**, runs only when inventory found nothing waiting. Until then GitHub skips it.
+
+Do not mark that second job as a required check. A skipped required check blocks the
+merge, which is the opposite of a pause.
+
 ### Making the audio yourself
 
 This is the same thing the Action does: feed each Kannada string to the speech model,

@@ -5,7 +5,13 @@
 # load, so the render job here only ever failed. Making clips is a job for a machine
 # with a GPU, either a contributor's own or the Colab notebook in scripts/.
 #
-# So this stays cheap and green: it tells you what is missing and where to make it.
+# Two jobs, so a pause is a skip and not a red X:
+#   inventory  always runs. Lists phrases still waiting on a render. Fails only
+#              when the audio on disk contradicts the manifest.
+#   clips      runs only when inventory found nothing waiting. Otherwise GitHub
+#              skips it, which is the paused state. Do not mark this job as a
+#              required check: a skipped required check blocks the merge.
+#
 # A phrase without a clip is not broken, it just falls back to the device voice.
 name: Kannada audio
 
@@ -27,9 +33,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  check:
-    name: Every phrase has a clip
+  inventory:
+    name: Phrases and clips line up
     runs-on: ubuntu-latest
+    outputs:
+      pending: ${{ steps.check.outputs.pending }}
+      problems: ${{ steps.check.outputs.problems }}
     steps:
       - uses: actions/checkout@v4
 
@@ -37,15 +46,17 @@ jobs:
         with:
           python-version: '3.11'
 
-      # No model, no token, no GPU: this only compares the phrases on the site
-      # against docs/audio/kn/manifest.json and the files next to it.
+      # No model, no token, no GPU. Compares the phrases on the site against
+      # docs/audio/kn/manifest.json and the files next to it, then writes
+      # pending= and problems= for the clips job's `if:`.
       - name: Look for phrases with no audio
         id: check
         run: python scripts/build-kannada-audio.py --check
 
-      - name: How to make the missing clips
-        if: failure()
-        run: |
-          echo "::notice::Some phrases have no audio. Render them on a machine with a GPU:"
-          echo "::notice::  locally  - python scripts/build-kannada-audio.py  (see the README)"
-          echo "::notice::  or Colab - scripts/render-audio-colab.ipynb, which pushes back to your branch"
+  clips:
+    name: Every phrase has a clip
+    needs: inventory
+    if: needs.inventory.result == 'success' && needs.inventory.outputs.pending == '0'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Every phrase has a clip in both voices."
