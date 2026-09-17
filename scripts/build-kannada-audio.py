@@ -48,11 +48,31 @@ MODEL_ID = 'ai4bharat/indic-parler-tts'
 SAMPLE_RATE = 44100
 KANNADA = re.compile(r'[ಀ-೿]')
 
-# AI4Bharat's recommended Kannada speakers; they rate Suresh and Anu highest.
+# AI4Bharat's Kannada speakers. They rate Suresh and Anu highest, which is why those
+# two are built; the site lets a reader switch between them. DEFAULT_VOICE is what
+# someone hears before they choose anything.
 SPEAKERS = ('Suresh', 'Anu', 'Chetan', 'Vidya')
-DELIVERY = ('{speaker} speaks in a casual, conversational tone, as if talking to a friend '
-            'in everyday speech rather than reading aloud. The delivery is natural and '
-            'expressive at a moderate pace. Very high quality recording, no background noise.')
+VOICES = ('Suresh', 'Vidya')
+DEFAULT_VOICE = 'Suresh'
+# The model is autoregressive and sometimes keeps going after the word is finished,
+# which comes out as a short phrase rambling for seconds. Roughly, a clip should run
+# FIXED_SECONDS of lead-in plus PER_CHARACTER for each character; anything longer than
+# TOLERANCE times that is the model overrunning rather than speaking slowly. Fitted to
+# clips that sound right, then checked against the ones that do not.
+FIXED_SECONDS = 0.35
+PER_CHARACTER = 0.10
+TOLERANCE = 1.8
+RETRY_SEEDS = (0, 1, 2, 3, 4, 5)
+
+# Keep this plain. An earlier version asked for a voice that was "casual",
+# "conversational", "as if talking to a friend" and "expressive", and the model took
+# that as licence to embellish: Anu inserted words the text did not contain, sometimes
+# without the clip even running long. Asking only for clear speech fixed it. Greedy
+# decoding was tried too and is much worse: with no randomness it can settle into a
+# loop and run away, thirty seconds of audio for a single word. So the sampling stays
+# and the instruction is what got simpler.
+DELIVERY = ('{speaker} speaks clearly at a moderate pace. '
+            'Very high quality recording, no background noise.')
 
 
 def normalize(text):
@@ -114,6 +134,12 @@ def recording_for(directory, phrase):
     return candidate if os.path.exists(candidate) else None
 
 
+def clip_path(voice, name):
+    """Clips live one folder per voice, so 'one clip per phrase' stays true within
+    a voice while the same phrase can exist in several."""
+    return os.path.join(OUT_DIR, voice, name)
+
+
 def clip_name(phrase, wav_path, kbps):
     """Clip filenames carry a hash of the audio, so re-rendering with a different
     voice produces a different URL. Without that, browsers and CDNs go on serving the
@@ -126,6 +152,12 @@ def clip_name(phrase, wav_path, kbps):
     with open(wav_path, 'rb') as fh:
         digest = hashlib.sha1(fh.read() + str(kbps).encode()).hexdigest()[:8]
     return f'{phrase}-{digest}.m4a'
+
+
+def plausible_seconds(text):
+    """About how long this phrase should take. Short words carry a fixed cost, so a
+    flat seconds-per-character rule would wrongly condemn them."""
+    return FIXED_SECONDS + PER_CHARACTER * len(text)
 
 
 def load_voice(speaker):
@@ -142,21 +174,49 @@ def load_voice(speaker):
     except ValueError:
         pass  # already registered
 
-    device = 'mps' if torch.backends.mps.is_available() else 'cpu'
+    # cuda first: on a rented GPU box this is the whole point, and checking only for
+    # Apple's mps quietly left the GPU idle while the CPU did the work.
+    if torch.cuda.is_available():
+        device = 'cuda'
+    elif torch.backends.mps.is_available():
+        device = 'mps'
+    else:
+        device = 'cpu'
     model = ParlerTTSForConditionalGeneration.from_pretrained(MODEL_ID).to(device).eval()
     prompt_tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, config=model.config)
     style_tokenizer = AutoTokenizer.from_pretrained(model.config.text_encoder._name_or_path)
     style = style_tokenizer(DELIVERY.format(speaker=speaker), return_tensors='pt').to(device)
     print(f'  loaded on {device}')
 
-    def render(text):
-        set_seed(0)  # sampled decoding; fix it so rebuilds are reproducible
+    def attempt(text, seed):
+        set_seed(seed)  # sampled decoding; fixed per attempt so rebuilds are reproducible
         prompt = prompt_tokenizer(prepare_for_voice(text), return_tensors='pt').to(device)
         with torch.no_grad():
             generated = model.generate(
                 input_ids=style.input_ids, attention_mask=style.attention_mask,
                 prompt_input_ids=prompt.input_ids, prompt_attention_mask=prompt.attention_mask)
-        audio = generated.cpu().numpy().squeeze().astype(np.float32)
+        return generated.cpu().numpy().squeeze().astype(np.float32)
+
+    def render(text):
+        # Keep the first attempt that runs to a plausible length, else the shortest of
+        # them: a clip that overruns is worse than one that is merely a bit long.
+        limit = plausible_seconds(text) * TOLERANCE
+        best = None
+        for seed in RETRY_SEEDS:
+            audio = attempt(text, seed)
+            seconds = audio.size / SAMPLE_RATE
+            if best is None or seconds < best[0]:
+                best = (seconds, audio, seed)
+            if seconds <= limit:
+                if seed != RETRY_SEEDS[0]:
+                    print(f'      seed {seed} after {seed} overran ({seconds:.2f}s, '
+                          f'wanted under {limit:.2f}s)')
+                break
+        else:
+            print(f'      WARNING: every seed overran for "{text}" - kept the shortest '
+                  f'at {best[0]:.2f}s against a {limit:.2f}s budget')
+        audio = best[1]
+
         # Levels vary a lot between phrases; even them out so one clip is not
         # noticeably quieter than the next.
         peak = float(np.abs(audio).max()) if audio.size else 0.0
@@ -194,41 +254,88 @@ def write_wav(samples, rate, path):
         handle.writeframes(pcm.tobytes())
 
 
-def finish(manifest, new_count, suspect):
+def load_manifest():
+    """{'default': voice, 'voices': [...], 'clips': {text: {voice: file}}}."""
+    if not os.path.exists(MANIFEST):
+        return {}
+    with open(MANIFEST, encoding='utf-8') as fh:
+        data = json.load(fh)
+    return data.get('clips', {})
+
+
+def finish(clips, new_count):
     """Write the manifest and drop clips nothing points at any more."""
     with open(MANIFEST, 'w', encoding='utf-8') as fh:
-        json.dump(manifest, fh, ensure_ascii=False, indent=0, sort_keys=True)
+        json.dump({'default': DEFAULT_VOICE, 'voices': list(VOICES), 'clips': clips},
+                  fh, ensure_ascii=False, indent=0, sort_keys=True)
 
-    keep = set(manifest.values()) | {'manifest.json'}
-    for stale in sorted(os.listdir(OUT_DIR)):
-        if stale not in keep:
-            os.remove(os.path.join(OUT_DIR, stale))
-            print(f'  removed stale clip {stale}')
+    total = 0
+    for voice in VOICES:
+        folder = os.path.join(OUT_DIR, voice)
+        if not os.path.isdir(folder):
+            continue
+        keep = {per_voice[voice] for per_voice in clips.values() if voice in per_voice}
+        for stale in sorted(os.listdir(folder)):
+            if stale not in keep:
+                os.remove(os.path.join(folder, stale))
+                print(f'  removed stale clip {voice}/{stale}')
+        total += sum(os.path.getsize(os.path.join(folder, n)) for n in keep)
 
-    on_disk = sum(os.path.getsize(os.path.join(OUT_DIR, n)) for n in manifest.values())
-    print(f'{len(manifest)} clips ({new_count} new), {on_disk/1e6:.2f} MB total, '
-          f'manifest at {os.path.relpath(MANIFEST, ROOT)}')
-    if suspect:
-        print(f'{len(suspect)} clip(s) worth listening to before publishing:')
-        for text in suspect:
-            print(f'  {text}  ->  {manifest[text]}')
+    print(f'{len(clips)} phrases across {len(VOICES)} voices ({new_count} new), '
+          f'{total/1e6:.2f} MB total, manifest at {os.path.relpath(MANIFEST, ROOT)}')
+
+
+def check(phrases, clips):
+    """Every phrase needs one clip in every voice, and nothing spare lying around."""
+    problems = []
+
+    for text in phrases:
+        for voice in VOICES:
+            name = clips.get(text, {}).get(voice)
+            if not name:
+                problems.append(f'no {voice} clip: {phrase_id(text)}  {text}')
+            elif not os.path.exists(clip_path(voice, name)):
+                problems.append(f'manifest points at a missing file: {voice}/{name}  ({text})')
+
+    for voice in VOICES:
+        folder = os.path.join(OUT_DIR, voice)
+        if not os.path.isdir(folder):
+            continue
+        on_disk = {n for n in os.listdir(folder) if n.endswith('.m4a')}
+        wanted = {per_voice[voice] for per_voice in clips.values() if voice in per_voice}
+
+        # One phrase, one clip per voice. Two means a recorded clip and a rendered one
+        # both survived, and which plays is down to whatever the manifest points at.
+        seen = {}
+        for name in sorted(on_disk):
+            seen.setdefault(name.split('-')[0], []).append(name)
+        for pid, names in sorted(seen.items()):
+            if len(names) > 1:
+                problems.append(f'{len(names)} {voice} clips for one phrase {pid}: '
+                                f'{", ".join(names)}')
+
+        for name in sorted(on_disk - wanted):
+            problems.append(f'clip no phrase points at: {voice}/{name}')
+
+    return problems
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--voice', choices=SPEAKERS, default='Suresh',
-                        help='AI4Bharat Kannada speaker (default Suresh)')
+    parser.add_argument('--voice', choices=SPEAKERS, action='append', dest='voices',
+                        help=f'render only this voice; repeatable (default {", ".join(VOICES)})')
     parser.add_argument('--kbps', type=int, default=32, help='AAC bitrate (default 32)')
     parser.add_argument('--recordings', metavar='DIR',
-                        help='prefer human-recorded WAVs from DIR, named <clip name>.wav')
+                        help='prefer human-recorded WAVs from DIR, named <phrase id>.wav')
     parser.add_argument('--list', action='store_true',
-                        help='print the phrases and their clip names, render nothing')
+                        help='print the phrases and their ids, render nothing')
     parser.add_argument('--force', action='store_true',
                         help='re-render every clip, not just the ones that are missing')
     parser.add_argument('--check', action='store_true',
-                        help='exit non-zero if any phrase lacks a clip; renders nothing')
+                        help='exit non-zero if anything is out of order; renders nothing')
     args = parser.parse_args()
 
+    voices = tuple(args.voices) if args.voices else VOICES
     phrases = collect()
     print(f'{len(phrases)} distinct Kannada strings across the site')
 
@@ -240,80 +347,44 @@ def main():
             print(f'{number:3}. {phrase_id(text)}  {mark}{source:24} {text}')
         return
 
-    # Reuse what is already rendered. Adding one phrase should cost one clip, not 147.
-    existing = {}
-    if os.path.exists(MANIFEST):
-        with open(MANIFEST, encoding='utf-8') as fh:
-            existing = json.load(fh)
-    # A phrase with a recording waiting is never reused: re-encoding a WAV is
-    # instant and costs no model, and otherwise a recording added later would be
-    # silently ignored in favour of the clip the model already made.
-    reusable = {} if args.force else {
-        text: name for text, name in existing.items()
-        if text in phrases
-        and os.path.exists(os.path.join(OUT_DIR, name))
-        and not recording_for(args.recordings, phrase_id(text))
-    }
-    todo = [text for text in phrases if text not in reusable]
+    clips = {text: dict(per_voice) for text, per_voice in load_manifest().items()
+             if text in phrases}
 
     if args.check:
-        problems = []
-
-        for text in todo:
-            problems.append(f'no clip: {phrase_id(text)}  {text}')
-
-        on_disk = {n for n in os.listdir(OUT_DIR) if n.endswith('.m4a')}
-
-        # One phrase, one clip. Two files sharing a phrase id means a recorded clip
-        # and a rendered one both survived, and which of them plays is down to
-        # whatever the manifest happens to point at.
-        by_phrase = {}
-        for name in sorted(on_disk):
-            by_phrase.setdefault(name.split('-')[0], []).append(name)
-        for pid, names in sorted(by_phrase.items()):
-            if len(names) > 1:
-                problems.append(f'{len(names)} clips for one phrase {pid}: {", ".join(names)}')
-
-        for name in sorted(on_disk - set(existing.values())):
-            problems.append(f'clip no phrase points at: {name}')
-
-        for text, name in sorted(existing.items()):
-            if name not in on_disk:
-                problems.append(f'manifest points at a missing file: {name}  ({text})')
-
+        problems = check(phrases, clips)
         if problems:
             print(f'{len(problems)} problem(s):')
             for problem in problems:
                 print(f'   {problem}')
             sys.exit(1)
-
-        print(f'{len(phrases)} phrases, {len(on_disk)} clips, one each, all accounted for')
+        print(f'{len(phrases)} phrases, {len(VOICES)} voices, all accounted for')
         return
 
-    print(f'{len(reusable)} already rendered, {len(todo)} to render')
+    # A phrase with a recording waiting is never reused: re-encoding a WAV is instant
+    # and costs no model, and otherwise a recording added later would be silently
+    # ignored in favour of the clip the model already made.
+    todo = []
+    for voice in voices:
+        for text in phrases:
+            name = clips.get(text, {}).get(voice)
+            fresh = name and os.path.exists(clip_path(voice, name))
+            if args.force or not fresh or recording_for(args.recordings, phrase_id(text)):
+                todo.append((voice, text))
+
+    print(f'{len(todo)} clip(s) to render across {len(voices)} voice(s)')
     if not todo:
-        # Still rewrite: a phrase may have been removed rather than added, and its
-        # clip and manifest entry should go with it.
-        finish(reusable, 0, [])
+        finish(clips, 0)
         return
 
     import numpy as np
 
     encoder = find_encoder()
-    os.makedirs(OUT_DIR, exist_ok=True)
-
-    # Loaded only if something actually needs the model, so a run that is purely
-    # re-encoding recordings needs no Hugging Face access and no 3.5 GB download.
-    render = None
-
-    manifest = dict(reusable)
-    suspect = []
-    total_bytes = 0
+    renderers = {}
     tmp_wav = os.path.join(OUT_DIR, '.tmp.wav')
 
-    for index, text in enumerate(todo, 1):
+    for index, (voice, text) in enumerate(todo, 1):
+        os.makedirs(os.path.join(OUT_DIR, voice), exist_ok=True)
         phrase = phrase_id(text)
-
         recorded = recording_for(args.recordings, phrase)
 
         if recorded:
@@ -322,11 +393,10 @@ def main():
                 seconds = handle.getnframes() / handle.getframerate()
             peak, origin = 1.0, 'recorded'
         else:
-            if render is None:
-                print(f'voice: AI4Bharat Indic Parler-TTS, speaker {args.voice}, '
-                      f'{SAMPLE_RATE} Hz')
-                render = load_voice(args.voice)
-            audio = render(text)
+            if voice not in renderers:
+                print(f'loading {voice}…')
+                renderers[voice] = load_voice(voice)
+            audio = renderers[voice](text)
             peak = float(np.abs(audio).max()) if audio.size else 0.0
             seconds = audio.size / SAMPLE_RATE
             write_wav(audio, SAMPLE_RATE, tmp_wav)
@@ -337,23 +407,17 @@ def main():
             os.remove(tmp_clip)
         encode(encoder, tmp_wav, tmp_clip, args.kbps)
         name = clip_name(phrase, tmp_wav, args.kbps)
-        out_path = os.path.join(OUT_DIR, name)
-        os.replace(tmp_clip, out_path)
-        size = os.path.getsize(out_path)
-        total_bytes += size
-        manifest[text] = name
+        os.replace(tmp_clip, clip_path(voice, name))
+        clips.setdefault(text, {})[voice] = name
 
-        flag = ''
-        if peak < 0.02 or seconds < 0.2:
-            flag = '  <-- CHECK: near silence or too short'
-            suspect.append(text)
-        print(f'  [{index:3}/{len(todo)}] {origin} {seconds:5.2f}s {size/1024:6.1f}KB '
+        flag = '  <-- CHECK: near silence or too short' if (peak < 0.02 or seconds < 0.2) else ''
+        print(f'  [{index:3}/{len(todo)}] {voice:7} {origin} {seconds:5.2f}s '
               f'peak={peak:.2f} {text}{flag}')
 
     if os.path.exists(tmp_wav):
         os.remove(tmp_wav)
 
-    finish(manifest, len(todo), suspect)
+    finish(clips, len(todo))
 
 
 if __name__ == '__main__':
