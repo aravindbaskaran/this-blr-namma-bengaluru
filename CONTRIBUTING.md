@@ -28,11 +28,19 @@ Fork, edit, and open a PR against `main`.
 - Keep the voice: Bengaluru-first, specific, no generic India filler. Follow `AGENTS.md` and run `python3 scripts/check-copy.py` before you open a PR.
 - Preview with `./scripts/preview.sh`, then open http://127.0.0.1:5600/
 
-A location entry usually looks like: `id`, `name`, `area`, `category`, `blurb`, optional `kn`, `photos`, `personalPick`, `personalNote`, `skipCrowd`, a short `try` list, and optional `fieldNotes` with `timing`, `order`, and `dayOff`. Leave an operational field out when it has not been verified. `personalNote` is one first-person line from Aravind. If you add a `culture` place, assign its ID to the museum or worship set in `docs/js/guide.js`; unassigned culture places appear under Civic & historic.
+A location entry usually looks like: `id`, `addedBy`, `name`, `area`, `category`, `blurb`, optional `kn`, `photos`, `personalPick`, `personalNote`, `skipCrowd`, a short `try` list, and optional `fieldNotes` with `timing`, `order`, and `dayOff`. Leave an operational field out when it has not been verified. `personalNote` is one first-person line from Aravind. If you add a `culture` place, assign its ID to the museum or worship set in `docs/js/guide.js`; unassigned culture places appear under Civic & historic.
 
 ## Kannada audio
 
 Speaker buttons play clips in `docs/audio/kn/`. If you add a Kannada string to the data files, a GitHub Action can build the missing clip. Details, including how to record a real voice, are in the README.
+
+## Credit on the card
+
+A spot, day trip, dish, or habba you send in carries your GitHub login in `addedBy`, and the card prints **Sent in by <your name>** with a link to your profile. Aravind's own entries have no `addedBy` and stay unsigned, so the line means someone else brought it.
+
+When landing a Write in issue or someone else's list, keep their login on the row. Do not drop `addedBy` because the merge commit is Aravind's.
+
+Add the login to `NAMMA_PEOPLE` in `docs/js/gallery.js` so the card shows a name rather than a handle. If it is missing there, the card falls back to the login. Photos use `by` in `gallery.json`.
 
 ## Credit on the page
 

@@ -1,0 +1,26 @@
+---
+description: Credit other people's spots and dataset entries on the card, not as Aravind's.
+alwaysApply: true
+---
+
+# Credit contributor data
+
+When you add or land a spot, day trip, dish, habba, phrase, aside, race, or similar dataset row that **someone else** sent in (Write in issue, PR, chat, email), set `addedBy` to their GitHub login. The card prints **Sent in by** with a profile link. Unsigned cards are Aravind's. Do not put `addedBy` on his own entries.
+
+Do not infer credit from git blame. Landing commits are often Aravind's even when the content is not.
+
+```
+Good: "id": "hari-super-sandwich", "addedBy": "Yogesh-mb",
+Bad:  omitting addedBy on a Write-in spot
+Bad:  "addedBy": "aravindbaskaran"
+```
+
+Files: `docs/data/locations.json`, `karnataka-places.json`, `dishes.json`, `festivals.json`, and the same field if you add it elsewhere. Photos use `by` in `gallery.json`, not `addedBy`.
+
+Also:
+
+- Add the login to `NAMMA_PEOPLE` in `docs/js/gallery.js` (name on the card).
+- Add or update `PEOPLE_NOTES` in `docs/js/guide.js` (people rail).
+- `personalNote` is Aravind's first-person line only. Never write one in someone else's voice.
+
+Cards already render `addedBy` in `guide.js` and `food.js`. Do not drop that line when editing card HTML.

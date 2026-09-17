@@ -68,6 +68,7 @@ function foodCardHtml(d, ctx){
       <div class="dish-kn-row">${foodKnCycle(d.kn, d.name, 'dish-kn')}<span class="dish-say">${foodEsc(d.say || '')}</span>${foodSpeakBtn(d.kn)}</div>
       <p class="dish-desc">${foodEsc(d.desc || '')}</p>
       ${tryHtml}
+      ${window.NammaCredit ? NammaCredit.line(d.addedBy) : ''}
       <div class="card-actions" style="margin-top:10px;flex-wrap:wrap">${tagsHtml}</div>
     </div>`;
 }

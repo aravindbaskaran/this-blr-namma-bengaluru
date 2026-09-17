@@ -391,6 +391,7 @@ function buildLocationCard(l){
         ${fieldNotesHtml}
         ${eatHtml}
         ${skipHtml}
+        ${creditLine(l.addedBy)}
       </div>
       <div class="card-actions">
         <button class="add-btn" data-added="${added}" onclick="toggleAgenda('${l.id}')">${added ? 'On your list ✓' : '+ Add to list'}</button>
@@ -711,6 +712,7 @@ function renderFestivals(){
       </div>
       <div class="festival-where">${f.where} · ${knCycle(f.kn, f.name)}</div>
       <p>${f.blurb}</p>
+      ${creditLine(f.addedBy)}
       ${f.url ? `<p class="festival-credit"><a href="${f.url}" target="_blank" rel="noopener">Programme</a>${f.also ? ` · <a href="${f.also.url}" target="_blank" rel="noopener">${f.also.label}</a>` : ''}</p>` : ''}
     </div>
   `).join('');
@@ -893,6 +895,16 @@ const PEOPLE_NOTES = {
 
 function esc(s){
   return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+/* Prefers the people-rail name, since that is where a contributor states how they
+   want to be called. Falls back to the shared map in gallery.js. */
+function creditLine(login, label){
+  if(!login) return '';
+  const note = PEOPLE_NOTES[login];
+  const name = (note && note.name) || (window.NammaCredit ? NammaCredit.name(login) : login);
+  const href = 'https://github.com/' + encodeURIComponent(login);
+  return `<p class="added-by">${esc(label || 'Sent in by')} <a href="${href}" target="_blank" rel="noopener">${esc(name)}</a></p>`;
 }
 
 function knCycle(kn, en, extraClass){

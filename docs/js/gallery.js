@@ -25,6 +25,33 @@ function galleryInBlrBox(lat, lng){
   return lat >= 12.72 && lat <= 13.20 && lng >= 77.35 && lng <= 77.85;
 }
 
+/* Dataset credits. A spot, day trip or dish carries "addedBy" with the GitHub login
+   of whoever sent it in; entries without one are Aravind's own and stay unsigned.
+   Logins land here so a card can print a name instead of a handle. Keep in step with
+   PEOPLE_NOTES in guide.js, which feeds the people rail. */
+const NAMMA_PEOPLE = {
+  'deepikarajan-swym': 'Deepika Varadarajan',
+  'namita-raddi': 'Namita Gudaraddi',
+  'Yogesh-mb': 'Yogesh'
+};
+
+function nammaCreditName(login){
+  return NAMMA_PEOPLE[login] || login;
+}
+
+function nammaCreditLine(login, label){
+  if(!login) return '';
+  const who = galleryEsc(nammaCreditName(login));
+  const href = 'https://github.com/' + encodeURIComponent(login);
+  return `<p class="added-by">${galleryEsc(label || 'Sent in by')} <a href="${href}" target="_blank" rel="noopener">${who}</a></p>`;
+}
+
+window.NammaCredit = {
+  people: NAMMA_PEOPLE,
+  name: nammaCreditName,
+  line: nammaCreditLine
+};
+
 function galleryWaitPhoto(src, alt, extraClass, attrs){
   const cls = extraClass || '';
   return `<div class="photo-wait"><span class="photo-wait-deco" aria-hidden="true"></span><span class="photo-wait-copy kn kn-cycle" tabindex="0"><span class="kn-native">ಸ್ವಲ್ಪ ನಿಲ್ಲಿ</span><span class="kn-en">hold on</span></span><img class="${cls}" src="${galleryEsc(src)}" alt="${galleryEsc(alt)}" loading="lazy" ${attrs || ''} onload="photoWaitReady(this)" onerror="photoWaitFail(this, '')"></div>`;

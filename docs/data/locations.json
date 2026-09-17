@@ -53,6 +53,7 @@
   },
   {
     "id": "indian-music-experience",
+    "addedBy": "deepikarajan-swym",
     "name": "Indian Music Experience",
     "area": "JP Nagar 7th Phase",
     "category": "culture",
@@ -113,6 +114,7 @@
   },
   {
     "id": "map-museum",
+    "addedBy": "deepikarajan-swym",
     "name": "Museum of Art & Photography (MAP)",
     "area": "Kasturba Road",
     "category": "culture",
@@ -182,6 +184,7 @@
   },
   {
     "id": "mane-holige",
+    "addedBy": "deepikarajan-swym",
     "name": "Bhaskar's Mane Holige",
     "area": "D.V.G Road, Basavanagudi",
     "category": "food",
@@ -222,6 +225,7 @@
   },
   {
     "id": "vidhana-soudha",
+    "addedBy": "deepikarajan-swym",
     "name": "Vidhana Soudha",
     "area": "Ambedkar Veedhi, Sampangi Rama Nagara",
     "category": "culture",
@@ -286,6 +290,7 @@
   },
   {
     "id": "tipu-palace",
+    "addedBy": "deepikarajan-swym",
     "name": "Tipu Sultan's Summer Palace",
     "area": "Chamarajpet",
     "category": "culture",
@@ -350,6 +355,7 @@
   },
   {
     "id": "freedom-park",
+    "addedBy": "deepikarajan-swym",
     "name": "Freedom Park",
     "area": "Central Business District, near City Railway Station",
     "category": "culture",
@@ -388,6 +394,7 @@
   },
   {
     "id": "ngma",
+    "addedBy": "deepikarajan-swym",
     "name": "National Gallery of Modern Art (NGMA)",
     "area": "Palace Road",
     "category": "culture",
@@ -449,6 +456,7 @@
   },
   {
     "id": "visvesvaraya-museum",
+    "addedBy": "deepikarajan-swym",
     "name": "Visvesvaraya Industrial and Technological Museum",
     "area": "Kasturba Road",
     "category": "culture",
@@ -530,6 +538,7 @@
   },
   {
     "id": "rangoli-metro-art-center",
+    "addedBy": "deepikarajan-swym",
     "name": "Rangoli Metro Art Center",
     "area": "MG Road",
     "category": "culture",
@@ -590,6 +599,7 @@
   },
   {
     "id": "bannerghatta",
+    "addedBy": "deepikarajan-swym",
     "name": "Bannerghatta National Park",
     "area": "~22km south",
     "category": "nature",
@@ -632,6 +642,7 @@
   },
   {
     "id": "attara-kacheri",
+    "addedBy": "deepikarajan-swym",
     "name": "Attara Kacheri (Karnataka High Court)",
     "area": "Dr. B.R. Ambedkar Road, opposite Vidhana Soudha",
     "category": "culture",
@@ -693,6 +704,7 @@
   },
   {
     "id": "someshwara-temple-halasuru",
+    "addedBy": "deepikarajan-swym",
     "name": "Halasuru Someshwara Temple",
     "area": "Halasuru (Ulsoor)",
     "category": "culture",
@@ -753,6 +765,7 @@
   },
   {
     "id": "panchalinga-nageshwara-temple",
+    "addedBy": "deepikarajan-swym",
     "name": "Sri Panchalinga Nageshwara Temple",
     "area": "Begur, beside Begur Lake",
     "category": "culture",
@@ -810,6 +823,7 @@
   },
   {
     "id": "gavi-gangadhareshwara-temple",
+    "addedBy": "deepikarajan-swym",
     "name": "Sri Gavi Gangadhareshwara Swamy Temple",
     "area": "Gavipuram",
     "category": "culture",
@@ -871,6 +885,7 @@
   },
   {
     "id": "nandi-tirtha-kalyani",
+    "addedBy": "deepikarajan-swym",
     "name": "Sri Dakshinamukha Nandi Tirtha Kalyaani Kshetra",
     "area": "2nd Temple Street, Malleswaram",
     "category": "culture",
@@ -928,6 +943,7 @@
   },
   {
     "id": "bull-temple",
+    "addedBy": "deepikarajan-swym",
     "name": "Dodda Basavana Gudi (Bull Temple)",
     "area": "Bull Temple Road, Basavanagudi",
     "category": "culture",
@@ -997,6 +1013,7 @@
   },
   {
     "id": "kote-venkataramana-temple",
+    "addedBy": "deepikarajan-swym",
     "name": "Kote Sri Prasanna Venkataramana Swamy Temple",
     "area": "Krishnarajendra Road, Chamarajpet (old Bangalore Fort)",
     "category": "culture",
@@ -1035,6 +1052,7 @@
   },
   {
     "id": "banashankari-devi-temple",
+    "addedBy": "deepikarajan-swym",
     "name": "Shree Banashankari Devi Temple",
     "area": "Banashankari (Kanakapura Road)",
     "category": "culture",
@@ -1097,6 +1115,7 @@
   },
   {
     "id": "st-marks-cathedral",
+    "addedBy": "deepikarajan-swym",
     "name": "CSI St. Mark's Cathedral",
     "area": "West end of MG Road, MacIver Town",
     "category": "culture",
@@ -1135,6 +1154,7 @@
   },
   {
     "id": "st-marys-basilica",
+    "addedBy": "deepikarajan-swym",
     "name": "St. Mary's Basilica",
     "area": "Shivajinagar",
     "category": "culture",
@@ -1173,6 +1193,7 @@
   },
   {
     "id": "st-patricks-church",
+    "addedBy": "deepikarajan-swym",
     "name": "St Patrick's Church",
     "area": "Brigade Road",
     "category": "culture",
@@ -1240,6 +1261,7 @@
   },
   {
     "id": "st-francis-xavier-cathedral",
+    "addedBy": "deepikarajan-swym",
     "name": "St. Francis Xavier's Cathedral",
     "area": "Cleveland Town",
     "category": "culture",
@@ -1297,6 +1319,7 @@
   },
   {
     "id": "holy-trinity-church",
+    "addedBy": "deepikarajan-swym",
     "name": "CSI Holy Trinity Church",
     "area": "Trinity Circle, east end of MG Road",
     "category": "culture",
@@ -1339,6 +1362,7 @@
   },
   {
     "id": "st-johns-church",
+    "addedBy": "deepikarajan-swym",
     "name": "C.S.I. St. John's Church",
     "area": "St. John's Hill, Cleveland Town",
     "category": "culture",
@@ -1404,6 +1428,7 @@
   },
   {
     "id": "jumma-masjid",
+    "addedBy": "deepikarajan-swym",
     "name": "Jumma Masjid (Sangeen Jamia)",
     "area": "Jumma Masjid Road, Shivajinagar",
     "category": "culture",
@@ -1423,6 +1448,7 @@
   },
   {
     "id": "commercial-street",
+    "addedBy": "deepikarajan-swym",
     "name": "Commercial Street",
     "area": "Shivajinagar",
     "category": "craft",
@@ -1443,6 +1469,7 @@
   },
   {
     "id": "chickpet",
+    "addedBy": "deepikarajan-swym",
     "name": "Chickpet",
     "area": "Old Bengaluru pete",
     "category": "craft",
@@ -1463,6 +1490,7 @@
   },
   {
     "id": "lakeview-milk-bar",
+    "addedBy": "deepikarajan-swym",
     "name": "Lakeview Milk Bar",
     "area": "MG Road (moved here in the 1970s)",
     "category": "food",
@@ -1525,6 +1553,7 @@
   },
   {
     "id": "koshys-restaurant",
+    "addedBy": "deepikarajan-swym",
     "name": "Koshy's",
     "area": "St. Mark's Road",
     "category": "food",
@@ -1575,6 +1604,7 @@
   },
   {
     "id": "shivaji-military-hotel",
+    "addedBy": "deepikarajan-swym",
     "name": "Shivaji Military Hotel",
     "area": "45th Cross, Jayanagar 8th Block",
     "category": "food",
@@ -1641,6 +1671,7 @@
   },
   {
     "id": "new-modern-hotel",
+    "addedBy": "deepikarajan-swym",
     "name": "New Modern Hotel",
     "area": "Diagonal Road, VV Puram, Basavanagudi",
     "category": "food",
@@ -1701,6 +1732,7 @@
   },
   {
     "id": "pump-house",
+    "addedBy": "deepikarajan-swym",
     "name": "The Pump House",
     "area": "Outer Ring Road, JP Nagar",
     "category": "night",
@@ -1751,6 +1783,7 @@
   },
   {
     "id": "turahalli-forest",
+    "addedBy": "deepikarajan-swym",
     "name": "Turahalli Forest",
     "area": "~20km south, off Kanakapura Road",
     "category": "nature",
@@ -1813,6 +1846,7 @@
   },
   {
     "id": "mini-forest-hbr-layout",
+    "addedBy": "deepikarajan-swym",
     "name": "Mini Forest, HBR Layout",
     "area": "Hennur lakebed, HBR Layout",
     "category": "nature",
@@ -1875,6 +1909,7 @@
   },
   {
     "id": "doresanipalya-forest",
+    "addedBy": "deepikarajan-swym",
     "name": "Doresanipalya Forest",
     "area": "Off Bannerghatta Road, near Puttenahalli Lake",
     "category": "nature",
@@ -1960,6 +1995,7 @@
   },
   {
     "id": "desi",
+    "addedBy": "namita-raddi",
     "name": "Desi",
     "area": "South End Circle, Basavanagudi",
     "category": "craft",
@@ -1981,6 +2017,7 @@
   },
   {
     "id": "varnam",
+    "addedBy": "namita-raddi",
     "name": "Varnam Craft Collective",
     "area": "Indiranagar",
     "category": "craft",
@@ -2023,6 +2060,7 @@
   },
   {
     "id": "chikmagalur-queens-coffee",
+    "addedBy": "namita-raddi",
     "name": "Chikmagalur Queen's Coffee",
     "area": "Jayanagar 4th T Block",
     "category": "food",
@@ -2061,6 +2099,7 @@
   },
   {
     "id": "hari-super-sandwich",
+    "addedBy": "Yogesh-mb",
     "name": "Hari Super Sandwich",
     "area": "Jayanagar 3rd Block",
     "category": "food",
@@ -2078,6 +2117,7 @@
   },
   {
     "id": "chalukya-samrat",
+    "addedBy": "Yogesh-mb",
     "name": "Chalukya Samrat",
     "area": "Sheshadripuram",
     "category": "food",
@@ -2099,6 +2139,7 @@
   },
   {
     "id": "sri-raghavendra-stores",
+    "addedBy": "Yogesh-mb",
     "name": "Sri Raghavendra Stores",
     "area": "Malleswaram",
     "category": "food",
