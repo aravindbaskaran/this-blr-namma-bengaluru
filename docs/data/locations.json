@@ -323,6 +323,12 @@
       "Sit under the banyan trees - the open-air tables are the point.",
       "Come for breakfast or a slow lunch, not a quick grab."
     ],
+    "skipCrowd": {
+      "why": "Long delays and questionable quality of service and food.",
+      "insteadId": "gandhi-bazaar",
+      "insteadNote": "Finish your run elsewhere"
+    },
+    "personalNote": "Skip this typical tourist mode, explore other less popular ones for a more fulfilling experience - Prachin Cafe, IDC on Residency Road, Konark on Kanteerava, smaller MTR on Museum road, etc.",
     "stay": true,
     "photos": [
       "https://commons.wikimedia.org/wiki/Special:FilePath/Bisi%20Bele%20Bath%20(Bisibelebath).JPG"
