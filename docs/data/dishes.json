@@ -332,6 +332,19 @@
       ]
     },
     {
+      "name": "Maddur Vada",
+      "kn": "ಮದ್ದೂರು ವಡೆ",
+      "say": "Mad-door Vade",
+      "desc": "A crisp, onion-forward vada from Maddur on the Bengaluru-Mysuru route, usually eaten hot with evening chai.",
+      "tags": [
+        "breakfast",
+        "mysuru"
+      ],
+      "id": "maddur-vada",
+      "tourist": true,
+      "stay": true
+    },
+    {
       "name": "Rava Idli",
       "kn": "ರವೆ ಇಡ್ಲಿ",
       "say": "Rave Idli",
