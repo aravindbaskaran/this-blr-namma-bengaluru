@@ -185,7 +185,7 @@ const CATEGORY_MAP = {
 };
 const ADDA_IDS = new Set([
   'dyu-art-cafe', 'atta-galatta', 'blossom-books', 'bookworm',
-  'araku-coffee', 'third-wave', 'koshys-restaurant',
+  'araku-coffee', 'third-wave', 'koshys-restaurant', 'truffles-st-marks-road',
 ]);
 const HISTORY_SUBFILTERS = [
   { id:'all', label:'All history, art & worship' },
