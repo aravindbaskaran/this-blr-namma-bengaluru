@@ -2160,5 +2160,22 @@
     ],
     "stay": true,
     "photos": []
+  },
+  {
+    "id": "fatima-bakery-super-market",
+    "addedBy": "Yogesh-mb",
+    "name": "Fatima Bakery & Super Market",
+    "area": "Ashok Nagar",
+    "category": "food",
+    "blurb": "An old-school bakery and mini-supermarket from 1957. In a city full of Iyengar bakery counters, this one built its name on savoury non-vegetarian bakes.",
+    "try": [
+      "Meat puffs and other savoury bakes first. That is what people still line up for.",
+      "Use this as a bakery stop, not a sit-down meal stop."
+    ],
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Fatima%20Bakery%20and%20Super%20Market%2C%20Ashok%20Nagar%2C%20Bengaluru.jpg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Fatima%20Bakery%20%26%20Super%20Market%20Bengaluru.jpg"
+    ]
   }
 ]
