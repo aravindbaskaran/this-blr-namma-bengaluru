@@ -2160,5 +2160,26 @@
     ],
     "stay": true,
     "photos": []
+  },
+  {
+    "id": "truffles-st-marks-road",
+    "addedBy": "Yogesh-mb",
+    "name": "Truffles",
+    "area": "St. Mark's Road",
+    "category": "food",
+    "blurb": "Started as Ice & Spice in the mid 2000s, then became Truffles. It is known for American-style burgers, desserts, and shakes.",
+    "kn": "ಟ್ರಫಲ್ಸ್",
+    "say": "Truffles",
+    "lat": 12.9749,
+    "lng": 77.6063,
+    "try": [
+      "Order one of the house burgers, then finish with a shake.",
+      "Go off-peak if you want a quieter table on St. Mark's Road."
+    ],
+    "stay": true,
+    "photos": [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Hamburger.jpg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Milkshake.jpg"
+    ]
   }
 ]
