@@ -1811,6 +1811,19 @@
     }
   },
   {
+    "id": "prani-pet-sanctuary",
+    "addedBy": "Rakshit26",
+    "name": "Prani - The Pet Sanctuary",
+    "area": "Kanakpura Road",
+    "category": "nature",
+    "blurb": "A sanctuary for rescued animals on Kanakpura Road, recommended for visits with young children.",
+    "try": [
+      "Visit with young children to see the rescued animals."
+    ],
+    "stay": true,
+    "photos": []
+  },
+  {
     "id": "brigade-mg",
     "name": "Brigade Road / MG Road",
     "area": "Central Bengaluru",

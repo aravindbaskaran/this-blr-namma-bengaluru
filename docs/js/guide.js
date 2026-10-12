@@ -915,7 +915,8 @@ const PEOPLE_NOTES = {
   hassanrelated: { name: 'Hassan', role: 'Layout and saree bands', blurb: 'Page layout and the saree bands that sit between sections.' },
   'namita-raddi': { name: 'Namita Gudaraddi', role: 'Spots, food, habbas, and craft', blurb: 'Places to eat, places to go, the habbas that mark the year, craft rooms (Desi, Varnam, Channapatna), and Chikmagalur Queen\'s Coffee in Jayanagar.' },
   sakshigupta1996: { name: 'Sakshi Gupta', role: 'Location photo cards', blurb: 'Turned the 60px thumbnail under Try into a full-bleed photo band on each spot card. When a Commons file fails, the band collapses instead of leaving a hole.' },
-  'Yogesh-mb': { name: 'Yogesh', role: 'Old kitchens', blurb: 'Hari Super Sandwich in Jayanagar, Chalukya Samrat in Sheshadripuram, and Sri Raghavendra Stores in Malleswaram.' }
+  'Yogesh-mb': { name: 'Yogesh', role: 'Old kitchens', blurb: 'Hari Super Sandwich in Jayanagar, Chalukya Samrat in Sheshadripuram, and Sri Raghavendra Stores in Malleswaram.' },
+  'Rakshit26': { name: 'Rakshit26', role: 'Prani - The Pet Sanctuary suggestion' }
 };
 
 function esc(s){

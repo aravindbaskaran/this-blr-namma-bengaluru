@@ -32,7 +32,8 @@ function galleryInBlrBox(lat, lng){
 const NAMMA_PEOPLE = {
   'deepikarajan-swym': 'Deepika Varadarajan',
   'namita-raddi': 'Namita Gudaraddi',
-  'Yogesh-mb': 'Yogesh'
+  'Yogesh-mb': 'Yogesh',
+  'Rakshit26': 'Rakshit26'
 };
 
 function nammaCreditName(login){
