@@ -1173,7 +1173,7 @@ function renderPhotoCredits(){
 /* toggleNav, closeNavSub and toggleNavSub live in gallery.js, which every page loads first. */
 
 /* Cache key and TTL for GitHub API responses - avoids hitting the 60 req/hr limit (#47) */
-const PEOPLE_CACHE_KEY = 'blr-people-cache-v1';
+const PEOPLE_CACHE_KEY = 'blr-people-cache-v2';
 const PEOPLE_CACHE_TTL = 60 * 60 * 1000; /* 1 hour */
 
 async function loadPeople(){
@@ -1190,6 +1190,7 @@ async function loadPeople(){
     }));
   const byLogin = new Map(seed.map(p => [p.login, p]));
   const contribLogins = new Set();
+  const pullLogins = new Set();
   const remember = (p) => {
     if(!p || !p.login || p.type === 'Bot') return;
     const note = PEOPLE_NOTES[p.login];
@@ -1198,7 +1199,7 @@ async function loadPeople(){
   };
   try{
     /* Check localStorage cache before hitting the GitHub API (#47) */
-    let contribs = [], issues = [];
+    let contribs = [], issues = [], pulls = [];
     let fromCache = false;
     try{
       const cached = localStorage.getItem(PEOPLE_CACHE_KEY);
@@ -1207,22 +1208,25 @@ async function loadPeople(){
         if(Date.now() - ts < PEOPLE_CACHE_TTL){
           contribs = data.contribs || [];
           issues = data.issues || [];
+          pulls = data.pulls || [];
           fromCache = true;
         }
       }
     }catch(e){}
     if(!fromCache){
-      const [contribRes, issueRes] = await Promise.all([
+      const [contribRes, issueRes, pullRes] = await Promise.all([
         fetch('https://api.github.com/repos/aravindbaskaran/this-blr-namma-bengaluru/contributors?per_page=100'),
-        fetch('https://api.github.com/repos/aravindbaskaran/this-blr-namma-bengaluru/issues?state=all&per_page=100')
+        fetch('https://api.github.com/repos/aravindbaskaran/this-blr-namma-bengaluru/issues?state=all&per_page=100'),
+        fetch('https://api.github.com/repos/aravindbaskaran/this-blr-namma-bengaluru/pulls?state=all&per_page=100')
       ]);
       contribs = contribRes.ok ? await contribRes.json() : [];
       issues = issueRes.ok ? await issueRes.json() : [];
-      /* Only cache a fully successful pair - a rate-limit or server error must
+      pulls = pullRes.ok ? await pullRes.json() : [];
+      /* Only cache fully successful responses - a rate-limit or server error must
          not be frozen into the cache as an empty result for the whole TTL. */
-      if(contribRes.ok && issueRes.ok){
+      if(contribRes.ok && issueRes.ok && pullRes.ok){
         try{
-          localStorage.setItem(PEOPLE_CACHE_KEY, JSON.stringify({ ts: Date.now(), data: { contribs, issues } }));
+          localStorage.setItem(PEOPLE_CACHE_KEY, JSON.stringify({ ts: Date.now(), data: { contribs, issues, pulls } }));
         }catch(e){}
       }
     }
@@ -1233,6 +1237,10 @@ async function loadPeople(){
       });
     }
     if(Array.isArray(issues)) issues.forEach(issue => remember(issue && issue.user));
+    if(Array.isArray(pulls)) pulls.forEach(pull => {
+      remember(pull && pull.user);
+      if(pull && pull.user && pull.user.login) pullLogins.add(pull.user.login);
+    });
   }catch(e){ /* keep the seeded list */ }
   const others = [...byLogin.values()].filter(p => p.login !== 'aravindbaskaran');
   if(!others.length){
@@ -1244,7 +1252,7 @@ async function loadPeople(){
   host.innerHTML = others.map(p => {
     const note = PEOPLE_NOTES[p.login] || {};
     const name = note.name || p.login;
-    const role = note.role || (contribLogins.has(p.login) ? 'Pushed to this repo' : 'Opened a Write in issue');
+    const role = note.role || (contribLogins.has(p.login) ? 'Pushed to this repo' : pullLogins.has(p.login) ? 'Opened a pull request' : 'Opened a Write in issue');
     const url = p.html_url || ('https://github.com/' + p.login);
     const avatar = p.avatar_url || ('https://github.com/' + p.login + '.png');
     return `<details class="person-card">
